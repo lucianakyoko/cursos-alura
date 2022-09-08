@@ -1,6 +1,4 @@
-
 <p align="center">
-  <a href="#-sobre">Sobre</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#javascript">JavaScript</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#react">React</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#nextjs">Next.js</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -17,6 +15,8 @@
   <a href="#nestjs">NestJS</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#graphql">GraphQL</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
+
+---
 
 ## 📌 Sobre
 Repositório destinado para organizar as anotações das aulas, exercícios e projetos desenvolvidos durante os cursos realizando na platafora da **[Alura](https://www.alura.com.br/planos-cursos-online)**.
@@ -208,26 +208,3 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 15.2 | GraphQL: integração de dados e relacionamentos | ➖ | ⚫ |
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-✔️ concluded
-⚫ not started
-🔵 in progress
-🔶 paused
-🔴 abandoned
-
-➖
- -->
