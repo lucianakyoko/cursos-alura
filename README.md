@@ -50,7 +50,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 1.13 | JavaScript: consumindo e tratando dados de uma API | ➖ | ⚫ |
 | 1.14 | JavaScript: métodos de array | ➖ | ⚫ |
 | 1.15 | JavaScript na Web: validação de Formulários e HTML5  | ➖ | ⚫ |
-| 1.16 | JavaScript na Web: CRUD com JavaScript assíncrono  | ➖ | 🔵 |
+| 1.16 | [JavaScript na Web: CRUD com JavaScript assíncrono](./CRUD-com-JS-assincrono/)  | ➖ | 🔵 |
 | 1.17 | JavaScript na Web: armazenando dados no navegador  | ➖ | ⚫ |
 | 1.18 | JavaScript na Web: Crie páginas dinâmicas  | ➖ | ⚫ |
 
