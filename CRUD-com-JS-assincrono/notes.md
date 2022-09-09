@@ -58,3 +58,19 @@ Promise.all([
 ```
 
 O Promise.all vai executar todas as chamadas na ordem e devolver uma resposta que então poderá ser utilizada no .then.
+
+## Instalando browser-sync
+`npm install -g browser-sync`
+
+para executar:
+`cd CRUD-com-JS-assincrono`
+`browser-sync start --server --file . --host --port 5000 --startPath admin/telas/lista_cliente.html`
+
+## sobre o JavaScript runtime
+O `setTimeOut()` é uma instrução da WebApi, logo ele é mandado para a callback que é executado apos os dois `console.log()` que são executados primeiro pois são comandos nativos da linguagem:
+
+```
+  console.log('1');
+  setTimeout(() => console.log('2'), 1000);
+  console.log('3')
+```
