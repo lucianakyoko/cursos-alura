@@ -34,8 +34,8 @@
 | --- | AULA | STATUS |
 | --- | --- | --- |
 | 1 | Comunicação assíncrona | ✔️ |
-| 2 | Fetch API | 🔵 |
-| 3 | Criar e remover clientes | ⚫ |
+| 2 | Fetch API | ✔️ |
+| 3 | Criar e remover clientes | 🔵 |
 | 4 | Editar dados | ⚫ |
 | 5 | Async/Await | ⚫ |
 
@@ -54,6 +54,14 @@
 
 
 ### 2️⃣ Fetch API
+<ul>
+  <li>Entender a ordem de execução do código JavaScript.</li>
+  <li>Puxar dados do servidor utilizando a função a fetch api ao invés do xmlhttprequest para modernizar o código.</li>
+  <li>Refatorar as responsabilidades do código pensando na manutenção da aplicação no futuro.</li>
+</ul>
+
+
+
 ### 3️⃣ Criar e remover clientes
 ### 4️⃣ Editar dados
 ### 5️⃣ Async/Await
