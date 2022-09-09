@@ -3,6 +3,7 @@
 <p align="center">
   <a href="#sobre">Sobre</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#aulas">Aulas</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#aprendizados">Aprendizados</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 
 </p>
 
@@ -33,7 +34,7 @@
 
 | --- | AULA | STATUS |
 | --- | --- | --- |
-| 1 | Comunicação assíncrona | ⚫ |
+| 1 | Comunicação assíncrona | 🔵 |
 | 2 | Fetch API | ⚫ |
 | 3 | Criar e remover clientes | ⚫ |
 | 4 | Editar dados | ⚫ |
