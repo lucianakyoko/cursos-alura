@@ -4,7 +4,6 @@
   <a href="#sobre">Sobre</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#aulas">Aulas</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#aprendizados">Aprendizados</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-
 </p>
 
 ---
@@ -34,8 +33,8 @@
 
 | --- | AULA | STATUS |
 | --- | --- | --- |
-| 1 | Comunicação assíncrona | 🔵 |
-| 2 | Fetch API | ⚫ |
+| 1 | Comunicação assíncrona | ✔️ |
+| 2 | Fetch API | 🔵 |
 | 3 | Criar e remover clientes | ⚫ |
 | 4 | Editar dados | ⚫ |
 | 5 | Async/Await | ⚫ |
@@ -45,6 +44,15 @@
 ## 🚀Aprendizados 
 
 ### 1️⃣ Comunicação assíncrona
+<ul>
+  <li>Fazer requisições utilizando XMLHttpRequest.</li>
+  <li>Lidar com promises.</li>
+  <li>Fazer uma requisição http utilizando XMLHttpRequest para buscar todos os clientes do servidor.</li>
+  <li>Refatorar o código utilizando promises melhorando a leitura do código.</li>
+  <li>Utilizar template literals para criar um template html.</li>
+</ul>
+
+
 ### 2️⃣ Fetch API
 ### 3️⃣ Criar e remover clientes
 ### 4️⃣ Editar dados
