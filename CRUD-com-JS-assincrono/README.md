@@ -30,7 +30,7 @@
 
 ---
 
-## 📖 Aulas 
+## 📖Aulas 
 
 | --- | AULA | STATUS |
 | --- | --- | --- |
@@ -42,7 +42,7 @@
 
 ---
 
-## 🚀 Aprendizados 
+## 🚀Aprendizados 
 
 ### 1️⃣ Comunicação assíncrona
 ### 2️⃣ Fetch API
