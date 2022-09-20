@@ -27,7 +27,10 @@
 
 ### Class 03 - Refatoracoes
 <ul>
-  <li></li>
+  <li>Porque usar inline styles é algo ruim</li>
+  <li>Como usar Heranças de estilo</li>
+  <li>Sobre possíveis problemas de performance caso um Styled Component seja declarado dentro de um outro componente React</li>
+  <li>Como tratar de media queries dentro dos componentes estilizados</li>
 </ul>
 
 ### Class 04 - Novo Item
