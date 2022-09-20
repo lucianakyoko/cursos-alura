@@ -103,6 +103,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 4.8 | Node.js: testes unitarios e de integracao | ➖ | ⚫ |
 | 4.9 | Node.js: criptografia e tokens JWT | ➖ | ⚫ |
 | 4.10 | Node.js: adicionando CI ao projeto e deploy no Google Cloud | ➖ | ⚫ |
+| 4.11 | Node.js: criando sua primeira biblioteca  | ➖ | ⚫ |
 
 
 ---
