@@ -18,9 +18,15 @@ Os problemas que temos e por que devemos evitar estilos:
  - Se utilizamos estilos inline a tendência do nosso projeto é ter muito código CSS duplicado, o que dificulta a manutenção do projeto. Devemos lembrar sempre do principio de não se repetir ou DRY ( dont repeat yourself)
  - Devemos evitar estilos inline pois eles não são reutilizáveis e acabamos tendo código mais rígido. Se precisarmos fazer alguma alteração no layout precisaremos fazer um a um no caso dos inline, ao invés de ter um único lugar para alterar.
 
-## Problemas de Perfornmance
+## Problemas de Performance
 Sempre que possível devemos evitar colocarmos a declaração de componentes dentro do método ```render``` dentro de componente baseados em classes e no caso de componentes funcionais não devemos declarar um componente dentro do outro.
 
 Isso porque, caso um componente seja declarado dentro do método render ou dentro de um outro componente funcional ele será re-declarado a cada nova renderização e o React não conseguirá fazer cache desse componente, o que pode atrasar e muito a renderização da página.
 
 Por isso, lembre-se de declarar seus componentes e ```styled components``` fora dos métodos de renderização do React.
+
+## Casos de uso
+Existem várias maneiras diferentes de utilizarmos a biblioteca de Styled Components. Os possíveis casos de uso dessa biblioteca:
+  - Essa é uma biblioteca que nos ajuda a padronizar os menores componentes possíveis dentro da aplicação, assim quem vai consumir esses componente não precisa se preocupar com a estilização deles.Nesse sentido os componentes estilizados serão sempre as menores unidades da nossa aplicação. Uma página, por exemplo, continua sendo um componente React padrão que organiza esses componentes menores.
+  
+  - Essa é uma boa biblioteca para criação de Design Systems desde os mais simples até os mais complexos. Por ser muito flexível essa biblioteca nos permite criar design systems facilmente.
