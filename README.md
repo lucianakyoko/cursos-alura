@@ -36,23 +36,22 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### JavaScript
 | 1 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 1.2 | JavaScript na Web: validação de Formulários e HTML5 | ➖ | ⚫ |
-| 1.3 | Algoritmos com JavaScript: aprofundando em algoritmos de ordenação e busca | ➖ | ⚫ |
-| 1.4 | JavaScript: programacao orientada a objetos | ➖ | ⚫ |
-| 1.5 | JavaScript: conhecendo o Browser e padrões de projeto | ➖ | ⚫ |
-| 1.6 | JavaScript: aprofundando em MVC, padrão Proxy e Factory| ➖ | ⚫ |
-| 1.7 | JavaScript: salvando dados localmente com IndexedDB | ➖ | ⚫ |
-| 1.8 | JavaScript: de padrões a uma abordagem funcional | ➖ | ⚫ |
-| 1.9 | JavaScript: projeto de conclusão | ➖ | ⚫ |
-| 1.10 | JavaScript: desenvolvedor poliglota | ➖ | ⚫ |
-| 1.11 | JavaScript: manipulando o DOM | ➖ | ⚫ |
-| 1.12 | JavaScript: validações e reconhecimento de voz | ➖ | ⚫ |
-| 1.13 | JavaScript: consumindo e tratando dados de uma API | ➖ | ⚫ |
-| 1.14 | JavaScript: métodos de array | ➖ | ⚫ |
-| 1.15 | JavaScript na Web: validação de Formulários e HTML5  | ➖ | ⚫ |
-| 1.16 | [JavaScript na Web: CRUD com JavaScript assíncrono](./CRUD-com-JS-assincrono/)  | ➖ | 🔵 |
-| 1.17 | JavaScript na Web: armazenando dados no navegador  | ➖ | ⚫ |
-| 1.18 | JavaScript na Web: Crie páginas dinâmicas  | ➖ | ⚫ |
+| 1.1 | JavaScript na Web: validação de Formulários e HTML5 | ➖ | ⚫ |
+| 1.2 | Algoritmos com JavaScript: aprofundando em algoritmos de ordenação e busca | ➖ | ⚫ |
+| 1.3 | JavaScript: programacao orientada a objetos | ➖ | ⚫ |
+| 1.4 | JavaScript: conhecendo o Browser e padrões de projeto | ➖ | ⚫ |
+| 1.5 | JavaScript: aprofundando em MVC, padrão Proxy e Factory| ➖ | ⚫ |
+| 1.6 | JavaScript: salvando dados localmente com IndexedDB | ➖ | ⚫ |
+| 1.7 | JavaScript: de padrões a uma abordagem funcional | ➖ | ⚫ |
+| 1.8 | JavaScript: projeto de conclusão | ➖ | ⚫ |
+| 1.9 | JavaScript: desenvolvedor poliglota | ➖ | ⚫ |
+| 1.10 | JavaScript: manipulando o DOM | ➖ | ⚫ |
+| 1.11 | JavaScript: validações e reconhecimento de voz | ➖ | ⚫ |
+| 1.12 | JavaScript: consumindo e tratando dados de uma API | ➖ | ⚫ |
+| 1.13 | JavaScript: métodos de array | ➖ | ⚫ |
+| 1.14 | JavaScript na Web: CRUD com JavaScript assíncrono  | ➖ | ⚫ |
+| 1.15 | JavaScript na Web: armazenando dados no navegador  | ➖ | ⚫ |
+| 1.16 | JavaScript na Web: Crie páginas dinâmicas  | ➖ | ⚫ |
 
 ---
 
@@ -73,6 +72,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.12 | React com TypeScript: integrando seu projeto React com APIs | ➖ | ⚫ |
 | 2.13 | React com TypeScript: gerenciando estado com Recoil | ➖ | ⚫ |
 | 2.14 | React com TypeScript: testando os seus componentes | ➖ | ⚫ |
+| 2.15 | React: desenvolvendo uma biblioteca de componentes | ➖ | ⚫ |
 
 ---
 
@@ -86,6 +86,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 3.5 | Next.js: trabalhando com arquitetura Front-end | ➖ | ⚫ |
 | 3.6 | NextJS: documentando seu Front-end com o Storybook | ➖ | ⚫ |
 | 3.7 | NextJS: CI e CD para Front-end com o Github Actions | ➖ | ⚫ |
+| 3.8 | NextJS FullStack: arquitetura de componentes Front-end | ➖ | ⚫ |
 
 ---
 
@@ -176,8 +177,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### Electron
 | 12 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 12.1 | Electron: crie aplicativos Desktop com as tecnologias da Web
- | ➖ | ⚫ |
+| 12.1 | Electron: crie aplicativos Desktop com as tecnologias da Web | ➖ | ⚫ |
 
 ---
 
