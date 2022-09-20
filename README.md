@@ -60,7 +60,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | --- | --- | --- | --- |
 | 2.1 | React: como os componentes funcionam | ➖ | ⚫ |
 | 2.2 | React: desenvolvendo com JavaScript | ➖ | ⚫ |
-| 2.3 | React: abstraindo seu CSS com Styled Components | ➖ | 🔵 |
+| 2.3 | [React: abstraindo seu CSS com Styled Components](./React-Abstraindo-CSS-StyledComponents/) | ➖ | 🔵 |
 | 2.4 | React: automatizando os testes em aplicações front-end | ➖ | ⚫ |
 | 2.5 | React Router: navegação em uma SPA | ➖ | ⚫ |
 | 2.6 | React: gerenciamento de estados globais com ContextAPI | ➖ | ⚫ |
@@ -103,7 +103,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 4.8 | Node.js: testes unitarios e de integracao | ➖ | ⚫ |
 | 4.9 | Node.js: criptografia e tokens JWT | ➖ | ⚫ |
 | 4.10 | Node.js: adicionando CI ao projeto e deploy no Google Cloud | ➖ | ⚫ |
-| 4.11 | Node.js: criando sua primeira biblioteca  | ➖ | 🔵 |
+| 4.11 | [Node.js: criando sua primeira biblioteca](./Node-Criando-Primeira-Biblioteca/)  | ➖ | 🔵 |
 
 
 ---
