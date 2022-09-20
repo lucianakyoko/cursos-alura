@@ -35,7 +35,10 @@
 
 ### Class 04 - Novo Item
 <ul>
-  <li></li>
+  <li>Como compor elementos estilizados para criar novas telas</li>
+  <li>Vantagens de usar componentes para criar layouts</li>
+  <li>Utilizando styled components apenas para estilização</li>
+  <li>Porque evitar o uso de switch-case</li>
 </ul>
 
 ### Class 04 - Tema
