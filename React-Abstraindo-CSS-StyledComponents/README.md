@@ -18,7 +18,11 @@
 
 ### Class 02 - Topicos Basicos
 <ul>
-  <li></li>
+  <li>Usando o reset global do projeto com o Styled Components</li>
+  <li>Criando estilos globais para a aplicação</li>
+  <li>Importando fontes do google para o projeto</li>
+  <li>Criando variáveis para cores do projeto</li>
+  <li>Utilizando propriedades em Componentes estilizados</li>
 </ul>
 
 ### Class 03 - Refatoracoes
