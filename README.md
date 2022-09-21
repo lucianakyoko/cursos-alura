@@ -60,7 +60,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | --- | --- | --- | --- |
 | 2.1 | React: como os componentes funcionam | ➖ | ⚫ |
 | 2.2 | React: desenvolvendo com JavaScript | ➖ | ⚫ |
-| 2.3 | [React: abstraindo seu CSS com Styled Components](./React-Abstraindo-CSS-StyledComponents/) | ➖ | 🔵 |
+| 2.3 | [React: abstraindo seu CSS com Styled Components](./React-Abstraindo-CSS-StyledComponents/) | Smart Bank | ✔️ |
 | 2.4 | React: automatizando os testes em aplicações front-end | ➖ | ⚫ |
 | 2.5 | React Router: navegação em uma SPA | ➖ | ⚫ |
 | 2.6 | React: gerenciamento de estados globais com ContextAPI | ➖ | ⚫ |
