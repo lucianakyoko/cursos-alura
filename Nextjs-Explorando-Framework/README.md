@@ -17,7 +17,9 @@
 
 ### Class 02 - Build e SEO na prática
 <ul>
-  <li></li>
+  <li>Como buildar um projeto Next.js. O comando next build && next export gera os arquivos que serão utilizados no ambiente de produção.</li>
+  <li>SEO no Next.js. O Next.js entrega o conteúdo da página diretamente, enquanto no Create React App ele é gerado após o carregamento. Como resultado o SEO é melhor.</li>
+  <li>create-next-app. Essa ferramenta realiza o setup inicial por você, facilitando o início de uma aplicação Next.js.</li>
 </ul>
 
 ### Class 03 - Estilizando o projeto
