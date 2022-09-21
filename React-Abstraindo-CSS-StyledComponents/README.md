@@ -43,9 +43,15 @@
 
 ### Class 04 - Tema
 <ul>
-  <li></li>
+  <li>Como organizar os temas do nosso projeto</li>
+  <li>O que é o ThemeProvider do styledComponents</li>
+  <li>Como alterar cores de icones SVG usando filters</li>
 </ul>
 
 ---
 
 ## 🎉 Preview
+**White mode:**
+![White mode](../.github/smartBank-white.png)
+**Dark mode:**
+![Dark mode](../.github/smartBank-dark.png)
