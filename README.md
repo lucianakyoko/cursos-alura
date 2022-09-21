@@ -79,7 +79,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### Next.js
 | 3 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 3.1 | Next.js: explorando o framework | ➖ | ⚫ |
+| 3.1 | [Next.js: explorando o framework](./Nextjs-Explorando-Framework) | ➖ | 🔵 |
 | 3.2 | Next.js: tour pelo Next.js | ➖ | ⚫ |
 | 3.3 | Next.js: autenticacao e gerenciamento de Tokens | ➖ | ⚫ |
 | 3.4 | Next.js: trabalhando com um CMS | ➖ | ⚫ |
