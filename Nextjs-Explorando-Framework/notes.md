@@ -60,3 +60,31 @@ export default function Link({ children, href, ...props }) {
 [Problemas, SEO e Web Vitals](https://web.dev/vitals/)
 [JamStack Arquivos estáticos](https://jamstack.org/)
 [Performance Web I: otimizando o front-end](https://www.alura.com.br/curso-online-otimizacao-performance-web?gclid=CjwKCAiA78aNBhAlEiwA7B76pyarbX78QH2cLA9zcfvbwKHd9JFQJCkShSEAF5TU9oq0RGE_iGN09hoCmusQAvD_BwE)
+
+## Como seria esse rodar no servidor?
+Basicamente o seu código vai ser baixado em um desses servidores(AWS, Heroku, a Vercel), vai ter uma máquina que vai ler o seu código, tal como a minha máquina que está rodando esse projeto aqui agora. E lá vai rodar o comando ```yarn build && yarn start```
+
+Ao rodar esse comando no terminal, ele fará o build do projeto e fará algumas otimizações. Se abrirmos o localhost:3000, aparentemente continua tudo igual, e se dermos um view page source na página, está tudo do mesmo jeito, estão aqui os arquivos Next. Eu posso até fechar e abrir de novo: ```next start```, ```started server on```.
+
+Note que basicamente agora, se viermos na nossa home e alterarmos algo, ele não muda mais de acordo com as alterações que fazemos. Ou seja, ele está só pegando a versão já gerada e jogando-a para o nosso usuário. É isso que vai acontecer no servidor.
+
+No momento do build, é mostrado no terminal que tudo está sendo gerado como estático.
+Mesmo os servidores, é mais barato rodarmos os arquivos de forma estática. Arquivos de forma estática seria pegar somente o HTML, o CSS e o JavaScript e servir. Então o usuário acessa uma URL, o servidor interpreta que teve a requisição e manda só um arquivo HTML estático. Você não tem o processamento do servidor de gerar o arquivo e depois mandar, que é uma coisa que acontece muito.
+
+O que o Next está fazendo parece Server Render, mas vai gerar um monte de arquivos estáticos, ele está gerando um monte de arquivo estático para nós. Ou seja, temos um build, que gera os arquivos estáticos e o servidor do próprio Next, otimizado para rodar o Next, que roda isso. É isso que está acontecendo.
+
+## Next Export
+Vamos criar um comando chamado “export”:, no meu “package.json”, e eu vou dizer que esse “export”:, quando eu rodar npmr export, é um atalho para “next build && next export”. Basicamente eu estou fazendo um atalho para rodar isso aqui.
+
+Repara que ao rodar o ```npm export``` surgiu uma pasta “out”, à esquerda e dentro dela tem o “index.html”, o “faq.html” e a página “404.html”. Ele também tem esse monte de “chunks”, esse monte de arquivos JavaScript. Tudo que está aparecendo aqui que o Next gera, está aparecendo aqui também.
+
+Conseguimos copiar o path para esse arquivo na minha máquina e colar isso no navegador, então “/Users/mariosouto/dev/alura/01-nextjs-course/out/index.html” e ele abriu. E se clicarmos para ir para o FAQ, ele quebra porque desse jeito aqui só os arquivos estáticos mesmo ele não está 100% preparado para rodar, precisaria minimamente ter algum outro servidor rodando.
+
+Utilizamos para fins de teste o servidor http-server:
+```npx http-server ./out -c-1```
+
+## Sobre o Next.js
+Uma aplicação web criada com Next.js:
+ - Possibilita Server Side Rendering (SSR). O Next.js consegue pré-renderizar o HTML para cada requisição
+ - Possibilita geração de conteúdo estático (Static Site Generation - SSG). O Next.js consegue pré-renderizar o HTML durante o build que será reutilizado em todas as requisições.
+ - Tem melhor SEO. O SSR e SSG facilitam o escaneamento dos motores de busca, como resultado a aplicação tem uma melhor nota de SEO.
