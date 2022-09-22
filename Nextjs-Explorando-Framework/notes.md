@@ -88,3 +88,22 @@ Uma aplicação web criada com Next.js:
  - Possibilita Server Side Rendering (SSR). O Next.js consegue pré-renderizar o HTML para cada requisição
  - Possibilita geração de conteúdo estático (Static Site Generation - SSG). O Next.js consegue pré-renderizar o HTML durante o build que será reutilizado em todas as requisições.
  - Tem melhor SEO. O SSR e SSG facilitam o escaneamento dos motores de busca, como resultado a aplicação tem uma melhor nota de SEO.
+
+## Recursos extras
+```
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+```
+
+## Organização de projeto
+Como começar a estruturar um projeto React? com NextJS, Styled Components.
+Dev Soutinho
+https://youtu.be/mJK5oGixSYo
+
+## Pasta public
+  Os arquivos dentro da pasta public estarão disponíveis como recursos do website e poderão ser acessados diretamente pela URL, seguidos do caminho relativo do arquivo à raiz da pasta public.
+
+## Robots.txt
+Um arquivo robots. txt informa aos rastreadores do mecanismo de pesquisa quais URLs podem ser acessados no seu site. Esse recurso é usado principalmente para evitar a sobrecarga do site com solicitações e não funciona como um mecanismo para manter uma página da Web fora dos resultados da pesquisa do Google.
+
+## Arquivos estáticos
+Arquivos estáticos e imagens devem ser colocadas dentro da pasta public. Para referenciar o arquivo dentro dessa pasta, devemos começar o caminho com “/” e também colocar a extensão no final.
