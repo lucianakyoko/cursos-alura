@@ -24,7 +24,9 @@
 
 ### Class 03 - Capturando links
 <ul>
-  <li></li>
+  <li>Como utilizar expressões regulares, uma sintaxe feita para reconhecer padrões de texto, para capturar links e URLs;</li>
+  <li>Como utilizamos classes e grupos de expressões regulares para refinar a busca por estes padrões, além dos métodos que o JavaScript tem (por exemplo match e exec) para trazer os resultados e trabalhar com eles;</li>
+  <li>Manipular os resultados extraídos do texto através de expressões regulares e montar um objeto de retorno utilizando a sintaxe do JavaScript e desestruturação de objetos com o spread operator ...</li>
 </ul>
 
 ### Class 04 - Usando a linha de comando
