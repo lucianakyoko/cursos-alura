@@ -427,3 +427,30 @@ No JavaScript o try...catch possibilita lidar com um erro identificando o trecho
 O Javascript (assim como muitas outras linguagens) utiliza o bloco try para envolver o trecho de código que pode gerar algum tipo de exceção e o bloco catch é o responsável por capturar a exceção (caso ocorra) e permitir que seja “tratada”, retornando alguma mensagem informativa, executando alguma função específica, etc.
 
 Tratamento de erros e todas as formas possíveis de se fazer isso é um tópico recorrente em JavaScript, havendo vários prós e contras na utilização de cada método
+
+## expressões regulares
+expressões regulares são objetos que mapeiam padrões de texto por meio de uma linguagem própria, com sintaxe e regras específicas. Elas são uma ferramenta eficiente para resolver problemas de código que envolvem padrões e buscas textuais.
+
+Pode ser que você já conheça alguns dos meta-chars usados em expressões regulares sem saber. Por exemplo, quando procuramos no campo de busca do computador por qualquer arquivo de extensão jpg com *.jpg. É claro que as expressões regulares podem ir de muito simples até extremamente complexas, então você não precisa se preocupar em decorar todos os meta-chars ou como eles se comportam; sempre é possível consultar sites como regex101 ou o guia do MDN.
+
+Cada linguagem de programação desenvolve seu próprio interpretador de expressões regulares; no caso do JavaScript podemos usar // e salvar o padrão em uma variável, como foi feito nos vídeos, ou utilizar o construtor new RegExp():
+```
+const regex = /[a-zA-z\s]/;
+```
+
+ou
+
+```
+let regex = new RegExp("[a-zA-z\s]");
+```
+
+Para trabalhar com as regex em nosso código, podemos utilizar alguns métodos próprios de string, como matchAll() (que usamos no vídeo), search(), replace(), match() e split(). Você pode consultar mais sobre estes métodos no MDN. Além disso, o JavaScript também tem alguns métodos próprios do objeto RegExp: test() e exec(). Vamos enter mais sobre o exec() durante este curso, mas você também pode ler a respeito deles [aqui](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp).
+
+## validações de formulário
+Depois de trabalharmos com expressões regulares, é bem comum pensarmos em validações de formulário como um possível uso.
+
+Embora seja uma opção válida, já existem algumas libs para validação de formulários com JavaScript - você se lembra de que há muitas libs para automatizar tarefas comuns em programação?
+
+A validação de formulários é uma das tarefas que podem consumir muito tempo para desenvolver desde o início e normalmente não são features, ou seja, funcionalidades de um produto. Então, usamos as libs para focar nas partes mais importantes do desenvolvimento.
+
+Validações são importantes tanto no lado do front-end quanto do back-end. Você pode conferir duas libs para isso, [Joi](https://joi.dev/) e [Yup](https://joi.dev/), e suas documentações com exemplos de uso. A Joi tem um [ambiente de testes](https://joi.dev/tester/) que ajudam a visualizar melhor como utilizar os métodos dessa lib.
