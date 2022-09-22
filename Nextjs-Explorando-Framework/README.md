@@ -24,7 +24,9 @@
 
 ### Class 03 - Estilizando o projeto
 <ul>
-  <li></li>
+  <li>Estilização no Next.js. Existem diversas maneiras de estilizar sua aplicação Next.js e você é livre para escolher a que mais lhe agrada.</li>
+  <li>Arquitetura de aplicação. Podemos criar novas pastas para agrupar componentes com propósitos semelhantes.</li>
+  <li>Lidar com arquivos estáticos. Conseguimos acessar os arquivos dentro da pasta public diretamente pela URL da aplicação.</li>
 </ul>
 
 ### Class 04 - Dados dinamicos no Next.js
