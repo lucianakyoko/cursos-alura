@@ -31,3 +31,44 @@ Podemos destrinchar o fluxo de execução de tarefas em JavaScript em três part
 
 https://cursos.alura.com.br/extra/alura-mais/o-que-e-javascript--c1311
 https://www.alura.com.br/artigos/hoisting-no-javascript
+
+## Callbacks
+ Callbacks são, basicamente, funções enviadas como parâmetro para outras funções. Podemos chamar de callback funções que são passadas como parâmetro para outras funções, como por exemplo a função ```mandaMensagem()``` que é enviada como parâmetro para a função ```setTimeOut```, dessa maneira: ```setTimeOut(mandaMensagem, 5000)```.
+ 
+ Geralmente, callbacks são executados quando alguma operação é concluída ou quando um evento específico ocorre. Callbacks são assíncronos, portanto são funções que são ativadas por algum fator pré-determinado, podendo ser um tempo específico, a partir de uma ação do usuário, depois da conclusão de alguma coisa.
+
+
+## API - Interface de Programação de Aplicações
+API - permite que dois componentes de software se comuniquem. Chamamos esses dois lados de cliente e servidor. A API fica no meio fazendo a conexão. O cliente faz uma solicitação para essa API, ela faz os trâmites e pede ao servidor para retornar a resposta.
+
+Uma API é um mecanismo que permite que duas partes de um software se comuniquem usando um conjunto de definições e protocolos. Sua arquitetura geralmente é explicada em termos de cliente e servidor. A aplicação que envia a solicitação é chamada de cliente e a aplicação que envia a resposta é chamada de servidor.
+
+ ## Fetch API
+ O método Fetch é assíncrono e tem como parâmetro obrigatório a URL da API.
+
+ ## Promise
+ Promise - é uma promessa de que algo vai acontecer. Como retorno, ela pode ser resolvida ou rejeitada.
+
+Anatomia de uma promisse é composta de uma função com os parâmetros Resolve e Reject. Resolve e Reject são, dois Callbacks da função da Promise.
+```
+const entrega = new Promise(function(resolve, reject) {
+  if(recebeu == true) {
+    resolve('Ana recebeu a encomenda')
+  } else {
+    reject('Não foi possível receber a encomenda)
+  }
+})
+```
+Se essa promessa foi resolvida, ela vai ser chamada de função Resolve e enviará uma mensagem ou fará alguma ação que você definiu que fosse acontecer.
+
+Na maioria dos casos, não construímos uma Promise do zero. Ela é gerada a partir de algo síncrono que, no caso, é o nosso Fetch API. Ele está fazendo uma Promise por trás dos panos que foi gerada através da nossa requisição.
+
+Pode acontecer de a requisição demorar para carregar. Então, ao invés de dar um valor final de erro, ele gera uma promessa, e no futuro teremos o resultado da requisição.
+
+  - Fulfilled: quer dizer que está completa
+  - Reject
+  - Pending: quer dizer que ainda não concluiu.
+
+**métodos das Promises**
+Retorna outras Promises.
+Esses métodos são: o Then, o Catch e o Finally. Eles nos permitirão mostrar na tela todo esse valor do que estamos recebendo
