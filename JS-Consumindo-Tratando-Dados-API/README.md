@@ -20,7 +20,10 @@
 
 ### Class 02 - Aplicando a assincronicidade
 <ul>
-  <li></li>
+  <li>Criar funções que recebem como parâmetros outras funções (callbacks);</li>
+  <li>Identificar uma API;</li>
+  <li>Consumir dados de uma API através do método fetch;</li>
+  <li>Compreender o funcionamento das promises.</li>
 </ul>
 
 ### Class 03 - Aprofundando em promises
