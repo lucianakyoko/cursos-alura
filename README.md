@@ -52,6 +52,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 1.14 | JavaScript na Web: CRUD com JavaScript assíncrono  | ➖ | ⚫ |
 | 1.15 | JavaScript na Web: armazenando dados no navegador  | ➖ | ⚫ |
 | 1.16 | JavaScript na Web: Crie páginas dinâmicas  | ➖ | ⚫ |
+| 1.17 | JavaScript: criando requisições  | ➖ | ⚫ |
 
 ---
 
