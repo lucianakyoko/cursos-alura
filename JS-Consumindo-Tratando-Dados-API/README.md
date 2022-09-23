@@ -28,7 +28,11 @@
 
 ### Class 03 - Aprofundando em promises
 <ul>
-  <li></li>
+  <li>Tratar promises a partir dos seus métodos</li>
+  <li>Utilizar o método then para acessar o valor retornado do fetch API</li>
+  <li>Converter dados em JSON através do método json()</li>
+  <li>Lidar com possíveis erros com o método catch</li>
+  <li>Enviar respostas independente do retorno com o método finally</li>
 </ul>
 
 ### Class 04 - Criando funções assíncronas
