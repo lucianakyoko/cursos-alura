@@ -72,3 +72,47 @@ Pode acontecer de a requisição demorar para carregar. Então, ao invés de dar
 **métodos das Promises**
 Retorna outras Promises.
 Esses métodos são: o Then, o Catch e o Finally. Eles nos permitirão mostrar na tela todo esse valor do que estamos recebendo
+
+## Convertendo dados
+Observe o trecho de código a seguir:
+```
+  var requisicao = fetch("https://viacep.com.br/ws/01001000/json/")
+    .then(resposta => resposta.json())
+```
+Ao fazer uma requisição para uma API com o fetch, é necessário converter os dados recebidos com o método .json(), pois os dados chegam em formato de bytes e precisamos transformar em outro formato para manipulá-los.
+
+O corpo da resposta de uma requisição chega em formato de bytes. Desta forma o .json() transforma o corpo e retorna um json formatado. O formato JSON (JavaScript Object Notation) possui basicamente a mesma sintaxe que a de um objeto JS.
+
+## Finally
+  - **then** é quando a nossa promessa é resolvida, 
+  - **catch** é quando a nossa promessa foi rejeitada.
+  - **finally** é literalmente a sua tradução também, sendo "Finalmente". Independente da resposta dessa promessa, ele vai imprimir o que colocarmos.
+
+## Arrow Functions
+Dê uma olhada na estrutura do nosso código dentro do primeiro método .then dessa requisição: .then(resposta => resposta.json()). O conteúdo que está ali presente é uma função, mas construída de uma maneira diferente se torna uma arrow function. A versão ES6 do ECMAScript trouxe uma nova forma mais sucinta de trabalhar com funções chamada de Arrow Functions, por causa da sintaxe que lembra uma flecha: () =>.
+
+Em uma função tradicional, caso você crie uma variável dentro dela, seu contexto é referente a função onde ela está. Para entender melhor: se você usar a palavra chave “.this”, você está se referindo a essa função em si.
+
+Já em uma arrow function temos um contexto externo. Por exemplo, se essa arrow function for criada dentro de outra função seu contexto será aquela função que ela está dentro. Caso a função for aplicada fora de outra função, seu contexto será global, o código inteiro.
+
+https://youtu.be/3EkS9-P3cIM
+
+## Retornos de requisições
+Quando estamos realizando uma requisição para a API, estamos trocando protocolos HTTP’s. HTTP é um protocolo, uma forma de conversa entre duas máquinas, que permite transferir hiper-texto de um lado a outro. Daí o nome Hyper Text Transport Protocol.
+
+Uma requisição é composta de uma request (solicitação) e uma response (resposta). Request e Response são dois tipos de mensagem diferentes quando falamos de HTTP. A especificação HTTP diz exatamente o que podemos colocar dentro de cada um destes tipos de mensagem para que todos que "falem" o idioma HTTP consigam trocar informações corretamente.
+
+Em uma response é retornado um response code (código de resposta) e um motivo, que dá significado ao código. A estrutura padrão desse código tem três dígitos, sendo o primeiro referente a classificação dele. Elas são:
+
+1XX: Informativo – a solicitação foi aceita ou está em andamento;
+2XX: Confirmação – a solicitação foi concluída ou entendida;
+3XX: Redirecionamento – faltou alguma coisa na solicitação;
+4XX: Erro do cliente – houve um erro na solicitação;
+5XX: Erro no servidor – houve uma falha no servidor durante a solicitação.
+Durante essa aula nós conhecemos um deles: quando consultado um CEP de formato inválido na API do ViaCEP ela nos retornará o código 400 (Bad Request).
+
+Caso você queira saber mais sobre os tipos de código de resposta do protocolo HTTP recomendo a aplicação HTTP Cat que demonstra de forma descontraída as diferentes categorias que podemos encontrar. 
+
+Além de todos esses conhecimentos novos, fizemos com sucesso uma requisição com os métodos das promises .then e .catch. 
+
+https://www.alura.com.br/artigos/comecando-com-fetch-no-javascript
