@@ -107,3 +107,78 @@ Um arquivo robots. txt informa aos rastreadores do mecanismo de pesquisa quais U
 
 ## Arquivos estáticos
 Arquivos estáticos e imagens devem ser colocadas dentro da pasta public. Para referenciar o arquivo dentro dessa pasta, devemos começar o caminho com “/” e também colocar a extensão no final.
+
+## getStaticProps
+o getStaticProps surge para você fazer sites estáticos, sites que você vai publicar dentro do GitHub Pages, num bucket do S3 da Amazon ou até mesmo no seu servidor customizado.
+É na mesma pegada da pasta “out” aqui, ou seja, sempre que você usar o getStaticProps, pensa que o conteúdo que você está trabalhando nunca vai ser alterado, por mais que o conteúdo da API mude. Você vai precisar fazer um novo build do site para isso aqui mudar. Eu vou mostrar mais na prática.
+
+## Algumas siglas importantes
+  - **SSG**: Static Site Generation
+  - **SSR**: Server Side Rendering
+  - **ISG**: Incremental Static Generation
+
+## Busca de dados
+Considerando o seguinte cenário:
+Uma empresa lançará um novo produto e você será responsável por montar o site de apresentação e venda.
+
+O site será composto por 2 páginas: a página inicial e um painel de controle.
+
+A página inicial terá os seguintes requisitos:
+
+Ser atrativa visualmente para os clientes;
+Ter bom SEO para aparecer nas pesquisas dos motores de busca;
+Ter um baixo tempo de carregamento;
+Descrever o produto;
+Redirecionar para a parte de compra (que será desenvolvido por outra equipe);
+Uma vez pronta, serão necessários pequenos ou quase nenhum ajuste.
+O painel de controle terá os seguintes requisitos:
+
+Mostrar os dados de venda atualizados;
+A informação deve ser personalizada para cada cargo (vendedor, administrador, patrocinador etc);
+Não deverá ser visto pelos motores de busca nem pelos clientes;
+O tempo de carregamento não é prioridade.
+Após analisar os requisitos, você percebeu que o Next.js fornece as ferramentas necessárias para atendê-los bem.
+
+Neste cenário, a estratégia de busca de dados ideal para a página inicial e do painel de controle, respectivamente será o SSG e SSR, pois o ponto forte do SSG é a entrega rápida de conteúdos estáticos, então ele é a melhor estratégia para a página inicial. Com o SSR, você poderá construir um painel de controle personalizado e atualizado para cada requisição.
+
+## Next e Google Analytics
+O local que coloraremos o código do Analytics do Google será no arquivo _app.js dentro do componente <Head> (next/head). Desta forma pegará todas as nossas páginas.
+
+Porém, não basta apenas copiar o código e colar. precisamos realizar o seguinte ajuste:
+exemplo:
+
+```
+<Head>
+  {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2QZDPX3BLK"></script>
+  <script 
+    dangerourslySetInnerHTML={{
+      __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){
+            dataLayer.push(argments);
+          }
+          gtag('config', 'G-2QZDPX3BLK');
+      `
+    }}
+  />
+  </script>
+</Head>
+```
+
+## Referências da aula 04
+getStaticProps (Static Generation): https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+
+useEffect: https://pt-br.reactjs.org/docs/hooks-reference.html#useeffect
+
+Web.dev - Web Vitals: https://web.dev/i18n/pt/vitals/
+
+getServerSideProps (Server-side Rendering): https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
+
+Jamstack: https://jamstack.org/
+
+SSG - Static Site Generation
+
+SSR - Server Side Rendering
+
+ISG - Incremental Static Generation
