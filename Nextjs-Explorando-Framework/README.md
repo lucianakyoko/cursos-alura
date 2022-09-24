@@ -38,5 +38,7 @@
 
 ### Class 04 - Publicando seu projeto
 <ul>
-  <li></li>
+  <li>O que é o next.config.js. Neste arquivo, podemos modificar algumas configurações, como, por exemplo, redirects e adição do trailing slash no final da URL automaticamente.</li>
+  <li>Como fazer o deploy do seu projeto Next.js. A criadora do framework (Vercel) oferece uma plataforma de hosting de forma gratuita e integrada ao GitHub.</li>
+  <li>Benefícios de hospedar na Vercel. A plataforma oferece fácil integração com plataformas de versionamento de código, assim como HTTPs e domínios customizados.</li>
 </ul>
