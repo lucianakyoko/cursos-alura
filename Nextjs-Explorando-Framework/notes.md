@@ -1,14 +1,14 @@
 ## passHref
-O atributo passHref do NextLink força a passagem do href para seus componentes filhos. Ou seja, o href passado para o Link é implicitamente passado para o LinkEstilizado. Por isso que o href está presente na tag <a> do HTML e não precisamos escrever.
+O atributo passHref do NextLink força a passagem do href para seus componentes filhos. Ou seja, o href passado para o Link é implicitamente passado para o LinkEstilizado. Por isso que o href está presente na tag ```<a>``` do HTML e não precisamos escrever.
 ```<LinkEstilizado href={href}>```
 
-O valor default do ```passHref``` é false, então, após executar o passo 5 você verá que a tag <a> não possui mais o ```href```. A tag está no documento e as suas estilizações provavelmente ainda estarão lá, mas a funcionalidade de navegação não funciona mais. Portanto, a acessibilidade e SEO da sua página serão prejudicados.
+O valor default do ```passHref``` é false, então, após executar o passo 5 você verá que a tag ```<a>``` não possui mais o ```href```. A tag está no documento e as suas estilizações provavelmente ainda estarão lá, mas a funcionalidade de navegação não funciona mais. Portanto, a acessibilidade e SEO da sua página serão prejudicados.
 
-Segundo a documentação sobre o Link do Next.js, o passHref é mandatório quando o filho do NextLink é um componente que envolve uma tag <a>, como é caso do LinkEstilizado e qualquer outro componente de navegação dos frameworks citados no início.
+Segundo a documentação sobre o Link do Next.js, o passHref é mandatório quando o filho do NextLink é um componente que envolve uma tag ```<a>```, como é caso do LinkEstilizado e qualquer outro componente de navegação dos frameworks citados no início.
 
-É muito comum a utilização de bibliotecas e/ou frameworks como o styled-componentes, Material UI e Chakra UI na construção de interfaces gráficas. Essas ferramentas fornecem seus próprios componentes de âncora (tag <a> do HTML), mas seus propósitos são apenas aplicar a estilização.
+É muito comum a utilização de bibliotecas e/ou frameworks como o styled-componentes, Material UI e Chakra UI na construção de interfaces gráficas. Essas ferramentas fornecem seus próprios componentes de âncora (tag ```<a>``` do HTML), mas seus propósitos são apenas aplicar a estilização.
 
-Sendo assim, é comum a composição do componente <Link> do Next.js com os componentes dos frameworks citados anteriormente, gerando um novo componente que possui tanto a funcionalidade de navegação quanto a estilização desejada.
+Sendo assim, é comum a composição do componente ```<Link>``` do Next.js com os componentes dos frameworks citados anteriormente, gerando um novo componente que possui tanto a funcionalidade de navegação quanto a estilização desejada.
 
 Vamos simular a utilização de um desses frameworks e entender mais sobre o passHref mencionado no vídeo anterior.
 
@@ -30,7 +30,7 @@ const LinkEstilizado = React.forwardRef(({ onClick, href, children }, ref) => {
 export default LinkEstilizado;
 ```
 
-2) Substitua a tag <a> dentro do Link criado no vídeo anterior pelo componente <LinkEstilizado>.
+2) Substitua a tag ```<a>``` dentro do Link criado no vídeo anterior pelo componente <LinkEstilizado>.
 
 ```
 // Componente Link
@@ -48,9 +48,9 @@ export default function Link({ children, href, ...props }) {
 
 3) Rode o servidor com yarn dev.
 
-4) Abra o DevTools do seu navegador e inspecione a tag <a>.
+4) Abra o DevTools do seu navegador e inspecione a tag ```<a>```.
 
-5) Retire o atributo passHref do componente Link, salve e inspecione novamente a tag <a> no documento.
+5) Retire o atributo passHref do componente Link, salve e inspecione novamente a tag ```<a>``` no documento.
 
 ## Referências da aula
 [Guillermo Rauch](https://twitter.com/rauchg)
@@ -142,7 +142,7 @@ Após analisar os requisitos, você percebeu que o Next.js fornece as ferramenta
 Neste cenário, a estratégia de busca de dados ideal para a página inicial e do painel de controle, respectivamente será o SSG e SSR, pois o ponto forte do SSG é a entrega rápida de conteúdos estáticos, então ele é a melhor estratégia para a página inicial. Com o SSR, você poderá construir um painel de controle personalizado e atualizado para cada requisição.
 
 ## Next e Google Analytics
-O local que coloraremos o código do Analytics do Google será no arquivo _app.js dentro do componente <Head> (next/head). Desta forma pegará todas as nossas páginas.
+O local que coloraremos o código do Analytics do Google será no arquivo _app.js dentro do componente ```<Head>``` (next/head). Desta forma pegará todas as nossas páginas.
 
 Porém, não basta apenas copiar o código e colar. precisamos realizar o seguinte ajuste:
 exemplo:
@@ -219,3 +219,127 @@ E vamos restartar o nosso servidor.
 
 Bom o código acima diz: Sempre que acessarmos a rota /perguntas, o distino é a /faq
 Perceba agora que se digitarmos ```http://localhost:3000/perguntas``` na barra do navegador, ele redirecioná para ```http://localhost:3000/faq/``` 
+
+## SSR e SSG
+No início do curso você aprendeu que o Next.js possibilita a renderização tanto do lado do servidor quanto do cliente e que ele também pode gerar páginas estáticas na hora do build.
+
+Na aula 4 você aprendeu como framework busca os dados da sua aplicação com GetServerSideProps ou GetStaticProps para implementar tais estratégias de renderização.
+
+Chegou a hora de colocar a mão na massa! Caso não lembre da sintaxe de getStaticProps e getServerSideProps visite a documentação sobre [data-fetching](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation).
+
+1) Comece um projeto Next.js novo com create-next-app.
+
+2) Crie uma página com a rota /ssr e implemente a função getServersideProps.
+
+a) Seu retorno deve ser uma variável mensagem com o valor “Fui renderizada para esta requisição!”
+
+b) O valor dessa variável deve ser mostrado em tela.
+
+3) Crie uma página com a rota /ssg e implemente a função getStaticProps.
+
+a) Seu retorno deve ser uma variável mensagem com o valor “Fui gerada durante o build!”.
+
+b) O valor dessa variável deve ser mostrado em tela.
+
+4) Na página / crie um Link para as páginas /ssr e /ssg.
+
+5) Utilize a função delay abaixo para criar um atraso artificial na renderização de cada página. Ela recebe como parâmetro quantos segundos o processo será atrasado.
+```
+function delay(seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+}
+```
+
+6) Chame a função delay dentro de getServersideProps e getStaticProps.
+
+7) Rode o servidor com yarn dev e acesse as páginas /ssg e /ssr.
+
+Após a criação do projeto com yarn create next-app nome-do-projeto, foi criado a rota /ssr com o código:
+```
+function SSRPage({ mensagem }) {
+  return <div>{mensagem}</div>;
+}
+
+function delay(seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+}
+
+export const getServerSideProps = async () => {
+  await delay(2);
+
+  return {
+    props: {
+      mensagem: 'Fui gerada pra essa requisição!',
+    },
+  };
+};
+export default SSRPage;
+```
+E a rota /ssg com o código:
+
+```
+  function SSGPage({ mensagem }) {
+  return <div>{mensagem}</div>;
+}
+
+function delay(seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+}
+
+export const getStaticProps = async () => {
+  await delay(2);
+
+  return {
+    props: {
+      mensagem: 'Fui gerado no build',
+    },
+  };
+};
+
+export default SSGPage;
+```
+
+O atraso utilizado foi de 2 segundos.
+
+No componente da rota /, foram criados ```<Link>``` para navegação SPA de cada página.
+
+```
+<Link href="/ssg">
+            <a>
+            Navegar para SSG
+            </a>
+</Link>
+ <Link href="/ssr">
+            <a>
+            Navegar para SSR
+            </a>
+</Link>
+```
+
+OBS: O passHref não é necessário aqui, pois a tag ```<a>``` é filha direta do ```<Link>``` do Next.js.
+
+Após iniciar o servidor, era esperado que a página inicial carregasse rapidamente por ser estática. A página /ssr demorou cerca de 2 segundos para ser renderizada devido ao atraso dentro de getServerSideProps. Curiosamente, esse atraso também está presente em /ssg, mas durante o curso você aprendeu que o getStaticProps deveria rodar somente 1 vez durante o build, portanto, o atraso não deveria ocorrer no acesso à página.
+
+Isso acontece porque em ambiente de desenvolvimento (ou seja, quando usamos yarn dev), o getStaticProps é [executado em cada requisição](https://nextjs.org/docs/basic-features/data-fetching#runs-on-every-request-in-development), se comportando de maneira semelhante ao getServerSideProps.
+
+Para ver o getStaticProps em ação, você deve executar o comando yarn build para que as páginas estáticas sejam geradas.
+
+![screenshot](./.github/aula5-imagem1.png)
+
+Note que a página /ssg demorou 2070 ms para ser gerada devido ao atraso de 2 segundos (2000 ms).
+
+Para rodar o servidor em modo de produção, execute o comando: npm run dev
+Dessa vez, o atraso estará somente na página /ssr.
+
+## Referências da aula
+- Que tal saber o status HTTP correto das requisições com cachorrinhos??? [HTTP STATUS DOGS](https://httpstatusdogs.com/)
+
+- Para saber mais sobre redirects no Next, segue uma leitura incrível:[Redirects](https://nextjs.org/docs/api-reference/next.config.js/redirects)
+
+- Para finalizar as leituras opcionais, recomendamos essa que mostra como o Next.js redireciona URLs com barras . Por exemplo /home/, redirecionará para /home. Você pode configurar esse comportamento para agir de maneira oposta, onde urls sem barras finais são redirecionadas para suas contrapartes com barras finais. [Trailing Slash](https://nextjs.org/docs/api-reference/next.config.js/trailing-slash)
