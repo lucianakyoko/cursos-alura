@@ -31,7 +31,9 @@
 
 ### Class 04 - Dados dinamicos no Next.js
 <ul>
-  <li></li>
+  <li>getStaticProps - Essa função busca os dados durante o build. Ou seja, essa função é executada apenas uma vez.</li>
+  <li>getServerSideProps - Essa função busca os dados do lado do servidor para cada requisição.</li>
+  <li>Ao modificar o título da página - Com o componente <Head> conseguimos editar os metadados de cada página, como, por exemplo, o título.</li>
 </ul>
 
 ### Class 04 - Publicando seu projeto
