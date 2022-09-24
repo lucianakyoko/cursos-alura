@@ -182,3 +182,40 @@ SSG - Static Site Generation
 SSR - Server Side Rendering
 
 ISG - Incremental Static Generation
+
+## next.config.js
+Alguns ajustes são importantes no projeto:
+  - **trailing slash**, que é você ter ou não ter uma barra no final de todas as URLs do seu projeto, ou até mesmo fazer redirects.
+
+O arquivo ```next.config.js``` vai servir basicamente para botarmos configurações gerais de como o Next deve funcionar com o nosso projeto.
+
+Dentro do arquivo next.config.js, vamos colocar o seguinte código:
+```
+module.exports = {
+  trailingSlash: true,
+}
+```
+No localhost:3000, olhando na parte do “Confira as principais dúvidas” podemos ver que o FAQ agora tem sempre essa barra no final, e se ele não tiver, ele força, ele vai sempre botá-la aqui: ```http://localhost:3000/faq/``` 
+
+Essa barra se faz necessário pois configuramos o Analytics no projeto, muitas pessoas que trabalham com análise de Analytics preferem que por padrão o site tenha essa barra ou ele não tenha essa barra
+
+## Redirects
+Dentro do arquivo next.config.js, vamos colocar o seguinte código:
+```
+module.exports = {
+  trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: '/perguntas',
+        destination: '/faq',
+        permanent: true,
+      }
+    ]
+  }
+}
+```
+E vamos restartar o nosso servidor.
+
+Bom o código acima diz: Sempre que acessarmos a rota /perguntas, o distino é a /faq
+Perceba agora que se digitarmos ```http://localhost:3000/perguntas``` na barra do navegador, ele redirecioná para ```http://localhost:3000/faq/``` 
