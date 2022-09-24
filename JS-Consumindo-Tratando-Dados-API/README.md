@@ -45,7 +45,10 @@
 
 ### Class 04 - Manipulando formulários
 <ul>
-  <li></li>
+  <li>Selecionar elementos pelo seu id através do getElementById</li>
+  <li>Incluir valores em elementos com a propriedade value</li>
+  <li>Detectar interação do usuário com auxílio do addEventListener</li>
+  <li>Inserir elementos HTML a partir do innerHTML</li>
 </ul>
 
 ---
