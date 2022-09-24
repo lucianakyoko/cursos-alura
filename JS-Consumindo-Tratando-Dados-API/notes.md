@@ -116,3 +116,38 @@ Caso você queira saber mais sobre os tipos de código de resposta do protocolo 
 Além de todos esses conhecimentos novos, fizemos com sucesso uma requisição com os métodos das promises .then e .catch. 
 
 https://www.alura.com.br/artigos/comecando-com-fetch-no-javascript
+
+## Async Await
+Esta é uma outra forma de trabalhar com promessas, ou seja, a estrutura utilizada para construir um código assíncrono abaixo foi a do .then, um método que as Promises disponibilizam:
+
+```
+const requisicao = fetch("https://localhost:5000/")
+  .then(resposta => resposta.json())
+  .then(respostaConvertida => console.log(respostaConvertida));
+```
+
+Esse código faz uma requisição pra uma API através de seu link em conjunto do método fetch e em seguida converte o resultado para JSON. Podemos reproduzir o mesmo código usando async await: 
+
+```
+async function geraRequisicao() {
+  var requisicao = await fetch(“https://localhost:5000”);
+  var respostaConvertida = await requisicao.json();
+}
+```
+
+A declaração async function define uma função assíncrona e o operador await é utilizado para esperar por uma Promise. Dessa maneira, nossa requisição funcionará corretamente.
+
+## Then ou Async Await?
+Quando produzimos um código assíncrono com o uso do .then nós fazemos uso de callback dentro deles. O maior problema com callbacks é que eles não são bem dimensionados mesmo para códigos assíncronos moderadamente complexos, onde temos vários .then em seguida do outro. O código resultante geralmente se torna difícil de ler, fácil de quebrar e difícil de depurar. Isso é o que chamamos de callback hell.
+
+Para resolver isso, foi desenvolvido outra forma de construir um código assíncrono: o async await, que funciona de forma semelhante ao then mas o código fica mais “bonito”. Esse “embelezamento” em códigos é o que chamamos de syntax sugar.
+
+Em ciência da computação, syntax sugar ou açúcar sintático (em tradução literal), é a sintaxe dentro de uma linguagem de programação que foi concebido para tornar as coisas mais fáceis de ler ou expressar. Isso torna a linguagem "mais doce" para uso humano: as coisas podem ser expressas de forma mais clara, de forma mais concisa, ou em um estilo alternativo que alguns podem preferir.
+
+O async/await apesar de ser uma opção mais "legível" ao .then() é importante frisar que não são logicamente equivalentes: 
+- o **async/await** faz o processamento de forma sequencial, 
+- Promises com **.then()** são processadas em paralelo, o que faz com que este método seja mais rápido. 
+
+O async/await simplifica a escrita e a interpretação do código, mas não é tão flexível e só funciona com uma Promise por vez.
+
+Ler artigo [“Async/await no JavaScript: o que é e quando usar a programação assíncrona?”](https://www.alura.com.br/artigos/async-await-no-javascript-o-que-e-e-quando-usar) 
