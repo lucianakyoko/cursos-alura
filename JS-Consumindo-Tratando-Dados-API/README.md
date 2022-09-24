@@ -37,7 +37,10 @@
 
 ### Class 04 - Criando funções assíncronas
 <ul>
-  <li></li>
+  <li>Construir funções assíncronas com async;</li>
+  <li>Criar requisições com await;</li>
+  <li>Tratar erros com try catch;</li>
+  <li>Implementar várias requisições simultaneamente com Promise All.</li>
 </ul>
 
 ### Class 04 - Manipulando formulários
