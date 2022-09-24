@@ -47,7 +47,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 1.9 | JavaScript: desenvolvedor poliglota | ➖ | ⚫ |
 | 1.10 | JavaScript: manipulando o DOM | ➖ | ⚫ |
 | 1.11 | JavaScript: validações e reconhecimento de voz | ➖ | ⚫ |
-| 1.12 | [JavaScript: consumindo e tratando dados de uma API](./JS-Consumindo-Tratando-Dados-API/) | Alura Books | 🔵 |
+| 1.12 | [JavaScript: consumindo e tratando dados de uma API](./JS-Consumindo-Tratando-Dados-API/) | Alura Books | ✔️ |
 | 1.13 | JavaScript: métodos de array | ➖ | ⚫ |
 | 1.14 | JavaScript na Web: CRUD com JavaScript assíncrono  | ➖ | ⚫ |
 | 1.15 | JavaScript na Web: armazenando dados no navegador  | ➖ | ⚫ |
