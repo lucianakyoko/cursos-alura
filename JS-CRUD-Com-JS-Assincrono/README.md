@@ -21,7 +21,9 @@
 
 ### Class 02 - Fetch API
 <ul>
-  <li></li>
+  <li>Entender a ordem de execução do código JavaScript.</li>
+  <li>Puxar dados do servidor utilizando a função a fetch api ao invés do xmlhttprequest para modernizar o código.</li>
+  <li>Refatorar as responsabilidades do código pensando na manutenção da aplicação no futuro.</li>
 </ul>
 
 ### Class 03 - Criar e remover clientes
