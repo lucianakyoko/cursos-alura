@@ -18,7 +18,9 @@
 
 ### Class 02 - Páginas com Next.js
 <ul>
-  <li></li>
+  <li>getStaticProps e getStaticPaths para a geração de páginas estáticas (SSG);</li>
+  <li>getServerSideProps para a geração de páginas com conteúdo dinâmico (SSR);</li>
+  <li>Como o atributo revalidate torna possível a criação de páginas estáticas, porém com conteúdo que pode ser atualizado de tempos em tempos (ISR).</li>
 </ul>
 
 ### Class 03 - Recursos adicionais do Next.js
