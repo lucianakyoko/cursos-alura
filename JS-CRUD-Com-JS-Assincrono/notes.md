@@ -42,3 +42,18 @@ Promise.all([
 ```
 
 O Promise.all vai executar todas as chamadas na ordem e devolver uma resposta que então poderá ser utilizada no .then.
+
+##  ordem de execução
+```
+console.log('1');
+setTimeout(() => console.log('2'), 1000);
+console.log('3')
+```
+
+a saída do código acima é:
+```
+1
+3
+2
+```
+O setTimeOut() é uma instrução da WebApi, logo ele é mandado para a callback queue e executado após os dois console.log() que são executados primeiro pois são comandos nativos da linguagem.
