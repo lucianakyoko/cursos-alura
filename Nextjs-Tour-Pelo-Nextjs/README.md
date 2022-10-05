@@ -25,7 +25,9 @@
 
 ### Class 03 - Recursos adicionais do Next.js
 <ul>
-  <li></li>
+  <li>Como o prefetch pode impactar na performance da sua aplicação;</li>
+  <li>Que é possível carregar componentes sob demanda com Dynamic Imports - https://nextjs.org/docs/advanced-features/dynamic-import;</li>
+  <li>Adicionar o TypeScript ao seu projeto Next.js e como a tipagem de funções da biblioteca podem te ajudar durante o desenvolvimento.</li>
 </ul>
 
 ### Class 04 - Next.js é um framework fullstack?
