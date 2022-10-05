@@ -250,3 +250,73 @@ export default function Posts(props) {
 ```
 
 Dentro de dados.json temos as possíveis datas: "21/01/2022", "14/01/2022" e "08/01/2022". Acesse "http://localhost:3000/posts?date=14/01/2022" para buscar o post com a data "14/01/2022".
+
+
+## Link Prefetch - Preve comportamento do usuario
+(considerar a pasta class03/a3)
+
+Por enquanto, no arquivo link-prefetch.js tem um parametro chamado ```prefetch={false}```:
+```
+<Link href="/"  prefetch={false}>
+  <a>
+    Home
+  </a>
+</Link>
+```
+
+Antes de mais nada, vamos rodar o comando ```npm run dev```. Tudo funciona normal até aqui. A mesma navegação SPA, que usamos até agora. Onde entra esse lance de prever o comportamento? Quando estamos acessando uma página na web, temos a tendência, de se eu carreguei a home, e o site tem um menu, é provável que eu vá para algumas dessas páginas.
+
+E o que você pode fazer é tentar pré-carregar a próxima página, para o usuário ter uma sensação de que a latência tá negativa, ou seja, não demora para trocar de uma página para outra. Fica um comportamento semelhante ao que acontece nos apps um pouco, como se o site já tivesse pré-carregado a página ou se ele tivesse previsto que você ia navegar.
+
+No Next é legal, porque não dá para testar esse recurso em modo de desenvolvimento. Conseguimos acompanhar as coisas que estão sendo baixadas na página, por meio dessa aba “Network” do console. Você vai abrir com “inspecionar elemento”, vai abrir nessa aba “Elements” e você clica em “Network”.
+Clicou em “Network”, ele mostra tudo que está sendo baixado. Se eu carregar a página, repara que se eu clicar no “Sobre”, ele baixa os conteúdos da página.
+
+Se eu abrir a “Home”, ele baixa o conteúdo do “index.js”. Então ele sempre baixa quando clicamos. Agora, olha que curioso, se eu “buildar” o projeto. Então vou colocar ```npm run build && npm run start```.
+
+Eu vou colocar true, só para vocês verem. Quando eu abri a minha página, agora estou rodando no modo de produção. Aparentemente, nada de novo, se eu vier na página do “Link Prefetch”, só de termos o link dentro, só de termos esse comportamento, ele já tentou baixar o nosso projeto, tanto a “home”, quando a página “sobre”, por padrão.
+
+Quando vamos para a sobre, ele não baixou mais nada, e se eu vier para a home, também não. Então isso é uma coisa boa do Next, e ruim também. Porque nem sempre você quer pré-carregar o link. Lembrando que só funciona para links internos do seu projeto, que o Next vai conseguir trabalhar. Acessamos uma página, ele baixou todas as outras. Então se você tiver um menu com 10 links, ele vai pré-baixar esses 10 links. Então isso não é interessante.
+
+O que é interessante? Provavelmente você vai querer colocar esse Prefetch como false. Mas por quê? Porque nem sempre você vai querer fazer esse pré-download. Por mais que seja pouco, você pode analisar, se é a página mais acessada do seu site ou a página que os usuários mais navegam, você pode customizar.
+
+Então por padrão, ele vem habilitado, é um recurso bem legal, mas se você começar a ter algum gargalo de performance, você começar a sentir que a home está baixando muito conteúdo, algo do gênero, você pode mudar essa abordagem para ficar tudo com prefetch false, ou seja, ele não vai fazer o prefetch, e quando rodarmos o projeto, ele não vai baixar o “index” e o “sobre”.
+
+Vamos voltar novamente para false e rodar o comando ```npm run build && npm run start``` de novo.
+
+Só que se eu passar o mouse em cima, você concorda que passar o mouse em cima, é quase que declarar a intenção de que quer mudar de página. Então ele baixa, tanto a “home”, quanto o “sobre”. Se clicarmos, ele navega e faz tudo corretamente.
+
+  - Quando seu valor é false, o prefetch ocorre no evento de hover do link. O conteúdo da página de destino será carregado somente no evento de hover do link.
+  - Seu valor padrão é true - Por padrão, o Next.js pré-carregará todas as páginas de destino dos links presentes na tela.
+  - O prefetch pode afetar negativamente a performance do site. Caso as páginas pré-carregadas tenham muito conteúdo, é possível que o conteúdo mais importante da página chegue levemente atrasado.
+
+## Dynamic Imports
+É uma feature muito bacana, para você carregar pedaços da página sob demanda. Como assim? É o seguinte, eu consigo pegar como exemplo, o próprio YouTube. Se eu carregar a página, der um “F5”, repara que ele baixa primeiro o vídeo, depois ele baixa a parte do lado e depois ele baixa os comentários.
+
+Está vendo que tem um delay para baixar as coisas? Conseguimos fazer isso com o React, trazendo para um caso simples, basicamente, tendo por exemplo, um state, e um check box, ou alguma chamada de API, algo do gênero. O importante é, se o valor for true, ele mostra o componente, senão, ele não mostra. Dá para pegarmos isso tranquilamente, consigo até mostrar para vocês como funciona.
+
+Em alguns cenários, para otimizar mais as páginas, às vezes pegar alguns milissegundos, que vão impactar em performance, que vai impactar no Web Vitals, naquela parte do carregamento, você não vai recarregar nem esse trecho de HTML, ou às vezes, até mesmo alguma lib que esse código importa. Às vezes você só quer que carregue esse trecho de código inteiro, se você tiver realmente disparado o vídeo. Para conseguir ter esse controle fino do carregamento, não podemos pausar o import tradicional, que temos padrão.
+
+Para utilizar o import dynamic:
+```
+import dynamic from 'next/dynamic';
+```
+
+Passar uma função que retorna esse import diferente. Então eu passo uma função que retorne esse import, que é o mesmo caminho que temos em cima, então 
+```
+const YouTubeVideo = dynamic(() => import(‘.../components/DynamicVideo’))
+```
+
+A diferença é que estamos separando, esse pedaço da aplicação, só carregamos quando essa tag estiver sendo mostrada na página. Então eu vou salvar, vou voltar para a página, carreguei, vamos ver se falta alguma configuração para fazermos.
+
+Podemos ter uma aplicação inteira, quando você carrega a página, você baixa tudo que aquela página tem, e cada módulo pode carregar outros módulos, cada módulo faz import de outras coisas, ou separamos. Então você só vai baixar o restante desse módulo, essas 4 partes, se você baixar essa primeira. Se você não baixar, está tranquilo, não mostra nada.
+
+## Next.js com TypeScript
+(considerar a pasta class03/a3-typescript)
+
+Para criar um projeto do zero, com TypeScript, só rodando esse comando 
+```
+npx create-next-app@latest --typescript.
+```
+
+Para converter um projeto que já existe para a versão com TypeScript
+Bom, vale lembrar que o TypeScript é uma extensão de JavaScript, então ele é um superset da linguagem. Então, ele não modifica as coisas que o JavaScript já tem, ele só adiciona coisas novas, que basicamente podem ser removidas.
