@@ -28,7 +28,10 @@
 
 ### Class 03 - Criar e remover clientes
 <ul>
-  <li></li>
+  <li>Usar a método closest para encontrar o elemento do DOM mais próximo ao que queremos remover</li>
+  <li>Criar um cliente utilizando o verbo http POST.</li>
+  <li>Remover um elemento do dom com método remove()</li>
+  <li>Deletar um cliente utilizando o verbo http DELETE</li>
 </ul>
 
 ### Class 04 - Editar dados
