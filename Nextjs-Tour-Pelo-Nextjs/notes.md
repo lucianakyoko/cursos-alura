@@ -320,3 +320,103 @@ npx create-next-app@latest --typescript.
 
 Para converter um projeto que já existe para a versão com TypeScript
 Bom, vale lembrar que o TypeScript é uma extensão de JavaScript, então ele é um superset da linguagem. Então, ele não modifica as coisas que o JavaScript já tem, ele só adiciona coisas novas, que basicamente podem ser removidas.
+
+## API Routes
+(considerar a pasta class04/a1.3)
+
+ O Next, além de nos deixar fazer:
+  - o Server-side, 
+  - o getStatic, ter a página estática por padrão, 
+  - o build esperto dele e tudo o mais, 
+  
+  ele também tem um recurso chamado de **API Routes**, que consiste basicamente em, se eu criar uma pasta dentro da pasta “pages” chamada de “API”, eu posso criar um arquivo “index.js”, e tudo que eu preciso fazer é export default function capturadorDeRequests().
+
+  Se digitarmos na barra do navegador “localhost:3000/api”. Ele não teve resposta, ele ficou travado, ele está dando um loading no canto. Ele mostra no código: “API resolve without sending a response for /api, this may result in installed request”.
+
+  Com as API Routes, basicamente, você consegue construir o json a partir do seu projeto frontend. Então no mundo, no dia a dia, sempre o seu navegador pede um conteúdo para um servidor através de uma URL, esse servidor pode ou não bater no banco de dados ou em uma outra API ou algo do gênero, ele pega essa resposta, formata de algum jeito e devolve para o navegador. É exatamente isso que está acontecendo.
+
+  No nosso caso, como eu que estou subindo o projeto, eu sou o servidor. Então eu subo o projeto e eu acesso na minha própria máquina. Então o navegador pede para a minha porta localhost:3000, o conteúdo vai certo. Esse recurso do Next é muito poderoso, para caso você esteja desenvolvendo, por exemplo, algum projeto pessoal, e você queira ter alguma API fake para você bater e conseguir consultar. Para um projeto do dia a dia, caso você tenha algum dado que você quer expor, que você quer servir ou, por exemplo, você quer guardar algum token.
+
+## API Routes com typescript
+  Existem 2 formas de tipar os handlers de uma API Route:
+   - 1) Tipando o handler diretamente com NextApiHandler.
+   ```
+   import type { NextApiHandler } from 'next';
+
+  const handler: NextApiHandler = (req, res) => {
+    res.status(200).json({ curso: 'next.js', instrutor: 'Dev soutinho' });
+  };
+
+  export default handler;
+   ```
+
+  - 2) Tipando as variáveis de requisição e resposta individualmente.
+  ```
+  import type { NextApiRequest, NextApiResponse } from 'next';
+
+  export default (req: NextApiRequest, res: NextApiResponse) => {
+    res.status(200).json({ curso: 'next.js', instrutor: 'Dev Soutinho' });
+  };
+  ```
+
+  Também é possível tipar a resposta da API utilizando generics.
+
+  Com NextApiHandler devemos passar o ResponseData como generics da função:
+  ```
+  import type { NextApiHandler } from 'next';
+
+  export type ResponseData = {
+    curso: string;
+    instrutor: string;
+  };
+
+  const handler: NextApiHandler<ResponseData> = (req, res) => {
+    // res.status(200).json({ nome: 'Mario Souto' });
+      res.status(200).json({ curso: 'next.js', instrutor: 'Mario Souto' });
+    };
+
+    export default handler;
+  ```
+
+Com NextApiRequest e NextApiResponse devemos passar ResponseData como generics de NextApiResponse.
+
+```
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export type ResponseData = {
+  curso: string;
+  instrutor: string;
+};
+
+export default (req: NextApiRequest, res: NextApiResponse<ResponseData>) => {
+  // res.status(200).json({ nome: 'Mario Souto' });
+  res.status(00).json({ curso: 'next.js', instrutor: 'Mario Souto' });
+};
+```
+
+
+## Tipos de build da ferramenta
+
+sempre é em tempo de build, nada que roda ali, vai estar rodando no ambiente do seu usuário, ou vai ter acesso a cookie ou algo do gênero. Sempre é no ambiente do seu servidor, que está “buildando” e gerando a biblioteca:
+- **Static**:
+  - Por padrão;
+  - Só vai usar o next report, em casos onde TUDO é pré-renderizado;
+  - getStaticProps: versão com menos recursos
+
+- **SSG (Static Site Generation)**:
+  - getStaticProps;
+    - revalidate: true [npm run build && npm start];
+  - Incremental Static Generation [npm run build && npm start];
+    - fallback: true || 'blocking' e o getStaticPaths vem vazio ou com somente alguns itens.
+
+- **SSR (Server Side Render)**:
+  - getServerSideProps;
+  - Se tiver dentro da pasta /api é uma API Route e é SSR.
+
+
+## Sobre o Incremental Static Regeneration (ISR)
+- Utiliza o getStaticProps com o atributo revalidate: A ativação do ISR se dá pela adição do atributo revalidate com um valor numérico inteiro ao retorno de getStaticProps.
+
+- Une os benefícios da geração dinâmica e da estática: O cliente receberá a página instantaneamente, pois ela é gerada estaticamente. Caso o conteúdo precisa ser atualizado, a página será (re)construida do lado do servidor e posteriormente servida como estática.
+
+- O atributo revalidate é o tempo em segundos que a página pré-renderizada ficará no cachê. Requisições feitas dentro do valor em segundos do atributo revalidate terão o retorno instantâneo da página cacheada.
