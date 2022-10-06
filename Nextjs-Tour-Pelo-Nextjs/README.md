@@ -32,7 +32,9 @@
 
 ### Class 04 - Next.js é um framework fullstack?
 <ul>
-  <li></li>
+  <li>Criar uma API com Next.js através da pasta pages/api;</li>
+  <li>Carregar componentes sob demanda com Dynamic Imports https://nextjs.org/docs/advanced-features/dynamic-import;</li>
+  <li>Adicionar o TypeScript ao seu projeto Next.js e como a tipagem de funções da biblioteca podem te ajudar durante o desenvolvimento.</li>
 </ul>
 
 ### Class 04 - Dicas finais e deploy
