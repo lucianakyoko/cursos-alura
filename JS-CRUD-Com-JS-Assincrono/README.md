@@ -36,7 +36,9 @@
 
 ### Class 04 - Editar dados
 <ul>
-  <li></li>
+  <li>Fazer uma query string utilizando a propriedade searchParams.get() para encontrar um id.</li>
+  <li>Criar uma IIFE ou função auto executável.</li>
+  <li>Editar os dados utilizando o verbo http PUT.</li>
 </ul>
 
 ### Class 04 - Async/Await
