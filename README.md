@@ -74,7 +74,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.13 | React com TypeScript: gerenciando estado com Recoil | ➖ | ⚫ |
 | 2.14 | React com TypeScript: testando os seus componentes | ➖ | ⚫ |
 | 2.15 | React: desenvolvendo uma biblioteca de componentes | ➖ | ⚫ |
-| 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | [➖] | 🔵 |
+| 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | ➖ | 🔵 |
 
 ---
 
@@ -82,7 +82,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 3 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
 | 3.1 | [Next.js: explorando o framework](./Nextjs-Explorando-Framework) | [Alura Cases Campanha](https://cursos-alura-nextjs-explorando-framework-pd6m.vercel.app/) | ✔️ |
-| 3.2 | [Next.js: tour pelo Next.js](./NextJS-Tour-Pelo-Nextjs) | ➖ | 🔵 |
+| 3.2 | [Next.js: tour pelo Next.js](./NextJS-Tour-Pelo-Nextjs) | ➖ | ✔️ |
 | 3.3 | Next.js: autenticacao e gerenciamento de Tokens | ➖ | ⚫ |
 | 3.4 | Next.js: trabalhando com um CMS | ➖ | ⚫ |
 | 3.5 | Next.js: trabalhando com arquitetura Front-end | ➖ | ⚫ |
