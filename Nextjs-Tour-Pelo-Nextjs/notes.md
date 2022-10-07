@@ -420,3 +420,57 @@ sempre é em tempo de build, nada que roda ali, vai estar rodando no ambiente do
 - Une os benefícios da geração dinâmica e da estática: O cliente receberá a página instantaneamente, pois ela é gerada estaticamente. Caso o conteúdo precisa ser atualizado, a página será (re)construida do lado do servidor e posteriormente servida como estática.
 
 - O atributo revalidate é o tempo em segundos que a página pré-renderizada ficará no cachê. Requisições feitas dentro do valor em segundos do atributo revalidate terão o retorno instantâneo da página cacheada.
+
+## de onde vem as props da página?
+Vimos as diferentes estratégias de pré-renderização de páginas que o Next.js nos fornece:  
+  - Server Side Rendering, 
+  - Static Site Generation, 
+  - Incremental Static Regeneration e até mesmo o 
+  - Client Side Rendering.
+
+Para usar os primeiros 3 métodos, é preciso implementar as funções getServerSideProps, getStaticProps e getStaticProps com o atributo revalidate, respectivamente. O retorno dessas funções retorna um objeto com a propriedade props, que é magicamente passado para o componente da página.
+
+Exemplo: no arquivo pages/index.js, podemos criar o componente:
+```
+function PaginaExemplo(props) {
+  return <div>{JSON.stringify(props, null, 2)}</div>;
+}
+
+export const getServerSideProps= async () => {
+  return {
+    props: {
+      curso: 'Next.js',
+      instrutor: 'Dev Soutinho',
+    },
+  };
+};
+
+export default PaginaExemplo;
+```
+
+Aprendemos na prática que o objeto props retornado de getServerSideProps será o mesmo que o props passado de argumento para o componente PaginaExemplo. Entretanto, a forma que isso acontece não é explícita.
+
+Durante o curso, vimos sobre algum arquivo específico do framework que referencia uma propriedade pageProps, que curiosamente pode ser entendido como "props da página". Esse arquivo é o _app.js!
+```
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+A prop Component é o export default da página e o pageProps é o objeto props retornado de getServerSideProps.
+Seguindo o exemplo do arquivo pages/index.js criado acima, temos:
+  - Component: PaginaExemplo
+  - pageProps: { curso: "Next.js", instrutor: "Dev Soutinho" }
+
+Resumindo: para cada página da aplicação, o getStaticProps ou getServerSideProps são executados e o objeto props é encaminhado para o MyApp como pageProps.
+
+O MyApp é executado e o objeto pageProps é passado para o export default da página como props.
+
+##  ordem de execução
+Descrobrimos que através do _app, o Next.js passa a informação de getStaticProps e getServerSideProps para o componente da página.
+
+Como essas funções geram o conteúdo da página, é intuitivo pensar que elas precisam rodar antes que o componente da página. O _app.js precisa rodar antes do componente, porém depois da função que gera o conteúdo.
+
+https://github.com/alura-cursos/curso-next-2-desafio
