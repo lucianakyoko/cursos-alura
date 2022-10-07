@@ -43,7 +43,8 @@
 
 ### Class 04 - Async/Await
 <ul>
-  <li></li>
+  <li>Utilizar async/await para indicar funções assíncronas.</li>
+  <li>Tratar erros com try/catch</li>
 </ul>
 
 ---
