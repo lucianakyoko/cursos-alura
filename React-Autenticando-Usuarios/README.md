@@ -12,11 +12,11 @@
 ## 🚀 Learnings
 ### Class 01 - Novos usuários
 <ul>
-  <li>Fazer requisições utilizando XMLHttpRequest.</li>
-  <li>Lidar com promises.</li>
-  <li>Fazer uma requisição http utilizando XMLHttpRequest para buscar todos os clientes do servidor.</li>
+  <li>Preparamos o projeto base do Alura Books</li>
+  <li>Criamos a modal de cadastro do usuário</li>
+  <li>Transformamos um layout do Figma numa aplicação funcional</li>
   <li>Refatorar o código utilizando promises melhorando a leitura do código.</li>
-  <li>Utilizar template literals para criar um template html.</li>
+  <li>Deixamos o formulário pronto para se comunicar com a API.</li>
 </ul>
 
 ### Class 02 - Autenticando o usuário
