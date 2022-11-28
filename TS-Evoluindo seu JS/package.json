@@ -8,6 +8,7 @@
     "server": "lite-server --baseDir=dist",
     "start": "concurrently \"npm run watch\" \"npm run server\""
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
