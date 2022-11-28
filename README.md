@@ -75,6 +75,8 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.14 | React com TypeScript: testando os seus componentes | ➖ | ⚫ |
 | 2.15 | React: desenvolvendo uma biblioteca de componentes | ➖ | ⚫ |
 | 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | ➖ | 🔵 |
+| 2.17 | React: desenvolvendo em React Router com JavaScript | ➖ | ⚫ |
+| 2.18 | React: crie sua primeira página web | ➖ | ⚫ |
 
 ---
 
@@ -131,7 +133,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### TypeScript
 | 7 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 7.1 | TypeScript: evoluindo seu JavaScript | ➖ | ⚫ |
+| 7.1 | [TypeScript: evoluindo seu JavaScript](./TS-Evoluindo%20seu%20JS/) | ➖ | 🔵 |
 | 7.2 | TypeScript: avancando na linguagem | ➖ | ⚫ |
 | 7.3 | TypeScript: mais tecnicas e boas praticas | ➖ | ⚫ |
 
