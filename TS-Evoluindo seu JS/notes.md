@@ -105,3 +105,22 @@ O código abaixo é um exemplo de  um erro de compilação do TypeScript de aces
 ```
 
 A propriedade nome é declarada com o modificador private, dessa forma, apenas métodos da própria classe podem acessá-la.
+
+---
+
+## Class 02 - TypeScript e Compilador
+### Sobre o tipo any:
+    - Por padrão, é assumido automaticamente pelo TypeScript quando não definimos o tipo das nossas variáveis.
+    - É possível desativar o tipo implícito any passando uma configuração especial para o compilador no arquivo tsconfig.json. Isso fará com que o compilador emita um erro em todos os locais que o tipo any foi adotado implicitamente.
+    ```
+        "compilerOptions": {
+            "noImplicitAny": true
+        },
+    ```
+    - Variáveis do tipo any podem ter uma atribuição de qualquer tipo conhecido no mundo TypeScript. Como o nome do tipo indica, any pode ser qualquer coisa.
+    -  Variáveis declaradas com o tipo any, por poderem ser qualquer tipo, não permitem que IDE's e editores integrados com TypeScript infiram métodos e funções específicas de um tipo.
+
+### Conversão de data:
+A string passada pelo construtor deve ter o ano, mês e dia separados por vírgula.
+ cria um objeto Date a partir de uma string: ```const date = new Date('2021,2,20');```
+

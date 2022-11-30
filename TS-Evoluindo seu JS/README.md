@@ -18,3 +18,14 @@
   <li>Modificadores de acesso private e public</li>
   <li>Benefícios iniciais da linguagem TypeScript</li>
 </ul>
+
+---
+
+## Aula 03 - Benefícios da tipagem estática
+<ul>
+  <li>O tipo implícito any</li>
+  <li>Benefícios da tipagem estática</li>
+  <li>Mais configurações do compilador tsc</li>
+  <li>Retorno de método explícito</li>
+  <li>Conversão de valores da interface do usuário</li>
+</ul>
