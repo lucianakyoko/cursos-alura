@@ -53,6 +53,9 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 1.15 | JavaScript na Web: armazenando dados no navegador  | ➖ | ⚫ |
 | 1.16 | JavaScript na Web: Crie páginas dinâmicas  | ➖ | ⚫ |
 | 1.17 | JavaScript: criando requisições  | ➖ | ⚫ |
+| 1.18 | JavaScript: objetos  | ➖ | ⚫ |
+| 1.18 | JavaScript: validando formulários | ➖ | ⚫ |
+| 1.18 | JavaScript: Arrays | ➖ | ⚫ |
 
 ---
 
@@ -77,6 +80,9 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | ➖ | 🔵 |
 | 2.17 | React: desenvolvendo em React Router com JavaScript | ➖ | ⚫ |
 | 2.18 | React: crie sua primeira página web | ➖ | ⚫ |
+| 2.19 | React com TailwindCSS: estilizando componentes | ➖ | ⚫ |
+| 2.19 | React: migrando para TypeScript | ➖ | ⚫ |
+| 2.19 | React: Mutabilidade x Imutabilidade no Redux Toolkit com Immer | ➖ | ⚫ |
 
 ---
 
