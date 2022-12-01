@@ -124,3 +124,14 @@ A propriedade nome é declarada com o modificador private, dessa forma, apenas m
 A string passada pelo construtor deve ter o ano, mês e dia separados por vírgula.
  cria um objeto Date a partir de uma string: ```const date = new Date('2021,2,20');```
 
+### Sobre Array:
+Opções que declaram um array corretamente em TypeScript, assumindo que a configuração noImplicitAny está definida com o valor true:
+ - ```let nomes: Array<string> = [];```
+ - ```let idades: Array<Number> = [1, 2, 3];```
+
+### Somente leitura:
+Maneira para declarar um array e que não disponibilize a remoção ou inclusão de novos items.
+
+```
+    const nomes: ReadonlyArray<string> = ['a', 'b', 'c'];
+```
