@@ -135,3 +135,80 @@ Maneira para declarar um array e que não disponibilize a remoção ou inclusão
 ```
     const nomes: ReadonlyArray<string> = ['a', 'b', 'c'];
 ```
+
+--- 
+
+## Class 05 - Simplificando nosso código
+### Construtor e atalho:
+Observe a declaração de classe abaixo:
+```
+export class Fatura {
+    private criadaEm: Date;
+    private quantidade: number;
+    private valor: number;
+
+    constructor(
+        criadaEm: Date, 
+        quantidade: number, 
+        valor: number
+    ) {
+            this.criadaEm = criadaEm;
+            this.quantidade = quantidade;
+            this.valor = valor;
+    }
+}
+```
+
+A mesma classe pode ser declarada utilizando o atalho que o TypeScript possui:
+```
+export class Fatura {
+    constructor(
+        private criadaEm: Date, 
+        private quantidade: number, 
+        private valor: number
+    ) {}
+}
+```
+
+-> Isso: ```Array<Negociação>``` é a mesma coisa que: ```Negociacao[]```
+-> Isso: ```ReadonlyArray<Negociacao>``` é a mesma coisa que: ```readonly Negociacao[]```
+-> Isso: 
+```export class Negociacao {
+        constructor(
+            private _data: Date, 
+            private _quantidade: number, 
+            private _valor: number
+        ) {}
+
+        get data(): Date {
+            return this._data;
+        }
+
+        get quantidade(): number {
+            return this._quantidade;
+        }
+
+        get valor(): number {
+            return this._valor;
+        }
+
+        get volume(): number {
+            return this._quantidade * this._valor;
+        }
+    }``` 
+    
+    é a mesma coisa que:
+    
+    ```
+        export class Negociacao {
+            constructor(
+                public readonly data: Date, 
+                public readonly quantidade: number, 
+                public readonly valor: number
+            ) {}
+
+            get volume(): number {
+                return this.quantidade * this.valor;
+            }
+        }
+    ```

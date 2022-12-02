@@ -29,3 +29,26 @@
   <li>Retorno de método explícito</li>
   <li>Conversão de valores da interface do usuário</li>
 </ul>
+
+---
+
+## Aula 04 - Avancando na modelagem do dominio
+<ul>
+  <li>Modelagem da classe Negociacoes</li>
+  <li>Utilização de Generics</li>
+  <li>Revisão sobre encapsulamento</li>
+  <li>Questões de mutabilidade e como solucioná-la</li>
+  <li>O tipo ReadonlyArray</li>
+  <li>Adição de negociações em nossa lista</li>
+</ul>
+
+---
+
+## Aula 05 - Simplificando nosso código
+<ul>
+  <li>Nova maneira de declaração de array com generics</li>
+  <li>O tipo ReadonlyArray</li>
+  <li>O modificador readonly</li>
+  <li>Getters vs propriedades públicas em modo de leitura</li>
+  <li>Programação defensiva</li>
+</ul>
