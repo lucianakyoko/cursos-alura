@@ -81,8 +81,9 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.17 | React: desenvolvendo em React Router com JavaScript | ➖ | ⚫ |
 | 2.18 | React: crie sua primeira página web | ➖ | ⚫ |
 | 2.19 | React com TailwindCSS: estilizando componentes | ➖ | ⚫ |
-| 2.19 | React: migrando para TypeScript | ➖ | ⚫ |
-| 2.19 | React: Mutabilidade x Imutabilidade no Redux Toolkit com Immer | ➖ | ⚫ |
+| 2.20 | React: migrando para TypeScript | ➖ | ⚫ |
+| 2.21 | React: Mutabilidade x Imutabilidade no Redux Toolkit com Immer | ➖ | ⚫ |
+| 2.22 | React: obtendo dados com React Query | ➖ | ⚫ |
 
 ---
 
