@@ -141,7 +141,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 7 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
 | 7.1 | [TypeScript: evoluindo seu JavaScript](./TS-Evoluindo%20seu%20JS/) | ➖ | ✔️ |
-| 7.2 | TypeScript: avancando na linguagem | ➖ | ⚫ |
+| 7.2 | TypeScript: avancando na linguagem | ➖ | 🔵 |
 | 7.3 | TypeScript: mais tecnicas e boas praticas | ➖ | ⚫ |
 
 ---
