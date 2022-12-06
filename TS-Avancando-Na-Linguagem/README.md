@@ -7,3 +7,13 @@
   <li>Template dinâmico</li>
   <li>Formatação de datas usando Intl</li>
 </ul>
+
+--- 
+
+## Aula 02 - Herança e reaproveitamento de código
+<ul>
+  <li>Herança com TypeScript</li>
+  <li>Classes com tipo genérico</li>
+  <li>Classes abstratas</li>
+  <li>O modificador protected</li>
+</ul>
