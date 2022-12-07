@@ -145,3 +145,29 @@ Pode indicar mais de um tipo genérico. No caso T, será o tipo da classe e K, o
     }
   } 
 ``` 
+
+--- 
+
+## Class 03 - Visibilidade de métodos e Enumeration
+#### Sobre o objeto Date:
+A forma que retorna corretamente o dia da semana da instancia de date:
+```
+const date = new Date();
+date.getDay();
+```
+
+Os dias da semana são representados por número que vão de 0 (domingo) a 6 (sábado).
+
+### Sobre o valor da enum:
+Considere o código abaixo:
+``` 
+enum MinhaEnum {
+  A,
+  B = 3,
+  C,
+  D,
+  F
+}
+```
+O valor de MinhaEnum.D: 5
+As enum começam de 0, porém, se modificarmos o valor de alguma das enum, os próximos valores passarão a contar a partir do novo valor.

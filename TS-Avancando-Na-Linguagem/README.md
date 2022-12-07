@@ -17,3 +17,13 @@
   <li>Classes abstratas</li>
   <li>O modificador protected</li>
 </ul>
+
+--- 
+
+## Aula 03 - Visibilidade de métodos e Enumeration
+<ul>
+  <li>Visibilidade de métodos</li>
+  <li>Validando negociações em dias úteis</li>
+  <li>Vantagens do uso de enums</li>
+  <li>Cuidados com enums</li>
+</ul>
