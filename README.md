@@ -233,8 +233,16 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | --- | --- | --- | --- |
 | 16.1 | WebSockets: implemente comunicações em tempo real com Socket.IO e MongoDB | ➖ | ⚫ |
 
+---
 
 ### MongoDb
 | 17 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
 | 17.1 | MongoDB: conhecendo um banco de dados NoSQL | ➖ | ⚫ |
+
+---
+
+### UI Design
+| 18 | 📘 Course Title | 🔗 Project | Status |
+| --- | --- | --- | --- |
+| 18.1 | UI Design: Mergulhando nas interfaces digitais | ➖ | 🔵 |
