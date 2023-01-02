@@ -87,7 +87,10 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.23 | React: obtendo dados com React Query | ➖ | ⚫ |
 | 2.24 | React: praticando React com Js | ➖ | ⚫ |
 | 2.25 | React: consumindo GraphQL com Apollo Client | ➖ | ⚫ |
+<<<<<<< HEAD
 | 2.26 | React: testando os seus componentes | ➖ | ⚫ |
+=======
+>>>>>>> 0e7f479672590d169f1691c3900a7d6a7e156f75
 
 ---
 
