@@ -83,7 +83,10 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.19 | React com TailwindCSS: estilizando componentes | ➖ | ⚫ |
 | 2.20 | React: migrando para TypeScript | ➖ | ⚫ |
 | 2.21 | React: Mutabilidade x Imutabilidade no Redux Toolkit com Immer | ➖ | ⚫ |
-| 2.22 | React: obtendo dados com React Query | ➖ | ⚫ |
+| 2.22 | React: gerenciamento de estados globais com Redux | ➖ | ⚫ |
+| 2.23 | React: obtendo dados com React Query | ➖ | ⚫ |
+| 2.24 | React: praticando React com Js | ➖ | ⚫ |
+| 2.25 | React: consumindo GraphQL com Apollo Client | ➖ | ⚫ |
 
 ---
 
@@ -221,3 +224,13 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 
 ---
 
+### WebSockets
+| 16 | 📘 Course Title | 🔗 Project | Status |
+| --- | --- | --- | --- |
+| 16.1 | WebSockets: implemente comunicações em tempo real com Socket.IO e MongoDB | ➖ | ⚫ |
+
+
+### MongoDb
+| 17 | 📘 Course Title | 🔗 Project | Status |
+| --- | --- | --- | --- |
+| 17.1 | MongoDB: conhecendo um banco de dados NoSQL | ➖ | ⚫ |
