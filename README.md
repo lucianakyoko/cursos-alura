@@ -63,7 +63,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
 | 2.1 | React: como os componentes funcionam | ➖ | ⚫ |
-| 2.2 | React: desenvolvendo com JavaScript | ➖ | ⚫ |
+| 2.2 | React: desenvolvendo com JavaScript | ➖ | 🔵 |
 | 2.3 | [React: abstraindo seu CSS com Styled Components](./React-Abstraindo-CSS-StyledComponents/) | Smart Bank | ✔️ |
 | 2.4 | React: automatizando os testes em aplicações front-end | ➖ | ⚫ |
 | 2.5 | React Router: navegação em uma SPA | ➖ | ⚫ |
@@ -77,7 +77,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.13 | React com TypeScript: gerenciando estado com Recoil | ➖ | ⚫ |
 | 2.14 | React com TypeScript: testando os seus componentes | ➖ | ⚫ |
 | 2.15 | React: desenvolvendo uma biblioteca de componentes | ➖ | ⚫ |
-| 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | ➖ | 🔵 |
+| 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | ➖ | ⚫ |
 | 2.17 | React: desenvolvendo em React Router com JavaScript | ➖ | ⚫ |
 | 2.18 | React: crie sua primeira página web | ➖ | ⚫ |
 | 2.19 | React com TailwindCSS: estilizando componentes | ➖ | ⚫ |
