@@ -1,11 +1,10 @@
 import './CampoTexto.css';
 
 const CampoTexto = (props) => {
-  console.log(props.label)
   return (
     <div className="campo-texto">
       <label htmlFor="">{props.label}</label>
-      <input placeholder={props.placeholder} />
+      <input required={props.obrigatorio} placeholder={props.placeholder} />
     </div>
   );
 
