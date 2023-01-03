@@ -24,3 +24,27 @@ Tipos de interfaces:
   - Holograma
   - HUD: Heads Up Display
   - fisico: ex. martelo
+
+---
+
+# AULA 02 - Sobre a área
+O UI Designer é responsável por dar vida a um produto, trazendo beleza, interação, acessibilidade e usabilidade.
+
+**O que as empresas procuram em um UI Designer:**
+  - Cor
+  - Tipografia
+  - Iconografia
+  - Design responsivo
+  - Microinterações
+  - Usabilidade
+  - Acessibilidade
+  - Prototipagem
+
+**e as Soft Skills:**
+  - Colaboração
+  - Criatividade
+  - Autonomia
+  - Comunicação
+
+Artigo interessante:
+https://www.alura.com.br/artigos/o-que-faz-quem-trabalha-com-ui-design#ui-design-na-pratica
