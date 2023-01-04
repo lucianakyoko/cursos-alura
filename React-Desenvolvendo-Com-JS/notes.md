@@ -36,4 +36,18 @@ O package.json é usado para armazenar os metadados associados ao projeto. Abaix
 
 **forEach vs map** - para renderizar listas de elementos dentro dos componentes React, utilizamos o ```.map```, pois o .map retorna um novo array de elementos, baseado no que retornamos na função passada por callback.
 
+--- 
 
+# AULA 03 - INTERAGINDO COM O USUÁRIO
+**Usando o estado** - a diferença entre controlar uma variável com o ```useState``` e criar e atribuir normalmente uma ```let``` é:
+
+  Sempre que queremos que o componente reaja a alguma alteração no valor de uma variável e se renderize novamente, precisamos indicar isto utilizando o ```useState```. Do contrário, o valor vai ser alterado mas o DOM não será atualizado.
+
+**Stateless VS Statefull**
+React tem duas abordagens diferentes para lidar com inputs de formulários:
+
+  - Um elemento de input de formulário cujo valor é controlado pelo React é chamado de componente controlado.
+  Quando o usuário insere dados em um componente controlado, o evento que manipula essa alteração é disparado e o seu código decide se o input é válido (ou seja, renderizado com o valor atualizado). Se você não re-renderizar o elemento de formulário, permanecerá inalterado.
+
+  - Um componente não controlado funciona como um elemento de formulário fora do React.
+  Quando um usuário insere dados em um campo de formulário (um input box, dropbox, etc), a informação atualizada é refletida sem necessidade do React fazer nada. No entanto, isso também significa que você não pode forçar o campo a ter um certo valor.

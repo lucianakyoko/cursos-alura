@@ -27,3 +27,10 @@
   <li>Trabalhamos com elementos aninhados usando a prop children;</li>
   <li>Ouvimos elementos disparados pelo DOM: o onSubmit do nosso form.</li>
 </ul>
+
+### Aula 03 - Interagindo com o usuário:
+<ul>
+  <li>Controlar inputs utilizando value e onChange;</li>
+  <li>Gerenciar o estado de um componente, utilizando o useState;</li>
+  <li>Trabalhar com props que são funções.</li>
+</ul>
