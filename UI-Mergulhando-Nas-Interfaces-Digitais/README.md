@@ -17,3 +17,11 @@
   <li>Soube como é relação do UI Designer com a pessoa desenvolvedora;</li>
   <li>Descobriu quais são os principais conhecimentos de um designer de interface.</li>
 </ul>
+
+### Aula 03 - Iniciando um projeto
+<ul>
+  <li>Entendeu como organizar o início de um projeto de produto digital;</li>
+  <li>Descobriu as 10 heurísticas de usabilidade de Jakob Nielsen;</li>
+  <li>Aprendeu a realizar uma análise heurística em produtos digitais;</li>
+  <li>Aprendeu a importância e a conduzir um benchmarking.</li>
+</ul>
