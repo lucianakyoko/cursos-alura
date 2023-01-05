@@ -51,3 +51,11 @@ React tem duas abordagens diferentes para lidar com inputs de formulários:
 
   - Um componente não controlado funciona como um elemento de formulário fora do React.
   Quando um usuário insere dados em um campo de formulário (um input box, dropbox, etc), a informação atualizada é refletida sem necessidade do React fazer nada. No entanto, isso também significa que você não pode forçar o campo a ter um certo valor.
+
+--- 
+
+# AULA 04 - MONTANDO OS TIMES
+** Prop drilling**: Prop drilling, em tradução livre, significa "vazamento de props", e acontece quando você passa uma ou mais props, do pai para o filho, o filho passa para o filho dele, e assim por diante. Lidar com esse prop drilling pode ser desafiador, pois em pouco tempo fica difícil para qualquer pessoa descobrir onde os dados são inicializados, atualizados e usados de fato.
+
+Artigo interessante sobre o assunto: https://www.alura.com.br/artigos/prop-drilling-no-react-js
+

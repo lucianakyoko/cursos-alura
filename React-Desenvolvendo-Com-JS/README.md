@@ -34,3 +34,10 @@
   <li>Gerenciar o estado de um componente, utilizando o useState;</li>
   <li>Trabalhar com props que são funções.</li>
 </ul>
+
+### Aula 04 - Montando times:
+<ul>
+  <li>Manipular e transformar arrays de objetos;</li>
+  <li>Filtrar itens de um array;</li>
+  <li>Renderização condicional.</li>
+</ul>
