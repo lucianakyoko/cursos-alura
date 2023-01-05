@@ -14,6 +14,8 @@
   <a href="#front-end">Front-end</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#nestjs">NestJS</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#graphql">GraphQL</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#websockets">WebSockets</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#ui-design">UI Design</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 ---
@@ -242,4 +244,4 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### UI Design
 | 18 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 18.1 | UI Design: Mergulhando nas interfaces digitais | ➖ | 🔵 |
+| 18.1 | [UI Design: Mergulhando nas interfaces digitais](./UI-Mergulhando-Nas-Interfaces-Digitais/) | ➖ | ✔️ |
