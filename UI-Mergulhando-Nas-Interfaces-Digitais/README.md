@@ -25,3 +25,10 @@
   <li>Aprendeu a realizar uma análise heurística em produtos digitais;</li>
   <li>Aprendeu a importância e a conduzir um benchmarking.</li>
 </ul>
+
+### Aula 04 - Estruturas iniciais
+<ul>
+  <li>Aprendeu a criar a estrutura de um produto digital;</li>
+  <li>Entendeu a importância de definir a arquitetura préviamente;</li>
+  <li>Aprendeu a organizar os conteúdos internos das páginas.</li>
+</ul>

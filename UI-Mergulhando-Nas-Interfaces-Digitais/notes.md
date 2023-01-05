@@ -71,4 +71,11 @@ https://www.alura.com.br/artigos/o-que-faz-quem-trabalha-com-ui-design#ui-design
 
 **Repositório no Notion**: https://www.notion.so/Projeto-e-Ticket-547c588e9fe64b17ab2e9e6e22e16763
 
+---
 
+## AULA 04 - Estruturas iniciais
+
+**Revisão de conteúdo**
+- Uma interface é o meio pelo qual nós interagimos para completar um objetivo.
+- Analisar a concorrência nos ajuda a ter uma visão sobre o que outras empresas de segmento igual ou semelhante estão produzindo no quesito visual, interação e usabilidade. Espiar nossos concorrentes, que é o processo que chamamos de Benchmarking, é comum e super útil na área de experiência e interface, pois olhando para outros produtos, podemos entender forças e fraquezas, para otimizar a nossa criação.
+- Antes de iniciar qualquer construção visual, é importante definir a estrutura e conteúdos das páginas, pois facilitará e organizará o nosso trabalho futuramente. Precisamos criar os fluxos previamente, entendendo qual a primeira página, para onde as pessoas que acessarão poderão ir, além de definir os conteúdos que serão dispostos.
