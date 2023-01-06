@@ -16,6 +16,7 @@
   <a href="#graphql">GraphQL</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#websockets">WebSockets</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#ui-design">UI Design</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#formacao-seo">Formação SEO</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 ---
@@ -245,3 +246,13 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 18 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
 | 18.1 | [UI Design: Mergulhando nas interfaces digitais](./UI-Mergulhando-Nas-Interfaces-Digitais/) | ➖ | ✔️ |
+
+---
+
+### Formação SEO
+| 19 | 📘 Course Title | 🔗 Project | Status |
+| --- | --- | --- | --- |
+| 19.1 |  SEO: Otimização de sites | ➖ | 🔵 |
+| 19.2 |  SEO: Estratégias e ferramentas | ➖ | ⚫ |
+| 19.3 |  Google Analytics 4: implementação e relatórios | ➖ | ⚫ |
+| 19.4 |  SEO: Plataformas CMS | ➖ | ⚫ |
