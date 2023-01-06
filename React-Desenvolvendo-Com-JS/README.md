@@ -41,3 +41,10 @@
   <li>Filtrar itens de um array;</li>
   <li>Renderização condicional.</li>
 </ul>
+
+### Aula 05 - Caça aos bugs:
+<ul>
+  <li>Ler e interpretar mensagens de erro;</li>
+  <li>Corrigir erros;</li>
+  <li>Depurar o seu código com o debugger.</li>
+</ul>
