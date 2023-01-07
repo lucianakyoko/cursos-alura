@@ -92,3 +92,57 @@ A base do SEO:
 Todo projeto de SEO precisa de um bom planejamento estratégico onde são traçados e definidos os objetivos da ação. Esses objetivos vão além de conseguir mais visitantes para o seu site, eles também precisam visar o foco principal do seu produto ou serviço: ligações, cadastros, venda direta etc.
 
 Para um bom e completo planejamento estratégico, o primeiro passo é documentar todas as informações necessárias e pertinentes ao projeto: dados da empresa, do produto ou serviço, público-alvo, preço, concorrentes etc. Esse documento leva o nome de briefing.  Primeiro passo para começar o planejamento estratégico de SEO é um bom e completo Briefing! É a partir dele que você identifica os objetivos e levanta ideias para o seu conteúdo. Sem um briefing, fica bem mais difícil acertar!
+
+---
+
+## AULA 03 - COMO O GOOGLE FUNCIONA?
+  começamos logo com a pesquisa de palavras-chave para saber exatamente onde você, o seu cliente, seu site, o site do seu cliente ou site da empresa que você trabalha, quer aparecer dentro do buscador do Google.
+
+  Essa página inicial do Google se chama SERP. Tem uma sigla que falamos no mundo do marketing digital, que chama SERP - search engine results page (página de resultados do mecanismo de busca). 
+
+  Estrutura básica:
+    1. Anúncios pagos do Google Shopping - Quando a pesquisa é sobre produtos físicos.
+    2. Anúncios pagos de Rede de Pesquisa - 4 primeiras posições.
+    3. Resultados Orgânicos - Features Snippet (posição zero); People Also Ask (perguntas comuns).
+
+**Atualizações do Google**
+  leitura do artigo 14 principais atualizações do algoritmo do Google que causaram impacto nas buscas, do portal Resultados Digitais, para entender mais sobre as outras grandes atualizações do maior buscador da internet, e entender o impacto de cada uma na época em que foram lançadas. Para ler é só [clicar aqui](https://resultadosdigitais.com.br/blog/algoritmo-google/).
+
+**Rastreamento, Indexação e classificação de resultados**
+  O Google cumpre 3 passos até achar o seu site:
+    - identificar o conteúdo que está dentro dele, 
+    - ler coisa por coisa, 
+    - colocar no índice do Google e, aí sim, apresentar ao usuário que fez uma pesquisa e que ativou o seu site/produto/serviço.
+
+  Rastreamento - Googlebot faz a leitura das páginas na internet para enviá-las ao buscador.
+  Indexação - Googlebot cataloga os arquivos de imagens e vídeos e tenta identificar sobre o que se trata.
+  Classificação de resultados - Os resultados são mostrados de forma mais satisfatória possível para o usuário.
+
+  **EAT**
+  EAT, sigla para Expertise, Authoritativeness and Trustworthiness (expertise, autoridade e credibilidade) é uma das principais quando pensamos nos fatores de ranqueamento na SERP.
+
+  Exatamente como o nome da sigla diz, a inteligência de máquina do Google quer que o conteúdo ofertado ao usuário seja de qualidade, demonstre autoridade no assunto e que o público confie no que está consumindo ali.
+
+  O foco do Google é a qualidade do conteúdo que o usuário vai consumir ao fazer uma pesquisa no buscador, por isso, a diretriz EAT é uma das principais quando se trata de fator de ranqueamento. O seu conteúdo precisa passar credibilidade ao leitor e, assim, você consegue aumentar a sua autoridade no segmento em que atua.
+  
+---
+
+## AULA 04 - OTIMIZAÇÕES DE SEO
+  Toda a estrutura de uma página web pode e deve ser otimizável para a melhor leitura do Google.
+    Conteúdos otimizáveis
+      - Pesquisa de palavras-chave
+  
+  **Otimizações On Page**
+      Conteúdos otimizáveis:
+        - otimizações on page (são otimizações feitas na estrutura interna da página)
+          1. Título da página (title)
+          2. Meta tag ou meta description
+          3. Imagens (alt text)
+          4. Subtítulos (headings)
+          5. Links da página
+      [checklist](https://caelum-online-public.s3.amazonaws.com/2200-seo-fundamentos/04/2200%20-%20Aula%204%20-%20Checklist%20de%20SEO%20-%20Otimiza%C3%A7%C3%B5es%20On%20Page.xlsx) de otimizações on page
+
+  **Otimizações Off Page**
+    - Otimização off page (otimizações fora da página), 
+      *é um trabalho de reforço de marca (branding), 
+      *não existe controle sobre essa otimização
