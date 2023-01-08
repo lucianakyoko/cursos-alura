@@ -30,3 +30,10 @@
   <li>Os tipos de otimizações feitas dentro do seu site, que se chamam On Page;</li>
   <li>Os tipos de otimizações possíveis feitas fora do seu site que se chamam Off Page.</li>
 </ul>
+
+## AULA 05 - RESULTADOS E TENDÊNCIAS DE SEO
+<ul>
+  <li>Como mensurar os resultados de um trabalho de SEO, e quais são as principais métricas a serem avaliadas;</li>
+  <li>O que é algoritmo do Google, e entendeu as principais atualizações da plataforma que moldam o que entendemos por SEO hoje;</li>
+  <li>Quais os principais fatores de rastreamento, indexação e classificação de resultados da pesquisa orgânica do Google e demais buscadores.</li>
+</ul>

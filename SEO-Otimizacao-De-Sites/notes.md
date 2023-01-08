@@ -146,3 +146,40 @@ Para um bom e completo planejamento estratégico, o primeiro passo é documentar
     - Otimização off page (otimizações fora da página), 
       *é um trabalho de reforço de marca (branding), 
       *não existe controle sobre essa otimização
+  
+---
+
+## AULA 05 - RESULTADO E TENDÊNCIAS DE SEO
+**Ferramentas de mensuração de resultados**
+1 - SEMRush - Essa plataforma é uma das mais utilizadas pelos grandes portais, isso porque ela é uma das mais completas disponíveis no mercado. A plataforma pode te auxiliar a descobrir novas palavras-chave nacionais e locais, e também faz análises de perfis de qualquer domínio. Com ela também é possível fazer uma auditoria do seu SEO técnico (sabe o checklist? Ela faz automaticamente!) e também te dá um monitoramento preciso da sua posição média na SERP.
+
+É possível fazer um teste grátis da ferramenta completa [clicando aqui](https://chrome.google.com/webstore/detail/mozbar/eakacpaijcpapndcfffdgphdiccmpknp).
+
+2 - Moz.com - O Moz funciona com basicamente as mesmas funcionalidades do SEMRush, mas ele não tem um suporte brasileiro, o que pode ser um grande empecilho. Em contrapartida, a ferramenta conta com uma extensão gratuita para o navegador Chrome, que te mostrará um resumo analítico dos seus sites já na página de busca do Google.
+
+Para conhecer mais sobre a ferramenta basta acessar o site deles por [aqui](https://moz.com/).
+
+**Black Hat - fuja dessa prática**
+Os buscadores “premiam” os melhores sites com as primeiras páginas da SERP a partir do bom desempenho e boas práticas de cada site, mas eles também penalizam práticas ruins da mesma forma.
+
+  1. Uso excessivo de palavras-chave (keyword stuffing)
+    usar várias vezes a mesma palavra-chave para que o Google dê preferência ao seu conteúdo na hora de ranquear um site. Mas na verdade é o total oposto! Usar várias vezes o mesmo termo no corpo do texto ou conteúdo do seu site, além de ficar redundante e ruim para a leitura do usuário, também é uma prática condenável pelo Google. A plataforma já tem inteligência suficiente para entender sinônimos, por exemplo, então não precisa apelar para isso!
+  
+  2. Conteúdo oculto
+    Essa técnica era uma forma de inserir mais palavras-chave avulsas, outros termos de pesquisa e links de outros sites pensando apenas no robô de rastreamento dos buscadores, sem mostrar nada ao usuário. Esse conteúdo era omitido do usuário de formas bem simples como colocar o texto da mesma cor do fundo do site, alterar o texto para o tamanho da fonte em zero ou reposicionar o texto para fora da página usando CSS.
+  
+  3. Conteúdo duplicado/Plágio!
+    Não adianta pegar artigos de outros sites e replicar no seu blog achando que a frequência das postagens vai melhorar o seu posicionamento no ranking! Essa regra não diz nada sobre penalização, mas o Google não vai mostrar vários resultados idênticos ao usuário. Ao invés disso, ele prioriza o conteúdo original e oculta o restante que aparecer na SERP.
+  
+  4. Blog Spam
+    Anos atrás também era muito comum que os comentários de um fórum ou de um post de um blog fosse cheio de links para divulgar outras páginas ou até mesmo outros sites. Isso se feito repetidamente pode ser lido como spam e você pode receber penalizações do Google.
+  
+  5. Unrelated Keywords
+    Essa técnica se dá quando as palavras-chave utilizadas na otimização são de grande relevância, porém o conteúdo da página não é condizente. Essas palavras-chave vão desde nomes de celebridades até memes/bordões da Internet no meio de um conteúdo que não faz conexão com a página. Identificar isso é muito simples, pois não precisa ler muito do conteúdo para ver que as palavras são simplesmente encaixadas no texto sem o menor sentido. Muitas vezes elas são encontradas nos rodapés.
+
+As punições do Google variam de acordo com a gravidade da infração cometida, o que pode ter relação com o número de vezes do mesmo erro, ou pelo peso de influência no desempenho do site. As possíveis punições são:
+
+- Queda de 30 posições no ranking;
+- Queda de 50 posições;
+- Queda de 950 posições;
+- Banimento do Google.
