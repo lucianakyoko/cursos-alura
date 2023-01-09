@@ -91,6 +91,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.24 | React: praticando React com Js | ➖ | ⚫ |
 | 2.25 | React: consumindo GraphQL com Apollo Client | ➖ | ⚫ |
 | 2.26 | React: testando os seus componentes | ➖ | ⚫ |
+| 2.27 | React com JavaScript: lidando com arquivos estáticos | Alura Space | 🔵 |
 
 ---
 
