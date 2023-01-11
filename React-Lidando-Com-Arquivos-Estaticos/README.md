@@ -12,3 +12,16 @@
   <li>Instalar o Sass no projeto;</li>
   <li>Vantagens de usar CSS modules.</li>
 </ul>
+
+---
+
+## Aula 02 - Avançando nos componentes
+<ul>
+  <li>Criar o componente de Menu e boas práticas de organização de pastas ;</li>
+  <li>Como importar as imagens de ícones;</li>
+  <li>A importância de manter um padrão de nomenclatura de classes;</li>
+  <li>A escrever um HTML semântico;</li>
+  <li>Inserir o banner da página;</li>
+  <li>Utilizar o import da forma correta como sugere a documentação;</li>
+  <li>O que é e como usar a extensão React Snippets.</li>
+</ul>
