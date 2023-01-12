@@ -22,3 +22,12 @@
   <li>Como instalar novas dependências na sua aplicação;</li>
   <li>Diferença entre export e export default.</li>
 </ul>
+
+---
+
+## Aula 03 - Como o React vê um componente
+<ul>
+  <li>O que é Virtual DOM;</li>
+  <li>Como o React escuta uma mudança e porque precisamos de um state para isto;</li>
+  <li>Diferença de imperatividade e declaratividade.</li>
+</ul>
