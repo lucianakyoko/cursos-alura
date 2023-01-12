@@ -25,3 +25,14 @@
   <li>Utilizar o import da forma correta como sugere a documentação;</li>
   <li>O que é e como usar a extensão React Snippets.</li>
 </ul>
+
+---
+
+## Aula 03 - Fontes e estilos
+<ul>
+  <li>Adicionar os arquivos GlobalStyle.scss e _variaveis.scss;</li>
+  <li>Como usar o normalize.css;</li>
+  <li>Como organizar e usar variáveis css;</li>
+  <li>Como configurar os arquivos de fontes no projeto ;</li>
+  <li>Como importar essas fontes usando o @fontface.</li>
+</ul>
