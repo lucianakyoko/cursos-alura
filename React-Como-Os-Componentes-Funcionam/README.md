@@ -31,3 +31,22 @@
   <li>Como o React escuta uma mudança e porque precisamos de um state para isto;</li>
   <li>Diferença de imperatividade e declaratividade.</li>
 </ul>
+
+---
+
+## Aula 04 - Criando funcionalidades
+<ul>
+  <li>A diferença entre two-way data binding e one-way data binding;</li>
+  <li>Por que o React utiliza one-way data binding;</li>
+  <li>Por que utilizar id é importante no React.</li>
+</ul>
+
+---
+
+## Aula 05 - Finalizando o projeto
+<ul>
+  <li>Como criar um ternário para renderizar de forma opcional;</li>
+  <li>Como renderizar condicionais de outras formas;</li>
+  <li>Como refatorar um componente sem atrapalhar a execução primária dele;</li>
+  <li>A importância de se refatorar um componente em projetos React.</li>
+</ul>
