@@ -98,3 +98,41 @@ Ao importar um svg como componente você deve usar a notação de componente <Lo
 O nome de importação ReactComponent informa ao Create React App que você deseja um componente React que renderize um SVG. As vantagens de utilizar um svg como um componente é que você não precisa carregar o arquivo svg como um arquivo separado.
 
 As duas formas de importação estão corretas, mas na segunda forma você renderizará um componente que é um svg puro, enquanto que na primeira forma será uma imagem que renderiza um svg. Do ponto de vista de compilação, é bem melhor a segunda forma.
+
+---
+
+## Aula 05 - Finalizando o projeto
+
+**Absolute Imports**
+Geralmente, quando queremos importar arquivos como imagens e estilos css que estão a níveis acima do diretório onde queremos fazer a importação, fazemos dessa maneira:
+```
+import nome-da-imagem from '../../../assets/imagens/nome da imagem'
+```
+Voltamos vários níveis de pastas para conseguir acessar o arquivo que desejamos importar. Mas e se um dia esse caminho mudar? Não vai quebrar nada na aplicação? Provavelmente sim! Essas importações múltiplas, relativas e aninhadas foram padrão por muito tempo e são muito difíceis de gerenciar.
+
+É por isso que atualmente se usa absolute imports (importações absolutas) para tornar o código muito mais limpo, legível e gerenciável. As vantagens de se uilizar a importação absoluta são:
+
+O código se torna mais limpo;
+A escrita do código se torna mais fácil;
+Você não precisa se preocupar com os ../../../;
+Você consegue localizar facilmente um componente ou arquivo importado devido ao posicionamento absoluto.
+E como eu faço para usar absolute imports no meu projeto, Neilton?
+
+Primeiro você deve criar um arquivo chamado jsconfig.json na raiz do seu projeto com o seguinte código:
+```
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+```
+
+Essas poucas linhas simples dirão à configuração do Create React App para usar seu diretório src como base para suas importações, para que você possa importar arquivos e componentes com caminhos absolutos.
+
+Com isso configurado, você pode fazer a importação do exemplo inicial da seguinte forma:
+```
+import nome-da-imagem from '/assets/imagens/nome da imagem'
+```
+
+Muito fácil né? Agora você não precisa mais se preocupar com as importações relativas, basta apenas importar seus arquivos de forma direta como no exemplo acima. Se quiser saber mais, neste [link](https://javascript.plainenglish.io/why-and-how-to-use-absolute-imports-in-react-d5b52f24d53c) você acessa um artigo explicando porquê e como usar absolute imports.

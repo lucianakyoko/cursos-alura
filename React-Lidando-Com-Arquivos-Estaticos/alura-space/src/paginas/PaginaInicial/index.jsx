@@ -2,10 +2,10 @@ import Cabecalho from "../../componentes/Cabecalho";
 import Menu from '../../componentes/Menu';
 import Galeria from '../../componentes/Galeria';
 import Rodape from '../../componentes/Rodape';
+import Populares from "../../componentes/Populares";
 import banner from '../../assets/banner.png';
 
 import styles from './PaginaInicial.module.scss';
-import Populares from "../../componentes/Populares";
 
 function PaginaInicial() {
   return (
