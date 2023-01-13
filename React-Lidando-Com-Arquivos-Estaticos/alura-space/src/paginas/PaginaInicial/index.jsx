@@ -1,9 +1,11 @@
 import Cabecalho from "../../componentes/Cabecalho";
 import Menu from '../../componentes/Menu';
+import Galeria from '../../componentes/Galeria';
 import Rodape from '../../componentes/Rodape';
 import banner from '../../assets/banner.png';
 
 import styles from './PaginaInicial.module.scss';
+import Populares from "../../componentes/Populares";
 
 function PaginaInicial() {
   return (
@@ -19,8 +21,12 @@ function PaginaInicial() {
           </div>
 
         </section>
-      </main>
 
+        <div className={styles.galeria}>
+          <Galeria />
+          <Populares />
+        </div>
+      </main>
       <Rodape />
     </>
   );
