@@ -65,7 +65,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### React
 | 2 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 2.1 | React: como os componentes funcionam | Organo | 🔵 |
+| 2.1 | [React: como os componentes funcionam](./React-Como-Os-Componentes-Funcionam/) | Organo | ✔️ |
 | 2.2 | [React: desenvolvendo com JavaScript](./React-Desenvolvendo-Com-JS/) | [Organo](./React-Desenvolvendo-Com-JS/organo/) | ✔️ |
 | 2.3 | [React: abstraindo seu CSS com Styled Components](./React-Abstraindo-CSS-StyledComponents/) | Smart Bank | ✔️ |
 | 2.4 | React: automatizando os testes em aplicações front-end | ➖ | ⚫ |
