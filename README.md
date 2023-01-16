@@ -253,7 +253,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### Formação SEO
 | 19 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 19.1 |  [SEO: Otimização de sites](./SEO-Otimizacao-De-Sites/) | ➖ | ✔️ |
-| 19.2 |  SEO: Estratégias e ferramentas | ➖ | ⚫ |
+| 19.1 |  [SEO: Otimização de sites](./Formacao-SEO/SEO-Otimizacao-De-Sites/) | ➖ | ✔️ |
+| 19.2 |  SEO: Estratégias e ferramentas | ➖ | 🔵 |
 | 19.3 |  Google Analytics 4: implementação e relatórios | ➖ | ⚫ |
 | 19.4 |  SEO: Plataformas CMS | ➖ | ⚫ |
