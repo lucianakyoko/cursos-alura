@@ -81,7 +81,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 | 2.14 | React com TypeScript: testando os seus componentes | ➖ | ⚫ |
 | 2.15 | React: desenvolvendo uma biblioteca de componentes | ➖ | ⚫ |
 | 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | ➖ | ⚫ |
-| 2.17 | React: desenvolvendo em React Router com JavaScript | ➖ | ⚫ |
+| 2.17 | React: desenvolvendo em React Router com JavaScript | ➖ | 🔵 |
 | 2.18 | React: crie sua primeira página web | ➖ | ⚫ |
 | 2.19 | React com TailwindCSS: estilizando componentes | ➖ | ⚫ |
 | 2.20 | React: migrando para TypeScript | ➖ | ⚫ |
@@ -232,7 +232,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### WebSockets
 | 16 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 16.1 | WebSockets: implemente comunicações em tempo real com Socket.IO e MongoDB | ➖ | ⚫ |
+| 16.1 | [WebSockets: implemente comunicações em tempo real com Socket.IO e MongoDB](./Websocket-SocketIO-MongoDB/) | ➖ | 🔵 |
 
 ---
 
