@@ -18,3 +18,15 @@
   </li>
 </ul>
 
+
+
+
+
+## Aula 02 - SPA com React-Router-Dom
+<ul>
+  <li>Diferenciar o comportamento de sites tradicionais e de SPAs: Sites tradicionais são compostos por várias páginas HTML, e uma requisição é realizada para o servidor do site sempre que queremos ir para uma nova página. Já as SPAs (Single Page Applications) são compostas por uma única página HTML, e seu conteúdo é alterado dinamicamente pelo JavaScript.</li>
+  <li>Utilizar o componente Link do react-router-dom: Ele mantém o comportamento de uma SPA, impedindo que a página do navegador recarregue.</li>
+  <li>Utilizar o hook useLocation: Com ele, podemos obter informações da rota que estamos atualmente.</li>
+  <li>Utilizar o componente NavLink do react-router-dom: Com ele, temos acesso direto à informação do link estar ativo ou não</li>
+</ul>
+
