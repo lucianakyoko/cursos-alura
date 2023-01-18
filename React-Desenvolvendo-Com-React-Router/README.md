@@ -18,9 +18,7 @@
   </li>
 </ul>
 
-
-
-
+---
 
 ## Aula 02 - SPA com React-Router-Dom
 <ul>
@@ -28,5 +26,15 @@
   <li>Utilizar o componente Link do react-router-dom: Ele mantém o comportamento de uma SPA, impedindo que a página do navegador recarregue.</li>
   <li>Utilizar o hook useLocation: Com ele, podemos obter informações da rota que estamos atualmente.</li>
   <li>Utilizar o componente NavLink do react-router-dom: Com ele, temos acesso direto à informação do link estar ativo ou não</li>
+</ul>
+
+--- 
+
+## Aula 03 - Rotas aninhadas
+<ul>
+  <li>Identificar quando utilizar rotas aninhadas: Colocamos as páginas Inicio e SobreMim como filhas de PaginaPadrao, para que apenas elas reaproveitassem a mesma estrutura. Não queríamos que o Banner aparecesse na página 404.</li>
+  <li>Utilizar o componente Outlet: A rota que é pai de outras se responsabiliza por dizer onde elas serão renderizadas com o Outlet do react-router-dom.</li>
+  <li>Utilizar o atributo index do Route: O index indica que o caminho da rota é igual ao da rota pai.</li>
+  <li>Diferenciar caminhos relativos e absolutos: Caminhos absolutos iniciam com /, enquanto caminhos relativos iniciam sem a /, partindo do caminho da rota pai.</li>
 </ul>
 
