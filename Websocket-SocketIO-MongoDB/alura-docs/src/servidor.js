@@ -14,6 +14,5 @@ const servidorHttp = http.createServer(app);
 servidorHttp.listen(porta, () => console.log(`servidor escutando na porta: ${porta}`));
 
 const io = new Server(servidorHttp);
-io.on("connection", () => {
-  console.log('Um cliente se connectou')
-});
+
+export default io;

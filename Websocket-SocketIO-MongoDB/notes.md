@@ -1,6 +1,7 @@
 # WEBSOCKETS: IMPLEMENTE COMUNICAÇÕES EM TEMPO REAL COM SOCKET.IO E MONGODB
 
 ---
+
 ## Aula 01 - Crianto o Alura Docs
 **Protocolo WebSockets**
 Esse protocolo permite o desenvolvimento de aplicações que possuem comunicação em tempo real entre cliente e servidor. Por exemplo, em aplicações onde há um bate-papo em tempo real ou mesmo em jogos online.
@@ -210,3 +211,491 @@ A biblioteca Socket.IO, permite que trabalhemos com o protocolo WebSockets de fo
   - **Long-polling do HTTP usado como reserva**: caso o navegador não tenha suporte ao protocolo WebSockets, o Socket.IO trocará automaticamente para o modo long-polling do HTTP. Esse modo não é tão eficiente quanto o WebSockets, mas funciona de forma semelhante, e mantém uma conexão ativa entre o cliente e o servidor por um determinado período de tempo, sendo melhor que o modelo requisição-resposta tradicional do HTTP.
   - **Reconexão automática**: caso algum cliente não consiga se conectar ao servidor, o Socket.IO tentará periodicamente conectá-lo novamente, o que vai aumentar o tamanho desse período a cada tentativa.
   - **Buffer de pacotes**: quando um cliente é desconectado, seus pacotes de dados são guardados e, quando o cliente for reconectado, eles serão enviados automaticamente.
+
+---
+
+## Aula 02 - Trabalhando com Socket.IO
+**DevTools:**
+O DevTools permite às pessoas desenvolvedoras realizar diversas ações: acessar e modificar os códigos HTML e CSS de um site; um console próprio para rodar código JavaScript; depuração; análise de rede e performance e muito mais!
+
+**Obtendo id do socket:**
+  - Agora, vamos abrir o arquivo servidor.js. No io.on a função callback pode nos trazer alguns parâmetros do evento, por exemplo, o socket. E no console.log() podemos escrever o seguinte "(Um cliente se conectou! ID:, socket.id)". Concatenando com socket.id.
+  ```
+  const io = new Server(servidorHttp);
+
+  io.on("connection", (socket) => {
+    console.log("Um cliente se conectou! ID:", socket.id);
+  });
+  ```
+
+  O socket será disponibilizado por cada conexão feita com o cliente. Esse socket tem várias informações, uma delas é o id.
+
+  - Vamos salvar o arquivo, voltar ao navegador e atualizar a página do documento. Agora o terminal do VS Code está exibindo a mensagem com o id, que é um identificador único com vários caracteres aleatórios: ```Um cliente se conectou! ID: bkAzHsrlaxrPU0c2AAAB```
+
+  - Vamos criar um novo arquivo dentro da pasta "src". Nomearemos esse novo arquivo de socket-back.js. E no servidor.js vamos recortar o seguinte trecho de código:
+    ```
+    io.on("connection", (socket) => {
+      console.log("Um cliente se conectou! ID:", socket.id);
+    });
+    ```
+  
+  - e vamos exportar a constante io escrevendo abaixo dela o código export default io no fim do arquivo servidor.js.
+  ```
+  const io = new Server(servidorHttp);
+
+  export default io;
+  ```
+
+  - Vamos salvar o arquivo e ir para o socket-back.js. Nele vamos colar o código que recortamos e com o cursor em io podemos usar o atalho "Ctrl + Espaço" para importar io de servidor.js. Lembrando de preencher com .js no final do nome do arquivo na linha de importação que foi criada automaticamente.
+  ```
+  import io from "./servidor.js"
+
+  io.on("connection", (socket) => {
+    console.log("Um cliente se conectou! ID:", socket.id);
+  });
+  ```
+
+  - Em seguida, em package.json teremos que mudar o ponto de partida da nossa aplicação. O nodemon está observando apenas o servidor.js, teremos que trocar para socket-back.js;
+  ```
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/socket-back.js"
+  },
+  ```
+
+  Agora sim, o socket-back.js será o ponto de partida da nossa aplicação. Podemos salvar o package.json. Ele vai importar o io do servidor e utilizar o código normalmente.
+
+  Como fizemos uma alteração no package.json precisaremos reiniciar o servidor.
+  ```
+  Servidor escutando na porta 3000
+
+  Um cliente se conectou! ID: 8rXwF&PDbM1AXynkAAAB
+
+  Um cliente se conectou! ID: ZIksWOqxq9GoNzSZAAD
+  ```
+
+**Emitindo eventos:**
+Com os arquivos separados podemos iniciar o desenvolvimento da comunicação entre clientes do Socket.IO.
+  - Para isso, vamos ao arquivo JavaScript relacionado a página de documento do HTML, o documento.js (dentro do pacote "public").
+  ```
+    //documento.js
+    const socket = io();
+  ```
+
+    Por enquanto, estamos aplicando somente o const socket = io(), sendo o que estabelece a conexão entre cliente e servidor. Entretanto, nesse mesmo arquivo, podemos interagir com os elementos do HTML, mais especificamente com o campo de texto.
+
+  - Se podemos interagir com esse elemento, podemos capturar os valores que os clientes estão digitando no campo de texto. Para tal, abriremos o documento.html e localizaremos a tag do HTML que representa o campo de texto que visualizamos na tela.
+
+    ```
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+      <title>Documento</title>
+    </head>
+
+    <body class="mt-3">
+      <header>
+        <h1 class="display-4 mb-4 text-center" id="titulo-documento">Documento sem título</h1>
+      </header>
+
+      <main class="w-75 mx-auto">
+        <textarea id="editor-texto" class="form-control mb-4" style="height: 400px; resize: none;"></textarea>
+
+        <div class="d-flex justify-content-between">
+          <a href="index.html" class="btn btn-primary">Voltar</a>
+          <button id="excluir-documento" class="btn btn-outline-danger">Excluir documento</button>
+        </div>
+      </main>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="documento.js" type="module"></script>
+    </body>
+
+    </html> 
+    ```
+  - Focaremos na tag textarea localizada na linha 21:
+    ```
+    //documento.html
+    //código omitido
+
+    <main class="w-75 mx-auto">
+        <textarea id="editor-texto" class="form-control mb-4" style="height: 400px; resize: none;"></textarea>
+
+    //código omitido
+    ```
+
+  - Estamos interessados(as) no atributo id da tag textarea. Vamos copiar o valor do id, precisaremos dele para capturarmos esse elemento com JavaScript. ```editor-texto```
+  - Com o valor do id copiado, voltaremos ao documento.js. ```const socket = io();```
+  - Para capturar aquele elemento usando JavaScript, digitamos const textoEditor que receberá (=) o document.getElementById() (código específico do front-end, não precisamos nos preocupar) passando como parâmetro o "editor-texto". Este nome é do id do elemento HTML que desejamos localizar.
+    ```
+    const socket = io();
+    const textoEditor = document.getElementById("editor-texto");
+    ```
+  - Com isso, temos o elemento HTML armazenado em uma constante do JavaScript. Agora, vamos escrever textoEditor.addEventListener(), sendo "keyup" o primeiro parâmetro do método.
+    ```
+    //código omitido
+
+    textoEditor.addEventListener("keyup",)
+    ```
+  - O segundo parâmetro será uma função callback executada sempre que o usuário soltar uma tecla ao digitar no campo de texto. Note que isso é um conceito de eventos do front-end, e precisamos tomar cuidado para não confundirmos com os conceitos de eventos do Socket.IO.
+    ```
+    //código omitido
+
+    textoEditor.addEventListener("keyup", () => {
+
+    })
+    ```
+    Isso porque no front-end existem eventos HTML (soltar e pressionar uma tecla, clicar, etc). O evento que inserimos é o keyup, sendo quando o usuário solta a tecla no elemento de texto editor. Ou seja, quando um usuário soltar uma tecla executaremos o código correspondente a função callback (segundo parâmetro).
+
+  - Para testarmos isso, colocamos no escopo da função callback o console.log("Soltou tecla!").
+    ```
+    //documento.js
+    //código omitido
+
+    textoEditor.addEventListener("keyup", () => {
+        console.log("Soltou tecla!");
+    })
+    ```
+  - Código completo:
+    ```
+    //documento.js
+
+    const socket = io();
+
+    const textoEditor = document.getElementById("editor-texto");
+
+    textoEditor.addEventListener("keyup", () => {
+      console.log("Soltou tecla!");
+    });
+    ```
+  - Ao executarmos o console.log() do lado do front-end, o texto não será exibido no terminal do VS Code. Na verdade, a mensagem será mostrada no console do navegador.
+
+  - Voltando ao arquivo documento.js, daremos um console.log na tecla que foi solta, ou melhor, no texto atualizado no campo de texto. Para isso, ao invés de "Soltou tecla!" colocamos "textoEditor.value".
+  ```
+  //documento.js
+
+  const socket = io();
+
+  const textoEditor = document.getElementById("editor-texto");
+
+  textoEditor.addEventListener("keyup", () => {
+    console.log("textoEditor.value");
+  });
+  ```
+
+- Após alterar, salvamos o arquivo. Agora, atualizamos a página do navegador e no campo de texto vamos digitar "qualquer coisa". Observe que conforme escrevemos, cada caractere foi exibido no console do navegador, com o texto atualizado do front-end.
+
+Isso significa que temos essa informação disponível para nós no front-end e podemos enviá-la para o back-end. A partir disso, entrará o Socket.IO.
+
+**que dados posso enviar?**
+Você aprendeu como emitir o seu primeiro evento no Socket.IO com o método emit()!
+
+Para isso, utilizamos esse método do lado do cliente, para em seguida poder escutá-lo do lado do servidor com o método on().
+
+Também vimos que os eventos do Socket.IO podem carregar dados no segundo parâmetro do método emit(). No nosso caso, enviamos o texto do editor, um dado do tipo string. Mas além desse, quais outros tipos de dados eu posso enviar junto com os eventos?
+
+O Socket.IO permite que qualquer dado serializável do JavaScript possa ser enviado junto com um evento. Um dado serializável é um dado que pode ser convertido em um determinado formato e, posteriormente, pode ser convertido de volta para sua forma original. Chamamos a recuperação do dado de desserialização.
+
+O JavaScript possui os métodos nativos JSON.stringify() e JSON.parse() para, respectivamente, serializar e desserializar diversos tipos de dados, como os tipos primitivos, arrays e objetos. Alguns tipos de dados, como undefined, Function, Symbol, Infinity, NaN, entre outros, não são serializados corretamente com estes métodos, pois não são dados aceitos no formato JSON.
+
+Acesse a documentação do [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+) para estudar mais sobre quais tipos de dados podem ser serializados!
+
+Podemos falar que, “por debaixo dos panos”, os métodos JSON.stringify() e JSON.parse() são utilizados pelo Socket.IO ao enviar e receber os dados carregados pelos eventos! Dessa forma, não precisamos utilizá-los manualmente para a maioria dos tipos de dados.
+
+Entretanto, uma atenção especial deve ser tomada para os tipos Map e Set do JavaScript. Eles não são serializados corretamente se utilizarmos JSON.stringify(), mas possuem métodos próprios para serialização.
+
+Um objeto Map pode ser serializado e desserializado com o seguinte código:
+```
+const mapa = new Map();
+const mapaSerializado = [...mapa.entries()];
+const mapaOriginal = new Map(mapaSerializado);
+```
+
+De forma semelhante, um objeto Set pode ser serializado e desserializado com o seguinte código:
+```
+const set = new Set();
+const setSerializado = [...set.keys()];
+const setOriginal = new Set(setSerializado);
+```
+
+O tipo [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) também merece atenção especial. Ao enviar um objeto Date como dado de um evento, ele será convertido para sua representação em string (por exemplo, 2022-11-03T19:11:54.073Z).
+
+Então, ao receber esse dado do outro lado da comunicação, ele deve ser convertido de volta para o tipo Date. Para fazer isso, utilizamos o construtor Date(), passando a representação em string da data como parâmetro, como no exemplo a seguir:
+```
+const dataStr = "2022-11-03T19:11:54.073Z";
+const data = new Date(dataStr);
+```
+Confira essas informações na seção [Emitting Events](https://socket.io/docs/v4/emitting-events/) da documentação!
+
+
+**Do servidor para os clientes**
+Já conseguimos pegar informações do front-end e exibir no back-end. Conforme alguém digitar no documento, o texto digitado vai aparecer no terminal do VS Code, do lado do servidor.
+
+Agora, queremos enviar de forma simultânea essa informação para todo mundo que estiver conectado naquela página de documento. Vamos fazer isso agora.
+
+No VS Code, podemos abrir o arquivo socket-back.js. Agora queremos fazer o servidor pegar informação do texto que estamos recebendo como parâmetro da função callback e emitir para todos os outros clientes.
+
+- Para fazer isso, podemos escrever io.emit() passando por exemplo o evento texto_editor_clientes e em seguida passando o texto como parâmetro.
+
+  ```
+  socket.on("texto_editor", (texto) => {
+    io.emit("texto_editor_clientes", texto);
+  });
+  ```
+- Vamos salvar o arquivo com esse código para vermos o que vai acontecer. Imediatamente quando o servidor escutar um evento vindo do front-end, ele vai emitir de volta para todos os clientes.
+
+- Para verificar se isso está funcionando, vamos adicionar a seguinte linha de código no documento.js para escutar do lado do cliente, socket.on(). O primeiro parâmetro será texto_editor_clientes e o segundo será uma função callback:
+
+  ```
+  socket.on("texto_editor_clientes", (texto) => {
+
+  })
+  ```
+
+- Então, não importa se estamos no lado do front-end ou de back-end, a estrutura de escutar um evento e de emitir é praticamente a mesma.
+
+- Em seguida, vamos inserir um console.log(texto) para verificar se agora aparecerá para todos os navegadores que estão conectados nesta mesma página.
+  ```
+  socket.on("texto_editor_clientes", (texto) => {
+  console.log(texto);
+  })
+  ```
+- Vamos salvar o código e voltar ao navegador para verificar se está funcionando.
+
+- Colocarei as duas abas do navegador com a página documento lado a lado. Assim conseguiremos simular duas pessoas acessando o documento. Vou deixar também o console do navegador aberto nas duas abas, assim poderemos verificar se o console.log() vai aparecer.
+
+- Agora precisamos pegar essa informação e atualizar a interface para que esse texto apareça no campo de texto de todo mundo que esteja conectado nesta página.
+
+- Um ponto importante é que faz sentido que a pessoa que escreveu "Olá" envie esse texto para todas as pessoas, mas não queremos que esse texto seja enviado para ela mesma. Como ela também está conectada no servidor esse texto foi enviado para ela via console.log(), mas não é necessário.
+
+- Uma forma de evitar isso é voltarmos ao código do arquivo socket-back.js e em vez de escrever io.emit podemos escrever socket.broadcast.emit para emitir esse evento para todos os cliente menos para o cliente que está conectado nesse socket.
+
+```
+socket.on("texto_editor", (texto) => {
+  socket.broadcast.emit("texto_editor_clientes", texto);
+});
+```
+
+- É interessante perceber que o servidor está sempre ciente de qual cliente está conectado em cada socket. No momento em que escrevemos socket.broadcast.emit ele é inteligente o suficiente para enviar essa informação para todo mundo, menos para o cliente deste socket.
+
+- Vamos salvar o arquivo e atualizar o navegador para testar essa alteração.
+
+- Agora, ao escrever no campo de texto da página do documento, o texto não está aparecendo no console da janela em que estou escrevendo, mas aparece no console da outra janela. Está funcionando corretamente.
+
+**Atualizando a interface**
+Agora vamos inserir um código no front-end para atualizar exibindo o texto na interface das outras pessoas.
+
+  - No arquivo documento.js, dentro de socket.on(), em vez de dar um console.log() vamos escrever que textoEditor.value recebe texto.
+    ```
+      socket.on("texto_editor_clientes", (texto) => {
+        textoEditor.value = texto;
+      });
+    ```
+    Agora ele vai atualizar o valor na interface com o texto que estamos recebendo como parâmetro.
+
+  - Podemos salvar o arquivo e atualizar o navegador para testar.
+
+  - Agora, ao escrever no campo de texto de uma janela, o texto aparece em tempo real na outra janela e vice-versa. Já estamos vendo a magia do WebSocket acontecer.
+
+
+**Organizando arquivos**
+Agora vamos melhorar a organização dos arquivos do nosso projeto.
+
+Podemos ver que em documento.js temos um código que utiliza funções do código mas, ao mesmo tempo, manipula elementos do documento.html e também estamos usando eventos do DOM. O código está um tanto misturado. É uma boa prática separar a parte de funções do HTML e a parte de funções do socket.
+
+- Para começar, criaremos um novo arquivo na pasta "public". Nomearemos esse arquivo como socket-front-documento.js.
+
+- Em documento.js vamos recortar a primeira linha e colar no socket-front-documento.js: ```const socket = io();```
+
+- Em seguida, no documento.js como não teremos mais acesso ao socket não conseguiremos mais escrever socket.emit nem socket.on.
+
+- Para resolver esse problema, primeiro vamos recortar a linha do socket.emit para uma função que criaremos em socket-front-documento.js e nesta função receberemos o texto como parâmetro. Lembrando de exportar a função para usarmos no documento.js:
+  ```
+  const socket = io();
+
+  function emitirTextoEditor(texto) {
+    socket.emit("texto_editor", texto);
+  }
+
+  export { emitirTextoEditor };
+  ```
+
+- Voltando para documento.js podemos chamar a função emitirTextoEditor e passaremos textoEditor.value como parâmetro.
+  ```
+  textoEditor.addEventListener("keyup", () => {
+    emitirTextoEditor(textoEditor.value);
+  });
+
+  socket.on("texo_editor_clientes", (texto) => {
+  textoEditor.value = texto;
+  });
+  ```
+
+- Agora, vamos organizar o socket.on. Podemos recortar o bloco de código dele para colar no socket-front-documento.js.
+  ```
+  const socket = io();
+
+  function emitirTextoEditor(texto) {
+    socket.emit("texto_editor", texto);
+  }
+
+  socket.on("texo_editor_clientes", (texto) => {
+
+  });
+
+  export { emitirTextoEditor };
+  ```
+
+- E deixaremos o código textoEditor.value = texto guardado em uma função chamada atualizatextoEditor() no arquivo documento.js. Também exportaremos essa função:
+  ```
+  function atualizaTextoEditor(texto) {
+    textoEditor.value = texto;
+  }
+
+  export { atualizaTextoEditor };
+  ```
+
+- Podemos voltar ao socket-front-documento.js e chamar essa função no socket.on:
+  ```
+  socket.on("texto_editor_clientes", (texto) => {
+    atualizaTextoEditor(texto);
+  });
+  ```
+
+Essa é basicamente uma refatoração que fizemos para separar responsabilidades dos arquivos. Vejamos como ficaram os nossos arquivos:
+```
+//Código do arquivo socket-front-documento.js:
+
+import { atualizaTextoEditor } from "./documento.js";
+
+const socket = io();
+
+function emitirTextoEditor(texto) {
+  socket.emit("texto_editor", texto);
+}
+
+socket.on("texto_editor_clientes", (texto) => {
+  atualizaTextoEditor(texto);
+});
+
+export { emitirTextoEditor };
+```
+
+```
+//Código do arquivo documento.js:
+
+import { emitirTextoEditor } from "./socket-front-documento.js";
+
+const textoEditor = document.getElementById("editor-texto");
+
+textoEditor.addEventListener("keyup", () => {
+  emitirTextoEditor(textoEditor.value);
+});
+
+function atualizaTextoEditor(texto) {
+  textoEditor.value = texto;
+}
+
+export { atualizaTextoEditor };
+```
+
+Agora podemos salvar o código, atualizar a página do navegador e ao testar verificamos que continua funcionando corretamente.
+
+Com isso, temos uma melhor separação de responsabilidades. Em documento.js temos código que interage com o HTML e em socket-front-documento.js temos o código responsável pelos eventos do socket.
+
+**eventos com mesmo nome?**
+Entendemos como fazer um cliente emitir um evento para o servidor e, em seguida, fazer o servidor enviar um novo evento para vários outros clientes. Utilizamos o seguinte código em socket-back.js:
+```
+io.on("connection", (socket) => {
+  socket.on("texto_editor", (texto) => {
+    socket.broadcast.emit("texto_editor_clientes", texto);
+  });
+});
+```
+
+E se eu te disser que, nesse lado do servidor, também poderíamos ter emitido um evento chamado "texto_editor"? Saiba que isso não geraria conflito no código!
+
+O código ficaria assim:
+```
+io.on("connection", (socket) => {
+  socket.on("texto_editor", (texto) => {
+    socket.broadcast.emit("texto_editor", texto);
+  });
+});
+```
+
+Mas também precisaríamos alterar o nome do evento em socket-front-documento.js, trocando "texto_editor_clientes" por "texto_editor":
+```
+socket.on("texto_editor", (texto) => {
+  atualizaTextoEditor(texto);
+});
+```
+
+Como já vimos antes, o protocolo WebSockets permite que tanto o cliente quanto o servidor possam emitir eventos. Um detalhe importante é que quando um dos lados da comunicação emite um evento, apenas o outro lado pode escutá-lo.
+
+Ou seja, se o cliente emitir um evento chamado "texto_editor", apenas o servidor escutará essa emissão. Da mesma forma, se o servidor também emitir um evento com o mesmo nome "texto_editor", apenas os clientes escutarão essa emissão.
+
+Dessa forma, é possível que você identifique algum código onde isso aconteça. A pessoa desenvolvedora pode escolher que dois eventos diferentes tenham o mesmo nome se ela julgar que eles são intrínsecos, ou que um seja uma “continuação” do outro.
+
+No nosso caso, faria sentido. Pois, para que o texto do editor seja enviado por um cliente, chegue ao servidor, e seja enviado de volta para outros clientes, essa informação “viaja” pelos dois eventos que criamos. Ou seja, o evento emitido pelo servidor pode ser visto como a continuação do evento emitido pelo cliente.
+
+Mas caso você queira evitar qualquer confusão na leitura do código, você pode deixar todos os eventos com nomes diferentes, como estou fazendo ao longo do curso!
+
+**evento disconnect:**
+Você sabia que existe um evento chamado “disconnect” (do inglês “desconectar”) que pode ser escutado tanto do lado do cliente quanto do servidor? Para praticar e entender melhor a conexão entre cada cliente e servidor, vamos explorar esse evento:
+  - Quando um cliente é desconectado:
+    
+    No arquivo socket-back.js, dentro da função callback do evento “connection”, podemos adicionar o seguinte código:
+      ```
+      socket.on("disconnect", (motivo) => {
+        console.log(`Cliente "${socket.id}" desconectado!
+        Motivo: ${motivo}`);
+      });
+      ```
+    Você sabe que, quando um cliente se conecta ao servidor, um evento “connection” é emitido pelo cliente e pode ser escutado por io.on(). De forma semelhante, quando um cliente é desconectado, por exemplo, quando sai da página ou a atualiza, ele emite um evento chamado “disconnect”, que pode ser escutado por socket.on() no lado do servidor.
+
+    Se você atualizar a página de documento no navegador, deve aparecer uma mensagem como essa no terminal do VSCode:
+    ```
+    Cliente "9i2Fhbhe_SY4KHC0AAAB" desconectado!
+    Motivo: transport close
+    ```
+
+    Perceba que o motivo de desconexão também pode ser obtido como parâmetro da função callback do evento.
+
+    E se você manteve a linha console.log("Um cliente se conectou! ID:", socket.id); no seu código, deve aparecer logo abaixo uma mensagem como essa: ```Um cliente se conectou! ID: L0TRoI-WR7w-mUH5AAAF```
+
+    Ou seja, com isso vemos que um socket é mantido para cada cliente que se mantém na página, e deixa de existir quando essa conexão é encerrada de alguma forma, seja atualizando ou saindo da página. Mesmo que seja a mesma pessoa no mesmo navegador, um novo socket é criado para cada vez que a página é carregada.
+
+    Caso queiramos guardar as informações de cada pessoa que acessa a aplicação, independente de desconexões, elas devem ser armazenadas de outra forma, como no próprio navegador ou em um banco de dados, por exemplo.
+  
+  - Quando o servidor é desconectado:
+    Também podemos escutar no lado cliente se o servidor foi desconectado de alguma forma. Em socket-front-documento.js, podemos adicionar o seguinte código:
+    ```
+    socket.on("disconnect", (motivo) => {
+      console.log(`Servidor desconectado!
+      Motivo: ${motivo}`);
+    });
+    ```
+
+    Se você mantiver o navegador aberto na página de documento e encerrar o servidor, receberá a seguinte mensagem no console do navegador:
+    ```
+    Servidor desconectado!
+    Motivo: transport close
+    ```
+
+    Você pode ler mais sobre esses eventos e os diferentes motivos de desconexão nas seções [The Socket instance (server-side)](https://socket.io/docs/v4/server-socket-instance/#disconnect) e [The Socket instance (client-side)](https://socket.io/docs/v4/client-socket-instance/#disconnect) da documentação. Essas páginas também contêm informações de outros eventos das instâncias socket tanto no lado do front-end quanto no lado do back-end, caso queira se aprofundar!
+
+
