@@ -38,3 +38,11 @@
   <li>Diferenciar caminhos relativos e absolutos: Caminhos absolutos iniciam com /, enquanto caminhos relativos iniciam sem a /, partindo do caminho da rota pai.</li>
 </ul>
 
+---
+
+## Aula 04 - Rotas dinâmicas
+<ul>
+  <li>Identificar quando utilizar rotas dinâmicas: Rotas dinâmicas são úteis quando queremos ter uma mesma estrutura de página e mudar seu conteúdo de acordo com alguma informação passada na URL. No nosso caso, passamos o id de um post pela URL, buscamos o post de acordo com o id e mostramos suas informações na tela.</li>
+  <li>Utilizar os seletores de rotas dinâmicas para criar uma rota dinâmica: Utilizamos a sintaxe /caminho/:nomedoparametro no atributo path de uma Route.</li>
+  <li>Utilizar o hook useParams: Com ele, obtemos os parâmetros passados para uma rota dinâmica.</li>
+</ul>

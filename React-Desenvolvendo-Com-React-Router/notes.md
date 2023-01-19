@@ -28,3 +28,15 @@ Veja que há três rotas aninhadas de Layout. A primeira delas possui um atribut
 As outras duas rotas têm caminhos que iniciam sem a /. Isso quer dizer que essas rotas serão relativas ao caminho da rota pai, e são equivalentes a "/invoices" e "/activity", respectivamente.
 
 Se a rota pai tivesse o caminho "/qualquercoisa", os caminhos das três rotas aninhadas seriam equivalentes a "/qualquercoisa, "/qualquercoisa/invoices" e "/qualquercoisa/activity". Utilizando rotas index e caminhos relativos, evitamos repetição de código e o deixamos mais legível.
+
+---
+
+## Aula 04 - Linguagem markdown
+O markdown é uma linguagem de marcação, assim como o HTML. Inclusive, no projeto React que criamos, já vem um arquivo chamado README.md na raiz do projeto. A extensão .md indica que é um arquivo escrito em markdown.
+
+Você pode ler mais sobre essa linguagem no artigo Markdown: [como trabalhar com essa linguagem de markup?](https://www.alura.com.br/artigos/como-trabalhar-com-markdown)
+
+No Olá Mundo, guardamos os textos markdown no JSON, mas essa não é a melhor forma de trabalhar com o markdown, pois o JSON possui limitações, como não permitir quebra de linha nas strings (foi utilizado \n em vez de quebra de linha). Porém, os cenários ideais são um pouco mais avançados, envolvendo consumo de serviços externos. Então, apesar das limitações do JSON, ele é mais simples de utilizar e supre as necessidades do nosso projeto.
+
+Para melhor experiência de escrita, você pode escrever seus posts em markdown e depois passar para a string do JSON, mas se atente para substituir as quebras de linha por \n (e duas quebras de linha \n\n para um novo parágrafo), assim como já está sendo feito no posts.json.
+
