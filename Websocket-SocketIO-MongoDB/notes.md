@@ -698,4 +698,566 @@ Você sabia que existe um evento chamado “disconnect” (do inglês “descone
 
     Você pode ler mais sobre esses eventos e os diferentes motivos de desconexão nas seções [The Socket instance (server-side)](https://socket.io/docs/v4/server-socket-instance/#disconnect) e [The Socket instance (client-side)](https://socket.io/docs/v4/client-socket-instance/#disconnect) da documentação. Essas páginas também contêm informações de outros eventos das instâncias socket tanto no lado do front-end quanto no lado do back-end, caso queira se aprofundar!
 
+---
+
+## Aula 03 - Avançando na comunicação
+Neste ponto ao escrever algo no documento de Node, esse texto também vai aparecer no documento de JavaScript. Está havendo uma interferência entre os documentos. Não queremos isso.
+
+Precisamos obter a informação de qual documento está sendo acessado para poder enviar apenas para os clientes que também estão nesse documento e não ter essa interferência de informações em documentos variados.
+
+Voltando ao VS Code, podemos verificar no socket-back.js que estamos enviando para todo mundo justamente na linha de código socket.broadcast.emit. É nesta linha que precisaremos mudar nosso código para mandar apenas para os clientes que estão em determinado documento.
+
+  - Primeiro, precisamos pegar o nome do documento em que o cliente se conectou.
+
+  - Faremos isso no arquivo documento.js. Antes de const textoEditor vamos criar a constante parametros, que serão os parâmetros da URL, ele vai receber new URLSearchParams(), essa é uma classe do próprio front-end. E passaremos window.location.search como parâmetro.
+
+  - Em seguida, const nomeDocumento vai receber parametros.get("nome"). Esse nome é o parâmetro que é passado pela URL, no documento de JavaScript o endereço que aparece na URL do navegador é /documento.html?nome=JavaScript.
+    ```
+    const parametros = new URLSearchParams(window.location.search);
+    const nomeDocumento = parametros.get("nome");
+    ```
+  - Agora, podemos corrigir um detalhe na página. Onde aparece "Documento sem título" podemos exibir o nome do documento. Para isso, vamos checar no documento.html qual é o elemento que está mostrando esse texto e pegaremos o id dele.
+  ```
+   <header>
+    <h1 class="display-4 mb-4 text-center" id="titulo-documento">Documento sem título</h1>
+  </header>
+  ```
+
+  - O elemento que queremos é um h1 com id igual a titulo-documento. Vamos copiar esse id. ```titulo-documento```
+
+  - Voltando no arquivo documento.js escreveremos o código para capturar esse título a partir desse id.
+
+  - Se, por algum motivo, esse parâmetro não for passado na URL vamos colocar no local usando duas barras verticais e inserir "Documento sem título" caso o nome do documento não esteja definido.
+  ```
+  const textoEditor = document.getElementById("editor-texto");
+  const tituloDocumento = document.getElementById("titulo-documento");
+
+  tituloDocumento.textContent = nomeDocumento || "Documento sem título";
+  ```
+
+  - Ao atualizar a página podemos ver que onde antes exibia "Documento sem título" agora aparece "JavaScript". E se entrarmos na página do documento de Node vai aparecer o título "Node".
+
+  - Agora, vamos pegar essa informação do nome da página e enviar para o servidor. Assim, o servidor saberá para quais clientes enviar corretamente o texto.
+
+  - Faremos isso no socket-front-documento.js. Abaixo de const socket vamos escrever socket.emit e o nome do evento será selecionar_documento, porque assim que alguém selecionar um documento, entrar na página, vamos emitir esse evento. ```socket.emit("selecionar_documento")```
+
+  - Mas ainda queremos passar o nome do documento como segundo parâmetro, e o nome do documento está em outro arquivo. Para conseguir pegar esse nome, vamos criar uma função chamada selecionarDocumento e dentro dessa função faremos o socket.emit passando nome como segundo parâmetro.
+    ```
+    function selecionarDocumento(nome) {
+      socket.emit("selecionar_documento", nome);
+    }
+    ```
+  - Vamos também exportar a função selecionarDocumento para usá-la em documento.js.
+
+  - No documento.js, logo abaixo de tituloDocumento, vamos escrever selecionarDocumento e vamos importar essa função de socket-front-documento.js, passando o nomeDocumento como parâmetro.
+    ```
+    tituloDocumento.textContent = nomeDocumento || "Documento sem título";
+
+    selecionarDocumento(nomeDocumento);
+    ```
+  
+  - Em seguida, para escutar esse evento do lado do back-end, vamos em socket-back.js e escreveremos socket.on("selecionar_documento") e incluiremos uma função callback e daremos um console.log() em nome para ver se está funcionando corretamente.:
+    ```
+    io.on("connection", (socket) => {
+      console.log("Um cliente se conectou! ID:", socket.id);
+
+      socket.on("selecionar_documento", (nomeDocumento) => {
+        console.log(nomeDocumento);
+    });
+    ```
+  - Podemos salvar o arquivo. Voltar para o navegador e atualizar a página. Após atualizarmos a página do documento JavaScript no navegador, a informação do nome deve ser enviada para o servidor. Agora o nome apareceu no terminal integrado do VS Code.
+    ```
+    Um cliente se conectou! ID:UbJCjlfbaEfxy2yyAAAF
+
+    JavaScript
+    ```
+  - Vimos que está funcionando corretamente. Então vamos substituir o console.log() por socket.join. "Join" em português significa "juntar". Dentro desse join vamos passar o nome do documento.
+    ```
+    socket.on("selecionar_documento", (nomeDocumento) => {
+      socket.join(nomeDocumento);
+    });
+    ```
+  
+  - Esse método join(), que é específico do Socket.IO vai pegar o cliente que está conectado nesse socket e colocar em uma sala com o nome do documento.
+    ```
+    "Sala" é basicamente um conceito do Socket.IO onde ele vai agrupar conexões, vai agrupar clientes.
+    ```
+
+  - Então, sempre que uma pessoa entrar no documento de JavaScript, por exemplo, estará entrando numa sala do Socket.IO chamada JavaScript.
+
+  - Para verificarmos que isso realmente funciona, no arquivo socket-back.js podemos comentar a linha do código socket.broadcast.emit e no lugar dele escrever socket.to("JavaScript").emit ("texto_editor_clientes, texto").
+    ```
+    socket.on(texto_editor", (texto) => {
+    // socket.broadcast.emit("texto_editor_clientes", texto);
+
+    socket.to("JavaScript").emit ("texto_editor_clientes, texto");
+    });
+    ```
+  - Quando esse código for executado, espero que o texto seja enviado para todos os clientes que estão dentro do documento JavaScript. Vamos ver se isso está funcionando e depois refinaremos o código para enviar apenas para os documentos corretos.
+
+  - Vamos salvar o código e abrir as páginas do navegador. Se estamos na sala de Node, o texto que escrevermos deverá ir para quem está na sala de JavaScript. Mas se alguém estiver na sala de JavaScript e escrever algo, esse texto não não vai para a sala de Node. É o que está acontecendo, isso prova o conceito de salas do Socket.IO.
+
+**obtendo parâmetros da URL**
+Você aprendeu no vídeo anterior a obter os parâmetros da URL no lado do front-end! Vamos explorar um pouco mais as funções e variáveis que utilizamos?
+
+  - Primeiramente, nós nos aproveitamos da classe URLSearchParams, que pode ser instanciada para criar um objeto que conterá informações da URL.
+
+  - Existem diferentes tipos de dados válidos que podemos passar como parâmetro de URLSearchParams() para criar uma nova instância; como por exemplo uma string, um array de arrays ou um objeto. Os três exemplos abaixo são equivalentes:
+    ```
+    // string como parâmetro
+    const parametros = new URLSearchParams("?nome=maria&sobrenome=eduarda");
+
+    // array de arrays como parâmetro
+    const parametros = new URLSearchParams([
+      ["nome", "maria"],
+      ["sobrenome", "eduarda"],
+    ]);
+
+    // objeto como parâmetro
+    const parametros = new URLSearchParams({
+      nome: "maria",
+      sobrenome: "eduarda"
+    });
+    ```
+
+  - Note que, ao passar uma string, ela deve seguir o mesmo padrão dos parâmetros passados em uma URL: os parâmetros são separados por & e a chave e o valor de cada parâmetro são separados por =. E especificamente no caso do URLSearchParams(), a interrogação ? no início da string é opcional.
+
+  - Mas no vídeo passamos o valor window.location.search como parâmetro de URLSearchParams(). De onde ele vem?
+
+  - Window é um objeto global que contém várias propriedades e métodos do front-end. Uma dessas propriedades é a location, que é um objeto que possui métodos e propriedades relacionados à URL atual. E uma de suas propriedades é a search, que nos dá justamente uma string dos parâmetros da URL.
+
+  - Assim, se você estiver em http://localhost:3000/documento.html?nome=JavaScript no navegador, o valor de window.location.search será "?nome=JavaScript".
+
+  - Logo, chegamos ao código escrito em vídeo:
+    ```
+    const parametros = new URLSearchParams(window.location.search);
+    ```
+  
+  - Agora que a constante parametros é uma instância de URLSearchParams, ela possui métodos como get(), has(), entries(), entre outros. Então, adicionamos o seguinte código:
+    ```
+    const nomeDocumento = parametros.get("nome");
+    ```
+  
+  - Perceba que o método get() recebe o nome do parâmetro da URL e retorna seu valor. Assim, ainda usando a URL http://localhost:3000/documento.html?nome=JavaScript como exemplo, o código parametros.get("nome") irá nos retornar a string "JavaScript".
+
+**Enviando para as salas corretas:** 
+agora podemos escolher para quais sockets enviaremos determinada informação. No momento, estamos enviando apenas para as pessoas que estão conectadas na sala de JavaScript. Vamos corrigir isso.
+
+- Primeiro, vamos alterar o código do arquivo socket-back.js. Em vez de socket.to("JavaScript") vamos pegar o nome da sala e não esse valor estático, então deixaremos: socket.to("nomeDocumento").
+
+- Vamos obter a informação do nome do documento como parâmetro da função callback do evento texto_editor:
+  ```
+  socket.on(texto_editor", (texto, nomeDocumento) => {
+  // socket.broadcast.emit("texto_editor_clientes", texto);
+
+  socket.to("JavaScript").emit ("texto_editor_clientes, texto");
+  });
+  ```
+
+- Agora precisamos receber esse parâmetro nomeDocumento do lado do front-end. Vamos em socket-front-documento.js e inserir um terceiro parâmetro no socket.emit da função emitirTextoEditor.
+  ```
+  function emitirTextoEditor(texto) {
+  socket.emit("texto_editor", texto, nomeDocumento);
+  ```
+
+- Essa é uma das formas que usamos para enviar múltiplas informações para um evento. Por fim, vamos incluir nomeDocumento como parâmetro da função emitirTextoEditor.
+  ```
+  function emitirTextoEditor(texto, nomeDocumento) {
+  socket.emit("texto_editor", texto, nomeDocumento);
+  ```
+
+- Em seguida, no arquivo documento.js, onde estamos chamando a função emitirTextoEditor, vamos passar o nomeDocumento como segundo parâmetro.
+  ```
+  textoEditor.addEventListener("keyup", () => {
+    emitirTextoEditor({textoEditor.value, nomeDocumento);
+  });
+  ```
+
+- Podemos salvar o projeto e atualizar as páginas do navegador para testar se está funcionando.
+
+- Agora, com as janelas lado a lado, uma no documento de JavaScript e outra no documento de Node, podemos ver que se escrevermos no documento de Node o texto não aparecerá no documento de JavaScript e vice-versa.
+  Mas se as duas páginas estiverem no mesmo documento, veremos os textos sendo atualizados na página. Está funcionando como esperado.
+
+- Agora vamos fazer uma melhoria no código.
+  É algo que eu recomendo quando queremos enviar múltiplas informações através de um evento. No caso, estamos recebendo múltiplos parâmetros, o Socket.IO permite que façamos isso, mas eu prefiro passar apenas um objeto contendo esses parâmetros.
+
+- Começaremos em documento.js, no código de emitirTextoEditor. Em vez de enviar dois parâmetros (textoEditor.value e nomeDocumento), vamos colocar chaves antes e depois dessa informação, pressionar alguns "Enters" para o código ficar mais legívelcom um parâmetro abaixo do outro.
+
+- A primeira propriedade desse objeto será texto e seu valor será textoEditor.value e a segunda propriedade será nomeDocumento e o valor será o próprio nome do documento.
+  ```
+  textoEditor.addEventListener("keyup", () => {
+    emitirTextoEditor({
+      texto: textoEditor.value,
+      nomeDocumento,
+    });
+  });
+  ```
+
+- Em seguida, em socket-front-documento.js, na função emitirTextoEditor, podemos substituir texto, nomeDocumento por dados:
+  ```
+  function emitirTextoEditor(dados) {
+    socket.emit("texto_editor", dados);
+  }
+  ```
+
+- No arquivo socket-back.js. Ao redor de texto, nomeDocumento vamos colocar chaves e desestruturar objeto para pegar diretamente das propriedades texto e nomeDocumento. Podemos também excluir a linha do socket.broadcast.emit que havíamos comentado anteriormente, pois não vamos mais utilizá-la.
+  ```
+  socket.on(texto_editor", ({ texto, nomeDocumento }) => {
+  socket.to("JavaScript").emit ("texto_editor_clientes, texto");
+  });
+  ```
+
+Gosto dessa abordagem de passar um objeto porque assim não precisamos depender, por exemplo, da ordem dos parâmetros.
+
+Podemos salvar o projeto e a aplicação deverá continuar funcionando corretamente no navegador.
+
+Estamos melhorando a aplicação, mas ainda temos um problema: os textos não estão ficando salvos em lugar nenhum, se atualizarmos a página o texto será apagado. No próximo vídeo veremos como começar a resolver esse problema.
+
+
+**possibilidades de emissão:**
+Vimos como o servidor pode agrupar clientes em diferentes salas do Socket.IO, para posteriormente emitir eventos para salas específicas. Você pode ler mais sobre isso na seção Rooms da documentação.
+
+Nos vídeos, escrevemos o seguinte código:
+```
+io.on("connection", (socket) => {
+  socket.on("selecionar_documento", (nomeDocumento) => {
+    socket.join(nomeDocumento);
+  });
+
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+  });
+});
+```
+
+Um detalhe importante é que a função socket.to("nome_da_sala").emit("nome_do_evento") emite o evento para todos os clientes de uma determinada sala, exceto para o cliente conectado ao socket.
+
+Mas se quiséssemos emitir um evento para todos os clientes de uma sala, independente se um deles é o que está conectado ao socket, utilizaríamos: io.to("nome_da_sala").emit("nome_do_evento") (troca de socket para io). O código ficaria assim: ```io.to(nomeDocumento).emit("texto_editor_clientes", texto);```
+
+O servidor (ou um socket) também pode emitir para mais de uma sala, repetindo o método to():
+```
+io.on("connection", (socket) => {
+  // código omitido...
+
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    // servidor emitindo
+    io.to(nomeDocumento).to("JavaScript").emit("texto_editor_clientes", texto);
+
+    // socket emitindo
+    socket.to(nomeDocumento).to("JavaScript").emit("texto_editor_clientes", texto);
+  });
+});
+```
+
+Ou então passando para o to() um array com os nomes das salas:
+```
+io.on("connection", (socket) => {
+  // código omitido...
+
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    // servidor emitindo
+    io.to([nomeDocumento, "JavaScript"]).emit("texto_editor_clientes", texto);
+
+    // socket emitindo
+    socket.to([nomeDocumento, "JavaScript"]).emit("texto_editor_clientes", texto);
+  });
+});
+```
+
+Vale ressaltar que todos esses códigos acontecem apenas do lado do back-end. As salas do Socket.IO são uma funcionalidade apenas do servidor, e no lado do front-end não há como saber quais clientes estão em quais salas.
+
+Além disso, os clientes também podem entrar em diversas salas do Socket.IO. Com isso, no lado do servidor, podemos emitir eventos para clientes que estão, por exemplo, nas salas "sala1", "sala2", mas que não estão na "sala3", com auxílio do método except() (que significa “exceto”, do inglês):
+```
+io.to(["sala1", "sala2"]).except("sala3").emit("nome_do_evento");
+```
+
+O método except() também pode ser usado em conjunto com outras formas de emissão, como io.emit(), socket.broadcast().emit(), etc. Confira alguns exemplos no código abaixo:
+```
+// envia para todos os clientes, exceto os que estão na sala "sala_excluida"
+io.except("sala_excluida").emit("nome_do_evento");
+
+// envia para todos os clientes, exceto para o que está em `socket` e os que estão na sala "sala_excluida_1" e "sala_excluida_2"
+io.on("connection", (socket) => {
+  socket.broadcast.except(["sala_excluida_1", "sala_excluida_2"]).emit("nome_do_evento");
+});
+```
+
+Com esses conhecimentos a mais, você já conhece várias das formas de se emitir eventos no Socket.IO. Aproveite para conferir a [Emit cheatsheet (Folha de dicas de Emissões)](https://socket.io/docs/v4/emit-cheatsheet/) da documentação, ela também serve como uma boa consulta.
+
+
+**Guardando os dados localmente**
+Se atualizarmos ou sairmos da página os textos são apagados, então vamos pensar como podemos guardar os textos.
+
+Começaremos criando uma lista com dados do JavaScript no servidor Node.js. Assim estaremos preparando o terreno para evoluir nossa aplicação e posteriormente utilizar banco de dados.
+
+Vamos abrir o VS Code no arquivo socket-back.js e vamos colocar os dados dos documentos nesse arquivo justamente porque quando a Eduarda ou a Juliana entrarem em algum documento poderemos capturar o texto desse documento e mandar para elas no front-end.
+
+Começaremos criando uma constante no início do arquivo socket-back.js. Será a constante documentos e ela vai receber um array, uma lista de objetos onde cada objeto vai representar as informações do documento.
+  ```
+  import io from "./servidor.js";
+
+  const documentos = [
+
+  ];
+  ```
+
+Criaremos três objetos, um para cada documento da nossa aplicação, com propriedade nome e texto:
+```
+import io from "./servidor.js";
+
+const documentos = [
+  {
+    nome: "JavaScript",
+    texto: "texto de javascript...",
+  },
+  {
+    nome: "Node",
+    texto: "texto de node...",
+  },
+  {
+    nome: "Socket.io",
+    texto: "texto de socket.io...",
+  },
+];
+```
+
+Podemos salvar o arquivo. Então, no momento em que o servidor escutar o evento selecionar_documento queremos buscar o texto desse documento e enviar de volta para os clientes.
+
+Para isso, dentro da função callback do selecionar_documento vamos adicionar o seguinte código para recebermos retorno de uma função que ainda vamos criar, o nome dessa função será encontrarDocumento. E essa função precisará receber o nomeDocumento para saber qual documento buscar.
+
+```
+ socket.on("selecionar_documento", (nomeDocumento) => {
+    const documento = encontrarDocumento(nomeDocumento);
+
+    socket.join(nomeDocumento);
+```
+
+Agora podemos criar essa função encontrarDocumento lá no final do arquivo.
+
+A função encontrarDocumento vai receber o parâmetro nome e faremos uma lógica de programação, escrevendo que a constante documento recebe documentos, a lista que criamos no início do arquivo socket-back.js, documentos.find(documento). O find() é um método do JavaScript para encontrar um item específico de uma lista. E nesse método passaremos uma função callback.
+
+Vamos retornar o documento que recebemos o nome como parâmetro. Vamos retornar uma condição que será avaliada como verdadeira para o método find().
+
+Retornaremos documento.nome triplo igual (===) a nome, ou seja, se o documento que estivermos avaliando nessa lista tiver exatamente a propriedade nome igual ao nome que recebemos como parâmetro, essa condição será avaliada como verdadeira. E o retorno do método find() vai cair na constante documento. Em seguida, retornaremos o documento encontrado dentro da função.
+
+```
+function encontrarDocumento(nome) {
+  const documento = documentos.find((documento) => {
+    return documento.nome === nome;
+  });
+
+  return documento;
+}
+```
+
+Podemos incluir um console.log(documento) para verificar se conseguimos realmente capturar esse documento.
+
+ socket.on("selecionar_documento", (nomeDocumento) => {
+    const documento = encontrarDocumento(nomeDocumento);
+
+    console.log(documento);
+
+    socket.join(nomeDocumento);
+
+Vamos salvar o projeto. Podemos deixar o terminal integrado do VS Code aberto e vamos para a janela do navegador.
+
+Atualizei a página em que está o documento JavaScript e podemos ver que o terminal do VS Code já imprimiu um objeto: ```{nome: 'JavaScript', texto: 'texto de javascript...'}```
+
+{nome: 'JavaScript', texto: 'texto de javascript...'}
+
+
+**Enviando de volta para o cliente**
+Já conseguimos guardar os textos de cada documento de forma local. E também conseguimos acessar essas informações assim que o documento é selecionado.
+
+No socket-back.js inserimos um console.log(documento). Mas agora precisamos enviar o texto desse documento de volta para o cliente no front-end.
+
+A primeira solução que veremos é com algo que já conhecemos: emitir eventos.
+
+O servidor pode emitir um evento de volta para o front-end com o texto do documento.
+
+No arquivo socket-back.js, para fazer uma tratativa de erro, vamos escrever, abaixo de const documento, uma condição if (documento). Dentro desse if escreveremos o código para emitir o texto do documento para o front-end.
+
+Podemos apagar o console.log(documento) pois não vamos mais usá-lo.
+
+Usaremos o if (documento) porque se o método find() não encontrar nenhum documento, vai retornar "undefined". Então, para evitar qualquer bug na aplicação, faremos essa tratativa.
+
+Podemos escrever socket.emit. Até agora, fizemos apenas o servidor emitir eventos para os clientes. Neste caso, queremos emitir de volta apenas para o cliente que está neste socket.
+
+O nome do evento será texto_documento e o dado que esse evento vai carregar será documento.texto:
+```  
+  socket.on("selecionar_documento", (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+      socket.emit("texto_documento", documento.texto);
+    }
+  });
+```
+
+Salvando esse arquivo, agora podemos escutar esse evento do lado do front-end.
+
+No arquivo socket-front-documento.js, escreveremos acima de socket.on("texto_editor_cliente"). Escreveremos socket.on("texto_documento"), o segundo parâmetro será uma função callback que recebe o texto como parâmetro. E daremos um console.log(texto) para verificar se o cliente está obtendo esse texto de volta.
+
+```
+socket.on("texto_documento", (texto) => {
+  console.log(texto);
+});
+
+socket.on("texto_editor_clientes", (texto) => {
+  atualizaTextoEditor(texto);
+});
+```
+
+Vamos salvar o projeto e ir para a página do JavaScript no navegador, lembrando de deixar o console do navegador aberto.
+
+Ao atualizarmos o navegador, o console já está exibindo a seguinte informação: ```texto de javascript...```
+
+E o mesmo está acontecendo na página de Node, o console está exibindo a frase "texto de node...". Está funcionando corretamente. Mas queremos atualizar a interface em vez de atualizar com o console.log().
+
+Voltando ao VS Code, no código de socket-front-documento.js vamos apagar o console.log(texto) e usar a função atualizaTextoEditor() com texto como parâmetro.
+
+```
+socket.on("texto_documento", (texto) => {
+  atualizaTextoEditor(texto);
+});
+```
+
+Podemos salvar e testar no navegador.
+
+Na página do documento JavaScript apareceu a frase "texto de javascript..." no campo de texto da página. Na página do Node apareceu "texto de node..."
+
+Para aparecer no documento Socket.io vamos corrigir no código de socket-back.js. Onde colocamos nome: "Socket.IO" o "io" deve ser com letra minúscula e apenas o primeiro "S" maiúsculo:
+```
+//código omitido
+
+  {
+    nome: "Socket.io",
+    texto: "texto de socket.io...",
+  },
+//...
+```
+
+Após essa correção, podemos salvar e agora sim está aparecendo. É importante conferir se os nomes estão corretos e verificar as maiúsculas e minúsculas.
+
+A segunda solução também é interessante e usaremos um recurso do Socket.IO.
+
+No arquivo socket-back.js estamos verificando se o documento existe e fazendo o socket.emit para enviar de volta ao cliente desse socket.
+
+Primeiro, vamos comentar a linha do código socket.emit que está abaixo do if (documento).
+
+A segunda forma é receber mais um dado na função callback. Por enquanto chamaremos esse dado de callback e ele será uma função que vamos executar dentro de if (documento) e passaremos documento.texto como parâmetro do callback.
+
+```
+  socket.on("selecionar_documento", (nomeDocumento, callback) => {
+    socket.join(nomeDocumento);
+
+    const documento = encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+        //socket.emit("texto_documento", documento.texto);
+
+      callback(documento.texto);
+    }
+  });
+```
+
+Essa função callback será um dado como qualquer outro, que pode ser recebido como parâmetro dos eventos do Socket.IO.
+
+Já podemos salvar o arquivo socket-back.js. Em seguida, vamos para o código de socket-front-documento.js e passaremos uma função callback como parâmetro no evento selecionar_documento. Dentro dessa função receberemos o texto com atualizaTextoEditor(texto):
+
+```
+const socket = io();
+
+function selecionarDocumento(nome) {
+  socket.emit("selecionar_documento", nome, (texto) => {
+    atualizaTextoEditor(texto);
+  });
+}
+```
+
+Após fazer isso, podemos ignorar o código que escrevemos anteriormente, vamos comentar as linhas do socket.on referente ao evento texto_documento que fizemos na primeira solução.
+```
+// socket.on("texto_documento", (texto) => {
+//  atualizaTextoEditor(texto);
+// });
+```
+
+Inclusive, nosso código ficou com uma escrita mais sucinta. Podemos salvar o projeto e testar no navegador. O texto continua aparecendo no campo de texto de cada documento. Está funcionando.
+
+Recapitulando, temos a função callback que foi declarada do lado do front-end mas foi executada do lado do back-end.
+
+Essa estratégia que utilizamos é um pouco parecida com o modelo de requisição e resposta do protocolo HTTP, onde o cliente solicita o texto de um documento. O cliente vai emitir o evento selecionar_documento, o servidor vai fazer operações para encontrar o documento e vai mandar de volta o texto desse documento para o front-end.
+
+Esse é um recurso que o próprio Socket.IO denomina como Acknowledgements que, em português, significa "reconhecimentos". Usam esse nome porque, basicamente, quando emitimos um evento do cliente para o servidor, esperamos o servidor reconhecer esse evento. Assim que o evento é reconhecido, o servidor retorna alguma informação para o front-end.
+
+A princípio, nomeamos a função como callback, mas agora daremos um nome mais descritivo para ela. No arquivo socket-back.js vamos selecionar a palavra callback, pressionar o atalho "F2" e renomeá-la para devolverTexto. E, por fim, podemos apagar a linha de socket.emit que havíamos comentado anteriormente.
+
+```
+  socket.on("selecionar_documento", (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+      devolverTexto(documento.texto);
+    }
+  });
+```
+
+Em socket-front-documento.js também vamos apagar as linhas do socket.on("texto_documento") que deixamos comentadas.
+
+**Salvando os textos:**
+Precisamos inserir o código para salvar os texto justamente onde estamos "escutando" o evento texto_editor.
+
+No socket-back.js, vamos inserir const documento recebendo encontrarDocumento(nomeDocumento). E, se esse documento realmente existir, documento.texto receberá texto. E, por fim, vamos incluir o socket.to dentro do if também.
+
+```
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    const documento = encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+      documento.texto = texto;
+
+      socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+  });
+});
+```
+
+Interessante notar que a linha documento.texto = texto só vai funcionar por causa da forma que o JavaScript funciona com objetos. No momento em que o documento é retornado pelas função encontrarDocumento teremos uma referência para o objeto documento. E no momento em que escrevemos que documento.texto recebe texto, o documento que está lá na lista local será alterado.
+
+Isso acontece graças ao comportamento do JavaScript em relação aos dados primitivos.
+
+Podemos salvar o projeto e testar no navegador.
+
+Vamos atualizar a página do navegador, escrever no campo de texto a frase: "novo texto de javascript". Ao atualizarmos a página novamente, o texto continua no campo. O mesmo comportamento acontece nos documentos de Node e de Socket.IO.
+
+Isso está funcionando graças ao servidor Node.js estar funcionando. Se o servidor cair, os textos vão se perder e voltarão aos valores originais. Não é isso que a Eduarda e a Juliana querem.
+
+**Reconhecimento do Socket.IO**
+Nos últimos vídeos, você aprendeu que quando um cliente envia um evento para o servidor e espera receber um dado de volta, podemos utilizar o recurso de Reconhecimento (ou Acknowledgment, em inglês) do Socket.IO, que imita o modelo de requisição-resposta do HTTP.
+
+Com base nessa explicação, considere o seguinte código no front-end:
+```
+socket.emit("nome_usuario", "Evaldo", (dadosUsuario) => {
+  console.log(dadosUsuario);
+});
+```
+
+Sendo assim, o código que devemos colocar no back-end para imprimirmos dadosUsuario no front-end, considerando que a função obterDadosUsuario retorna os dados do usuário corretamente:
+```
+io.on("connection", (socket) => {
+  socket.on("nome_usuario", (nome, devolverDados) => {
+    const dadosUsuario = obterDadosUsuario(nome);
+
+    devolverDados(dadosUsuario);
+  });
+});
+```
+
+Obtemos a função do último parâmetro do método emit() do lado do front como o último parâmetro da função callback de on(). Neste código, ela foi nomeada como devolverDados, e é executada posteriormente, passando dadosUsuario como parâmetro. Assim, o código escrito no front-end, de fato, utilizará os dados que vieram do back-end.
+
+
 
