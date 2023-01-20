@@ -46,3 +46,13 @@
   <li>Utilizar os seletores de rotas dinâmicas para criar uma rota dinâmica: Utilizamos a sintaxe /caminho/:nomedoparametro no atributo path de uma Route.</li>
   <li>Utilizar o hook useParams: Com ele, obtemos os parâmetros passados para uma rota dinâmica.</li>
 </ul>
+
+---
+
+## Aula 05 - Finalizando o projeto
+<ul>
+  <li>Componentizar um botão: Criamos o componente BotaoPrincipal, que recebe props que definem seus estilos.</li>
+  <li>Utilizar o hook useNavigate: Podemos utilizá-lo para fazer navegações mais complexas, como voltar para a página anterior no navegador.</li>
+  <li>Tratar o caso de post não encontrado: Utilizamos o componente NaoEncontrada para quando um post não era encontrado. Vimos duas possíveis soluções para reutilizar o componente PaginaPadrao apenas quando um post era encontrado. Uma delas é aproveitando o Outlet e adicionando os componentes Routes e Route dentro do componente Post; outra é adicionando {children} em PaginaPadrao e permitindo ele possa ser utilizado como um componente pai direto.</li>
+  <li>Publicar o projeto: Você aprendeu a publicar seu projeto na Vercel para que o mundo possa vê-lo.</li>
+</ul>
