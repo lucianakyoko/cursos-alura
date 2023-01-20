@@ -29,3 +29,19 @@
   <li>Emitir eventos para uma sala específica: Para isso, utilizamos o método to() (do inglês “para”), passando como parâmetro o nome da sala para a qual queremos emitir o evento.</li>
   <li>Enviar um dado de volta para o cliente com Reconhecimento: Utilizamos esse recurso quando o cliente emite um evento e espera receber dados de volta do servidor, imitando o modelo de requisição-resposta do HTTP. Para tal, passamos uma função como último parâmetro de emit(), a obtemos na função callback do lado do servidor e a executamos, passando como parâmetro o dado que interessa ao cliente.</li>
 </ul>
+
+--- 
+## Aula 04 - Utilizando o MongoDb
+<ul>
+  <li>
+    Criar um banco de dados e conectá-lo com o Alura Docs: Criamos um cluster, um banco de dados e uma coleção no MongoDB Atlas. Em seguida, utilizamos o driver do Node.js para conectar o projeto ao banco de dados. Assim, conseguiremos fazer o projeto interagir com o banco de dados para persistir as informações dos documentos.
+  </li>
+  <li>
+    Obter dados do banco de dados: 
+    Utilizamos o método findOne (do inglês “encontrar um”) das coleções do MongoDB para buscar por um documento específico. No nosso caso, passamos um objeto com a propriedade nome, e seu valor é o nome do documento a ser encontrado. Com esse método, conseguimos obter o texto salvo no banco de dados para exibir na página de documento.
+  </li>
+  <li>
+    Alterar dados do banco de dados:
+    Utilizamos o método updateOne (do inglês “atualizar um”) das coleções do MongoDB para editar um documento específico. O primeiro parâmetro é o de busca do documento, e o segundo parâmetro é um objeto que deve possuir propriedades específicas (por exemplo, $set), que irão indicar ao MongoDB como atualizar o documento. Com esse método, a Eduarda e a Juliana conseguem refletir as alterações dos textos dos documentos no banco de dados.
+  </li>
+</ul>

@@ -1260,4 +1260,923 @@ io.on("connection", (socket) => {
 Obtemos a função do último parâmetro do método emit() do lado do front como o último parâmetro da função callback de on(). Neste código, ela foi nomeada como devolverDados, e é executada posteriormente, passando dadosUsuario como parâmetro. Assim, o código escrito no front-end, de fato, utilizará os dados que vieram do back-end.
 
 
+---
+
+## Aula 4 - Utilizando o MongoDB
+**Criando um banco de dados:**
+Vamos utilizar um banco de dados para guardar de forma segura os dados de cada documento do Alura Docs. Usaremos o MongoDB, um banco de dados não-relacional, que suprirá as necessidades do nosso projeto. Neste curso, optaremos pelo MongoDB Atlas, o serviço em nuvem do MongoDB.
+
+  **MongoDB Atlas** - No navegador, vamos acessar o site do [MongoDB Atlas](https://www.mongodb.com/atlas). No canto direito superior, temos os botões "Sign in" para fazer o login e "Try Free" para criar uma conta.
+
+  Caso você não tenha uma conta no MongoDB, você pode clicar em "Try Free" e fazer o seu cadastro.
+
+  Clicando em "Sign in", o site nos redirecionará a uma nova página com três opções de login: pela conta do Google, pelo GitHub ou pelo endereço de e-mail. No caso, podemos entrar com a própria conta do Google.
+
+  **Cluster** - Após realizar o login, vamos reparar que a página inicial do MongoDB Atlas possui diversas informações! Na parte central da tela, temos o texto "Create a database" (Crie um banco de dados), seguido do botão "Build a database" (Construir um banco de dados). Vamos clicar nele.
+
+  Na nova tela, precisamos escolher entre três opções:
+  - Serverless (sem servidor)
+  - Dedicated (dedicado)
+  - Shared (compartilhado).
+
+  Estamos interessados na terceira opção, que é gratuita e supre as necessidades do nosso sistema. Então, vamos clicar no botão "Create" da opção "Shared" para criar um cluster. No MongoDB, o cluster é a estrutura que poderá armazenar vários banco de dados.
+
+  Na sequência, vamos definir algumas configurações para a criação do cluster. Na seção "Cloud Provider & Region", temos três opções de provedores: AWS, Google Cloud ou Azure. Vamos manter selecionada a "AWS". Quanto à região, marcaremos "São Paulo".
+
+  Em seguida, vamos expandir a seção "Cluster name" e alterar o nome do cluster de "Cluster0" para "AluraCluster".
+
+  Ao final da tela, podemos clicar no botão "Create Cluster".
+
+  No canto esquerdo inferior da tela, surgirá um pequeno cartão indicando que o cluster está sendo provisionado. Quando esse processo for finalizado, teremos a mensagem "Your cluster has finished provisioning" na cor verde.
+
+  **Etapas de segurança** - Enquanto o cluster é criado, seremos levados para uma nova página para configurar duas etapas de segurança.
+
+  A primeira etapa é a definição de um usuário e uma senha para conseguirmos ter acesso ao cluster e seus bancos de dados. Vamos preencher os campos da seguinte forma: ```Username: alura``` ```Password: 123```
+
+  Depois, clicaremos no botão "Create User", logo abaixo desses campos. Vale lembrar que, em um ambiente de produção, utilizaríamos uma senha mais segura. Inclusive, à direita do campo "Password", temos o botão "Autogenerate Secure Password" para gerar uma senha segura automaticamente.
+
+  A segunda etapa é a definição de quem terá acesso aos nossos bancos de dados. Nessa seção, há um pequeno formulário em que podemos adicionar endereços IP à lista de acesso. Nele consta:
+
+  - o campo "IP address" (endereço IP)
+  - o campo "Description" (descrição)
+  - o botão "Add Entry" (adicionar registro)
+  - o botão "Add My Current IP Address" (adicionar meu endereço de IP atual).
+
+  Vamos clicar no botão "Add My Current IP Address" para incluir o nosso endereço de IP atual à lista, que aparecerá logo abaixo do formulário:
+  | IP Adress List | Description |
+  | --- | --- |
+  | 168.227.18.122/32 | My IP Address |
+  | 0.0.0.0/0 |  |
+
+  O endereço 0.0.0.0/0 permitirá que nosso banco seja acessado por qualquer endereço de IP. Às vezes, quando reiniciamos o computador e tentamos nos conectar ao banco de dados novamente, ocorrem erros de conexão. Adicionando o endereço 0.0.0.0/0, evitamos esse tipo de problemas.
+
+  Em seguida, vamos clicar no botão "Finish and Close" ao final da tela. Uma janela pop-up aparecerá nos parabenizando por finalizar a configuração de regras de acesso. Basta clicarmos no botão "Go to Databases", no canto direito inferior, para navegar até a página em que nosso cluster foi criado.
+
+  **Banco de dados e coleções** - Na lateral esquerda da interface, há um painel de navegação. Atualmente, estamos na seção "Databases". Na parte central da tela, há uma área denominada "Database Deployments", onde temos o título "AluraCluster". À direita desse título, vamos clicar no botão "Browse Collections" (navegar pelas coleções).
+
+  No MongoDB, as coleções são análogas às tabelas de um banco de dados relacional. Por enquanto, não temos nenhum banco de dados e nenhuma coleção. No centro da tela, há dois botões:
+  - Load a Sample Dataset (carregar amostra de dados)
+  - Add My Own Data (adicionar meus próprios dados)
+
+  Ao clicar no segundo botão, aparecerá uma janela pop-up para inserirmos o nome do nosso primeiro banco de dados. Vamos chamá-lo de "alura-websockets". Além disso, já podemos criar uma coleção dentro do banco de dados. No caso, essa coleção será o conjunto de documentos do Alura Docs, então vamos chamá-la de "documentos":
+
+  - Database name: alura-websockets
+  - Collection name: documentos
+
+  Em seguida, vamos clicar no botão "Create" no canto direito inferior.
+
+  **Documentos** - O MongoDB atualizará a página e nos mostrará as coleções disponíveis. Na parte central da tela, temos uma área denominada "AluraCluster". Em sua lateral esquerda, há um painel com a lista de banco de dados. No caso, temos o "alura-websockets" e, dentro dele, a coleção "documentos" — que está aberta na parte direita da tela.
+
+  Um banco de dados pode conter várias coleções e uma coleção pode conter vários registros, chamados de documentos.
+
+  Coincidentemente, os itens do Alura Docs também são chamados de documentos, então cada documento no MongoDB representará um documento do Alura Docs.
+
+  A seguir, vamos adicionar cada um dos nossos documentos na coleção. À direita da página, clicaremos no botão "Insert document" (Inserir documento). Aparecerá uma nova janela pop-up no centro da tela. Na primeira linha, temos a propriedade _id, cujo valor são vários caracteres aleatórios: ```_id: 6357fedbdfbef788f7298645```
+
+  À direita dessa linha, notamos que o tipo selecionado é ObjectId. O MongoDB gera automaticamente um ID para cada registro de uma coleção.
+
+  Na segunda linha, vamos adicionar um campo chamado "nome" com valor "JavaScript", do tipo "String":
+  ```
+  _id: 6357fedbdfbef788f7298645
+  nome: "JavaScript"
+  ```
+
+  À esquerda da segunda linha, vamos clicar no botão com símbolo de "+" e selecionar "Add field after nome" para adicionar outro campo após "nome". Na terceira linha, adicionaremos o campo "texto" com valor "texto do javascript do mongoDB", do tipo "String" também:
+  ```
+  _id: 6357fedbdfbef788f7298645
+  nome: "JavaScript"
+  texto: "texto do javascript do mongoDB"
+  ```
+
+  Estamos adicionando manualmente esse registro só para checar se posteriormente conseguimos conectar ao nosso código e obter esse dado no nosso projeto.
+
+  Vamos clicar no botão "Insert" no canto inferior direito. Feito isso, conseguimos inserir à coleção nosso primeiro documento, com as propriedades _id, nome e texto.
+
+  **Recapitulando** - criamos:
+  - um cluster que pode guardar bancos de dados;
+  - nosso primeiro banco de dados (alura-websockets);
+  - nossa primeira coleção (documentos);
+
+**Conectando o banco ao projeto**
+Vamos conectar o banco de dados do MongoDB Atlas com o nosso projeto. Assim, posteriormente, conseguiremos pegar dados diretamente desse banco de dados.
+
+Existe mais de uma forma de realizar essa conexão. Talvez você já conheça o Mongoose, por exemplo. Neste curso, vamos usar o MongoDB Driver, do Node.js, uma solução nativa do MongoDB.
+
+  - **MongoDB Driver**
+  No navegador, vamos acessar a documentação do [MongoDB Node Driver](https://www.mongodb.com/docs/drivers/node/current/) para aprender como configurar nosso projeto com MongoDB Atlas, utilizando MongoDB Node Driver.
+
+  Um dos tópicos dessa página é o [Quick Start](https://www.mongodb.com/docs/drivers/node/current/quick-start/), em que temos um link para acessar a seção "Quick Start". Clicando nele, abriremos uma página com instruções de como conectar nosso projeto ao MongoDB Atlas.
+
+  Vamos até o tópico "Add MongoDB as a Dependency" (adicionar MongoDB como uma dependência), onde temos o seguinte bloco de código: ```npm install mongodb@4.11```
+
+  Vamos copiá-lo, pois o usaremos em breve.
+
+  É possível que já existam versões mais recentes. Recomendamos que você utilize a mesma versão do instrutor para evitar problemas de compartibilidade.
+
+  No VS Code, abriremos o terminal integrado e pausaremos o nosso servidor, para instalar uma nova dependência. Em seguida, executaremos o comando que copiamos há pouco.
+
+  Essa dependência é o Driver do MongoDB, que nos fornecerá vários métodos para conectar nosso código ao banco de dados online. Terminada a instalação, podemos abrir o arquivo package.json para conferir que o MongoDB foi instalado corretamente, na versão 4.11:
+  ```
+  // ...
+
+  "dependencies": {
+      "express": "^4.18.2",
+      "mongodb": "4.11",
+      "socket.io": "^4.5.3"
+  }
+
+  // ...
+  ```
+
+  - **Conexão com a aplicação**
+  Na pasta "src", criaremos um arquivo chamado dbConnect.js, que conterá as configurações para conectar nosso código com o MongoDB Atlas. Primeiramente, vamos importar o MongoClient do mongodb para ter um cliente para conectar com o banco de dados: ```import { MongoClient } from "mongodb";```
+
+  Em seguida, vamos declarar a constante cliente, que receberá uma nova instância de MongoClient():
+  ```
+  import { MongoClient } from "mongodb";
+
+  const cliente = new MongoClient("");
+  ```
+  Como parâmetro, devemos passar a string de conexão, fornecida pelo próprio banco de dados. Para encontrá-la, vamos voltar ao MongoDB Atlas, no navegador. No painel à esquerda, clicaremos no item "Database" para acessar a página que mostra os nossos clusters.
+
+  À direita do título "AluraCluster", vamos clicar no botão "Connect". Uma nova janela pop-up surgirá na tela, com quatro opções de conexão:
+  - Connect with the MongoDB Shell
+  - Connect your application
+  - Connect using MongoDB Compass
+  - Connect with VS Code
+
+  Pressionaremos a segunda opção, para conectar nossa aplicação.
+  Na sequência, temos mais dois passos de configuração. No primeiro passo, podemos definir opções de driver e sua versão. Vamos manter o que já está selecionado, isto é, Node.js na versão 4.1 ou mais recente:
+
+  ```
+  Driver: Node.js
+  Version: 4.1 or later
+  ```
+
+  No segundo passo, temos um bloco de código com a nossa string de conexão! No canto direito desse bloco, há um botão para copiá-la. Voltando ao arquivo dbConnect.js no VS Code, vamos inserir a string de conexão no nosso código. Lembre-se de que ela deve estar entre aspas duplas:
+  ```
+  import { MongoClient } from "mongodb";
+
+  const cliente = new MongoClient(
+    "mongodb+srv://alura:<password>@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
+  );
+  ```
+
+  É preciso fazer uma pequena alteração. A string de conexão sempre começa com mongodb+srv://. Em seguida, temos o nome do usuário, seguido de dois pontos. No nosso caso, alura:. Depois, é preciso informar a senha. Vamos substituir o trecho <password> pela senha que configuramos no vídeo passado, 123:
+  ```
+  import { MongoClient } from "mongodb";
+
+  const cliente = new MongoClient(
+    "mongodb+srv://alura:123@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
+  );
+  ```
+
+  Nossa string de conexão já está pronta.
+  Na sequência, vamos desenvolver um bloco try/catch. O catch receberá erro como parâmetro e o exibirá no console:
+
+  ```
+  import { MongoClient } from "mongodb";
+
+  const cliente = new MongoClient(
+    "mongodb+srv://alura:123@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
+  );
+
+  try {
+
+  } catch (erro) {
+      console.log(erro);
+  }
+  ```
+
+  No bloco try, vamos inserir await cliente.connect() para adiantar algumas configurações de conexão e checarmos de antemão se realmente conseguimos conectar com sucesso:
+  ```
+  // ...
+
+  try {
+      await cliente.connect();
+
+  } catch (erro) {
+      console.log(erro);
+  }
+  ```
+
+  Depois, vamos declarar a constante db, que receberá cliente.db(). Como parâmetro, passaremos o nome do nosso banco de dados:
+  ```
+  // ...
+  try {
+      await cliente.connect();
+
+      const db = cliente.db("alura-websockets");
+
+  } catch (erro) {
+      console.log(erro);
+  }
+  ```
+
+  "db" é uma abrevitura para "database", que significa "banco de dados" em inglês.
+
+  Já selecionamos o banco de dados, agora podemos buscar uma coleção nele, usando o método .collection() e passando o nome da coleção como parâmetro. Vamos salvar o resultado na constante documentos:
+  ```
+  // ...
+  try {
+      await cliente.connect();
+
+      const db = cliente.db("alura-websockets");
+      const documentos = db.collection("documentos");
+
+  } catch (erro) {
+      console.log(erro);
+  }
+  ```
+
+  Vamos inserir um console.log() ao final do bloco try para confirmar no console que a conexão foi bem-sucedida:
+  ```
+  // ...
+  try {
+      await cliente.connect();
+
+      const db = cliente.db("alura-websockets");
+      const documentos = db.collection("documentos");
+
+      console.log("Conectado ao banco de dados com sucesso!");
+
+  } catch (erro) {
+      console.log(erro);
+  }
+  ```
+
+  Se o código no bloco try não conseguir conectar com o nosso banco de dados e nossas coleções, haverá um erro e entraremos no bloco catch. Vamos salvar nosso código e, em seguida, importá-lo no arquivo servidor.js:
+  ```
+  import express from "express";
+  import url from "url";
+  import path from "path";
+  import http from "http";
+  import { Server } from "socket.io";
+
+  import "./dbConnect.js";
+
+  // ...
+  ```
+  Após salvar essa alteração, vamos abrir o terminal integrado e rodar o servidor novamente: ```npm run dev```
+
+  A execução pode ser um pouco mais demorada dessa vez, pois o código está se conectando com o banco de dados online. Como retorno, teremos a seguinte mensagem no terminal: "Conectado ao banco de dados com sucesso!"
+
+  Para nos certificar que o código está funcionando devidamente, simularemos um erro. No arquivo dbConnect.js, vamos alterar a string de conexão e passar uma senha incorreta propositalmente. Em vez de 123, vamos inserir 12345:
+  ```
+  import { MongoClient } from "mongodb";
+
+  const cliente = new MongoClient(
+    "mongodb+srv://alura:12345@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
+  );
+
+  try {
+    await cliente.connect();
+
+    const db = cliente.db("alura-websockets");
+    const documentos = db.collection("documentos");
+
+    console.log("Conectado ao banco de dados com sucesso!");
+
+  } catch (erro) {
+    console.log(erro);
+  }
+  ```
+
+  Ao salvar o arquivo, o servidor será reiniciado automaticamente e teremos um erro no terminal. Na primeira linha da descrição, é explicado que houve um problema na autenticação: "MongoDDBerverError: bad auth : Authentication failed"
+
+  Confirmamos que nosso código está funcionando como esperado! Portanto, vamos corrigir a senha informada na string de conexão para solucionar esse erro de autenticação.
+
+  Por fim, vamos fazer as últimas alterações no arquivo dbConnect.js. Atualmente, a constante documentos existe somente no escopo do bloco try, então não conseguimos exportar essa coleção. Como solução, vamos declarar a variável documentosColecao antes do bloco try e apenas atribuir um novo valor a ela dentro do bloco try:
+  ```
+  import { MongoClient } from "mongodb";
+
+  const cliente = new MongoClient(
+    "mongodb+srv://alura:123@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
+  );
+
+  let documentosColecao;
+
+  try {
+    await cliente.connect();
+
+    const db = cliente.db("alura-websockets");
+    documentosColecao = db.collection("documentos");
+
+    console.log("Conectado ao banco de dados com sucesso!");
+
+  } catch (erro) {
+    console.log(erro);
+  }
+  ```
+  Agora, conseguimos exportar a coleção ao final de dbConnect.js, para usá-la posteriormente em outros arquivos:
+  ```
+  import { MongoClient } from "mongodb";
+
+  const cliente = new MongoClient(
+    "mongodb+srv://alura:123@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
+  );
+
+  let documentosColecao;
+
+  try {
+    await cliente.connect();
+
+    const db = cliente.db("alura-websockets");
+    documentosColecao = db.collection("documentos");
+
+    console.log("Conectado ao banco de dados com sucesso!");
+  } catch (erro) {
+    console.log(erro);
+  }
+
+  export { documentosColecao };
+  ```
+  Após salvar essas alterações, podemos checar no terminal integrado que o servidor continua funcionando perfeitamente.
+
+**Driver Node.js e Mongoose**
+Na página [MongoDB Drivers](https://www.mongodb.com/docs/drivers/) da documentação do MongoDB, você pode conferir drivers específicos para diferentes linguagens de programação lidarem com o banco de dados. Neste curso estamos utilizando o [driver do Node.js](https://www.mongodb.com/docs/drivers/node/current/) para conectar o nosso projeto ao [MongoDB Atlas](https://www.mongodb.com/atlas), o serviço em nuvem do MongoDB para armazenar bancos de dados.
+
+Como solução alternativa, você também pode conectar o seu projeto ao MongoDB Atlas utilizando o mongoose, uma biblioteca criada por terceiros, que permite que você crie modelos para os objetos que virão do banco de dados, uma solução adequada para projetos que seguem o padrão MVC. Caso queira se aprofundar no mongoose, acesse a [documentação](https://mongoosejs.com/). 
+
+**Obtendo dados do banco**
+No VS Code, vamos abrir o arquivo socket-back.js e analisar nosso código atual.
+  **Nova implementação do método encontrarDocumento()** - nós executamos o método encontrarDocumento(nomeDocumento) para selecionar um elemento da lista local e salvamos o retorno na constante documento. Agora que provisionamos um banco de dados, vamos modificar a implementação desse método para selecionar um documento do banco!
+
+Primeiramente, vamos apagar a constante documentos, que representa a lista local de documentos que não usaremos mais:
+```
+import io from "./servidor.js";
+
+io.on("connection", (socket) => {
+  console.log("Um cliente se conectou! ID:", socket.id);
+
+  socket.on("selecionar_documento", (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+      devolverTexto(documento.texto);
+    }
+  });
+
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    const documento = encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+      documento.texto = texto;
+
+      socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+  });
+});
+
+function encontrarDocumento(nome) {
+  const documento = documentos.find((documento) => {
+    return documento.nome === nome;
+  });
+
+  return documento;
+}
+```
+
+Em seguida, vamos até o final do arquivo, para alterar a implementação do método encontrarDocumento(). De início, vamos remover documentos.find():
+```
+// ...
+
+function encontrarDocumento(nome) {
+  const documento = 
+
+  return documento;
+}
+```
+
+Agora, vamos importar a coleção documentosColecao do arquivo dbConnect.js, que desenvolvemos no vídeo passado. Conforme digitamos documentosColecao após o sinal de igual, o VS Code vai sugerir a autoimportação. Pressinando a tecla "Enter", a importação será inserida automaticamente no início do arquivo:
+```
+import { documentosColecao } from "./dbConnect.js";
+import io from "./servidor.js";
+
+// ...
+
+function encontrarDocumento(nome) {
+  const documento = documentosColecao
+
+  return documento;
+}
+```
+
+O documentosColecao representa uma coleção do MongoDB, então possui métodos próprios do MongoDB. Um deles é o findOne(), que busca um registro na coleção. Em inglês, find one significa "encontrar um".
+
+Como parâmetro, passaremos um objeto que contém as características do documento que pretendemos encontrar. No caso, queremos o documento cuja propriedade nome tem o valor do parâmetro nome, recebido em encontraDocumento():
+```
+// ...
+
+function encontrarDocumento(nome) {
+  const documento = documentosColecao.findOne({
+        nome: nome
+    })
+
+  return documento;
+}
+```
+
+Assim, vamos buscar o documento que tem o campo nome (que configuramos no MongoDB Atlas) e seu valor deve ser igual ao recebido por parâmetro nesse método.
+
+O JavaScript permite a redução a sintaxe da seguinte forma:
+```
+// ...
+
+function encontrarDocumento(nome) {
+  const documento = documentosColecao.findOne({
+        nome
+    })
+
+  return documento;
+}
+```
+
+Esse código basta para o MongoDB realizar a requisição. Sabemos que o retorno será uma promise do JavaScript, então é preciso fazer algumas adaptações no resto do código.
+
+Vamos voltar à parte onde estamos escutando o evento selecionar_documento. Na linha em que declaramos a constante documento, vamos inserir a palavra-chave await antes de encontrarDocumento(), pois sabemos que o retorno será uma promise que contém os dados do documento que queremos:
+```
+// ...
+
+socket.on("selecionar_documento", (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = await encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+        devolverTexto(documento.texto);
+    }
+});
+
+// ...
+```
+
+O compilador indicará um erro na palavra await, porque para usá-la a função callback deve ser assíncrona. Portanto, na declaração da função, escreveremos a palavra-chave async:
+```
+// ...
+
+socket.on("selecionar_documento", async (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = await encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+        devolverTexto(documento.texto);
+    }
+});
+
+// ...
+```
+
+Vamos incluir um console.log() para exibir o documento e verificar se realmente conseguimos captá-lo do MongoDB Atlas:
+```
+// ...
+
+socket.on("selecionar_documento", async (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = await encontrarDocumento(nomeDocumento);
+
+    console.log(documento);
+
+    if (documento) {
+        devolverTexto(documento.texto);
+    }
+});
+
+// ...
+```
+
+**Testando** Na sequência, acessaremos o Alura Docs no navegador. Ao abrir um documento, esperamos que seja feita uma requisição para o banco de dados. Então, vamos clicar no documento "JavaScript", pois já cadastramos um registro com esse nome no banco.
+
+Na interface do Alura Docs, temos o título "JavaScript" centralizado no topo e o seguinte conteúdo: "texto de javascript do mongoDB".
+
+Conferindo o terminal do VS Code, notamos que o console.log() também funcionou. Recebemos um objeto com as três propriedades que configuramos no banco de dados:
+```
+Conectado ao banco de dados com sucesso!
+Servidor escutando na porta 3000
+Um cliente se conectou! ID: 8GZRtUD6RDNUYI4RAAAB
+{
+    _id: new ObjectId("6357f0dbdfbef788f7298645"),
+    nome: 'JavaScript',
+    texto: 'texto de javascript do mongoDB'
+} 
+``` 
+
+**Cadastrando os demais documentos** Para finalizar, vamos cadastrar os documentos "Node" e "Socket.io" no banco de dados. No MongoDB Atlas, vamos acessar o "alura-websockets" e consultar a coleção "documentos".
+
+Atualmente, temos apenas um registro: o documento "JavaScript". Quando passamos o cursor sobre ele, temos a opção "Clone document" para clonar esse registro, vamos clicar nela.
+```
+Mais adiante, refinaremos esse processo de criação e remoção de documentos. Por ora, vamos apenas fazer clones para agilizar o cadastro dos três documentos do projeto do Alura Docs.
+```
+Uma janela pop-up aparecerá no centro da tela, com as propriedades _id, nome e texto. Vamos adaptar o segundo e o terceiro item para condizer com os documentos do Alura Docs:
+```
+_id: 6358155586c89ddfcf63d6fb
+nome: "Node"
+texto: "texto de node do mongoDB"
+```
+
+Ao clicar no botão "Insert", o MongoDB adicionará esse documento à coleção. Vamos fazer mais um clone para adicionar o terceiro documento, "Socket.io":
+```
+_id: 6358157286c89ddfcf63d6fc
+nome: "Socket.io"
+texto: "texto de socket.io do mongoDB"
+```
+
+Agora, teremos três registros na coleção "documentos".
+
+Voltando à interface do Alura Docs, podemos acessar o documento "Node" e teremos o seguinte conteúdo aparecendo na tela: "texto de node do mongoDB"
+
+Clicando no documento "Socket.io", o resultado será o seguinte: "texto de socket.io do mongoDB"
+
+Ou seja, estamos conseguindo consultar os dados do banco de dados com sucesso, com o método interno findOne().
+
+**Alterando dados do banco** 
+Já conseguimos obter informações do banco de dados e disponibilizá-las na interface do Alura Docs. Se Eduarda ou Juliana entrar no documento "JavaScript", por exemplo, lerá o conteúdo "texto de javascript do mongoDB".
+
+Contudo, ainda não é possível alterar esse texto. Precisamos programar esse recurso para que a modificação seja salva no banco de dados.
+
+**Reorganização de arquivos** - O arquivo socket-back.js está ficando muito extenso, então vamos criar outro arquivo para armazenar os métodos de operações no banco de dados, como o encontrarDocumento().
+
+Dentro da pasta "src", criaremos o arquivo documentosDb.js. Vamos recortar o método encontrarDocumento() do socket-back.js e colá-lo nesse novo arquivo. Ao final, vamos exportá-lo para que outros arquivos possam utilizá-lo:
+```
+function encontrarDocumento(nome) {
+  const documento = documentosColecao.findOne({
+    nome,
+  });
+
+  return documento;
+}
+
+export { encontrarDocumento }
+```
+
+Voltando ao arquivo socket-back.js, na linha em que declaramos a constante documento, posicionaremos o cursor exatamente antes do abre parênteses em encontrarDocumento(nomeDocumento), pressionaremos "Ctrl + Espaço" e importaremos essa função do outro arquivo:
+```
+import { documentosColecao } from "./dbConnect.js";
+import { encontrarDocumento } from "./documentosDb.js";
+import io from "./servidor.js";
+
+io.on("connection", (socket) => {
+  console.log("Um cliente se conectou! ID:", socket.id);
+
+  socket.on("selecionar_documento", async (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = await encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+      devolverTexto(documento.texto);
+    }
+  });
+
+  // ...
+
+});
+```
+
+Note que não precisamos mais da coleção documentosColecao em socket-back.js. Podemos recortar a importação no início desse arquivo e colá-la em documentosDb.js, já que é neste arquivo que usaremos essa coleção:
+```
+import { documentosColecao } from "./dbConnect.js";
+
+function encontrarDocumento(nome) {
+  const documento = documentosColecao.findOne({
+    nome,
+  });
+
+  return documento;
+}
+
+export { encontrarDocumento }
+```
+
+Vamos salvar todas as alterações. O Alura Docs continuará funcionando como antes, apenas fizemos uma reorganização de arquivos, antes de prosseguir os estudos.
+
+**Alterando dados** - No arquivo socket-back.js, vamos alterar o código na parte em que recebemos o evento texto_editor, quando um usuário digita no campo de texto:
+```
+// ...
+
+socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    const documento = encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+        documento.texto = texto;
+
+        socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+Atualmente, a constante documento recebe encontrarDocumento(nomeDocumento). Em vez disso, ela receberá atualizaDocumento(). Para atualizar um documento, precisamos do nome dele para buscá-lo no banco de dados e do novo texto que queremos definir no banco. Então, como parâmetros, passaremos nomeDocumento e texto:
+```
+// ...
+
+socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    const documento = atualizaDocumento(nomeDocumento, texto);
+
+    if (documento) {
+        documento.texto = texto;
+
+        socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+**Método atualizaDocumento()** - A função atualizaDocumento() ainda não existe. A seguir, vamos desenvolvê-la no arquivo documentosDb.js, depois do método encontrarDocumento():
+```
+import { documentosColecao } from "./dbConnect.js";
+
+function encontrarDocumento(nome) {
+  const documento = documentosColecao.findOne({
+    nome,
+  });
+
+  return documento;
+}
+
+function atualizaDocumento(nome, texto) {
+
+}
+
+export { encontrarDocumento }
+```
+
+Vamos declarar a constante atualizacao e, dessa vez, utilizaremos o método interno updateOne() do MongoDB:
+```
+// ...
+
+function atualizaDocumento(nome, texto) {
+    const atualizacao = documentosColecao.updateOne();
+}
+
+export { encontrarDocumento }
+```
+
+O método updateOne() buscará um documento e o atualizará, de acordo com o que passarmos. Semelhante ao findOne(), o primeiro parâmetro será um objeto com as características do registro que queremos buscar na coleção:
+```
+// ...
+
+function atualizaDocumento(nome, texto) {
+    const atualizacao = documentosColecao.updateOne({
+        nome
+    });
+}
+
+export { encontrarDocumento }
+```
+
+O segundo parâmetro também será um objeto, que indicará qual atualização deve ser feita no documento. Depois de encontrar o documento cuja propriedade nome é igual ao parâmetro nome, queremos definir o texto desse documento. Para fazer essa definição, usaremos o $set.
+
+Em inglês, set significa "definir".
+
+O valor do $set será um objeto também, porque queremos definir nosso documento como um objeto com a propriedade texto igual ao texto que recebemos por parâmetro também:
+```
+// ...
+
+function atualizaDocumento(nome, texto) {
+  const atualizacao = documentosColecao.updateOne(
+    {
+      nome,
+    },
+    {
+      $set: {
+        texto,
+      },
+    }
+  );
+}
+```
+
+O MongoDB verificará que o documento no banco de dados é um objeto também e que estamos passando um objeto e mesclará os dois. Já que passamos a propriedade texto, ele atualizará o texto. As demais propriedades serão mantidas.
+
+Depois do updateOne(), basta retornar a constante atualizacao:
+```
+// ...
+
+function atualizaDocumento(nome, texto) {
+  const atualizacao = documentosColecao.updateOne(
+    {
+      nome,
+    },
+    {
+      $set: {
+        texto,
+      },
+    }
+  );
+
+  return atualizacao;
+}
+```
+
+Vale ressaltar que, depois de fazer as operações, o updateOne() não retorna o documento que foi alterado, mas informações da operação de atualização!
+
+Por fim, vamos exportar a função atualizaDocumento:
+```
+// ...
+
+function atualizaDocumento(nome, texto) {
+  const atualizacao = documentosColecao.updateOne(
+    {
+      nome,
+    },
+    {
+      $set: {
+        texto,
+      },
+    }
+  );
+
+  return atualizacao;
+}
+
+export { encontrarDocumento, atualizaDocumento };
+```
+
+Vamos salvar o arquivo documentosDb.js e voltar ao socket-back.js, no trecho em que usamos o atualizaDocumento().
+
+Primeiramente, vamos importar a função. Basta posicionar o cursor exatamente antes do abre parênteses em atualizaDocumento(), pressionar "Ctrl + Espaço" e aceitar a importação, que será inserida no início do arquivo automaticamente:
+```
+import { atualizaDocumento, encontrarDocumento } from "./documentosDb.js";
+import io from "./servidor.js";
+
+// ...
+```
+
+Como a maioria dos métodos do MongoDB, o updateOne() retorna uma promise. Para resolvê-la, vamos inserir a palavra-chave await antes da chamada do atualizaDocumento(). Além disso, precisamos definir a função callback como assíncrona:
+```
+// ...
+
+socket.on("texto_editor", async ({ texto, nomeDocumento }) => {
+    const documento = await atualizaDocumento(nomeDocumento, texto);
+
+    if (documento) {
+        documento.texto = texto;
+
+        socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+Para manter nosso código consistente, vamos mudar o nome da variável de documento para atualizacao:
+```
+// ...
+
+socket.on("texto_editor", async ({ texto, nomeDocumento }) => {
+    const atualizacao = await atualizaDocumento(nomeDocumento, texto);
+
+    if (documento) {
+        documento.texto = texto;
+
+        socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+Ademais, vamos comentar o restante do código dessa função, a partir do bloco if, já que não vamos utilizá-lo por enquanto:
+```
+// ...
+
+socket.on("texto_editor", async ({ texto, nomeDocumento }) => {
+    const atualizacao = await atualizaDocumento(nomeDocumento, texto);
+
+    //  if (documento) {
+    //      documento.texto = texto;
+
+    //   socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+Agora, usaremos o console.log() para exibir a atualização e verificar o que acontece quando tentamos redefinir o texto de um documento:
+```
+// ...
+
+socket.on("texto_editor", async ({ texto, nomeDocumento }) => {
+    const atualizacao = await atualizaDocumento(nomeDocumento, texto);
+
+    console.log(atualizacao);
+
+    //  if (documento) {
+    //      documento.texto = texto;
+
+    //   socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+Depois, vamos salvar as alterações e deixar o terminal integrado aberto. Na interface do Alura Docs, vamos abrir o documento "JavaScript". Atualmente, seu conteúdo é:
+
+texto de javascript do mongoDB
+
+Como teste, vamos simplesmente pressionar o Enter para pular uma linha.
+
+Voltando ao VS Code, a última informação impressa no terminal integrado é o seguinte objeto:
+```
+{
+    acknowledged: true,
+    modifiedCount: 1,
+    upsertedId: null,
+    upsertedCount: 0,
+    matchedCount: 1
+}
+```
+
+A propriedade acknowledged: true indica que nossa operação foi reconhecida pelo servidor. O que mais nos interessa é a propriedade modifiedCount: 1, que nos informa quantos documentos foram alterados na coleção do MongoDB depois da operação updateOne(). No caso, modificamos apenas um documento.
+
+No Alura Docs, vamos alterar do documento "JavaScript" novamente, acrescentando mais conteúdo:
+ - texto de javascript do mongoDB
+ - texto a mais
+
+No MongoDB Atlas, vamos clicar no botão "Refresh" no canto direito superior da coleção "documentos". Após atualizar, repararemos que o conteúdo modificado no Alura Docs também foi alterado na coleção:
+```
+_id: ObjectId('6357fodbdfbef288f7298645')
+nome: "JavaScript"
+texto: "texto de javascript do mongoDB
+        texto a mais"
+```
+
+Conseguimos verificar na prática que o código está funcionando como esperávamos!
+
+Voltando do VS Code, vamos descomentar o trecho comentado e fazer algumas alterações. No bloco if, em vez de documento, colocaremos atualizacao.modifiedCount:
+```
+// ...
+
+socket.on("texto_editor", async ({ texto, nomeDocumento }) => {
+    const atualizacao = await atualizaDocumento(nomeDocumento, texto);
+
+    console.log(atualizacao);
+
+    if (atualizacao.modifiedCount) {
+        documento.texto = texto;
+
+        socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+Caso a operação falhe e não altere nenhum documento, a propriedade modifiedCount será igual a 0 e o código deve ignorar esse bloco if. Caso a operação seja bem-sucedida, modifiedCount terá valor igual a 1 e executaremos o bloco.
+
+No bloco if, vamos remover a linha documento.texto = texto, pois diz respeito à alteração da lista local, que não existe mais. Ou seja, manteremos apenas a emissão para as salas do Socket.IO:
+```
+// ...
+
+socket.on("texto_editor", async ({ texto, nomeDocumento }) => {
+    const atualizacao = await atualizaDocumento(nomeDocumento, texto);
+
+    console.log(atualizacao);
+
+    if (atualizacao.modifiedCount) {
+        socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+});
+```
+
+Para finalizar, podemos apagar o console.log() do evento texto_editor e também o do evento selecionar_documento, pois serviam apenas para testes. O arquivo finalizado ficará assim:
+```
+import { atualizaDocumento, encontrarDocumento } from "./documentosDb.js";
+import io from "./servidor.js";
+
+io.on("connection", (socket) => {
+  console.log("Um cliente se conectou! ID:", socket.id);
+
+  socket.on("selecionar_documento", async (nomeDocumento, devolverTexto) => {
+    socket.join(nomeDocumento);
+
+    const documento = await encontrarDocumento(nomeDocumento);
+
+    if (documento) {
+      devolverTexto(documento.texto);
+    }
+  });
+
+  socket.on("texto_editor", async ({ texto, nomeDocumento }) => {
+    const atualizacao = await atualizaDocumento(nomeDocumento, texto);
+
+    if (atualizacao.modifiedCount) {
+      socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+    }
+  });
+});
+```
+
+Uma vez salvo, vamos testar todas as funcionalidades que implementamos no Alura Docs até agora, para nos certificar de que continua funcionando.
+
+**Testando** - Para simular que Juliana e Eduarda estão editando documentos simultaneamente, acessaremos o Alura Docs em duas janelas diferentes do navegador. Vamos posicionar uma janela à esquerda para representar a tela da Eduarda e outra à direita para a tela da Juliana. Em ambas, abriremos o documento "Node".
+
+Na tela de Juliana (à direita), vamos editar o conteúdo do documento: 
+ - texto de node do mongoDB
+ - texto da Juliana aqui...
+
+Note que a alteração também aparece na tela de Eduarda! Nosso sistema está funcionando como esperado.
+
+Vale ressaltar que essas alterações não interferem em outros documentos. Na tela de Juliana, vamos abrir o documento "Socket.IO" e alterar seu conteúdo:
+  - texto de socket.io do mongoDB
+  - novo texto aqui...
+
+Podemos atualizar a página ou até acessar o "documento Socket.io" pela janela de Eduarda, não teremos nenhum problema.
+
+Além disso, atualizando a coleção "documentos" no MongoDB Atlas, reparamos que todas as alterações foram salvas no banco de dados também!
 
