@@ -2180,3 +2180,1330 @@ Podemos atualizar a página ou até acessar o "documento Socket.io" pela janela 
 
 Além disso, atualizando a coleção "documentos" no MongoDB Atlas, reparamos que todas as alterações foram salvas no banco de dados também!
 
+---
+
+## Aula 05 - Avançando o Alura Docs
+**Listando os documentos do banco**
+Antes de implementar a funcionalidade de adição de documentos, é preciso atentar a outro ponto. Atualmente, os três documentos que aparecem na interface do Alura Docs não vêm do banco de dados, nós os colocamos de forma estática no HTML — o que não é o ideal. Portanto, vamos sincronizar os dados mostrados do Alura Docs com o banco de dados, antes de partir para a funcionalidade de adição de documentos.
+
+No VS Code, na pasta "public", abriremos o arquivo index.html, referente à interface da página inicial do Alura Docs. Vamos até a tag <main>, que contém uma <div> com o ID lista-documentos. Dentro dessa div, temos os três links estáticos para cada sala.
+
+A ideia é deixar essa div vazia no HTML e, depois, inserir elementos de forma dinâmica com JavaScript. Para fazer essa inserção, vamos criar outro arquivo para a página index.html. Ele se chamará index.js e ficará localizado na pasta "public".
+
+Ao final do arquivo index.html, antes do fechamento da tag <body>, vamos referenciar esse novo arquivo com o tipo module. Assim, poderemos usar os módulos do ECMAScript:
+```
+< !-- ... -- >
+
+<body class="col-lg-6 mt-3 mx-auto">
+    < !-- ... -- >
+
+    <script src="index.js" type="module"></script>
+</body>
+```
+
+Vamos salvar essa alteração e partir para o arquivo index.js.
+
+**Arquivo index.js:** De início, vamos capturar a lista de documentos, que está na <div> que consultamos no HTML. Como conferimos, seu ID é lista-documentos: ```const listaDocumentos = document.getElementById("lista-documentos");```
+
+Em seguida, vamos criar uma função para inserir de forma dinâmica um link para um documento. Ela se chamará inserirLinkDocumento() e receberá o nome do documento como parâmetro:
+
+```
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+
+}
+```
+
+Nessa função, usaremos a propriedade innerHTML com uma template string do JavaScript para definir o código HTML que queremos inserir na lista de documentos:
+```
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+    listaDocumentos.innerHTML += `
+
+    `;
+}
+```
+
+Para selecionar o modelo de HTML, vamos voltar ao arquivo index.html e recortar o primeiro link da div, isto é, a tag <a> referente ao documento "JavaScript". Inclusive, já podemos apagar os links de "Node" e "Socket.IO" e deixar essa div vazia, por enquanto:
+```
+<main class="w-75 mx-auto">
+    <div id="lista-documentos" class="list-group mb-4"></div>
+
+        <form id="form-adiciona-documento" class="row g-3">
+            <div class="col-md-6">
+                <label class="visually-hidden" for="input-documento">Nome do documento</label>
+                <input type="text" class="form-control" id="input-documento" placeholder="Documento..." required>
+            </div>
+
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary w-100">Adicionar documento</button>
+            </div>
+        </form>
+</main>
+```
+
+Em index.js, vamos colar o modelo dentro da template string:
+```
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+    listaDocumentos.innerHTML += `
+      <a href="documento.html?nome=JavaScript" class="list-group-item list-group-item-action">
+        JavaScript
+      </a>
+    `;
+}
+```
+
+Podemos fazer algumas quebras de linhas para melhorar a leitura:
+```
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+    listaDocumentos.innerHTML += `
+      <a
+        href="documento.html?nome=JavaScript"
+        class="list-group-item list-group-item-action"
+      >
+        JavaScript
+      </a>
+    `;
+}
+```
+
+Agora, usando o nomeDocumento que recebemos por parâmetro, vamos dinamizar os valores estáticos da template string. Substituiremos as duas ocorrências da palavra "JavaScript" por ${nomeDocumento}:
+```
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+    listaDocumentos.innerHTML += `
+      <a
+        href="documento.html?nome=${nomeDocumento}"
+        class="list-group-item list-group-item-action"
+      >
+        ${nomeDocumento}
+      </a>
+    `;
+}
+```
+
+Para verificar se nossa função está funcionando, vamos executá-la ao final do arquivo, adicionando "JavaScript" de forma estática:
+```
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+    listaDocumentos.innerHTML += `
+      <a
+        href="documento.html?nome=${nomeDocumento}"
+        class="list-group-item list-group-item-action"
+      >
+        ${nomeDocumento}
+      </a>
+    `;
+}
+
+inserirLinkDocumento("JavaScript");
+```
+
+Após salvar todas as alterações, vamos acessar o Alura Docs no navegador e atualizar a página. Agora, temos listado apenas o documento "JavaScript", ou seja, nossa função está funcionando.
+
+Porém, nosso objetivo não é adicionar os links manualmente, como fizemos agora ao executar a função. Queremos que os nomes dos documentos estejam sincronizados com o banco de dados. Então, quando Eduarda ou Juliana entrar na página inicial, vamos emitir um evento para o back-end e escutar posteriormente.
+
+**Arquivo socket-front-index.js** - Seguindo nosso padrão de organização, criaremos outro arquivo para a página index.html. Ele será responsável por utilizar os métodos do Socket.IO. Na pasta "public", vamos criar o arquivo socket-front-index.js.
+
+Em index.js, vamos adicionar a importação desse novo arquivo: 
+```
+import "./socket-front-index.js";
+
+// ...
+```
+
+Desse modo, assim que alguém entrar em index.html, o código do arquivo socket-front-index.js também será executado. A seguir, vamos desenvolvê-lo.
+
+Primeiramente, declararemos a constante socket, que receberá io():
+```const socket = io();```
+
+Esse código só funcionará se tivermos aquela tag ```<script>``` especial para podermos utilizar o socket do lado do front, porque é a primeira vez o usaremos na página index.html. Até agora, só utilizamos na página de documento.html.
+
+Vamos abrir o documento.html e copiar a tag ```<script>``` referente ao Socket.IO, no final do arquivo. Em seguida, abriremos index.html e colaremos a tag logo antes da referência ao script de index.js:
+```
+<body class="col-lg-6 mt-3 mx-auto">
+    < !-- ... -- >
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js" type="module"></script>
+</body>
+```
+
+Após salvar as alterações, voltaremos ao arquivo socket-front-index.js. O socket já está funcionando, então usaremos o método emit() para emitir o evento obter_documentos:
+```
+const socket = io();
+
+socket.emit("obter_documentos");
+```
+
+Não precisamos passar mais nenhum dado específico para ele, porque estamos pedindo todos os documentos do banco de dados. Então, vamos salvar esse arquivo e ir até o servidor para escutar esse evento e checar se nosso código está funcionando.
+
+No arquivo socket-back.js, no trecho em que estamos escutando o evento connection, vamos remover o console.log(), visto que não nos serve mais.
+
+No lugar dele, vamos escutar o evento obter_documentos. O segundo parâmetro será uma função callback em que faremos um console.log() com uma mensagem explicativa. Assim, conseguiremos verificar se o código está funcionando:
+
+```
+import { atualizaDocumento, encontrarDocumento } from "./documentosDb.js";
+import io from "./servidor.js";
+
+io.on("connection", (socket) => {
+  socket.on("obter_documentos", () => {
+    console.log("O cliente está solicitando os documentos!");
+  });
+
+    // ...
+```
+
+Espera-se que esse console.log() apareça no terminal do VS Code, quando alguém entrar na página inicial do Alura Docs. Para testar, vamos acessar o Alura Docs no navegador e atualizar a página inicial. No terminal integrado do VS Code, teremos a seguinte mensagem: "O cliente está solicitando os documentos!"
+
+O código está funcionando, então podemos dar continuidade. Em vez de usar o console.log(), vamos fazer uma operação para o banco de dados, pedindo para ele retornar todos os documentos.
+
+Declararemos a constante documentos, que receberá o resultado da função obterDocumentos():
+```
+import { atualizaDocumento, encontrarDocumento } from "./documentosDb.js";
+import io from "./servidor.js";
+
+io.on("connection", (socket) => {
+  socket.on("obter_documentos", () => {
+    const documentos = obterDocumentos();
+  });
+
+    // ...
+```
+
+No arquivo documentosDb.js, vamos criar a função obterDocumentos() no início do arquivo e já incluí-la na exportação também:
+```
+import { documentosColecao } from "./dbConnect.js";
+
+function obterDocumentos() {
+
+}
+
+// ...
+
+export { encontrarDocumento, atualizaDocumento, obterDocumentos };
+```
+
+Após salvar essa alteração, vamos importar a função no arquivo socket-back.js. Basta posicionar o cursor imediatamente antes dos parênteses em obterDocumentos(), pressionar "Ctrl + Espaço" e aceitar a importação.
+
+Voltando ao documentosDb.js, na função obterDocumentos(), utilizaremos outro método específico do MongoDB, o find():
+
+```
+import { documentosColecao } from "./dbConnect.js";
+
+function obterDocumentos() {
+    const documentos = documentosColecao.find();
+}
+
+// ...
+```
+
+O retorno desse método não será uma promise com nossos documentos. Ele retornará um cursor, um conceito sobre o qual não entraremos em muitos detalhes agora. Basicamente, vamos transformar esse cursor em um array do JavaScript, com o método toArray():
+```
+import { documentosColecao } from "./dbConnect.js";
+
+function obterDocumentos() {
+    const documentos = documentosColecao.find().toArray();
+}
+
+// ...
+```
+
+Por fim, retornamos documentos, que será uma promise:
+```
+import { documentosColecao } from "./dbConnect.js";
+
+function obterDocumentos() {
+    const documentos = documentosColecao.find().to Array;
+
+    return documentos;
+}
+
+// ...
+```
+
+Vamos voltar para socket-back.js. Para resolver a promise recebida, vamos inserir a palavra-chave await antes de obterDocumentos() e transformar a função callback em uma função assíncrona:
+```
+import {
+    atualizaDocumento,
+    encontrarDocumento,
+    obterDocumentos,
+    } from "./documentosDb.js";
+import io from "./servidor.js";
+
+io.on("connection", (socket) => {
+  socket.on("obter_documentos", async () => {
+    const documentos = await obterDocumentos();
+  });
+
+    // ...
+```
+
+Após a obtenção do documentos, usaremos um console.log() para verificar se eles realmente vieram do banco de dados:
+```
+import {
+    atualizaDocumento,
+    encontrarDocumento,
+    obterDocumentos,
+    } from "./documentosDb.js";
+import io from "./servidor.js";
+
+io.on("connection", (socket) => {
+  socket.on("obter_documentos", async () => {
+    const documentos = await obterDocumentos();
+
+        console.log(documentos);
+  });
+
+    // ...
+```
+
+Vamos salvar as alterações em todos os arquivos e deixar o terminal integrado aberto. No navegador, atualizaremos a interface do Alura Docs. No terminal integrado do VS Code, teremos uma lista com três objetos:
+```
+[
+    {
+        _id: newObjectId("6357fodbdfbef288f7298645"),
+        nome: 'JavaScript',
+        texto: 'texto de javascript do mongoDB\n\texto a mais'
+    },
+    {
+        _id: newObjectId("6358155586c89ddfcf63d6fb"),
+        nome: 'Node',
+        texto: 'texto de node do mongoDB\n\texto da Juliana aqui...'
+    }
+    {
+        _id: newObjectId("6358157286c89ddfcf63d6fc"),
+        nome: 'Socket.io',
+        texto: 'texto de socket.io do mongoDB\n\novo texto aqui...'
+    }
+]
+```
+
+Estes são exatamente os três objetos que temos no banco de dados. Então, vamos mandar esses dados para o front-end!
+
+Essa é uma situação em que o cliente está pedindo uma informação para o servidor e o servidor as enviará para o mesmo cliente. Portanto, vamos apenas atualizar a interface da pessoa que acabou de entrar na página inicial. Podemos utilizar novamente o recurso de reconhecimento do Socket.io, que é basicamente passar uma função callback como dado da função.
+
+Na função callback do evento obter_documentos, vamos passar um parâmetro chamado devolverDocumentos — esse será o nome da nossa função callback:
+
+```
+// ...
+
+io.on("connection", (socket) => {
+  socket.on("obter_documentos", async (devolverDocumentos) => {
+    const documentos = await obterDocumentos();
+
+        console.log(documentos);
+  });
+
+    // ...
+```
+
+E, em vez de usar um console.log() nos documentos, chamaremos devolverDocumentos(), passando os documentos como parâmetro:
+
+```
+// ...
+
+io.on("connection", (socket) => {
+  socket.on("obter_documentos", async (devolverDocumentos) => {
+    const documentos = await obterDocumentos();
+
+        devolverDocumentos(documentos);
+  });
+
+    // ...
+```
+
+Agora, precisamos criar essa função do lado do front-end, então vamos abrir o arquivo socket-front-index.js. Como a função callback é um dado passado junto com o evento obter_documento, vamos criar mais um parâmetro no socket.emit(), que será justamente a função devolverDocumentos(). Ela receberá documentos como parâmetro:
+```
+const socket = io();
+
+socket.emit("obter_documentos", (documentos) => {
+
+});
+```
+
+Dentro dessa função callback, vamos executar o método inserirLinkDocumento() para atualizar a interface. Antes disso, precisamos exportá-lo no arquivo index.js:
+```
+import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+    listaDocumentos.innerHTML += `
+      <a
+        href="documento.html?nome=${nomeDocumento}"
+        class="list-group-item list-group-item-action"
+      >
+        ${nomeDocumento}
+      </a>
+    `;
+}
+
+InserirLinkDocumento("JavaScript");
+
+export { inserirLinkDocumento };
+```
+
+Agora, em socket-front-index.js, podemos utilizá-la para inserir os elementos na interface. Temos que realizar esse processo para cada documento, então usaremos um forEach() com outra função callback, passando um parâmetro chamado documento:
+```
+const socket = io();
+
+socket.emit("obter_documentos", (documentos) => {
+    documentos.forEach( (documento) => {
+
+    });
+});
+```
+
+Dentro dessa função callback, executaremos o método inserirLinkDocumento(), passando o nome do documento como parâmetro. Também será necessário incluir a importação desse método, no início do arquivo:
+```
+import { inserirLinkDocumento } from "./index.js";
+
+const socket = io();
+
+socket.emit("obter_documentos", (documentos) => {
+    documentos.forEach( (documento) => {
+        inserirLinkDocumento(documento.nome)
+    });
+});
+```
+
+Para finalizar, vamos conectar tudo que desenvolvemos ao longo desses vários arquivos. No início desse vídeo, já testamos a função inserirLinkDocumento(). Agora, vamos checar se ela funciona corretamente para cada um dos documentos que obtemos do banco de dados, reutilizando o recurso de reconhecimento.
+
+Vamos salvar todas as alterações, abrir o Alura Docs no navegador e atualizar a página inicial. O resultado será uma lista com quatro documentos:
+  - JavaScript
+  - JavaScript
+  - Node
+  - Socket.io
+
+O documento "JavaScript" está duplicado porque a primeira aparição é referente ao teste que fizemos no início do vídeo, quando inserirmos manualmente o nome do documento. Vamos apagar esse teste, em index.js:
+
+```
+import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+
+function inserirLinkDocumento(nomeDocumento) {
+    listaDocumentos.innerHTML += `
+      <a
+        href="documento.html?nome=${nomeDocumento}"
+        class="list-group-item list-group-item-action"
+      >
+        ${nomeDocumento}
+      </a>
+    `;
+}
+
+export { inserirLinkDocumento };
+```
+
+Após salvar o arquivo, podemos atualizar novamente a página inicial do Alura Docs e, agora, teremos apenas os três documentos do banco de dados:
+  - JavaScript
+  - Node
+  - Socket.io
+
+Por último, vamos nos certificar que esses documentos são obtidos por meio do banco de dados. No MongoDB Atlas, vamos acessar a coleção "documentos" e adicionar manualmente mais um registro para checar se a interface do Alura Docs se atualiza de acordo. Clicando no botão "Insert documento", vamos adicionar as seguintes propriedades:
+```
+nome: "MongoDB"
+texto: "texto de mongoDB"
+```
+
+Após a inserção, voltaremos ao Alura Docs e atualizaremos a página inicial mais uma vez. Dessa vez, constará o documento "MongoDB" na lista:
+  - JavaScript
+  - Node
+  - Socket.io
+  - MongoDB
+
+Acessando o documento "MongoDB", temos o seguinte texto: "texto de mongoDB"
+
+**cursor do MongoDB**
+Até agora utilizamos alguns métodos do driver do NodeJS do MongoDB, como findOne, updateOne e find(). A documentação do MongoDB é uma excelente fonte de consultas e contém informações valiosas para impulsionar seus estudos neste banco de dados. A seção [CRUD Operations](https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/) explica os métodos que utilizamos até agora, bem como os que ainda iremos utilizar (insertOne e deleteOne).
+
+Algumas operações do MongoDB podem retornar grandes quantidades de documentos, então em vez de criarem um array do JavaScript com os documentos, essas operações retornam um Cursor com esses dados. Cursor é um tipo de dado do MongoDB otimizado para lidar com grandes quantidades de dados.
+
+O método find() de coleções do MongoDB retorna um Cursor, então podemos utilizar o método toArray(), que retorna uma Promise contendo um array com os documentos: ```  const documentos = documentosColecao.find().toArray();```
+
+Entretanto, ao utilizar esse método, uma grande quantidade de dados retornados pode causar problemas de performance. Então, nos casos em que for possível, pode ser mais apropriado utilizar o método forEach() de um Cursor para executar algum determinado código para cada documento, como no exemplo abaixo:
+```
+  const documentosCursor = documentosColecao.find();
+  await documentosCursor.forEach((documento) => console.log(documento));
+```
+
+Para ler mais sobre esse assunto, acesse a seção [Access Data From a Cursor](https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/read-operations/cursor/) da documentação!
+
+**Adicionando um documento:** Já conseguimos mostrar a lista de documentos do Alura Docs de acordo com os registros do banco de dados, então já estamos preparados para implementar a adição de documentos e a atualização da interface conforme essa nova adição.
+
+Nosso fluxo de estudos tem sido bastante interessante, pois estamos revisando diversos conceitos de Socket.IO que aprendemos ao longo deste curso. Ao aprimorar os arquivos que criamos até agora, já aproveitamos para recapitular noções de front-end, back-end e métodos do MongoDB.
+
+Adição de arquivos
+Na interface do Alura Docs, após a listagem de documentos, há um formulário com um campo de texto para o usuário inserir o nome do novo documento, seguido de um botão azul "Adicionar documento". Nosso primeiro objetivo é capturar o que foi digitado nesse campo.
+
+No VS Code, vamos abrir o arquivo index.html e copiar o ID desse formulário:form-adiciona-documento. Em seguida, abriremos o arquivo index.js e utilizaremos o método getElementById() para selecionar o formulário por seu ID e armazená-lo numa constante chamada form:
+```
+ import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+const form = document.getElementById("form-adiciona-documento");
+
+// ...
+``` 
+
+Repetiremos o processo com o ID do input, pois precisaremos dele em breve:
+```
+import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+const form = document.getElementById("form-adiciona-documento");
+const inputDocumento = document.getElementById("input-documento");
+
+// ...
+```
+
+Quando uma pessoa clicar no botão "Adicionar documento" ou pressionar a tecla "Enter" no campo de texto, o evento submit será disparado. Então, vamos adicionar um event listener nesse formulário para executar uma função callback quando ele for enviado:
+```
+import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+const form = document.getElementById("form-adiciona-documento");
+const inputDocumento = document.getElementById("input-documento");
+
+form.addEventListener("submit", () => {
+
+});
+
+// ...
+```
+
+Primeiramente, vamos usar um console.log() para imprimir o valor do input, para testar se o código está funcionando:
+```
+import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+const form = document.getElementById("form-adiciona-documento");
+const inputDocumento = document.getElementById("input-documento");
+
+form.addEventListener("submit", () => {
+    console.log(inputDocumento.value);
+});
+
+// ...
+```
+
+Após salvar as alterações, vamos abrir o navegador e acessar o Dev Tools na aba "Console". Na interface do Alura Docs, vamos digitar um texto qualquer no campo de texto do formulário, por exemplo, "qualquer coisa"
+
+Ao pressionar o botão "Adicionar documento", a página será atualizada, pois esse é o comportamento padrão de um formulário do HTML. Para evitar esse comportamento padrão, vamos passar o evento como parâmetro da nossa função callback e, em seguida, usaremos o método preventDefault():
+```
+import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+const form = document.getElementById("form-adiciona-documento");
+const inputDocumento = document.getElementById("input-documento");
+
+form.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    console.log(inputDocumento.value);
+});
+
+// ...
+```
+
+Vamos salvar, voltar ao navegador e atualizar a página inicial do Alura Docs novamente. No campo de texto do formulário, digitaremos "qualquer coisa". Ao pressionar o botão "Adicionar documento", teremos o mesmo texto impresso no console do Dev Tools: "qualquer coisa"
+
+Ou seja, já conseguimos capturar o texto digitado no campo do formulário. Na sequência, vamos enviar essa informação para o servidor e adicionar o nome desse documento no banco de dados.
+
+Na função callback, em vez do console.log(), vamos executar uma função chamada emitirAdicionarDocumento(), que ainda não existe, mas criaremos em breve. Como parâmetro, passaremos o nome do documento que queremos adicionar, isto é, o texto digitado no campo do formulário:
+```
+import "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+const form = document.getElementById("form-adiciona-documento");
+const inputDocumento = document.getElementById("input-documento");
+
+form.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    emitirAdicionarDocumento(inputDocumento.value);
+});
+
+// ...
+```
+
+Respeitando a organização do projeto, vamos desenvolver a função emitirAdicionarDocumento() ao final do arquivo socket-front-index.js. Ela receberá nome como parâmetro e emitirá o evento adicionar_documento com o nome do novo documento:
+```
+import { inserirLinkDocumento, removerLinkDocumento } from "./index.js";
+
+const socket = io();
+
+socket.emit("obter_documentos", (documentos) => {
+  documentos.forEach((documento) => {
+    inserirLinkDocumento(documento.nome);
+  });
+});
+
+function emitirAdicionarDocumento(nome) {
+  socket.emit("adicionar_documento", nome);
+}
+```
+
+Em seguida, exportaremos essa função:
+```
+import { inserirLinkDocumento, removerLinkDocumento } from "./index.js";
+
+const socket = io();
+
+socket.emit("obter_documentos", (documentos) => {
+  documentos.forEach((documento) => {
+    inserirLinkDocumento(documento.nome);
+  });
+});
+
+function emitirAdicionarDocumento(nome) {
+  socket.emit("adicionar_documento", nome);
+}
+
+export { emitirAdicionarDocumento };
+```
+
+Após salvar as alterações, vamos voltar ao index.js e importar a função emitirAdicionarDocumento(), de socket-front-index.js. Dessa forma, a importação da primeira linha não será mais necessária e podemos excluí-la, ficando da seguinte forma:
+```
+import { emitirAdicionarDocumento } from "./socket-front-index.js";
+
+const listaDocumentos = document.getElementById("lista-documentos");
+const form = document.getElementById("form-adiciona-documento");
+const inputDocumento = document.getElementById("input-documento");
+
+// ...
+```
+
+O evento deve ser disparado quando enviarmos o formulário. Para checar se a emissão está funcionando, vamos escutar o evento do lado do servidor.
+
+No arquivo socket-back.js, após o trecho referente ao evento obter_documentos, vamos escutar adicionar_documentos também. O segundo parâmetro será uma função callback que recebe o nome do documento. Para conferir se todo o processo está funcionando corretamente do front até o back-end, vamos usar um console.log() para exibir o nome do documento no terminal do VS Code:
+```
+// ...
+
+socket.on("obter_documentos", async (devolverDocumentos) => {
+    const documentos = await obterDocumentos();
+
+    devolverDocumentos(documentos);
+});
+
+socket.on("adicionar_documento", (nome) => {
+    console.log(nome);
+});
+```
+
+Vamos salvar o arquivo e testar! Após atualizar a página inicial do Alura Docs, digitaremos "Novo documento" no campo de texto do formulário e clicaremos no botão "Adicionar documento".
+
+No terminal integrado do VS Code, temos a seguinte mensagem: "Novo documento"
+Ou seja, os dados já estão chegando no back-end também! Agora, falta apenas pedirmos para o servidor executar a operação no banco de dados e efetivamente adicionar o documento.
+
+No lugar do console.log(), vamos declarar a constante resultado, pois o retorno será o resultado da operação de adição no banco de dados:
+```
+// ...
+
+socket.on("adicionar_documento", (nome) => {
+    const resultado = adicionarDocumento(nome);
+});
+```
+
+No arquivo documentosDb.js, após a função obterDocumentos(), vamos criar a função adicionarDocumento(), que receberá o nome do documento como parâmetro. Já aproveitaremos para incluí-la na exportação, ao final do arquivo:
+```
+import { documentosColecao } from "./dbConnect.js";
+
+function obterDocumentos() {
+  const documentos = documentosColecao.find().toArray();
+  return documentos;
+}
+
+function adicionarDocumento(nome) {
+
+}
+
+// ...
+
+export {
+  encontrarDocumento,
+  atualizaDocumento,
+  obterDocumentos,
+  adicionarDocumento,
+};
+```
+
+Após salvar o arquivo, voltaremos ao socket-back.js e importaremos a função.
+
+Em seguida, implementaremos a função adicionarDocumento() em documentosDb.js. Declararemos a constante resultado e utilizaremos o método insertOne() do MongoDB. Em inglês, insert one significa "inserir um":
+```
+// ...
+
+function adicionarDocumento(nome) {
+    const resultado = documentosColecao.insertOne();
+}
+
+// ...
+```
+
+Como parâmetro, passaremos o documento que queremos inserir. Esse documento será representado por um objeto com a propriedade nome com valor do parâmetro nome e a propriedade texto, que inicialmente será uma string vazia:
+```
+// ...
+
+function adicionarDocumento(nome) {
+    const resultado = documentosColecao.insertOne({
+        nome,
+        texto: ""
+    });
+}
+
+// ...
+```
+
+Depois, retornaremos o resultado para a função:
+```
+// ...
+
+function adicionarDocumento(nome) {
+    const resultado = documentosColecao.insertOne({
+        nome,
+        texto: ""
+    });
+
+    return resultado;
+}
+
+// ...
+```
+
+Após salvar as alterações, vamos voltar ao arquivo socket-back.js. Como o retorno do adicionarDocumento() é uma promise, usaremos a palavra-chave await para resolvê-la. Além disso, tornaremos a função callback assíncrona:
+```
+// ...
+
+socket.on("adicionar_documento", async (nome) => {
+    const resultado = await adicionarDocumento(nome);
+});
+```
+
+Para testar, utilizaremos um console.log() para exibir o resultado e conferir o que acontece quando conseguimos inserir um novo registro no banco de dados:
+```
+// ...
+
+socket.on("adicionar_documento", async (nome) => {
+    const resultado = await adicionarDocumento(nome);
+
+    console.log(resultado);
+});
+```
+
+Vamos salvar todas as alterações e deixar o terminal integrado do VS Code aberto.
+
+No navegador, atualizaremos a página inicial do Alura Docs e digitaremos "Express" no campo de texto do formulário — este será o nome do novo documento. Em seguida, pressionaremos a tecla "Enter".
+
+No terminal integrado do VS Code, será impresso um objeto com as propriedades acknowledged e insertedId:
+```
+{
+    acknowledged: true,
+    insertedId: new ObjectId("6358252a196cb9bb0d027c8c")
+}
+```
+
+Podemos adicionar outro documento com nome "Novo documento" e teremos um retorno semelhante, com um ID diferente.
+
+O MongoDB capta o objeto que pedimos para adicionar na coleção e insere um ID automaticamente. Já a propriedade acknowledged (em português, "reconhecido") pode ser usada para saber se a operação de adição foi bem-sucedida. É o que faremos a seguir.
+
+**Atualizando a interface**: No trecho em que escutamos o evento adicionar_documento, vamos substituir o console.log() por um bloco if. Se a operação for reconhecida, atualizaremos a interface de todos os clientes que estão na página inicial.
+
+Para emitir um evento para todos os clientes, utilizaremos o método emit(). O nome do evento será adicionar_documento_interface e passaremos o nome do documento:
+```
+// ...
+
+socket.on("adicionar_documento", async (nome) => {
+    const resultado = await adicionarDocumento(nome);
+
+    if (resultado.acknowledged) {
+        io.emit("adicionar_documento_interface", nome);
+    }
+});
+```
+
+Como a alteração será feita em index.js, vamos escutar o evento emitido pelo servidor em socket-front-index.js. No final desse arquivo, vamos escutar adicionar_documento_interface. O segundo parâmetro será uma função callback que recebe o nome do documento:
+```
+// ...
+
+socket.on("adicionar_documento_interface", (nome) => {
+
+});
+
+export { emitirAdicionarDocumento };
+```
+
+Na função callback, executaremos inserirLinkDocumento(), passando o nome do documento como parâmetro:
+```
+// ...
+
+socket.on("adicionar_documento_interface", (nome) => {
+    inserirLinkDocumento(nome);
+});
+
+export { emitirAdicionarDocumento };
+```
+
+Na sequência, vamos checar se todo o código que desenvolvemos está conectado e funcionando como esperado, atualizando a interface de todos os clientes, quando uma pessoa adicionar um documento. Após salvar todas as alterações, vamos abrir duas janelas do navegador para simular que Eduarda e Juliana estão utilizando o Alura Docs simultaneamente.
+
+Na janela à esquerda (Eduarda), vamos digitar "React" no campo de texto do formulário. Ao pressionar "Enter", notaremos que tanto a interface de Eduarda como a de Juliana foram atualizadas. Agora, temos a seguinte listagem:
+  - JavaScript
+  - Node
+  - Socket.io
+  - MongoDB
+  - Express
+  - Novo documento
+  - React
+
+Nosso código está funcinando como esperado!
+
+Na aba de Eduarda, note que o campo do formulário permanece com o texto "React", mesmo após o envio do formulário. Para finalizar esse vídeo, vamos fazer com que esse campo seja esvaziado automaticamente, assim que a pessoa clicar no botão "Adicionar documento".
+
+Em index.js, após emititAdicionarDocumento(), vamos definir que o valor de inputDocumento é uma string vazia:
+```
+// ...
+
+form.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  emitirAdicionarDocumento(inputDocumento.value);
+  inputDocumento.value = "";
+});
+
+// ...
+```
+
+Após salvar o arquivo, vamos atualizar a página incial do Alura Docs e digitar "Angular" no formulário. Ao pressionar "Enter", a interface será atualizada e o campo de texto estará limpo novamente.
+
+Sendo assim, conseguimos implementar a funcionalidade de adição de documentos. Contudo, não temos nenhuma tratativa de erro para quando inserimos um documento que já existe. Como exemplo, vamos digitar "Angular" novamente no formulário e enviá-lo. O documento ficará duplicado, o que pode ser problemático e causar inconsistências nos nossos dados.
+
+
+**Tratando documento existente:**
+Ao final do último vídeo, inserimos dois registros com o nome "Angular" para demonstrar um caso de documentos duplicados. Concluímos que é preciso fazer uma tratativa de erro no código para impedir a adição de documentos com nomes que já existem.
+
+Então, no arquivo socket-back.js, no trecho referente ao evento adicionar_documento, antes de adicionar um documento, vamos verificar se ele já existe. Antes da variável resultado, vamos declarar a constante documentoExiste, cujo valor será um booleano. Executaremos await encontrarDocumento() passando o nome do documento e compararemos o retorno com o valor null:
+```
+// ...
+
+socket.on("adicionar_documento", async (nome) => {
+    const documentoExiste = (await encontrarDocumento(nome)) !== null;
+
+    const resultado = await adicionarDocumento(nome);
+
+    if (resultado.acknowledged) {
+      io.emit("adicionar_documento_interface", nome);
+    }
+  }
+});
+
+// ...
+```
+
+O método encontrarDocumento() executa a função findOne() do MongoDB. Caso não seja encontrado um documento com o nome informado, o retorno será nulo, após resolução da promise.
+
+Em resumo, se o retorno for nulo, sabemos que ainda não existe um documento com o nome informado e a variável documentoExiste assumirá o valor false. Se o retorno não for nulo, o nome já está sendo usado.
+
+Logo, vamos criar um bloco if/else para determinar o que será feito nos dois casos. Se o documento já existir, emitiremos um evento chamado documento_existente, passando o nome do documento. Do contrário, adicionaremos o registro e atualizaremos a interface:
+```
+// ...
+
+socket.on("adicionar_documento", async (nome) => {
+    const documentoExiste = (await encontrarDocumento(nome)) !== null;
+
+    if (documentoExiste) {
+      socket.emit("documento_existente", nome);
+    } else {
+      const resultado = await adicionarDocumento(nome);
+
+      if (resultado.acknowledged) {
+        io.emit("adicionar_documento_interface", nome);
+      }
+    }
+  });
+
+// ...
+```
+
+Recapitulando: se o documento não existir, vamos adicioná-lo ao banco de dados e atualizar a interface, como vínhamos fazendo anteriormente. No entanto, caso o nome já esteja sendo usado, apenas emitiremos um evento.
+
+Na sequência, vamos escutar esse evento do lado do front-end. Ao final do arquivo socket-front-index.js, vamos escutar documento_existente e, como segundo parâmetro, teremos uma função callback que receberá o nome do documento:
+```
+// ...
+
+socket.on("documento_existente", (nome) => {
+
+});
+
+export { emitirAdicionarDocumento };
+```
+
+Usaremos um console.log() com uma template string para informar o usuário que já existe um documento com o nome inserido:
+```
+// ...
+
+socket.on("documento_existente", (nome) => {
+    console.log(`O documento ${nome} já existe!`);
+});
+
+export { emitirAdicionarDocumento };
+```
+
+Vamos salvar todas as alterações e testar nosso código. Se inserirmos o nome de um documento que já existe, esperamos a emissão de um evento que executará o console.log().
+
+No navegador, abriremos o Dev Tools na aba "Console". Atualizaremos a página inicial do Alura Docs e, em seguida, digitaremos "Node" no campo de texto. Ao enviar o formulário, o documento "Node" não será duplicado no sistema e teremos a seguinte mensagem no console do Dev Tools: "O documento Node já existe!"
+
+Para melhor a exibição dessa mensagem para Juliana e Eduarda, vamos mostrá-la de forma mais explícita na interface. Usaremos uma função do front-end chamada alert().
+
+Em vez do console.log() com a template string, executaremos a função alert() com a mesma string:
+```
+// ...
+
+socket.on("documento_existente", (nome) => {
+    alert(`O documento ${nome} já existe!`);
+});
+
+export { emitirAdicionarDocumento };
+```
+
+Vamos salvar as alterações e atualizar a página inicial do Alura Docs novamente. No campo do formulário, digitaremos "JavaScript" e pressionaremos o botão "Adicionar documento". No topo da página, aparecerá um alerta com a seguinte mensagem:
+```
+localhost:3000 diz:
+
+O documento JavaScript já existe!
+```
+
+Então, conseguimos aplicar a tratativa. A partir do próximo vídeo, implementaremos a última funcionalidade do Alura Docs: a exclusão de documentos. Isso será bastante útil para removermos o documento "Angular", que está duplicado no momento.
+
+**Excluindo um documento**
+Já conseguimos implementar a adição de documentos no banco de dados, fizemos uma tratativa para impedir a inserção de nomes repetidos e, agora, focaremos na funcionalidade de remoção.
+
+Na interface do Alura Docs, ao abrir um documento, temos o botão vermelho "Excluir documento" no canto inferior direito da tela. Na sequência, vamos torná-lo funcional.
+
+No VS Code, abriremos o arquivo documento.html e copiar o ID do botão "Excluir documento", que se encontra quase no final da tag <main>. Seu ID é excluir-documento.
+
+Em seguida, abriremos o arquivo documento.js, onde realizamos as alterações do HTML e a obtenção de dados. Abaixo da constante tituloDocumento, buscaremos pelo elemento com ID excluir-documento e o armazenaremos na variável chamada botaoExcluir:
+```
+import {
+  emitirTextoEditor,
+  selecionarDocumento,
+} from "./socket-front-documento.js";
+
+const parametros = new URLSearchParams(window.location.search);
+const nomeDocumento = parametros.get("nome");
+
+const textoEditor = document.getElementById("editor-texto");
+const tituloDocumento = document.getElementById("titulo-documento");
+const botaoExcluir = document.getElementById("excluir-documento");
+
+// ...
+```
+
+Assim que uma pessoa abrir um documento, emitiremos um evento para o servidor a partir do cliente. Então, no final do arquivo, vamos adicionar um event listener nesse botão de exclusão. O evento do HTML que usaremos é o click:
+```
+// ...
+
+botaoExcluir.addEventListener("click", () => {
+
+});
+
+export { atualizaTextoEditor };
+```
+
+Na função callback, executaremos emitirExcluirDocumento(), que criaremos em breve. Como parâmetro, passaremos o nome do documento:
+```
+// ...
+
+botaoExcluir.addEventListener("click", () => {
+  emitirExcluirDocumento(nomeDocumento);
+});
+
+export { atualizaTextoEditor };
+```
+
+Na sequência, vamos desenvolver a função emitirExcluirDocumento(), ao final do arquivo socket-front-index.js. Ela receberá o nome do documento como parâmetro:
+```
+// ...
+
+function emitirExcluirDocumento(nome) {
+
+}
+
+export { emitirTextoEditor, selecionarDocumento };
+```
+
+Vamos emitir um evento chamado excluir_documento, passando o nome do documento como segundo parâmetro para sabermos qual documento excluir do banco de dados. Também exportaremos a função:
+```
+// ...
+
+function emitirExcluirDocumento(nome) {
+  socket.emit("excluir_documento", nome);
+}
+
+export { emitirTextoEditor, selecionarDocumento, emitirExcluirDocumento };
+```
+
+No arquivo documento.js, importaremos a função emitirExcluirDocumento(). Após salvar todas as alterações, vamos escutar o evento do lado do servidor para checar se o emit() está funcionando.
+
+No final do arquivo socket-back.js, vamos escutar o evento excluir_documento. O segundo parâmetro será uma função callback que recebe o nome do documento e executa um console.log(). Assim, verificaremos se, ao clicar no botão "Excluir documento", o nome do documento chega ao servidor:
+```
+// ...
+
+socket.on("excluir_documento", (nome) => {
+    console.log(nome);
+});
+```
+
+Vamos salvar o arquivo e deixar o terminal integrado aberto. Na interface do Alura Docs, abriremos o documento "Node" e clicaremos no botão "Excluir documento" no canto direito inferior. No terminal do VS Code, temos o seguinte texto impresso: "Node"
+
+Nosso código está funcionando até agora, então vamos dar continuidade a ele. Em vez de dar um console.log(), declararemos a constante resultado e chamaremos a função excluirDocumento(), passando o nome do documento como parâmetro. Vamos criar a função excluirDocumento() ao final do arquivo documentosDb.js, lembrando de exportá-la:
+```
+// ...
+
+function excluirDocumento() {
+
+}
+
+export {
+  encontrarDocumento,
+  atualizaDocumento,
+  obterDocumentos,
+  adicionarDocumento,
+  excluirDocumento,
+};
+```
+
+Em seguida, importaremos a função em socket-back.js. Basta posicionar o cursor imediatamente antes do abre parênteses em excluirDocumento(), pressionar "Ctrl + Espaço" e aceitar a importação, que será inserida no início do arquivo:
+```
+import {
+  adicionarDocumento,
+  atualizaDocumento,
+  encontrarDocumento,
+  excluirDocumento,
+  obterDocumentos,
+} from "./documentosDb.js";
+import io from "./servidor.js";
+
+// ...
+```
+
+Voltando a documentosDb.js, vamos desenvolver a função excluirDocumento(). Declararemos a constante resultado e usaremos o método deleteOne() do MongoDB para excluir um registro da coleção:
+```
+// ...
+
+function excluirDocumento(nome) {
+  const resultado = documentosColecao.deleteOne();
+}
+```
+
+Como parâmetro, passaremos um objeto semelhante ao que passamos ao método insertOne(). Trata-se de um objeto que informa as características do documento que queremos excluir, ou seja, um registro com a propriedade nome igual ao nome informado:
+```
+// ...
+
+function excluirDocumento(nome) {
+  const resultado = documentosColecao.deleteOne({
+        nome
+    });
+}
+```
+
+Por fim, retornaremos a variável resultado:
+```
+// ...
+
+function excluirDocumento(nome) {
+  const resultado = documentosColecao.deleteOne({
+        nome
+    });
+
+    return resultado;
+}
+```
+
+Em socket-back.js, no trecho em que escutamos o evento excluir_documento, usaremos a palavra-chave await para resolver a promise retornada e tornaremos a função callback assíncrona:
+```
+// ...
+
+socket.on("excluir_documento", async (nome) => {
+    const resultado = await excluirDocumento(nome);
+});
+```
+
+Executaremos um console.log() para checar qual é o resultado da operação:
+```
+// ...
+
+socket.on("excluir_documento", async (nome) => {
+    const resultado = await excluirDocumento(nome);
+
+    console.log(resultado);
+});
+```
+
+Após salvar todas alterações, deixaremos o terminal integrado aberto. Na interface do Alura Docs, vamos abrir o documento "Express" e clicar no botão "Excluir documento", no canto direito inferior. Nada ocorre na interface, mas no VS Code temos o seguinte objeto impresso no terminal: ```{ acknowledged: true, deletedCount: 1 }```
+
+Ou seja, a operação foi reconhecida e conseguimos deletar um documento do banco de dados. No navegador, ao voltar para a página inicial do Alura Docs, vamos reparar que o documento "Express" não existe mais — a operação de exclusão está funcionando. No próximo vídeo, atualizaremos a interface conforme a mudança no banco de dados.
+
+
+**Atualizando diferentes páginas**
+Por exemplo, se ao acessar o documento "JavaScript" no Alura Docs e clicar no botão "Excluir documento", a interface não será atualizada. Contudo, voltando à página inicial, comprovamos que a operação de exclusão foi bem-sucedida. Ao remover um registro, seria interessante exibir uma caixa de alerta na tela e redirecionar a usuária para a página inicial.
+
+**Redirecionando** - No VS Code, vamos abrir o arquivo socket-back.js. No trecho em que escutamos o evento excluir_documento, armazenamos o resultado em uma constante e o exibimos no terminal do VS Code. Esse resultado é um objeto com a propriedade acknowledged com valor true e a propriedade deletedCount igual a 1: ```{ acknowledged: true, deletedCount: 1 }```
+
+A segunda propriedade é a contagem de elementos deletados do banco de dados. Em vez do console.log() que exibe esse resultado, vamos desenvolver um bloco if com essa propriedade:
+```
+// ...
+
+socket.on("excluir_documento", async (nome) => {
+    const resultado = await excluirDocumento(nome);
+
+    if (resultado.deletedCount) {
+
+    }
+});
+```
+
+Dessa maneira, se a propriedade deletedCount não for igual a zero, vamos executar o código do bloco if.
+
+Assim que alguém excluir um registro, todas as pessoas que estiverem na página de documento receberão um alerta e serão redirecionadas para a página inicial. Com io.emit(), vamos emitir um evento para todos os clientes chamado excluir_documento_sucesso, passando o nome do documento:
+```
+// ...
+
+socket.on("excluir_documento", async (nome) => {
+    const resultado = await excluirDocumento(nome);
+
+    if (resultado.deletedCount) {
+        io.emit("excluir_documento_sucesso", nome);
+    }
+});
+```
+
+Vamos salvar as alterações e escutar o evento do lado do front-end, no final do arquivo socket-front-documento.js (o arquivo JavaScript referente à página de documento). O segundo parâmetro será uma função callback à qual passaremos o nome do documento:
+```
+// ...
+
+socket.on("excluir_documento_sucesso", (nome) => {
+
+});
+```
+
+Nessa função, pretendemos executar uma operação no front-end para alertar sobre a exclusão e redirecionar o cliente. Para tanto, criaremos uma função chamada alertarERedirecionar() no final do arquivo documento.js. Ela receberá o nome do documento como parâmetro:
+```
+// ...
+
+function alertarERedirecionar(nome) {
+
+}
+
+export { atualizaTextoEditor };
+```
+
+Dentro da função, executaremos o alert(), passando uma template string. Em seguida, com window.location.href, redirecionaremos o usuário para index.html (no caso, representado por uma barra):
+```
+// ...
+
+function alertarERedirecionar(nome) {
+  alert(`Documento ${nome} excluído!`);
+  window.location.href = "/";
+}
+
+export { atualizaTextoEditor };
+```
+
+Ademais, vamos exportar a função:
+```
+// ...
+
+function alertarERedirecionar(nome) {
+  alert(`Documento ${nome} excluído!`);
+  window.location.href = "/";
+}
+
+export { atualizaTextoEditor, alertarERedirecionar };
+```
+
+Após salvar as alterações, voltaremos para o arquivo socket-front-documento.js. No trecho em que escutamos o evento excluir_documento_sucesso, executaremos a função alertarERedirecionar(), passando o nome do documento como parâmetro:
+```
+// ...
+
+socket.on("excluir_documento_sucesso", (nome) => {
+    alertarERedirecionar(nome);
+});
+```
+
+Vamos salvar novamente e checar se nosso código está funcionando.
+**Testando** - Abriremos dois navegadores na interface do Alura Docs, para simular o uso simultâneo da aplicação por Eduarda (janela à esquerda) e Juliana (à direita). Na janela de Eduarda, abriremos o documento "MongoDB" e clicaremos no botão "Excluir documento". No topo da tela, aparecerá um alerta com a seguinte mensagem: "Documento MongoDB excluído!"
+
+Ao pressionar o botão "OK" no canto direito inferior desse alerta, Eduarda é redirecionada para a página inicial.
+
+Em seguida, vamos simular o que acontece quando ambas estão no mesmo documento e uma delas realiza a exclusão. Vamos abrir o documento "React" nos dois navegadores. Na janela de Juliana, clicaremos no botão "Excluir documento".
+
+No topo da tela de Juliana, temos novamente o alerta de documento excluído. Teoricamente, o mesmo aconteceria na tela de Eduarda. No caso, isso não aconteceu porque nossa simulação não é muito precisa, visto que estamos usando apenas um computador, então só conseguimos focar em um navegador por vez. Ao clicar no navegador de Eduarda, somos automaticamente redirecionados para a página inicial.
+
+Imaginando um cenário em que cada uma delas estivesse em seu computador, ambas teriam escutado a emissão do evento, recebido o alerta e sido redirecionadas. Nosso código está funcionando como esperado, porém temos um pequeno problema. Atualmente, qualquer pessoa que esteja na página de documento será redirecionada para a página inicial.
+
+Para ilustrar o problema, vamos abrir o documento "Node" no navegador de Eduarda e o documento "Socket.io" no de Juliana. Quando Eduarda exclui o registro, Juliana também será redirecionada para a página inicial! Queremos que o redirecionamento ocorra apenas se a pessoa estiver exatamente no documento que foi excluído. Então, vamos fazer uma tratativa no código.
+
+No arquivo documento.js, na função alertarERedirecionar(), podemos inserir um bloco if. Vamos exibir o alerta e redirecionar a pessoa apenas se o nome for igual a nomeDocumento:
+```
+// ...
+
+function alertarERedirecionar(nome) {
+  if (nome === nomeDocumento) {
+    alert(`Documento ${nome} excluído!`);
+    window.location.href = "/";
+  }
+}
+
+export { atualizaTextoEditor, alertarERedirecionar };
+```
+
+Após salvar as alterações, vamos testar nosso código. No navegador, simularemos que Eduarda está do documento "Novo documento" e Juliana, no "Socket.io". Se Eduarda clicar no botão "Excluir documento", apenas ela será redirecionada para a página inicial! Problema resolvido!
+
+**Atualizando a página inicial** - Digamos que a Eduarda está no documento "Socket.io" e Juliana está na página inicial do Alura Docs. Quando Eduarda exclui o documento, ela é redirecionada para a página inicial, porém a interface de Juliana continua desatualizada e ela não notará que um registro foi excluído, pois fizemos uma tratativa apenas para pessoas que estão na página de documento.
+
+Esta situação é bastante interessante, porque temos o mesmo servidor enviando o mesmo evento para todos os clientes, contudo, dependendo da página em que o usuário está, podemos escutar o evento e realizar uma operação diferente.
+
+No caso, quando uma pessoa está em uma página de documento, verificamos se o documento em questão foi excluído e, se sim, vamos redirecioná-la. Já quando uma pessoa estiver na página inicial, queremos que a interface seja atualizada para que o documento excluído não conste mais na lista.
+
+Antes de dar continuidade, vamos excluir um dos documentos "Angular", para eliminar essa inconsistência de registros duplicados. Após excluí-lo, vamos adicionar mais dois documentos à listagem: "JavaScript" e "Node". Assim, teremos três documentos no Alura Docs:
+  - Angular
+  - JavaScript
+  - Node
+
+Agora, podemos partir para a atualização da interface. No VS Code, vamos abrir o arquivo socket-front-index.js, pois é justamente no index.html que queremos escutar o evento, quando alguém excluir um documento.
+
+Ao final do arquivo, vamos escutar excluir_documento_sucesso, o evento que o servidor está emitindo para todos os clientes. O segundo parâmetro será uma função callback que recebe o nome do documento:
+
+```
+// ...
+
+socket.on("excluir_documento_sucesso", (nome) => {
+
+});
+
+export { emitirAdicionarDocumento };
+```
+
+Para buscar o link do documento no DOM e removê-lo, criaremos uma função ao final do arquivo index.js. Ela se chamará removerLinkDocumento() e receberá o nome do documento como parâmetro:
+```
+// ...
+
+function removerLinkDocumento(nomeDocumento) {
+
+}
+
+export { inserirLinkDocumento };
+```
+
+Note que nosso projeto está bem organizado! Nesse mesmo arquivo, também temos a função inserirLinkDocumento(). As funcionalidades de manipulação do HTML estão bem atribuídas!
+
+Vamos exportar a função removerLinkDocumento() em index.js:
+```
+// ...
+
+function removerLinkDocumento(nomeDocumento) {
+
+}
+
+export { inserirLinkDocumento, removerLinkDocumento };
+```
+
+E importá-la em socket-front-index.js:
+```
+import { inserirLinkDocumento, removerLinkDocumento } from "./index.js";
+
+// ...
+
+socket.on("excluir_documento_sucesso", (nome) => {
+  removerLinkDocumento(nome);
+});
+
+export { emitirAdicionarDocumento };
+```
+
+Voltando a index.js, vamos desenvolver a função removerLinkDocumento(), para fazer a manipulação do HTML. Usaremos o método removeChild() do front-end, ao qual devemos passar a referência do elemento que queremos excluir:
+```
+// ...
+
+function removerLinkDocumento(nomeDocumento) {
+  listaDocumentos.removeChild();
+}
+
+export { inserirLinkDocumento, removerLinkDocumento };
+```
+
+Ainda não temos essa referência. Para buscar esse elemento, usaremos o método getElementById() novamente e armazenaremos o retorno na constante documento:
+```
+// ...
+function removerLinkDocumento(nomeDocumento) {
+  const documento = document.getElementById();
+
+  listaDocumentos.removeChild();
+}
+
+export { inserirLinkDocumento, removerLinkDocumento };
+```
+
+Precisamos de um identificador para cada um dos links dos documentos! Podemos adicioná-los na função inserirLinkDocumento(), pois é nela que definimos o modelo do link. Dentro da template string, vamos incluir um atributo chamado id e defini-lo para "documento-${nomeDocumento}". Dessa forma, o ID de cada documento será dinâmico e único:
+```
+// ...
+
+function inserirLinkDocumento(nomeDocumento) {
+  listaDocumentos.innerHTML += `
+    <a
+      href="documento.html?nome=${nomeDocumento}"
+      class="list-group-item list-group-item-action"
+      id="documento-${nomeDocumento}"
+    >
+      ${nomeDocumento}
+    </a>
+  `;
+}
+
+function removerLinkDocumento(nomeDocumento) {
+  const documento = document.getElementById();
+
+  listaDocumentos.removeChild();
+}
+
+export { inserirLinkDocumento, removerLinkDocumento };
+```
+
+Agora que definimos um ID para cada documento, podemos buscá-lo, passando documento-${nomeDocumento} como parâmetro do getElementById(), lembrando de usar uma template string:
+```
+  // ...
+
+function removerLinkDocumento(nomeDocumento) {
+  const documento = document.getElementById(`documento-${nomeDocumento}`);
+
+  listaDocumentos.removeChild();
+}
+
+export { inserirLinkDocumento, removerLinkDocumento };
+```
+
+Visto que conseguimos armazenar o elemento na variável documento, podemos então passá-la ao método removeChild():
+```
+// ...
+
+function removerLinkDocumento(nomeDocumento) {
+  const documento = document.getElementById(`documento-${nomeDocumento}`);
+
+  listaDocumentos.removeChild(documento);
+}
+
+export { inserirLinkDocumento, removerLinkDocumento };
+```
+
+Esse código será o suficiente para remover o documento da interface para quem estiver na página inicial do Alura Docs. Vamos salvar as alterações e testar nosso código!
+
+Novamente, vamos abrir duas janelas do navegador para simular o uso simultâneo de Juliana e Eduarda. Primeiramente, atualizaremos a página inicial em ambas. Na aba de Juliana, vamos abrir o documento "Node" e clicar no botão "Excluir documento". Como esperado, Juliana é redirecionada à página inicial. Quanto à aba de Eduarda, note que interface foi automaticamente atualizada e "Node" não consta mais na lista. Podemos repetir esse processo com o documento "Angular".
+
+Desse modo, finalizamos todas as funcionalidades.
