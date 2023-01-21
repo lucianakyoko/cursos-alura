@@ -232,7 +232,7 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 ### WebSockets
 | 16 | 📘 Course Title | 🔗 Project | Status |
 | --- | --- | --- | --- |
-| 16.1 | [WebSockets: implemente comunicações em tempo real com Socket.IO e MongoDB](./Websocket-SocketIO-MongoDB/) | ➖ | 🔵 |
+| 16.1 | [WebSockets: implemente comunicações em tempo real com Socket.IO e MongoDB](./Websocket-SocketIO-MongoDB/) | Alura Docs | ✔️ |
 
 ---
 
