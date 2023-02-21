@@ -36,93 +36,14 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 
 ---
 
-### JavaScript
-| 1 | 📘 Course Title | 🔗 Project | Status |
-| --- | --- | --- | --- |
-| 1.1 | JavaScript na Web: validação de Formulários e HTML5 | ➖ | ⚫ |
-| 1.2 | Algoritmos com JavaScript: aprofundando em algoritmos de ordenação e busca | ➖ | ⚫ |
-| 1.3 | JavaScript: programacao orientada a objetos | ➖ | ⚫ |
-| 1.4 | JavaScript: conhecendo o Browser e padrões de projeto | ➖ | ⚫ |
-| 1.5 | JavaScript: aprofundando em MVC, padrão Proxy e Factory| ➖ | ⚫ |
-| 1.6 | JavaScript: salvando dados localmente com IndexedDB | ➖ | ⚫ |
-| 1.7 | JavaScript: de padrões a uma abordagem funcional | ➖ | ⚫ |
-| 1.8 | JavaScript: projeto de conclusão | ➖ | ⚫ |
-| 1.9 | JavaScript: desenvolvedor poliglota | ➖ | ⚫ |
-| 1.10 | JavaScript: manipulando o DOM | ➖ | ⚫ |
-| 1.11 | JavaScript: validações e reconhecimento de voz | ➖ | ⚫ |
-| 1.12 | [JavaScript: consumindo e tratando dados de uma API](./JS-Consumindo-Tratando-Dados-API/) | Alura Books | ✔️ |
-| 1.13 | JavaScript: métodos de array | ➖ | ⚫ |
-| 1.14 | [JavaScript na Web: CRUD com JavaScript assíncrono](./JS-CRUD-Com-JS-Assincrono/)  | ➖ | ✔️ |
-| 1.15 | JavaScript na Web: armazenando dados no navegador  | ➖ | ⚫ |
-| 1.16 | JavaScript na Web: Crie páginas dinâmicas  | ➖ | ⚫ |
-| 1.17 | JavaScript: criando requisições  | ➖ | ⚫ |
-| 1.18 | JavaScript: objetos  | ➖ | ⚫ |
-| 1.18 | JavaScript: validando formulários | ➖ | ⚫ |
-| 1.18 | JavaScript: Arrays | ➖ | ⚫ |
+| - | 📘 Cursos | 
+| --- | --- | 
+| 1 | [JavaScript](./JavaScript/) |
+| 2 | [React](./React/) |
+| 3| [Next.js](./NextJS/) |
+| 4| Node.js |
+| 5| Vue.js |
 
----
-
-### React
-| 2 | 📘 Course Title | 🔗 Project | Status |
-| --- | --- | --- | --- |
-| 2.1 | [React: como os componentes funcionam](./React-Como-Os-Componentes-Funcionam/) | Organo | ✔️ |
-| 2.2 | [React: desenvolvendo com JavaScript](./React-Desenvolvendo-Com-JS/) | [Organo](./React-Desenvolvendo-Com-JS/organo/) | ✔️ |
-| 2.3 | [React: abstraindo seu CSS com Styled Components](./React-Abstraindo-CSS-StyledComponents/) | Smart Bank | ✔️ |
-| 2.4 | React: automatizando os testes em aplicações front-end | ➖ | ⚫ |
-| 2.5 | React Router: navegação em uma SPA | ➖ | ⚫ |
-| 2.6 | React: gerenciamento de estados globais com ContextAPI | ➖ | ⚫ |
-| 2.7 | React: otimizando a performance | ➖ | ⚫ |
-| 2.8 | Django React: construindo uma aplicação de ponta a ponta | ➖ | ⚫ |
-| 2.9 | React com TypeScript: escrevendo com TypeScript | ➖ | ⚫ |
-| 2.10 | React com TypeScript: lidando com arquivos estaticos | ➖ | ⚫ |
-| 2.11 | React com TypeScript: conhecendo a biblioteca React Router | ➖ | ⚫ |
-| 2.12 | React com TypeScript: integrando seu projeto React com APIs | ➖ | ⚫ |
-| 2.13 | React com TypeScript: gerenciando estado com Recoil | ➖ | ⚫ |
-| 2.14 | React com TypeScript: testando os seus componentes | ➖ | ⚫ |
-| 2.15 | React: desenvolvendo uma biblioteca de componentes | ➖ | ⚫ |
-| 2.16 | [React: autenticando usuários](./React-Autenticando-Usuarios/) | ➖ | ⚫ |
-| 2.17 | [React: desenvolvendo em React Router com JavaScript](./React-Desenvolvendo-Com-React-Router/) | Ola Mundo | ✔️ |
-| 2.18 | React: crie sua primeira página web | ➖ | ⚫ |
-| 2.19 | React com TailwindCSS: estilizando componentes | ➖ | ⚫ |
-| 2.20 | React: migrando para TypeScript | ➖ | ⚫ |
-| 2.21 | React: Mutabilidade x Imutabilidade no Redux Toolkit com Immer | ➖ | ⚫ |
-| 2.22 | React: gerenciamento de estados globais com Redux | ➖ | ⚫ |
-| 2.23 | React: obtendo dados com React Query | ➖ | ⚫ |
-| 2.24 | React: praticando React com Js | ➖ | ⚫ |
-| 2.25 | React: consumindo GraphQL com Apollo Client | ➖ | ⚫ |
-| 2.26 | React: testando os seus componentes | ➖ | ⚫ |
-| 2.27 | [React com JavaScript: lidando com arquivos estáticos](./React-Lidando-Com-Arquivos-Estaticos/) | Alura Space | ✔️ |
-
----
-
-### Next.js
-| 3 | 📘 Course Title | 🔗 Project | Status |
-| --- | --- | --- | --- |
-| 3.1 | [Next.js: explorando o framework](./Nextjs-Explorando-Framework) | [Alura Cases Campanha](https://cursos-alura-nextjs-explorando-framework-pd6m.vercel.app/) | ✔️ |
-| 3.2 | [Next.js: tour pelo Next.js](./NextJS-Tour-Pelo-Nextjs) | ➖ | ✔️ |
-| 3.3 | Next.js: autenticacao e gerenciamento de Tokens | ➖ | ⚫ |
-| 3.4 | Next.js: trabalhando com um CMS | ➖ | ⚫ |
-| 3.5 | Next.js: trabalhando com arquitetura Front-end | ➖ | ⚫ |
-| 3.6 | NextJS: documentando seu Front-end com o Storybook | ➖ | ⚫ |
-| 3.7 | NextJS: CI e CD para Front-end com o Github Actions | ➖ | ⚫ |
-| 3.8 | NextJS FullStack: arquitetura de componentes Front-end | ➖ | ⚫ |
-
----
-
-### Node.js
-| 4 | 📘 Course Title | 🔗 Project | Status |
-| --- | --- | --- | --- |
-| 4.1 | Node.js: criando sua biblioteca | ➖ | ⚫ |
-| 4.2 | Node.js: API Rest com Express e MongoDB | ➖ | ⚫ |
-| 4.3 | ORM com Node.js: API com Sequelize e MySQL | ➖ | ⚫ |
-| 4.4 | ORM com Node.js: Avancando nas funcionalidades do Sequelize | ➖ | ⚫ |
-| 4.5 | Node.js e JWT: autenticacao com Tokens | ➖ | ⚫ |
-| 4.6 | Node.js: Refresh e confirmacao de cadastro | ➖ | ⚫ |
-| 4.7 | Node.js: Controle de acesso e autorizacao com RBAC | ➖ | ⚫ |
-| 4.8 | Node.js: testes unitarios e de integracao | ➖ | ⚫ |
-| 4.9 | Node.js: criptografia e tokens JWT | ➖ | ⚫ |
-| 4.10 | Node.js: adicionando CI ao projeto e deploy no Google Cloud | ➖ | ⚫ |
-| 4.11 | [Node.js: criando sua primeira biblioteca](./Node-Criando-Primeira-Biblioteca/)  | ➖ | 🔵 |
 
 
 ---
@@ -145,12 +66,6 @@ Repositório destinado para organizar as anotações das aulas, exercícios e pr
 
 ---
 
-### TypeScript
-| 7 | 📘 Course Title | 🔗 Project | Status |
-| --- | --- | --- | --- |
-| 7.1 | [TypeScript: evoluindo seu JavaScript](./TS-Evoluindo%20seu%20JS/) | ➖ | ✔️ |
-| 7.2 | TypeScript: avancando na linguagem | ➖ | 🔵 |
-| 7.3 | TypeScript: mais tecnicas e boas praticas | ➖ | ⚫ |
 
 ---
 
