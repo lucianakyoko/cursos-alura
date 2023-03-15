@@ -39,7 +39,6 @@ class BoasVindas extends React.Component {
 }
 ```
 
-
 #### Node.JS:
 https://www.hipsters.tech/o-que-e-node-js/
 

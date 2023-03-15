@@ -13,7 +13,7 @@
 
 | Aula | Titulo | Status |
 | --- | --- | --- |
-| 1 | Uma biblioteca declarativa | ⚫ |
+| 1 | Uma biblioteca declarativa | ✔️ |
 | 2 | Trabalhando com props | ⚫ |
 | 3 | Interagindo com usuário | ⚫ |
 | 4 | Montando os times | ⚫ |
