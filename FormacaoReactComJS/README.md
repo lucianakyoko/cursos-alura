@@ -12,7 +12,7 @@
 | concluded | not started | in progress | paused | abandoned |
 
 | 🟪 | 🟦 | 🟫  | 🟨 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Curso | Alura+ | Artigo | Podcast |
 
 ---
