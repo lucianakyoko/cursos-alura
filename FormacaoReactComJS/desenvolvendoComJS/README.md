@@ -1,0 +1,56 @@
+# CURSO - DESENVOLVENDO COM JAVASCRIPT
+
+---
+
+## Aulas
+<p>
+  ✔️ concluded &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  ⚫ not started &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🔵 in progress &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🔶 paused &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🔴 abandoned 
+</p>
+
+| Aula | Titulo | Status |
+| --- | --- | --- |
+| 1 | Uma biblioteca declarativa | ⚫ |
+| 2 | Trabalhando com props | ⚫ |
+| 3 | Interagindo com usuário | ⚫ |
+| 4 | Montando os times | ⚫ |
+| 5 | Caça aos bugs | ⚫ |
+
+---
+
+## Aprendizados
+
+### Aula 01 - Uma biblioteca declarativa
+<ul>
+  <li>Criar novo projeto React;</li>
+  <li>Criar componentes funcionais;</li>
+  <li>Estilizar componentes com CSS;</li>
+  <li>Analisar as dependências do projeto;</li>
+  <li>Analisar os comandos disponíveis no package.json</li>
+</ul>
+
+### Aula 02 - Trabalhando com props
+<ul>
+  <li></li>
+</ul>
+
+
+### Aula 03 - Interagindo com usuário
+<ul>
+  <li></li>
+</ul>
+
+
+### Aula 04 - Montando os times
+<ul>
+  <li></li>
+</ul>
+
+
+### Aula 05 - Caça aos bugs
+<ul>
+  <li></li>
+</ul>
