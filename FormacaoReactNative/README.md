@@ -27,7 +27,7 @@
 | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
 | 1.1 | 🟦 | React e React Native: O poder da dobradinha | --- | [Repo](./poder-da-dobradinha/) | ✔️ |
-| 1.2 | 🟫 | Como começar com React Native? | --- | --- | ⚫ |
+| 1.2 | 🟫 | Como começar com React Native? | --- | [Repo](./como-comecar-com-RN/) | ✔️ |
 | 1.3 | 🟪 | React Native: criando um app | --- | --- | ⚫ |
 | 1.4 | 🟪 | React Native: componentes e unidades de medida | --- | --- | ⚫ |
 
@@ -44,9 +44,9 @@
 ### 3️⃣ - Navegação entre telas
 
 | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | 3.1 | 🟪 | React Native: criando menu e navegando entre telas | --- | --- | ⚫ |
-| 3.2 | Alura+ | Como utilizar ícones e animações em apps com RN | --- | --- | ⚫ |
+| 3.2 | 🟦 | Como utilizar ícones e animações em apps com RN | --- | --- | ⚫ |
 | 3.3 | 🟫 | React Native: posicionando elementos com Flex | --- | --- | ⚫ |
 | 3.4 | 🟫 | React Native: utilizando styled-components | --- | --- | ⚫ |
 
