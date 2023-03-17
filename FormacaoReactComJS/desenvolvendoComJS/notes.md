@@ -61,6 +61,8 @@ Algumas responsabilidades:
 
 ## 📌 AULA 2
 ### Trabalhando com props
+#### Eventos HTML
+Com o React, os eventos deverão ser nomeados em camelCase
 
 ---
 
@@ -75,3 +77,4 @@ Algumas responsabilidades:
 
 ## 📌 AULA 5
 ### Caça aos bugs
+

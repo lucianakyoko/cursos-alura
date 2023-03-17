@@ -14,7 +14,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Uma biblioteca declarativa | ✔️ |
-| 2 | Trabalhando com props | ⚫ |
+| 2 | Trabalhando com props | ✔️ |
 | 3 | Interagindo com usuário | ⚫ |
 | 4 | Montando os times | ⚫ |
 | 5 | Caça aos bugs | ⚫ |
@@ -34,7 +34,10 @@
 
 ### Aula 02 - Trabalhando com props
 <ul>
-  <li></li>
+  <li>Passar props para um componente;</li>
+  <li>Renderizar listas com o .map;</li>
+  <li>Trabalhar com elementos aninhados usando a prop children;</li>
+  <li>Ouvir elementos disparados pelo DOM: o onSubmit do nosso form.</li>
 </ul>
 
 
