@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | 1 | Uma biblioteca declarativa | ✔️ |
 | 2 | Trabalhando com props | ✔️ |
-| 3 | Interagindo com usuário | ⚫ |
+| 3 | Interagindo com usuário | ✔️ |
 | 4 | Montando os times | ⚫ |
 | 5 | Caça aos bugs | ⚫ |
 
@@ -43,7 +43,9 @@
 
 ### Aula 03 - Interagindo com usuário
 <ul>
-  <li></li>
+  <li>Controlar inputs utilizando value e onChange;</li>
+  <li>Gerenciar o estado de um componente, utilizando o useState;</li>
+  <li>Trabalhar com props que são funções.</li>
 </ul>
 
 
