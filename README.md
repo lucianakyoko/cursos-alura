@@ -20,8 +20,9 @@ Cada formação é composta por diversas atividades como: cursos, alura+, podcas
 
 | --- | Formação | Repo | Status |
 | --- | --- | --- | --- |
-| 1 | React com JS | [🗂️](./FormacaoReactComJS/) | ⚫ |
+| 1 | React com JS | [🗂️](./FormacaoReactComJS/) | 🔵 |
 | 2 | React Native | [🗂️](./FormacaoReactNative/) | 🔵 |
+| 3 | Full stack com JS | [🗂️](./FormacaoFullstackJS/) | 🔵 |
 
 ---
 
