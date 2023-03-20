@@ -16,7 +16,7 @@
 | 1 | Uma biblioteca declarativa | ✔️ |
 | 2 | Trabalhando com props | ✔️ |
 | 3 | Interagindo com usuário | ✔️ |
-| 4 | Montando os times | ⚫ |
+| 4 | Montando os times | ✔️ |
 | 5 | Caça aos bugs | ⚫ |
 
 ---
@@ -51,7 +51,9 @@
 
 ### Aula 04 - Montando os times
 <ul>
-  <li></li>
+  <li>Manipular e transformar arrays de objetos;</li>
+  <li>Filtrar itens de um array;</li>
+  <li>Renderização condicional.</li>
 </ul>
 
 

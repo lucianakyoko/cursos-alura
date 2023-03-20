@@ -5,20 +5,10 @@ import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css';
 
 const Formulario = (props) => {
-  const times = [
-    'Programação',
-    'Front-end',
-    'Data Science',
-    'Devops',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão'
-  ];
-
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
   const [imagem, setImagem] = useState('');
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState('Programação');
 
   const aoSalvar = event => {
     event.preventDefault();
@@ -27,7 +17,11 @@ const Formulario = (props) => {
       cargo,
       imagem,
       time
-    })
+    });
+    setNome('');
+    setCargo('');
+    setImagem('');
+    setTime('Programação');
   };
 
   return (
@@ -55,7 +49,7 @@ const Formulario = (props) => {
         <ListaSuspensa 
           obrigatorio 
           label='Time' 
-          itens={times}
+          itens={props.times}
           valor={time}
           aoAlterado={valor => setTime(valor)}
         />

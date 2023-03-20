@@ -69,21 +69,26 @@ Com o React, os eventos deverão ser nomeados em camelCase.
   Sempre que queremos que o componente reaja a alguma alteração no valor de uma variável e se renderize novamente, precisamos indicar isto utilizando o useState. Do contrário, o valor vai ser alterado mas o DOM não será atualizado.
   Ver mais [aqui](https://pt-br.reactjs.org/docs/hooks-reference.html#functional-updates)
 
+---
+
+## 📌 AULA 3
+### Interagindo com usuário
 #### Stateless VS Statefull
 React tem duas abordagens diferentes para lidar com inputs de formulários.
 
 Um elemento de input de formulário cujo valor é controlado pelo React é chamado de **componente controlado**. Quando o usuário insere dados em um componente controlado, o evento que manipula essa alteração é disparado e o seu código decide se o input é válido (ou seja, renderizado com o valor atualizado). Se você não re-renderizar o elemento de formulário, permanecerá inalterado.
 
 Um **componente não controlado** funciona como um elemento de formulário fora do React. Quando um usuário insere dados em um campo de formulário (um input box, dropbox, etc), a informação atualizada é refletida sem necessidade do React fazer nada. No entanto, isso também significa que você não pode forçar o campo a ter um certo valor.
----
-
-## 📌 AULA 3
-### Interagindo com usuário
 
 ---
 
 ## 📌 AULA 4
 ### Montando os times
+
+#### Prop drilling
+Prop drilling, em tradução livre, significa "vazamento de props", e acontece quando você passa uma ou mais props, do pai para o filho, o filho passa para o filho dele, e assim por diante. Lidar com esse prop drilling pode ser desafiador, pois em pouco tempo fica difícil para qualquer pessoa descobrir onde os dados são inicializados, atualizados e usados de fato.
+
+Artigo importante: [link](https://www.alura.com.br/artigos/prop-drilling-no-react-js)
 ---
 
 ## 📌 AULA 5
