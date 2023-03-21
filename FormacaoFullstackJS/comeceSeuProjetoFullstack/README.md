@@ -14,7 +14,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Iniciando o 1º projeto React | ✔️ |
-| 2 | Primeiro componente | ⚫ |
+| 2 | Primeiro componente | ✔️ |
 | 3 | Styled components | ⚫ |
 | 4 | Estados | ⚫ |
 | 5 | Props e finalização do projeto | ⚫ |
@@ -31,7 +31,9 @@
 
 ### Aula 02 - Primeiro componente
 <ul>
-  <li></li>
+  <li>modificar e criar componentes React</li>
+  <li>estilizar um componente React usando CS</li>
+  <li>usar loops para termos um componente mais dinâmico e com menos repetições.</li>
 </ul>
 
 

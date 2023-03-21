@@ -22,10 +22,11 @@ No curso, o projeto foi iniciado com ```npx create-react-app alura-books```. Mas
 
 ---
 
-## 📌 AULA 2
+## 📌 AULA 2 - Primeiro componente
+### entendendo o ''Export Default''
+Durante o desenvolvimento de componentes precisamos usar ```export default``` para permitir que outros arquivos consigam acessar nossos componentes e utilizá-los da maneira que quiserem. 
 
-
-
+[artigo interessante](https://www.alura.com.br/artigos/como-funciona-o-import-e-export-do-javascript)
 ---
 
 ## 📌 AULA 3
