@@ -19,10 +19,10 @@
 
 ### 1️⃣ - Desenvolva uma aplicação do zero ao deploy
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 1.1 | 🟨 | Do Front End ao React | ✖️ | ✖️ | ✔️ |
-| 1.2 | 🟪 | React: desenvolvendo com JavaScript | Organo | [🗂️](./desenvolvendoComJS/) | ✔️ |
+| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS | PREVIEW |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1.1 | 🟨 | Do Front End ao React | ✖️ | ✖️ | ✔️ | --- | 
+| 1.2 | 🟪 | React: desenvolvendo com JavaScript | Organo | [🗂️](./desenvolvendoComJS/) | ✔️ |  <img align="center" alt="Miniatura da imagem do projeto" height="100" width="100" src="../.github/preview-organo.png">
 | 1.3 | 🟪 | React: como os componentes functionam | ✖️ | ✖️ | ⚫ |
 | 1.4 | 🟫 | React, front-end e o mercado | ✖️ | ✖️ | ⚫ |
 | 1.5 | 🟦 | Hooks do React: useState | ✖️ | ✖️ | ⚫ |
