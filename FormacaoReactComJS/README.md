@@ -22,7 +22,7 @@
 | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
 | 1.1 | 🟨 | Do Front End ao React | ✖️ | ✖️ | ✔️ |
-| 1.2 | 🟪 | React: desenvolvendo com JavaScript | Organo | [🗂️](./desenvolvendoComJS/) | 🔵 |
+| 1.2 | 🟪 | React: desenvolvendo com JavaScript | Organo | [🗂️](./desenvolvendoComJS/) | ✔️ |
 | 1.3 | 🟪 | React: como os componentes functionam | ✖️ | ✖️ | ⚫ |
 | 1.4 | 🟫 | React, front-end e o mercado | ✖️ | ✖️ | ⚫ |
 | 1.5 | 🟦 | Hooks do React: useState | ✖️ | ✖️ | ⚫ |

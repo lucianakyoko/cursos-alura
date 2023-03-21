@@ -17,7 +17,7 @@
 | 2 | Trabalhando com props | ✔️ |
 | 3 | Interagindo com usuário | ✔️ |
 | 4 | Montando os times | ✔️ |
-| 5 | Caça aos bugs | ⚫ |
+| 5 | Caça aos bugs | ✔️ |
 
 ---
 
@@ -59,5 +59,7 @@
 
 ### Aula 05 - Caça aos bugs
 <ul>
-  <li></li>
+  <li>Ler e interpretar mensagens de erro;</li>
+  <li>Corrigir erros;</li>
+  <li>Depurar o seu código com o debugger</li>
 </ul>
