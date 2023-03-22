@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | 1 | Iniciando o 1º projeto React | ✔️ |
 | 2 | Primeiro componente | ✔️ |
-| 3 | Styled components | ⚫ |
+| 3 | Styled components | ✔️ |
 | 4 | Estados | ⚫ |
 | 5 | Props e finalização do projeto | ⚫ |
 
@@ -39,7 +39,9 @@
 
 ### Aula 03 - Styled components
 <ul>
-  <li></li>
+  <li>Instalar e utilizar componentes estilizados no React</li>
+  <li>Substituir arquivos CSS por styled-components</li>
+  <li>Criar estilos globais com styled-components</li>
 </ul>
 
 
