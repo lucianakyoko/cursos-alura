@@ -38,5 +38,9 @@ só a executa:
 ```
 
 ## 📌 AULA 3 - Como o React vê um componente
+### Virtual DOM
+  Virtual DOM é algo vital dentro do React, os componentes são vistos como objetos no React.
+  O Virtual DOM armazena estes objetos, e quando algo muda dentro desta árvore de objetos, o React compara o DOM real com o que a gente quer que mude (que a gente chama de candidato) e atualiza apenas o que for mudado
+
 ## 📌 AULA 4 - Criando funcionalidade
 ## 📌 AULA 5 - Finalizando o projeto

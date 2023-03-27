@@ -5,43 +5,36 @@ import Rodape from './componentes/Rodape';
 import Time from './componentes/Time';
 
 function App() {
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: 'Programação',
-      corPrimaria: '#D9F7E9',
-      corSecundaria: '#57C278'
+      cor: '#57C278'
     },
     {
       nome: 'Front-End',
-      corPrimaria: '#E8F8FF',
-      corSecundaria: '#82CFFA'
+      cor: '#82CFFA'
     },
     {
       nome: 'Data Science',
-      corPrimaria: '#F0F8E2',
-      corSecundaria: '#A6D157'
+      cor: '#A6D157'
     },
     {
       nome: 'Devops',
-      corPrimaria: '#FDE7E8',
-      corSecundaria: '#E06B69'
+      cor: '#E06B69'
     },
     {
       nome: 'UX e Design',
-      corPrimaria: '#FAE9F5',
-      corSecundaria: '#DB6EBF'
+      cor: '#DB6EBF'
     },
     {
       nome: 'Mobile',
-      corPrimaria: '#FFF5D9',
-      corSecundaria: '#FFBA05'
+      cor: '#FFBA05'
     },
     {
       nome: 'Inovação e Gestão',
-      corPrimaria: '#FFEEDF',
-      corSecundaria: '#FF8A29'
+      cor: '#FF8A29'
     },
-  ];
+  ]);
 
   const inicial = [
     {
@@ -194,7 +187,18 @@ function App() {
 
   const deletarColaborador = () => {
     console.log('deletando colaborador!')
-  }
+  };
+
+  const mudarCorTime = (cor, nome) => {
+    setTimes(times.map(time => {
+      if(time.nome === nome) {
+        time.cor = cor;
+      };
+      return time;
+    }));
+    
+  };
+
   return (
     <div className="App">
       <Banner />
@@ -210,6 +214,7 @@ function App() {
               time={time} 
               colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} 
               aoDeletar={deletarColaborador} 
+              mudarCor={mudarCorTime}
             />
           ))}
         </section>

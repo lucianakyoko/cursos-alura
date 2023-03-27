@@ -14,8 +14,8 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Importando do Github | ✔️ |
-| 2 | O que são componentes | ⚫ |
-| 3 | Como o React vê um componente | ⚫ |
+| 2 | O que são componentes | ✔️ |
+| 3 | Como o React vê um componente | ✔️ |
 | 4 | Criando funcionalidade | ⚫ |
 | 5 | Finalizando o projeto | ⚫ |
 
@@ -43,7 +43,9 @@
 
 ### Aula 03 - Como o React vê um componente
 <ul>
-  <li></li>
+  <li>O que é Virtual DOM;</li>
+  <li>Como o React escuta uma mudança e porque precisamos de um state para isto;</li>
+  <li>Diferença de imperatividade e declaratividade</li>
 </ul>
 
 ### Aula 04 - Criando funcionalidade
