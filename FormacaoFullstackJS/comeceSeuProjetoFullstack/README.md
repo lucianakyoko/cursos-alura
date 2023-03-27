@@ -47,7 +47,9 @@
 
 ### Aula 04 - Estados
 <ul>
-  <li></li>
+  <li>Criar um estado de componente React </li>
+  <li>Modificar um estado React usando onBlur</li>
+  <li>Modificar componentes a partir do estado </li>
 </ul>
 
 

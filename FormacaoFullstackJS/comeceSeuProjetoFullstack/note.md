@@ -36,8 +36,12 @@ Durante o desenvolvimento de componentes precisamos usar ```export default``` pa
 ---
 
 ## 📌 AULA 4
+### Class vs. Function components
+Quando estamos criando um componente React existem duas maneiras de fazer isso. 
+ - Class components, que são componentes que, ao invés de serem feitos como funções JavaScript, são feitos com classes.
 
-
+Quando usamos Class components precisamos mudar o jeito que usamos o estado. 
+Ler [artigo](https://backefront.com.br/diferenca-class-component-function-component-react/)
 
 ---
 
