@@ -24,6 +24,19 @@ Obs.: No meu caso, simplesmente copiei a pasta com os arquivos, já que na aula 
 
 
 ## 📌 AULA 2 - O que são componentes
+### Closures e map
+Uma closure é um bloco dentro de uma função que nos permite colocar alguma informação dentro, ou seja, é o mesmo que um “bloco”
+
+retorna a função:
+```
+<Componente onClick={() => executarFuncao()}
+```
+
+só a executa:
+```
+<Componente onClick={() => { executarFuncao() }}
+```
+
 ## 📌 AULA 3 - Como o React vê um componente
 ## 📌 AULA 4 - Criando funcionalidade
 ## 📌 AULA 5 - Finalizando o projeto

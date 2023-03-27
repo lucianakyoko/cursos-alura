@@ -34,7 +34,11 @@
 
 ### Aula 02 - O que são componentes
 <ul>
-  <li></li>
+  <li>Criar uma nova prop;</li>
+  <li>Passar esta prop para inúmeros componentes;</li>
+  <li>O que é uma closure e como utilizá-la a seu favor;</li>
+  <li>Instalar novas dependências na sua aplicação;</li>
+  <li>Diferença entre export e export default.</li>
 </ul>
 
 ### Aula 03 - Como o React vê um componente
