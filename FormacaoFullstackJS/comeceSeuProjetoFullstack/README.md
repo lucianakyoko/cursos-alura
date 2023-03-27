@@ -55,7 +55,8 @@
 
 ### Aula 05 - Props e finalização do projeto
 <ul>
-  <li></li>
+  <li>Criar componentes dinâmicos reaproveitando código</li>
+  <li>Criar componentes genéricos usando props </li>
 </ul>
 
 

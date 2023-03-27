@@ -21,6 +21,6 @@
 
 | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
-| 1.1 | 🟪 | React: comece seu projeto fullstack | Alura Books | [🗂️](./comeceSeuProjetoFullstack/) | 🔵 |
+| 1.1 | 🟪 | React: comece seu projeto fullstack | Alura Books | [🗂️](./comeceSeuProjetoFullstack/) | ✔️ |
 | 1.2 | 🟪 | Node.js: continue seu projeto fullstack criando uma API com Express | ✖️ | ✖️ | ⚫ |
 
