@@ -32,8 +32,8 @@
 
 | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
-| 2.1 | 🟪 | React com JS: lidando com arquivos estáticos | ✖️ | ✖️ | ⚫ |
-| 2.2 | 🟪 | React com JS: desenvolvendo em React Router com JS | ✖️ | ✖️ | ⚫ |
+| 2.1 | 🟪 | React com JS: lidando com arquivos estáticos | Alura Space | [🗂️](./lidandoComArquivosEstaticos/) | 🔵 |
+| 2.2 | 🟪 | React com JS: desenvolvendo em React Router com JS | Ola Mundo | [🗂️](./reactRouterComJS/) | 🔵 |
 | 2.3 | 🟪 | React com JS: gerenciamento de estados globais com ContextAPI | ✖️ | ✖️ | ⚫ |
 
 
