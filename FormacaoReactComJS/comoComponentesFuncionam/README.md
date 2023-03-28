@@ -16,7 +16,7 @@
 | 1 | Importando do Github | ✔️ |
 | 2 | O que são componentes | ✔️ |
 | 3 | Como o React vê um componente | ✔️ |
-| 4 | Criando funcionalidade | ⚫ |
+| 4 | Criando funcionalidade | ✔️ |
 | 5 | Finalizando o projeto | ⚫ |
 
 ---
@@ -50,7 +50,9 @@
 
 ### Aula 04 - Criando funcionalidade
 <ul>
-  <li></li>
+  <li>Diferença entre two-way data binding e one-way data binding</li>
+  <li>Por que o React utiliza one-way data binding;</li>
+  <li>Por que utilizar id é importante no React.</li>
 </ul>
 
 ### Aula 05 - Finalizando o projeto

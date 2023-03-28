@@ -43,4 +43,6 @@ só a executa:
   O Virtual DOM armazena estes objetos, e quando algo muda dentro desta árvore de objetos, o React compara o DOM real com o que a gente quer que mude (que a gente chama de candidato) e atualiza apenas o que for mudado
 
 ## 📌 AULA 4 - Criando funcionalidade
+
+
 ## 📌 AULA 5 - Finalizando o projeto
