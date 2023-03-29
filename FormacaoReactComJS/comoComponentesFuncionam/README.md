@@ -17,7 +17,7 @@
 | 2 | O que são componentes | ✔️ |
 | 3 | Como o React vê um componente | ✔️ |
 | 4 | Criando funcionalidade | ✔️ |
-| 5 | Finalizando o projeto | ⚫ |
+| 5 | Finalizando o projeto | ✔️ |
 
 ---
 
@@ -57,5 +57,8 @@
 
 ### Aula 05 - Finalizando o projeto
 <ul>
-  <li></li>
+  <li>Criar um ternário para renderizar de forma opcional;</li>
+  <li>Renderizar condicionais de outras formas;</li>
+  <li>Refatorar um componente sem atrapalhar a execução primária dele;</li>
+  <li>A importância de se refatorar um componente em projetos React.</li>
 </ul>
