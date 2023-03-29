@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando o "Ola mundo" | ✔️ |
-| 2 | SPA com react-router-dom | ⚫ |
+| 2 | SPA com react-router-dom | ✔️ |
 | 3 | Rotas aninhadas | ⚫ |
 | 4 | Rotas dinâmicas | ⚫ |
 | 5 | Finalizando o projeto | ⚫ |
@@ -30,7 +30,10 @@
 
 ### Aula 02 - SPA com react-router-dom
 <ul>
-  <li></li>
+  <li>Diferenciar o comportamento de sites tradicionais e de SPAs;</li>
+  <li>Utilizar o componente Link do react-router-dom;</li>
+  <li>Utilizar o hook useLocation;</li>
+  <li>Utilizar o componente NavLink do react-router-dom.</li>
 </ul>
 
 ### Aula 03 - Rotas aninhadas
