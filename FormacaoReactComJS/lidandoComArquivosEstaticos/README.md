@@ -14,7 +14,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Explorando o projeto | ✔️ |
-| 2 | Avançando nos componentes | ⚫ |
+| 2 | Avançando nos componentes | ✔️ |
 | 3 | Fontes e estilos | ⚫ |
 | 4 | Lidando com imagens | ⚫ |
 | 5 | Finalizando o projeto | ⚫ |
@@ -36,7 +36,15 @@
 
 ### Aula 02 - Avançando nos componentes
 <ul>
-  <li></li>
+  <li>
+    Criar o componente de Menu e boas práticas de organização de pastas;
+  </li>
+  <li>Como importar as imagens de ícones;</li>
+  <li>A importância de manter um padrão de nomenclatura de classes;</li>
+  <li>A escrever um HTML semântico;</li>
+  <li>Inserir o banner da página;</li>
+  <li>Utilizar o import da forma correta como sugere a documentação;</li>
+  <li>O que é e como usar a extensão React Snippets.</li>
 </ul>
 
 ### Aula 03 - Fontes e estilos

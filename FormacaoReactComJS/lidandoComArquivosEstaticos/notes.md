@@ -25,7 +25,7 @@ O React por padrão suporta CSS Modules sem nenhuma instalação adicional, util
 Documentação [CSS Modules](https://github.com/css-modules/css-modules).
 
 
-## 📌 AULA 2
+## 📌 AULA 2 - Avançando nos componentes
 ## 📌 AULA 3
 ## 📌 AULA 4
 ## 📌 AULA 5
