@@ -26,6 +26,26 @@ Documentação [CSS Modules](https://github.com/css-modules/css-modules).
 
 
 ## 📌 AULA 2 - Avançando nos componentes
-## 📌 AULA 3
+## 📌 AULA 3 - Fontes e estilos
+### @font-face
+  O @font-face surgiu para permitir que pessoas desenvolvedoras possam adicionar fontes sem se limitar às chamadas “fontes seguras”, como as do Google. Com o @font-face podemos especificar o nome de uma fonte instalada localmente. Se a fonte não estiver instalada no localmente na máquina do usuário, automaticamente ela é baixada no servidor e exibida ao usuário.
+  Para utilizar o @font-face no React você precisa criar uma pasta chamada fonts.
+
+  Feito isso, você pode baixar as fontes desejadas e colocá-las nessa pasta fonts.
+
+  Em seguida, você deve adicionar essas fontes ao arquivo index.js de seu projeto, dessa forma: ```import './fonts/nome-da-fonte.ttf';```
+
+  No arquivo index.css (ou a extensão de pré-processador que está usando), você pode usar o @font-face:
+  ```
+    @font-face {
+      font-family: "NomePersonalizadoDaFonte";
+      src: local("NomePersonalizadoDaFonte"),
+        url("../assets/fontes/nome-da-font.ttf") format("truetype");
+      font-weight: 500;
+      font-display: swap;
+    }
+  ```
+
+
 ## 📌 AULA 4
 ## 📌 AULA 5

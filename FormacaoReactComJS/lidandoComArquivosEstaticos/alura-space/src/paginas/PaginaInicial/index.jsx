@@ -1,8 +1,9 @@
 import Cabecalho from "../../componentes/Cabecalho";
 import Menu from "../../componentes/Menu";
+import Banner from '../../componentes/Banner';
+import Rodape from '../../componentes/Rodape';
 
 import styles from './PaginaInicial.module.scss';
-import Banner from '../../componentes/Banner';
 
 export default function PaginaInicial() {
   return(
@@ -14,6 +15,7 @@ export default function PaginaInicial() {
           <Banner />
         </section>
       </main>
+      <Rodape />
     </>
   );
 }

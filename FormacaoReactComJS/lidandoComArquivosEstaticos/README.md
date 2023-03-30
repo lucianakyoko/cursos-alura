@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | 1 | Explorando o projeto | ✔️ |
 | 2 | Avançando nos componentes | ✔️ |
-| 3 | Fontes e estilos | ⚫ |
+| 3 | Fontes e estilos | ✔️ |
 | 4 | Lidando com imagens | ⚫ |
 | 5 | Finalizando o projeto | ⚫ |
 
@@ -49,7 +49,11 @@
 
 ### Aula 03 - Fontes e estilos
 <ul>
-  <li></li>
+  <li>Adicionar os arquivos GlobalStyle.scss e _variaveis.scss;</li>
+  <li>Como usar o normalize.css;</li>
+  <li>Como organizar e usar variáveis css;</li>
+  <li>Como configurar os arquivos de fontes no projeto ;</li>
+  <li>Como importar essas fontes usando o @fontface.</li>
 </ul>
 
 ### Aula 04 - Lidando com imagens
