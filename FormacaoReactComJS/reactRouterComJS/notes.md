@@ -69,6 +69,7 @@ Quando queremos reaproveitar partes da nossa aplicação em apenas algumas rotas
 
  Documentação sobre [rotas index](https://reactrouter.com/en/main/start/concepts#index-routes).
  
-## 📌 AULA 4
+## 📌 AULA 4 - Rotas dinâmicas
+[Artigo](https://www.alura.com.br/artigos/como-trabalhar-com-markdown) importante
 ## 📌 AULA 5
 

@@ -14,7 +14,7 @@
 | 1 | Criando o "Ola mundo" | ✔️ |
 | 2 | SPA com react-router-dom | ✔️ |
 | 3 | Rotas aninhadas | ✔️ |
-| 4 | Rotas dinâmicas | ⚫ |
+| 4 | Rotas dinâmicas | ✔️ |
 | 5 | Finalizando o projeto | ⚫ |
 
 ---
@@ -46,7 +46,9 @@
 
 ### Aula 04 - Rotas dinâmicas
 <ul>
-  <li></li>
+  <li>Identificar quando utilizar rotas dinâmicas;</li>
+  <li>Utilizar os seletores de rotas dinâmicas para criar uma rota dinâmica;</li>
+  <li>Utilizar o hook useParams.</li>
 </ul>
 
 ### Aula 05 - Finalizando o projeto
