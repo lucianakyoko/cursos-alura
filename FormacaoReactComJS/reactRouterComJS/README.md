@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Criando o "Ola mundo" | ✔️ |
 | 2 | SPA com react-router-dom | ✔️ |
-| 3 | Rotas aninhadas | ⚫ |
+| 3 | Rotas aninhadas | ✔️ |
 | 4 | Rotas dinâmicas | ⚫ |
 | 5 | Finalizando o projeto | ⚫ |
 
@@ -38,7 +38,10 @@
 
 ### Aula 03 - Rotas aninhadas
 <ul>
-  <li></li>
+  <li>Identificar quando utilizar rotas aninhadas;</li>
+  <li>Utilizar o componente Outlet;</li>
+  <li>Utilizar o atributo index do Route;</li>
+  <li>Diferenciar caminhos relativos e absolutos.</li>
 </ul>
 
 ### Aula 04 - Rotas dinâmicas

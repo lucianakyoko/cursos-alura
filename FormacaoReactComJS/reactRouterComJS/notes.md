@@ -46,7 +46,29 @@ O Routes funciona como um roteador de diferentes rotas, renderizando apenas uma 
 
 
 
-## 📌 AULA 3
+## 📌 AULA 3 - Rotas aninhadas
+### pacote SVGR
+  A sintaxe import { ReactComponent as NomeDoComponente } from 'caminho_do_componente'; é possível devido ao pacote SVGR, que já vem por padrão em um projeto React. Esse pacote permite que utilizemos um SVG como um componente React, assim não precisamos utilizá-lo como uma tag img.
+
+  Para o meu caso, como usei o Vite para iniciar o projeto, foi necessário instalar o plugin: ```npm install vite-plugin-svgr```
+
+  Ao final, foi necessário configurar o arquivo vite.config.js da seguinte forma:
+  ```
+  import { defineConfig } from 'vite'
+  import react from '@vitejs/plugin-react'
+  import svgr from 'vite-plugin-svgr'
+
+  // https://vitejs.dev/config/
+  export default defineConfig({
+    plugins: [ svgr(), react()]
+  })
+  ```
+
+### rotas index e caminhos relativos
+Quando queremos reaproveitar partes da nossa aplicação em apenas algumas rotas em vez de todas, utilizamos o recurso de rotas aninhadas, que são rotas filhas de uma mesma rota pai. Você pode ver sobre isso na [documentação](https://reactrouter.com/en/main/start/overview#nested-routes).
+
+ Documentação sobre [rotas index](https://reactrouter.com/en/main/start/concepts#index-routes).
+ 
 ## 📌 AULA 4
 ## 📌 AULA 5
 
