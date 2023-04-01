@@ -62,3 +62,12 @@
   <li>Refatorar um componente sem atrapalhar a execução primária dele;</li>
   <li>A importância de se refatorar um componente em projetos React.</li>
 </ul>
+
+---
+
+## 🎯 Projeto desenvolvido
+Este é o screenshot do projeto que foi desenvolvido durante o curso:
+
+<p align="center">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-organo-v2.png">
+</p>

@@ -58,3 +58,12 @@
   <li>Tratar o caso de post não encontrado;</li>
   <li>Publicar o projeto!</li>
 </ul>
+
+---
+
+## 🎯 Projeto desenvolvido
+Este é o screenshot do projeto que foi desenvolvido durante o curso:
+
+<p align="center">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-olaMundo.png">
+</p>

@@ -68,3 +68,12 @@
 <p align="center">
   <img src="../../.github/preview-organo.png" alt="Preview da página Organo" width="70%"/>
 </p>
+
+---
+
+## 🎯 Projeto desenvolvido
+Este é o screenshot do projeto que foi desenvolvido durante o curso:
+
+<p align="center">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/organo.png">
+</p>
