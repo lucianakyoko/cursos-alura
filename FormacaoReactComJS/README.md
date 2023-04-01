@@ -30,11 +30,11 @@
 
 ### 2️⃣ - Arquivos estáticos, roteamento e gestão de estados
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 2.1 | 🟪 | React com JS: lidando com arquivos estáticos | Alura Space | [🗂️](./lidandoComArquivosEstaticos/) | 🔵 |
-| 2.2 | 🟪 | React com JS: desenvolvendo em React Router com JS | Ola Mundo | [🗂️](./reactRouterComJS/) | 🔵 |
-| 2.3 | 🟪 | React com JS: gerenciamento de estados globais com ContextAPI | ✖️ | ✖️ | ⚫ |
+| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS | PREVIEW |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2.1 | 🟪 | React com JS: lidando com arquivos estáticos | Alura Space | [🗂️](./lidandoComArquivosEstaticos/) | 🔵 | --- |
+| 2.2 | 🟪 | React com JS: desenvolvendo em React Router com JS | Ola Mundo | [🗂️](./reactRouterComJS/) | ✔️ | <img align="center" alt="Miniatura da imagem do projeto" height="100" width="100" src="../.github/preview-olaMundo.png"> |
+| 2.3 | 🟪 | React com JS: gerenciamento de estados globais com ContextAPI | ✖️ | ✖️ | ⚫ | --- |
 
 
 ### 3️⃣ - Praticando React Js e migrando para o Typescript
