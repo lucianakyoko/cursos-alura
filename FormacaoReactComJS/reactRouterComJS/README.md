@@ -53,5 +53,8 @@
 
 ### Aula 05 - Finalizando o projeto
 <ul>
-  <li></li>
+  <li>Componentizar um botão;</li>
+  <li>Utilizar o hook useNavigate;</li>
+  <li>Tratar o caso de post não encontrado;</li>
+  <li>Publicar o projeto!</li>
 </ul>

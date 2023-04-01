@@ -71,5 +71,7 @@ Quando queremos reaproveitar partes da nossa aplicação em apenas algumas rotas
  
 ## 📌 AULA 4 - Rotas dinâmicas
 [Artigo](https://www.alura.com.br/artigos/como-trabalhar-com-markdown) importante
-## 📌 AULA 5
 
+## 📌 AULA 5
+### navegação no react-router-dom
+Sobre o controle de navegação, ler a [documentação](https://reactrouter.com/en/main/hooks/use-navigate)  
