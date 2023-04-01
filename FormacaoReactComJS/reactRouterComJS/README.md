@@ -15,7 +15,7 @@
 | 2 | SPA com react-router-dom | ✔️ |
 | 3 | Rotas aninhadas | ✔️ |
 | 4 | Rotas dinâmicas | ✔️ |
-| 5 | Finalizando o projeto | ⚫ |
+| 5 | Finalizando o projeto | ✔️ |
 
 ---
 

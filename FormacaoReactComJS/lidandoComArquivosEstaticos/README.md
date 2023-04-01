@@ -16,7 +16,7 @@
 | 1 | Explorando o projeto | ✔️ |
 | 2 | Avançando nos componentes | ✔️ |
 | 3 | Fontes e estilos | ✔️ |
-| 4 | Lidando com imagens | ⚫ |
+| 4 | Lidando com imagens | ✔️ |
 | 5 | Finalizando o projeto | ⚫ |
 
 ---
@@ -58,7 +58,12 @@
 
 ### Aula 04 - Lidando com imagens
 <ul>
-  <li></li>
+  <li>Como criar o componente de Tags e o de Galeria;</li>
+  <li>Utilizar o map para percorrer o arquivo de dados e renderizar as imagens;</li>
+  <li>Quando utilizar a pasta public;</li>
+  <li>Como criar o componente de Card;</li>
+  <li>As vantagens de componentizar a aplicação em diferentes níveis;</li>
+  <li>Como criar o componente para exibir imagens populares.</li>
 </ul>
 
 ### Aula 05 - Finalizando o projeto
