@@ -17,7 +17,7 @@
 | 2 | Avançando nos componentes | ✔️ |
 | 3 | Fontes e estilos | ✔️ |
 | 4 | Lidando com imagens | ✔️ |
-| 5 | Finalizando o projeto | ⚫ |
+| 5 | Finalizando o projeto | ✔️ |
 
 ---
 
