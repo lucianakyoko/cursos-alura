@@ -68,5 +68,10 @@
 
 ### Aula 05 - Finalizando o projeto
 <ul>
-  <li></li>
+  <li>Como criar filtros de ordenação de imagens por Tag;</li>
+  <li>Boas práticas de código;</li>
+  <li>Como controlar estados e utilizar props em componentes;</li>
+  <li>Como usar mixins para reaproveitamento de código e responsividade da página;</li>
+  <li>As vantagens de utilizar absolute imports e como configurar caminhos absolutos;</li>
+  <li>Como fazer o deploy da aplicação na vercel.</li>
 </ul>

@@ -1,5 +1,6 @@
 import React from 'react';
 import fotosPopulares from './fotos-populares.json';
+import Botao from '../Botao';
 import styles from './Populares.module.scss';
 
 export default function Populares() {
@@ -13,7 +14,7 @@ export default function Populares() {
           </li>
         ))}
       </ul>
-      <button>Ver mais fotos</button>
+      <Botao>Ver mais fotos</Botao>
     </aside>
   )
 }
