@@ -75,3 +75,12 @@
   <li>As vantagens de utilizar absolute imports e como configurar caminhos absolutos;</li>
   <li>Como fazer o deploy da aplicação na vercel.</li>
 </ul>
+
+---
+
+## 🎯 Projeto desenvolvido
+Este é o screenshot do projeto que foi desenvolvido durante o curso:
+
+<p align="center">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-aluraSpace.png">
+</p>
