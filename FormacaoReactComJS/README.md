@@ -41,5 +41,5 @@
 
 | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
-| 3.1 | 🟪 | React: praticando React com JS | ✖️ | ✖️ | ⚫ |
+| 3.1 | 🟪 | React: praticando React com JS | CineTag | [🗂️](./praticandoReactComJS/) | 🔵 |
 | 3.2 | 🟪 | React: migrando pra TypeScript | ✖️ | ✖️ | ⚫ |
