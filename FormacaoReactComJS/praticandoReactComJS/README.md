@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Primeiros passos | ✔️ |
-| 2 | Criando componentes | ⚫ |
+| 2 | Criando componentes | ✔️ |
 | 3 | Definindo contextos | ⚫ |
 | 4 | Evoluindo as rotas | ⚫ |
 | 5 | Externalizando dados | ⚫ |
@@ -32,7 +32,11 @@
 
 ### Aula 02 - Criando componentes
 <ul>
-  <li></li>
+  <li>Criar novos componentes;</li>
+  <li>Construir novas rotas;</li>
+  <li>Compartilhar informações entre componentes com props e children;</li>
+  <li>Importar dados de um arquivo json;</li>
+  <li>Usar o método .map para listar componentes.</li>
 </ul>
 
 ---

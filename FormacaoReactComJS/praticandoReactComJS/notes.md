@@ -35,7 +35,13 @@ O React por padrão suporta esse tipo de CSS sem precisar instalar, utilizando o
 ---
 
 ## AULA 02 - CRIANDO COMPONENTES
+### Props
+**Props** são propriedades de uma classe ou função JavaScript que podem ser passados aos seus componentes filhos. É possível enviar como “prop” diferentes tipos de dados e até mesmo outros componentes. É fundamental na criação de componentes por ser o meio de comunicação entre eles.
 
+###  props.children
+A props.children (propriedade filha) é uma propriedade especial do React que contém qualquer elemento filho definido no componente. Ela é usada para exibir o que você inclui entre as tags de abertura e fechamento ao chamar um componente.
+
+A [documentação](https://reactjs.org/docs/composition-vs-inheritance.html) do React diz que você pode usar props.children em componentes que são genéricos, que não tem filhos pré-determinados, flexibilizando o uso do componente.
 ---
 
 ## AULA 03 - DEFININDO CONTEXTOS
