@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Primeiros passos | ✔️ |
 | 2 | Criando componentes | ✔️ |
-| 3 | Definindo contextos | ⚫ |
+| 3 | Definindo contextos | ✔️ |
 | 4 | Evoluindo as rotas | ⚫ |
 | 5 | Externalizando dados | ⚫ |
 
@@ -50,7 +50,12 @@
 
 ### Aula 04 - Evoluindo as rotas
 <ul>
-  <li></li>
+  <li>Criar contextos através da ContextAPI com o createContext;</li>
+  <li>Permitir o uso de contextos nos elementos com o Provider e useContext;</li>
+  <li>Construir hooks personalizados;</li>
+  <li>Procurar valores dentro de um array com o método some;</li>
+  <li>Remover itens de um array com o método splice e auxílio do indexOf;</li>
+  <li>Instalar e usar a extensão React Context DevTool.</li>
 </ul>
 
 ---

@@ -45,6 +45,27 @@ A [documentação](https://reactjs.org/docs/composition-vs-inheritance.html) do 
 ---
 
 ## AULA 03 - DEFININDO CONTEXTOS
+### contextualizando contexts
+O Context (em português, contexto) fornece uma maneira de passar dados pela árvore de componentes sem ter que passar props manualmente em todos os níveis.
+
+Geralmente, quando estamos desenvolvendo um projeto em React, os dados são passados de por meio de props, de componente pai para filho.
+
+Esse uso pode ser complicado para alguns tipos de propriedades que são exigidas por muitos componentes dentro de um aplicativo, como no nosso caso em que gostaríamos de mostrar quais filmes foram favoritados seja na página inicial ou na página de favoritos.
+
+ A estrutura para iniciar um contexto é a seguinte: ```const MeuContexto = createContext();```
+
+ Cada objeto Context vem com um componente Provider React que permite que os componentes que estão usando esse contexto façam alterações nele.
+ ```
+ <MeuContexto.Provider value={/* algum valor */}>
+ ```
+
+ Após abranger o componente com o provider, você consegue acesso ao componente utilizando o hook useContext(MeuContexto).
+
+Resumidamente, o contexto fornece uma maneira de compartilhar valores como esses entre componentes sem ter que passar explicitamente um prop por todos os níveis da árvore.
+
+### Hook
+Um Hook (em português, gancho) é uma função especial que te permite utilizar recursos do React. Você pode detectar um hook pelo início de seu nome, em que aparece o termo use.
+
 
 ---
 
