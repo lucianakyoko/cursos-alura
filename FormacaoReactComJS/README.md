@@ -39,7 +39,7 @@
 
 ### 3️⃣ - Praticando React Js e migrando para o Typescript
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 3.1 | 🟪 | React: praticando React com JS | CineTag | [🗂️](./praticandoReactComJS/) | 🔵 |
-| 3.2 | 🟪 | React: migrando pra TypeScript | ✖️ | ✖️ | ⚫ |
+| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS | PREVIEW |
+| --- | --- | --- | --- | --- | --- | --- |
+| 3.1 | 🟪 | React: praticando React com JS | CineTag | [🗂️](./praticandoReactComJS/) | ✔️ |  <img align="center" alt="Miniatura da imagem do projeto" height="100" width="100" src="../.github/preview-cineTag.png"> |
+| 3.2 | 🟪 | React: migrando pra TypeScript | ✖️ | ✖️ | ⚫ | --- |
