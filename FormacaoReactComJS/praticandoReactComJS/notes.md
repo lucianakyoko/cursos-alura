@@ -70,6 +70,18 @@ Um Hook (em português, gancho) é uma função especial que te permite utilizar
 ---
 
 ## AULA 04 - EVOLUINDO AS ROTAS
+### Parâmetros da URL
+A estrutura da criação de um parâmetro de URL dinâmico é o sinal de dois pontos e o nome desse parâmetro. Dessa maneira, foi criada uma rota dinâmica e podemos acessar as músicas pelo número do seu id.
+
+### useParams
+O hook useParams é um hook da biblioteca react-router-dom, e segundo sua [documentação](O hook useParams é um hook da biblioteca react-router-dom, e segundo sua documentação, ele retorna um objeto de valores/chaves que foram passados como parâmetros dinâmicos da URL atual. Para usá-lo, inicialmente, precisamos construir uma rota:), ele retorna um objeto de valores/chaves que foram passados como parâmetros dinâmicos da URL atual. Para usá-lo, inicialmente, precisamos construir uma rota:
+```<Route path="videos/:id/" element={<Player />} />```
+
+No exemplo acima, o parâmetro enviado é o id, que virou é uma rota reservada por causa do : na frente. Com o parâmetro dentro da URL, o roteador React não corresponderá literalmente à rota acima. Agora, corresponderá dinamicamente a páginas com o padrão “videos/:id”, sendo o id o valor que você quiser inserir, como: “videos/1”.
+
+### Nested Routes
+[Nested Routes](https://reactrouter.com/en/v6.3.0/getting-started/overview#nested-routes) (em português, rotas aninhadas) é um recurso do React Router que auxilia na criação do projeto, evitando códigos de layout duplicados e complicados. Com ele, você acopla componentes que se repetem entre as páginas em uma rota, levando em conta alguma parte da URL que é repetida entre todas elas.
+
 
 ---
 
