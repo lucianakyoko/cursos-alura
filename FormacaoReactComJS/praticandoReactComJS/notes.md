@@ -42,6 +42,7 @@ O React por padrão suporta esse tipo de CSS sem precisar instalar, utilizando o
 A props.children (propriedade filha) é uma propriedade especial do React que contém qualquer elemento filho definido no componente. Ela é usada para exibir o que você inclui entre as tags de abertura e fechamento ao chamar um componente.
 
 A [documentação](https://reactjs.org/docs/composition-vs-inheritance.html) do React diz que você pode usar props.children em componentes que são genéricos, que não tem filhos pré-determinados, flexibilizando o uso do componente.
+
 ---
 
 ## AULA 03 - DEFININDO CONTEXTOS
@@ -66,7 +67,6 @@ Resumidamente, o contexto fornece uma maneira de compartilhar valores como esses
 ### Hook
 Um Hook (em português, gancho) é uma função especial que te permite utilizar recursos do React. Você pode detectar um hook pelo início de seu nome, em que aparece o termo use.
 
-
 ---
 
 ## AULA 04 - EVOLUINDO AS ROTAS
@@ -86,3 +86,23 @@ No exemplo acima, o parâmetro enviado é o id, que virou é uma rota reservada 
 ---
 
 ## AULA 05 - EXTERNALIZANDO DADOS
+### My Json Server
+Acessar o [My JSON Server](https://my-json-server.typicode.com/)
+
+Na página inicial, temos a informação de que o site cria uma API fake online ("Get instantly a fake server") e um tutorial de como usar.
+
+O tutorial contém os seguintes passos:
+
+- Create a repository on GitHub (<your-username>/<your-repo>)
+- Create a db.json file ("Criar um arquivo db.json)
+- Visit "https://my-json-server.typicode.com/your-username/your-repo" to access your server
+
+Conforme dito no tópico 3 do tutorial, para acessar o servidor, precisamos copiar a URL e inserir o nosso username do GitHub, seguido do nome do repositório. O meu é "monicahillman" e o repositório é "cinetag-api" (Exemplo: https://my-json-server.typicode.com/monicahillman/cinetag-api).
+
+Nessa página, são exibidos os recursos disponíveis: o nosso array chamado "videos" e o db.json. Ao clicar em db.json, será aberta uma URL contendo todas as informações que antes estavam no arquivo db.json do nosso projeto.
+
+Na mesma página, também temos a informação de que podemos usar as requisições GET, POST, PUT, PATCH e DELETE. Além disso, o site nos diz que as alterações não são persistentes entre as chamadas ("Changes aren't persisted between calls").
+
+Por isso, nesse projeto, vamos fazer somente o GET e simular a API (também podemos dizer "mockar" a API).
+
+Para este projeto, como eu não quis gerar mais um repositório no Github, utilizei o repositório da intrutora: ```https://my-json-server.typicode.com/monicahillman/cinetag-api/videos```

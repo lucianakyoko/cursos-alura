@@ -15,7 +15,7 @@
 | 2 | Criando componentes | ✔️ |
 | 3 | Definindo contextos | ✔️ |
 | 4 | Evoluindo as rotas | ✔️ |
-| 5 | Externalizando dados | ⚫ |
+| 5 | Externalizando dados | ✔️ |
 
 ---
 
@@ -65,7 +65,10 @@
 
 ### Aula 05 - Externalizando dados
 <ul>
-  <li></li>
+  <li>Fazer upload de um protótipo de API no Github;</li>
+  <li>Hospedar o protótipo de API no My Json Server;</li>
+  <li>Consumir APIs com o FetchAPI;</li>
+  <li>Executar o deploy do projeto.</li>
 </ul>
 
 ---
