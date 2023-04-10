@@ -59,4 +59,12 @@
   <li>Criar componentes genéricos usando props </li>
 </ul>
 
+---
+
+## 🎯 Projeto desenvolvido
+Este é o screenshot do projeto que foi desenvolvido durante o curso:
+
+<p align="center">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-aluraBooks.png">
+</p>
 

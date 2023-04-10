@@ -19,8 +19,8 @@
 
 ### 1️⃣ - Desenvolvendo uma página com React e API CRUD
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 1.1 | 🟪 | React: comece seu projeto fullstack | Alura Books | [🗂️](./comeceSeuProjetoFullstack/) | ✔️ |
-| 1.2 | 🟪 | Node.js: continue seu projeto fullstack criando uma API com Express | ✖️ | ✖️ | ⚫ |
+| --- | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS | PREVIEW |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| . | 1.1 | 🟪 | React: comece seu projeto fullstack | Alura Books | [🗂️](./comeceSeuProjetoFullstack/) | ✔️ | <img align="center" alt="Miniatura da imagem do projeto" height="100" width="100" src="../.github/preview-aluraBooks.png"> |
+| 🚩 | 1.2 | 🟪 | Node.js: continue seu projeto fullstack criando uma API com Express | ✖️ | [🗂️](./criandoUmaAPIComExpress/) | 🔵 | ✖️ |
 
