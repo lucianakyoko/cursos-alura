@@ -34,6 +34,8 @@ para usar o hot reload do nodemon, rodar o comando ```nodemon app.js```
 
 ## 📌 AULA 2
 ### CRIANDO AS PRIMEIRAS ROTAS
+#### conhecendo mais o protocolo HTTP
+Ler [artigo](https://www.alura.com.br/artigos/desmistificando-o-protocolo-http-parte-1#:~:text=HTTP%20%C3%A9%20um%20protocolo%2C%20uma,nome%20Hyper%20Text%20Transport%20Protcolo)
 
 ---
 

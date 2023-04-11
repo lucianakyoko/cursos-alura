@@ -14,7 +14,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Iniciando o 1º projeto | ✔️ |
-| 2 | Criando as primeiras rotas | ⚫ |
+| 2 | Criando as primeiras rotas | ✔️ |
 | 3 | JSON para armazenar os dados | ⚫ |
 | 4 | Parâmetro nas requisições | ⚫ |
 | 5 | Lidando com erros | ⚫ |
@@ -31,7 +31,9 @@
 
 ### Aula 02 - CRIANDO AS PRIMEIRAS ROTAS
 <ul>
-  <li></li>
+  <li>O que são e como criar rotas,</li>
+  <li>O que são HTTP Status e quando usar cada status</li>
+  <li>O que são e como criar controladores</li>
 </ul>
 
 
