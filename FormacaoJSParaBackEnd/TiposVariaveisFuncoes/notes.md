@@ -198,6 +198,46 @@ console.log(Number(usuarioConectado)); // agora teremos a conversão de true (ve
 
 ## 📌 AULA 3
 ### O JAVASCRIPT E O NODEJS
+O JavaScript é uma **linguagem interpretada** com **Tipagem Dinâmica** e **Multiparadigmas**
+
+O JS como é uma linguagem interpretada, precisamos do navegador para interpretar, ou podemos usar o Node como interpretador.
+
+O NodeJS não é uma linguagem.
+
+#### Tipos de erro
+Cada linguagem de programação tem sua própria forma de lidar com erros. O JavaScript começa dividindo cada tipo de erro possível em algumas categorias:
+
+- *RangeError*: Quando o código recebe um dado do tipo certo, porém não dentro do formato aceitável. Por exemplo, um processamento que só pode ser feito com números inteiros maiores ou iguais a zero, mas recebe -1.
+
+- *ReferenceError*: Normalmente ocorre quando o código tenta acessar algo que não existe, como uma variável que não foi definida; muitas vezes é causado por erros de digitação ou confusão nos nomes utilizados, mas também pode indicar um erro no programa.
+
+- *SyntaxError*: Na maior parte dos casos ocorre quando há erros no programa e o JavaScript não consegue executá-lo. Os erros podem ser métodos ou propriedades escritos ou utilizados de forma incorreta, por exemplo, operadores ou sinais gráficos com elementos a menos, como esquecer de fechar chaves ou colchetes.
+
+- *TypeError*: Indica que o código esperava receber um dado de um determinado tipo, tal qual uma string de texto, mas recebeu outro, como um número, booleano ou null.
+
+[DOCUMENTAÇÃO](https://nodejs.org/api/errors.html#errors_errors)
+
+#### Outros métodos da Console API
+Embora seja o mais utilizado, .log() é um dos vários métodos que podemos utilizar para exibir informações na chamada “saída padrão” - o terminal - enquanto estamos desenvolvendo uma aplicação. A palavra log significa algo como “registro”, então este método apenas registra no terminal o que passamos entre os parênteses, por exemplo o conteúdo de uma variável ou o resultado de uma operação.
+
+Entre os outros métodos, existem:
+
+ - ```console.error()``` para exibir mensagens de erro;
+ - ```console.table()``` para visualizar de forma mais organizada informações tabulares;
+ - ```console.time()``` e ```console.timeEnd()``` para temporizar período que uma operação de código leva para ser iniciada e concluída;
+ - ```console.trace()``` para exibir a stacktrace de todos os pontos (ou seja, os arquivos chamados) por onde o código executado passou durante a execução.
+
+ A [documentação](https://nodejs.org/api/console.html) oficial do NodeJS dá exemplos sobre como utilizar cada um destes métodos e mais outros da lista.
+
+#### Características do JS
+O JavaScript foi padronizado em 1996 pela European Computer Manufacturers Association (ECMA), e é por isso que às vezes você o ouve como ECMAScript. É uma linguagem incrivelmente poderosa, presente na maioria dos navegadores e no back-end de grandes sistemas.
+
+Os tipos primitivos do JavaScript incluem números, texto (conhecidas como strings) e valores booleanos. Já o tipo objeto é uma coleção de propriedades, onde cada uma possui um nome e um valor, sendo ele um valor primitivo ou outro objeto.
+
+ O JavaScript é uma linguagem de programação multiparadigma e possui suporte para funcional, orientado a objetos ou lógico por exemplo.
+
+ Diferente de outras linguagens de programação como Java ou Python, divisão por zero no JavaScript não gera um erro. O retorno desta operação é infinito ou infinito negativo (Infinity). Porém, a divisão de zero por zero resulta num NaN (not a number).
+
 
 ---
 
