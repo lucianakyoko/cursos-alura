@@ -42,6 +42,8 @@ Ler [artigo](https://www.alura.com.br/artigos/desmistificando-o-protocolo-http-p
 ## 📌 AULA 3
 ### JSON PARA ARMAZENAR OS DADOS
 
+Ler [artigo](https://medium.com/sysadminas/banco-de-dados-af36571670ee#:~:text=Os%20tipos%20de%20bancos%20de,conhecido%2C%20com%20colunas%20e%20linhas)
+
 ---
 
 ## 📌 AULA 4

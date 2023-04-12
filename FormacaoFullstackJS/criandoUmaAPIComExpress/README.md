@@ -39,7 +39,8 @@
 
 ### Aula 03 - JSON PARA ARMAZENAR OS DADOS
 <ul>
-  <li></li>
+  <li>Como usar a ferramenta de manipulação de arquivos em node, o que nos permitirá usar um arquivo JSON como banco de dados da nossa aplicação;</li>
+  <li>Como usar consulta de arquivos em uma rota GET da API para que assim possamos devolver ao cliente todos os livros inseridos no JSON.</li>
 </ul>
 
 
