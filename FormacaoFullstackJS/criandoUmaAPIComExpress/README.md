@@ -17,7 +17,7 @@
 | 2 | Criando as primeiras rotas | ✔️ |
 | 3 | JSON para armazenar os dados | ✔️ |
 | 4 | Parâmetro nas requisições | ✔️ |
-| 5 | Lidando com erros | ⚫ |
+| 5 | Lidando com erros | ✔️ |
 
 ---
 
@@ -54,7 +54,8 @@
 
 ### Aula 05 - LIDANDO COM ERROS
 <ul>
-  <li></li>
+  <li>Como fazer verificação de erros no body para que a API seja mais robusto e à prova de erros;</li> 
+  <li>Como garantir que os IDs buscados sejam existentes, para que o usuário saiba possíveis problemas com sua requisição.</li> 
 </ul>
 
 ---

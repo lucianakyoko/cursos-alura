@@ -57,5 +57,8 @@ Quando estamos lidando com requisições HTTP, além de enviarmos um corpo(body)
 
 ## 📌 AULA 5
 ### LIDANDO COM ERROS
+#### status HTTP
+Há muitas possibilidades de status. 
+Para se informar melhor sobre todos os tipos de status HTTP, temos esta [documentação](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status).
 
 ---
