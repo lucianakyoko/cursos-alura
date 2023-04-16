@@ -15,8 +15,8 @@
 | --- | --- | --- |
 | 1 | Iniciando o 1º projeto | ✔️ |
 | 2 | Criando as primeiras rotas | ✔️ |
-| 3 | JSON para armazenar os dados | ⚫ |
-| 4 | Parâmetro nas requisições | ⚫ |
+| 3 | JSON para armazenar os dados | ✔️ |
+| 4 | Parâmetro nas requisições | ✔️ |
 | 5 | Lidando com erros | ⚫ |
 
 ---
@@ -46,7 +46,9 @@
 
 ### Aula 04 - PARÂMETRO NAS REQUISIÇÕES
 <ul>
-  <li></li>
+  <li>Como criar uma rota de GET, POST, PATCH e DELETE para a API;</li>
+  <li>Como receber dados(ID) pelos parâmetros da requisição e poder tomar ações dinâmicas baseadas no valor recebido pela requisição;</li>
+  <li>Como receber dados no corpo da requisição para que possamos fazer inserção ou edição de dados, tendo a capacidade de receber qualquer tipo de valor pela requisição.</li>
 </ul>
 
 

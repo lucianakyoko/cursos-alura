@@ -48,6 +48,10 @@ Ler [artigo](https://medium.com/sysadminas/banco-de-dados-af36571670ee#:~:text=O
 
 ## 📌 AULA 4
 ### PARÂMETRO NAS REQUISIÇÕES
+#### Headers
+Quando estamos lidando com requisições HTTP, além de enviarmos um corpo(body) na requisição, são enviados headers(cabeçalhos) com configurações. Além de headers que são enviados automaticamente, muitas vezes nós, como desenvolvedores, temos que configurar diferentes headers que serão enviados por motivos como autenticação, por exemplo. 
+
+[documentação](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers) sobre headers.
 
 ---
 
