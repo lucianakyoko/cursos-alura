@@ -17,7 +17,7 @@
 | 2 | Declarando variáveis | ✔️ |
 | 3 | O JavaScript e NodeJS | ✔️ |
 | 4 | Operadores | ✔️ |
-| 5 | Funções | ⚫ |
+| 5 | Funções | ✔️ |
 
 ---
 
@@ -67,5 +67,11 @@
 
 ### Aula 05 - Funções
 <ul>
-  <li></li>
+  <li>O que são funções, pequenos trechos de código que podem ser executados uma ou mais vezes.</li>
+  <li>As vantagens de se usar uma função, pois com elas conseguimos deixar o código mais curto e mais legível, facilitando a manutenção.</li>
+  <li>Como retornar informações da função, utilizando o return, lembrando que o console.log() apenas mostra a informação no terminal e não para outras partes do código.</li>
+  <li>A utilidade dos argumentos, já que com eles podemos passar variáveis para as funções poderem usar os valores.</li>
+  <li>Que com o hoisting o JavaScript analisa todo o código procurando por variáveis declaradas com var e funções para trazer tais declarações para o início do código.</li>
+  <li>Expressões de função, uma maneira diferente de montar funções usando variáveis do tipo const e chamando-as pelo nome. Lembrando que é necessário que o programa passe pela variável antes de podermos chamá-la, já que não há suporte à hoisting.</li>
+  <li>Arrow function, uma função declarada de maneira mais compacta usando uma const. A arrow function também não tem suporte à hoisting.</li>
 </ul>
