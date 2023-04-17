@@ -30,7 +30,7 @@
 | . | 1.2 | 🟪 | JavaScript: tipos, variáveis e funções | ✖️ | [🗂️](./TiposVariaveisFuncoes/) | ✔️ |
 | . | 1.3 | 🟫 | Higher Order Functions: o que são? | ✖️ | [🗂️](./higherOrderFunction/) | ✔️ |
 | . | 1.4 | 🟫 | Strings com JavaScript: o que são e como manipulá-las | ✖️ | [🗂️](./stringsComJS/) | ✔️ |
-| 🚩 | 1.5 | 🟪 | JavaScript: Arrays | ✖️ | ✖️ | 🔵 |
+| 🚩 | 1.5 | 🟪 | JavaScript: Arrays | ✖️ | [🗂️](./JavascriptArrays/) | 🔵 |
 | . | 1.6 | 🟪 | JavaScript: Objetos | ✖️ | ✖️ | ⚫ |
 | . | 1.7 | 🟦 | Classes x Funções no JavaScript | ✖️ | ✖️ | ⚫ |
 | . | 1.8 | 🟦 | Destructuring em JavaScript | ✖️ | ✖️ | ⚫ |
