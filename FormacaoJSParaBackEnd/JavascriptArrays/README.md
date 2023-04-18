@@ -14,7 +14,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | O que são arrays | ✔️ |
-| 2 | Alterando arrays | ⚫ |
+| 2 | Alterando arrays | ✔️ |
 | 3 | Laços de repetição | ⚫ |
 | 4 | Funções callback | ⚫ |
 | 5 | Avançando em arrays | ⚫ |
@@ -33,7 +33,10 @@
 
 ### Aula 02 - Declarando variáveis
 <ul>
-  <li></li>
+  <li>Separar um array em partes com slice() (utilizamos para obter dois novos arrays a partir de um).</li>
+  <li>Remover e incluir novos elementos em um array com splice(); sendo que esse método permite remover elementos de qualquer posição do array. Além disso, podemos incluir um novo elemento no local dos removidos.</li>
+  <li>Concatenar elementos em um único array com concat(); sendo que essa é uma forma facilitada de juntar dois arrays.</li>
+  <li>Trabalhar com arrays de duas dimensões. Vimos que uma lista também pode guardar outras listas! Para acessar elementos das listas mais internas, devemos informar primeiro os índices das mais externas e depois os das mais internas, como por exemplo com funcionarios[0][2].</li>
 </ul>
 
 

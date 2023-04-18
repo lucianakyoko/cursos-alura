@@ -89,6 +89,7 @@ forEach()
 
 ## 📌 AULA 2
 ### ALTERANDO ARRAYS
+Consultar a [documentação](https://developer.mozilla.org/pt-BR/)
 ---
 
 ## 📌 AULA 3
