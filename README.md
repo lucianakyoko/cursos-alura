@@ -3,9 +3,14 @@
 </p>
 
 ## 📌 Sobre
-Repositório destinado para organizar as anotações das aulas, exercícios e projetos desenvolvidos durante os cursos realizando na platafora da **[Alura](https://www.alura.com.br/planos-cursos-online)**.
+Repositório destinado para organizar as anotações das aulas, exercícios e projetos desenvolvidos durante as formações realizados na platafora da **[Alura](https://www.alura.com.br/planos-cursos-online)**.
 
-Cada formação é composta por diversas atividades como: cursos, alura+, podcast, videos e artigos.
+Cada **Formação** é composta por diversas atividades como: 
+  - cursos, 
+  - alura+, 
+  - podcast, 
+  - videos e 
+  - artigos.
 
 ---
 
@@ -21,8 +26,8 @@ Cada formação é composta por diversas atividades como: cursos, alura+, podcas
 | --- | Formação | Repo | Status |
 | --- | --- | --- | --- |
 | 1 | React com JS | [🗂️](./FormacaoReactComJS/) | 🔵 |
-| 2 | React Native | [🗂️](./FormacaoReactNative/) | 🔵 |
-| 3 | Full stack com JS | [🗂️](./FormacaoFullstackJS/) | 🔵 |
+| 2 | React Native | [🗂️](./FormacaoReactNative/) | 🔶 |
+| 3 | Full stack com JS | [🗂️](./FormacaoFullstackJS/) | ✔️ |
 | 4 | JavaScript para back-end | [🗂️](./FormacaoJSParaBackEnd/) | 🔵 |
 
 ---
