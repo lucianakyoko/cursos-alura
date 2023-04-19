@@ -23,42 +23,42 @@
 ---
 
 ### 1️⃣ - ####
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 1.1 | . | . | . | . | ⚫ |
+| . | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- | --- |
+| 🚩 | 1.1 | . | . | ✖️ | ➖ | ⚫ |
 
 
 
 ### 2️⃣ - ####
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 2.1 | . | . | . | . | ⚫ |
+| . | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- | --- |
+| . | 2.1 | . | . | . | . | ⚫ |
 
 
 ### 3️⃣ - ####
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 3.1 | . | . | . | . | ⚫ |
+| . | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- | --- |
+| . | 3.1 | . | . | . | . | ⚫ |
 
 
 ### 4️⃣ - ####
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 4.1 | . | . | . | . | ⚫ |
+| . | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- | --- |
+| . | 4.1 | . | . | . | . | ⚫ |
 
 
 ### 5️⃣ - ####
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 5.1 | . | . | . | . | ⚫ |
+| . | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- | --- |
+| . | 5.1 | . | . | . | . | ⚫ |
 
 
 ### 6️⃣ - ####
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 6.1 | . | . | . | . | ⚫ |
+| . | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- | --- |
+| . | 6.1 | . | . | . | . | ⚫ |
