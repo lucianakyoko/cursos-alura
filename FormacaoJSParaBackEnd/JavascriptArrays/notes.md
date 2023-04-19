@@ -95,6 +95,11 @@ Consultar a [documentação](https://developer.mozilla.org/pt-BR/)
 ## 📌 AULA 3
 ### LAÇOS DE REPETIÇÃO
 
+o método includes() confere se o elemento passado por parâmetro está incluso em uma lista;
+o método indexOf() retorna o índice do elemento passado por parâmetro.
+
+Assistir o [Alura+](https://cursos.alura.com.br/extra/alura-mais/destructuring-em-js-c308) sobre Destructuring;
+
 ---
 
 ## 📌 AULA 4
