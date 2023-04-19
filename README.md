@@ -29,6 +29,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 2 | React Native | [🗂️](./FormacaoReactNative/) | 🔶 |
 | 3 | Full stack com JS | [🗂️](./FormacaoFullstackJS/) | ✔️ |
 | 4 | JavaScript para back-end | [🗂️](./FormacaoJSParaBackEnd/) | 🔵 |
+| 5 | TypeScrpt | [🗂️](./FormacaoTypescript/) | 🔵 |
 
 ---
 
