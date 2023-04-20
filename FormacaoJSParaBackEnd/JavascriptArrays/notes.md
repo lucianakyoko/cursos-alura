@@ -104,6 +104,29 @@ Assistir o [Alura+](https://cursos.alura.com.br/extra/alura-mais/destructuring-e
 
 ## 📌 AULA 4
 ### FUNÇÕES CALLBACK
+#### for...of vs callback
+**for**:
+A forma mais “clássica” de se efetuar um loop em JavaScript e em várias outras linguagens, o for é muito conveniente pois pode ser utilizado com qualquer tipo de iterável e é construído de uma forma que deixa muito claro quais são todas as “fases” de cada loop - também chamamos um loop de laço de repetição ou de iteração.
+
+**for…of**:
+Adicionado às funcionalidades do JavaScript na versão ES6, é um tipo de laço de repetição diferente do for tradicional, embora utilize a mesma palavra-chave. O for…of pode ser executado utilizando qualquer tipo de iterável: além de arrays, strings, sets (conjuntos) e maps (mapas ou dicionários) são considerados objetos iteráveis.
+
+**forEach()**:
+Ao contrário de for e for…of, o forEach() é um método do objeto Array.
+O forEach(), assim como outros métodos de array que vimos, também cumprem o papel de iterar arrays, porém com funcionalidades e retornos bem definidos. No caso do forEach(), apesar da sintaxe bem diferente, podemos utilizar este método como o for ou o for…of, pois ele vai executar as instruções que forem passadas para cada elemento iterado, sem retornar nenhum dado.
+
+**quando devo utilizar um ou outro?**
+- forEach() para trabalhar com arrays da forma mais corriqueira - percorrendo do primeiro ao último elemento, sem alterar a condição de parada, e também para manter a coesão do estilo quando em conjunto com outros métodos de array como map, filter e etc;
+
+- for…of em caso de iteráveis (dicionários, conjuntos e outras estruturas de dados) ou de arrays quando for necessário o uso de programação assíncrona e/ou dar condições de saída do laço (por exemplo, com o uso de break);
+
+- for para casos em que seja necessário manipular de forma mais fina as fases do laço (condição inicial, condição de parada e incremento).
+
+
+#### strings são arrays?
+“String”, além de ser o tipo de dado usado para representar textos, também se define como uma sequência ordenada de caracteres!
+
+checar [documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
 
 ---
 

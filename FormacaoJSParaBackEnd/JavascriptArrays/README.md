@@ -16,7 +16,7 @@
 | 1 | O que são arrays | ✔️ |
 | 2 | Alterando arrays | ✔️ |
 | 3 | Laços de repetição | ✔️ |
-| 4 | Funções callback | ⚫ |
+| 4 | Funções callback | ✔️ |
 | 5 | Avançando em arrays | ⚫ |
 
 ---
@@ -51,7 +51,9 @@
 
 ### Aula 04 - Operadores
 <ul>
-  <li></li>
+  <li>Como utilizar o forEach: Aprendemos mais uma forma de iterar sobre arrays, dessa vez com um método próprio deles. O forEach recebe uma função callback que será executada para cada item do array.</li>
+  <li>Diferentes formas de utilizar funções callback: Podemos utilizar funções anônimas (como arrow functions) diretamente como funções callback, ou então criar funções de forma externa e utilizá-las no parâmetro.</li>
+  <li>Como utilizar o map: O map também aceita funções callback, assim como o forEach, e é adequado para quando queremos "reescrever" os valores de um array, sem modificar o array original. Um novo array é criado com os valores reescritos.</li>
 </ul>
 
 
