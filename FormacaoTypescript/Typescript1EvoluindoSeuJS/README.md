@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Porque usar TypeScript? | ✔️ |
-| 2 | Typescript e compilador | ⚫ |
+| 2 | Typescript e compilador | ✔️ |
 | 3 | Benefícios da tipagem estática | ⚫ |
 | 4 | Avançando na modelagem do domínio | ⚫ |
 | 5 | Simplificando nosso código | ⚫ |
@@ -31,7 +31,11 @@
 
 ### Aula 02 - Typescript e compilador
 <ul>
-  <li></li>
+  <li>Download do TypeScript</li>
+  <li>Configuração do compilador e papel do tsconfig.json</li>
+  <li>Integração com scripts do Node.js</li>
+  <li>Modificadores de acesso private e public</li>
+  <li>Benefícios iniciais da linguagem TypeScript</li>
 </ul>
 
 ### Aula 03 - Benefícios da tipagem estática
