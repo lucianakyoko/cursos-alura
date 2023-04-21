@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Porque usar TypeScript? | ✔️ |
 | 2 | Typescript e compilador | ✔️ |
-| 3 | Benefícios da tipagem estática | ⚫ |
+| 3 | Benefícios da tipagem estática | ✔️ |
 | 4 | Avançando na modelagem do domínio | ⚫ |
 | 5 | Simplificando nosso código | ⚫ |
 
@@ -35,12 +35,16 @@
   <li>Configuração do compilador e papel do tsconfig.json</li>
   <li>Integração com scripts do Node.js</li>
   <li>Modificadores de acesso private e public</li>
-  <li>Benefícios iniciais da linguagem TypeScript</li>
+  <li>Benefícios iniciais da linguagem TypeScript </li>
 </ul>
 
 ### Aula 03 - Benefícios da tipagem estática
 <ul>
-  <li></li>
+  <li>O tipo implícito any</li>
+  <li>Benefícios da tipagem estática</li>
+  <li>Mais configurações do compilador tsc</li>
+  <li>Retorno de método explícito</li>
+  <li>Conversão de valores da interface do usuário</li>
 </ul>
 
 ### Aula 04 - Avançando na modelagem do domínio

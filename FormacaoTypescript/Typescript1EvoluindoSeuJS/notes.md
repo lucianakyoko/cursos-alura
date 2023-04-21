@@ -38,6 +38,9 @@ class Pessoa {
 
 ## 📌 AULA 3
 ### BENEFÍCIOS DA TIPAGEM ESTÁTICA
+####  Sobre o tipo any
+  - Por padrão, é assumido automaticamente pelo TypeScript quando não definimos o tipo das nossas variáveis.
+  - É possível desativar o tipo implícito any passando uma configuração especial para o compilador no arquivo tsconfig.json. Isso fará com que o compilador emita um erro em todos os locais que o tipo any foi adotado implicitamente.
 
 ---
 
