@@ -132,3 +132,32 @@ checar [documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/
 
 ## 📌 AULA 5
 ### AVANÇANDO EM ARRAYS
+#### estrutura do reduce()
+Considere o código abaixo:
+```
+const numeros = [43, 50, 65, 12];
+const soma = numeros.reduce((acc, atual) => atual + acc, 0);
+
+console.log(soma) //170
+```
+
+O método reduce() está trabalhando com dois parâmetros:
+  - O primeiro é a função callback obrigatória para retornar o cálculo e;
+  - O segundo parâmetro é um número que representa o valor inicial do acumulador – no caso, 0.
+
+A função callback foi escrita diretamente dentro do reduce(), e esta função também está recebendo dois parâmetros, ambos obrigatórios: o valor acumulado e o valor atual.
+
+A função callback foi escrita na forma de arrow function; nesse caso, quando só temos uma linha de instrução dentro da função (atual + acc) não precisamos usar chaves e nem da palavra-chave return.
+
+O reduce() roda o loop no array “por baixo dos panos”, executando para cada elemento a instrução passada na função operacaoNumerica.
+
+####  valor ou referência?
+Atribuir diretamente um array para outro com o sinal = faz com o que o JavaScript entenda que é como se eles fossem o mesmo array. Para evitar esse comportamento, devemos criar um array totalmente novo, com a ajuda do spread operator ... (ou operador de espalhamento).
+
+Porém, esse comportamento não acontece com strings, números e booleanos, que são tipos primitivos do JavaScript.
+
+
+#### estrutura Set
+A estrutura Set é muito semelhante aos arrays, mas possui diferentes métodos e a interessante regra de que seus elementos não podem se repetir. Utilizamos essa regra ao nosso favor para eliminar as duplicatas de um array, convertendo-o para um Set e de volta para um array.
+
+Você pode explorar mais seus conhecimentos sobre o Set na [documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set).

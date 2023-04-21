@@ -17,7 +17,7 @@
 | 2 | Alterando arrays | ✔️ |
 | 3 | Laços de repetição | ✔️ |
 | 4 | Funções callback | ✔️ |
-| 5 | Avançando em arrays | ⚫ |
+| 5 | Avançando em arrays | ✔️ |
 
 ---
 
@@ -59,5 +59,7 @@
 
 ### Aula 05 - Funções
 <ul>
-  <li></li>
+  <li>Como utilizar o filter e o reduce: Utilizamos o filter para criar um array filtrado a partir de um existente e o reduce para acumular valores de um array em um só.</li>
+  <li>Como clonar arrays com o spread operator ...: Para resolver esse problema, utilizamos o spread operator para espalhar todos os valores de um array em um novo, realizando a clonagem com sucesso.</li>
+  <li>Como utilizar a estrutura Set: Vimos como criar um Set a partir de um array existente, a fim de remover todas as suas duplicatas. Em seguida, utilizamos o spread operator para converter o Set de volta em um lista.</li>
 </ul>
