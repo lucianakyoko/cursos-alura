@@ -14,7 +14,7 @@
 | 1 | Porque usar TypeScript? | ✔️ |
 | 2 | Typescript e compilador | ✔️ |
 | 3 | Benefícios da tipagem estática | ✔️ |
-| 4 | Avançando na modelagem do domínio | ⚫ |
+| 4 | Avançando na modelagem do domínio | ✔️ |
 | 5 | Simplificando nosso código | ⚫ |
 
 ---
@@ -49,7 +49,12 @@
 
 ### Aula 04 - Avançando na modelagem do domínio
 <ul>
-  <li></li>
+  <li>Modelagem da classe Negociacoes</li>
+  <li>Utilização de Generics</li>
+  <li>Revisão sobre encapsulamento</li>
+  <li>Questões de mutabilidade e como solucioná-la</li>
+  <li>O tipo ReadonlyArray</li>
+  <li>Adição de negociações em nossa lista</li>
 </ul>
 
 ### Aula 05 -Simplificando nosso código####

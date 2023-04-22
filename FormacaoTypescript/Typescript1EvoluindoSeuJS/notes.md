@@ -46,6 +46,22 @@ class Pessoa {
 
 ## 📌 AULA 4
 ### AVANÇANDO NA MODELAGEM DO DOMÍNIO
+####  Sobre Array
+Para declarar corretamete em TypeScript, assumindo que a configuração ```noImplicitAny``` está definida como ```true```, considere os exemplos abaixo:
+
+```
+let nomes: Array<string> = [];
+```
+```
+let idades: Array<number> = [1, 2, 3];
+```
+
+#### Somente leitura
+**ReadonlyArray** - A maneira de  declarar um array e que não disponibilize a remoção ou inclusão de novos items:
+
+```
+const nomes: ReadonlyArray<string> = ['a', 'b', 'c'];
+```
 
 ---
 
