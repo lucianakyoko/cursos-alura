@@ -67,3 +67,53 @@ const nomes: ReadonlyArray<string> = ['a', 'b', 'c'];
 
 ## 📌 AULA 5
 ### SIMPLIFICANDO NOSSO CÓDIGO
+#### Construtor e atalho
+Considerando o seguinte código:
+```
+export class Fatura {
+  private criadaEm: Date;
+  private quantidade: number;
+  private valor: number;
+
+  constructor(
+    criadaEm: Date, 
+    quantidade: number, 
+    valor: number
+  ) {
+      this.criadaEm = criadaEm;
+      this.quantidade = quantidade;
+      this.valor = valor;
+  }
+}
+```
+Uma maneira alternativa que declara a mesma classe utilizando o atalho que o TypeScript possui, ficaria assim:
+
+```
+export class Fatura {
+  constructor(
+    private criadaEm: Date, 
+    private quantidade: number, 
+    private valor: number
+  ) {}
+}
+```
+
+#### Arrays e Generics
+Baseado no projeto da aula. 
+```
+private negociacoes: Array<Negociacao> = [];
+```
+É a mesma coisa que:
+
+```
+private negociacoes: Negociacao[] = [];
+```
+
+E:
+```
+lista(): ReadonlyArray<Negociacao> {}
+```
+É mesma coisa que:
+```
+lista(): readonly Negociacao[] {}
+```

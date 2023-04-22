@@ -15,7 +15,7 @@
 | 2 | Typescript e compilador | ✔️ |
 | 3 | Benefícios da tipagem estática | ✔️ |
 | 4 | Avançando na modelagem do domínio | ✔️ |
-| 5 | Simplificando nosso código | ⚫ |
+| 5 | Simplificando nosso código | ✔️ |
 
 ---
 
@@ -59,7 +59,11 @@
 
 ### Aula 05 -Simplificando nosso código####
 <ul>
-  <li></li>
+  <li>Nova maneira de declaração de array com generics</li>
+  <li>O tipo ReadonlyArray</li>
+  <li>O modificador readonly</li>
+  <li>Getters vs propriedades públicas em modo de leitura</li>
+  <li>Programação defensiva</li>
 </ul>
 
 ---
