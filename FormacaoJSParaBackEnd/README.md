@@ -31,7 +31,7 @@
 | . | 1.3 | 🟫 | Higher Order Functions: o que são? | ✖️ | [🗂️ abrir](./higherOrderFunction/) | ✔️ |
 | . | 1.4 | 🟫 | Strings com JavaScript: o que são e como manipulá-las | ✖️ | [🗂️ abrir](./stringsComJS/) | ✔️ |
 | . | 1.5 | 🟪 | JavaScript: Arrays | ✖️ | [🗂️ abrir](./JavascriptArrays/) | ✔️ |
-| . | 1.6 | 🟪 | JavaScript: Objetos | ✖️ | ✖️ | ⚫ |
+| 🚩 | 1.6 | 🟪 | JavaScript: Objetos | ✖️ | [🗂️ abrir](./JavascriptObjetos/) | 🔵 |
 | . | 1.7 | 🟦 | Classes x Funções no JavaScript | ✖️ | ✖️ | ⚫ |
 | . | 1.8 | 🟦 | Destructuring em JavaScript | ✖️ | ✖️ | ⚫ |
 
