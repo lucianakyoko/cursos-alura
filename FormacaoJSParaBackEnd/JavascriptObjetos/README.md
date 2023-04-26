@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | O que são objetos | ✔️ |
-| 2 | Manipulação de objetos | ⚫ |
+| 2 | Manipulação de objetos | ✔️ |
 | 3 | Percorrendo objetos | ⚫ |
 | 4 | Conhecendo o JSON | ⚫ |
 | 5 | Exercitando os conhecimentos | ⚫ |
@@ -31,7 +31,9 @@
 
 ### Aula 02 - Manipulação de objetos
 <ul>
-  <li></li>
+  <li>para manipular objetos literais podemos utilizar os métodos do JavaScript para cada tipo de dado;</li>
+  <li> os valores em um objeto podem ser tipos primitivos (strings, números, booleanos e null), arrays ou outros objetos;</li>
+  <li>além das propriedades, também podemos atribuir funções que dão comportamento a um objeto.</li>
 </ul>
 
 ### Aula 03 - Percorrendo objetos
