@@ -149,9 +149,57 @@ Ver [documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Ref
 
 ## 📌 AULA 3
 ### Percorrendo objetos
+O JavaScript traz uma série de métodos próprios que nos ajudam a trabalhar com objetos.
+Um exemplo disso é o método for … In que permite a iteração sobre as propriedades de um objeto como em um array. Sabendo disso, observe o código que define um objeto do tipo paciente:
+
+```
+const paciente = {
+ nome: "James T.",
+ idade:30,
+ email: "jt@email.com",
+ identicacao: "Alpha01259859",
+ funcao:"comandante",
+ peso:80.1,
+ altura:1.80,
+ calcularIMC:function(){
+       return (this.peso/(Math.pow(this.altura,2)))
+ },
+ nomeCompleto:function(){
+   console.log(this.nome)
+ }
+}
+```
+
+Desta forma:
+ - Posso utilizar o método for..In como loop e exibir somente as propriedades do objeto que não são classificadas como objetos ou funções, como no código abaixo:
+  ```
+  let dados = "";
+  for (let info in paciente) {
+  if (typeof paciente[info] === "object" || typeof paciente[info] === "function") {
+    continue
+  } else {
+  dados += `${info} ==> ${paciente[info]}
+    `}
+  };
+  ```
+  O for...in permite iterar sobre as propriedades de um objeto. No caso desse loop, temos a flexibilidade de percorrer o objeto e executar uma série de comparações, uma delas é usar o typeof e verificar o tipo da propriedade.
+
+- Para a execução do código:
+  ```
+  for (let info in paciente) {
+  console.log(info)
+  };
+  ```
+  A saída esperada é a listagem do nome das propriedades do objeto paciente.
+  O loop definido no for...in irá retornar para a variável info que é o nome da chave do objeto, ou seja, o nome da propriedade do objeto.
+
+#### Outros métodos de objetos
+  Ler [documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 
-
+#### spread operator
+spread operator, também conhecido como sintaxe de espalhamento ou operador de espalhamento. Este operador copia as propriedades de objetos para outros, “espalhando” os conteúdos. 
+```
 ---
 
 ## 📌 AULA 4

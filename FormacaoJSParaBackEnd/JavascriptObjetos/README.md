@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | O que são objetos | ✔️ |
 | 2 | Manipulação de objetos | ✔️ |
-| 3 | Percorrendo objetos | ⚫ |
+| 3 | Percorrendo objetos | ✔️ |
 | 4 | Conhecendo o JSON | ⚫ |
 | 5 | Exercitando os conhecimentos | ⚫ |
 
@@ -38,7 +38,10 @@
 
 ### Aula 03 - Percorrendo objetos
 <ul>
-  <li></li>
+  <li>percorrer objetos a partir das chaves com for...in, iterando sobre as propriedades de um objeto como em um array;</li>
+  <li>extrair chaves e valores de objetos é possível utilizar métodos de Object;</li>
+  <li>funções como .entries, .key e .value podem ser úteis na hora de trabalhar com objetos;</li>
+  <li> spread operator (ou sintaxe de espalhamento) pode ser uma opção para decompor objetos quando precisamos extraí-los de um array e formar um novo array.</li>
 </ul>
 
 ### Aula 04 - Conhecendo o JSON
