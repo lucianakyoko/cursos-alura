@@ -14,7 +14,7 @@
 | 1 | O que são objetos | ✔️ |
 | 2 | Manipulação de objetos | ✔️ |
 | 3 | Percorrendo objetos | ✔️ |
-| 4 | Conhecendo o JSON | ⚫ |
+| 4 | Conhecendo o JSON | ✔️ |
 | 5 | Exercitando os conhecimentos | ⚫ |
 
 ---
@@ -46,7 +46,10 @@
 
 ### Aula 04 - Conhecendo o JSON
 <ul>
-  <li></li>
+  <li>formato JSON e por qual motivo o utilizamos, como por exemplo a transmissão de dados ou armazenamento de configurações;</li>
+  <li>a sintaxe do JSON e suas limitações, como não ter variáveis ou comentários;</li>
+  <li>ler um arquivo .json no Node.js;</li>
+  <li>utilizar as funções nativas do Node.js para manipular um JSON.</li>
 </ul>
 
 ### Aula 05 - Exercitando os conhecimentos

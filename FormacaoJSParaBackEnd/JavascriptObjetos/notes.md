@@ -204,9 +204,19 @@ spread operator, também conhecido como sintaxe de espalhamento ou operador de e
 
 ## 📌 AULA 4
 ### Conhecendo o JSON
+#### require
 
+A função ```require()``` é bem presente no Node.js.
+Esta função nos permite passar o caminho de um arquivo terminado em .json para obter o conteúdo de um arquivo do tipo JSON. Essa função também pode ser utilizada para reaproveitar códigos que estão em outros arquivos, também chamados de módulos.
 
+Essa função também pode ser utilizada para reaproveitar códigos que estão em outros arquivos, também chamados de módulos.
 
+Ler [documentação](https://nodejs.org/api/modules.html#modules_modules)
+
+#### copiando objetos
+A forma como os objetos são armazenados e como fazer cópias de seus valores é também um conhecimento importante já que existem diversos detalhes da forma como o JavaScript lida com isso
+
+Ler [artigo](https://www.alura.com.br/artigos/implementar-funcao-clonagem-profunda-imutabilidade-js)
 ---
 
 ## 📌 AULA 5
