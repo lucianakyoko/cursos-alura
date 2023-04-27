@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando uma nova página | ✔️ |
-| 2 | Requisições com Axios | ⚫ |
+| 2 | Requisições com Axios | ✔️ |
 | 3 | Rota de livros favoritos | ⚫ |
 | 4 | Usando API de favoritos | ⚫ |
 
@@ -29,7 +29,11 @@
 
 ### Aula 02 - Requisições com Axios
 <ul>
-  <li></li>
+  <li>Instalar a ferramenta Axios, que nos possibilitará fazer requisições HTTP na aplicação;</li>
+  <li>Utilizar o Axios para criar serviços e poder personalizar suas requisições pra determinados serviços;</li>
+  <li>Fazer requisições HTTP dentro de seus componentes para podermos acessar os dados da API dentro dos componentes;</li>
+  <li>Usar useEffect e entender suas regras, para que possamos lidar com chamadas à API que devem rodar no momento da inicialização do componente;</li>
+  <li>Entender conceitos de assincronismo, para que possamos lidar com o tempo de espera entre a chamada HTTP e a resposta.</li>
 </ul>
 
 ### Aula 03 - Rota de livros favoritos

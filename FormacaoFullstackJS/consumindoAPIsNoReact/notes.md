@@ -20,6 +20,8 @@ A ferramenta chamada **React Router** como principal auxiliar para a criação d
 
 ## 📌 AULA 2 - 
 ### Requisições com Axios
+#### conceito de assincronismo
+Ler [artigo](https://www.alura.com.br/artigos/async-await-no-javascript-o-que-e-e-quando-usar)
 
 ## 📌 AULA 3 - 
 ### Rota de livros favoritos
