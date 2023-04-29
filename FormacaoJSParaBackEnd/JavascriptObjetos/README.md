@@ -54,7 +54,9 @@
 
 ### Aula 05 - Exercitando os conhecimentos
 <ul>
-  <li></li>
+  <li> utilizar os métodos de listas em conjunto com objetos;</li>
+  <li>passar os parâmetros e propriedades dos objetos para alguns métodos de listas;</li>
+  <li>como encontrar, filtrar e ordenar uma lista de objetos.</li>
 </ul>
 
 ---
