@@ -23,8 +23,11 @@ A ferramenta chamada **React Router** como principal auxiliar para a criação d
 #### conceito de assincronismo
 Ler [artigo](https://www.alura.com.br/artigos/async-await-no-javascript-o-que-e-e-quando-usar)
 
+
 ## 📌 AULA 3 - 
 ### Rota de livros favoritos
+####  APIs com Postman
+Ler [artigo](https://medium.com/@thiagogrespi/testes-de-api-parte-1-entendendo-e-botando-a-m%C3%A3o-na-massa-com-postman-b365923b83e1)
 
 ## 📌 AULA 4 - 
 ### Usando API de favoritos

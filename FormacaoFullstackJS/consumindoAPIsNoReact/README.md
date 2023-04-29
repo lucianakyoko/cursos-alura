@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Criando uma nova página | ✔️ |
 | 2 | Requisições com Axios | ✔️ |
-| 3 | Rota de livros favoritos | ⚫ |
+| 3 | Rota de livros favoritos | ✔️ |
 | 4 | Usando API de favoritos | ⚫ |
 
 
@@ -38,7 +38,8 @@
 
 ### Aula 03 - Rota de livros favoritos
 <ul>
-  <li></li>
+  <li>Criar uma API com mais de um tipo de rota, para que nossa aplicação possa ter duas fontes diferentes de dados e integrar esses dados entre si;</li>
+  <li>Consultar 2 arquivos JSON, para termos dois locais de armazenamento de dados dentro da aplicação.</li>
 </ul>
 
 ### Aula 04 - Usando API de favoritos
