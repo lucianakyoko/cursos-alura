@@ -1,19 +1,14 @@
-const {
-  getTodosFavoritos,
-  insereFavorito,
-  deletaFavoritoPorId
-} = require('../servicos/favorito');
+const { getTodosFavoritos, insereFavorito, deletaFavoritoPorId } = require("../servicos/favorito")
 
 
 function getFavoritos(req, res) {
   try {
-    const livros = getTodosFavoritos();
-    res.send(livros);
-
+    const livros = getTodosFavoritos()
+    res.send(livros)
   } catch (error) {
-    res.status(500);
+    res.status(500)
     res.send(error.message)
-  }
+  } 
 }
 
 function postFavorito(req, res) {

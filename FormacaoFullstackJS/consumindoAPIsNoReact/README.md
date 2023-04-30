@@ -14,7 +14,7 @@
 | 1 | Criando uma nova página | ✔️ |
 | 2 | Requisições com Axios | ✔️ |
 | 3 | Rota de livros favoritos | ✔️ |
-| 4 | Usando API de favoritos | ⚫ |
+| 4 | Usando API de favoritos | ✔️ |
 
 
 ---
@@ -44,7 +44,8 @@
 
 ### Aula 04 - Usando API de favoritos
 <ul>
-  <li></li>
+  <li>fazer POST e DELETE dentro dos componentes, para podermos adicionar e retirar livros da lista de favoritos;</li>
+  <li>manipular estados a partir de chamadas para a API, para que estes dados possam ser mostrados nas telas.</li>
 </ul>
 
 

@@ -30,4 +30,4 @@ OBS.: Esta formação está em **pré-lançamento**
 
 | --- | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS | PREVIEW |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 2.1 | 🟪 | React e Node.js: consumindo APIs no React no projeto full stack | Alura Books | [🗂️](./criandoUmaAPIComExpress/) | 🔵 | --- |
+| . | 2.1 | 🟪 | React e Node.js: consumindo APIs no React no projeto full stack | Alura Books | [🗂️](./criandoUmaAPIComExpress/) | ✔️ | <img align="center" alt="Miniatura da imagem do projeto" height="100" width="100" src="../.github/preview-aluraBooks.png"> |

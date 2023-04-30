@@ -21,7 +21,7 @@ function insereFavorito(id) {
 }
 
 
-module.export = {
+module.exports = {
   getTodosFavoritos,
   deletaFavoritoPorId,
   insereFavorito
