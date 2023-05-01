@@ -22,7 +22,7 @@
 
 ---
 
-### 1️⃣ - Fundamentos do JavaScript 🚩
+### 1️⃣ - Fundamentos do JavaScript 
 
 | --- | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -37,21 +37,21 @@
 
 
 
-### 2️⃣ - Algoritmos com JavaScript 🚩
+### 2️⃣ - Algoritmos com JavaScript 
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
-| --- | --- | --- | --- | --- | --- |
-| 2.1 | 🟫 | Algoritmos e Lógica de programação: O que são e qual a importância | ✖️ | [🗂️ abrir](./AlgoritmosLogicaProgramacao/) | ✔️ |
-| 2.2 | 🟪 | JavaScript: algoritmos de ordenação | ✖️ | ✖️ | ⚫ |
-| 2.3 | 🟪 | JavaScript: aprofundando em algoritmos de ordenação e busca  | ✖️ | ✖️ | ⚫ |
-| 2.4 | 🟫 | Estruturas de dados: uma introdução | ✖️ | ✖️ | ⚫ |
-| 2.5 | 🟫 | Por que algoritmos | ✖️ | ✖️ | ⚫ |
-| 2.6 | 🟫 | Ordenação de números no javascript não funciona? | ✖️ | ✖️ | ⚫ |
+| --- | --- | Tipo | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- | --- |
+| . | 2.1 | 🟫 | Algoritmos e Lógica de programação: O que são e qual a importância | ✖️ | [🗂️ abrir](./AlgoritmosLogicaProgramacao/) | ✔️ |
+| 🚩 | 2.2 | 🟪 | JavaScript: algoritmos de ordenação | ✖️ | [🗂️ abrir](./JavascriptAlgoritmosOrdenacao/) | 🔵 |
+| . | 2.3 | 🟪 | JavaScript: aprofundando em algoritmos de ordenação e busca  | ✖️ | ✖️ | ⚫ |
+| . | 2.4 | 🟫 | Estruturas de dados: uma introdução | ✖️ | ✖️ | ⚫ |
+| . | 2.5 | 🟫 | Por que algoritmos | ✖️ | ✖️ | ⚫ |
+| . | 2.6 | 🟫 | Ordenação de números no javascript não funciona? | ✖️ | ✖️ | ⚫ |
 
 
 ### 3️⃣ - Avançando com ferramentas e paradigmas
 
-| --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | Tipo | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
 | 3.1 | 🟦 | NodeJS: o que é e como funciona | ✖️ | ✖️ | ⚫ |
 | 3.2 | 🟫 | Como instalar o NodeJS no windows, linux e macOS | ✖️ | ✖️ | ⚫ |
