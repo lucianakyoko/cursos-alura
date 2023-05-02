@@ -32,7 +32,10 @@
 
 ### Aula 02 - Herança e reaproveitamento de código
 <ul>
-  <li></li>
+  <li>Herança com TypeScript</li>
+  <li>Classes com tipo genérico</li>
+  <li>Classes abstratas</li>
+  <li>O modificador protected</li>
 </ul>
 
 ### Aula 03 - Visibilidade de métodos e Enumeration

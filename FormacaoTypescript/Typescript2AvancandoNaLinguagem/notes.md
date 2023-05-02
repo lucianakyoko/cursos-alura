@@ -14,12 +14,13 @@
 
 ## 📌 AULA 1
 ### Elaborando uma solução de view
-
+ - O modificador protected garante que apenas a própria classe e suas classes filhas tenham acesso à propriedade.- O modificador public é bem abrangente, classes filhas e outras partes do sistema poderão acessar a propriedade sem qualquer problema. 
  
 ---
 
 ## 📌 AULA 2
 ### Herança e reaproveitamento de código
+
 
 ---
 
