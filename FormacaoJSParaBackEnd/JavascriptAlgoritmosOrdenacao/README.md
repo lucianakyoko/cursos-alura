@@ -37,7 +37,10 @@
 
 ### Aula 03 - Insertion Sort
 <ul>
-  <li></li>
+  <li>um problema pode ser resolvido com algoritmos diferentes, por exemplo, um problema de ordenação resolvido com Selection Sort ou Insertion Sort;</li>
+  <li>apesar do resultado final ser o mesmo, o processo (ou passos lógicos) de cada um dos algoritmos é diferente;</li>
+  <li>criar funções para melhor reaproveitamento de código, como para fazer o Insertion Sort receber uma lista de produtos diversos;</li>
+  <li>praticar mais com testes de mesa e ver o código funcionando passo a passo, e como isso pode nos ajudar a entender melhor como o código de um algoritmo funciona.</li>
 </ul>
 
 ### Aula 04 - Analisando a complexidade

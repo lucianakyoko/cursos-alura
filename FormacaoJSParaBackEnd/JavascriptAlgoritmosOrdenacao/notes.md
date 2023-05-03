@@ -53,7 +53,12 @@ Ler [documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Ref
 
 ## 📌 AULA 3 - 
 ### Insertion Sort
+#### Testes de mesa ou desk checking
+Um teste de mesa é justamente o processo manual de verificar todas as linhas de um código e executá-lo passo a passo com ajuda de, por exemplo, papel e lápis para anotar qual os valores das variáveis em cada passo de cada linha. É como compilar/interpretar um bloco de código usando o cérebro como compilador/interpretador.
 
+Apesar de hoje as IDEs e as linguagens terem ferramentas práticas, modernas e eficientes para avisar, “debugar” e encontrar erros de código, o teste de mesa é uma forma muito boa de se estudar lógica de programação e para entender o que acontece em cada passo de execução do código, especialmente no caso de algoritmos que envolvem laços de repetição, substituição de valores e variáveis temporárias, como vimos durante a aula.
+
+Uma forma muito comum de fazer o registro de valores de variáveis durante um teste de mesa é utilizando tabelas de rastreio, ou trace tables. 
 
 ---
 
