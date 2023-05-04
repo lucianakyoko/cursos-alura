@@ -48,7 +48,9 @@
 
 ### Aula 04 - Lapidando nosso código
 <ul>
-  <li></li>
+  <li>Revisão da lógica de conversão negociações</li>
+  <li>Método estáticos</li>
+  <li>Parâmetros opcionais</li>
 </ul>
 
 ### Aula 05 -TSC e StrictNullChecks

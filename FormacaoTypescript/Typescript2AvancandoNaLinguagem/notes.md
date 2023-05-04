@@ -33,6 +33,32 @@
 
 ## 📌 AULA 4
 ### Lapidando nosso código
+#### métodos estáticos
+
+Considere o seguinte código:
+```
+class DateUtils {
+  public ehDiaUtil(data: Date) {
+    return data.getDay() > DiasDaSemana.DOMINGO
+      && data.getDay() < DiasDaSemana.SABADO;
+  }
+}
+
+const dateUtils = new DateUtils();
+const ehDiaUtil = dateUtils.ehDiaUtil(new Date());
+```
+
+A forma que transforma corretamente o método ehDiaUtil em um método estático:
+```
+  
+class DateUtils {
+  public static ehDiaUtil(data: Date) {
+    return data.getDay() > DiasDaSemana.DOMINGO
+      && data.getDay() < DiasDaSemana.SABADO;
+  }
+}
+```
+Métodos estáticos podem ser acessados diretamente pela classe sem precisarmos de uma instância desta mesma classe.
 
 ---
 
