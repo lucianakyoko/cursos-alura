@@ -64,6 +64,18 @@ Uma forma muito comum de fazer o registro de valores de variáveis durante um te
 
 ## 📌 AULA 4 - 
 ### Analisando a complexidade
+#### Comparação de algoritmos
+Existem vários outros algoritmos apenas para resolver o problema de ordenar listas, como Quick Sort, Radix Sort e etc. Todos esses algoritmos já foram desenvolvidos anteriormente, assim como o Selection Sort e o Insertion Sort que utilizamos durante o curso.
+
+Assistir [video](https://youtu.be/BeoCbJPuvSE).
+
+Comparar algoritmos:
+  - Uma forma de medirmos a performance de um algoritmo é através do tempo. Um algoritmo “lento”, ou seja, que leva mais tempo para executar em comparação com outro algoritmo que resolve o mesmo problema, pode impactar inclusive a experiência de usuário de um programa (nenhum usuário quer esperar, por exemplo, dois minutos para obter uma lista de produtos ordenada por preço)
+  - Sempre que trabalhamos com algoritmos, um dos aspectos mais importantes é a performance. O que chamamos de performance é a quantidade de recursos computacionais que o algoritmo precisa para executar.
+  - A quantidade de dados processados impacta diretamente na performance de um algoritmo. Uma lista com poucos elementos não impacta em nada na performance de um algoritmo, mas é possível ver o impacto na quantidade de processos (operações) executados à medida em que a quantidade de dados cresce. Lembrando que trabalhamos com quantidades grandes de dados!
+
+#### Como funciona um processador
+É importante relacionar o código e a forma como ele é interpretado pelo computador. Esse conhecimento nos ajuda a entender o porquê de alguns comportamentos das linguagens de programação, porque alguns bugs acontecem e como corrigi-los ou evitá-los. E, como vimos durante a aula, essa questão pode ser essencial para uma boa performance dos nossos programas.
 
 
 ---

@@ -7,7 +7,7 @@ function menorValor(arrayProdutos, posicaoInicial) {
     }
   }
 
-  return indiceMaisBarato
+  return indiceMaisBarato;
 }
 
 module.exports = menorValor;

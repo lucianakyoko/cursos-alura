@@ -45,7 +45,11 @@
 
 ### Aula 04 - Analisando a complexidade
 <ul>
-  <li></li>
+  <li>Que entender a complexidade de um algoritmo é essencial para que nossos programas funcionem da melhor forma possível;</li>
+  <li>Que analisamos esta complexidade observando as operações feitas pelo código e transformando essas operações em números;</li>
+  <li>Que performance e tempo impactam em custos e também na experiência do usuário do programa, pois um programa pode ficar muito lento dependendo da quantidade de dados que precisam ser processados;</li>
+  <li>A analisar os dados de performance e comparar os números para verificar a performance de um algoritmo com relação a quantidade de operações efetuadas e tempo;</li>
+  <li>Como o volume de operações efetuadas por um algoritmo se traduz em tempo de processamento, simulando a capacidade de um processador de computador.</li>
 </ul>
 
 ### Aula 05 - Comparando algoritmos
