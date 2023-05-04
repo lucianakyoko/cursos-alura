@@ -37,12 +37,12 @@
 
 
 
-### 2️⃣ - Algoritmos com JavaScript 
+### 2️⃣ - Algoritmos com JavaScript 🚩
 
 | --- | --- | Tipo | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 2.1 | 🟫 | Algoritmos e Lógica de programação: O que são e qual a importância | ✖️ | [🗂️ abrir](./AlgoritmosLogicaProgramacao/) | ✔️ |
-| 🚩 | 2.2 | 🟪 | JavaScript: algoritmos de ordenação | ✖️ | [🗂️ abrir](./JavascriptAlgoritmosOrdenacao/) | 🔵 |
+| . | 2.2 | 🟪 | JavaScript: algoritmos de ordenação | ✖️ | [🗂️ abrir](./JavascriptAlgoritmosOrdenacao/) | ✔️ |
 | . | 2.3 | 🟪 | JavaScript: aprofundando em algoritmos de ordenação e busca  | ✖️ | ✖️ | ⚫ |
 | . | 2.4 | 🟫 | Estruturas de dados: uma introdução | ✖️ | ✖️ | ⚫ |
 | . | 2.5 | 🟫 | Por que algoritmos | ✖️ | ✖️ | ⚫ |

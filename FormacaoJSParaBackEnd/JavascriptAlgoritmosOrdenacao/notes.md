@@ -74,6 +74,7 @@ Comparar algoritmos:
   - Sempre que trabalhamos com algoritmos, um dos aspectos mais importantes é a performance. O que chamamos de performance é a quantidade de recursos computacionais que o algoritmo precisa para executar.
   - A quantidade de dados processados impacta diretamente na performance de um algoritmo. Uma lista com poucos elementos não impacta em nada na performance de um algoritmo, mas é possível ver o impacto na quantidade de processos (operações) executados à medida em que a quantidade de dados cresce. Lembrando que trabalhamos com quantidades grandes de dados!
 
+
 #### Como funciona um processador
 É importante relacionar o código e a forma como ele é interpretado pelo computador. Esse conhecimento nos ajuda a entender o porquê de alguns comportamentos das linguagens de programação, porque alguns bugs acontecem e como corrigi-los ou evitá-los. E, como vimos durante a aula, essa questão pode ser essencial para uma boa performance dos nossos programas.
 
@@ -82,6 +83,9 @@ Comparar algoritmos:
 
 ## 📌 AULA 5 - 
 ### Comparando algoritmos
+#### Big O Notation
+Essa notação é utilizada para expressar a complexidade de um algoritmo, com relação ao tempo e volume de recursos computacionais necessários para executar esse algoritmo, de acordo com o volume de dados de entrada. Em geral, utiliza-se o tempo de uso de CPU (unidade central de processamento) do computador.
 
+Ou seja, usamos O para classificar funções (implementações de algoritmos) de acordo com a forma como crescem em complexidade. Algoritmos diferentes podem crescer em complexidade da mesma forma, então podem ter a mesma classificação O, como vimos durante o curso com o Selection Sort e o Insertion Sort.
 
 ---
