@@ -55,7 +55,11 @@
 
 ### Aula 05 -TSC e StrictNullChecks
 <ul>
-  <li></li>
+  <li>Remoção de comentários do código compilado</li>
+  <li>Ativação do strictNullChecks</li>
+  <li>Como suprimir erros, quando fizer sentido, resultantes do strictNullChecks</li>
+  <li>Benefícios do strictNullChecks no controle do fluxo da sua aplicação
+</li>
 </ul>
 
 ---

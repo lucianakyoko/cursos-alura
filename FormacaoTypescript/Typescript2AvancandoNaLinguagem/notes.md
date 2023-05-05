@@ -64,3 +64,26 @@ Métodos estáticos podem ser acessados diretamente pela classe sem precisarmos 
 
 ## 📌 AULA 5
 ### TSC e StrictNullChecks
+#### tsconfig.json
+Para remover os comentários dos arquivos ts durante o processo de compilação para javascript:
+
+Dentro do arquivo tsconfig.json:
+```
+{
+  "compilerOptions": {
+    "removeComments": true
+  },
+}
+```
+
+#### StrictNullChecks
+Diz para o compilador TSC que pare de assumir implicitamente o tipo null para todos os tipos da aplicação. Caso null faça sentido, o desenvolvedor deve deixar isso explícito em seu código. Inclusive o StrictNullChecks obrigará o desenvolvedor a tratar todos os pontos de acesso a valores null em sua aplicação, forçando que o desenvolvedor pondere com cuidado cada cenário.
+
+No arquivo tsconfig.json:
+```
+{
+  "compilerOptions": {
+    "strictNullChecks": true
+  },
+}
+```
