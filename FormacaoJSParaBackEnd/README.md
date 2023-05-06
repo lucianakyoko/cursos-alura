@@ -44,9 +44,9 @@
 | . | 2.1 | 🟫 | Algoritmos e Lógica de programação: O que são e qual a importância | ✖️ | [🗂️ abrir](./AlgoritmosLogicaProgramacao/) | ✔️ |
 | . | 2.2 | 🟪 | JavaScript: algoritmos de ordenação | ✖️ | [🗂️ abrir](./JavascriptAlgoritmosOrdenacao/) | ✔️ |
 | 🚩 | 2.3 | 🟪 | JavaScript: aprofundando em algoritmos de ordenação e busca  | ✖️ | [🗂️ abrir](./AprofundandoEmAlgoritmosDeOrdenacaoEBusca/) | ✔️ |
-| . | 2.4 | 🟫 | Estruturas de dados: uma introdução | ✖️ | ✖️ | ⚫ |
-| . | 2.5 | 🟫 | Por que algoritmos | ✖️ | ✖️ | ⚫ |
-| . | 2.6 | 🟫 | Ordenação de números no javascript não funciona? | ✖️ | ✖️ | ⚫ |
+| . | 2.4 | 🟫 | Estruturas de dados: uma introdução | ✖️ | [🗂️ abrir](./estruturaDeDadosIntroducao/) | ✔️ |
+| . | 2.5 | 🟫 | Por que algoritmos | ✖️ | [🗂️ abrir](./PqAlgoritmos/) | ✔️ |
+| . | 2.6 | 🟫 | Ordenação de números no javascript não funciona? | ✖️ | ✖️ | ✔️ |
 
 
 ### 3️⃣ - Avançando com ferramentas e paradigmas
