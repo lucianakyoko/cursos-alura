@@ -159,11 +159,6 @@ A resposta é: sim. O código, com suas funções e métodos utilizados, pode va
 Durante o curso, desenvolvemos primeiramente um código mais “agnóstico”, para em seguida utilizar mais métodos como, por exemplo, array.push(). Mas seria possível desacoplar ainda mais, abstraindo funções de comparação para não depender de uma propriedade objeto.preco, por exemplo.
 
 #### Ordenando pelo pivô
-O quick sort utiliza o princípio do elemento pivô para fazer a ordenação dos elementos.
-  - Posicionar o pivô no meio do array é uma das opções para este algoritmo, mas poderia ser um elemento escolhido de forma aleatória ou o último elemento do array. Para o algoritmo, não há diferença em posicionar o pivô entre qualquer uma destas três opções - você pode fazer o teste de mesa e observar o comportamento dos elementos. Porém, haverá mudança no código!
-  - utilizamos sempre o elemento do meio do array como pivô para separar maiores e menores, porém a posição do pivô com relação ao array completo vai sendo modificada durante a ordenação. Conforme vimos durante as aulas, o array original vai ser “fatiado” em pequenas partes, e sempre que isso acontece é definido um novo pivô a partir do meio do array.
-  - Posicionar o pivô no primeiro elemento do array pode levar o algoritmo a se comportar no pior caso possível, se o array já tiver algum tipo de ordenação interna. Observando a simulação que fizemos na aula, vemos que a ordenação do array é feita em partes bem pequenas para que depois ele seja reconstruído. Desconstruir essas partes já ordenadas, para desordená-las temporariamente e só depois reconstruí-las não é uma boa escolha.
-
 
 
 ---
@@ -171,13 +166,103 @@ O quick sort utiliza o princípio do elemento pivô para fazer a ordenação dos
 ## 📌 AULA 3
 ### Quick Sort
 
+O quick sort utiliza o princípio do elemento pivô para fazer a ordenação dos elementos.
+  - Posicionar o pivô no meio do array é uma das opções para este algoritmo, mas poderia ser um elemento escolhido de forma aleatória ou o último elemento do array. Para o algoritmo, não há diferença em posicionar o pivô entre qualquer uma destas três opções - você pode fazer o teste de mesa e observar o comportamento dos elementos. Porém, haverá mudança no código!
+  - utilizamos sempre o elemento do meio do array como pivô para separar maiores e menores, porém a posição do pivô com relação ao array completo vai sendo modificada durante a ordenação. Conforme vimos durante as aulas, o array original vai ser “fatiado” em pequenas partes, e sempre que isso acontece é definido um novo pivô a partir do meio do array.
+  - Posicionar o pivô no primeiro elemento do array pode levar o algoritmo a se comportar no pior caso possível, se o array já tiver algum tipo de ordenação interna. Observando a simulação que fizemos na aula, vemos que a ordenação do array é feita em partes bem pequenas para que depois ele seja reconstruído. Desconstruir essas partes já ordenadas, para desordená-las temporariamente e só depois reconstruí-las não é uma boa escolha.
 
 ---
 
 ## 📌 AULA 4
 ### Busca binária
+#### Outros erros da busca binária
+Durante a aula, vimos que, se não colocamos a condição de > ate e tentarmos buscar um número inexistente maior do que qualquer um da lista, o resultado será um erro do tipo RangeError: Maximum call stack size exceeded.
 
+Vamos falar um pouco mais sobre este erro em seguida. Mas agora, vamos testar mais dois casos: Um elemento inexistente menor do que qualquer um da lista, e outro inexistente no meio, ou seja, entre os valores da lista.
 
+Valor menor:
+Vamos chamar a função passando 1 como valor buscado:
+```
+console.log(busca(listaLivros, 0, listaLivros.length - 1, 1));
+```
+
+Executando o código, temos o seguinte retorno no terminal:
+```
+/<diretório>/aula-4/busca.js:11
+  if (valorBuscado === atual.preco) {
+                             ^
+
+TypeError: Cannot read property 'preco' of undefined
+```
+
+Ué, não deveríamos ter recebido um erro do tipo rangeError? O que aconteceu de diferente?
+Vamos conferir o que a função busca() está recebendo como parâmetro a cada chamada:
+```
+function busca(array, de, ate, valorBuscado) {
+ console.log('de, ate', de, ate)
+ //restante do código
+}
+```
+
+E executar novamente:
+```
+de, ate 0 10
+de, ate 0 4
+de, ate 0 1
+de, ate 0 -1
+```
+
+No caso de valores menores, o código do algoritmo chama a função busca() passando sempre o valor do parâmetro ate diminuindo um número:
+```
+ if (valorBuscado < atual.preco) {
+   return busca(array, de, meio - 1, valorBuscado);
+ }
+```
+
+Quando o valor atinge -1, que não é um valor válido de índice de array, o resultado de atual.preco retornará undefined.
+
+Valor inexistente no meio do array
+Vamos chamar a função passando 36 como valor buscado. Não é menor do que todos nem maior do que todos, porém não existe nenhum objeto com esse valor no array:
+```
+console.log(busca(listaLivros, 0, listaLivros.length - 1, 36));
+```
+
+Executando o código, temos o seguinte retorno no terminal:
+```
+RangeError: Maximum call stack size exceeded
+```
+
+Dessa vez, voltamos a receber o rangeError. Observando o `console.log(‘de, ate’, de, ate), os valores finais retornados são:
+```
+de, ate 8 7
+de, ate 8 7
+de, ate 8 7
+de, ate 8 7
+```
+
+Até atingir call stack size exceeded, da mesma forma que ocorreu quando passamos o valor de 60, maior do que o maior elemento do array.
+
+#### Maximum call stack size
+Vamos ver um pouco mais a fundo o que significa o erro RangeError: Maximum call stack size exceeded visto anteriormente.
+
+A pilha de chamadas
+Em programação, uma pilha é uma estrutura de dados onde o último item adicionado é o primeiro a ser removido - como uma pilha de livros no mundo real, por exemplo. Também nos referimos como pilha (ou stack) a estrutura onde estão “empilhados” os processos que estão sendo executados em um programa.
+
+Nem todo interpretador ou linguagem de programação lida da mesma forma com os processos que devem ser executados por um programa. O NodeJS trabalha com o paradigma de programação orientada a eventos (event driven programming), e o gerenciamento dos processos ocorre através do que chamamos de loop de eventos.
+
+Não vamos entrar em detalhes aqui sobre como ocorrem a entrada e a saída de processos deste loop e a forma como o Node trabalha com threads e programação assíncrona - são assuntos complexos o suficiente para terem seus próprios cursos. Porém, vale mencionar aqui que, assim como em outras linguagens de programação, o JavaScript também trabalha com pilhas de chamadas. No NodeJS, esta pilha faz parte da estrutura do loop de eventos; quando uma função é chamada por um programa ela entra na stack, ou seja, na pilha de execução, onde apenas um processo é executado por vez e o próximo processo só é executado após a finalização do processo atual.
+
+Esta pilha tem uma quantidade limitada de processos que podem ser empilhados (o que depende de muitos fatores, como memória disponível, arquitetura, etc); caso o interpretador não consiga limpar a pilha, ou seja, executar e finalizar os processos/funções que estão empilhados, ao atingir o limite o programa cai no chamado erro de estouro de pilha, também chamado de stack overflow (daí o nome do famoso fórum de programação).
+
+Um dos motivos mais comuns para o estouro de pilha são justamente as chamadas recursivas onde o caso base (como vimos na atividade “Para Saber Mais” da aula 2) não existe ou não foi definido da forma correta. Sem o caso base, as funções recursivas não param de ser chamadas e vão se empilhando na pilha de chamadas, até que não haja mais recursos para processar o programa.
+
+No caso do exemplo visto durante a aula, o NodeJS retorna o erro RangeError: Maximum call stack size exceeded, ou “tamanho máximo da pilha de chamadas excedido” e encerra a execução.
+
+Por isso, é muito importante sempre testar as funções recursivas e definir quando interromper a recursividade.
+
+sobre a busca binária:
+  - A busca binária utiliza recursão de uma forma similar ao merge sort e ao quick sort para dividir o array em partes cada vez menores. A cada chamada recursiva, o array é dividido em seções cada vez menores, e o valor buscado é situado entre à esquerda (menor) ou à direita (maior) do que o elemento central. Dessa forma, é possível descartar metade dos elementos de cada seção, a cada chamada da função.
+  - A busca binária é mais eficiente em termos de quantidade de operações necessárias do que a busca linear. Conforme as simulações feitas durante a aula, é possível localizar um elemento em um array com um número máximo de operações muito menor do que a busca linear.
 ---
 
 ## 📌 AULA 5

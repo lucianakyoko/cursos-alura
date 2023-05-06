@@ -12,9 +12,9 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Dividir para conquistar | ✔️ |
-| 2 | Merge Sort | ⚫ |
-| 3 | Quick Sort | ⚫ |
-| 4 | Busca binária | ⚫ |
+| 2 | Merge Sort | ✔️ |
+| 3 | Quick Sort | ✔️ |
+| 4 | Busca binária | ✔️ |
 | 5 | Análise dos algoritmos | ⚫ |
 
 ---
@@ -46,7 +46,10 @@
 
 ### Aula 04 - Busca binária
 <ul>
-  <li></li>
+  <li>Aplicamos novamente o paradigma “dividir para conquistar” para desenvolver o algoritmo de busca chamado busca binária;</li>
+  <li>Utilizamos recursão para manipular um array ordenado e buscar um elemento, seguindo o fluxo da busca binária que foi visto nas simulações e testes;</li>
+  <li>Desenvolvemos código em JavaScript para implementar o algoritmo de busca binária;</li>
+  <li>Continuamos a prática de funções recursivas, vendo o funcionamento do “caso base”, que pode ser considerada como a condição de parada de uma função recursiva.</li>
 </ul>
 
 ### Aula 05 - Análise dos algoritmos
