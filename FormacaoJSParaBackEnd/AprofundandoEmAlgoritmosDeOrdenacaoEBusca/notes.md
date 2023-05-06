@@ -151,6 +151,19 @@ O script só finaliza a execução quando a pilha de chamadas estiver vazia.
 
 ## 📌 AULA 2
 ### Merge Sort
+#### Uma implementação “oficial”?
+Durante o curso, temos abordado cada algoritmo a partir do conceito, passando pela representação em diagrama/teste de mesa, para só depois implementar o código. O que pode gerar a pergunta: Existe mais de uma forma de implementar um algoritmo?
+
+A resposta é: sim. O código, com suas funções e métodos utilizados, pode variar e depende inclusive da linguagem utilizada. É possível encontrar o mesmo algoritmo implementado de formas diferentes. Porém, a lógica de funcionamento do algoritmo sempre permanece a mesma. Por esse motivo não começamos direto pelo código e sim entendendo como o algoritmo é pensado e como ele deve se comportar.
+
+Durante o curso, desenvolvemos primeiramente um código mais “agnóstico”, para em seguida utilizar mais métodos como, por exemplo, array.push(). Mas seria possível desacoplar ainda mais, abstraindo funções de comparação para não depender de uma propriedade objeto.preco, por exemplo.
+
+#### Ordenando pelo pivô
+O quick sort utiliza o princípio do elemento pivô para fazer a ordenação dos elementos.
+  - Posicionar o pivô no meio do array é uma das opções para este algoritmo, mas poderia ser um elemento escolhido de forma aleatória ou o último elemento do array. Para o algoritmo, não há diferença em posicionar o pivô entre qualquer uma destas três opções - você pode fazer o teste de mesa e observar o comportamento dos elementos. Porém, haverá mudança no código!
+  - utilizamos sempre o elemento do meio do array como pivô para separar maiores e menores, porém a posição do pivô com relação ao array completo vai sendo modificada durante a ordenação. Conforme vimos durante as aulas, o array original vai ser “fatiado” em pequenas partes, e sempre que isso acontece é definido um novo pivô a partir do meio do array.
+  - Posicionar o pivô no primeiro elemento do array pode levar o algoritmo a se comportar no pior caso possível, se o array já tiver algum tipo de ordenação interna. Observando a simulação que fizemos na aula, vemos que a ordenação do array é feita em partes bem pequenas para que depois ele seja reconstruído. Desconstruir essas partes já ordenadas, para desordená-las temporariamente e só depois reconstruí-las não é uma boa escolha.
+
 
 
 ---
