@@ -54,7 +54,9 @@
 
 ### Aula 05 - Análise dos algoritmos
 <ul>
-  <li></li>
+  <li>Aprendemos a fazer a análise assintótica do algoritmo de busca binária e por que este é considerado um algoritmo de complexidade logarítmica, em comparação com a busca linear que é um algoritmo de complexidade linear;</li>
+  <li>Fizemos a análise assintótica dos algoritmos de ordenação quick sort e merge sort e analisamos o código para entendermos por que são considerados algoritmos de complexidade linear-logarítmica;</li>
+  <li>E o que significa, em termos de performance, a diferença entre algoritmos de crescimento linear, quadrático e logarítmico.</li>
 </ul>
 
 ---
