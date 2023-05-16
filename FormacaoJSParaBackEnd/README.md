@@ -53,9 +53,9 @@
 
 | --- | Tipo | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
-| 3.1 | 🟦 | NodeJS: o que é e como funciona | ✖️ | ✖️ | ⚫ |
-| 3.2 | 🟫 | Como instalar o NodeJS no windows, linux e macOS | ✖️ | ✖️ | ⚫ |
-| 3.3 | 🟪 | Node.js: criando sua primeira biblioteca | ✖️ | ✖️ | ⚫ |
+| 3.1 | 🟦 | NodeJS: o que é e como funciona | ✖️ | ✖️ | ✔️ |
+| 3.2 | 🟫 | Como instalar o NodeJS no windows, linux e macOS | ✖️ | ✖️ | ✔️ |
+| 3.3 | 🟪 | Node.js: criando sua primeira biblioteca | ✖️ | ✖️ | 🔵 |
 | 3.4 | 🟫 | Lidando com erros no Node.js | ✖️ | ✖️ | ⚫ |
 | 3.5 | 🟪 | JavaScript: programação orientada a objetos | ✖️ | ✖️ | ⚫ |
 | 3.6 | 🟫 | async/await no javascript | ✖️ | ✖️ | ⚫ |
