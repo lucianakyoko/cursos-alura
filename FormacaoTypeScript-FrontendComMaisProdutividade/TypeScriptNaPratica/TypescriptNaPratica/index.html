@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bytebank</title>
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+</head>
+<body>
+    <header class="topo container-padding flex">
+        <img src="images/logo-bytebank.svg" alt="Bytebank">
+        <div class="usuario flex">
+            <span>Joana da Silva Oliveira</span>
+            <img src="images/avatar.svg" alt="Joana da Silva Oliveira" />
+        </div>
+    </header>
+    <main class="container-padding flex">
+        <nav class="menu">
+            <a href="#" class="active">Início</a>
+            <a href="#">Transferências</a>
+            <a href="#">Investimentos</a>
+            <a href="#">Outros serviços</a>
+        </nav>
+
+        <div class="coluna-central">
+            <section class="block-saldo">
+                <h2>Olá, Joana! :)</h2>
+                <time>Quinta-feira, 08/09/2022</time>
+                
+                <div class="flex">
+                    <div class="saldo-valor">
+                        <strong>
+                            Saldo <img src="images/olho.svg" alt="Mostrar saldo" />
+                        </strong>
+                        <div class="cc">
+                            <span>Conta Corrente</span>
+                            <span class="valor">R$ 2.500,00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="block-nova-transacao">
+                <h2>Nova transação</h2>
+                <form action="" method="post" novalidate>
+                    <div class="campo">
+                        <select name="tipoTransacao" id="tipoTransacao" class="campo-input" required>
+                            <option value="">Selecione o tipo de transação</option>
+                            <option value="Depósito">Depósito</option>
+                            <option value="Transferência">Transferência</option>
+                            <option value="Pagamento de Boleto">Pagamento de Boleto</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="valor">Valor:</label><br>
+                        <input type="number" name="valor" id="valor" class="campo-input" placeholder="0,00" step=".01" min="0" required />
+                    </div>
+                    <div class="campo">
+                        <label for="data">Data:</label><br>
+                        <input type="date" name="data" id="data" class="campo-input" placeholder="dd/mm/aaaa" required />
+                    </div>
+                    <div class="campo">
+                        <button type="submit" class="btn">
+                            Concluir transação
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <aside class="extrato">
+            <h3>Extrato</h3>
+            <div class="registro-transacoes">
+                <div class="transacoes-group">
+                    <strong class="mes-group">Setembro</strong>
+                    <div class="transacao-item">
+                        <div class="transacao-info">
+                            <span class="tipo">Transferência</span>
+                            <strong class="valor">-R$ 36,00</strong>
+                        </div>
+                        <time class="data">04/09</time>
+                    </div>
+                    <div class="transacao-item">
+                        <div class="transacao-info">
+                            <span class="tipo">Transferência</span>
+                            <strong class="valor">-R$ 58,00</strong>
+                        </div>
+                        <time class="data">02/09</time>
+                    </div>
+                </div>
+
+                <div class="transacoes-group">
+                    <strong class="mes-group">Agosto</strong>
+                    <div class="transacao-item">
+                        <div class="transacao-info">
+                            <span class="tipo">Transferência</span>
+                            <strong class="valor">-R$ 50,00</strong>
+                        </div>
+                        <time class="data">30/08</time>
+                    </div>
+                    <div class="transacao-item">
+                        <div class="transacao-info">
+                            <span class="tipo">Depósito</span>
+                            <strong class="valor">R$ 86,00</strong>
+                        </div>
+                        <time class="data">27/08</time>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>
