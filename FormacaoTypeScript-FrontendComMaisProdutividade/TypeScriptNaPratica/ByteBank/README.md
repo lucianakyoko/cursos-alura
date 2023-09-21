@@ -11,8 +11,8 @@
 
 | Aula | Titulo | Status |
 | --- | --- | --- |
-| 1 | JavaScript vs TypeScript | ⚫ |
-| 2 | Definindo tipos | ⚫ |
+| 1 | JavaScript vs TypeScript | 🔵 |
+| 2 | Definindo tipos | 🔵 |
 | 3 | Aplicando o TypeScript | ⚫ |
 | 4 | Modularizando o TypeScript | ⚫ |
 | 5 | Finalizando o projeto do TypeScript | ⚫ |
@@ -21,14 +21,20 @@
 
 ## Aprendizados
 
-### Aula 01 - 
+### Aula 01 - JavaScript vs TypeScript
 <ul>
-  <li></li>
+  <li>Configuração do ambiente para criar um projeto simples com TypeScript.</li>
+  <li>Instalação das ferramentas necessárias.</li>
+  <li>Desenvolvimento de uma solução utilizando JavaScript e compreensão de suas limitações.</li>
+  <li>Refatoração do código da solução para TypeScript e compreensão inicial de suas vantagens.</li>
 </ul>
 
-### Aula 02 - 
+### Aula 02 - Definindo Tipos
 <ul>
-  <li></li>
+  <li>Conhecemos o arquivo tsconfig.json e sua função em um projeto.</li>
+  <li>Aprendemos as vantagens de trabalhar com tipos definidos.</li>
+  <li>Exploramos a criação de tipos personalizados usando Type Alias e também a criação de Arrays tipados no TypeScript.</li>
+  <li>Aprendemos o conceito e a aplicabilidade das Enums.</li>
 </ul>
 
 ### Aula 03 - 
