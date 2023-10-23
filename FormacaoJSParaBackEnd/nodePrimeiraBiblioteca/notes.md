@@ -79,6 +79,9 @@ Agora que esclarecemos um pouco mais os termos, você pode perceber que muitas v
 ## 📌 AULA 2 - 
 ### Carregamento de arquivos
 
+
+---
+
 ## 📌 AULA 3 - 
 ### Capturando links
 

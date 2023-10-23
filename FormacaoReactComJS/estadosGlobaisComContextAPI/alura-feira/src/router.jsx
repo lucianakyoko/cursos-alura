@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Login from '@/pages/Login';
 import Feira from '@/pages/Feira';
 import Carrinho from '@/pages/Carrinho';
+
 import UsuarioProvider from '@/common/contexts/Usuario';
 import CarrinhoProvider from '@/common/contexts/Carrinho';
 import { PagamentoProvider } from '@/common/contexts/Pagamento';

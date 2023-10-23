@@ -27,7 +27,7 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 1.1 | 🟫 | JavaScript ou TypeScript? | ✖️ | [🗂️ abrir](./JavaScriptOuTypeScript/) | ✔️ |
 | . | 1.2 | 🟪 | TypeScript parte 1 - evoluindo seu JS | Alura Bank | [🗂️ abrir](./Typescript1EvoluindoSeuJS/) | ✔️ |
-| . | 1.3 | 🟪 | TypeScript parte 2 - avançando na linguagem | Alura Bank | [[🗂️ abrir]](./Typescript2AvancandoNaLinguagem/) | ✔️ |
-| . | 1.4 | 🟪 | TypeScript parte 3 - mais técnicas e boas práticas | ➖ | ➖ | ⚫ |
+| . | 1.3 | 🟪 | TypeScript parte 2 - avançando na linguagem | Alura Bank | [🗂️ abrir](./Typescript2AvancandoNaLinguagem/) | ✔️ |
+| . | 1.4 | 🟪 | TypeScript parte 3 - mais técnicas e boas práticas | Alura Bank | [🗂️ abrir](./Typescript3TecnicasBoasPraticas/) | 🔵 |
 
 

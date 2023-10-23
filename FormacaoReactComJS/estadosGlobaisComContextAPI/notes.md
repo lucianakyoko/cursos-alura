@@ -22,7 +22,7 @@ Criando o contexto resolvemos o problema de Prop Drilling e provemos nossos esta
 
 ## 📌 AULA 2
 ### Contexto de usuário
-
+Consideramos que criar estados dentro do arquivo routes é uma má prática
 
 ---
 
