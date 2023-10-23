@@ -25,10 +25,10 @@
 ### 1️⃣ - API Rest
 | . | --- | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | HTTP: entendendo a web por baixo dos panos | Alura Books | [repo](./HTTPEntendendoAWebPorBaixoDosPanos/) | ✔️ |
-| . | 1.2 | 🟥 | O que é Node.js? | ✖️ | ➖ | ⚫ |
-| . | 1.3 | 🟫 | Como instalar o Node.js | ✖️ | ➖ | ⚫ |
-| . | 1.4 | 🟪 | Node.js: criando uma API com Express e MongoDB | ✖️ | ➖ | ⚫ |
+| . | 1.1 | 🟪 | HTTP: entendendo a web por baixo dos panos | Alura Books | [repo](./HTTPEntendendoAWebPorBaixoDosPanos/) | ✔️ |
+| . | 1.2 | 🟥 | O que é Node.js? | ✖️ | ➖ | ✔️ |
+| . | 1.3 | 🟫 | Como instalar o Node.js | ✖️ | ➖ | ✔️ |
+| 🚩 | 1.4 | 🟪 | Node.js: criando uma API com Express e MongoDB | ✖️ | [repo](./APIExpressMongoDB/) | 🔵 |
 | . | 1.5 | 🟪 | Node.js: lidando com buscas, filtros, paginação e erros em uma API | ✖️ | ➖ | ⚫ |
 
 
