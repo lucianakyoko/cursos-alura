@@ -12,8 +12,8 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando o projeto com Node.js | ✔️ |
-| 2 | Express e primeiras rotas | ⚫ |
-| 3 | Persistindo dados | ⚫ |
+| 2 | Express e primeiras rotas | ✔️ |
+| 3 | Persistindo dados | 🔵 |
 | 4 | Evoluindo a API | ⚫ |
 | 5 | Adicionando funcionalidades | ⚫ |
 
@@ -30,7 +30,10 @@
 
 ### Aula 02 - Express e primeiras rotas 
 <ul>
-  <li></li>
+  <li>Como instalar e utilizar os métodos do framework Express para criação de um servidor HTTP e também para gerenciamento de requisições, respostas e criação de rotas;</li>
+  <li>Como implementar um CRUD inicial com os métodos HTTP GET, POST, PUT e DELETE, e como utilizar os métodos do Express para cada método;</li>
+  <li>Como testar requisições com Postman e quais são as partes de uma requisição HTTP;</li>
+  <li>Como utilizar o Express para gerar e enviar respostas adequadas para cada tipo de requisição HTTP</li>
 </ul>
 
 ### Aula 03 - Persistindo dados
