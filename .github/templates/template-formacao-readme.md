@@ -16,9 +16,9 @@
 </p>
 
 ---
-| 🟪 | 🟦 | 🟫 | 🟥 | 🟨 | 🟩
-| --- | --- | --- | --- | --- |
-| Curso | Alura+ | Artigo | video | Podcast | Site
+| 🟪 | 🟦 | 🟫 | 🟥 | 🟨 | 🟩 |
+| --- | --- | --- | --- | --- | --- |
+| Curso | Alura+ | Artigo | video | Podcast | Site |
 
 ---
 
