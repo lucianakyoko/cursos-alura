@@ -25,11 +25,9 @@ Cada **Formação** é composta por diversas atividades como:
 
 | --- | Formação | Repo | Status |
 | --- | --- | --- | --- |
-| 1 | React com JS | [🗂️](./FormacaoReactComJS/) | 🔵 |
-| 2 | React Native | [🗂️](./FormacaoReactNative/) | 🔶 |
-| 3 | Full stack com JS | [🗂️](./FormacaoFullstackJS/) | ✔️ |
-| 4 | JavaScript para back-end | [🗂️](./FormacaoJSParaBackEnd/) | 🔵 |
-| 5 | TypeScrpt | [🗂️](./FormacaoTypescript/) | 🔵 |
+| 1 | Aplique TypeScript no front-end | [🗂️](./Aplique_TypeScript_no_front-end/) | ⚫ |
+| 2 | Aplicação acessível com JS, Emotion e React Router | [🗂️](./Criando_uma_aplicacao_acessivel_com_JavaScript_Emotion_React_Router/) | ⚫ |
+| 3 | --- | 🗂️ | ⚫ |
 
 ---
 
