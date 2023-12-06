@@ -25,7 +25,7 @@
 ### 1️⃣ - API REST
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | HTTP: entendendo a web por baixo dos panos | ➖ | [🗂️](./HTTP_entendendo_a_web_por_baixo_dos_panos/) | 🔵 |
+| 🚩 | 1.1 | 🟪 | HTTP: entendendo a web por baixo dos panos | ➖ | [🗂️](./http/) | 🔵 |
 | . | 1.2 | 🟦 | O que é Node.js? | ✖️ | ✖️ | ⚫ |
 | . | 1.3 | 🟫 | Como instalar o Node.js no Windows, Linux e MacOS | ✖️ | ✖️ | ⚫ |
 | . | 1.4 | 🟪 | Node.js: criando uma API com Express e MongoDB | ➖ | ➖ | ⚫ |
