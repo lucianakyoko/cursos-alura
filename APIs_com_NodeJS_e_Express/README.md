@@ -25,8 +25,8 @@
 ### 1️⃣ - API REST
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | HTTP: entendendo a web por baixo dos panos | ➖ | [🗂️](./http/) | 🔵 |
-| . | 1.2 | 🟦 | O que é Node.js? | ✖️ | ✖️ | ⚫ |
+| 🚩 | 1.1 | 🟪 | HTTP: entendendo a web por baixo dos panos | AluraBooks | [🗂️](./http/) | ✔️ |
+| . | 1.2 | 🟦 | O que é Node.js? | ✖️ | [🗂️](./O_que_e_NodeJS/) | ✔️ |
 | . | 1.3 | 🟫 | Como instalar o Node.js no Windows, Linux e MacOS | ✖️ | ✖️ | ⚫ |
 | . | 1.4 | 🟪 | Node.js: criando uma API com Express e MongoDB | ➖ | ➖ | ⚫ |
 | . | 1.5 | 🟪 | Node.js: lidando com buscas, filtros, paginação e erros em uma API | ➖ | ➖ | ⚫ |
