@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Criando o projeto com Node.js | ✔️ |
 | 2 | Express e primeiras rotas | ✔️ |
-| 3 | Persistindo dados | ⚫ |
+| 3 | Persistindo dados | ✔️ |
 | 4 | Evoluindo a API | ⚫ |
 | 5 | Adicionando funcionalidades | ⚫ |
 
@@ -38,7 +38,10 @@
 
 ### Aula 03 - Persistindo dados
 <ul>
-  <li></li>
+  <li>Como os bancos de dados atuam integrados a uma API, guardando os dados recebidos e processados pela API;</li>
+  <li>Quais são as principais diferenças entre tipos de bancos de dados SQL e NoSQL e alguns casos de uso de cada tipo de banco;</li>
+  <li>Como utilizar uma instância gratuita de um banco MongoDB na nuvem através do serviço Mongo Atlas e conectar a instância com a API;</li>
+  <li>Os conceitos de model e schema e qual a função de cada na construção de uma API.</li>
 </ul>
 
 ### Aula 04 - Evoluindo a API

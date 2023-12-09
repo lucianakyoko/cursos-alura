@@ -41,3 +41,17 @@ A resposta contém informações referentes à requisição, que podem ser uma c
 ### PUT vs PATCH
 - PUT substitui totalmente o recurso atual pelos novos dados que estão sendo recebidos na requisição. Caso não exista o recurso anterior, ele será criado. Apesar disso, não é o método indicado para a criação de novos recursos, para isso existe o método POST.
 - PATCH atualiza parcialmente um recurso já existente. Ao contrário do PUT que precisa receber um recurso completo para fazer a substituição completa, PATCH pode receber apenas os dados a serem modificados para atualizar apenas estes campos.
+
+---
+### Tipos de servidores:
+Existem diversos tipos de servidores, além dos utilizados para hospedar e processar informações através de APIs REST. Cada tipo de servidor é pensado, construído e otimizado para sua função específica, por exemplo:
+
+- Servidores de banco de dados: armazenam, gerenciam e acessam bancos de dados, como um servidor Oracle, MySQL ou MongoDB (não incluindo aqui servidores em nuvem como o Atlas).
+- Servidores de arquivos: armazenam arquivos e dados. Ao contrário de um serviço de armazenamento de arquivos em “bucket”, oferecido pelos provedores de nuvem (como o AWS S3) e que normalmente pode ser acessado de qualquer lugar via internet, os servidores de arquivos geralmente são acessados apenas através de uma rede interna.
+- Servidores de arquivos estáticos: armazenam e distribuem arquivos “estáticos”, como CSS, imagens e arquivos JavaScript utilizados em sites e conteúdos web. Ao contrário dos servidores que hospedam APIs (que precisam processar inputs e servir os resultados deste processamento), servidores de arquivos estáticos apenas “entregam” os arquivos solicitados pela requisição. Mesmo arquivos JavaScript, nesse caso, são considerados estáticos, pois toda a execução é feita pelo lado cliente da requisição (através, por exemplo, do navegador do usuário).
+
+Ainda há vários outros tipos de servidores específicos, como os voltados para a análise de grandes volumes de dados, servidores de backup, de DNS, entre outros.
+
+Mesmo quando utilizamos os serviços de armazenamento em nuvem, devemos sempre lembrar que a nuvem é, entre muitas aspas, “o servidor de outra pessoa”. Ao utilizarmos a nuvem, terceirizamos muito do trabalho de manutenção dos servidores para os provedores destes serviços, como AWS, Google Cloud, MS Azure, entre outros. Mas os princípios ainda são os mesmos.
+
+---
