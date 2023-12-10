@@ -55,3 +55,18 @@ Ainda há vários outros tipos de servidores específicos, como os voltados para
 Mesmo quando utilizamos os serviços de armazenamento em nuvem, devemos sempre lembrar que a nuvem é, entre muitas aspas, “o servidor de outra pessoa”. Ao utilizarmos a nuvem, terceirizamos muito do trabalho de manutenção dos servidores para os provedores destes serviços, como AWS, Google Cloud, MS Azure, entre outros. Mas os princípios ainda são os mesmos.
 
 ---
+### Models:
+Os models são responsáveis pela representação dos dados e da lógica de negócio da aplicação, ou seja, é responsabilidade do model gerenciar o relacionamento entre a API e a camada de dados, incluindo validação, armazenamento e manipulação dos dados, interação com a base de dados e suas regras
+
+### Controllers:
+Os controllers atuam como intermediários entre a camada responsável pelo recebimento dos inputs de dados, que em nossa API está sendo feito através das rotas, e os models. Controllers também são a camada responsável pelo “caminho inverso”, pegando o resultado do processamento feito pelos models e “repassando” de volta.
+A comunicação entre as camadas de model e controller é uma caminho de ida e volta, pois o model vai repassar o resultado da consulta para o controller para que seja processada e transformada na resposta HTTP no formato adequado e com as informações esperadas
+
+---
+### try/catch
+O try/catch é uma estrutura usada justamente quando é necessário capturar e manejar erros de forma mais precisa, permitindo que os erros sejam “capturados e tratados” internamente pela função e evitando que a aplicação pare de funcionar ou que o cliente receba respostas inesperadas.
+
+- No bloco try inserimos o código que é necessário “monitorar” para que potenciais erros sejam capturados, como operações em bases de dados ou APIs externas. Em caso de sucessos, apenas o código dentro do try é executado e seus resultados retornados para fora da função, conforme o caso.
+- No bloco catch inserimos o código que vai ser executado em caso de erros ocorridos no código que está dentro do try. Qualquer erro que aconteça dentro do try é automaticamente lançado para dentro do catch e recebido através do parâmetro que normalmente chamamos de (error) ou (e). Uma vez dentro do catch o erro pode ser tratado de acordo e debugado, e o lado cliente pode receber uma resposta que faça sentido.
+
+O try/catch funciona também para captura e tratamento de possíveis erros em operações assíncronas, como as que envolvem justamente operações em bancos ou outras APIs.

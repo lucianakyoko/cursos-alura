@@ -14,7 +14,7 @@
 | 1 | Criando o projeto com Node.js | ✔️ |
 | 2 | Express e primeiras rotas | ✔️ |
 | 3 | Persistindo dados | ✔️ |
-| 4 | Evoluindo a API | ⚫ |
+| 4 | Evoluindo a API | ✔️ |
 | 5 | Adicionando funcionalidades | ⚫ |
 
 ---
@@ -46,7 +46,9 @@
 
 ### Aula 04 - Evoluindo a API
 <ul>
-  <li></li>
+  <li>A organizar a estrutura do código de um projeto de API utilizando o padrão chamado controller;</li>
+  <li>A evoluir as funcionalidades da API organizando as chamadas da lib Mongoose em métodos separados em um controller;</li>
+  <li>A praticar a implementação do CRUD (Create, Read, Update e Delete) com as respostas HTTP e as rotas correspondentes</li>
 </ul>
 
 ### Aula 05 - Adicionando funcionalidades
