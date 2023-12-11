@@ -1,0 +1,50 @@
+# Curso - Node.js: lidando com buscas, filtros, paginação e erros em uma API
+
+## Aulas
+<p>
+  ✔️ concluded &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  ⚫ not started &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🔵 in progress &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🔶 paused &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🔴 abandoned 
+</p>
+
+| Aula | Titulo | Status |
+| --- | --- | --- |
+| 1 | Deixando nossa API resilient | ✔️ |
+| 2 | Avançando o tratamento de erros | 🔵 |
+| 3 | Validando os dados | ⚫ |
+| 4 | Avançando em buscas e filtros | ⚫ |
+| 5 | Implementando paginação | ⚫ |
+
+---
+
+## Aprendizados
+
+### Aula 01 - Deixando nossa API resilient
+<ul>
+  <li>Proteger informações sensíveis com o dotenv;</li>
+  <li>Configurar o ESLint para formatar o código e identificar bugs;</li>
+  <li>Refatorar o código com async/await;</li>
+  <li>Identificar e tratar erros específicos de uma rota.</li>
+</ul>
+
+### Aula 02 - Avançando o tratamento de erros
+<ul>
+  <li></li>
+</ul>
+
+### Aula 03 - Validando os dados
+<ul>
+  <li></li>
+</ul>
+
+### Aula 04 - Avançando em buscas e filtros
+<ul>
+  <li></li>
+</ul>
+
+### Aula 05 - Implementando paginação
+<ul>
+  <li></li>
+</ul>
