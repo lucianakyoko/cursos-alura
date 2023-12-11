@@ -70,3 +70,43 @@ O try/catch é uma estrutura usada justamente quando é necessário capturar e m
 - No bloco catch inserimos o código que vai ser executado em caso de erros ocorridos no código que está dentro do try. Qualquer erro que aconteça dentro do try é automaticamente lançado para dentro do catch e recebido através do parâmetro que normalmente chamamos de (error) ou (e). Uma vez dentro do catch o erro pode ser tratado de acordo e debugado, e o lado cliente pode receber uma resposta que faça sentido.
 
 O try/catch funciona também para captura e tratamento de possíveis erros em operações assíncronas, como as que envolvem justamente operações em bancos ou outras APIs.
+
+---
+### relacionamentos:
+Em bancos SQL, a avaliação de requisitos e modelagem dos dados costuma ser feita de forma adiantada com relação à aplicação, pois o SQL é, por definição, mais “estrito” com relação à estrutura de um banco, aos tipos de dados associados a cada campo e ao relacionamento entre as tabelas.
+
+Já em um banco de objetos como o MongoDB, esta estrutura é menos rígida e pode ser atualizada de acordo com as necessidades da aplicação, então, dois documentos livro podem ser diferentes entre si sem que para isso sejam necessárias alterações significativas na base de dados.
+
+Porém, em ambos os tipos de banco existem três tipos de relacionamentos entre dados. São eles:
+
+- Relacionamento “um para um” (one-to-one ou 1:1), quando um registro está conectado a somente outro registro em outro conjunto de dados. Exemplo: uma pessoa registrada no sistema da nossa livraria tem somente um CPF relacionado a ela, e não é possível que duas pessoas diferentes tenham o mesmo CPF ou uma pessoa ter dois CPFs.
+- Relacionamento “um para muitos” (one-to-many ou 1:n), quando um registro pode ser conectado a mais de um registro em outro conjunto de dados. Exemplo: as pessoas cadastradas em nossa livraria podem fornecer mais de um número de telefone celular, porém, cada um destes números de celular pode estar associado a apenas uma pessoa por vez.
+- Relacionamento “muitos para muitos” (many-to-many ou n:m), quando mais de um registro pode estar relacionado a mais de um registro em outro conjunto. Exemplo: um livro pode ter mais de um autor, ao mesmo tempo que este mesmo autor pode ter escrito vários livros.
+
+---
+### MongoDB - Embed x Reference
+**Embedding:**
+Ao contrário do SQL, o MongoDB segue o princípio de “dados que são acessados juntos devem ser armazenados juntos”.
+
+Embedding significa incorporar dados que são relacionados e inseri-los em um documento. É usado para simplificar as consultas (queries) aos dados e melhorar a performance geral das ferramentas nas consultas.
+
+Incorporar dados em um único documento pode criar documentos muito grandes, o que pode acabar prejudicando a performance da aplicação, pois um documento deve ser carregado em memória por inteiro. Além disso, pode também fazer com que novos dados sejam incorporados indefinidamente a um único objeto e aumentando o tamanho em bytes além do limite de 16 mb por documento de um objeto BSON.
+
+**Referencing:**
+Referencing significa fazer referência a documentos em outra coleção. Nesse caso, os dados são guardados em coleções separadas, mas ainda é importante que mantenham vínculo entre eles. A referência é feita através de um campo específico do documento, normalmente o campo id ou equivalente.
+
+A agregação de dados via reference visa evitar duplicação de dados (um aspecto muito importante no SQL, também chamada de “normalização de dados”) e também gerenciar o tamanho dos documentos para evitar a criação de documentos muito grandes, que prejudicariam a performance do sistema.
+
+Por outro lado, a junção de dados via referência faz com que uma consulta se transforme em duas ou várias.
+
+---
+###  estrutura de uma URL
+```https://cursos.alura.com.br:443/search?query=express
+```
+
+- https:// é o protocolo de comunicação utilizado.
+cursos.alura.com.br é o host, composto por subdomínio (cursos) e domínio (alura.com.br).
+- :443/ é a porta utilizada na comunicação. 443 é a porta usada para conexões do tipo HTTPS e o número é normalmente suprimido na visualização padrão do navegador. No caso de conexões HTTP, a porta utilizada é a 80.
+- search é a rota ou path (“caminho”), assim como nossa API tem as rotas livros e autores. Rotas de APIs, como a que estamos trabalhando, normalmente são “abstrações” referentes aos recursos. Porém, as rotas também podem ser usadas para a localização de recursos no servidor, por exemplo, /pages/sobre.html para exibir a página sobre no navegador.
+- ?query=express são os query parameters ou parâmetros de busca. Note que os parâmetros de busca sempre iniciam com ?. Uma URL pode conter vários parâmetros encadeados, separados por &. Por exemplo, ?query=express&type=curso&formacao=node.
+URLs também podem conter fragments ou anchors, comumente utilizadas em front-end como marcadores para determinadas partes de uma página e que não são enviadas ao servidor nas requisições.

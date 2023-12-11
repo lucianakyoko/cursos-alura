@@ -15,7 +15,7 @@
 | 2 | Express e primeiras rotas | ✔️ |
 | 3 | Persistindo dados | ✔️ |
 | 4 | Evoluindo a API | ✔️ |
-| 5 | Adicionando funcionalidades | ⚫ |
+| 5 | Adicionando funcionalidades | ✔️ |
 
 ---
 
@@ -53,7 +53,9 @@
 
 ### Aula 05 - Adicionando funcionalidades
 <ul>
-  <li></li>
+  <li>A evoluir as funcionalidades de uma API, unindo diferentes entidades como livro e autor;</li>
+  <li>Como funciona o relacionamento em um banco de objetos como MongoDB utilizando o modelo de embedding;</li>
+  <li>Como realizar buscas em API via parâmetros de query.</li>
 </ul>
 
 ---
