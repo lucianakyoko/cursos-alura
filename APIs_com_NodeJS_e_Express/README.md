@@ -28,7 +28,7 @@
 | . | 1.1 | 🟪 | HTTP: entendendo a web por baixo dos panos | AluraBooks | [🗂️](./http/) | ✔️ |
 | . | 1.2 | 🟦 | O que é Node.js? | ✖️ | [🗂️](./O_que_e_NodeJS/) | ✔️ |
 | . | 1.3 | 🟫 | Como instalar o Node.js no Windows, Linux e MacOS | ✖️ | [🗂️](./Como_Instalar_NodeJS.md) | ✔️ |
-| . | 1.4 | 🟪 | Node.js: criando uma API com Express e MongoDB | ➖ | [🗂️](./NodeJS_APIRest_Express_MongoDB/) | ✔️ |
+| . | 1.4 | 🟪 | Node.js: criando uma API com Express e MongoDB | Livraria | [🗂️](./NodeJS_APIRest_Express_MongoDB/) | ✔️ |
 | 🚩 | 1.5 | 🟪 | Node.js: lidando com buscas, filtros, paginação e erros em uma API | ➖ | ➖ | ⚫ |
 
 
