@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Deixando nossa API resilient | ✔️ |
-| 2 | Avançando o tratamento de erros | 🔵 |
+| 2 | Avançando o tratamento de erros | ✔️ |
 | 3 | Validando os dados | ⚫ |
 | 4 | Avançando em buscas e filtros | ⚫ |
 | 5 | Implementando paginação | ⚫ |
@@ -31,7 +31,10 @@
 
 ### Aula 02 - Avançando o tratamento de erros
 <ul>
-  <li></li>
+  <li>Criar e utilizar um middleware de manipulador de erros;</li>
+  <li>Identificar e tratar erros de validação;</li>
+  <li>Refatorar o manipulador de erros utilizando classes;</li>
+  <li>Criar um middleware para tratar páginas 404.</li>
 </ul>
 
 ### Aula 03 - Validando os dados

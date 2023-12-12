@@ -33,3 +33,16 @@ O método findById receberá uma string, e o Mongoose tentará convertê-la para
 Tanto no MongoDB quanto no Mongoose, um ObjectId deve ser uma sequência de 12 ou 24 caracteres hexadecimais. Se o método findById receber uma string que não cumpre esses requisitos, ele falhará em converter a string para o tipo ObjectId e lançará um CastError.
 
 ---
+### controladores são middlewares?:
+Um middleware especial do Express caracterizado por receber quatro parâmetros que chamamos de: erro, req, res e next.
+
+Há uma semelhança entre a estrutura dessa função e os métodos dos controladores da API, como o listarAutorPorId. Afinal, os métodos de controladores podem receber três dos quatro parâmetros que um middleware de erro pode receber, e que convencionalmente chamamos de req, res e next.
+
+Isso porque os métodos de controladores também são middlewares do Express! Eles são o tipo mais convencional de middleware, que recebem até três parâmetros. Uum middleware do Express é uma função que é executada em toda requisição para a API ou em determinadas requisições.
+
+Se pararmos para pensar, é exatamente assim que os métodos dos controladores se comportam: quando uma requisição é feita para uma determinada rota da API, esses métodos executam um determinado código (recebem parâmetros da requisição, acessam o banco de dados, etc) e devolvem uma resposta para o cliente.
+
+### Registrando middlewares na aplicação Express
+Para registrar um middleware que é executado em todas as requisições para a API, independente da rota ou do método HTTP, utilizamos o método app.use. 
+
+a ordem em que os middlewares são registrados na aplicação é importante. 
