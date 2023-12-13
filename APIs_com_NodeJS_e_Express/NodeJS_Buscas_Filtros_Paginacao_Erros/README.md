@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Deixando nossa API resilient | ✔️ |
 | 2 | Avançando o tratamento de erros | ✔️ |
-| 3 | Validando os dados | ⚫ |
+| 3 | Validando os dados | ✔️ |
 | 4 | Avançando em buscas e filtros | ⚫ |
 | 5 | Implementando paginação | ⚫ |
 
@@ -39,7 +39,9 @@
 
 ### Aula 03 - Validando os dados
 <ul>
-  <li></li>
+  <li>Aplicar validações nativas do Mongoose:</li>
+  <li>Criar validadores personalizados:</li>
+  <li>Aplicar um validador global:</li>
 </ul>
 
 ### Aula 04 - Avançando em buscas e filtros
