@@ -14,7 +14,7 @@
 | 1 | Deixando nossa API resilient | ✔️ |
 | 2 | Avançando o tratamento de erros | ✔️ |
 | 3 | Validando os dados | ✔️ |
-| 4 | Avançando em buscas e filtros | ⚫ |
+| 4 | Avançando em buscas e filtros | ✔️ |
 | 5 | Implementando paginação | ⚫ |
 
 ---
@@ -46,7 +46,9 @@
 
 ### Aula 04 - Avançando em buscas e filtros
 <ul>
-  <li></li>
+  <li>Buscar pelos títulos dos livros de forma dinâmica:</li>
+  <li>Filtrar os livros por número de páginas:</li>
+  <li>Buscar livros pelo nome do autor:</li>
 </ul>
 
 ### Aula 05 - Implementando paginação

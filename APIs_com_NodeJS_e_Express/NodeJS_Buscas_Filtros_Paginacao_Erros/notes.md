@@ -46,3 +46,16 @@ Se pararmos para pensar, é exatamente assim que os métodos dos controladores s
 Para registrar um middleware que é executado em todas as requisições para a API, independente da rota ou do método HTTP, utilizamos o método app.use. 
 
 a ordem em que os middlewares são registrados na aplicação é importante. 
+
+---
+### Modelagem de dados:
+Aplicamos um filtro de busca de livros pelo nome do autor. Para aplicar esse filtro, nós precisamos primeiro buscar pelo autor na coleção de autores para obter o seu _id. Com essa informação, é possível filtrar os livros corretamente, já que o id do autor está presente no schema de livros.
+
+Contudo, perceba que essa operação adiciona mais uma consulta ao banco de dados, no caso, para a coleção de autores, o que torna a busca mais custosa. Conforme as aplicações começam a crescer, devemos nos preocupar em manter a otimização e performance das operações realizadas no banco de dados.
+
+Talvez uma coisa que você tenha pensado seria utilizar o populate do Mongoose para popular os dados do livros com as informações restantes do autor. Infelizmente, essa solução não é possível, pois o método populate não altera a forma como os livros são consultados no banco de dados. Em vez disso, ele apenas popula os campos solicitados depois que a consulta já foi realizada ao banco de dados.
+
+Da forma que os Schemas de livros e autores estão atualmente modelados na API da livraria, não há muitas soluções além da que realizamos em aula. Porém, os dados cadastrados em um banco de dados podem ser modelados a fim de otimizar as consultas realizadas. A forma como isso deve ser feito depende de vários fatores, como: quais coleções são mais acessadas; a proporção entre a quantidade de operações de leitura e operações de escrita em determinadas coleções; a quantidade de dados cadastrados em cada coleção; etc.
+
+O site do MongoDB possui um artigo bastante rico sobre as diversas formas que os dados de um banco de dados podem ser modelados em uma relação 1:N (1 para muitos, que é o caso da nossa API, em que 1 autor está relacionado a vários livros). Acesse o artigo 6 Rules of Thumb for MongoDB Schema Design para entender mais sobre o assunto.
+
