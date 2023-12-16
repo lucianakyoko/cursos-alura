@@ -29,13 +29,13 @@
 | . | 1.2 | 🟦 | O que é Node.js? | ✖️ | [🗂️](./O_que_e_NodeJS/) | ✔️ |
 | . | 1.3 | 🟫 | Como instalar o Node.js no Windows, Linux e MacOS | ✖️ | [🗂️](./Como_Instalar_NodeJS.md) | ✔️ |
 | . | 1.4 | 🟪 | Node.js: criando uma API com Express e MongoDB | Livraria | [🗂️](./NodeJS_APIRest_Express_MongoDB/) | ✔️ |
-| 🚩 | 1.5 | 🟪 | Node.js: lidando com buscas, filtros, paginação e erros em uma API | Livraria | [🗂️](./NodeJS_Buscas_Filtros_Paginacao_Erros/) | 🔵 |
+| . | 1.5 | 🟪 | Node.js: lidando com buscas, filtros, paginação e erros em uma API | Livraria | [🗂️](./NodeJS_Buscas_Filtros_Paginacao_Erros/) | ✔️ |
 
 
 ### 2️⃣ - ORM com Sequelize
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 2.1 | 🟦 | O que é ORM? | ✖️ | ✖️ | ⚫ |
+| 🚩 | 2.1 | 🟦 | O que é ORM? | ✖️ | ✖️ | ⚫ |
 | . | 2.2 | 🟩 | Squelize | ✖️ | ✖️ | ⚫ |
 | . | 2.3 | 🟪 | ORM com Node.js: desenvolvendo uma API com Sequelize e SQLite | ➖ | ➖ | ⚫ |
 | . | 2.4 | 🟪 | ORM com Node.js: avançando nas funcionalidades do Sequelize | ➖ | ➖ | ⚫ |
