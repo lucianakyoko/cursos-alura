@@ -37,7 +37,7 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 2.1 | 🟦 | O que é ORM? | ✖️ | ✖️ | ✔️ |
 | . | 2.2 | 🟩 | Squelize | ✖️ | ✖️ | ✔️ |
-| 🚩| 2.3 | 🟪 | ORM com Node.js: desenvolvendo uma API com Sequelize e SQLite | ➖ | ➖ | ⚫ |
+| 🚩| 2.3 | 🟪 | ORM com Node.js: desenvolvendo uma API com Sequelize e SQLite | ➖ | [🗂️] | 🔵 |
 | . | 2.4 | 🟪 | ORM com Node.js: avançando nas funcionalidades do Sequelize | ➖ | ➖ | ⚫ |
 
 
