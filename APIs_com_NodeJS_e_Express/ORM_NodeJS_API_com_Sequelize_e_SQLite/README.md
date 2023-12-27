@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Conhecendo o Sequelize | ✔️ |
-| 2 | Criando um modelo | ⚫ |
+| 2 | Criando um modelo | ✔️ |
 | 3 | Desenvolvendo a API | ⚫ |
 | 4 | Relações e associaçõe | ⚫ |
 | 5 | Atualizando a API | ⚫ |
@@ -32,7 +32,11 @@
 
 ### Aula 02 - Criando um modelo
 <ul>
-  <li></li>
+  <li>O que são modelos e como os modelos representam e mapeiam os dados de tabelas correspondentes no banco;</li>
+  <li>Como automatizar a criação de modelos a partir do sequelize-cli;</li>
+  <li>O que são tipos de dados em SQL e como o Sequelize adapta os tipos de dados de diversos bancos;</li>
+  <li>O que são migrações no contexto de ORMs e como utilizar as migrações para fazer mudanças rastreáveis e incrementais no banco de dados;</li>
+  <li>O que são seeds e como utilizar o sequelize-cli para criar arquivos de seed e também para popular o banco com dados de teste.</li>
 </ul>
 
 ### Aula 03 - Desenvolvendo a API
