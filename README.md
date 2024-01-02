@@ -26,7 +26,7 @@ Cada **Formação** é composta por diversas atividades como:
 | --- | Formação | Repo | Status |
 | --- | --- | --- | --- |
 | 1 | Aplique TypeScript no front-end | [🗂️](./Aplique_TypeScript_no_front-end/) | ⚫ |
-| 2 | Aplicação acessível com JS, Emotion e React Router | [🗂️](./Criando_uma_aplicacao_acessivel_com_JavaScript_Emotion_React_Router/) | ⚫ |
+| 2 | Aplicação acessível com JS, Emotion e React Router | [🗂️](./Criando_uma_aplicacao_acessivel_com_JavaScript_Emotion_React_Router/) | 🔵 |
 | 3 | APIs com Node.js e Express | [🗂️](./APIs_com_NodeJS_e_Express/) | 🔵 |
 | 4 | Cursos Avulsos | [🗂️](./Cursos_Avulsos/) | ⚫ |
 | 5 | --- | 🗂️ | ⚫ |
