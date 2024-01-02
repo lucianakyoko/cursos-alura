@@ -26,7 +26,7 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | 🚩 | 1.1 | 🟨 | TypeScript - Hipster Ponto Tech #378 | ✖️ | ✖️ | ⚫ |
-| . | 1.2 | 🟪 | TS na prática: implemente um projeto completo com TypeScript e módulos | ➖ | ➖ | ⚫ |
+| . | 1.2 | 🟪 | TS na prática: implemente um projeto completo com TypeScript e módulos | ByteBank | [🗂️](./TS_na_Pratica-TS_e_modulos/) | 🔵 |
 | . | 1.3 | 🟪 | TypeScript: aplicando orientação a objetos no Front-end | ➖ | ➖ | ⚫ |
 | . | 1.3 | 🟫 | JavaScript ou TypeScript? Entenda as principais diferenças | ✖️ | ✖️ | ⚫ |
 
