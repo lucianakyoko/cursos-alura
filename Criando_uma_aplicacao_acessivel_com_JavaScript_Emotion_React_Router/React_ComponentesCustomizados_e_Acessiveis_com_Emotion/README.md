@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Do Figma para o React  | ✔️ |
-| 2 | Trabalhando com temas | ⚫ |
+| 2 | Trabalhando com temas | ✔️ |
 | 3 | Tipografando a aplicação | ⚫ |
 | 4 | Um Grid para a todos governar | ⚫ |
 | 5 | Componentizando o Select | ⚫ |
@@ -31,7 +31,10 @@
 
 ### Aula 02 - Trabalhando com temas
 <ul>
-  <li></li>
+  <li>Criar um provedor para o tema;</li>
+  <li>Consumir o tema em componente styled;</li>
+  <li>Consumir o tema em componentes Globais, de estilos globais;</li>
+  <li>Criar e exportar um componente puramente visual, sem comportamento: o Cabecalho.jsx.</li>
 </ul>
 
 ### Aula 03 - Tipografando a aplicação
