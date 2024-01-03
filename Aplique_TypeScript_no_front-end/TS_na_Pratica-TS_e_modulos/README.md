@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | JavaScript vs TypeScript | ✔️ |
-| 2 | Definindo tipos | ⚫ |
+| 2 | Definindo tipos | ✔️ |
 | 3 | Aplicando o TypeScript | ⚫ |
 | 4 | Modularizando o TypeScript | ⚫ |
 | 5 | Finalizando o projeto do TypeScript | ⚫ |
@@ -31,7 +31,10 @@
 
 ### Aula 02 - Definindo tipos
 <ul>
-  <li></li>
+  <li>Conhecemos o arquivo tsconfig.json e sua função em um projeto.</li>
+  <li>Aprendemos as vantagens de trabalhar com tipos definidos.</li>
+  <li>Exploramos a criação de tipos personalizados usando Type Alias e também a criação de Arrays tipados no TypeScript.</li>
+  <li>Aprendemos o conceito e a aplicabilidade das Enums.</li>
 </ul>
 
 ### Aula 03 - Aplicando o TypeScript

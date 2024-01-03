@@ -1,6 +1,9 @@
 # Anotações do curso - TypeScript na prática: implemente um projeto completo com TypeScript e módulos
 
 ---
+"ouvidor" - ```tsc -w```
+
+---
 
 ### Compilação de arquivos TS
 ```tsc meu-arquivo.ts```
