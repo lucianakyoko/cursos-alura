@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Do Figma para o React  | ✔️ |
 | 2 | Trabalhando com temas | ✔️ |
-| 3 | Tipografando a aplicação | ⚫ |
+| 3 | Tipografando a aplicação | ✔️ |
 | 4 | Um Grid para a todos governar | ⚫ |
 | 5 | Componentizando o Select | ⚫ |
 
@@ -39,7 +39,9 @@
 
 ### Aula 03 - Tipografando a aplicação
 <ul>
-  <li></li>
+  <li>Selecionar uma tag HTML para um componente de forma dinâmica, em tempo de execução;</li>
+  <li>Estilizar a tipografia baseada na variante escolhida;</li>
+  <li>Desenvolver inputs e labels de forma dinâmica e acessível.</li>
 </ul>
 
 ### Aula 04 - Um Grid para a todos governar
