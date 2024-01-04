@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | JavaScript vs TypeScript | ✔️ |
 | 2 | Definindo tipos | ✔️ |
-| 3 | Aplicando o TypeScript | ⚫ |
+| 3 | Aplicando o TypeScript | ✔️ |
 | 4 | Modularizando o TypeScript | ⚫ |
 | 5 | Finalizando o projeto do TypeScript | ⚫ |
 
@@ -39,7 +39,10 @@
 
 ### Aula 03 - Aplicando o TypeScript
 <ul>
-  <li></li>
+  <li>Reorganizamos a estrutura de arquivos do projeto;</li>
+  <li>Aplicamos os conceitos apresentados e explorados na aula 2;</li>
+  <li>Realizamos a formatação de moedas e data nos formatos necessários;</li>
+  <li>Analisamos os problemas que ainda persistem na aplicação e que podem ser resolvidos por meio dos módulos.</li>
 </ul>
 
 ### Aula 04 - Modularizando o TypeScript
