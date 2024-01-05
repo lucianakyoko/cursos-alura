@@ -14,7 +14,7 @@
 | 1 | Do Figma para o React  | ✔️ |
 | 2 | Trabalhando com temas | ✔️ |
 | 3 | Tipografando a aplicação | ✔️ |
-| 4 | Um Grid para a todos governar | ⚫ |
+| 4 | Um Grid para a todos governar | ✔️ |
 | 5 | Componentizando o Select | ⚫ |
 
 ---
@@ -46,7 +46,11 @@
 
 ### Aula 04 - Um Grid para a todos governar
 <ul>
-  <li></li>
+  <li>Analisar e utilizar uma biblioteca de Grid;</li>
+  <li>Trabalhar com Containers, Linhas e Colunas;</li>
+  <li>Dar peso diferente para uma coluna, baseado na largura da tela;</li>
+  <li>Componentizar blocos da aplicação de forma reaproveitável;</li>
+  <li>Analisar sua aplicação com o Lighthouse e interpretar o resultado.</li>
 </ul>
 
 ### Aula 05 - Componentizando o Select

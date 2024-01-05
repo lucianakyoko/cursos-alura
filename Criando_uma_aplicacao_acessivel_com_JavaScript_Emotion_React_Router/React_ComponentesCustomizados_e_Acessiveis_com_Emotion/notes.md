@@ -14,3 +14,13 @@ No React a Context API você cria um repositório de informações onde todos os
 A Context API é uma ferramenta super útil para tornar o desenvolvimento de aplicações mais eficiente e fácil de gerenciar.
 
 ---
+
+### react-grid-system
+De forma resumida, é um sistema de grade baseado no sistema de colunas e linhas do BootStrap.
+
+[documentação](https://www.npmjs.com/package/react-grid-system)
+
+instalação:
+```
+npm install react-grid-system --save
+```
