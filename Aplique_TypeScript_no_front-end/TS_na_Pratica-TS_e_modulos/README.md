@@ -14,7 +14,7 @@
 | 1 | JavaScript vs TypeScript | ✔️ |
 | 2 | Definindo tipos | ✔️ |
 | 3 | Aplicando o TypeScript | ✔️ |
-| 4 | Modularizando o TypeScript | ⚫ |
+| 4 | Modularizando o TypeScript | ✔️ |
 | 5 | Finalizando o projeto do TypeScript | ⚫ |
 
 ---
@@ -47,7 +47,9 @@
 
 ### Aula 04 - Modularizando o TypeScript
 <ul>
-  <li></li>
+  <li>Compreendemos as vantagens da utilização de módulos na criação de aplicações com TypeScript.</li>
+  <li>Reestruturamos o projeto, redefinindo os papéis e responsabilidades de cada componente ou módulo da aplicação.</li>
+  <li>Utilizamos os comandos import/export para importar recursos de outros módulos e disponibilizá-los para uso.</li>
 </ul>
 
 ### Aula 05 - Finalizando o projeto do TypeScript
