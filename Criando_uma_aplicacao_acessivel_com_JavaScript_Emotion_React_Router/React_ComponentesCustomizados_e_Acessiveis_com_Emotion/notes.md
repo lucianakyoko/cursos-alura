@@ -24,3 +24,23 @@ instalação:
 ```
 npm install react-grid-system --save
 ```
+
+### diferentes eventos do teclado
+Eventos de teclado ocorrem quando uma tecla é pressionada ou liberada no teclado. Dentro do contexto do React, esses eventos são usados para gerenciar a interação do usuário com a interface.
+
+Eventos específicos:
+
+- onKeyDown: Este evento é acionado quando uma tecla é pressionada. Isso significa que, mesmo se o usuário mantiver a tecla pressionada por algum tempo, o evento será acionado apenas uma vez.
+
+- onKeyDownCapture: Este é o mesmo que o onKeyDown, mas ele é acionado primeiro pelo evento capturador. Isso significa que ele será processado antes de chegar ao elemento-alvo.
+
+- onKeyUp: Este evento é acionado quando uma tecla é liberada. Isso significa que o evento será acionado apenas uma vez, independentemente de quanto tempo a tecla tenha sido mantida pressionada.
+
+- onKeyUpCapture: Este é o mesmo que o onKeyUp, mas ele é acionado primeiro pelo evento capturador. Isso significa que ele será processado antes de chegar ao elemento-alvo.
+
+- onKeyPress*: Este evento é acionado quando uma tecla é pressionada e liberada. Isso significa que o evento será acionado repetidamente enquanto a tecla for mantida pressionada.
+O evento onkeypress está marcado como depreciado em alguns navegadores. Alguns deles, como o Google Chrome, já não suportam mais esse evento.
+
+A razão disso é que o evento onkeypress tinha algumas limitações e comportamentos inconsistentes em diferentes navegadores. Em vez disso, é recomendável usar os eventos onkeydown ou onkeyup para gerenciar a interação do usuário com o teclado em sua aplicação React.
+
+Ao usar os eventos onkeydown ou onkeyup, você tem mais controle sobre a interação do usuário com o teclado e pode garantir que seu código seja compatível com diferentes navegadores.

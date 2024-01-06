@@ -15,7 +15,7 @@
 | 2 | Trabalhando com temas | ✔️ |
 | 3 | Tipografando a aplicação | ✔️ |
 | 4 | Um Grid para a todos governar | ✔️ |
-| 5 | Componentizando o Select | ⚫ |
+| 5 | Componentizando o Select | ✔️ |
 
 ---
 
@@ -55,14 +55,16 @@
 
 ### Aula 05 - Componentizando o Select
 <ul>
-  <li></li>
+  <li>Montar uma lista suspensa do zero;</li>
+  <li>Combinar o uso de estilos com o React;</li>
+  <li>Reagir a eventos do teclado.</li>
 </ul>
 
 ---
 
 ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
+Este é o screenshot do **Freelando** que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-olaMundo.png">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/freelando-preview.svg">
 </p>
