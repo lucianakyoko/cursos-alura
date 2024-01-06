@@ -15,7 +15,7 @@
 | 2 | Definindo tipos | ✔️ |
 | 3 | Aplicando o TypeScript | ✔️ |
 | 4 | Modularizando o TypeScript | ✔️ |
-| 5 | Finalizando o projeto do TypeScript | ⚫ |
+| 5 | Finalizando o projeto do TypeScript | ✔️ |
 
 ---
 
@@ -54,14 +54,17 @@
 
 ### Aula 05 - Finalizando o projeto do TypeScript
 <ul>
-  <li></li>
+  <li>Realizamos o armazenamento das informações da aplicação utilizando o localStorage.</li>
+  <li>Agrupamos as transações por data e as exibimos por meio do componente de Extrato.</li>
+  <li>Modificamos o objeto Date das Transações para exibir corretamente a data no front-end.</li>
+  <li>Modificamos o objeto Date das Transações para exibir corretamente a data no front-end.</li>
 </ul>
 
 ---
 
 ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
+Este é o screenshot do projeto **ByteBank** que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-olaMundo.png">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/byteBank-preview.jpg">
 </p>
