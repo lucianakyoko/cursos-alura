@@ -32,4 +32,3 @@ Cada **Formação** é composta por diversas atividades como:
 | 5 | --- | 🗂️ | ⚫ |
 
 ---
-

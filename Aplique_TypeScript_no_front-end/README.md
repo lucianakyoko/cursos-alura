@@ -27,7 +27,7 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 1.1 | 🟨 | TypeScript - Hipster Ponto Tech #378 | ✖️ | [🗂️](./notes.md) | ✔️ |
 | . | 1.2 | 🟪 | TS na prática: implemente um projeto completo com TypeScript e módulos | ByteBank | [🗂️](./TS_na_Pratica-TS_e_modulos/) | ✔️ |
-| 🚩 | 1.3 | 🟪 | TypeScript: aplicando orientação a objetos no Front-end | ➖ | ➖ | ⚫ |
+| 🚩 | 1.3 | 🟪 | TypeScript: aplicando orientação a objetos no Front-end | ByteBank | [🗂️](./TS_Aplicando_Orientacao_a_Objetos_No_Front-End/) | 🔵 |
 | . | 1.3 | 🟫 | JavaScript ou TypeScript? Entenda as principais diferenças | ✖️ | ✖️ | ⚫ |
 
 
