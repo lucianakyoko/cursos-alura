@@ -32,7 +32,10 @@
 
 ### Aula 02 - Encapsulando dados
 <ul>
-  <li></li>
+  <li>Utilizar os modificadores de acesso para controlar a visibilidade dos membros de uma classe;</li>
+  <li>Aplicar o encapsulamento em TypeScript para proteger os dados internos de uma classe;</li>
+  <li>Utilizar os métodos públicos para obter informações de propriedades privadas de uma classe de forma segura;</li>
+  <li>Criar e utilizar métodos estáticos em TypeScript para definir comportamentos e lógicas que podem ser acessados diretamente na classe, sem a necessidade de criar objetos.</li>
 </ul>
 
 ### Aula 03 - Lidando com tipos
