@@ -31,7 +31,10 @@
 
 ### Aula 02 - Rotas aninhadas
 <ul>
-  <li></li>
+  <li>Definir e aninhar rotas;</li>
+  <li>Analisar e elevar componentes provedores;</li>
+  <li>Definir componentes base para rotas aninhadas;</li>
+  <li>Utilizar o <Outlet /> para definir onde o conteúdo dinâmico será renderizado.</li>
 </ul>
 
 ### Aula 03 - Concluindo o fluxo
