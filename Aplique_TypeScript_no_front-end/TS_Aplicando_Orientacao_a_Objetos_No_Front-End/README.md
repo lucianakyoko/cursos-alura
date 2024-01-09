@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Orientação a objetos | ✔️ |
-| 2 | Encapsulando dados | ⚫ |
+| 2 | Encapsulando dados | ✔️ |
 | 3 | Lidando com tipos | ⚫ |
 | 4 | Herdando atributos | ⚫ |
 | 5 | Validando interações | ⚫ |
