@@ -5,8 +5,8 @@ import { Transacao } from "./Transacao.js";
 
 export class Conta {
   protected nome: string;
-  protected saldo: number = Armazenador.obter('saldo') || 0;
-  private transacoes: Transacao[] = Armazenador.obter(('transacoes'), (key: string, value: any) => {
+  protected saldo: number = Armazenador.obter<number>('saldo') || 0;
+  private transacoes: Transacao[] = Armazenador.obter<Transacao[]>(('transacoes'), (key: string, value: any) => {
     if (key === 'data') {
       return new Date(value);
     };

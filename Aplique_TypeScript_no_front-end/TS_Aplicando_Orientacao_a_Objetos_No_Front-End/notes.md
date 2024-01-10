@@ -49,3 +49,28 @@ No exemplo acima, definimos o método converterParaMaiusculas como um método es
 A chamada do método é feita diretamente na classe, sem precisar criar um objeto Utils. Isso nos permite acessar o método de maneira conveniente, sem a necessidade de criar instâncias desnecessárias da classe.
 
 Os métodos estáticos são especialmente úteis quando temos lógicas ou funcionalidades que são aplicáveis a toda a classe em si, em vez de instâncias individuais da classe. Eles também podem ser usados para criar funções utilitárias ou fábricas de objetos, que não dependem do estado ou de uma instância específica da classe.
+
+---
+
+### tipos parametrizados
+Generics são tipos parametrizados que permitem que você defina o tipo de um argumento ou retorno de uma função no momento da sua utilização. Assim, você pode criar uma função que aceite qualquer tipo de array, desde que ele seja compatível com uma interface que defina as propriedades comuns a todos os tipos de produtos.
+
+Generics são uma forma de reutilizar código e evitar duplicação. Eles permitem que você crie funções e classes que funcionem com diferentes tipos de dados, sem perder a segurança de tipo fornecida pelo typescript. Para usar generics, você precisa usar um espaço reservado para o tipo, como <T>, na declaração da função ou classe. Esse espaço reservado será substituído pelo tipo real no momento da utilização da função ou classe. Você também pode restringir o tipo genérico usando a palavra-chave extends, indicando que ele deve ser um subtipo de outro tipo ou interface. Por exemplo:
+```
+  interface Produto { 
+nome: string; preco: number; quantidade: number; 
+}
+
+function calcularValorTotal<T>(produtos: T[]): number { 
+let valorTotal = 0; 
+for (let x = 0; x < produtos.length; x++) { 
+valorTotal += produtos[x].preco * produtos[x].quantidade; 
+} 
+return valorTotal; 
+}
+```
+
+Generics são muito úteis para criar funções e classes mais genéricas e reutilizáveis, sem perder a segurança e a precisão dos tipos.
+
+---
+

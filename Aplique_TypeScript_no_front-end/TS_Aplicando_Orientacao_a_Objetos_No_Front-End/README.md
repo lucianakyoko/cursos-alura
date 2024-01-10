@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Orientação a objetos | ✔️ |
 | 2 | Encapsulando dados | ✔️ |
-| 3 | Lidando com tipos | ⚫ |
+| 3 | Lidando com tipos | ✔️ |
 | 4 | Herdando atributos | ⚫ |
 | 5 | Validando interações | ⚫ |
 
@@ -40,7 +40,9 @@
 
 ### Aula 03 - Lidando com tipos
 <ul>
-  <li></li>
+  <li>Usar generics para criar componentes flexíveis e reutilizáveis que funcionam com diferentes tipos de dados de forma segura e consistente;</li>
+  <li>Definir o tipo <T> para representar um tipo genérico que será determinado no momento da utilização do componente;</li>
+  <li>Aplicar o operador “as T” para definir explicitamente o tipo de retorno ao realizar a conversão de JSON para o tipo original.</li>
 </ul>
 
 ### Aula 04 - Herdando atributos
