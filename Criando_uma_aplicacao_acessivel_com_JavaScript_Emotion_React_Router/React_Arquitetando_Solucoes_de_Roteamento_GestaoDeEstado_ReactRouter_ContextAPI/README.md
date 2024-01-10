@@ -12,8 +12,8 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Um router para a todos governar  | ✔️ |
-| 2 | Rotas aninhadas | ⚫ |
-| 3 | Concluindo o fluxo | ⚫ |
+| 2 | Rotas aninhadas | ✔️ |
+| 3 | Concluindo o fluxo | ✔️ |
 | 4 | Desafios na gestão de estado | ⚫ |
 | 5 | Controlando o fluxo dos dados | ⚫ |
 
@@ -39,7 +39,9 @@
 
 ### Aula 03 - Concluindo o fluxo
 <ul>
-  <li></li>
+  <li>Criar componente visuais navegáveis por teclado;</li>
+  <li>Criar componentes compostos;</li>
+  <li>Criar um fluxo de navegação.</li>
 </ul>
 
 ### Aula 04 - Desafios na gestão de estado
