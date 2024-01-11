@@ -14,7 +14,7 @@
 | 1 | Um router para a todos governar  | ✔️ |
 | 2 | Rotas aninhadas | ✔️ |
 | 3 | Concluindo o fluxo | ✔️ |
-| 4 | Desafios na gestão de estado | ⚫ |
+| 4 | Desafios na gestão de estado | ✔️ |
 | 5 | Controlando o fluxo dos dados | ⚫ |
 
 ---
@@ -46,7 +46,10 @@
 
 ### Aula 04 - Desafios na gestão de estado
 <ul>
-  <li></li>
+  <li>Estruturar um Contexto da Context API;</li>
+  <li>Implementar um Provedor para um Contexto;</li>
+  <li>Utilizar e gerir o estado a partir de um contexto;</li>
+  <li>Identificar e extrair código duplicado em componentes reutilizáveis.</li>
 </ul>
 
 ### Aula 05 - Controlando o fluxo dos dados
