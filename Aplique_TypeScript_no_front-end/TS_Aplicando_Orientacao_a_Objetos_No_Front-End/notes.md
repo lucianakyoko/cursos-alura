@@ -74,3 +74,62 @@ Generics são muito úteis para criar funções e classes mais genéricas e reut
 
 ---
 
+## estendendo classes
+Você está trabalhando em um projeto de um jogo de RPG que tem vários tipos de personagens, como guerreiras, magos, arqueiras, etc. Cada tipo de personagem tem suas próprias habilidades, atributos e equipamentos, mas também compartilha algumas características comuns, como nome, nível, vida e experiência.
+
+Para representar cada tipo de personagem, você irá criar classes, mas não quer repetir o código das características comuns em todas elas. Além disso, você quer que o seu código seja fácil de entender e manter.
+
+```
+// Classe pai que representa um personagem genérico
+class Personagem {
+  nome: string;
+  nivel: number;
+  vida: number;
+  experiencia: number;
+
+  constructor(nome: string) {
+    this.nome = nome;
+    this.nivel = 1;
+    this.vida = 100;
+    this.experiencia = 0;
+  }
+
+  atacar(alvo: Personagem): void {
+    // implementar a lógica do ataque
+  }
+
+  defender(): void {
+    // implementar a lógica da defesa
+  }
+
+  ganharExperiencia(pontos: number): void {
+    // implementar a lógica do ganho de experiência
+  }
+}
+
+```
+
+Você pode usar herança para criar classes que herdem as características comuns de uma classe pai e adicionem as características específicas de cada tipo de personagem. Por exemplo:
+```
+// Classe filha que representa um tipo específico de personagem
+class Guerreira extends Personagem {
+  forca: number;
+  armadura: string;
+
+  constructor(nome: string, forca: number, armadura: string) {
+    super(nome); // chama o construtor da classe pai
+    this.forca = forca;
+    this.armadura = armadura;
+  }
+
+  atacar(alvo: Personagem): void {
+    // sobrescrever o método da classe pai com a lógica específica do guerreire
+  }
+
+  usarArmadura(): void {
+    // implementar a lógica do uso da armadura
+  }
+}
+```
+
+Herança é um princípio da programação orientada a objetos que permite que uma classe filha herde as propriedades e os métodos de uma classe pai, sem precisar redefinir as funções. Em Typescript, usamos a palavra-chave extends para indicar que uma classe é derivada de outra. A classe filha pode sobrescrever os métodos da classe pai se precisar de uma lógica diferente, ou adicionar novos métodos se precisar de mais funcionalidades. A classe filha também pode acessar o construtor da classe pai usando a função super.

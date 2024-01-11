@@ -14,7 +14,7 @@
 | 1 | Orientação a objetos | ✔️ |
 | 2 | Encapsulando dados | ✔️ |
 | 3 | Lidando com tipos | ✔️ |
-| 4 | Herdando atributos | ⚫ |
+| 4 | Herdando atributos | ✔️ |
 | 5 | Validando interações | ⚫ |
 
 ---
@@ -47,7 +47,10 @@
 
 ### Aula 04 - Herdando atributos
 <ul>
-  <li></li>
+  <li>Funcionam as heranças e como elas permitem criar classes derivadas que reutilizam e estendem o código das classes bases;</li>
+  <li>Usar a palavra-chave extends para indicar a relação de herança entre as classes em Typescript;</li>
+  <li>Inserir a função super para chamar o construtor da classe base na classe derivada;</li>
+  <li>Sobrescrever ou adicionar métodos na classe derivada para implementar a lógica específica de cada tipo de personagem.</li>
 </ul>
 
 ### Aula 05 - Validando interações
