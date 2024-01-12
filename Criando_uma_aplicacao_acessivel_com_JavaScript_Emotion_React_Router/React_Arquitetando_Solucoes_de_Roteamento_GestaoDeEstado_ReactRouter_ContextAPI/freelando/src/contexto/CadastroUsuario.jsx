@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const usuarioInicial = {
   perfil: '',
@@ -13,6 +14,7 @@ const usuarioInicial = {
 
 export const CadastroUsuarioContext = createContext({
   usuario: usuarioInicial,
+  erros: {},
   setPerfil: () => null,
   setInteresse: () => null,
   setNomeCompleto: () => null,
@@ -21,14 +23,16 @@ export const CadastroUsuarioContext = createContext({
   setEmail: () => null,
   setSenha: () => null,
   setSenhaConfirmada: () => null,
+  submeterUsuario: () => null,
+  possoSelecionarInteresse: () => null,
 })
 
 export const useCadastroUsuarioContext = () => {
-  return useState(CadastroUsuarioContext);
+  return useContext(CadastroUsuarioContext);
 }
 
 export const CadastroUsuarioProvider = ({ children }) => {
-
+  const navegar = useNavigate();
   const [usuario, setUsuario] = useState(usuarioInicial)
 
   const setPerfil = (perfil) => {
@@ -38,7 +42,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
         perfil
       }
     })
-  }
+  };
   const setInteresse = (interesse) => {
     setUsuario(estadoAnterior => {
       return {
@@ -46,7 +50,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
         interesse
       }
     })
-  }
+  };
   const setNomeCompleto = (nomeCompleto) => {
     setUsuario(estadoAnterior => {
       return {
@@ -54,7 +58,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
         nomeCompleto
       }
     })
-  }
+  };
   const setUf = (uf) => {
     setUsuario(estadoAnterior => {
       return {
@@ -62,7 +66,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
         uf
       }
     })
-  }
+  };
   const setCidade = (cidade) => {
     setUsuario(estadoAnterior => {
       return {
@@ -70,7 +74,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
         cidade
       }
     })
-  }
+  };
   const setEmail = (email) => {
     setUsuario(estadoAnterior => {
       return {
@@ -78,7 +82,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
         email
       }
     })
-  }
+  };
   const setSenha = (senha) => {
     setUsuario(estadoAnterior => {
       return {
@@ -86,7 +90,7 @@ export const CadastroUsuarioProvider = ({ children }) => {
         senha
       }
     })
-  }
+  };
   const setSenhaConfirmada = (senhaConfirmada) => {
     setUsuario(estadoAnterior => {
       return {
@@ -94,7 +98,18 @@ export const CadastroUsuarioProvider = ({ children }) => {
         senhaConfirmada
       }
     })
-  }
+  };
+  const submeterUsuario = () => {
+    if(usuario.senha.length < 8) {
+      return
+    }
+    console.log(usuario);
+    navegar('/cadastro/concluido')
+  };
+  const possoSelecionarInteresse = () => {
+    return !!usuario.perfil  
+    
+  };
 
   const contexto = {
     usuario,
@@ -106,6 +121,8 @@ export const CadastroUsuarioProvider = ({ children }) => {
     setEmail,
     setSenha,
     setSenhaConfirmada,
+    submeterUsuario,
+    possoSelecionarInteresse
 }
 
   return (

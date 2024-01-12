@@ -14,3 +14,8 @@ Existem algumas alternativas que podem ajudar a simplificar esse processo.
 - **Recoil** - Essa biblioteca é uma alternativa relativamente nova que tem ganhado popularidade nos últimos anos. Ela permite que você gerencie o estado da aplicação de forma mais simples e flexível, sem precisar lidar com as complexidades do Redux.
 
 Cada uma dessas alternativas tem seus prós e contras, e a escolha certa dependerá das necessidades específicas do seu projeto. Mas, com certeza, todas elas podem ajudar a simplificar o gerenciamento de estado da sua aplicação React.
+
+---
+
+### React Hook - useState
+Basicamente, o useState é uma função que nos permite adicionar estado a um componente. É como se fosse um cérebrozinho dentro do componente que armazena informações que podem ser alteradas ao longo do tempo.

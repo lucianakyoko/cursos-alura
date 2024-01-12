@@ -26,8 +26,8 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 1.1 | 🟪 | React: desenvolvendo componentes customizados e acessíveis com Emotion | Freelando | [🗂️](./React_ComponentesCustomizados_e_Acessiveis_com_Emotion/) | ✔️ |
-| 🚩 | 1.2 | 🟪 | React: arquitetando soluções de roteamento e gestão de estado com React Router e Context API | Freelando | [🗂️](./React_Arquitetando_Solucoes_de_Roteamento_GestaoDeEstado_ReactRouter_ContextAPI/) | 🔵 |
-| . | 1.3 | 🟨 | Acessibilidade web - Hipster Ponto Tech #21 | ✖️ | ✖️ | ⚫ |
+| . | 1.2 | 🟪 | React: arquitetando soluções de roteamento e gestão de estado com React Router e Context API | Freelando | [🗂️](./React_Arquitetando_Solucoes_de_Roteamento_GestaoDeEstado_ReactRouter_ContextAPI/) | ✔️ |
+| 🚩 | 1.3 | 🟨 | Acessibilidade web - Hipster Ponto Tech #21 | ✖️ | ✖️ | ⚫ |
 | . | 1.4 | 🟫 | O que é acessibilidade na web? | ✖️ | ✖️ | ⚫ |
 
 

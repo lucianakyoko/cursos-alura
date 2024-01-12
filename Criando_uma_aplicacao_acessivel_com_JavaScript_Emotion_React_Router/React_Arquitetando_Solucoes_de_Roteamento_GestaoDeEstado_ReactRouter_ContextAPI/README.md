@@ -15,7 +15,7 @@
 | 2 | Rotas aninhadas | ✔️ |
 | 3 | Concluindo o fluxo | ✔️ |
 | 4 | Desafios na gestão de estado | ✔️ |
-| 5 | Controlando o fluxo dos dados | ⚫ |
+| 5 | Controlando o fluxo dos dados | ✔️ |
 
 ---
 
@@ -54,14 +54,17 @@
 
 ### Aula 05 - Controlando o fluxo dos dados
 <ul>
-  <li></li>
+  <li>Conectar todo o conteúdo proposto, finalizando o fluxo dos dados;</li>
+  <li>Conectar todo o conteúdo proposto, finalizando o fluxo dos dados;</li>
+  <li>Usar o contexto como fonte de verdade, isolando regra de negócio de componentes visuais;</li>
+  <li>Praticou e exercitou conhecimentos de CSS e do próprio React.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do **Freelando** que foi desenvolvido durante o curso:
+## 🎯 Projeto desenvolvido
+Este é o screenshot de uma das telas do **Freelando** que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/freelando-preview.svg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/freelando2-preview.svg">
+</p>
