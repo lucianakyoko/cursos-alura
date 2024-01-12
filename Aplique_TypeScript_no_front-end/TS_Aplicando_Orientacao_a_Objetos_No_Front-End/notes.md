@@ -133,3 +133,73 @@ class Guerreira extends Personagem {
 ```
 
 Herança é um princípio da programação orientada a objetos que permite que uma classe filha herde as propriedades e os métodos de uma classe pai, sem precisar redefinir as funções. Em Typescript, usamos a palavra-chave extends para indicar que uma classe é derivada de outra. A classe filha pode sobrescrever os métodos da classe pai se precisar de uma lógica diferente, ou adicionar novos métodos se precisar de mais funcionalidades. A classe filha também pode acessar o construtor da classe pai usando a função super.
+
+---
+
+### Decorators 
+Decorators são funções que recebem informações sobre a declaração decorada e podem modificar o seu comportamento ou adicionar novas características. Por exemplo:
+```
+// Define um decorator de método chamado ValidaString
+export function ValidaString(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    // Guarda uma referência ao método original
+    const originalMethod = descriptor.value;
+
+    // Substitui o método original por uma nova função
+    descriptor.value = function (valor: any) {
+        // Verifica se o valor é uma string
+        if (typeof valor !== "string") {
+            // Se não for, lança um erro
+            throw new Error("O valor deve ser uma string!");
+        }
+
+        // Se for, chama o método original com o valor como argumento
+        return originalMethod.apply(this, [valor]);
+    }
+
+    // Retorna o descritor modificado
+    return descriptor;
+}
+```
+
+Em Typescript, você pode usar a sintaxe @expressão para aplicar um decorator a uma classe, método, propriedade ou parâmetro.
+```
+// Importa o decorator ValidaString
+import { ValidaString } from "./ValidaString";
+
+// Define uma classe livro
+class Livro {
+  // Define uma propriedade titulo
+  titulo: string;
+
+  // Define um construtor que recebe o titulo como parâmetro
+  constructor(titulo: string) {
+    this.titulo = titulo;
+  }
+
+  // Aplica o decorator ValidaString ao método imprimirTitulo
+  @ValidaString
+  imprimirTitulo(valor: any) {
+    // Imprime o valor na tela
+    console.log(valor);
+  }
+}
+
+// Cria uma instância da classe Livro
+let livro = new Livro("Senhor dos Aneis");
+
+// Chama o método imprimirTitulo com um valor válido
+livro.imprimirTitulo("Senhor dos Aneis"); // OK
+
+// Chama o método imprimirTitulo com um valor inválido
+livro.imprimirTitulo(42); // Error: O valor deve ser uma string!
+```
+
+Decorators são um recurso experimental do Typescript que permite adicionar anotações e metaprogramação às declarações de classe e membros. Decorators são funções que podem ser aplicadas usando a forma @expressão, onde expressão deve ser avaliada como uma função que será chamada em tempo de execução com informações sobre a declaração decorada. Decorators podem ser usados para modificar o comportamento, adicionar novas características ou observar as declarações decoradas.
+
+Existem diferentes tipos de decorators, como decorators de classe, decorators de método, decorators de propriedade e decorators de parâmetro. Cada tipo de decorator tem uma assinatura específica e recebe diferentes argumentos. Decorators podem ser compostos ou criados por fábricas de decorators para personalizar a sua aplicação.
+
+---
+
+### explorando o tsconfig.json
+[tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html);
+[propriedades do tsconfig](https://www.typescriptlang.org/tsconfig)

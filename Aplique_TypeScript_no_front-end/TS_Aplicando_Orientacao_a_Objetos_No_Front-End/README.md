@@ -15,7 +15,7 @@
 | 2 | Encapsulando dados | ✔️ |
 | 3 | Lidando com tipos | ✔️ |
 | 4 | Herdando atributos | ✔️ |
-| 5 | Validando interações | ⚫ |
+| 5 | Validando interações | ✔️ |
 
 ---
 
@@ -55,14 +55,16 @@
 
 ### Aula 05 - Validando interações
 <ul>
-  <li></li>
+  <li>Construir funções que serão executadas antes do método;</li>
+  <li>Definir e aplicar decorators;</li>
+  <li>Validar interações com o projeto.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-olaMundo.png">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/byteBank-preview.jpg">
+</p>

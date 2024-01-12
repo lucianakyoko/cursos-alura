@@ -52,5 +52,5 @@
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/preview-olaMundo.png">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
 </p>
