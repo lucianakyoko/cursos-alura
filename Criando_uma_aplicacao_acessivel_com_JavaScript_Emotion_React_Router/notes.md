@@ -18,3 +18,6 @@
 - [Encontro Nacional de Profissionais de TI com Deficiência Visual](http://www.entidv.com.br/)
 
 ---
+
+### Artigo - O que é acessibilidade na web?
+[📄 Link](https://www.alura.com.br/artigos/o-que-e-acessibilidade-web?_gl=1*78mjzz*_ga*MTI4OTcxMTkxMy4xNjc5MzMxNDMy*_ga_1EPWSW3PCS*MTcwNTI3MDIyNS4zNS4xLjE3MDUyNzM5NjEuMC4wLjA.*_fplc*SVlHaVZ1NVBtQXpJUXRyNTdydFE0VzJzdG9RTmQlMkZ6MGpqNVh0Z0hOcHpxTFpmZHMyWDlES3RHVU1xdHBhUWJMSSUyQkx3T2Y4NWwxVXdqNEhwJTJCVnklMkZyS1pYJTJGNlBvcGhEM09TaG5nQ3FiQU1SSWQzTHFuZVZDaUZRS245WlBNdyUzRCUzRA..)

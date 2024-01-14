@@ -28,7 +28,7 @@
 | . | 1.1 | 🟪 | React: desenvolvendo componentes customizados e acessíveis com Emotion | Freelando | [🗂️](./React_ComponentesCustomizados_e_Acessiveis_com_Emotion/) | ✔️ |
 | . | 1.2 | 🟪 | React: arquitetando soluções de roteamento e gestão de estado com React Router e Context API | Freelando | [🗂️](./React_Arquitetando_Solucoes_de_Roteamento_GestaoDeEstado_ReactRouter_ContextAPI/) | ✔️ |
 | . | 1.3 | 🟨 | Acessibilidade web - Hipster Ponto Tech #21 | ✖️ | [🗂️](./notes.md) | ✔️ |
-| 🚩 | 1.4 | 🟫 | O que é acessibilidade na web? | ✖️ | ✖️ | ⚫ |
+| . | 1.4 | 🟫 | O que é acessibilidade na web? | ✖️ | [🗂️](./notes.md) | ✔️ |
 
 
 
@@ -36,7 +36,7 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 2.1 | 🟪 | React: migrando para o Vite e implementando autenticação baseada em Token | ➖ | ➖ | ⚫ |
+| 🚩 | 2.1 | 🟪 | React: migrando para o Vite e implementando autenticação baseada em Token | ➖ | ➖ | ⚫ |
 | . | 2.2 | 🟨 | Estado do ecossistema React 2023 - Hipster Ponto Tech #354 | ✖️ | ✖️ | ⚫ |
 | . | 2.3 | 🟫 | A evolução do desenvolvimento React | ✖️ | ✖️ | ⚫ |
 
