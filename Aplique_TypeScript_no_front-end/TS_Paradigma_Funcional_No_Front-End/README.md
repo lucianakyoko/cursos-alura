@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Elevando seu JS com TypeScript  | ✔️ |
-| 2 | Dominando a UI | ⚫ |
+| 2 | Dominando a UI | ✔️ |
 | 3 | Gerenciando suas tarefas | ⚫ |
 | 4 | Refatoração e ajustes finais | ⚫ |
 
@@ -35,7 +35,10 @@
 
 ### Aula 02 - Dominando a UI
 <ul>
-  <li></li>
+  <li>Manipulação de elementos com o DOM: Como selecionar, criar e interagir com elementos HTML através de métodos como querySelector, createElement e appendChild.</li>
+  <li>Utilização de templates literais para estruturação de SVG: Construção e injeção de SVG diretamente no JavaScript</li>
+  <li>Dinamicamente atualizar a interface baseado no estado: Iterar sobre o array estadoInicial.tarefas e criar elementos HTML correspondentes.</li>
+  <li>Trabalhar com classes e atributos em elementos HTML: Adicionando, verificando e definindo classes e atributos usando métodos como classList.add, setAttribute e appendChild.</li>
 </ul>
 
 ### Aula 03 - Gerenciando suas tarefas

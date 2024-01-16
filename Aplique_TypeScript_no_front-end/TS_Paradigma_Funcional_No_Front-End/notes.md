@@ -31,3 +31,45 @@ const mestreAtualizado = { ...mestreJedi, planeta: "Dagobah" };
 ```
 
 O Typescript nos permite definir estruturas de dados imutáveis através de tipos, garantindo que não vamos, acidentalmente, modificar os dados.
+
+---
+
+### CSS e o padrão BEM
+BEM significa Block, Element, Modifier. É uma metodologia que fornece uma convenção para nomear classes em CSS, tornando seu código mais legível e compreensível.
+
+- **Block**: É uma entidade independente e significativa por si só. Exemplo: header, container, menu.
+
+- **Element**: Partes de um bloco que têm significado em conjunto com esse bloco. Exemplo: menu__item, header__logo.
+
+- **Modifier**: Uma variação ou extensão de um bloco ou elemento. Exemplo: menu--hidden, menu__item--active
+
+**Por que usar BEM?**
+- **Legibilidade**: Olhando para uma classe BEM, você pode facilmente entender a relação entre o CSS e o HTML, o que está acontecendo e onde.
+
+- **Independência**: Os blocos são independentes e podem ser reutilizados, sem estar atrelados a outros elementos.
+
+- **Sem Cascata**: Como o BEM evita a especificidade, os estilos não se sobrepõem, evitando efeitos colaterais indesejados.
+
+**Casos de uso comuns no frontend**:
+- **Componentização**: Pense nos componentes como blocos. Quando criamos componentes em frameworks como React, Vue ou Angular, o padrão BEM pode ser facilmente aplicado para manter a consistência de estilização.
+
+- **Manutenção e Escalabilidade**: Suponha que você está trabalhando em uma equipe grande, onde múltiplos desenvolvedores tocam na base de código. Com o BEM, cada pessoa pode entender e identificar rapidamente a estrutura e relação entre HTML e CSS, sem medo de quebrar estilos existentes.
+
+```
+<div class="card">
+  <img src="..." alt="..." class="card__image">
+  <h2 class="card__title">Título</h2>
+  <p class="card__description">Descrição aqui.</p>
+  <button class="card__button card__button--primary">Clique Aqui</button>
+</div>
+
+```
+
+### Compilando TS
+[documentação NPM Init](https://docs.npmjs.com/cli/v9/commands/npm-init)
+
+- Na raiz do projeto: ```npm ini -y```
+- Assim, teremos o projeto iniciado com o package.json devidamente configurado. Agora já podemos instalar o TypeScript: ```npm i typescript```
+
+---
+
