@@ -6,11 +6,13 @@ import LayoutBaseCadastro from "../paginas/cadastro/LayoutBaseCadastro";
 import SelecaoCliente from "../paginas/cadastro/SelecaoCliente";
 import LayoutBase from "../paginas/LayoutBase";
 import PaginaInicial from "../paginas/PaginaInicial/PaginaInicial";
+import Pagina404 from "../paginas/erros/Pagina404";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <LayoutBase />,
+        ErrorBoundary: Pagina404,
         children: [
             {
                 path: "",

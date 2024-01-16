@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Migrando para o Vite | ✔️ |
-| 2 | Frontend em T | ⚫ |
+| 2 | Frontend em T | ✔️ |
 | 3 | Efetuando login | ⚫ |
 | 4 | Autenticando requisições | ⚫ |
 | 5 | Renovando tokens expirados | ⚫ |
@@ -31,7 +31,11 @@
 
 ### Aula 02 - Frontend em T
 <ul>
-  <li></li>
+  <li>Executar o servidor back-end;</li>
+  <li>Diferenciar os verbos HTTP;</li>
+  <li>Testar APIs no Postman;</li>
+  <li>Interpretar a documentação de uma API no Swagger;</li>
+  <li>Construir requsições com o Axios.</li>
 </ul>
 
 ### Aula 03 - Efetuando login
