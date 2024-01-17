@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Elevando seu JS com TypeScript  | ✔️ |
 | 2 | Dominando a UI | ✔️ |
-| 3 | Gerenciando suas tarefas | ⚫ |
+| 3 | Gerenciando suas tarefas | ✔️ |
 | 4 | Refatoração e ajustes finais | ⚫ |
 
 ---
@@ -43,7 +43,10 @@
 
 ### Aula 03 - Gerenciando suas tarefas
 <ul>
-  <li></li>
+  <li>Interação entre a lógica de estados e a UI: Como o estado estadoInicial e as funções selecionarTarefa e adicionarTarefa se integram com a função atualizarUI para refletir mudanças na interface do usuário.</li>
+  <li>Manipulação de eventos na UI: Implementação de interações do usuário, como o clique no botão para adicionar uma tarefa e a seleção de uma tarefa, e como essas interações desencadeiam atualizações no estado e na UI.</li>
+  <li>Dinâmica de adição de tarefas: Como o formulário e os elementos relacionados são usados para adicionar uma nova tarefa ao estado e, posteriormente, atualizar a lista de tarefas na interface.</li>
+  <li>Feedback visual para tarefas concluídas: Uso de classes e atributos para alterar a aparência visual de tarefas com base em seu status de conclusão, tornando a interface intuitiva</li>
 </ul>
 
 ### Aula 04 - Refatoração e ajustes finais
