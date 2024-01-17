@@ -7,39 +7,44 @@ import SelecaoCliente from "../paginas/cadastro/SelecaoCliente";
 import LayoutBase from "../paginas/LayoutBase";
 import PaginaInicial from "../paginas/PaginaInicial/PaginaInicial";
 import Pagina404 from "../paginas/erros/Pagina404";
+import Login from "../paginas/Login/Login";
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <LayoutBase />,
-        ErrorBoundary: Pagina404,
-        children: [
-            {
-                path: "",
-                element: <PaginaInicial />
-            },
-            {
-                path:'cadastro',
-                element: <LayoutBaseCadastro />,
-                children: [
-                    {
-                        path: '',
-                        element: <SelecaoCliente />
-                    },
-                    {
-                        path: 'interesses',
-                        element: <Interesses />
-                    },
-                    {
-                        path: 'dados-pessoais',
-                        element: <DadosPessoais />
-                    },
-                    {
-                        path: 'concluido',
-                        element: <Concluido />
-                    }
-                ]
-            }
-        ],
-    },
+	{
+		path: "/",
+		element: <LayoutBase />,
+		ErrorBoundary: Pagina404,
+		children: [
+			{
+				path: "",
+				element: <PaginaInicial />
+			},
+			{
+				path: 'login',
+				element: <Login />
+			},
+			{
+				path: 'cadastro',
+				element: <LayoutBaseCadastro />,
+				children: [
+					{
+						path: '',
+						element: <SelecaoCliente />
+					},
+					{
+						path: 'interesses',
+						element: <Interesses />
+					},
+					{
+						path: 'dados-pessoais',
+						element: <DadosPessoais />
+					},
+					{
+						path: 'concluido',
+						element: <Concluido />
+					}
+				]
+			}
+		],
+	},
 ]);

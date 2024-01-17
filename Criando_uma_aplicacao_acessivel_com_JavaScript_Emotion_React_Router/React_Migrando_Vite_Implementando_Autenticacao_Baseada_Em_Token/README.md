@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Migrando para o Vite | ✔️ |
 | 2 | Frontend em T | ✔️ |
-| 3 | Efetuando login | ⚫ |
+| 3 | Efetuando login | ✔️ |
 | 4 | Autenticando requisições | ⚫ |
 | 5 | Renovando tokens expirados | ⚫ |
 
@@ -40,7 +40,11 @@
 
 ### Aula 03 - Efetuando login
 <ul>
-  <li></li>
+  <li>Implementar a ação de login com o Axios;</li>
+  <li>Construir classes com JavaScript;</li>
+  <li>Utilizar métodos do tipo static;</li>
+  <li>Desenvolver métodos para manipular o token;</li>
+  <li>Persistir os tokens com o Session Storage.</li>
 </ul>
 
 ### Aula 04 - Autenticando requisições
