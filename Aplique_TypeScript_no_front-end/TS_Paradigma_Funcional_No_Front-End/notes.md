@@ -73,3 +73,24 @@ BEM significa Block, Element, Modifier. É uma metodologia que fornece uma conve
 
 ---
 
+### passagem de valor vs referência
+- **Passagem por Valor:**
+Você tira uma fotocópia exata do seu livro e entrega ao seu amigo. Agora, se o seu amigo fizer anotações ou rabiscos na cópia, o seu livro original continua intacto, sem alterações. Isto é uma representação da passagem por valor. Em linguagens de programação, quando passamos um valor simples (como um número, string ou boolean) para uma função, estamos passando uma cópia desse valor. Qualquer alteração feita dentro da função não afeta o valor original. No mundo do JavaScript e TypeScript, isso é aplicado a tipos primitivos.
+
+- **Passagem por Referência:**
+Ao invés de entregar uma cópia, você entrega o seu livro original para o seu amigo. Agora, qualquer alteração que ele fizer no livro será permanente, afetando o seu exemplar. Isso é uma representação da passagem por referência. No nosso universo de programação, quando passamos um objeto ou array para uma função, estamos passando a referência para aquele objeto ou array. Isso significa que se a função modifica o objeto ou array, a mudança será refletida no objeto ou array original. No mundo do JavaScript e TypeScript, isso é aplicado a objetos, arrays e funções.
+
+```
+const adicionarTarefa = (estado: EstadoAplicacao, tarefa: Tarefa): EstadoAplicacao => {
+    return {
+        ...estado,
+        tarefas: [...estado.tarefas, tarefa]
+    }
+}
+
+```
+
+Ela não modifica diretamente o objeto estado. Em vez disso, ela retorna uma nova cópia do estado com as alterações desejadas, mantendo a imutabilidade, um conceito muito amigável ao mundo funcional. Aqui, mesmo lidando com objetos (que são passados por referência), estamos adotando uma abordagem funcional que preserva a originalidade dos dados e evita mutações indesejadas.
+
+Entendendo a diferença entre essas duas formas de passagem é crucial para evitar bugs e para escrever códigos mais previsíveis e confiáveis.
+

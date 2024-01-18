@@ -14,7 +14,7 @@
 | 1 | Elevando seu JS com TypeScript  | ✔️ |
 | 2 | Dominando a UI | ✔️ |
 | 3 | Gerenciando suas tarefas | ✔️ |
-| 4 | Refatoração e ajustes finais | ⚫ |
+| 4 | Refatoração e ajustes finais | ✔️ |
 
 ---
 
@@ -51,14 +51,16 @@
 
 ### Aula 04 - Refatoração e ajustes finais
 <ul>
-  <li></li>
+  <li>Captura de eventos personalizados: Como o document.addEventListener é usado para ouvir um evento personalizado chamado 'TarefaFinalizada'.</li>
+  <li>Atualização do estado com base no evento: Modificação do estado da tarefa selecionada, marcando-a como concluída quando o evento é acionado.</li>
+  <li>Reflexo das mudanças na interface: Utilização da função atualizarUI para refletir as mudanças no estado da aplicação na interface do usuário após a finalização de uma tarefa.</li>
 </ul>
 
 ---
-<!-- 
+
 ## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="screenshot da tela principal do Fokus" src="../../.github/thumbs/fokus-preview.jpg">
+</p>
