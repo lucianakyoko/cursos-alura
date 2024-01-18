@@ -48,3 +48,9 @@ Uma maneira para resolver isso é armazenar as notas localmente no navegador do 
 
 ---
 
+### Json Web Tokens
+Em várias aplicações precisamos garantir que apenas usuários autenticados possam acessar as informações do aplicativo e fazer alguma ação. Além disso, o sistema precisa garantir que as informações dos usuários sejam protegidas durante a transmissão de dados. Uma maneira pra resolver isso é usar JSON Web Tokens (JWTs) para autenticar usuários e proteger as informações do aplicativo.
+
+JWTs são uma forma segura de autenticar usuários e proteger as informações do aplicativo. Eles são um padrão aberto (RFC 7519) que define um formato compacto e autocontido para transmitir informações de forma segura entre partes como JSON. As informações podem ser verificadas e confiáveis porque são assinadas digitalmente. Os JWTs podem ser usados em uma variedade de aplicativos, incluindo sites e aplicativos móveis. Eles são fáceis de implementar e oferecem segurança e conveniência aos usuários finais.
+
+Leitura do artigo: [ O que é JSON Web Tokens?](https://www.alura.com.br/artigos/o-que-e-json-web-tokens?_gl=1*vq0vww*_ga*MTI4OTcxMTkxMy4xNjc5MzMxNDMy*_ga_1EPWSW3PCS*MTcwNTU4NDc1MS41NC4xLjE3MDU1ODk1MzIuMC4wLjA.*_fplc*WHFHeHgyczglMkZtM1hMQ2VUMkVvMGUlMkJka3JuOGZHYWg4QWtYREU0ZzZvdVRGSTQzTUxYbDNlQjdTTGxYb3ViYjhCQnJHVSUyRnhJTWx4cjJXRDZwTlFjMFIwQzlZSXRuZTBEZlBuTXJjQndiMDE4TWlhOG9qaERVZFZDUzdqbkl3JTNEJTNE)

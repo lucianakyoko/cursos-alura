@@ -7,10 +7,10 @@ export class ArmazenadorToken {
     sessionStorage.setItem(REFRESH_TOKEN, refreshToken);
   };
 
-  static get obterAccessToken() {
+  static get accessToken() {
     return sessionStorage.getItem(ACCESS_TOKEN);
   };
-  static get obterRefreshToken() {
+  static get refreshToken() {
     return sessionStorage.getItem(REFRESH_TOKEN);
   };
 }

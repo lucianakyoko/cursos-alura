@@ -14,7 +14,7 @@
 | 1 | Migrando para o Vite | ✔️ |
 | 2 | Frontend em T | ✔️ |
 | 3 | Efetuando login | ✔️ |
-| 4 | Autenticando requisições | ⚫ |
+| 4 | Autenticando requisições | ✔️ |
 | 5 | Renovando tokens expirados | ⚫ |
 
 ---
@@ -49,7 +49,9 @@
 
 ### Aula 04 - Autenticando requisições
 <ul>
-  <li></li>
+  <li>Realizar uma requisição dentro de um componente e lidar com um erro de falta de autenticação;</li>
+  <li>Utilizar o Axios para interceptar as requests e adicionar o token ao header de forma global;</li>
+  <li>Testar a funcionalidade para garantir que o token é adicionado automaticamente às requests.</li>
 </ul>
 
 ### Aula 05 - Renovando tokens expirados
