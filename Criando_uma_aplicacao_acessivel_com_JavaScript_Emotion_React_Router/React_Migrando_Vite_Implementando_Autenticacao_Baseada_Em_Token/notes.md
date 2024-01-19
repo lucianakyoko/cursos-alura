@@ -54,3 +54,19 @@ Em várias aplicações precisamos garantir que apenas usuários autenticados po
 JWTs são uma forma segura de autenticar usuários e proteger as informações do aplicativo. Eles são um padrão aberto (RFC 7519) que define um formato compacto e autocontido para transmitir informações de forma segura entre partes como JSON. As informações podem ser verificadas e confiáveis porque são assinadas digitalmente. Os JWTs podem ser usados em uma variedade de aplicativos, incluindo sites e aplicativos móveis. Eles são fáceis de implementar e oferecem segurança e conveniência aos usuários finais.
 
 Leitura do artigo: [ O que é JSON Web Tokens?](https://www.alura.com.br/artigos/o-que-e-json-web-tokens?_gl=1*vq0vww*_ga*MTI4OTcxMTkxMy4xNjc5MzMxNDMy*_ga_1EPWSW3PCS*MTcwNTU4NDc1MS41NC4xLjE3MDU1ODk1MzIuMC4wLjA.*_fplc*WHFHeHgyczglMkZtM1hMQ2VUMkVvMGUlMkJka3JuOGZHYWg4QWtYREU0ZzZvdVRGSTQzTUxYbDNlQjdTTGxYb3ViYjhCQnJHVSUyRnhJTWx4cjJXRDZwTlFjMFIwQzlZSXRuZTBEZlBuTXJjQndiMDE4TWlhOG9qaERVZFZDUzdqbkl3JTNEJTNE)
+
+---
+
+### logout no backend
+Basicamente, ele é um token de acesso que é enviado pelo cliente (no nosso caso, o frontend) para o servidor (backend) em cada requisição. Como se fosse o crachá que eventualmente é utilizado dentro das empresas.
+
+O servidor valida esse token e, se ele for válido, permite que a requisição seja processada. Se não for válido, o servidor retorna um erro.
+
+Quando o usuário faz logout no frontend, é importante que o token seja invalidado, para que ele não possa mais ser utilizado para fazer requisições. Para isso, podemos simplesmente deletar o token da memória do navegador como fizemos dentro do Freelando.
+
+Vale lembrar que mesmo que o token seja deletado do lado do frontend, ele ainda pode ser válido no lado do backend. Por isso, é importante que o backend também tenha um mecanismo para lidar com o logout de forma apropriada.
+
+Uma maneira comum de lidar com o logout em APIs autenticadas com Bearer Tokens é definir um tempo de vida para os tokens. Assim, quando o usuário faz logout, o backend pode simplesmente invalidar o token anterior e não aceitar mais requisições com ele.
+
+Outra abordagem é usar uma lista negra de tokens. Quando o usuário faz logout, o token é adicionado a essa lista, e o backend verifica se o token está nessa lista antes de processar a requisição.
+

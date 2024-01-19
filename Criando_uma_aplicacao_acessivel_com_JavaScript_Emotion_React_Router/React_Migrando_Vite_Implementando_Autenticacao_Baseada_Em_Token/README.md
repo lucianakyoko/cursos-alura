@@ -15,7 +15,7 @@
 | 2 | Frontend em T | ✔️ |
 | 3 | Efetuando login | ✔️ |
 | 4 | Autenticando requisições | ✔️ |
-| 5 | Renovando tokens expirados | ⚫ |
+| 5 | Renovando tokens expirados | ✔️ |
 
 ---
 
@@ -56,14 +56,16 @@
 
 ### Aula 05 - Renovando tokens expirados
 <ul>
-  <li></li>
+  <li>Interceptar e lidar com as respostas dos pedidos HTTP relizados pelo axios;</li>
+  <li>Renovar o token seguindo as especificações do swagger;</li>
+  <li>Atualizar os tokens na sessionStorage quando eles são renovados.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/freelando3-preview.svg">
+</p>

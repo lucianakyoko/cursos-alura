@@ -11,8 +11,12 @@ import { ItemListaInline } from "../componentes/Lista/ItemListaInline"
 import { ListaInline } from "../componentes/Lista/ListaInline"
 import { Rodape } from "../componentes/Rodape/Rodape"
 import { Tipografia } from "../componentes/Tipografia/Tipografia"
-
+import { Link as RouterLink } from "react-router-dom"
+import { ArmazenadorToken } from "../utils/ArmazenadorToken"
+import { useSessaoUsuarioContext } from "../contexto/SessaoUsuario"
 const LayoutBase = ({ children }) => {
+	const { usuarioEstaLogado, logout } = useSessaoUsuarioContext()
+
 	return (
 		<>
 			<Cabecalho>
@@ -22,7 +26,16 @@ const LayoutBase = ({ children }) => {
 							<FreelandoLogo />
 						</Col>
 						<Col style={{ textAlign: 'right' }}>
-							<Link>Login</Link>
+							{
+								usuarioEstaLogado ?
+									<Link onClick={logout}>
+										Logout
+									</Link>
+									:
+									<RouterLink to="/login">
+										<Link>Login</Link>
+									</RouterLink>
+							}
 						</Col>
 					</Row>
 				</Container>
