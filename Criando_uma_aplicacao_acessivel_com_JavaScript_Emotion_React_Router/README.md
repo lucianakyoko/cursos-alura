@@ -37,6 +37,6 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | .  | 2.1 | 🟪 | React: migrando para o Vite e implementando autenticação baseada em Token | ➖ | [🗂️](./React_Migrando_Vite_Implementando_Autenticacao_Baseada_Em_Token/) | ✔️ |
-| 🚩 | 2.2 | 🟨 | Estado do ecossistema React 2023 - Hipster Ponto Tech #354 | ✖️ | ✖️ | ⚫ |
-| . | 2.3 | 🟫 | A evolução do desenvolvimento React | ✖️ | ✖️ | ⚫ |
+| . | 2.2 | 🟨 | Estado do ecossistema React 2023 - Hipster Ponto Tech #354 | ✖️ | [🗂️](./notes.md) | ✔️ |
+| 🚩 | 2.3 | 🟫 | A evolução do desenvolvimento React | ✖️ | ✖️ | ⚫ |
 
