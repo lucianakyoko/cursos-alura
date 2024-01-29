@@ -40,4 +40,3 @@
 | . | 2.3 | 🟥 | Quais são as principais vantagens do TypeScript? | ✖️ | [🗂️](./notes.md) | ✔️ |
 | . | 2.4 | 🟨 | O Hype do TypeScript - Hipster Ponto Tech #207 | ✖️ | [🗂️](./notes.md) | ✔️ |
 
-
