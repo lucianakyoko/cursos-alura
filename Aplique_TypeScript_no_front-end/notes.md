@@ -17,3 +17,9 @@ Este episódio do podcast discute sobre o aprendizado, a adoção e o uso do Typ
 [📄 link](https://www.alura.com.br/artigos/typescript-javascript-vanilla?_gl=1*7icctu*_ga*MTI4OTcxMTkxMy4xNjc5MzMxNDMy*_ga_1EPWSW3PCS*MTcwNjU0MDc4Ny45Mi4xLjE3MDY1NDIxMDkuMC4wLjA.*_fplc*OHpmcTEwYyUyQkFOWWhTaDJOV0JUVnpDbndBZ25PJTJGdjh0UVV3bSUyRjBwM2tGUEs2Y2Vhc3M3RVB2RHJOUHRDcFFRM3lHS3JmS0Y0MGZ6ZXViMmlIMWJLYkNYbTloU09OV3BqNDQ3M2tMdU8xOE1yY0lhMU9MSW50SW9HVGYyMmNRJTNEJTNE)
 
 ---
+
+### Video - Quais são as principais vantagens do Typescript? | #HipstersPontoTube
+[Link](https://www.youtube.com/watch?v=snwevp02sIw)
+
+---
+
