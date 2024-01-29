@@ -23,3 +23,5 @@ Este episódio do podcast discute sobre o aprendizado, a adoção e o uso do Typ
 
 ---
 
+### Podcast - O Hype do TypeScript – Hipsters #207
+[🎧 Link](https://www.hipsters.tech/o-hype-do-typescript-hipsters-207/)
