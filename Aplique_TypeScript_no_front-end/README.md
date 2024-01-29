@@ -36,8 +36,8 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 2.1 | 🟪 | TypeScript: o paradigma funcional no front-end | Fokus | [🗂️](./TS_Paradigma_Funcional_No_Front-End/) | ✔️ |
-| 🚩 | 2.2 | 🟫 | TypeScript com JavaScript Vanilla | ✖️ | ✖️ | ⚫ |
-| . | 2.3 | 🟥 | Quais são as principais vantagens do TypeScript? | ✖️ | ✖️ | ⚫ |
+| . | 2.2 | 🟫 | TypeScript com JavaScript Vanilla | ✖️ | [🗂️](./notes.md) | ✔️ |
+| 🚩 | 2.3 | 🟥 | Quais são as principais vantagens do TypeScript? | ✖️ | ✖️ | ⚫ |
 | . | 2.4 | 🟨 | O Hype do TypeScript - Hipster Ponto Tech #207 | ✖️ | ✖️ | ⚫ |
 
 
