@@ -27,3 +27,7 @@
 ### Podcast - Estado do ecossistema React 2023 - Hipsters Ponto Tech #354
 [🎧 Link](https://cursos.alura.com.br/extra/hipsterstech/estado-do-ecossistema-react-2023-hipsters-ponto-tech-354-a2033)
 
+--- 
+
+### Artigo - A evolução do desenvolvimento React: porque outras ferramentas estão ganhando espaço sobre o create-react-app
+[📄 Link](https://www.alura.com.br/artigos/evolucao-desenvolvimento-react?_gl=1*1dc6fe7*_ga*MTI4OTcxMTkxMy4xNjc5MzMxNDMy*_ga_1EPWSW3PCS*MTcwNjU0MDc4Ny45Mi4xLjE3MDY1NDExNDguMC4wLjA.*_fplc*OHpmcTEwYyUyQkFOWWhTaDJOV0JUVnpDbndBZ25PJTJGdjh0UVV3bSUyRjBwM2tGUEs2Y2Vhc3M3RVB2RHJOUHRDcFFRM3lHS3JmS0Y0MGZ6ZXViMmlIMWJLYkNYbTloU09OV3BqNDQ3M2tMdU8xOE1yY0lhMU9MSW50SW9HVGYyMmNRJTNEJTNE)
