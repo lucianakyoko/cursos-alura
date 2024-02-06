@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando o projeto | ✔️ |
-| 2 | Componentização | ⚫ |
+| 2 | Componentização | ✔️ |
 | 3 | Usando CSS | ⚫ |
 | 4 | Props | ⚫ |
 | 5 | State | ⚫ |
@@ -33,7 +33,11 @@
 
 ### Aula 02 - Componentização
 <ul>
-  <li></li>
+  <li>Funciona a pasta public</li>
+  <li>Criar um componente com class component e como utilizá-lo;</li>
+  <li>O que é JSX;</li>
+  <li>Criar um function component;</li>
+  <li>Utilizar o método map para renderizar arrays.</li>
 </ul>
 
 ### Aula 03 - Usando CSS
