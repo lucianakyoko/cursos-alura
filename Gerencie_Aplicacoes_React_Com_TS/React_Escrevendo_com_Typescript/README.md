@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Criando o projeto | ✔️ |
 | 2 | Componentização | ✔️ |
-| 3 | Usando CSS | ⚫ |
+| 3 | Usando CSS | ✔️ |
 | 4 | Props | ⚫ |
 | 5 | State | ⚫ |
 | 6 | Selecionando um item | ⚫ |
@@ -42,7 +42,10 @@
 
 ### Aula 03 - Usando CSS
 <ul>
-  <li></li>
+  <li>Usar o CSS inline;</li>
+  <li>Utilizar CSS e Sass no projeto;</li>
+  <li>Colocar o CSS Modules em um projeto com Create React App + Typescript;</li>
+  <li>Vantagens de se utilizar CSS Modules.</li>
 </ul>
 
 ### Aula 04 - Props
