@@ -14,7 +14,7 @@
 | 1 | Criando o projeto | ✔️ |
 | 2 | Componentização | ✔️ |
 | 3 | Usando CSS | ✔️ |
-| 4 | Props | ⚫ |
+| 4 | Props | ✔️ |
 | 5 | State | ⚫ |
 | 6 | Selecionando um item | ⚫ |
 | 7 | Finalizando a aplicação | ⚫ |
@@ -50,7 +50,10 @@
 
 ### Aula 04 - Props
 <ul>
-  <li></li>
+  <li>Adicionar informações externas ao componente com Props;</li>
+  <li>Funciona o props.children;</li>
+  <li>O key (chaves) é importante em arrays no React;</li>
+  <li>Usar spread operator de forma consciente para passar props para os componentes;</li>
 </ul>
 
 ### Aula 05 - State
