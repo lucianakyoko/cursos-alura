@@ -15,7 +15,7 @@
 | 2 | Componentização | ✔️ |
 | 3 | Usando CSS | ✔️ |
 | 4 | Props | ✔️ |
-| 5 | State | ⚫ |
+| 5 | State | ✔️ |
 | 6 | Selecionando um item | ⚫ |
 | 7 | Finalizando a aplicação | ⚫ |
 
@@ -58,7 +58,11 @@
 
 ### Aula 05 - State
 <ul>
-  <li></li>
+  <li>O React utiliza os estados para atualizar os componentes;</li>
+  <li>Criar estados com function components e class components;</li>
+  <li>Controlar campos de um Formulário com estados;</li>
+  <li>Criar interfaces e reutilizá-las;</li>
+  <li>Utilizar props e para informar uma mudança de estado;</li>
 </ul>
 
 ### Aula 06 - Selecionando um item
