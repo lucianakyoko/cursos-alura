@@ -16,7 +16,7 @@
 | 3 | Usando CSS | ✔️ |
 | 4 | Props | ✔️ |
 | 5 | State | ✔️ |
-| 6 | Selecionando um item | ⚫ |
+| 6 | Selecionando um item | ✔️ |
 | 7 | Finalizando a aplicação | ⚫ |
 
 ---
@@ -67,7 +67,14 @@
 
 ### Aula 06 - Selecionando um item
 <ul>
-  <li></li>
+  <li>Compartilhar valores comuns entre componentes;</li>
+  <li>Aprendemos como criar um estado que será compartilhado entre vários componentes.</li>
+  <li>Estender interfaces;</li>
+  <li>Usamos a facilidade de estender uma interface dentro de outra interface para reaproveitar código.</li>
+  <li>Adicionar classes CSS de forma condicional;</li>
+  <li>Aprendemos a utilizar um ternário para mudar classes CSS de uma tag baseada em alguma prop com template string.</li>
+  <li>Criar pastas utilitárias;</li>
+  <li>Debatemos sobre formas de criar pastas com funções utilitárias compartilhadas na aplicação.</li>
 </ul>
 
 ### Aula 07 - Finalizando a aplicação
