@@ -25,8 +25,8 @@
 ### 1️⃣ - Primeiro mergulho no React
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | React: escrevendo com TypeScript | Alura Studies | [🗂️](./React_Escrevendo_com_Typescript/) | 🔵 |
-| . | 1.2 | 🟫 | React Hooks: o que é e como eles funcionam | ✖️ | ➖ | ⚫ |
+| . | 1.1 | 🟪 | React: escrevendo com TypeScript | Alura Studies | [🗂️](./React_Escrevendo_com_Typescript/) | ✔️ |
+| 🚩 | 1.2 | 🟫 | React Hooks: o que é e como eles funcionam | ✖️ | ➖ | ⚫ |
 | . | 1.3 | 🟫 | NPM vs Yarn | ✖️ | ➖ | ⚫ |
 | . | 1.4 | 🟪 | React: lidando com arquivos estáticos | ✖️ | ➖ | ⚫ |
 

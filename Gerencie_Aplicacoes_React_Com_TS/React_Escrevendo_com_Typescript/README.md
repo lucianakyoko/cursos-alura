@@ -17,7 +17,7 @@
 | 4 | Props | ✔️ |
 | 5 | State | ✔️ |
 | 6 | Selecionando um item | ✔️ |
-| 7 | Finalizando a aplicação | ⚫ |
+| 7 | Finalizando a aplicação | ✔️ |
 
 ---
 
@@ -79,14 +79,18 @@
 
 ### Aula 07 - Finalizando a aplicação
 <ul>
-  <li></li>
+  <li>Funciona o ciclo de vida de um componente;</li>
+  <li>Utilizar o useEffect;</li>
+  <li>Desestruturar strings;</li>
+  <li>Utilizar função recursiva;</li>
+  <li>Refatorar um class component para um function component;</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/aluraStudies-preview.svg">
+</p>
