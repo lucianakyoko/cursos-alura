@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando o projeto | ✔️ |
-| 2 | Assets | ⚫ |
+| 2 | Assets | ✔️ |
 | 3 | Header e Buscador | ⚫ |
 | 4 | Ordenação e filtros | ⚫ |
 | 5 | Lista de itens | ⚫ |
@@ -32,7 +32,10 @@
 
 ### Aula 02 - Assets
 <ul>
-  <li></li>
+  <li>Importar um svg;</li>
+  <li>Utilizar um svg como componente;</li>
+  <li>Imports absolutos;</li>
+  <li>Utilizar a biblioteca reset css para resetar o css;</li>
 </ul>
 
 ### Aula 03 - Header e Buscador
