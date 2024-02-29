@@ -10,8 +10,10 @@
     "@types/node": "^16.18.83",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"

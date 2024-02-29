@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Criando o projeto | ✔️ |
 | 2 | Assets | ✔️ |
-| 3 | Header e Buscador | ⚫ |
+| 3 | Header e Buscador | ✔️ |
 | 4 | Ordenação e filtros | ⚫ |
 | 5 | Lista de itens | ⚫ |
 | 6 | Finalizando o projeto | ⚫ |
@@ -40,7 +40,11 @@
 
 ### Aula 03 - Header e Buscador
 <ul>
-  <li></li>
+  <li>Importar fontes externas</li>
+  <li>Utilizar o normalize.css</li>
+  <li>Utilizar ícones</li>
+  <li>Ignorar arquivos para build</li>
+  <li>Criar variáveis css</li>
 </ul>
 
 ### Aula 04 - Ordenação e filtros
