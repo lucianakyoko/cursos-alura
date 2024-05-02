@@ -14,7 +14,7 @@
 | 1 | Criando o projeto | ✔️ |
 | 2 | Assets | ✔️ |
 | 3 | Header e Buscador | ✔️ |
-| 4 | Ordenação e filtros | ⚫ |
+| 4 | Ordenação e filtros | ✔️ |
 | 5 | Lista de itens | ⚫ |
 | 6 | Finalizando o projeto | ⚫ |
 
@@ -49,7 +49,9 @@
 
 ### Aula 04 - Ordenação e filtros
 <ul>
-  <li></li>
+  <li>Inferir o tipo de um objeto</li>
+  <li>Manipulação de objetos</li>
+  <li>Biblioteca classnames</li>
 </ul>
 
 ### Aula 05 - Lista de itens
