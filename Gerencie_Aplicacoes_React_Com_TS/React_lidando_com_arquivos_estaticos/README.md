@@ -15,7 +15,7 @@
 | 2 | Assets | ✔️ |
 | 3 | Header e Buscador | ✔️ |
 | 4 | Ordenação e filtros | ✔️ |
-| 5 | Lista de itens | ⚫ |
+| 5 | Lista de itens | ✔️ |
 | 6 | Finalizando o projeto | ⚫ |
 
 ---
@@ -56,7 +56,9 @@
 
 ### Aula 05 - Lista de itens
 <ul>
-  <li></li>
+  <li>Renderizar uma lista de componentes</li>
+  <li>Utilizar a pasta public</li>
+  <li>Gerar os arquivos utilizados em produção</li>
 </ul>
 
 ### Aula 06 - Finalizando o projeto
