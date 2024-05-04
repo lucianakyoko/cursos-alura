@@ -16,7 +16,7 @@
 | 3 | Header e Buscador | ✔️ |
 | 4 | Ordenação e filtros | ✔️ |
 | 5 | Lista de itens | ✔️ |
-| 6 | Finalizando o projeto | ⚫ |
+| 6 | Finalizando o projeto | ✔️ |
 
 ---
 
@@ -63,14 +63,16 @@
 
 ### Aula 06 - Finalizando o projeto
 <ul>
-  <li></li>
+  <li>Buscar com expressão regular</li>
+  <li>Manipular elementos de uma lista</li>
+  <li>Tipar o useState</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/aluroni-preview.png">
+</p>
