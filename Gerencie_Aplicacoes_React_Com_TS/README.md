@@ -28,8 +28,8 @@
 | . | 1.1 | 🟪 | React: escrevendo com TypeScript | Alura Studies | [🗂️](./React_Escrevendo_com_Typescript/) | ✔️ |
 | . | 1.2 | 🟫 | React Hooks: o que é e como eles funcionam | ✖️ | [🗂️](./notes.md) | ✔️ |
 | . | 1.3 | 🟫 | NPM vs Yarn | ✖️ | [🗂️](./notes.md) | ✔️ |
-| 🚩 | 1.4 | 🟪 | React: lidando com arquivos estáticos | Aluroni | [🗂️](./React_lidando_com_arquivos_estaticos/) | ✔️ |
-| . | 1.5 | 🟪 | React: estilize componentes com Styled Components e manipule arquivos | ✖️ | ➖ | ⚫ |
+| . | 1.4 | 🟪 | React: lidando com arquivos estáticos | Aluroni | [🗂️](./React_lidando_com_arquivos_estaticos/) | ✔️ |
+| 🚩 | 1.5 | 🟪 | React: estilize componentes com Styled Components e manipule arquivos | Alura Space | [🗂️](./React_Estilize_Componentes_Com_Styled-Componentes_Manipule_Arquivos_Estaticos/) | 🔵 |
 
 
 
