@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Iniciando o projeto  | ✔️ |
-| 2 | Componentes iniciais e fontes | ⚫ |
+| 2 | Componentes iniciais e fontes | ✔️ |
 | 3 | Criando galeria | ⚫ |
 | 4 | Uma modal de zoom | ⚫ |
 | 5 | Favoritando imagens | ⚫ |
@@ -31,7 +31,10 @@
 
 ### Aula 02 - Componentes iniciais e fontes
 <ul>
-  <li></li>
+  <li>Criar e estilizar o componente cabeçalho;</li>
+  <li>Estruturar a barra lateral;</li>
+  <li>Criar um item de lista que recebe um texto e uma imagem;</li>
+  <li>Importar fontes e defini-las como padrão.</li>
 </ul>
 
 ### Aula 03 - Criando galeria
