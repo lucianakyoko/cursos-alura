@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(180deg, #0e1112, #00090e 100%);
   margin: 0;

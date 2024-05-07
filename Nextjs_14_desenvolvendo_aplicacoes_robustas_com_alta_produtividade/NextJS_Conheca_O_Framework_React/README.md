@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando o projeto | ✔️ |
-| 2 | Criando um card para os posts | ⚫ |
+| 2 | Criando um card para os posts | ✔️ |
 | 3 | Obtendo dados da API | ⚫ |
 | 4 | Paginando dados | ⚫ |
 | 5 | Páginas dinâmicas | ⚫ |
@@ -31,7 +31,10 @@
 
 ### Aula 02 - Criando um card para os posts
 <ul>
-  <li></li>
+  <li>Utilizar imagens remotas no componente Image;</li>
+  <li>Configurar as props obrigatórias do componente Image;</li>
+  <li>Importar fontes do Google;</li>
+  <li>Analisar os logs e reagir a avisos de configurações do Next.js que estão depreciadas.</li>
 </ul>
 
 ### Aula 03 - Obtendo dados da API
