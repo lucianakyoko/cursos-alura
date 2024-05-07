@@ -30,7 +30,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 3 | APIs com Node.js e Express | [🗂️](./APIs_com_NodeJS_e_Express/) | 🔵 |
 | 4 | Cursos Avulsos | [🗂️](./Cursos_Avulsos/) | ⚫ |
 | 5 | Gerencie aplicações React com TypeScipt | [🗂️](./Gerencie_Aplicacoes_React_Com_TS/) | 🔵 |
-| 6 | Next.js 14: desenvolvendo aplicações robustas com alta produtividade | 🗂️ | ⚫ |
+| 6 | Next.js 14: desenvolvendo aplicações robustas com alta produtividade | [🗂️](./Nextjs_14_desenvolvendo_aplicacoes_robustas_com_alta_produtividade/) | 🔵 |
 | 7 | --- | 🗂️ | ⚫ |
 
 ---
