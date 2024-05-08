@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Iniciando o projeto  | ✔️ |
 | 2 | Componentes iniciais e fontes | ✔️ |
-| 3 | Criando galeria | ⚫ |
+| 3 | Criando galeria | ✔️ |
 | 4 | Uma modal de zoom | ⚫ |
 | 5 | Favoritando imagens | ⚫ |
 
@@ -39,7 +39,10 @@
 
 ### Aula 03 - Criando galeria
 <ul>
-  <li></li>
+  <li>Montar um layout desktop;</li>
+  <li>Estruturar o código de uma galeria de fotos com Flexbox;</li>
+  <li>Trabalhar com tags dinamicamente;</li>
+  <li>Importar fotos de um arquivo estático .json.</li>
 </ul>
 
 ### Aula 04 - Uma modal de zoom
