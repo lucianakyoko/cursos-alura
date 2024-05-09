@@ -15,13 +15,18 @@ const promptFont = Prompt({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={promptFont.className}>
+    <html lang="pt-br" className={promptFont.className}>
       <body>
         <div className='app-container'>
-          <Aside />
-          {children}
+          <div>
+            <Aside />
+          </div>
+          <div className='main-content'>
+            {children}
+          </div>
         </div>
       </body>
     </html>
-  );
+  )
 }
+

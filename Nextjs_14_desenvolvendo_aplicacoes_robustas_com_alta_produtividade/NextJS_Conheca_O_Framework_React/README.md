@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Criando o projeto | ✔️ |
 | 2 | Criando um card para os posts | ✔️ |
-| 3 | Obtendo dados da API | ⚫ |
+| 3 | Obtendo dados da API | ✔️ |
 | 4 | Paginando dados | ⚫ |
 | 5 | Páginas dinâmicas | ⚫ |
 
@@ -39,7 +39,9 @@
 
 ### Aula 03 - Obtendo dados da API
 <ul>
-  <li></li>
+  <li>Subir uma API usando o json-server;</li>
+  <li>Obter dados do lado do Servidor;</li>
+  <li>Configurar o winton como o logger da Code Connect.</li>
 </ul>
 
 ### Aula 04 - Paginando dados
