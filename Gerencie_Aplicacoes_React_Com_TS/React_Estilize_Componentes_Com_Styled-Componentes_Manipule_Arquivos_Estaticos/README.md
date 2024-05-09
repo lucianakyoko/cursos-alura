@@ -14,7 +14,7 @@
 | 1 | Iniciando o projeto  | ✔️ |
 | 2 | Componentes iniciais e fontes | ✔️ |
 | 3 | Criando galeria | ✔️ |
-| 4 | Uma modal de zoom | ⚫ |
+| 4 | Uma modal de zoom | ✔️ |
 | 5 | Favoritando imagens | ⚫ |
 
 ---
@@ -47,7 +47,10 @@
 
 ### Aula 04 - Uma modal de zoom
 <ul>
-  <li></li>
+  <li>Criar uma modal com o elemento Dialog;</li>
+  <li>Trabalhar com eventos de seleção;</li>
+  <li>Posicionar elementos de forma fixa e definir opacidade com rgba;</li>
+  <li>Criar um estado que representa o elemento selecionado.</li>
 </ul>
 
 ### Aula 05 - Favoritando imagens

@@ -6,6 +6,7 @@ import Imagem from "./Imagem";
 
 const GaleriaContainer = styled.div`
   display: flex;
+  gap: 24px;
 `;
 
 const SecaoFluida = styled.section`
@@ -19,7 +20,7 @@ const ImagensContainer = styled.section`
   gap: 24px;
 `
 
-const Galeria = ({ fotos=[] }) => {
+const Galeria = ({ fotos=[] , aoFotoSelecionada}) => {
   return(
     <>
       <Tags />
@@ -31,6 +32,7 @@ const Galeria = ({ fotos=[] }) => {
               <Imagem
                 key={foto.id}
                 foto={foto}
+                aoZoomSolicitado={aoFotoSelecionada}
               />
             ))}
             
