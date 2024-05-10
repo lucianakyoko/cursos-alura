@@ -12,6 +12,8 @@
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "winston": "^3.13.0"
   }
 }

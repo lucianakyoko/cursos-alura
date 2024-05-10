@@ -15,7 +15,7 @@
 | 2 | Criando um card para os posts | ✔️ |
 | 3 | Obtendo dados da API | ✔️ |
 | 4 | Paginando dados | ✔️ |
-| 5 | Páginas dinâmicas | ⚫ |
+| 5 | Páginas dinâmicas | ✔️ |
 
 ---
 
@@ -53,14 +53,18 @@
 
 ### Aula 05 - Páginas dinâmicas
 <ul>
-  <li></li>
+  <li>Configurar páginas com parâmetros dinâmicos usando Next.js;</li>
+  <li>Implementar a conversão de markdown para HTML;</li>
+  <li>Configurar as libs remark e remark-html.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
+## 🎯 Projeto desenvolvido
+Este é o screenshot das telas Code Connect que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/code-connect-1a-preview.svg">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/code-connect-1b-preview.svg">
+
+</p>
