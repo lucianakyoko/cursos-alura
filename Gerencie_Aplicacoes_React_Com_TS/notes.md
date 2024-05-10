@@ -10,3 +10,11 @@
 ## 📄 Leitura do artigo: NPM vs Yarn
 [Link do artigo](https://www.alura.com.br/artigos/npm-vs-yarn?_gl=1*51kr1z*_ga*MTI4OTcxMTkxMy4xNjc5MzMxNDMy*_ga_1EPWSW3PCS*MTcwODcwMzc3Ny4xMjkuMS4xNzA4NzA2Nzc3LjAuMC4w*_fplc*TWFvdldMR0R5SlBuTEVzWUF2TXNPMFdqeVpjdzUyZ3k0VlUxeUo0bU1TYnl4NGYzRW1UVDdObllvZENpdTZLZU5wdnAzUWFsQ1I4WXQlMkYxY1dMZnhKMXVqZVBGcVNERDEyMW5lVG9udzdCellnRE52Z1VuJTJGSTZMJTJGTTdUYlBBJTNEJTNE)
 
+---
+
+## Alura + -> Ciclo de vida de um componente React
+(Precisa estar logado)
+
+[Link Alura+](https://cursos.alura.com.br/extra/alura-mais/ciclo-de-vida-de-um-componente-react-c1333)
+
+---

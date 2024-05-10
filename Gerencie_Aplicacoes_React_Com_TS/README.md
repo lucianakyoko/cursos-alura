@@ -37,8 +37,8 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 2.1 | 🟦 | Ciclo de vida de um componente React | ✖️ | ➖ | ⚫ |
-| . | 2.2 | 🟪 | React: conhecendo a biblioteca React Router | ✖️ | ➖ | ⚫ |
+| . | 2.1 | 🟦 | Ciclo de vida de um componente React | ✖️ | [🗂️](./notes.md) | ✔️ |
+| 🚩 | 2.2 | 🟪 | React: conhecendo a biblioteca React Router | ✖️ | ➖ | ⚫ |
 | . | 2.3 | 🟫 | React: componentes com Styled components | ✖️ | ➖ | ⚫ |
 
 
