@@ -29,7 +29,7 @@
 | . | 1.2 | 🟫 | React Hooks: o que é e como eles funcionam | ✖️ | [🗂️](./notes.md) | ✔️ |
 | . | 1.3 | 🟫 | NPM vs Yarn | ✖️ | [🗂️](./notes.md) | ✔️ |
 | . | 1.4 | 🟪 | React: lidando com arquivos estáticos | Aluroni | [🗂️](./React_lidando_com_arquivos_estaticos/) | ✔️ |
-| 🚩 | 1.5 | 🟪 | React: estilize componentes com Styled Components e manipule arquivos | Alura Space | [🗂️](./React_Estilize_Componentes_Com_Styled-Componentes_Manipule_Arquivos_Estaticos/) | 🔵 |
+| . | 1.5 | 🟪 | React: estilize componentes com Styled Components e manipule arquivos | Alura Space | [🗂️](./React_Estilize_Componentes_Com_Styled-Componentes_Manipule_Arquivos_Estaticos/) | ✔️ |
 
 
 
@@ -37,7 +37,7 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 2.1 | 🟦 | Ciclo de vida de um componente React | ✖️ | ➖ | ⚫ |
+| 🚩 | 2.1 | 🟦 | Ciclo de vida de um componente React | ✖️ | ➖ | ⚫ |
 | . | 2.2 | 🟪 | React: conhecendo a biblioteca React Router | ✖️ | ➖ | ⚫ |
 | . | 2.3 | 🟫 | React: componentes com Styled components | ✖️ | ➖ | ⚫ |
 

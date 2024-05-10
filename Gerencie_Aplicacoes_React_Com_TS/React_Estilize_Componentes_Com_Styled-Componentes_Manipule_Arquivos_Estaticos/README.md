@@ -15,7 +15,7 @@
 | 2 | Componentes iniciais e fontes | ✔️ |
 | 3 | Criando galeria | ✔️ |
 | 4 | Uma modal de zoom | ✔️ |
-| 5 | Favoritando imagens | ⚫ |
+| 5 | Favoritando imagens | ✔️ |
 
 ---
 
@@ -55,14 +55,18 @@
 
 ### Aula 05 - Favoritando imagens
 <ul>
-  <li></li>
+  <li>Iniciou o projeto do zero com o Vite;</li>
+  <li>Criou todos os componentes de requisito do Figma;</li>
+  <li>Publicou o resultado final na Vercel.</li>
+  <li>criar uma aplicação do zero até o deploy!</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
+## 🎯 Projeto desenvolvido
+Este é o screenshot das telas projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/space-app-1a-preview.svg">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/space-app-1b-preview.svg">
+</p>
