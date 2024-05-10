@@ -14,9 +14,22 @@ body {
   margin: 56px auto;
   display: flex;
   gap: 28px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main-content {
   flex-grow: 1;
+}
+
+a {
+  color: #81FE88;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  text-decoration-line: underline;
+}
+
+a:visited {
+  color: #81FE88;
 }

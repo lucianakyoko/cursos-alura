@@ -101,3 +101,6 @@ O Node.js já vem com recursos de registro de logs integrados, como o console.lo
 
 ---
 
+## props de uma página Next.js
+**Query String** é uma extensão da URL base de um site, carregados por um navegador ou aplicação client side. Tradicionalmente, era usada para registrar o conteúdo de formulários HTML em uma página. Essa string é composta por pares campo-valor, como "campo=valor", unidos por um "&" e separados da URL base por um "?".
+

@@ -14,7 +14,7 @@
 | 1 | Criando o projeto | ✔️ |
 | 2 | Criando um card para os posts | ✔️ |
 | 3 | Obtendo dados da API | ✔️ |
-| 4 | Paginando dados | ⚫ |
+| 4 | Paginando dados | ✔️ |
 | 5 | Páginas dinâmicas | ⚫ |
 
 ---
@@ -46,7 +46,9 @@
 
 ### Aula 04 - Paginando dados
 <ul>
-  <li></li>
+  <li>Obter dados da query string utilizando searchParams;</li>
+  <li>Paginar os posts respeitando a interface da API;</li>
+  <li>Exibir e controlar os comandos de paginação, baseado na resposta do backend.</li>
 </ul>
 
 ### Aula 05 - Páginas dinâmicas
