@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Aquecendo os motores | ✔️ |
-| 2 | Criando documentação interativa | ⚫ |
+| 2 | Criando documentação interativa | ✔️ |
 | 3 | Importando Design Tokens | ⚫ |
 | 4 | O componente de botão | ⚫ |
 | 5 | Outros componentes | ⚫ |
@@ -30,7 +30,9 @@
 
 ### Aula 02 - Criando documentação interativa
 <ul>
-  <li></li>
+  <li>Instalar o Storybook em aplicações Next.js;</li>
+  <li>Criar um Story e associar a um componente;</li>
+  <li>Criar uma documentação utilizando Markdown.</li>
 </ul>
 
 ### Aula 03 - Importando Design Tokens
