@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Aquecendo os motores | ✔️ |
 | 2 | Criando documentação interativa | ✔️ |
-| 3 | Importando Design Tokens | ⚫ |
+| 3 | Importando Design Tokens | ✔️ |
 | 4 | O componente de botão | ⚫ |
 | 5 | Outros componentes | ⚫ |
 
@@ -37,7 +37,9 @@
 
 ### Aula 03 - Importando Design Tokens
 <ul>
-  <li></li>
+  <li>Importar valores do Figma;</li>
+  <li>Mapear valores CSS para o Tailwind;</li>
+  <li>Estruturar os tokens do projeto.</li>
 </ul>
 
 ### Aula 04 - O componente de botão
