@@ -44,7 +44,9 @@
 
 ### Aula 04 - O componente de botão
 <ul>
-  <li></li>
+  <li>Contextualizar a paleta de cores;</li>
+  <li>Adicionar variantes de componentes;</li>
+  <li>Refletir as variantes dentro da documentação.</li>
 </ul>
 
 ### Aula 05 - Outros componentes
