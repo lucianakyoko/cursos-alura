@@ -25,8 +25,8 @@
 ### 1️⃣ - Criando as bases do Design System
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | React: criando um design system com TailwindCSS | Alfabit | [🗂️](./Criando_Um_DesignSystem_Com_TailwindCSS/) | 🔵 |
-| . | 1.2 | 🟫 | Design System: Entenda o que é e confira exemplos | ✖️ | ➖ | ⚫ |
+| . | 1.1 | 🟪 | React: criando um design system com TailwindCSS | Alfabit | [🗂️](./Criando_Um_DesignSystem_Com_TailwindCSS/) | ✔️ |
+| 🚩 | 1.2 | 🟫 | Design System: Entenda o que é e confira exemplos | ✖️ | ➖ | ⚫ |
 | . | 1.3 | 🟦 | Atomic design | ✖️ | ➖ | ⚫ |
 | . | 1.4 | 🟪 | React: evolua o seu Design System com TailwindCSS | ✖️ | ➖ | ⚫ |
 | . | 1.5 | 🟨 | Design System - Hipsters #170 - Hipster Ponto Tech | ✖️ | ➖ | ⚫ |

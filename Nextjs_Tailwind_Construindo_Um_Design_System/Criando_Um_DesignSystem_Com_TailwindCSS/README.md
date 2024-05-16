@@ -14,8 +14,8 @@
 | 1 | Aquecendo os motores | ✔️ |
 | 2 | Criando documentação interativa | ✔️ |
 | 3 | Importando Design Tokens | ✔️ |
-| 4 | O componente de botão | ⚫ |
-| 5 | Outros componentes | ⚫ |
+| 4 | O componente de botão | ✔️ |
+| 5 | Outros componentes | ✔️ |
 
 ---
 
@@ -51,14 +51,19 @@
 
 ### Aula 05 - Outros componentes
 <ul>
-  <li></li>
+  <li>Criar outros componentes para o ecossistema;</li>
+  <li>Extrair complexidade de componentes;</li>
+  <li>Tratar variações visuais compostas.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/alfabit1a-preview.svg">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/alfabit1b-preview.svg">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/alfabit1c-preview.svg">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/alfabit1d-preview.svg">
+</p>
