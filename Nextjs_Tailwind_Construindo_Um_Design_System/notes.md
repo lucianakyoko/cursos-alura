@@ -5,3 +5,8 @@ Leitura do artigo - Design Systems: exemplos práticos
 
 ---
 
+Alura+ - Atomic design
+(Precisa estar logado)
+[Link do Alura+](https://cursos.alura.com.br/extra/alura-mais/atomic-design-c865)
+
+---
