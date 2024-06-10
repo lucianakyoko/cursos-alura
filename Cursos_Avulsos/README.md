@@ -45,4 +45,11 @@
 | . | 5.1 | PostgreSQL | ➖ | [🗂️](../Cursos_Avulsos/PostgreSQL/) | 🔵 |
 | . | 5.2 | ➖ | ➖ | 🗂️ | ⚫ |
 
+### 6️⃣ - Docker
+
+| . | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
+| --- | --- | --- | --- | --- | --- |
+| . | 6.1 | Docker: criando e gerenciando containers | ➖ | [🗂️](./Docker_criando_gerenciando_containers/) | 🔵 |
+| . | 6.2 | ➖ | ➖ | 🗂️ | ⚫ |
+
 
