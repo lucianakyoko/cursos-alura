@@ -40,3 +40,33 @@ button({ intent: "secondary", size: "small" }); // Retorna a string com as class
 [Link do vídeo Next.js Conf 2022 ](https://youtu.be/T-Zv73yZ_QI) 
 
 ---
+
+### Biblioteca classnames:
+A biblioteca "classnames" é uma ferramenta popular em JavaScript (tanto no ambiente do navegador quanto no Node.js) que ajuda a construir facilmente strings de classes CSS condicionais. É frequentemente utilizada em conjunto com frameworks e bibliotecas JavaScript, como React, para gerar as classes de estilo dinamicamente com base em certas condições ou propriedades.
+
+Com o "classnames", é possível concatenar e condicionar classes de forma mais conveniente e legível, evitando a repetição de código e simplificando a lógica de construção das classes de estilo. A biblioteca lida automaticamente com diferentes tipos de entrada, como strings, objetos e arrays, para gerar corretamente a string final das classes.
+
+Aqui está um exemplo básico de uso do "classnames":
+
+```
+import classnames from "classnames";
+
+const isActive = true;
+const isDisabled = false;
+const customClass = "custom-class";
+
+const buttonClasses = classnames("button", {
+  "active": isActive,
+  "disabled": isDisabled,
+  [customClass]: true,
+});
+
+console.log(buttonClasses);
+// Resultado: "button active custom-class"
+```
+
+No exemplo acima, o "classnames" é usado para gerar a string de classes do botão com base nas condições de ativação (isActive), desativação (isDisabled) e uma classe personalizada (customClass). A função classnames concatena automaticamente as classes que têm suas condições avaliadas como true, gerando a string final "button active custom-class".
+
+O "classnames" também permite passar múltiplos argumentos, como strings e objetos, para criar classes condicionais de maneira ainda mais flexível.
+
+[Link da documentação](https://github.com/JedWatson/classnames)

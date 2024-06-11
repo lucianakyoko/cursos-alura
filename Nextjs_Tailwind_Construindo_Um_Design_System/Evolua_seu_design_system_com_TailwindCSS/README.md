@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Estilização condicional | ✔️ |
-| 2 | Evoluindo a biblioteca de componentes | ⚫ |
+| 2 | Evoluindo a biblioteca de componentes | ✔️ |
 | 3 | Composição de componentes | ⚫ |
 | 4 | Acessibilidade com Headless UI | ⚫ |
 | 5 | Atualizando o Storybook | ⚫ |
@@ -30,7 +30,9 @@
 
 ### Aula 02 - Evoluindo a biblioteca de componentes
 <ul>
-  <li></li>
+  <li>Criar o componente de Divider que será muito importante para criação de designs modernos e bonitos com a nossa biblioteca;</li>
+  <li>Utilizar o classnames para realizar estilizações de forma condicional, gerando strings de classes com base em propriedades ativas em nosso componente;</li>
+  <li>Criar e documentar o componente de Caixa (Box) que é um átomo do nosso design system e servirá para criar muitas das moléculas que podemos ter nas mais diversas interfaces de usuário.</li>
 </ul>
 
 ### Aula 03 - Composição de componentes
