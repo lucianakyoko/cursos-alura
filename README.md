@@ -28,7 +28,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 1 | Aplique TypeScript no front-end | [🗂️](./Aplique_TypeScript_no_front-end/) | ✔️ |
 | 2 | Aplicação acessível com JS, Emotion e React Router | [🗂️](./Criando_uma_aplicacao_acessivel_com_JavaScript_Emotion_React_Router/) | ✔️ |
 | 3 | APIs com Node.js e Express | [🗂️](./APIs_com_NodeJS_e_Express/) | 🔵 |
-| 4 | Cursos Avulsos | [🗂️](./Cursos_Avulsos/) | ⚫ |
+| 4 | Cursos Avulsos | [🗂️](./Cursos_Avulsos/) | 🔵 |
 | 5 | Gerencie aplicações React com TypeScipt | [🗂️](./Gerencie_Aplicacoes_React_Com_TS/) | 🔵 |
 | 6 | Next.js 14: desenvolvendo aplicações robustas com alta produtividade | [🗂️](./Nextjs_14_desenvolvendo_aplicacoes_robustas_com_alta_produtividade/) | 🔵 |
 | 7 | Next.js e Tailwind: construindo um design system | [🗂️](./Nextjs_Tailwind_Construindo_Um_Design_System/) | 🔵 |

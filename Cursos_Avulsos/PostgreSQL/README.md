@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Primeiros passos com PostgreSQL | ✔️ |
-| 2 | Executando operações CRUD | ⚫ |
+| 2 | Executando operações CRUD | ✔️ |
 | 3 | Consultas com filtros | ⚫ |
 | 4 | Trabalhando com relacionamentos | ⚫ |
 | 5 | Usando CASCADE | ⚫ |
