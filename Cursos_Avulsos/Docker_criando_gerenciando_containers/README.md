@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Conhecendo o Docker | ✔️ |
-| 2 | Os primeiros comandos | ⚫ |
+| 2 | Os primeiros comandos | ✔️ |
 | 3 | Criando e compreendendo imagens | ⚫ |
 | 4 | Persistindo dados | ⚫ |
 | 5 | Comunicação através de redes | ⚫ |
@@ -32,7 +32,9 @@
 
 ### Aula 02 - Os primeiros comandos
 <ul>
-  <li></li>
+  <li>O Docker Hub é um grande repositório de imagens que podemos utilizar;</li>
+  <li>A base dos containers são as imagens;</li>
+  <li>Como utilizar comandos acerca do ciclo de vida dos containers, como: docker start, para iniciar um container que esteja parado; docker stop, para parar um que esteja rodando; docker pause, para pausar um container e docker unpause para iniciar um container pausado; -Conseguimos mapear portas de um container com as flags -p e -P.</li>
 </ul>
 
 ### Aula 03 - Criando e compreendendo imagens
