@@ -67,3 +67,140 @@ DELETE
 	FROM aluno 
 	WHERE nome = 'Nico'
 
+SELECT nome 
+	FROM aluno
+
+SELECT nome, idade, matriculado_em
+	FROM aluno
+
+SELECT nome, idade, matriculado_em AS quando_se_matriculou
+	FROM aluno
+
+
+SELECT nome AS "nome do aluno",
+	   idade, 
+	   matriculado_em AS quando_se_matriculou
+	FROM aluno
+
+INSERT INTO aluno (nome) VALUES ('Vinícios Dias');
+INSERT INTO aluno (nome) VALUES ('Nico Steppat');
+INSERT INTO aluno (nome) VALUES ('João Roberto');
+INSERT INTO aluno (nome) VALUES ('Diego');
+	
+SELECT * 
+	FROM aluno
+WHERE nome <> 'Diogo';
+
+
+SELECT * 
+	FROM aluno
+WHERE nome != 'Vinícios Dias';
+
+
+SELECT * 
+	FROM aluno
+WHERE nome LIKE 'Di_go';
+
+
+SELECT * 
+	FROM aluno
+WHERE nome NOT LIKE 'Di_go';
+
+
+SELECT * 
+	FROM aluno
+WHERE nome LIKE 'D%';
+
+
+SELECT * 
+	FROM aluno
+WHERE nome LIKE '%s';
+
+
+SELECT * 
+	FROM aluno
+WHERE nome LIKE '% %';
+
+
+SELECT * 
+	FROM aluno
+WHERE nome LIKE '%i%a%';
+
+
+SELECT *
+	FROM aluno
+WHERE cpf IS null; 
+
+
+SELECT *
+	FROM aluno
+WHERE cpf IS NOT null; 
+
+SELECT *
+	FROM aluno
+WHERE idade = 35; 
+
+SELECT *
+	FROM aluno
+WHERE idade <> 35; 
+
+SELECT *
+	FROM aluno
+WHERE idade >= 35; 
+
+SELECT *
+	FROM aluno
+WHERE idade <= 35; 
+	
+
+SELECT *
+	FROM aluno
+WHERE idade < 35; 
+	
+
+SELECT *
+	FROM aluno
+WHERE idade < 35; 
+
+SELECT *
+	FROM aluno
+WHERE idade BETWEEN 10 AND 35; 
+
+
+SELECT *
+	FROM aluno
+WHERE ativo = true; 
+
+SELECT *
+	FROM aluno
+WHERE ativo IS null; 
+
+
+SELECT *
+	FROM aluno
+WHERE nome LIKE 'D%'
+	AND cpf IS NOT null; 
+
+SELECT *
+	FROM aluno
+WHERE nome LIKE 'Diogo'
+	OR nome LIKE 'Rodrigo'; 
+
+SELECT *
+	FROM aluno
+WHERE nome LIKE 'Diogo'
+	OR nome LIKE 'Rodrigo'
+	OR nome LIKE 'Nico%'; 
+	
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Primeiros passos com PostgreSQL | ✔️ |
 | 2 | Executando operações CRUD | ✔️ |
-| 3 | Consultas com filtros | ⚫ |
+| 3 | Consultas com filtros | ✔️ |
 | 4 | Trabalhando com relacionamentos | ⚫ |
 | 5 | Usando CASCADE | ⚫ |
 | 6 | Avançando com consultas | ⚫ |
@@ -33,7 +33,13 @@
 
 ### Aula 02 - Executando operações CRUD
 <ul>
-  <li></li>
+  <li>A selecionar campos específicos da tabela</li>
+  <li>Como definir um alias para os nomes dos campos</li>
+  <li>A filtrar registros, utilizando o WHERE para campos do tipo de texto</li>
+  <li>Como filtrar utilizando IS NULL e IS NOT NULL</li>
+  <li>Como filtrar registros para campos do tipos relacionados a números, datas e horas</li>
+  <li>Como filtrar registros para campos do tipo booleano</li>
+  <li>Como funciona os operadores lógicos AND e OR</li>
 </ul>
 
 ### Aula 03 - Consultas com filtros
