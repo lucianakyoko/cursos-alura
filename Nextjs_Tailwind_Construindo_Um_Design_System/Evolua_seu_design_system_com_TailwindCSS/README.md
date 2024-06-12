@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Estilização condicional | ✔️ |
 | 2 | Evoluindo a biblioteca de componentes | ✔️ |
-| 3 | Composição de componentes | ⚫ |
+| 3 | Composição de componentes | ✔️ |
 | 4 | Acessibilidade com Headless UI | ⚫ |
 | 5 | Atualizando o Storybook | ⚫ |
 
@@ -37,7 +37,10 @@
 
 ### Aula 03 - Composição de componentes
 <ul>
-  <li></li>
+  <li>Criar o componente Avatar que renderiza condicionalmente um determinado componente conforme as props recebidas;</li>
+  <li>Compor componentes no React;</li>
+  <li>Relacionar o Atomic Design com composição de componentes;</li>
+  <li>Aplicar o Princípio Aberto Fechado (OCP) do SOLID nos componentes React.</li>
 </ul>
 
 ### Aula 04 - Acessibilidade com Headless UI
