@@ -267,4 +267,244 @@ Recentemente vimos sobre o comando docker run e docker exec. Sabemos que ambos o
 
 O docker run cria um novo container e o executa. O docker exec permite executar um comando em um container que já está em execução.
 
+---
+
+
+## O que são imagens?
+Até agora, temos aceitado que as imagens são uma receita para criar um container, mas efetivamente como elas funcionam?
+
+Uma imagem nada mais é que um conjunto de camadas, que ao serem unidas formam imagens. E essas camadas são independentes, cada uma tem o seu respectivo ID (identificador).
+
+Vamos voltar para o terminal no caso do dockersamples para visualizar esse exemplo.
+
+Após executar um docker pull do dockersamples e um docker run na nossa imagem, podemos visualizar as imagens que temos baixadas no nosso sistema, através do comando docker images ou docker image ls.
+
+```docker images```
+![](./imgs/03.jpg)
+
+Temos baixada a nossa imagem, que é o dockersamples/static-site, com essa tag latest, com seu respectivo ID. E ela foi criada há cinco anos pelo grupo do dockersamples e o tamanho dela é 191 megabytes.
+
+Podemos ir um pouco mais além, podemos dar o comando docker inspect em uma imagem passando o identificador do que queremos inspecionar.
+```docker inspect f589ccde7957```
+
+Dessa maneira, teremos diversas informações.
+Retorno parcialmente transcrito:
+
+```
+[
+    {
+        "Id": "sha256:f589ccde7957fa3ddf76a2eeee4d2f5d687b32176f559b703b6b8cacf6d36
+        bc4",
+        "RepoTags": [
+            "dockersamples/static-site:latest"
+        ],
+        "RepoDigests": [
+            "dockersamples/static-site@sha256:daa686c61d7d239b7977e72157997489db49f316b9b9af3909d9f10fd28b2dec"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2016-03-18T10:59:54.367126Z",
+    }
+]
+```
+
+Temos um conjunto muito grande de informação que podemos ter detalhadamente sobre determinado recurso dentro do nosso Docker.
+
+Por exemplo, o ID, a tag do repositório, o digest que foi utilizado para validação da imagem, se tem alguma imagem que é um parent, uma imagem pai ou mãe, a data de criação, o container e sua configuração. Inclusive, no final, temos mais informações sobre a parte de layers, ou seja, das camadas.
+
+Existe um comando específico para verificar quais são as camadas de uma imagem. Basta usar o comando docker history, passando o ID da imagem.
+
+```docker history f589ccde7957```
+
+![](./imgs/04.jpg)
+
+Repare que temos a nossa imagem f589ccde7957 na primeira linha. Ela tem 13 camadas, as quais quando são aglutinadas, ou seja, quando são empilhadas umas nas outras formam essa imagem final do dockersamples/static-site. E caso alguma outra imagem venha a depender dessas camadas, conseguimos reutilizá-las.
+
+Ele mostra detalhadamente qual é o tamanho de cada uma dessas camadas, a data de criação e a ordem de cada uma delas, como CMD, WORKDIR, COPY. Assim, conseguimos verificar todas essas informações e entender o que está acontecendo.
+
+Em resumo, uma imagem é um conjunto de camadas empilhadas para formar determinada regra de execução de um container.
+
+---
+
+## Como imagens viram containers?
+Quando fizemos o comando docker run pela primeira vez, ou simplesmente um docker pull, não para executar o container, mas só baixar a imagem, o que pode acontecer? Vamos fazer o download das nossas imagens, das nossas camadas.
+
+Mas é possível que, por exemplo, já tenhamos algumas das camadas que queremos no nosso host. Por isso, no momento em que fazemos um pull ou um run, que vai fazer um pull consequentemente, faremos os downloads simplesmente das camadas que necessitamos.
+
+O Docker é inteligente o suficiente para reutilizar essas camadas para compor novas imagens, conseguindo assim uma performance muito boa, já que não precisaremos ter informação duplicada ou triplicada, porque conseguimos reutilizar as camadas em outras imagens.
+
+O que mais podemos explorar na parte de criação de imagens? No fim das contas, quando temos a nossa imagem, ela é read-only (somente leitura), isso significa que não conseguimos modificar as camadas dessa imagem, depois que ela foi criada.
+
+Voltando ao exemplo no terminal, no momento em que temos a imagem do dockersamples/static-site, ela é imutável - assim como a imagem que temos do Ubuntu.
+
+Mais uma vez, se fazemos docker run -it ubuntu bash para executar o bash em modo iterativo, vamos baixar a camada necessária para ter a nossa imagem de execução para que consigamos executar nosso container do Ubuntu.
+```docker run -it ubuntu bash```
+
+Como o instrutor já apagado a imagem, ela será baixada, extraída e o terminal será aberto.
+
+Contudo, havíamos criado na home um arquivo qualquer de exemplo com o comando touch um-arquivo-qualquer.txt. Isso significa que estaríamos escrevendo dentro do container. Mas como estamos conseguindo fazer isso se a imagem que gera o nosso container é apenas para leitura (read only)?
+
+Se ela é bloqueada para escrita, como é que o container consegue escrever informação dentro dela? Porque um container nada mais é do que uma imagem com uma camada adicional de read-write (leitura e escrita).
+
+Quando criamos um container, criamos uma camada temporária em cima da imagem, onde conseguimos escrever informações. E, no momento em que esse container é deletado, essa camada extra também é deletada.
+
+Por isso que quando fizemos aquele experimento anteriormente, a nossa informação dentro do container era perdida quando nosso container era apagado. Porque essa camada é temporária, bem fina e leve para que o container tenha um ambiente de execução muito leve e fácil de ser executado.
+
+---
+
+## Por que os containers são tão leves?
+Agora voltamos àquela primeira pergunta, onde questionávamos por que os containers são tão leves.
+
+Além de serem simplesmente processos dentro do nosso sistema, podemos dizer que, quando um container entra em execução, estamos sempre reaproveitando a mesma imagem.
+
+Como a imagem é apenas de leitura, podemos ter vários containers baseados na mesma imagem. A diferença é que cada um desses containers terá apenas uma camada diferente de read-write, e como essa camada é extremamente leve, a fim de manter essa performance, temos uma reutilização da imagem para múltiplos containers.
+
+No fim das contas, o que acontece é que quando definimos um container ou outro container baseado na mesma imagem, o tamanho desse container será apenas o tamanho da camada de escrita que estamos gerando para ele, porque a imagem será reutilizada para cada um deles.
+
+Em breve, faremos um experimento prático, conforme formos avançando na criação e no fluxo das nossas imagens.
+
+O container é leve e otimizado, porque consegue reaproveitar as camadas das imagens prévias que já temos. E, quando criamos novos containers, ele simplesmente reutiliza as mesmas imagens e, consequentemente, as camadas.
+
+Além disso, utiliza a camada de read-write para utilizar de maneira mais performática o que ele já tem no ecossistema do Docker.
+
+---
+
+##  Criando a primeira imagem
+ Primeiro, definimos um arquivo Dockerfile e a partir dele criamos nossa imagem. Uma vez em posse da imagem, basta executar o comando run para gerar um container a partir da imagem.
+
+**Definindo arquivo Dockerfile**
+[aplicação node](https://github.com/danielartine/alura-docker/blob/aula-3/app-exemplo.zip?raw=true)
+[imagem do Node no Docker Hub](https://hub.docker.com/_/node)
+
+Para esse projeto, vamos usar uma aplicação Node. Ressaltamos que não vamos entrar em nenhum detalhe específico de Node ou qualquer linguagem de programação, apenas usamos como exemplo para ter uma aplicação efetiva para empacotar, transformar em uma imagem e depois em um container.
+
+O que queremos é que, ao executar nosso container e acessá-lo via nosso host, por exemplo, mapeando as portas, tenhamos a visualização, da aplicação em execução. Nesse caso, será uma tela azul com a frase "Eu amo Docker!".
+
+Mas não queremos simplesmente clicar duas vezes no arquivo index.html para abri-lo, queremos um servidor que nos disponibilize essa aplicação.
+
+Portanto, de alguma maneira, precisamos colocar todo o conteúdo da aplicação dentro de uma imagem, instalar o Node, que será responsável por executar o servidor e, finalmente, quando nosso container executar, queremos que ele execute algum comando que mantenha esse servidor em execução.
+
+Neste caso, vamos utilizar o Visual Studio Code para fazer a edição de texto, mas você pode usar o IDE de sua preferência.
+
+De ínicio, vamos criar um novo arquivo clicando em "File > New File" (ou "Ctrl + N") e apertar "Ctrl+S" para salvá-lo dentro da nossa pasta de "exemplo-node", que também estará disponível para download.
+
+Dentro desta pasta, vamos criar um arquivo chamado Dockerfile, que é basicamente o arquivo que vamos criar. Repare que o VS Code consegue reconhecer que é um arquivo Dockerfile.
+
+Dentro deste arquivo, vamos definir como será a criação da nossa imagem. O que queremos fazer? Nós queremos que dentro do nosso projeto como um todo nós tenhamos o Node para que consigamos rodar um servidor.
+
+Então, se queremos usar o Node como base para nossa aplicação, podemos pegar emprestado o que já desenvolveram. Assim, poderíamos fazer o pull dessa imagem já existente para poder usar em nosso projeto, e a partir daí, fazer modificações para customizar o projeto da nossa maneira.
+
+No fim das contas, precisamos do Node. Mas como colocamos o Node dentro da nossa imagem por padrão? A princípio, poderíamos colocar um Ubuntu e dentro desse Ubuntu, instalar o Node e fazer toda a configuração necessária.
+
+Porém, não precisamos ter necessariamente um sistema operacional dentro do nosso container. Podemos simplesmente usar uma imagem que já disponibilize o Node para nós, como a própria imagem do Node no Docker Hub, que é uma imagem oficial.
+
+A descrição contém todas as versões que podemos definir, desde a versão 17 até a 12. Então, o que podemos fazer neste cenário? Podemos simplesmente dizer que queremos pegar uma dessas versões do Node para executar nosso projeto e usar essa imagem como base para a nossa. A partir da imagem que vamos definir, começamos a usar a nossa.
+
+Como pegamos uma imagem emprestada? Por exemplo, se queremos usar o Node na versão 14, devemos definir isso dentro do arquivo Dockerfile.
+
+Para definir que queremos pegar a partir do Node, digitamos FROM node. Mas como explicitar a versão? Utilizando dois pontos e a versão que queremos:
+```FROM node:14```
+
+Como sabemos que é preciso escrever 14? Porque na documentação da imagem do Node, ele mostra quais são as tags suportadas, inclusive a 14.
+
+A partir do Node na versão 14, o que queremos fazer? Queremos colocar todo o nosso projeto, que são esses arquivos do diretório exemplo-node, exceto o próprio Dockerfile, dentro dessa imagem.
+
+Portanto, queremos copiar o conteúdo do nosso host para nossa imagem. Mas como fazemos isso? Podemos simplesmente colocar o COPY. Queremos copiar o quê? Todo o conteúdo do nosso diretório atual. Em que diretório está o nosso Dockerfile? No "exemplo-node".
+
+Então, todo o conteúdo do nosso diretório atual, queremos copiar para algum diretório dentro do nosso container, por exemplo, para uma pasta chamada /app-node.
+```COPY . /app-node```
+
+A partir deste momento, estamos copiando esse conteúdo do diretório do nosso host para o diretório dentro da nossa imagem chamado /app-node.
+
+E o que precisamos fazer? Queremos executar o comando npm install, mas esse comando deve ser executado dentro do nosso diretório /app-node, para que possamos instalar as dependências da nossa aplicação.
+```RUN npm install ```
+
+Caso você não conheça Node, esse comando basicamente é responsável apenas por instalar as dependências que nosso projeto precisa em um projeto Node. Basicamente, estamos instalando as dependências e o Node está resolvendo isso automaticamente.
+
+Por fim, queremos que o ponto de entrada (ENTRYPOINT) do nosso container ao executar essa imagem e começar a ter seu container devidamente em execução, seja iniciar a aplicação. Para isso, usamos npm start.
+```ENTRYPOINT npm start```
+
+Esse comando também tem que ser executado dentro desse diretório /app-node. Mas teríamos que colocar /app-node em todos os lugares. Será que poderíamos resolver isso de uma maneira mais simples?
+
+Por exemplo, queremos que todos esses comandos sejam executados no diretório que estamos atualmente por padrão. E como definimos qual é o diretório que a imagem vai tratar como padrão? Qual será o meu diretório de trabalho, por assim dizer?
+
+Para isso, existe a instrução WORKDIR, e com ela podemos definir o nosso diretório padrão /app-node.
+
+Com isso, podemos modificar o COPY inclusive. Podemos fazer um COPY de ponto, ou seja, esse ponto é o diretório atual dentro do nosso host, para ponto também, que será o nosso diretório atual dentro da nossa imagem.
+
+Qual será o nosso diretório atual? Nosso /app-node, que foi definido através do nosso WORKDIR.
+
+```
+FROM node:14
+WORKDIR /app-node
+COPY . .
+RUN npm install
+ENTRYPOINT npm start
+```
+
+O que estamos fazendo? Estamos definindo que vamos utilizar a imagem do node na versão 14 como base para a nossa imagem. Também vamos definir o nosso diretório de trabalho padrão como o /app-node.
+
+Depois, vamos copiar do diretório atual, onde está o Dockerfile do nosso host, que é esta pasta "exemplo-node", para a pasta atual dentro da nossa imagem, que é o /app-node, que foi definida dentro do nosso WORKDIR.
+
+Finalmente, vamos executar esse comando npm install, enquanto a imagem estiver sendo criada. Este comando npm install será executado na etapa de criação da imagem. E quando o container for executado a partir dessa imagem, o comando executado será o npm start.
+
+**Criando a imagem**
+Após salvar o arquivo, vamos ao terminal e acessar o diretório exemplo-node que está na área de trabalho.
+```cd Desktop/exemplo-node/```
+
+Como podemos gerar uma imagem a partir do arquivo Dockerfile? Através do comando docker build, passamos o -t, para criar um nome, ou seja, etiquetar a nossa imagem. Nesse caso, vamos colocar danielartini/app-node, por exemplo, na versão 1. Com os dois pontos (:), podemos explicitar qual é a versão que estamos criando.
+
+Em qual contexto tudo isso terá que ser executado? No contexto do diretório atual, ou seja, ponto (.) que é a referência ao diretório atual.
+
+```docker build -t danielartine/app-node:1 .```
+
+Ao executar esse comando, o Docker vai ao Docker Hub buscar a imagem do node, na versão 14, para baixá-la. Em outras palavras, ele pega todo esse conteúdo para a nossa máquina e vai construir uma nova imagem, utilizando essa como base.
+
+No momento em que todos os 5 passos terminarem, vamos executar o comando docker history para verificar o que ele vai fazer e entender como essa imagem vai se comportar dentro do nosso sistema.
+
+É importante mencionar que todas as instruções podem ser deduzidas a partir da própria documentação do Docker. É uma documentação muito completa, na qual podemos e devemos nos basear para seguir nossos projetos de criação de imagens.
+
+Nesta documentação, temos as principais instruções para a criação de uma imagem - desde como as sintaxes funcionam até como escapar caracteres.
+
+São listadas algumas instruções que já usamos, como FROM, ADD, COPY e WORKDIR, e também outras que ainda vamos conhecer, como ENV, EXPOSE, VOLUME e LABEL para etiquetar as imagens.
+
+Dentro da documentação, teremos diversos exemplos para entender como funcionam essas instruções e como aplicar aos nossos projetos. Mas ainda teremos outros exemplos de criação de imagens. Esse é só o primeiro para entender realmente como vai funcionar.
+
+Voltando para o terminal, ele está terminando de extrair nesse momento as últimas camadas dos downloads que ele fez da imagem do Node.
+
+```Status: Downloaded newer image for node:14```
+
+Feito isso, passamos para a etapa de WORKDIR, depois de cópia de arquivos e execução do npm install. E por fim, ele definiu o npm start no ENTRYPOINT.
+
+**Iniciando um container**
+```docker images```
+![](./imgs/05.jpg)
+
+Temos o danielartini/app-node na versão 1.0 com o ID 4cb1da959a47.
+
+E se agora fizemos um docker run nessa imagem danielartine/app-node para fazer um mapeamento? Lembra que definimos a nossa aplicação dentro do container, mas ela é isolada? Como podemos saber em qual porta essa aplicação está rodando dentro do container?
+
+Vamos usar a criatividade, conferindo o arquivo index.js e descobrindo que ela está sendo executada a princípio na porta 3000.
+
+```index.js:```
+
+```
+app.listen("3000", ()=>{
+    console.log("Server is listening on port 3000")
+})
+```
+
+Há um pequeno problema que precisaremos resolver, mas primeiro vamos colocar isso no terminal.
+
+Após docker run, vamos acrescentar -p. Como a porta 8080 já está em uso por causa dos nossos exemplos anteriores, vamos usar a porta 8081. Além disso, queremos que a porta 8081 reflita na porta 3000, que é onde a nossa aplicação vai ficar em execução dentro do nosso container.
+
+Também vamos acrescentar um -d para ficar em modo detached. Também faltou especificar a versão da imagem, nesse caso, será 1.0.
+
+```docker run -d –p 8081:3000 danielartine/app-node:1.0```
+
+Após executar, vamos ao navegador para tentar acessar o localhost na porta 8081.
+```localhost:8081```
+
+Conseguimos acessar a nossa aplicação agora de maneira containerizada! Então, criamos a nossa própria imagem e executamos um container a partir dela.
+
 

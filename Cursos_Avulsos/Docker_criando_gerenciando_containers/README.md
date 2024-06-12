@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Conhecendo o Docker | ✔️ |
 | 2 | Os primeiros comandos | ✔️ |
-| 3 | Criando e compreendendo imagens | ⚫ |
+| 3 | Criando e compreendendo imagens | ✔️ |
 | 4 | Persistindo dados | ⚫ |
 | 5 | Comunicação através de redes | ⚫ |
 | 6 | Coordenando containers  | ⚫ |
@@ -39,7 +39,10 @@
 
 ### Aula 03 - Criando e compreendendo imagens
 <ul>
-  <li></li>
+  <li>Imagens são imutáveis, ou seja, depois de baixadas, múltiplos containers conseguirão reutilizar a mesma imagem;</li>
+  <li>Imagens são compostas por uma ou mais camadas. Dessa forma, diferentes imagens são capazes de reutilizar uma ou mais camadas em comum entre si;</li>
+  <li>Podemos criar nossas imagens através de Dockerfiles e do comando docker build;</li>
+  <li>Para subir uma imagem no Docker Hub, utilizamos o comando docker push.</li>
 </ul>
 
 ### Aula 04 - Persistindo dados
