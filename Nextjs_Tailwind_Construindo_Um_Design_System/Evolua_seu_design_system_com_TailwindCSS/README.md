@@ -14,7 +14,7 @@
 | 1 | Estilização condicional | ✔️ |
 | 2 | Evoluindo a biblioteca de componentes | ✔️ |
 | 3 | Composição de componentes | ✔️ |
-| 4 | Acessibilidade com Headless UI | ⚫ |
+| 4 | Acessibilidade com Headless UI | ✔️ |
 | 5 | Atualizando o Storybook | ⚫ |
 
 ---
@@ -45,7 +45,9 @@
 
 ### Aula 04 - Acessibilidade com Headless UI
 <ul>
-  <li></li>
+  <li>Criar e documentar o componente de Switch;</li>
+  <li>Usar a biblioteca Headless UI para criar componentes acessíveis;</li>
+  <li>Acessibilidade web é importante e que vai muito além de apenas usar um HTML semântico.</li>
 </ul>
 
 ### Aula 05 - Atualizando o Storybook
