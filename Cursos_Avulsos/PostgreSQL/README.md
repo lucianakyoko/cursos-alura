@@ -14,7 +14,7 @@
 | 1 | Primeiros passos com PostgreSQL | ✔️ |
 | 2 | Executando operações CRUD | ✔️ |
 | 3 | Consultas com filtros | ✔️ |
-| 4 | Trabalhando com relacionamentos | ⚫ |
+| 4 | Trabalhando com relacionamentos | ✔️ |
 | 5 | Usando CASCADE | ⚫ |
 | 6 | Avançando com consultas | ⚫ |
 
@@ -33,6 +33,14 @@
 
 ### Aula 02 - Executando operações CRUD
 <ul>
+  <li>Como incluir um registro na tabela, entendendo a sintaxe de inclusão de cada tipo de campo</li>
+  <li>A efetuar uma consulta simples, para listar os dados da tabela</li>
+  <li>Como alterar um registro na tabela</li>
+  <li>Como excluir um registro na tabela</li>
+</ul>
+
+### Aula 03 - Consultas com filtros
+<ul>
   <li>A selecionar campos específicos da tabela</li>
   <li>Como definir um alias para os nomes dos campos</li>
   <li>A filtrar registros, utilizando o WHERE para campos do tipo de texto</li>
@@ -42,14 +50,15 @@
   <li>Como funciona os operadores lógicos AND e OR</li>
 </ul>
 
-### Aula 03 - Consultas com filtros
-<ul>
-  <li></li>
-</ul>
-
 ### Aula 04 - Trabalhando com relacionamentos
 <ul>
-  <li></li>
+  <li>Como funciona a chave primária</li>
+  <li>Como funciona os campos que aceitam NULL e que não aceitam NULL (NOT NULL)</li>
+  <li>Como funciona um campo UNIQUE</li>
+  <li>Como criar uma chave primária</li>
+  <li>Como funciona a chave estrangeira</li>
+  <li>Como criar uma chave estrangeira</li>
+  <li>Como criar consultas com relacionamentos: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, CROSS JOIN</li>
 </ul>
 
 ### Aula 05 - Usando CASCADE
