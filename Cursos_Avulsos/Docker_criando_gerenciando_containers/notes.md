@@ -507,4 +507,10 @@ Após executar, vamos ao navegador para tentar acessar o localhost na porta 8081
 
 Conseguimos acessar a nossa aplicação agora de maneira containerizada! Então, criamos a nossa própria imagem e executamos um container a partir dela.
 
+---
 
+## Tipos de persistência
+Podemos querer que os dados da nossa aplicação sejam persistentes, porque assim garantimos que ela esteja distribuída e disponível se precisarmos consultá-la. Porém, se escrevermos os dados nos containers, por padrão eles não ficarão armazenados nesta camada, criada para ser descartável. Existem três possibilidades para contornar esta situação com o Docker.
+- Volumes.
+- Bind mounts.
+- Tmpfs 

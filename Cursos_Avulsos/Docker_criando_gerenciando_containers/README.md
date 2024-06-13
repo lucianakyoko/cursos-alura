@@ -14,7 +14,7 @@
 | 1 | Conhecendo o Docker | ✔️ |
 | 2 | Os primeiros comandos | ✔️ |
 | 3 | Criando e compreendendo imagens | ✔️ |
-| 4 | Persistindo dados | ⚫ |
+| 4 | Persistindo dados | ✔️ |
 | 5 | Comunicação através de redes | ⚫ |
 | 6 | Coordenando containers  | ⚫ |
 
@@ -47,7 +47,11 @@
 
 ### Aula 04 - Persistindo dados
 <ul>
-  <li></li>
+  <li>Quando containers são removidos, nossos dados são perdidos;</li>
+  <li>Podemos persistir dados em definitivo através de volumes e bind mounts;</li>
+  <li>Bind mounts dependem da estrutura de pastas do host;</li>
+  <li>Volumes são gerenciados pelo Docker;</li>
+  <li>Tmpfs armazenam dados em memória volátil.</li>
 </ul>
 
 ### Aula 05 - Comunicação através de redes
