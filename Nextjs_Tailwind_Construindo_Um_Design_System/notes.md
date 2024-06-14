@@ -10,3 +10,6 @@ Alura+ - Atomic design
 [Link do Alura+](https://cursos.alura.com.br/extra/alura-mais/atomic-design-c865)
 
 ---
+
+PodCast - Hipsters Ponto Tec
+[Design Systems – Hipsters #170](https://www.hipsters.tech/design-systems-hipsters-170/);
