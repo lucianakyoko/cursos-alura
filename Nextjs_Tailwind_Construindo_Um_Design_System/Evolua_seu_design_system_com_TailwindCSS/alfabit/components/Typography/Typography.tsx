@@ -1,7 +1,7 @@
 import React from "react";
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva, type VariantProps } from "class-variance-authority";
 
-const textVarants = cva('text-gray-primary text-sm font-normal', {
+const textVariants = cva("text-gray-primary text-sm font-normal", {
   variants: {
     variant: {
       primary: "text-gray-primary",
@@ -18,32 +18,29 @@ const textVarants = cva('text-gray-primary text-sm font-normal', {
       title3: "text-tmd",
     },
     defaultVariants: {
-      variant: 'primary',
-      size: 'md'
-    }
-  }
+      variant: "primary",
+      size: "md",
+    },
+  },
 });
 
-export type TypographyProps = VariantProps<typeof textVarants> & {
+export type TypographyProps = VariantProps<typeof textVariants> & {
   children: React.ReactNode;
-  element?: keyof JSX.IntrinsicElements ;
-} & JSX.IntrinsicElements['p'];
+  element?: keyof JSX.IntrinsicElements;
+} & JSX.IntrinsicElements["p"];
 
-const Typography = (
-  {
-    children, 
-    element='p',
-    className,
-    ...rest
-  }: TypographyProps
-) => {
+const Typography = ({
+  children,
+  element = "p",
+  className,
+  ...rest
+}: TypographyProps) => {
   const Element = element as any;
   return (
-    <Element 
-      className={`${textVarants(rest)} ${className}`}
-      {...rest}
-    >{children}</Element>
-  )
+    <Element className={`${textVariants(rest)} ${className}`} {...rest}>
+      {children}
+    </Element>
+  );
 };
 
 export default Typography;

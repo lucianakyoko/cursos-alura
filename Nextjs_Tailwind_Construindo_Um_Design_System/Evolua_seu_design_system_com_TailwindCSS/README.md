@@ -15,7 +15,7 @@
 | 2 | Evoluindo a biblioteca de componentes | ✔️ |
 | 3 | Composição de componentes | ✔️ |
 | 4 | Acessibilidade com Headless UI | ✔️ |
-| 5 | Atualizando o Storybook | ⚫ |
+| 5 | Atualizando o Storybook | ✔️ |
 
 ---
 
@@ -52,14 +52,16 @@
 
 ### Aula 05 - Atualizando o Storybook
 <ul>
-  <li></li>
+  <li>Documentar seus componentes escrevendo histórias com mais detalhes e exibindo componentes interativos tornando fácil para quem usa entender e utiliza;</li>
+  <li>Adcionar a paleta de cores de seu design system no Storybook, apresentando de forma clara e intuitiva na documentação a identidade visual do seu negócio ou empresa;</li>
+  <li>Criar um tema personalizado no Storybook, adicionado a logotipo da sua marca, cores personalizadas e muito mais.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/alfabit2-preview.svg">
+</p>
