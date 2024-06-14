@@ -15,7 +15,7 @@
 | 2 | Executando operações CRUD | ✔️ |
 | 3 | Consultas com filtros | ✔️ |
 | 4 | Trabalhando com relacionamentos | ✔️ |
-| 5 | Usando CASCADE | ⚫ |
+| 5 | Usando CASCADE | ✔️ |
 | 6 | Avançando com consultas | ⚫ |
 
 ---
@@ -63,7 +63,10 @@
 
 ### Aula 05 - Usando CASCADE
 <ul>
-  <li></li>
+  <li>Como funcionam as restrições de chave estrangeira</li>
+  <li>A diferença entre RESTRICT e CASCADE</li>
+  <li>Como aplicar tipos diferentes de restrições de chave estrangeira no DELETE (RESTRICT, CASCADE)</li>
+  <li>A aplicar tipos diferentes de restrições de chave estrangeira no UPDATE (RESTRICT, CASCADE)</li>
 </ul>
 
 ### Aula 06 - Avançando com consultas
