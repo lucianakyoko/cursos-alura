@@ -56,7 +56,12 @@
 
 ### Aula 05 - Comunicação através de redes
 <ul>
-  <li></li>
+  <li>O docker dispõe por padrão de três redes: bridge, host e none;</li>
+  <li>A rede bridge é usada para comunicar containers em um mesmo host;</li>
+  <li>Redes bridges criadas manualmente permitem comunicação via hostname;</li>
+  <li>A rede host remove o isolamento de rede entre o container e o host;</li>
+  <li>A rede none remove a interface de rede do container;</li>
+  <li>Podemos criar redes com o comando docker network create.</li>
 </ul>
 
 ### Aula 06 - Coordenando containers 
