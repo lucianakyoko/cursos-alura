@@ -71,14 +71,19 @@
 
 ### Aula 06 - Avançando com consultas
 <ul>
-  <li></li>
+  <li>Como ordenar uma consulta</li>
+  <li>Como limitar quantidade e paginar registros de consulta</li>
+  <li>Como funcionam as funções de agregação</li>
+  <li>Como funciona a função de arredondamento ROUND</li>
+  <li>Como funciona o agrupamento de dados</li>
+  <li>Como funcionam os filtros por funções de agrupamento, utilizando HAVING</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/postgresql-preview.svg">
+</p> 

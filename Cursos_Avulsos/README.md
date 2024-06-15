@@ -42,7 +42,7 @@
 ### 5️⃣ - Banco de dados
 | . | --- | 📘 Curso | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
-| . | 5.1 | PostgreSQL | ➖ | [🗂️](../Cursos_Avulsos/PostgreSQL/) | 🔵 |
+| . | 5.1 | PostgreSQL | ➖ | [🗂️](../Cursos_Avulsos/PostgreSQL/) | ✔️ |
 | . | 5.2 | ➖ | ➖ | 🗂️ | ⚫ |
 
 ### 6️⃣ - Docker
