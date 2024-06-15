@@ -66,14 +66,10 @@
 
 ### Aula 06 - Coordenando containers 
 <ul>
-  <li></li>
+  <li>O Docker Compose é uma ferramenta de coordenação de containers;</li>
+  <li>Como instalar o Docker Compose no Linux;</li>
+  <li>Como iniciar containers em conjunto com o comando docker-compose up;</li>
+  <li>Como criar um arquivo de composição e definir instruções de containers, redes e serviços.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->

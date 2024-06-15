@@ -49,7 +49,7 @@
 
 | . | --- | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
-| . | 6.1 | Docker: criando e gerenciando containers | ➖ | [🗂️](./Docker_criando_gerenciando_containers/) | 🔵 |
+| . | 6.1 | Docker: criando e gerenciando containers | ➖ | [🗂️](./Docker_criando_gerenciando_containers/) | ✔️ |
 | . | 6.2 | ➖ | ➖ | 🗂️ | ⚫ |
 
 
