@@ -26,7 +26,7 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 1.1 | 🟪 | Next.js: conheça o framework React | Code Connect | [🗂️](./NextJS_Conheca_O_Framework_React/) | ✔️ |
-| 🚩 | 1.2 | 🟪 | Next.js: construa suas aplicações com Postgres e Prisma | ✖️ | [🗂️](./NextJS_Construa_suas_aplicacoes_com_Postgres_e_Prisma/) | ⚫ |
+| 🚩 | 1.2 | 🟪 | Next.js: construa suas aplicações com Postgres e Prisma | Codeconnect | [🗂️](./NextJS_Construa_suas_aplicacoes_com_Postgres_e_Prisma/) | 🔵 |
 | . | 1.3 | 🟫 | Next.js: aprimorando performance e escalabilidade com sua API de cach | ✖️ | ➖ | ⚫ |
 | . | 1.4 | 🟫 | Next.js criando aplicações fullstack | ✖️ | ➖ | ⚫ |
 | . | 1.5 | 🟨 | Next.js: Visão atual - Hipsters Ponto Tech #399 | ✖️ | ➖ | ⚫ |
