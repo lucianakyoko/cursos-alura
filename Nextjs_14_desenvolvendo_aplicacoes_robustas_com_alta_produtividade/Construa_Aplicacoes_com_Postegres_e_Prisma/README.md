@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Evoluindo o banco de dados  | ✔️ |
 | 2 | Server Actions e Client Components | ⚫ |
-| 3 | Adicionando comentários | ⚫ |
+| 3 | Adicionando comentários | ✔️ |
 | 4 | Respondendo comentários | ⚫ |
 | 5 | Finalizando a aplicação | ⚫ |
 
@@ -31,7 +31,9 @@
 
 ### Aula 02 - Server Actions e Client Components
 <ul>
-  <li></li>
+  <li>Obter dados utilizando o método findMany;</li>
+  <li>Incluir relacionamentos de forma automática via Prisma;</li>
+  <li>Configurar e executar seed de dados com o prisma db seed</li>
 </ul>
 
 ### Aula 03 - Adicionando comentários
