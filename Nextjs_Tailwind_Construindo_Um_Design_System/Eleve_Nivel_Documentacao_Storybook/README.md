@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Finalizando o Design System | ✔️ |
-| 2 | Componente Dropdown | ⚫ |
+| 2 | Componente Dropdown | ✔️ |
 | 3 | Storybook e plugins | ⚫ |
 | 4 | Chromatic e Vercel: configuração e deploy | ⚫ |
 
@@ -32,7 +32,11 @@
 
 ### Aula 02 - Componente Dropdown
 <ul>
-  <li></li>
+  <li>Atualizar e migrar para uma nova versão do Storybook.</li>
+  <li>Criar um componente de Dropdown usando a biblioteca Headless UI.</li>
+  <li>Trabalhar com o Transition da Biblioteca Headless UI para adicionar animações em nossos componentes.</li>
+  <li>Organizar e separar as classes utilitárias do tailwind css em um arquivo e consumir elas no nosso componente.</li>
+  <li>Melhorar a exibição e documentação do nosso componentes no Storybook.</li>
 </ul>
 
 ### Aula 03 - Storybook e plugins
