@@ -670,3 +670,135 @@ Um ORM serve como uma ponte entre esses dois mundos, permitindo que desenvolvedo
 Além disso, os ORMs promovem um código mais limpo e organizado, encorajando o uso de boas práticas de programação, como o princípio DRY (Don't Repeat Yourself) e a separação de preocupações. Isso é particularmente útil em projetos grandes e complexos, onde a manutenção do código pode se tornar um desafio.
 
 Outro aspecto importante dos ORMs é a sua capacidade de abstrair as especificidades do banco de dados. Isso significa que o mesmo código ORM pode ser usado com diferentes sistemas de banco de dados com poucas ou nenhuma modificação, tornando as aplicações mais portáveis e flexíveis.
+
+---
+
+## Paginar Posts
+Perceba, estamos listando todos os posts, sem exceção, por acaso só tem 12, mas imagine se tivessem 500 posts. Teríamos alguma dificuldade para exibir isso. O CodeConnect já era paginado, não podemos perder uma funcionalidade durante uma refatoração. Vamos resolver isso.
+
+Primeira coisa que vamos fazer é ir lá no VS Code, vamos fechar aqui o que está aberto, vamos fechar nossa página de erro, inclusive a nossa página de erro já está com o desafio aplicado, vamos comentar as linhas do include e do author para testarmos.
+```
+const posts = await db.post.findMany({
+ // include: {
+ //  author: true
+ //  }
+
+)}
+```
+
+Voltamos ao navegador e percebemos que já está com a imagem do robô pensante aqui, tentando entender o que aconteceu, então já está resolvido o desafio no nosso projeto. Podemos descomentar as linhas de include e de author.
+
+Neste ponto, está na hora de evoluirmos a nossa query, certo?
+
+Quando estamos falando de SQL, obter dados SQL, podemos usar alguns campos para dizer quantas linhas queremos pegar e quantas linhas queremos saltar. Usamos essa técnica justamente para fazer a paginação.
+
+Então se traduzirmos isso para a linguagem do Prisma, lá na nossa função no VS Code, getAllPosts(page), na primeira instrução do bloco try vamos criar uma constante e essa constante vai indicar quantos posts queremos por página, então vamos colocar aqui uma constante chamada perPage, ou seja, "por página" (para definir quantos posts queremos por página) e vamos inserir o valor de 6.
+
+Estamos extraindo esse 6 para essa constante perPage para a informação ficar legível.
+
+```const perPage = 6;```
+
+Dentro do nosso objeto de configuração que passamos para o findMany() é possível fazer várias coisas diferentes, uma delas é dizer quantos itens queremos pegar.
+
+Então vamos pegar a propriedade take, ou seja, queremos pegar 6, então queremos fazer o take: perPage.
+
+```
+async function getAllPosts (page) {
+  try {
+
+    const perPage = 6;
+    
+    const posts = await db.post.findMany({
+      take: perPage,
+      include: {
+        author: true
+      }
+    })
+```
+
+Estamos construindo a nossa query informando que queremos pegar 6, então de todas que o Prisma encontrar, então o findMany, desde que pegue somente 6, pega os 6 primeiros resultados.
+
+Vamos salvar, voltar no navegador, recarregar a página e agora sim ele está exibindo 6 posts!
+
+E outra coisa que podemos ir evoluindo e expandindo na nossa query, é tendo em mente que o ORM abstrai o que o SQL vai fazer, podemos instruí-lo com esse pensamento. Teríamos como, por exemplo, em uma query dizer qual é a nossa ordenação, queremos ordenar os posts, então pensando nisso temos duas coisas para fazer nesse momento.
+
+Primeiro, vamos olhar o nosso Prisma, esquema.prisma e relembrar os campos que temos lá, então um desses campos é o createdAt, ou seja, temos essa data de criação, então podemos usar esse campo para fazer essa ordenação, vamos experimentar?
+
+Então, dentro do nosso objeto de configuração, vamos colocar aqui um orderBy e aí vamos passar aqui um outro objeto e aqui dentro ele tem todos os campos que poderíamos ordenar, são os campos disponíveis lá no nosso model de post e podemos dizer, por exemplo, que queremos ordenar por createdAt e podemos pôr essa ordenação do maior para o menor ou do menor para o maior, queremos desc, ou seja, decrescente, certo? Assim teremos os posts mais recentes primeiro, certo?
+
+Então agora limitamos, ou seja, pegamos sempre seis itens, seis posts por página, ordenado pela data de criação, legal? Voltando lá no navegador, vamos carregar para ver se está tudo certo, continua tudo funcionando, a nossa listagem ainda está sendo feita e agora estamos evoluindo a nossa query.
+
+O que temos que fazer agora é esses controles de navegação de página anterior, página a seguir, próxima página e isso temos que retornar para o nosso componente Home e o nosso método getAllPosts, ele tem que saber disso, ele tem que saber como paginar esses posts.
+
+---
+
+## queries poderosas com o Prisma
+O Prisma ORM transforma o modo como interagimos com o banco de dados. Ao invés de escrever consultas SQL longas e propensas a erros, o Prisma nos permite usar construções de JavaScript para comunicar nossas intenções de forma clara. Isso não só melhora a legibilidade do código, mas também aumenta a produtividade ao permitir que nos concentremos na lógica da aplicação.
+
+Vamos simular uma aplicação para gerenciar uma coleção de itens de memorabilia geek, como action figures, quadrinhos e jogos. Utilizaremos o Prisma para realizar operações complexas no banco de dados.
+
+### create
+Para adicionar um novo item à coleção, usamos o método create:
+```
+
+const novoItem = await prisma.item.create({
+  data: {
+    nome: 'Action Figure Spider-Man',
+    descricao: 'Figura de ação do Spider-Man da série Marvel Legends.',
+    categoria: 'Action Figure',
+    preco: 29.99
+  },
+});
+console.log(novoItem);
+```
+
+### findMany
+Suponha que queremos encontrar todos os itens de uma categoria específica que têm um preço menor que um determinado valor. Podemos fazer isso facilmente com o Prisma:
+```
+
+const itensBaratos = await prisma.item.findMany({
+  where: {
+    AND: [
+      { categoria: 'Quadrinhos' },
+      { preco: { lt: 15 } }
+    ]
+  },
+});
+console.log(itensBaratos);
+```
+
+### update
+Para atualizar um item na nossa coleção, utilizamos o método update. Suponha que queremos atualizar o preço de um item específico:
+```
+
+const atualizaItem = await prisma.item.update({
+  where: {
+    id: 1,
+  },
+  data: {
+    preco: 19.99,
+  },
+});
+console.log(atualizaItem);
+```
+
+### delete
+Para remover um item da coleção, podemos usar o método delete:
+```
+
+const removeItem = await prisma.item.delete({
+  where: {
+    id: 1,
+  },
+});
+console.log(removeItem);
+```
+
+### Boas práticas e algumas dicas
+Use as migrations do Prisma: As migrações simplificam o processo de atualização do esquema do banco de dados, mantendo tudo sincronizado e seguro.
+
+Aproveite a tipagem: Embora estejamos usando JavaScript, o Prisma oferece um nível de segurança com os tipos que nos ajuda a prevenir erros comuns de banco de dados.
+
+Otimize as queries: O Prisma permite a realização de operações complexas com eficiência. No entanto, sempre revise suas queries para garantir que elas sejam otimizadas para performance.
+
+O Prisma abre um mundo de possibilidades para devs com foco em aplicações eficientes. Ao seguir as práticas recomendadas e utilizar as capacidades avançadas do Prisma, podemos criar aplicações poderosas e ao mesmo tempo manter nosso código limpo e fácil de manter.

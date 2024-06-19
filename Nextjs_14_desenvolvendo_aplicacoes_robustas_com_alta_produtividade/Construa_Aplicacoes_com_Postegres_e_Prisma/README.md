@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Evoluindo o banco de dados  | ✔️ |
-| 2 | Server Actions e Client Components | ⚫ |
+| 2 | Server Actions e Client Components | ✔️ |
 | 3 | Adicionando comentários | ✔️ |
 | 4 | Respondendo comentários | ⚫ |
 | 5 | Finalizando a aplicação | ⚫ |
@@ -38,7 +38,9 @@
 
 ### Aula 03 - Adicionando comentários
 <ul>
-  <li></li>
+  <li>Paginar dados com o Prisma;</li>
+  <li>Aplicar conceitos de take e skip usando queries do Prisma;</li>
+  <li>Analisar e resolver bugs baseado relacionados ao operador soma entre number e string.</li>
 </ul>
 
 ### Aula 04 - Respondendo comentários
