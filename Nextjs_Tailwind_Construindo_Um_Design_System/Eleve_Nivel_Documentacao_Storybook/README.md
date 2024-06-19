@@ -41,7 +41,11 @@
 
 ### Aula 03 - Storybook e plugins
 <ul>
-  <li></li>
+  <li>Aproveitar o máximo os plugins do Storybook e como eles tornam sua documentação mais interativa.</li>
+  <li>Melhorar a interação com seus componentes no Storybook através do plugin Controls.</li>
+  <li>Visualizar eventos como cliques em botões ou digitação em seus campos de texto com o plugin actions.</li>
+  <li>Organizar sua documentação seguindo uma hierarquia de pastas, documentos e componentes.</li>
+  <li>Classificiar os componentes da sua biblioteca por ordem alfabética.</li>
 </ul>
 
 ### Aula 04 - O componente de botão
