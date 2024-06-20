@@ -12,3 +12,5 @@
 {"error":{},"level":"error","message":"Falha ao obter posts"}
 {"error":{"clientVersion":"5.15.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
 {"error":{"clientVersion":"5.15.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{},"level":"error","message":"Falha ao obter o post com o slug","slug":"css-grid-na-praticaa"}
+{"error":{},"level":"error","message":"Falha ao obter o post com o slug","slug":"construindo-spa-com-vuejss"}

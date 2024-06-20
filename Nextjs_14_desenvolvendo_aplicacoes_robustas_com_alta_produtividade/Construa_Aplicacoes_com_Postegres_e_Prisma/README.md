@@ -14,7 +14,7 @@
 | 1 | Evoluindo o banco de dados  | ✔️ |
 | 2 | Server Actions e Client Components | ✔️ |
 | 3 | Adicionando comentários | ✔️ |
-| 4 | Respondendo comentários | ⚫ |
+| 4 | Respondendo comentários | ✔️ |
 | 5 | Finalizando a aplicação | ⚫ |
 
 ---
@@ -45,7 +45,10 @@
 
 ### Aula 04 - Respondendo comentários
 <ul>
-  <li></li>
+  <li>Obter dados utilizando o método findFirst;</li>
+  <li>Se recuperar de erros não esperados;</li>
+  <li>Customizar página 404 do Next.js;</li>
+  <li>Redirecionar a navegação do Next.js no lado do servidor.</li>
 </ul>
 
 ### Aula 05 - Finalizando a aplicação
