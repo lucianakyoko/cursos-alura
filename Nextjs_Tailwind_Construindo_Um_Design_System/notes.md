@@ -13,3 +13,10 @@ Alura+ - Atomic design
 
 PodCast - Hipsters Ponto Tec
 [Design Systems – Hipsters #170](https://www.hipsters.tech/design-systems-hipsters-170/);
+
+
+---
+
+Leitura do artigo - Versionamento Semântico (SemVer): uma breve introdução
+[Link do artigo](https://www.alura.com.br/artigos/versionamento-semantico-breve-introducao)
+
