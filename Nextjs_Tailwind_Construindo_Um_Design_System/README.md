@@ -37,8 +37,8 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 2.1 | 🟪 | React: eleve o nível da sua documentação no Storybook | ✖️ | ➖ | 🔵 |
-| . | 2.2 | 🟫 | Versionamento Semântico (SemVer): uma breve introdução | ✖️ | ➖ | ⚫ |
+| . | 2.1 | 🟪 | React: eleve o nível da sua documentação no Storybook | ✖️ | ➖ | ✔️ |
+| 🚩 | 2.2 | 🟫 | Versionamento Semântico (SemVer): uma breve introdução | ✖️ | ➖ | ⚫ |
 | . | 2.3 | 🟪 | React: versione e publique o seu Design System | ✖️ | ➖ | ⚫ |
 | . | 2.4 | 🟫 | Simplificando o controle de versão com Conventional Commits | ✖️ | ➖ | ⚫ |
 | . | 2.5 | 🟫 | Changelog: o guia do desenvolvedor para documentar e compreender alterações de software | ✖️ | ➖ | ⚫ |

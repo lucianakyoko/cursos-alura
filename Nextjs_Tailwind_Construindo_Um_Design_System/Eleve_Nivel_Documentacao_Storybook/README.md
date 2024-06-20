@@ -13,8 +13,8 @@
 | --- | --- | --- |
 | 1 | Finalizando o Design System | ✔️ |
 | 2 | Componente Dropdown | ✔️ |
-| 3 | Storybook e plugins | ⚫ |
-| 4 | Chromatic e Vercel: configuração e deploy | ⚫ |
+| 3 | Storybook e plugins | ✔️ |
+| 4 | Chromatic e Vercel: configuração e deploy | ✔️ |
 
 ---
 
@@ -50,15 +50,19 @@
 
 ### Aula 04 - O componente de botão
 <ul>
-  <li></li>
+  <li>Os testes visuais e de regressão funcionam e como é importante testar nossa biblioteca de componentes.</li>
+  <li>Instalar e configurar o Chromatic na nossa aplicação.</li>
+  <li>Analisar as mudanças em sua biblioteca de componentes usando o Chromatic e decidir o que fazer com elas.</li>
+  <li>Publicar sua biblioteca de componentes usando a Vercel.
+ </li>
 </ul>
 
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/alfabit3-preview.svg">
+</p>

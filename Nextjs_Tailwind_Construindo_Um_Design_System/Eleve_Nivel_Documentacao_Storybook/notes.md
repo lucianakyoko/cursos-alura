@@ -172,3 +172,21 @@ Neste exemplo, usamos um objeto de configuração para classificar as estórias 
 
 Personalizar a classificação de estórias no Storybook permite uma organização mais intuitiva e eficiente dos nossos componentes. Podemos agrupar e classificar as estórias de acordo com as categorias e ordens desejadas, facilitando a busca e compreensão das diferentes variações dos nossos componentes no projeto. Ao dominar essa personalização, tornamos o processo de desenvolvimento mais ágil e produtivo, melhorando a qualidade do produto final.
 [Documentação](https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories)
+
+---
+
+## conhecendo testes no Front-end
+Escrever testes para sua biblioteca de componentes é uma prática fundamental para identificar possíveis falhas, garantir o comportamento esperado e evitar regressões indesejadas. Quando você possui um conjunto sólido de testes, tem a tranquilidade de fazer alterações e melhorias com a certeza de que as funcionalidades essenciais continuarão funcionando corretamente.
+
+Além disso, ao criar testes para sua biblioteca de componentes, você está facilitando a vida dos desenvolvedores que a utilizam. Testes bem documentados servem como uma documentação viva, permitindo que outros membros da equipe compreendam facilmente como os componentes devem ser utilizados e como se comportarão em diferentes situações.
+
+Se você deseja se aprofundar nas melhores práticas de teste para bibliotecas de componentes e aprimorar suas habilidades de desenvolvimento frontend, temos uma Formação completa para isso. Os cursos desta formação fornecem conhecimentos sólidos e práticos para que você se torne um especialista em testes de bibliotecas de componentes.
+
+---
+
+## CI/CD para Front-end
+Testar é um pilar fundamental para garantir a qualidade e confiabilidade de nossa biblioteca de componentes. Ao escrever testes, podemos identificar e corrigir problemas antes que eles atinjam nossos usuários, assegurando que nossos componentes funcionem conforme o esperado em diferentes cenários.
+
+Podemos configurar Actions no Github em conjunto com a plataforma de hospedagem Vercel para por exemplo, testar e publicar a nossa biblioteca de componentes. As Actions permitem que os testes sejam executados automaticamente sempre que houver alterações no repositório do Github. Com isso, garantimos que nossa biblioteca seja continuamente testada e validada antes de ser disponibilizada para os usuários. Ao configurar esse fluxo automatizado, podemos focar em desenvolver novas funcionalidades com a tranquilidade de que nossa biblioteca se mantém estável e pronta para ser utilizada em diferentes contextos.
+
+Se você quiser aprender como trabalhar com CI/CD no Front-end usando o Github Actions, vou deixar um link do curso do Mario Souto, o dev soutinho, que mostra como trabalhar com CI/CD em uma aplicação Next js no Github Action.
