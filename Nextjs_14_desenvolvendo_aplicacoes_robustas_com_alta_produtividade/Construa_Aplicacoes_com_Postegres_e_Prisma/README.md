@@ -15,7 +15,7 @@
 | 2 | Server Actions e Client Components | ✔️ |
 | 3 | Adicionando comentários | ✔️ |
 | 4 | Respondendo comentários | ✔️ |
-| 5 | Finalizando a aplicação | ⚫ |
+| 5 | Finalizando a aplicação | ✔️ |
 
 ---
 
@@ -53,14 +53,17 @@
 
 ### Aula 05 - Finalizando a aplicação
 <ul>
-  <li></li>
+  <li>Evoluir queries e aplicar cláusulas WHERE;</li>
+  <li>Criar Links utilizando o objeto de configuração;</li>
+  <li>Cuidar da infraestrutura do projeto, customizando scripts de build;</li>
+  <li>Vincular um banco de dados Postgres a um projeto na Vercel.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/code-connect-1a-preview.svg">
+</p> 

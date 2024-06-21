@@ -802,3 +802,216 @@ Aproveite a tipagem: Embora estejamos usando JavaScript, o Prisma oferece um ní
 Otimize as queries: O Prisma permite a realização de operações complexas com eficiência. No entanto, sempre revise suas queries para garantir que elas sejam otimizadas para performance.
 
 O Prisma abre um mundo de possibilidades para devs com foco em aplicações eficientes. Ao seguir as práticas recomendadas e utilizar as capacidades avançadas do Prisma, podemos criar aplicações poderosas e ao mesmo tempo manter nosso código limpo e fácil de manter.
+
+---
+
+##  Deploy na Vercel
+Carregamos a documentação da Vercel, especificamente a documentação de Storage (Armazenamento), do Postgres, e por último, uma para usar o ORM. Ela diz que para usarmos o Prisma, precisamos de duas variáveis de ambiente específicas.
+
+```
+url env("POSTGRES PRISMA URL")
+// Uses direct connection. make sure to keep this to 'POSTGRES URL_NON_POOLING'
+// or you'll have dangling databases from migrations
+directUrl env("POSTGRES_URL_NON_POOLING")
+```
+
+Observe que o nosso .env local será totalmente ignorado na Vercel. Quem comandará nesse cenário será o próprio ambiente da Vercel. O .env só existirá no ambiente de desenvolvimento.
+
+Vamos pegar os valores de URL e direct URL, e levá-los para o nosso projeto. Então, acessaremos o VSCode, no .env. Temos o Database_URL e precisamos ajustá-lo.
+
+```
+# Environment variables declared in this file are automatically made available to Prisma.
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+DATABASE_URL="postgresql://postgres@localhost:5432/codeconnect_dev"
+```
+
+No schema.prisma, dentro do datasource db, que tem a nossa URL na linha 10, vamos colar o que veio da documentação da Vercel, retirar os comentários e agora temos essas duas variáveis que precisamos ajustar no nosso .env local: POSTGRES_PRISMA_URL e POSTGRES_URL_NON_POOLING.
+```
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+```
+
+Vamos copiar essas variáveis, voltar no .env, copiar, porque no ambiente local os dois terão o mesmo valor, e sobrescrever o nome. Não usaremos mais o DATABAS_URL, vamos ficar em sincronismo com o que a Vercel nos entregará.
+```
+# Environment variables declared in this file are automatically made available to Prisma.
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+POSTGRES_PRISMA_URL="postgresql://postgres@localhost:5432/codeconnect_dev"
+POSTGRES_URL_NON_POOLING="postgresql://postgres@localhost:5432/codeconnect_dev"
+```
+
+Além de ajustar essas variáveis de ambiente, precisamos executar os comandos do Prisma na Vercel. Então, como podemos fazer isso? No package.json, temos o comando build, que está na linha 7 e faz o next build.
+
+Antes de fazer o build, podemos executar alguns comandos:
+
+prisma generate, para executar e gerar o client do Prisma;
+prisma migrate dev, para rodar todas as migrations;
+prisma db seed.
+Observem que estamos usando o &&, por ser um comando de bash.
+
+```
+ "build": "prisma migrate dev && prisma generate && prisma db seed && next build",
+```
+
+Primeiro ele vai executar o prisma generate, se tudo der certo ele passa para o próximo, se tudo der certo ele passa para o próximo, faz o seed e executa o next build. Isso deve ser necessário para a Vercel funcionar corretamente com o nosso build.
+
+Vamos abrir o terminal, passar git add ., git commit -m 'parametros de build da vercel', git push origin main, e agora está tudo certo. Vamos conectar isso na Vercel para testarmos.
+
+Voltamos para o navegador e na Vercel. Apertaremos "Add New > project" para adicionar um novo projeto. Ele vai instalar o que veio do GitHub, temos o code-connect de 22 minutos atrás, é esse que queremos, portanto, apertaremos "Import".
+
+Ele já identificou que se trata de um Next.js, vamos pedir um deploy e ele começará o processo de building. Vamos deixar a aba aberta para acompanharmos o que está acontecendo durante esse build.
+
+A primeira tarefa que ele realiza é instalar as dependências do projeto, depois entra na sequência de comando que fizemos. Então, gerou o Prisma Client corretamente e enviou um erro dizendo que não conseguiu se conectar com um banco de dados. De fato, não temos um banco de dados. Precisamos indicar para a Vercel que queremos um Postgres conectado a esse projeto.
+
+Ao final da página, encontramos um botão "Go to Project" que nos redirecionará para a página do projeto. Dentro da página do projeto, existe uma aba chamada "Storage". Vamos apertar "Cretae" à frente de PostgreSQL. Observem que ele tem uma faixa gratuita dependendo do tamanho do banco, então nesse nosso cenário, vai dar tudo certo.
+
+Vamos aceitar os termos e condições. Podemos usar o nome "code-connect-postges", já que neste momento o nome não importa. A variável de ambiente será provida pela própria Vercel. Por fim, apertaremos "Create & Continue".
+
+Temos algumas opções de customização, mas vamos deixar tudo como padrão. Além disso, ele está usando um prefixo Postgres_URL que é exatamente o valor enviado da documentação.
+
+Com o banco de dados criado, vamos solicitar um redeploy. Voltando na Vercel, acessaremos "Project", parte de projetos. Em "Deploy", encontraremos o último deploy e verificamos que deu erro. Podemos acessá-lo e apertar o botão de "Redeploy".
+
+O build já começou, deixamos o Output, isto é, a saída do terminal, para veririficar se vai dar tudo certo. Outra vez, ele tentará instalar as dependências, gerar o client, tentar executar as migrations e popular o banco de dados.
+
+As variáveis foram carregadas, o client foi gerado e as migrations executadas. Também indicou que tudo está sync, executou o seed e parece ter entrado no fluxo do build do Next.js. Basta aguardar um sinal verde para testarmos se tudo funcionou como queríamos.
+
+Está fluindo bem, ele já gerou a página, tem um indicador do que é estático, do que é dinâmico, conseguiu concluir o build e vai começar a montar o deploy.
+
+Conseguimos exatamente o que queríamos, ele fez o Deploy e a nossa aplicação está pronta. Vamos voltar na página do projeto, ele gerou um domínio: code-connect-one.vercel.app. Este domínio carregou corretamente. Os nossos posts foram carregados.
+
+Podemos até experimentar a busca por S, que vai trazer uma paginação. Conseguimos passar de uma página para outra sem problemas. Porém, houve um delay nessas páginas, se tentamos acessar a página anterior, a mudança é instantânea, porque o Next.js faz o cache.
+
+Com isso, fechamos o nosso ciclo que foi remover a API que consumíamos no início desse curso. Agora está tudo conectado no post, por isso temos uma aplicação Next Fullstack. 
+
+---
+
+## clausulas where complexas
+
+Dentro do ecossistema Prisma, uma das funcionalidades mais poderosas é a construção de cláusulas WHERE para filtrar dados de forma precisa. O Prisma oferece uma interface flexível, o que nos permite lidar com condições complexas de forma elegante. Vamos explorar como podemos aproveitar ao máximo essa funcionalidade, com exemplos práticos para ilustrar a flexibilidade do Prisma na manipulação de consultas.
+
+Filtragem básica
+Imagine que temos uma tabela de usuários e queremos encontrar um usuário pelo seu email:
+
+```
+
+const usuario = await prisma.usuarios.findUnique({
+  where: {
+    email: 'fulano@exemplo.com',
+  },
+});
+```
+
+Esta é a forma mais simples de usar a cláusula WHERE: estamos especificando que queremos um registro que corresponda exatamente ao email fornecido. Bem parecido com o que fizemos no Code Connect.
+
+Condições compostas
+E se precisarmos de uma busca mais específica? Por exemplo, encontrar um usuário que tenha mais de 18 anos e que more em "Nova Friburgo":
+
+```
+
+const usuarios = await prisma.usuarios.findMany({
+  where: {
+    idade: {
+      gt: 18,
+    },
+    cidade: Nova Friburgo',
+  },
+});
+```
+
+Aqui, usamos { gt: 18 } para especificar uma condição "maior que" (greater then, em inglês). O Prisma oferece vários operadores para lidarmos com condições mais complexas, se liga só aqui na [documentação](https://www.prisma.io/docs/orm/prisma-client/queries/filtering-and-sorting).
+
+Utilizando OR e AND
+Para consultas que exigem lógica "OU" ou "E", o Prisma tem uma abordagem bacana. Vamos buscar usuários que moram em "São Paulo" OU "Rio de Janeiro":
+
+```
+
+const usuarios = await prisma.usuarios.findMany({
+  where: {
+    OR: [
+      { cidade: 'São Paulo' },
+      { cidade: 'Rio de Janeiro' },
+    ],
+  },
+});
+```
+
+E se quisermos encontrar usuários que morem em "São Paulo" E tenham sobrenome "Silva"? Vem comigo:
+```
+
+const usuarios = await prisma.usuarios.findMany({
+  where: {
+    cidade: 'São Paulo',
+    sobrenome: 'Silva',
+  },
+});
+```
+
+Trabalhando com listas
+Suponha que queremos encontrar usuários que possuam interesse em "tecnologia" ou "programação". Considerando que interesses seja um campo do tipo array, podemos fazer:
+
+```
+const usuarios = await prisma.usuarios.findMany({
+  where: {
+    interesses: {
+      hasSome: ['tecnologia', 'programação'],
+    },
+  },
+});
+```
+
+Buscas e relacionamentos
+O Prisma também brilha ao lidar com relacionamentos. Se precisarmos encontrar usuários que publicaram pelo menos um post, podemos fazer assim:
+
+```
+const usuarios = await prisma.usuarios.findMany({
+  where: {
+    posts: {
+      some: {},
+    },
+  },
+});
+```
+
+E se quisermos encontrar usuários com posts que tenham mais de 100 curtidas?
+
+```
+const usuarios = await prisma.usuarios.findMany({
+  where: {
+    posts: {
+      some: {
+        curtidas: {
+          gt: 100,
+        },
+      },
+    },
+  },
+});
+```
+
+Reparou que podemos combinar várias coisas diferentes?
+
+Negando condições
+Finalmente, se precisarmos buscar por usuários que NÃO moram em "São Paulo", o Prisma nos permite usar o operador not de forma elegante:
+
+```
+
+const usuarios = await prisma.usuarios.findMany({
+  where: {
+    NOT: {
+      cidade: 'São Paulo',
+    },
+  },
+});
+```
+
+Cada um desses exemplos ilustra o poder do Prisma ao construir cláusulas WHERE. O Prisma transforma o processo de consulta em uma experiência mais declarativa, assim podemos focar na lógica de negócios em vez de nos perdermos em sintaxes complexas de query.
