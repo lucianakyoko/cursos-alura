@@ -29,7 +29,7 @@
 | . | 1.2 | 🟪 | Next.js: construa suas aplicações com Postgres e Prisma | Codeconnect | [🗂️](./NextJS_Construa_suas_aplicacoes_com_Postgres_e_Prisma/) | ✔️ |
 | . | 1.3 | 🟫 | Next.js: aprimorando performance e escalabilidade com sua API de cach | ✖️ | ➖ | ✔️ |
 | . | 1.4 | 🟫 | Next.js criando aplicações fullstack | ✖️ | ➖ | ✔️ |
-| 🚩 | 1.5 | 🟨 | Next.js: Visão atual - Hipsters Ponto Tech #399 | ✖️ | ➖ | ⚫ |
+| . | 1.5 | 🟨 | Next.js: Visão atual - Hipsters Ponto Tech #399 | ✖️ | ➖ | ✔️ |
 
 
 
@@ -37,7 +37,7 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 2.1 | 🟪 | Next.js: construindo com Server Actions | Code Connect | [🗂️](./NextJS_Construindo_com_Server_Actions/) | ⚫ |
+| 🚩 | 2.1 | 🟪 | Next.js: construindo com Server Actions | Code Connect | [🗂️](./NextJS_Construindo_com_Server_Actions/) | ⚫ |
 | . | 2.2 | 🟫 | Como projtejer suas aplicações Next.js: práticas essenciais de segurança | . | . | ⚫ |
 | . | 2.3 | 🟫 | Next: Server Actions aprendendo na prática | . | . | ⚫ |
 

@@ -12,3 +12,7 @@
 
 ---
 
+## Ouvir podcas
+[Next.js: Visão Atual – Hipsters Ponto Tech #399](https://www.hipsters.tech/next-js-visao-atual-hipsters-ponto-tech-399/)
+
+---
