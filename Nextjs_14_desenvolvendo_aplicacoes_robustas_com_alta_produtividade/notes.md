@@ -7,3 +7,8 @@
 
 ---
 
+## Leitura de artigo
+[Next.js: criando aplicações fullstack](https://www.alura.com.br/artigos/aplicacoes-fullstack)
+
+---
+
