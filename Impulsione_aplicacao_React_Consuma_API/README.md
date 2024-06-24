@@ -25,7 +25,7 @@
 ### 1️⃣ - Biblioteca de componentes
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | React: desenvolvendo uma biblioteca de componentes | ✖️ | ➖ | ⚫ |
+| 🚩 | 1.1 | 🟪 | React: desenvolvendo uma biblioteca de componentes | ✖️ | [🗂️](./Desenvolvendo_Biblioteca_Componentes/) | 🔵 |
 | . | 1.2 | 🟨 | Design Systems - Hipsters #170 | ✖️ | ➖ | ⚫ |
 | . | 1.3 | 🟫 | Design System: Entenda o que é e confira Exemplos | ✖️ | ➖ | ⚫ |
 
