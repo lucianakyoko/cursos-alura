@@ -30,7 +30,9 @@
 
 ### Aula 02 - Server Actions e Client Components
 <ul>
-  <li></li>
+  <li>Revalidar o cache do Next com a função revalidatePath;</li>
+  <li>Pré-definir parâmetros usando o método bind;</li>
+  <li>Implementar client components e utilizar o hook useFormStatus.</li>
 </ul>
 
 ### Aula 03 - Adicionando comentários

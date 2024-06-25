@@ -462,3 +462,71 @@ O auto relacionamento adiciona uma camada de profundidade e complexidade ao mode
 Essas estruturas são comuns em aplicações modernas, especialmente onde a interação do usuário e a organização de conteúdo são complexas e aninhadas. A capacidade de modelar tais relações diretamente no banco de dados simplifica o desenvolvimento e a manutenção dessas aplicações.
 
 Como uma pessoa desenvolvedora é super importante ter um bom conhecimento sobre modelagem de dados. 
+
+---
+
+## o método bind
+Ele é fundamental para entender e trabalhar com o contexto this.
+
+**Mas afinal, o que esse método faz?**
+O método .bind() é usado para definir o contexto this de uma função, independentemente de como ela é chamada. Em outras palavras, .bind() permite que você fixe ou "amarre" (por isso o "bind") o valor de this para a função, garantindo que ele seja o mesmo, não importa como ou onde a função seja invocada.
+
+JavaScript é uma linguagem de programação muito flexível, mas isso pode levar a problemas de contexto. O valor de this dentro de uma função depende de como a função é chamada. Isso pode causar confusão, especialmente em callbacks e eventos, onde o contexto pode mudar inesperadamente.
+
+**Tá, mas porque ele foi criado?**
+O método .bind() está disponível a partir do ECMAScript 5 e foi criado para resolver exatamente esse problema: proporcionar uma maneira de manter o contexto this consistente, independentemente do contexto de execução da função. Isso é útil em situações onde o contexto é faz a diferença na lógica da aplicação, como manipulação de eventos, callbacks assíncronos e quando trabalhamos com classes e métodos em JavaScript (como os Class Components, utilizados em versões mais antigas do React).
+
+**Como ele funciona na prática:**
+Vamos entender como o .bind() funciona:
+```
+
+const person = {
+  name: "João",
+  greet: function() {
+    console.log("Olá, " + this.name);
+  }
+};
+
+person.greet(); // Saída: "Olá, João"
+
+const greet = person.greet;
+greet(); // Saída: "Olá, " - porque 'this' não está definido fora do contexto de 'person'
+```
+
+No exemplo acima, quando chamamos greet() diretamente, o contexto this se perde. Aqui é onde .bind() brilha:
+```
+const boundGreet = person.greet.bind(person);
+boundGreet(); // Saída: "Olá, João"
+```
+
+Ao usar .bind(person), fixamos o contexto de this para person, garantindo que name seja reconhecido independentemente de como greet é chamada.
+
+**Casos de uso comuns**
+Manipulação de eventos: Em frameworks nós frequentemente passamos métodos de um componente como callbacks para eventos. Usar .bind() garante que o método mantenha o contexto correto do componente.
+```
+document.getElementById("meuBotao").addEventListener("click", this.handleClick.bind(this));
+```
+Callbacks assíncronos: Ao trabalhar com Promises ou funções assíncronas, o .bind() pode ser usado para assegurar que o contexto dentro dos callbacks seja o esperado.
+
+Programação funcional: Aqui o .bind() é útil para criar versões parcialmente aplicadas de funções, permitindo a reutilização de lógicas de função com diferentes contextos.
+
+**Nosso caso de uso, o Code Connect:**
+Após o primeiro argumento que define o contexto this, qualquer outro argumento passado para .bind() será considerado um argumento pré-definido para a função alvo do bind. Quando essa função "amarrada" é chamada, ela receberá primeiro esses argumentos pré-definidos, seguidos por quaisquer argumentos passados diretamente na chamada da função.
+
+Vamos considerar o que fizemos em aula:
+```
+import { incrementThumbsUp } from "@/actions";
+
+export const CardPost = ({ post, highlight }) => {
+    const submitThumbsUp = incrementThumbsUp.bind(null, post);
+
+    // restante do componente
+}
+```
+Neste exemplo, incrementThumbsUp é uma função que espera receber um objeto post como seu primeiro argumento. Ao chamar .bind(null, post), estamos fazendo duas coisas:
+
+Definindo o contexto this da função incrementThumbsUp para null. Isso é útil em situações onde o contexto this não é relevante para a função.
+
+Pré-definindo o objeto post como o primeiro argumento da função incrementThumbsUp. Isso significa que, sempre que submitThumbsUp for chamado, ele automaticamente receberá * post como argumento, sem necessidade de passá-lo novamente.
+
+---

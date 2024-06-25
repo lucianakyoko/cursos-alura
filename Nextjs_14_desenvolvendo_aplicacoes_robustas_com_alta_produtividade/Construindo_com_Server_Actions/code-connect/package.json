@@ -1,0 +1,24 @@
+{
+  "name": "code-connect",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma migrate dev && prisma generate && prisma db seed && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.9.1",
+    "next": "14.0.4",
+    "prisma": "^5.9.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "winston": "^3.11.0"
+  }
+}
