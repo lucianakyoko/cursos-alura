@@ -34,3 +34,6 @@ Então, agora que já fechamos o ciclo que é iniciar o projeto, criar o primeir
 Com tudo isso já em vista, já pronto, podemos ir para o próximo passo. E na próxima aula, precisamos de alguma forma versionar o nosso código e linkar o que temos, com o próprio NPM, ou seja, precisamos criar um pacote no NPM, e é isso que vamos fazer, criar o repositório no GitHub, subir o nosso código no GitHub, para termos uma versionamento, e então, vamos subir para o NPM essa biblioteca que acabamos de criar.
 
 Uma vez feito isso, podemos ir em um projeto React real, e fazer um yarn add, ou um npm install, e utilizar essa biblioteca. Então, o nosso próximo passo é publicar isso de alguma forma.
+
+---
+

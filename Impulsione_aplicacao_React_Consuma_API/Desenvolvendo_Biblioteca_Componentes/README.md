@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Preparando o terreno s | ✔️ |
-| 2 | Do VSCode para o mundo | ⚫ |
+| 2 | Do VSCode para o mundo | ✔️ |
 | 3 | Testando a biblioteca | ⚫ |
 | 4 | Evoluindo a biblioteca | ⚫ |
 | 5 | Automatizando tarefas | ⚫ |
@@ -31,7 +31,9 @@
 
 ### Aula 02 - Do VSCode para o mundo
 <ul>
-  <li></li>
+  <li>Subir um projeto para o GitHub;</li>
+  <li>Conectar-se ao NPM;</li>
+  <li>Configurar o package.json corretamente, para que o pacote seja publicado com sucesso.</li>
 </ul>
 
 ### Aula 03 - Testando a biblioteca
