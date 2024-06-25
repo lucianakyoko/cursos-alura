@@ -1,0 +1,32 @@
+import { Meta, Primary, Canvas, Controls } from "@storybook/blocks";
+
+import * as Story from "./Avatar.stories.ts";
+
+<Meta of={Story} />
+
+# Avatar
+
+O componente Avatar exibe uma imagem personalizada, caso fornecida, representando um usuário ou uma entidade. Caso contrário, é exibido um ícone padrão.
+
+Essa pequena representação visual é comumente usada para identificar e diferenciar usuários em aplicativos e interfaces.
+
+### Pequeno
+
+<Canvas of={Story.AvatarSmall} layout="centered" />
+
+### Médio
+
+<Canvas of={Story.AvatarMedium} layout="centered" />
+
+### Grande
+
+<Canvas of={Story.AvatarLarge} layout="centered" />
+
+### Avatar Image
+
+<Canvas of={Story.AvatarImage} layout="centered" />
+
+## Documentação Interativa
+
+<Primary />
+<Controls />
