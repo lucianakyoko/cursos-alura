@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Aquecendo os motores | ✔️ |
-| 2 | Criando documentação interativa | ⚫ |
+| 2 | Criando documentação interativa | ✔️ |
 | 3 | Importando Design Tokens | ⚫ |
 | 4 | O componente de botão | ⚫ |
 | 5 | Outros componentes | ⚫ |
@@ -30,7 +30,10 @@
 
 ### Aula 02 - Consumindo o Design System
 <ul>
-  <li></li>
+  <li>Criar uma aplicação Next.js do zero com Typescript e TailwindCSS;</li>
+  <li>Instalar a biblioteca alfabit-ds;</li>
+  <li>Configurar sua aplicação para reconhecer o módulo instalado do alfabit-ds, bem como os estilos e arquivos de configuração do TailwindCSS;</li>
+  <li>Criar uma página de login utilizando os componentes da biblioteca alfabit-ds.</li>
 </ul>
 
 ### Aula 03 - Fazendo mudanças no Design System
