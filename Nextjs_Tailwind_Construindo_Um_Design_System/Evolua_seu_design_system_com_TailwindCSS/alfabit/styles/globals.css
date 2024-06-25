@@ -13,6 +13,24 @@
 
 * {
   font-family: "Mulish", sans-serif;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 14px;
+  border: 3px solid var(--scrollbar-track-color);
 }
 
 @layer base {

@@ -25,23 +25,25 @@ export default ({ variant, enabled, disabled }: SwitchProps) => {
       defaultVariants: {
         variant: "common",
       },
-    }    
-    );
+    }
+  );
   const containerClasses = containerVariant({ variant });
 
-  const switchClasses = classNames('inline-block bg-white h-5 w-5 rounded-full transform transition-transform duration-200 ease-in-out',
-    enabled ? 'translate-x-[2.1rem]' : 'translate-x-1'
+  const switchClasses = classNames(
+    "inline-block bg-white h-5 w-5 rounded-full transform transition-transform duration-200 ease-in-out",
+    enabled ? "translate-x-[2.1rem]" : "translate-x-1"
   );
 
-  const iconClasses = classNames('aria-disabled: text-font-disabled',
-    {'text-success' : enabled && !disabled},
-    {'text-error' : !enabled && !disabled},
-    {'text-disabled' : disabled},
+  const iconClasses = classNames(
+    "aria-disabled: text-font-disabled",
+    { "text-success": enabled && !disabled },
+    { "text-error": !enabled && !disabled },
+    { "text-disabled": disabled }
   );
 
   return {
     Icon: iconClasses,
-    switch:switchClasses,
-    Container: containerClasses
-  }
+    Switch: switchClasses,
+    Container: containerClasses,
+  };
 };

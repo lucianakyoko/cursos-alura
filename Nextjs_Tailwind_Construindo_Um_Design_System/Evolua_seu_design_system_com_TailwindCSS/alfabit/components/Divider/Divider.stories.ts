@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import Divider, { type DividerProps } from "./Divider";
 
 const meta: Meta<DividerProps> = {
-  title: "Atoms/Divider",
+  title: "Design System/Atoms/Divider",
   component: Divider,
   argTypes: {
     children: { type: "string" },
@@ -28,7 +28,7 @@ export const DivisorWithProps: StoryObj<DividerProps> = {
 
 export const ThicknessDivisor: StoryObj<DividerProps> = {
   args: {
-    height: "h-[5px]",
+    height: "h-[4px]",
   },
 };
 
@@ -38,4 +38,3 @@ export const DivisorDark: StoryObj<DividerProps> = {
     height: "h-1",
   },
 };
-

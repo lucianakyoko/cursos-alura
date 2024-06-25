@@ -17,8 +17,8 @@ const TextBlock = ({
 }: TextBlockProps) => {
   const textClass = type === "primary" ? "text-white" : "text-gray-primary";
   return (
-    <Box className={`flex flex-col gap-2 p-5  `} type={type} rounded {...rest}>
-      <div className={className}>
+    <Box className="flex flex-col gap-2" type={type} rounded {...rest}>
+      <div className="p-5">
         <Typography className={`font-bold ${textClass}`} size="xl">
           {title}
         </Typography>
@@ -29,4 +29,3 @@ const TextBlock = ({
 };
 
 export default TextBlock;
-
