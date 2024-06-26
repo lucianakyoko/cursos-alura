@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Aquecendo os motores | ✔️ |
 | 2 | Criando documentação interativa | ✔️ |
-| 3 | Importando Design Tokens | ⚫ |
+| 3 | Importando Design Tokens | ✔️ |
 | 4 | O componente de botão | ⚫ |
 | 5 | Outros componentes | ⚫ |
 
@@ -38,7 +38,9 @@
 
 ### Aula 03 - Fazendo mudanças no Design System
 <ul>
-  <li></li>
+  <li>Fazer atualizações na sua biblioteca de componentes e publicar uma nova versão dela;</li>
+  <li>Breaking changes podem afetar sua biblioteca de componentes;</li>
+  <li>Identificar os tipos de breaking changes que podem acontecer em sua biblioteca de componentes.</li>
 </ul>
 
 ### Aula 04 - Versionamento Semântico

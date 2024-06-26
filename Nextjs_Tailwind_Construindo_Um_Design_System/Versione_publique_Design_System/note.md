@@ -163,3 +163,40 @@ import { Componente1, Componente2, Componente3 } from 'sua-biblioteca-de-compone
 
 Usando o padrão de exportação de Barril (Barrel exports), você está facilitando a vida dos desenvolvedores que utilizam sua biblioteca, tornando a importação de componentes mais rápida e organizada.
 [Leitura de artigo](https://medium.com/@klauskpm/do-a-barrel-export-aa5b79b76b05)
+
+---
+
+## Breaking Changes
+
+"Breaking changes" (mudanças que quebram) é um termo utilizado na área de desenvolvimento de software para se referir a alterações em um programa, biblioteca, ou sistema que podem causar incompatibilidades ou quebras em relação às versões anteriores. Essas mudanças normalmente afetam a forma como o software interage com outros componentes ou como os desenvolvedores usam as funcionalidades do software.
+
+No frontend essas mudanças se referem a alterações nas APIs ou no comportamento dos componentes que podem afetar negativamente os aplicativos que utilizam essa biblioteca. Alguns exemplos são:
+
+**Alterações na API dos componentes**
+Mudança nas propriedades aceitas: Se você alterar as propriedades que um componente aceita ou a estrutura das propriedades, os aplicativos que usam esses componentes precisarão ser atualizados para refletir essas mudanças.
+Adição ou remoção de métodos de ciclo de vida: A adição ou remoção de métodos de ciclo de vida em um componente pode afetar como os aplicativos gerenciam o ciclo de vida do componente e exigir atualizações.
+Alterações no comportamento dos componentes
+Mudança de eventos: Se você modificar os eventos disparados por um componente (por exemplo, ao clicar em um botão), os aplicativos que dependem desses eventos podem quebrar.
+Remoção de componentes ou funcionalidades
+Se você decidir remover componentes ou funcionalidades da biblioteca de componentes, os aplicativos que dependem desses recursos precisarão ser reescritos para acomodar essa mudança.
+Dependências atualizadas ou removidas
+Se a biblioteca de componentes depende de outras bibliotecas ou pacotes e você atualiza ou remove essas dependências, isso pode causar quebras nos aplicativos que utilizam a biblioteca.
+Para mitigar o impacto das breaking changes em uma biblioteca de componentes você pode:
+
+**Documentação clara**
+Mantenha uma documentação atualizada que explique todas as mudanças, incluindo as breaking changes, para que os desenvolvedores que utilizam a biblioteca possam entender como atualizar seus aplicativos.
+
+**Versionamento semântico:**
+Siga uma estratégia de versionamento semântico para indicar o impacto das mudanças em cada nova versão da biblioteca.
+
+**Fornecer guias de migração**
+Se possível, forneça guias de migração detalhados para ajudar os desenvolvedores a atualizar seus aplicativos para acomodar as mudanças.
+
+**Testes e avaliação**
+É fundamental que os desenvolvedores conduzam testes rigorosos após fazerem breaking changes para garantir que o software continue funcionando corretamente e que os problemas sejam identificados e resolvidos antes do lançamento.
+
+Breaking changes podem ser uma parte necessária do desenvolvimento de software para melhorar a qualidade, a segurança e a eficiência do software, mas é crucial gerenciá-las adequadamente para minimizar interrupções para os usuários e desenvolvedores.
+
+Se você quiser conhecer mais exemplos de breaking changes e exemplos de como elas ocorrem no Frontend, clique aqui neste link e conheça um exemplo muito bacana da Morningstar Design System.
+
+[Versioning & Breaking Changes](https://designsystem.morningstar.com/legacy/about/versioning.html)
