@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Preparando o terreno s | ✔️ |
 | 2 | Do VSCode para o mundo | ✔️ |
-| 3 | Testando a biblioteca | ⚫ |
+| 3 | Testando a biblioteca | ✔️ |
 | 4 | Evoluindo a biblioteca | ⚫ |
 | 5 | Automatizando tarefas | ⚫ |
 
@@ -38,7 +38,10 @@
 
 ### Aula 03 - Testando a biblioteca
 <ul>
-  <li></li>
+  <li>Evoluir um componente existente;</li>
+  <li>Atualizar uma story para contemplar suas variantes;</li>
+  <li>Criar um componente de input de texto;</li>
+  <li>Atualizar a versão do pacote NPM manualmente.</li>
 </ul>
 
 ### Aula 04 - Evoluindo a biblioteca

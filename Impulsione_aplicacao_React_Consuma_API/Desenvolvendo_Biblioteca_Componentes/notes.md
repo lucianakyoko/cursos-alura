@@ -1,6 +1,13 @@
 # Anotações do Curso React: desenvolvendo uma biblioteca de componentes
 
 ---
+## Obs:
+Para este curso tive que usar a versão 16.0.0 do node. Para isto instalei o nvm para alterar entre as versões. 
+Portanto, antes de rodar o ```yarn storybook``` para abrir o storybook, verificar a versão do node que está sendo usada:
+- ```nvm ls``` para listar todas as versões e ver qual está sendo usada
+- ```nvm use 16.0.0``` para usar a versão adequada para este projeto específico
+
+---
 
 [Projeto inicial](https://github.com/viniciosneves/ds-alurabooks-base)
 
@@ -36,4 +43,21 @@ Com tudo isso já em vista, já pronto, podemos ir para o próximo passo. E na p
 Uma vez feito isso, podemos ir em um projeto React real, e fazer um yarn add, ou um npm install, e utilizar essa biblioteca. Então, o nosso próximo passo é publicar isso de alguma forma.
 
 ---
+
+## NPM
+
+É muito comum no dia a dia das pessoas desenvolvedoras a instalação, remoção e atualização de pacotes NPM.
+
+Normalmente, estamos do lado que consome os pacotes.
+
+Durante a aula nós aprendemos sobre o versionamento semântico:
+
+Dado um número de versão MAJOR.MINOR.PATCH, incremente a:
+
+Versão Maior (MAJOR): quando fizer mudanças incompatíveis na API,
+Versão Menor (MINOR): quando adicionar funcionalidades mantendo compatibilidade, e
+Versão de Correção (PATCH): quando corrigir falhas mantendo compatibilidade.
+Esse versionamento também é conhecido como [SEMVER](https://semver.org/lang/pt-BR/).
+
+Isso é de extrema importância, principalmente quando somos os mantenedores do pacote. De acordo com esse versionamento, as pessoas poderão manter a máxima versão compatível rodando em seus projetos.
 
