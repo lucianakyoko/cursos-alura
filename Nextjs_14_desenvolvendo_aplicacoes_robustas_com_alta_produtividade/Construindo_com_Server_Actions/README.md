@@ -12,8 +12,8 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Evoluindo o banco de dados  | ✔️ |
-| 2 | Server Actions e Client Components | ⚫ |
-| 3 | Adicionando comentários | ⚫ |
+| 2 | Server Actions e Client Components | ✔️ |
+| 3 | Adicionando comentários | ✔️ |
 | 4 | Respondendo comentários | ⚫ |
 | 5 | Finalizando a aplicação | ⚫ |
 
@@ -37,7 +37,9 @@
 
 ### Aula 03 - Adicionando comentários
 <ul>
-  <li></li>
+  <li>Implementar o useImperativeHandle;</li>
+  <li>Combinar Server Actions e Client Components;</li>
+  <li>Utilizar o método create do Prisma.</li>
 </ul>
 
 ### Aula 04 - Respondendo comentários

@@ -530,3 +530,6 @@ Definindo o contexto this da função incrementThumbsUp para null. Isso é útil
 Pré-definindo o objeto post como o primeiro argumento da função incrementThumbsUp. Isso significa que, sempre que submitThumbsUp for chamado, ele automaticamente receberá * post como argumento, sem necessidade de passá-lo novamente.
 
 ---
+
+## Modal - <dialog>
+[Documentação MDN](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/dialog)
