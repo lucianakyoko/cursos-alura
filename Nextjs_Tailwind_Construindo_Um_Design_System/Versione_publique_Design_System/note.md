@@ -200,3 +200,37 @@ Breaking changes podem ser uma parte necessária do desenvolvimento de software 
 Se você quiser conhecer mais exemplos de breaking changes e exemplos de como elas ocorrem no Frontend, clique aqui neste link e conheça um exemplo muito bacana da Morningstar Design System.
 
 [Versioning & Breaking Changes](https://designsystem.morningstar.com/legacy/about/versioning.html)
+
+---
+
+##  inferno de dependências
+O "inferno de dependências" é um termo usado na área de desenvolvimento de software para descrever a situação em que um projeto acumula um grande número de dependências externas, tornando-se complexo, difícil de gerenciar e propenso a problemas de compatibilidade. Isso ocorre quando um projeto depende de bibliotecas, frameworks e pacotes de terceiros, cada um com suas próprias dependências, e essa rede de dependências se torna cada vez mais intrincada à medida que o projeto cresce.
+
+Para evitar o inferno de dependências, os desenvolvedores devem adotar práticas como a gestão cuidadosa de dependências, a atualização regular de bibliotecas e a minimização do uso de dependências não essenciais. Além disso, é importante manter um controle rigoroso sobre as versões das dependências, utilizando o versionamento semântico por exemplo, para evitar conflitos e garantir que o projeto seja mantido de forma eficiente e segura.
+
+Assegurar que as dependências estejam sempre em dia é uma prática fundamental para garantir a segurança do software que você desenvolve. No entanto, a atualização manual das dependências é frequentemente vista como uma tarefa desafiadora e trabalhosa pelos desenvolvedores.
+
+Para te ajudar com essa tarefa árdua você pode contar com o Dependabot, um aliado valioso, que automatiza o processo de atualização de dependências. Com ele, você pode dedicar menos tempo a essas atualizações e mais tempo à criação de software de qualidade.
+[Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/)
+[Artigo - O que é o inferno de dependências e como utilizar o Dependabot](https://www.alura.com.br/artigos/o-que-e-inferno-de-dependencias-como-utilizar-dependabot)
+
+---
+
+## versionamento semântico
+Versionamento semântico, também conhecido como SemVer (Semantic Versioning), é um sistema de controle de versão utilizado principalmente na gestão de bibliotecas, pacotes e projetos de software.
+
+Ele define um conjunto de regras para atribuir números de versão aos seus projetos de uma maneira consistente e significativa, facilitando a comunicação e o entendimento das mudanças em uma biblioteca ou pacote.
+
+Imagem colorida. A imagem exibe uma lista numerada com itens explicando as três principais regras do versionamento semântico. O texto está alinhado a esquerda. No topo um título indicando os três principais tipos de versão, major, minor, path. Logo abaixo na lista numerada o item um é a versão maior (major), o item dois é a versão menor (minor) e o item três a versão de correção (path). A explicação na imagem é similar a que vem no texto a seguir.
+
+As principais regras do versionamento semântico incluem:
+
+Versão Major (X.y.z): O número principal (X) é incrementado quando há alterações incompatíveis na API que podem quebrar a compatibilidade com versões anteriores. Isso geralmente indica grandes mudanças ou alterações significativas.
+Versão Minor (x.Y.z): O número de versão menor (Y) é incrementado quando funcionalidades são adicionadas de maneira compatível com as versões anteriores, ou seja, sem quebrar a compatibilidade. Isso reflete melhorias e adições de recursos. Também serve quando queremos marcar um componente como depreciado, por exemplo.
+Versão Patch (x.y.Z): O número de versão de patch (Z) é incrementado quando correções de bugs ou pequenas melhorias são feitas sem alterar a compatibilidade com versões anteriores.
+Pre-release e Build Metadata: O versionamento semântico permite a inclusão de informações opcionais, como pré-lançamento (pre-release) e metadados de construção (build metadata) após o número de versão. Isso pode ser útil para indicar versões em desenvolvimento, alfas, betas, etc. Por exemplo, "1.0.0-alpha.1" indica a primeira versão alfa da versão 1.0.0.
+Compatibilidade Ascendente: As versões de aumento devem manter compatibilidade ascendente com as versões anteriores. Isso significa que um cliente que usa uma versão anterior deve ser capaz de atualizar para uma nova versão sem quebrar seu código existente.
+Dependências Claras: É importante declarar as dependências de forma clara em seu projeto, especificando a faixa de versões compatíveis (por exemplo, ">= 1.0.0"). Isso ajuda a evitar problemas de compatibilidade e garante que os usuários obtenham uma versão compatível do seu pacote.
+O versionamento semântico é uma abordagem amplamente aceita para a gestão de versões de software e pacotes, pois ajuda a criar expectativas claras sobre o impacto das atualizações e facilita a escolha de versões adequadas para os projetos. Ao seguir essas regras, você pode manter um controle mais eficaz sobre o desenvolvimento e a distribuição de suas bibliotecas e pacotes de software. Se ficou curioso e deseja conhecer melhor cada uma das regras do SemVer recomendo a leitura da documentação.
+
+[Semver](https://semver.org/lang/pt-BR/)

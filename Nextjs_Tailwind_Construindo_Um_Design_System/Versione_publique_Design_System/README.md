@@ -14,7 +14,7 @@
 | 1 | Aquecendo os motores | ✔️ |
 | 2 | Criando documentação interativa | ✔️ |
 | 3 | Importando Design Tokens | ✔️ |
-| 4 | O componente de botão | ⚫ |
+| 4 | O componente de botão | ✔️ |
 | 5 | Outros componentes | ⚫ |
 
 ---
@@ -45,7 +45,10 @@
 
 ### Aula 04 - Versionamento Semântico
 <ul>
-  <li></li>
+  <li>Lidar com breaking changes usando o versionamento semântico;</li>
+  <li>É importante usar o versionamento semântico para controlar e organizar melhor as versões do seu código e da sua biblioteca de componentes, mantendo a compatibilidade entre diferentes versões;</li>
+  <li>Incrementar as versões MAJOR, MINOR e PATH seguindo o versionamento semântico como forma de manter sua biblioteca com versões compatíveis com a API pública recém lançada;</li>
+  <li>Usar as diferentes versões para rotular mudanças na sua biblioteca de componentes.</li>
 </ul>
 
 ### Aula 05 - Licença e documentação
