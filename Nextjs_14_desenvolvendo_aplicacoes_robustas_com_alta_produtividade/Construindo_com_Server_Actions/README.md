@@ -14,7 +14,7 @@
 | 1 | Evoluindo o banco de dados  | ✔️ |
 | 2 | Server Actions e Client Components | ✔️ |
 | 3 | Adicionando comentários | ✔️ |
-| 4 | Respondendo comentários | ⚫ |
+| 4 | Respondendo comentários | ✔️ |
 | 5 | Finalizando a aplicação | ⚫ |
 
 ---
@@ -44,7 +44,9 @@
 
 ### Aula 04 - Respondendo comentários
 <ul>
-  <li></li>
+  <li>Manipular a inclusão de comentários aninhados;</li>
+  <li>Operador ?? (Nullish Coalescing Operator);</li>
+  <li>Pensamento crítico para organizar a estrura visual em componentes reaproveitáveis.</li>
 </ul>
 
 ### Aula 05 - Finalizando a aplicação

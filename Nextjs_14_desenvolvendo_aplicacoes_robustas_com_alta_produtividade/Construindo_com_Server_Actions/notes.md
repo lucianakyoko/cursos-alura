@@ -533,3 +533,6 @@ Pré-definindo o objeto post como o primeiro argumento da função incrementThum
 
 ## Modal - <dialog>
 [Documentação MDN](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/dialog)
+
+---
+
