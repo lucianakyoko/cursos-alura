@@ -14,7 +14,7 @@
 | 1 | Preparando o terreno s | ✔️ |
 | 2 | Do VSCode para o mundo | ✔️ |
 | 3 | Testando a biblioteca | ✔️ |
-| 4 | Evoluindo a biblioteca | ⚫ |
+| 4 | Evoluindo a biblioteca | ✔️ |
 | 5 | Automatizando tarefas | ⚫ |
 
 ---
@@ -46,7 +46,9 @@
 
 ### Aula 04 - Evoluindo a biblioteca
 <ul>
-  <li></li>
+  <li>Organizar a criação de novos componentes;</li>
+  <li>Criar interfaces para as APIs dos componentes;</li>
+  <li>Utilizar as exportações recomendadas pelo StoryBook para gerar documentação de forma automática.</li>
 </ul>
 
 ### Aula 05 - Automatizando tarefas
