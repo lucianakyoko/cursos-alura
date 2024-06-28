@@ -15,7 +15,7 @@
 | 2 | Server Actions e Client Components | ✔️ |
 | 3 | Adicionando comentários | ✔️ |
 | 4 | Respondendo comentários | ✔️ |
-| 5 | Finalizando a aplicação | ⚫ |
+| 5 | Finalizando a aplicação | ✔️ |
 
 ---
 
@@ -51,14 +51,17 @@
 
 ### Aula 05 - Finalizando a aplicação
 <ul>
-  <li></li>
+  <li>Implementar uma rota GET utilizando o Route Handler;</li>
+  <li>Buscar dados no servidor a partir do Client Component;</li>
+  <li>Manipular includes aninhados do Prisma.</li>
 </ul>
 
 ---
 
-<!-- ## 🎯 Projeto desenvolvido
+## 🎯 Projeto desenvolvido
 Este é o screenshot do projeto que foi desenvolvido durante o curso:
 
 <p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/code-connect2a-preview.svg">
+  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/code-connect2b-preview.svg">
+</p>

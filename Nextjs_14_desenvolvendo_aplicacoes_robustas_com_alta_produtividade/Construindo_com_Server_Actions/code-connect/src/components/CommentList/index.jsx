@@ -12,7 +12,7 @@ export const CommentList = ({comments}) => {
           <li>
             <Comment key={comment.id} comment={comment} />
             <ReplyModal comment={comment} />
-            <Replies />
+            <Replies comment={comment} />
           </li>
         ))}
       </ul>

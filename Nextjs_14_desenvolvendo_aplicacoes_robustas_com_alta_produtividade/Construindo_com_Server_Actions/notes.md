@@ -536,3 +536,22 @@ Pré-definindo o objeto post como o primeiro argumento da função incrementThum
 
 ---
 
+## APIs restful
+[Documentação](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
+
+Uma API RESTful geralmente segue os seguintes princípios:
+
+1. Cliente-Servidor: uma separação clara entre cliente e servidor.
+2. Stateless: cada requisição do cliente para o servidor deve conter todas as informações necessárias para entender e completar a requisição. O servidor não armazena o estado do cliente.
+3. Cacheável: as respostas devem ser explícitas sobre a sua cacheabilidade para evitar que clientes reutilizem dados desatualizados ou inapropriados.
+4. Interface Uniforme:
+    - Identificação de recursos: cada recurso é identificado por URIs.
+    - Representação de recursos: os recursos são representados em um formato que pode ser facilmente manipulado pelo cliente (como JSON).
+    - Mensagens auto-descritivas: as mensagens de requisição e resposta contêm metadados suficientes para descrever como processá-las
+    - HATEOAS (Hypermedia As The Engine Of Application State): as respostas da API incluem hiperlinks que permitem ao cliente descobrir outras ações e recursos disponíveis.
+5. Sistema em camadas: a arquitetura pode incluir várias camadas intermediárias entre cliente e servidor para aumentar a escalabilidade, segurança, etc.
+
+[Leitura de artigo](https://www.alura.com.br/artigos/rest-conceito-e-fundamentos)
+
+---
+
