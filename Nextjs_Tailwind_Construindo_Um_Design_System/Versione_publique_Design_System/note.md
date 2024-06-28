@@ -234,3 +234,11 @@ Dependências Claras: É importante declarar as dependências de forma clara em 
 O versionamento semântico é uma abordagem amplamente aceita para a gestão de versões de software e pacotes, pois ajuda a criar expectativas claras sobre o impacto das atualizações e facilita a escolha de versões adequadas para os projetos. Ao seguir essas regras, você pode manter um controle mais eficaz sobre o desenvolvimento e a distribuição de suas bibliotecas e pacotes de software. Se ficou curioso e deseja conhecer melhor cada uma das regras do SemVer recomendo a leitura da documentação.
 
 [Semver](https://semver.org/lang/pt-BR/)
+
+---
+##  tipos de licença de software
+Quando você cria um projeto no GitHub, eles pedem para você escolher uma licença. Mas o que é uma licença? Bem, é um conjunto de regras que dizem como as outras pessoas podem usar seu projeto. Por exemplo, se elas podem modificá-lo e compartilhá-lo de graça ou se precisam pagar por isso.
+
+As licenças de código aberto são legais porque permitem que as pessoas usem, editem e compartilhem seu projeto sem muitos problemas. Então, quando você escolhe uma licença para o seu projeto, está basicamente dizendo às pessoas o que elas podem e não podem fazer com ele.
+
+É importante escolher a licença certa, porque isso afeta como seu projeto será usado por outras pessoas.

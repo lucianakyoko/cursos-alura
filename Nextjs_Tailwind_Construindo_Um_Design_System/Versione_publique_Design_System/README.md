@@ -15,7 +15,7 @@
 | 2 | Criando documentação interativa | ✔️ |
 | 3 | Importando Design Tokens | ✔️ |
 | 4 | O componente de botão | ✔️ |
-| 5 | Outros componentes | ⚫ |
+| 5 | Outros componentes | ✔️ |
 
 ---
 
@@ -53,14 +53,12 @@
 
 ### Aula 05 - Licença e documentação
 <ul>
-  <li></li>
+  <li>Sobre licenças de software, os tipos de licença e qual a que se encaixa melhor em seus projetos;</li>
+  <li>O que são licenças permissivas e licenças de copyleft e quais as diferenças entre eleas;</li>
+  <li>Como adicionar uma licença ao seu projeto pelo Github;</li>
+  <li>A importância da documentação técnica de seus projetos;</li>
+  <li>O que deve conter na documentação com base em bibliotecas de componentes famosas como a MUI e o Ant Desig;</li>
+  <li>Como adicionar a documentação em seus projetos pelo github.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
