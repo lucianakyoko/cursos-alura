@@ -61,3 +61,4 @@ Esse versionamento também é conhecido como [SEMVER](https://semver.org/lang/pt
 
 Isso é de extrema importância, principalmente quando somos os mantenedores do pacote. De acordo com esse versionamento, as pessoas poderão manter a máxima versão compatível rodando em seus projetos.
 
+---

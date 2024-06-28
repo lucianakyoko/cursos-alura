@@ -15,7 +15,7 @@
 | 2 | Do VSCode para o mundo | ✔️ |
 | 3 | Testando a biblioteca | ✔️ |
 | 4 | Evoluindo a biblioteca | ✔️ |
-| 5 | Automatizando tarefas | ⚫ |
+| 5 | Automatizando tarefas | ✔️ |
 
 ---
 
@@ -53,14 +53,9 @@
 
 ### Aula 05 - Automatizando tarefas
 <ul>
-  <li></li>
+  <li>Configurar o auto para automatizar tarefas;</li>
+  <li>Utilizar as Actions do github para realizar tarefas repetitivas;</li>
+  <li>Realizar a publicação do pacote NPM a cada commit para master.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
