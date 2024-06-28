@@ -25,9 +25,9 @@
 ### 1️⃣ - Biblioteca de componentes
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | React: desenvolvendo uma biblioteca de componentes | ✖️ | [🗂️](./Desenvolvendo_Biblioteca_Componentes/) | 🔵 |
-| . | 1.2 | 🟨 | Design Systems - Hipsters #170 | ✖️ | ➖ | ⚫ |
-| . | 1.3 | 🟫 | Design System: Entenda o que é e confira Exemplos | ✖️ | ➖ | ⚫ |
+| . | 1.1 | 🟪 | React: desenvolvendo uma biblioteca de componentes | ✖️ | [🗂️](./Desenvolvendo_Biblioteca_Componentes/) | ✔️ |
+| . | 1.2 | 🟨 | Design Systems - Hipsters #170 | ✖️ | ➖ | ✔️ |
+| . | 1.3 | 🟫 | Design System: Entenda o que é e confira Exemplos | ✖️ | ➖ | ✔️ |
 
 
 
@@ -35,8 +35,8 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 2.1 | 🟫 | Autenticação, automatização e segurança no front-end | . | . | ⚫ |
-| . | 2.2 | 🟪 | React: autenticando usuários | . | . | ⚫ |
+| . | 2.1 | 🟫 | Autenticação, automatização e segurança no front-end | ✖️ | ➖ | ✔️ |
+| 🚩 | 2.2 | 🟪 | React: autenticando usuários | . | . | ⚫ |
 
 
 ### 3️⃣ - Obtenção de dados
