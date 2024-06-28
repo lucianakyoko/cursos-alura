@@ -31,7 +31,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 4 | Cursos Avulsos | [🗂️](./Cursos_Avulsos/) | 🔵 |
 | 5 | Gerencie aplicações React com TypeScipt | [🗂️](./Gerencie_Aplicacoes_React_Com_TS/) | 🔵 |
 | 6 | Next.js 14: desenvolvendo aplicações robustas com alta produtividade | [🗂️](./Nextjs_14_desenvolvendo_aplicacoes_robustas_com_alta_produtividade/) | 🔵 |
-| 7 | Next.js e Tailwind: construindo um design system | [🗂️](./Nextjs_Tailwind_Construindo_Um_Design_System/) | 🔵 |
+| 7 | Next.js e Tailwind: construindo um design system | [🗂️](./Nextjs_Tailwind_Construindo_Um_Design_System/) | ✔️ |
 | 8 | Inteligência Artificial e Google Gemini | [🗂️](./Inteligencia_Artificial_%20Google_Gemini/) | ⚫ |
 | 9 | Impulsione sua aplicação React e consuma APIs | [🗂️](./Impulsione_aplicacao_React_Consuma_API/) | 🔵 |
 | 10 | --- | 🗂️ | ⚫ |

@@ -21,5 +21,11 @@ Leitura do artigo - Versionamento Semântico (SemVer): uma breve introdução
 [Link do artigo](https://www.alura.com.br/artigos/versionamento-semantico-breve-introducao)
 
 ---
+
 Leitura do artigo - Simplificando o controle de versão com Conventional Commits
 [Link do artigo](https://www.alura.com.br/artigos/simplificando-controle-versao-conventional-commits)
+
+---
+
+Leitura do artigo - Changelog: o guia do desenvolvedor para documentar e compreender alterações de software
+[Link do artigo](https://www.alura.com.br/artigos/changelog-guia-desenvolvedor-alteracoes-software)
