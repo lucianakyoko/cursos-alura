@@ -22,3 +22,7 @@
 
 ---
 
+## Leitura do artigo
+[Next: Server Actions aprendendo na prática](https://www.alura.com.br/artigos/next-server-actions-aprendendo-pratica?utm_source=gnarus&utm_medium=timeline)
+
+---
