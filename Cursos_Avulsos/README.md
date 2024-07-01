@@ -37,7 +37,9 @@
 ### 4️⃣ - Node.JS
 | . | --- | 📘 Curso | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
-| . | 4.1 | ➖ | ➖ | 🗂️ | ⚫ |
+| . | 4.1 | ONode.js: Autenticação, Passport e OAuth 2.0 | ➖ | [🗂️](./NodeJS_Autenticacao_Passport_Oauth2/) | ✔️ |
+| . | 4.2 | ➖ | ➖ | 🗂️ | ⚫ |
+
 
 ### 5️⃣ - Banco de dados
 | . | --- | 📘 Curso | 🔗 PROJETO | REPOSITÓRIO | STATUS |

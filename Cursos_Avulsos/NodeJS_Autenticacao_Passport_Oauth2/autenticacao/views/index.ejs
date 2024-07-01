@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <img src="/assets/logo.jpeg" alt="Uma pessoa feliz no computador com várias telas" class="logo">
+    </header>
+
+    <main>
+        <h1>Login</h1>
+        <h2>Boas vindas! Faça seu login</h2>
+        <form class="login-form" action="#" method="#">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+
+            <% if (typeof error !== 'undefined') { %>
+                <p class="error-message"><%= error %></p>
+            <% } %>
+
+            <div class="login-btn-container">
+                <button type="submit" class="login-btn">Login <i class="arrow fas fa-arrow-right"></i></button>
+            </div>
+        </form>
+        <p class="alternate-accounts"><span>ou entre com outras contas</span></p>
+
+        <div class="social-media">
+            <div class="social-media-details">
+                <a href="#">
+                    <img src="/assets/google.svg" alt="Login com Google" class="social-media-icon">
+                    <p>Google</p>
+                </a>
+            </div>
+
+            <div class="social-media-details">
+                <a href="">
+                    <img src="/assets/gitHub.svg" alt="Login com GitHub" class="social-media-icon">
+                    <p>GitHub</p>
+                </a>
+            </div>
+        </div>
+        <section class="create_account">
+            <p>Ainda não tem conta?</p>
+            <a href="/signup">Crie seu cadastro! <img src="/assets/assignment.svg" alt="ícone de uma prancheta"></a>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
