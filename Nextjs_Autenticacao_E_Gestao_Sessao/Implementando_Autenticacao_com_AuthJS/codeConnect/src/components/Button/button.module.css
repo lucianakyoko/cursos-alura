@@ -1,0 +1,33 @@
+.btn {
+  color: #132e35;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 27px */
+  border-radius: 8px;
+  background: #81fe88;
+  padding: 12px 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.outline:hover,
+.btn:hover {
+  opacity: 0.6;
+}
+
+.outline {
+  color: #81fe88;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 27px */
+  border-radius: 8px;
+  background: transparent;
+  padding: 12px 16px;
+  cursor: pointer;
+  border: 1px solid #81fe88;
+  text-decoration: none;
+}

@@ -1,0 +1,17 @@
+.aside {
+  border-radius: 8px;
+  background: #171d1f;
+  padding: 40px 16px;
+  height: 100%;
+}
+
+.aside ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
