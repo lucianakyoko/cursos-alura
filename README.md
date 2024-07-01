@@ -34,6 +34,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 7 | Next.js e Tailwind: construindo um design system | [🗂️](./Nextjs_Tailwind_Construindo_Um_Design_System/) | ✔️ |
 | 8 | Inteligência Artificial e Google Gemini | [🗂️](./Inteligencia_Artificial_%20Google_Gemini/) | ⚫ |
 | 9 | Impulsione sua aplicação React e consuma APIs | [🗂️](./Impulsione_aplicacao_React_Consuma_API/) | 🔵 |
-| 10 | --- | 🗂️ | ⚫ |
+| 10 | Next.js: implementando autenticação com Auth.js | [🗂️] | 🔵 |
+| 11 | --- | 🗂️ | ⚫ |
 
 ---
