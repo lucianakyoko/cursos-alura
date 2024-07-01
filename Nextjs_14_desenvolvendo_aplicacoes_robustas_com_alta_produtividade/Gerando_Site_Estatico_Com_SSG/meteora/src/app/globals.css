@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+}
+
+ul li {
+  list-style: none;
+}
+
+a:link {
+  text-decoration: none;
+}
