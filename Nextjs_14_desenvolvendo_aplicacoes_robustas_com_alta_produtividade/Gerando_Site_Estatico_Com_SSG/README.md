@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando Api Router e fazendo fetch | ✔️ |
-| 2 | API Router para detalhes do produto | ⚫ |
+| 2 | API Router para detalhes do produto | ✔️ |
 | 3 | A caminho do SSG | ⚫ |
 | 4 | Testando arquivos estáticos | ⚫ |
 | 5 | Fazendo o deploy | ⚫ |
@@ -31,7 +31,9 @@
 
 ### Aula 02 - API Router para detalhes do produto
 <ul>
-  <li></li>
+  <li>Criar API SSR para detalhes do produto: demonstramos a criação e transformação de uma API de detalhes de produto em SSR no Next.js, mostrando práticas de SSR em APIs após yarn build;</li>
+  <li>Migrar para serviço externo: migramos o endpoint de produtos para o n:point, incluindo transferência de JSON, remoção do API Router e atualização do endpoint;</li>
+  <li>Atualização da página de produto: atualizamos a página de produto para usar um endpoint externo, assegurando dados atualizados de uma fonte externa. O objetivo principalmente é trabalhar na estratégia de utilizar uma fonte de dados externa para alimentar nossa aplicação e facilitar a geração estática do site.</li>
 </ul>
 
 ### Aula 03 - A caminho do SSG
