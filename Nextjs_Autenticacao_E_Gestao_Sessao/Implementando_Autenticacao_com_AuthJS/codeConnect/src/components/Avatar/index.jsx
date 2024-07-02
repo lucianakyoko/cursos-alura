@@ -1,13 +1,19 @@
-import Image from "next/image"
-import styles from './avatar.module.css'
+import Image from "next/image";
+import styles from "./avatar.module.css";
 
-export const Avatar = ({name, imageSrc}) => {
-    return (<ul className={styles.avatar}>
-        <li>
-            <Image src={imageSrc} width={32} height={32} alt={`Avatar do(a) ${name}`}/>
-        </li>
-        <li>
-            @{name}
-        </li>
-    </ul>)
-}
+export const Avatar = ({ author }) => {
+  const imgSrc = author.avatar ?? author.image;
+
+  return (
+    <div className={styles.container}>
+      {imgSrc && (
+        <Image
+          src={imgSrc}
+          width={32}
+          height={32}
+          alt={`Avatar do(a) ${author.name}`}
+        />
+      )}
+    </div>
+  );
+};

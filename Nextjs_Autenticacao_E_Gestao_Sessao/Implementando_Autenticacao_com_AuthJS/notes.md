@@ -56,3 +56,20 @@ Primeiro, nunca, jamais, em hipótese alguma, versione seu .env.local ou qualque
 Curiosidade
 
 Sabia que o Next.js automaticamente carrega as variáveis de ambiente de seus arquivos .env na inicialização? Isso significa que não há necessidade de usar bibliotecas adicionais (como o nodeenv, por exemplo) para gerenciar essas variáveis. E mais, as variáveis de ambiente definidas nos arquivos .env são substituídas pelas definidas em .env.local se elas existirem, permitindo que você tenha uma configuração base e depois a personalize localmente sem alterar o arquivo principal - exatamente como fizemos em aula.
+
+--- 
+
+##  entendendo o que é sessão
+Em termos simples, uma sessão é um período de interação entre o usuário e a aplicação que é mantido pelo servidor. Imagine que cada sessão é como uma conversa entre dois bons amigos (o usuário e o servidor). Durante essa conversa, ambos precisam se lembrar do que foi dito anteriormente para que a conversa faça sentido. Para a aplicação, manter o estado dessa "conversa" é essencial, pois a web, por natureza, é stateless — ou seja, cada requisição é independente e não tem memória das interações anteriores.
+
+Como o servidor identifica o usuário?
+
+Aqui entram os mecanismos de sessão. Quando você se loga em uma aplicação, o servidor cria um registro único desta sessão. Mas como ele se lembra dessa sessão específica na próxima vez que você fizer uma requisição? Será que o servidor tem uma memória infalível? Não, exatamente. Ele usa um pequeno e poderoso aliado chamado “cookie”.
+
+Qual é o papel do cookie nisso tudo?
+
+O cookie é como um crachá de identificação que você recebe em um evento. Toda vez que você interage com o servidor (ou volta ao evento), você mostra seu crachá. No mundo online, quando você se autentica, o servidor envia um cookie para o seu navegador, que armazena esse cookie e o envia de volta ao servidor com cada requisição subsequente. Esse cookie contém um identificador único da sua sessão, permitindo que o servidor recupere o estado da sua "conversa" e continue de onde vocês pararam.
+
+Aqui na nossa jornada, quando implementamos a autenticação usando NextAuth com o provedor GitHub, cada vez que um usuário se loga, o NextAuth cuida de estabelecer essa sessão. Utilizamos o método getServerSession para recuperar dados do usuário logado diretamente do servidor, garantindo que a sessão esteja válida e que os dados do usuário sejam os esperados. Esse método verifica o cookie de sessão, confirma sua validade e, em seguida, recupera os dados associados àquela sessão, facilitando a gestão de autenticação de maneira eficiente.
+
+---

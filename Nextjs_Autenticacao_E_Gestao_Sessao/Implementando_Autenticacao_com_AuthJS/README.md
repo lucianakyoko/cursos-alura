@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Fundamentos de autenticação | ✔️ |
-| 2 | Persistindo o usuário | ⚫ |
+| 2 | Persistindo o usuário | ✔️ |
 | 3 | Custom Provider | ⚫ |
 | 4 | Página de perfil | ⚫ |
 | 5 | Login customizado | ⚫ |
@@ -31,7 +31,9 @@
 
 ### Aula 02 - Persistindo o usuário
 <ul>
-  <li></li>
+  <li>Implementar e configurar o PrismaAdapter;</li>
+  <li>Manipular os dados persistidos na sessão;</li>
+  <li>Evoluir o schema do Prisma, de acordo com as novas necessidades da aplicação.</li>
 </ul>
 
 ### Aula 03 - Custom Provider
