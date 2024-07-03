@@ -3,3 +3,4 @@
 {"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"dicas-de-acessibilidade-webs"}
 {"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"dicas-de-acessibilidade-webs"}
 {"error":{"clientVersion":"5.9.1","name":"PrismaClientInitializationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"webpack-um-guia-para-iniciantes"}

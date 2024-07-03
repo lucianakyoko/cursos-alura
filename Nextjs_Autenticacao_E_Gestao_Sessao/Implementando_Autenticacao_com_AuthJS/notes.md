@@ -73,3 +73,32 @@ O cookie é como um crachá de identificação que você recebe em um evento. To
 Aqui na nossa jornada, quando implementamos a autenticação usando NextAuth com o provedor GitHub, cada vez que um usuário se loga, o NextAuth cuida de estabelecer essa sessão. Utilizamos o método getServerSession para recuperar dados do usuário logado diretamente do servidor, garantindo que a sessão esteja válida e que os dados do usuário sejam os esperados. Esse método verifica o cookie de sessão, confirma sua validade e, em seguida, recupera os dados associados àquela sessão, facilitando a gestão de autenticação de maneira eficiente.
 
 ---
+
+## BCrypt e credenciais armazenadas
+Quando falamos de Credentials Provider no NextAuth, estamos nos referindo à possibilidade de autenticar usuários diretamente através de credenciais como nome de usuário e senha. Isso pode parecer uma opção prática, mas traz consigo algumas complexidades e riscos de segurança. Você já parou para pensar na responsabilidade que é gerenciar senhas de forma segura? Armazenar e proteger senhas de maneira adequada exige uma infraestrutura robusta e um entendimento profundo de práticas de segurança.
+
+Além disso, ao usar credenciais como método de autenticação, nós assumimos a responsabilidade total por garantir a segurança desses dados. Isso inclui proteger as credenciais contra vazamentos e garantir que a verificação das senhas seja realizada de forma segura e eficiente.
+
+E por que mudar a estratégia para JWT?
+
+Quando configuramos o Credentials Provider no NextAuth, a recomendação é mudar a estratégia de sessão para usar JWT, pois ele oferece uma maneira flexível e segura de transmitir informações entre partes como um objeto JSON que você pode assinar e/ou criptografar.
+
+Usar JWT permite que a sessão do usuário seja validada independentemente do servidor ou da sessão em si ser armazenada em um banco de dados. Isso significa que, após o login, o servidor gera um token JWT que contém todas as informações necessárias para identificar o usuário. Esse token é enviado ao cliente e usado para manter o estado da sessão. Em cada requisição subsequente, esse token é enviado de volta ao servidor, que verifica sua validade. Essa abordagem reduz a necessidade de consultas constantes a um banco de dados para verificar o estado da sessão, o que pode melhorar o desempenho e a escalabilidade da aplicação.
+
+Se JWT é um assunto novo pra ti, que tal dar uma lida no artigo O que é JSON Web Tokens? que o Neilton escreveu? Super recomendo a leitura para se aprofundar no assunto.
+
+Entendendo o bcrypt e o processo de comparação de senhas
+
+Quando você executa o código bcrypt.compareSync(credentials.password, foundUser.password), está utilizando o bcrypt para verificar se a senha fornecida pelo usuário corresponde à senha hash armazenada no banco de dados. O processo é mais complexo do que parece à primeira vista: O bcrypt, primeiro, descriptografa o hash da senha armazenada para extrair o sal (salt, em inglês) usado originalmente (o sal é um dado aleatório que é adicionado à senha antes de criar o hash). Em seguida, ele aplica esse mesmo sal à senha que está sendo verificada e cria um novo hash. Se esse novo hash corresponde ao hash armazenado, a senha é confirmada como correta. Esse método garante que cada hash seja único, mesmo que as senhas sejam idênticas, devido ao uso de sais diferentes.
+
+Criando um hash de senha com bcrypt
+
+Ao olharmos para o código bcrypt.hashSync(formData.get('password'), 10), estamos vendo a criação de um hash para uma senha usando bcrypt. O primeiro argumento é a senha que você deseja "hashar", e o segundo argumento, o número 10, é chamado de "custo" ou "fator de custo" e representa o quão intensivo em recursos e tempo será o processo de hashing. O fator de custo é, na verdade, uma medida de quantas vezes a hash será processada sob o algoritmo bcrypt. Um fator de custo de 10 significa que a hash será processada através de 2^10 (ou 1024) rodadas de hashing. Aumentar o fator de custo torna a geração do hash e a verificação da senha mais lentas, o que é uma característica desejada para dificultar ataques de força bruta.
+
+Por que usar métodos assíncronos?
+
+Você deve ter notado que utilizamos métodos síncronos durante o curso, mas o bcrypt também oferece variantes assíncronas desses métodos, como bcrypt.compare() e bcrypt.hash().
+
+Em aplicações de mundo real, especialmente aquelas que operam em um ambiente de servidor, como aplicações Node.js, bloquear o loop de eventos (que é o que métodos síncronos fazem) pode levar a uma degradação significativa no desempenho. Métodos assíncronos, em contrapartida, permitem que as operações de computação intensiva sejam processadas em segundo plano, permitindo que o servidor continue respondendo a outras requisições. Isso melhora a escalabilidade e a eficiência da aplicação, mantendo a experiência do usuário suave e responsiva.
+
+[artigo citado](https://www.alura.com.br/artigos/o-que-e-json-web-tokens)

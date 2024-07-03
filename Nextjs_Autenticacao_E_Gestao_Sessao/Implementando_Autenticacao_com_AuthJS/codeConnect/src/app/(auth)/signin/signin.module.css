@@ -1,0 +1,34 @@
+.main {
+  display: flex;
+  gap: 55px;  
+  flex-wrap: wrap;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.providers {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer p {
+  font-size: 18px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #E1E1E1;
+  font-weight: 400;
+  justify-content: center;
+}
+.footer p a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}

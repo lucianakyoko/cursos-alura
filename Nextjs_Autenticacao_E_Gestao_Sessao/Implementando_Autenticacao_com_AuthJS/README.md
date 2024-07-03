@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Fundamentos de autenticação | ✔️ |
 | 2 | Persistindo o usuário | ✔️ |
-| 3 | Custom Provider | ⚫ |
+| 3 | Custom Provider | ✔️ |
 | 4 | Página de perfil | ⚫ |
 | 5 | Login customizado | ⚫ |
 
@@ -38,7 +38,9 @@
 
 ### Aula 03 - Custom Provider
 <ul>
-  <li></li>
+  <li>Implementar o CredentialsProvider do zero;</li>
+  <li>Lidar com route groups e os layouts de páginas;</li>
+  <li>Criptografia com bcrypt.</li>
 </ul>
 
 ### Aula 04 - O componente de botão

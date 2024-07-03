@@ -1,0 +1,19 @@
+.divider {
+  width: 100%;
+  text-align: center;
+  border: 0;
+  border-top: 1px solid #E1E1E1;
+  display: block;
+  overflow: visible;
+}
+
+.divider::before {
+  background-color: #171D1F;
+  content: attr(data-text);
+  color: #E1E1E1;
+  padding: 0 15px;
+  position: relative;
+  top: -50%;
+  font-size: 15px;
+  font-weight: 400;
+}
