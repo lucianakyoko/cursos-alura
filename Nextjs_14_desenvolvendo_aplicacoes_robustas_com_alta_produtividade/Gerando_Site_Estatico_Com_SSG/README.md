@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Criando Api Router e fazendo fetch | ✔️ |
 | 2 | API Router para detalhes do produto | ✔️ |
-| 3 | A caminho do SSG | ⚫ |
+| 3 | A caminho do SSG | ✔️ |
 | 4 | Testando arquivos estáticos | ⚫ |
 | 5 | Fazendo o deploy | ⚫ |
 
@@ -38,7 +38,9 @@
 
 ### Aula 03 - A caminho do SSG
 <ul>
-  <li></li>
+  <li>Aplicar o generateStaticParams para que seja possível gerar páginas estáticas para cada rota da dinâmica de detalhe do produto;</li>
+  <li>O build gera o site estático em .Next/static, onde esses arquivos não são facilmente mapeados para os componentes e páginas individuais, pois são otimizados, divididos em chunks (fragmentos) e minificados;</li>
+  <li>O "output export" no next.config.js, muda a forma de geração de como o Next.js deve tratar a geração e a disposição dos arquivos estáticos, especialmente para rotas dinâmicas, onde exporta os arquivos estáticos de uma forma mais clássica, onde podemos servir os sites em qualquer servidor web de forma simples.</li>
 </ul>
 
 ### Aula 04 - Testando arquivos estáticos
