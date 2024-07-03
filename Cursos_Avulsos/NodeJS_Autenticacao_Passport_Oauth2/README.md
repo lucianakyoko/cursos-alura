@@ -12,8 +12,8 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Iniciando o projeto | ✔️ |
-| 2 | Login e banco de dados | ⚫ |
-| 3 | Loops e tentativas | ⚫ |
+| 2 | Login e banco de dados | ✔️ |
+| 3 | Loops e tentativas | ✔️ |
 | 4 | Boas práticas de programação | ⚫ |
 | 5 | OAuth com GitHub | ⚫ |
 
@@ -30,12 +30,16 @@
 
 ### Aula 02 - Login e banco de dados
 <ul>
-  <li></li>
+  <li>Implementamos o controle para criar um novo usuário no banco de dados, garantindo que todos os dados necessários sejam salvos corretamente;</li>
+  <li>Salvamos os dados do novo usuário no banco de dados, assegurando que todas as informações fornecidas sejam armazenadas com precisão e segurança;</li>
+  <li>Criamos a rota para realizar o login dos usuários e o controller correspondente para gerenciar o processo de autenticação, permitindo que os usuários acessem o sistema de forma segura e protegida.</li>
 </ul>
 
 ### Aula 03 - Loops e tentativas
 <ul>
-  <li></li>
+  <li>Instalamos um encriptador de senhas para garantir a segurança dos dados dos usuários, protegendo suas informações pessoais contra acessos não autorizados;</li>
+  <li>Alteramos o processo de cadastro de usuário (signUp) para incluir a encriptação da senha, aumentando a segurança do sistema e protegendo as credenciais dos usuários;</li>
+  <li>Criamos um middleware para proteger uma rota específica, permitindo que apenas usuários autenticados tenham acesso a ela, reforçando a segurança e a privacidade das informações sensíveis.</li>
 </ul>
 
 ### Aula 04 - Boas práticas de programação
