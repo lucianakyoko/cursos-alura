@@ -102,3 +102,13 @@ Você deve ter notado que utilizamos métodos síncronos durante o curso, mas o 
 Em aplicações de mundo real, especialmente aquelas que operam em um ambiente de servidor, como aplicações Node.js, bloquear o loop de eventos (que é o que métodos síncronos fazem) pode levar a uma degradação significativa no desempenho. Métodos assíncronos, em contrapartida, permitem que as operações de computação intensiva sejam processadas em segundo plano, permitindo que o servidor continue respondendo a outras requisições. Isso melhora a escalabilidade e a eficiência da aplicação, mantendo a experiência do usuário suave e responsiva.
 
 [artigo citado](https://www.alura.com.br/artigos/o-que-e-json-web-tokens)
+
+
+---
+
+## FileReader
+O que faz o FileReader?
+
+Basicamente, ele lê o conteúdo de arquivos (que pode ser qualquer coisa, desde textos até imagens e sons) armazenados no computador do usuário, diretamente no navegador. O legal é que ele faz isso de forma assíncrona, ou seja, enquanto o arquivo está sendo lido, o usuário pode continuar interagindo com a aplicação sem travamentos ou lentidão.
+
+No nosso componente, quando um usuário seleciona um arquivo de imagem, a função handleFileChange é disparada. Essa função cria uma instância do FileReader e define o que fazer quando a leitura do arquivo termina, através de reader.onloadend. O método readAsDataURL(file) é chamado para iniciar a leitura do arquivo. O que ele faz é ler o arquivo e codificá-lo em uma string base64, permitindo que você use esse resultado (disponível em reader.result após a leitura) como fonte para a imagem, através do estado imgSrc. Isso permite que a imagem seja exibida instantaneamente como uma prévia no navegador.

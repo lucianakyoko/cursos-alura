@@ -45,7 +45,9 @@
 
 ### Aula 04 - O componente de botão
 <ul>
-  <li></li>
+  <li>Implementar um preview de imagens usando FileReader;</li>
+  <li>Criar um blob storage na Vercel e realizar upload de arquivos pra ele;</li>
+  <li>Combinar estratégias do lado do cliente e do lado do servidor para enviar arquivos.</li>
 </ul>
 
 ### Aula 05 - Outros componentes
