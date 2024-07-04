@@ -14,7 +14,7 @@
 | 1 | Criando Api Router e fazendo fetch | ✔️ |
 | 2 | API Router para detalhes do produto | ✔️ |
 | 3 | A caminho do SSG | ✔️ |
-| 4 | Testando arquivos estáticos | ⚫ |
+| 4 | Testando arquivos estáticos | ✔️ |
 | 5 | Fazendo o deploy | ⚫ |
 
 ---
@@ -45,7 +45,8 @@
 
 ### Aula 04 - Testando arquivos estáticos
 <ul>
-  <li></li>
+  <li>Configurar o assetPrefix para fins didáticos e trailingSlash no Next.js, onde entendemos seu impacto na navegação e estrutura de URLs;</li>
+  <li>A importância do loader customizado de imagens para garantir a renderização correta das imagens em sites estáticos, mantendo a consistência das URLs com a resposta do serviço.</li>
 </ul>
 
 ### Aula 05 - Fazendo o deploy
