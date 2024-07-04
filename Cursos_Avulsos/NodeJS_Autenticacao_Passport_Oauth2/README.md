@@ -14,7 +14,7 @@
 | 1 | Iniciando o projeto | ✔️ |
 | 2 | Login e banco de dados | ✔️ |
 | 3 | Loops e tentativas | ✔️ |
-| 4 | Boas práticas de programação | ⚫ |
+| 4 | Boas práticas de programação | ✔️ |
 | 5 | OAuth com GitHub | ⚫ |
 
 ---
@@ -44,7 +44,9 @@
 
 ### Aula 04 - Boas práticas de programação
 <ul>
-  <li></li>
+  <li>Aprendemos a evitar código duplicado utilizando estratégias para exibir a palavra "tentativas" no singular ou plural, dependendo do número de tentativas realizadas;</li>
+  <li>Analisamos a documentação e encontrar informações relevantes para o desenvolvimento do nosso programa;</li>
+  <li>Descobrimos como utilizar a função Math.random() para gerar um número aleatório, permitindo a criação de desafios e jogos mais dinâmicos e variados.</li>
 </ul>
 
 ### Aula 05 - OAuth com GitHub
