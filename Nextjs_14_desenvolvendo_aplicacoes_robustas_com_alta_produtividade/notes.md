@@ -26,3 +26,8 @@
 [Next: Server Actions aprendendo na prática](https://www.alura.com.br/artigos/next-server-actions-aprendendo-pratica?utm_source=gnarus&utm_medium=timeline)
 
 ---
+
+## Leitura do artigo
+[Next: um guia de como depurar aplicações web](https://www.alura.com.br/artigos/depurar-aplicacoes-nextjs)
+
+---

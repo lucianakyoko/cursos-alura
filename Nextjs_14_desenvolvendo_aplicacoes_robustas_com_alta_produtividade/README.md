@@ -46,7 +46,7 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 3.1 | 🟪 | Next.js: gerando site estático com SSG | . | [🗂️](./NextJS_Gerando_site_estatico_com_SSG/) | ✔️ |
-| 🚩 | 3.2| 🟫 | Next: um gia de como depurar aplicações web | . | . | ⚫ |
+| . | 3.1 | 🟪 | Next.js: gerando site estático com SSG | Meteora | [🗂️](./NextJS_Gerando_site_estatico_com_SSG/) | ✔️ |
+| . | 3.2| 🟫 | Next: um gia de como depurar aplicações web | . | . | ✔️ |
 
 
