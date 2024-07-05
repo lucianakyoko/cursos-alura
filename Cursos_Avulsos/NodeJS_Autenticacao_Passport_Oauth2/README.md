@@ -15,7 +15,7 @@
 | 2 | Login e banco de dados | ✔️ |
 | 3 | Loops e tentativas | ✔️ |
 | 4 | Boas práticas de programação | ✔️ |
-| 5 | OAuth com GitHub | ⚫ |
+| 5 | OAuth com GitHub | ✔️ |
 
 ---
 
@@ -55,10 +55,3 @@
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
