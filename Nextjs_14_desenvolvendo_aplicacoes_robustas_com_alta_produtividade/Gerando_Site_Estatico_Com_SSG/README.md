@@ -15,7 +15,7 @@
 | 2 | API Router para detalhes do produto | ✔️ |
 | 3 | A caminho do SSG | ✔️ |
 | 4 | Testando arquivos estáticos | ✔️ |
-| 5 | Fazendo o deploy | ⚫ |
+| 5 | Fazendo o deploy | ✔️ |
 
 ---
 
@@ -51,14 +51,9 @@
 
 ### Aula 05 - Fazendo o deploy
 <ul>
-  <li></li>
+  <li>Usar o http-server para corrigir problemas de carregamento de assets estáticos, substituindo o Live Server, garantindo que todos os recursos sejam carregados corretamente;</li>
+  <li>Reforçar um web server serve arquivos estáticos e a importância do protocolo HTTP nesse processo, enfatizando a correta configuração do servidor para otimizar a entrega;</li>
+  <li>Fazer deploy na Vercel, conectando o GitHub à plataforma para hospedar e disponibilizar sites estáticos na internet, com foco em simplicidade e eficiência.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
