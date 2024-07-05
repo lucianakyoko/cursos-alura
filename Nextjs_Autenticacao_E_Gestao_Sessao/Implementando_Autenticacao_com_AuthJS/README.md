@@ -14,8 +14,8 @@
 | 1 | Fundamentos de autenticação | ✔️ |
 | 2 | Persistindo o usuário | ✔️ |
 | 3 | Custom Provider | ✔️ |
-| 4 | Página de perfil | ⚫ |
-| 5 | Login customizado | ⚫ |
+| 4 | Página de perfil | ✔️ |
+| 5 | Login customizado | ✔️ |
 
 ---
 
@@ -52,14 +52,9 @@
 
 ### Aula 05 - Outros componentes
 <ul>
-  <li></li>
+  <li>Implementar o signIn manualmente;</li>
+  <li>Disponibilizar a sessão para componentes Client Side;</li>
+  <li>Customizar a página de login e conectá-la ao Next Auth.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->

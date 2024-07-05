@@ -8,8 +8,9 @@ import { useFormStatus } from 'react-dom'
 
 export const ThumbsUpButton = () => {
     const { pending } = useFormStatus()
+    const {data: session} = useSession()
     return (
-        <IconButton disabled={pending}>
+        <IconButton disabled={!session || pending}>
             { pending ? <Spinner /> : <ThumbsUp /> }
         </IconButton>
     )

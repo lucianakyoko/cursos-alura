@@ -9,7 +9,7 @@ import { Login } from '@/components/icons/Login'
 import FormLogin from '@/components/FormLogin'
 
 
-export default function Signup() {
+export default function SignIn() {
 
   return (
     <main className={styles.main}>
