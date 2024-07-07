@@ -36,6 +36,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 9 | Impulsione sua aplicação React e consuma APIs | [🗂️](./Impulsione_aplicacao_React_Consuma_API/) | 🔵 |
 | 10 | Next.js: implementando autenticação com Auth.js | [🗂️](./) | ✔️ |
 | 11 | Melhore sua aplicação React com testes automatizados | [🗂️](./React_com_Testes_automatizados/) | ⚫ |
-| 12 | --- | 🗂️ | ⚫ |
+| 12 | React: bibliotecas para desenvolver formulários | [🗂️](./React_bibliotecas_para_desenvolver_formulários/) | ⚫ |
+| 13 | --- | 🗂️ | ⚫ |
 
 ---
