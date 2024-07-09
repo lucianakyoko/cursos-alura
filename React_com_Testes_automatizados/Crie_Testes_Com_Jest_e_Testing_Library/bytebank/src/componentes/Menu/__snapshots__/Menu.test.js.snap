@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`eve renderizar uma lista de links com a classe link 1`] = `
+Array [
+  <a
+    class="link"
+    href="/"
+  >
+    Inicial
+  </a>,
+  <a
+    class="link"
+    href="/"
+  >
+    Transferências
+  </a>,
+  <a
+    class="link"
+    href="/"
+  >
+    Investimentos
+  </a>,
+  <a
+    class="link"
+    href="/"
+  >
+    Outros serviços
+  </a>,
+]
+`;

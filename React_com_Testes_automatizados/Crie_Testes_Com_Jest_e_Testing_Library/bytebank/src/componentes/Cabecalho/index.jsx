@@ -1,7 +1,7 @@
-import React from "react";
-import estilos from "./Cabecalho.module.css";
-import { ReactComponent as Logo } from "./bytebank.svg";
-import avatarUsuario from "./avatar.svg";
+import React from 'react';
+import estilos from './Cabecalho.module.css';
+import { ReactComponent as Logo } from './bytebank.svg';
+import avatarUsuario from './avatar.svg';
 
 export default function Cabecalho() {
   return (

@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Conhecendo testes no Front-end | ✔️ |
-| 2 | Criando os primeiros testes | ⚫ |
+| 2 | Criando os primeiros testes | ✔️ |
 | 3 | Simulando interações com a página | ⚫ |
 | 4 | Explorando o Jest | ⚫ |
 | 5 | Pensando em CI/CD | ⚫ |
@@ -31,7 +31,11 @@
 
 ### Aula 02 - Criando os primeiros testes
 <ul>
-  <li></li>
+  <li>Configurar o ESLint juntamente com o Prettier para realizar a análise estática de seu código em tempo de desenvolvimento;</li>
+  <li>Criar seu primeiro teste;</li>
+  <li>Criar um teste para um componente React;</li>
+  <li>Usar funções de consulta como o getByText , getAllByRole e queryByText;</li>
+  <li>Realizar testes de snapshot.</li>
 </ul>
 
 ### Aula 03 - Simulando interações com a página
