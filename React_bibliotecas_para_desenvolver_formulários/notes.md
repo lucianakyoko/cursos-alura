@@ -63,5 +63,23 @@ Quando você passa uma função como filho para o <Formik>, essa função é cha
 
 ---
 
+##  componentes do formulário
+
+Formik surge como uma biblioteca poderosa em React, simplificando o gerenciamento de estado e validação em formulários. Para utilizar ao máximo essa ferramenta, podemos também aplicar os componentes prontos disponibilizados por ela.
+
+Um dos principais componentes do Formik é o componente <Form>. Usado para envolver e gerenciar um formulário React. Ao utilizá-lo, ele automaticamente cuida de rastrear os valores do formulário, lidar com eventos de envio e fornecer funções de manipulação de formulário como handleChange, handleSubmit, entre outras.
+
+Além dele, temos o componente <Field>, uma ferramenta essencial para lidar com campos individuais em formulários React gerenciados pelo Formik. Ele simplifica o processo de rastreamento de valores e mudanças em campos de entrada, gerenciamento de estado, validação de entrada e encapsulamento de lógica de campo.
+
+Dessa maneira, não precisamos mais utilizar o parâmetro do render prop. Ao definir o tipo e o nome do campo no Field, ele já faz a iniciativa de gerenciar o estado.
+
+Todos esses componentes devem ser envolvidos pelo <Formik>: é o componente de nível superior. Ele é usado para envolver todo o componente de formulário e fornecer as funcionalidades principais da biblioteca, como rastreamento de estado, validação de formulário e manipulação de envio. É responsável por coordenar toda a lógica do Formik dentro do seu aplicativo.
+
+Ao utilizar todos esses componentes em conjunto, você se beneficia de um gerenciamento de estado centralizado, abstração de lógica de formulário, facilidade de uso e manutenção, e uma experiência de desenvolvimento mais eficiente para criar formulários em aplicações React.
+
+---
+
+## 
+
 
 

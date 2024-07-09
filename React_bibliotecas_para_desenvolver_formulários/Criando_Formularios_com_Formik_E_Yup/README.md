@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Conhecendo a biblioteca | ✔️ |
-| 2 | Estruturando o formulário | ⚫ |
+| 2 | Estruturando o formulário | ✔️ |
 | 3 | Validando dados | ⚫ |
 | 4 | Integrando componentes | ⚫ |
 | 5 | Transformando dados | ⚫ |
@@ -30,7 +30,11 @@
 
 ### Aula 02 - Estruturando o formulário
 <ul>
-  <li></li>
+  <li>Utilizar funções como children de um componente;</li>
+  <li>Inserir o componente Form dentro do Formik para trabalharem em conjunto;</li>
+  <li>Aplicar o componente Field nos campos de digitação para automatizar o gerenciamento de estado;</li>
+  <li>Implementar validações com condicionais;</li>
+  <li>Verificar se os dados seguem um padrão com auxílio de expressões regulares.</li>
 </ul>
 
 ### Aula 03 - Validando dados

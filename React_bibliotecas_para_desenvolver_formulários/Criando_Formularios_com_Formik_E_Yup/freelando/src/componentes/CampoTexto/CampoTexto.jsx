@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { Field } from "formik"
 
 const LabelEstilizada = styled.label`
     display: block;
@@ -9,7 +10,7 @@ const LabelEstilizada = styled.label`
     line-height: 24px;
 `
 
-const InputEstilizado = styled.input`
+const InputEstilizado = styled(Field)`
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -26,13 +27,11 @@ const InputEstilizado = styled.input`
     line-height: 17px;
 `
 
-export const CampoTexto = ({ titulo, valor, onChange, tipo = 'text' }) => {
+export const CampoTexto = ({ titulo, ...props }) => {
     return (<LabelEstilizada>
         {titulo}
         <InputEstilizado
-            value={valor}
-            onChange={evento => onChange(evento.target.value)}
-            type={tipo}
+            {...props}
         />
     </LabelEstilizada>)
 }
