@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Conhecendo a biblioteca | ✔️ |
 | 2 | Estruturando o formulário | ✔️ |
-| 3 | Validando dados | ⚫ |
+| 3 | Validando dados | ✔️ |
 | 4 | Integrando componentes | ⚫ |
 | 5 | Transformando dados | ⚫ |
 
@@ -39,7 +39,10 @@
 
 ### Aula 03 - Validando dados
 <ul>
-  <li></li>
+  <li>Imprimir mensagens de erro para cada campo;</li>
+  <li>Construir um formulário de login com o Formik;</li>
+  <li>Utilizar o hook useFormikContext para acessar e alterar as propriedades do formulário em componentes filhos;</li>
+  <li>Lidar com o envio do formulário e o resgate dos dados dos campos de digitação.</li>
 </ul>
 
 ### Aula 04 - Integrando componentes

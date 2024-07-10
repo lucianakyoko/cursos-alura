@@ -79,7 +79,27 @@ Ao utilizar todos esses componentes em conjunto, você se beneficia de um gerenc
 
 ---
 
-## 
+## Hook do Formik
+Entre os recursos do Formik, o useFormikContext se destaca como uma ferramenta essencial para acessar o estado e as funções do Formik em qualquer componente descendente. Mas o que é o useFormikContext?
+
+O useFormikContext é um hook customizado que fornece acesso ao contexto do Formik. Isso significa que você pode acessar as informações e funcionalidades do Formik a partir de qualquer componente dentro do formulário, sem precisar passá-las manualmente como props. Para isso, ele fornece as seguintes propriedades:
+
+formik: Retorna um objeto com o estado e as funções do Formik.
+errors: Retorna um objeto com os erros de validação do formulário.
+touched: Retorna um objeto com os campos que foram tocados pelo usuário.
+isSubmitting: Retorna um booleano que indica se o formulário está sendo submetido.
+submitForm: Função para submeter o formulário.
+setFieldValue: Função para definir o valor de um campo no formulário.
+values: Retorna um objeto com os valores de todos os campos do formulário.
+Ele é especialmente útil em cenários como:
+
+Componentes reutilizáveis: Se você precisa de um componente que pode ser usado em diferentes formulários, o hook facilita o acesso ao estado e funções do Formik sem a necessidade de props específicas.
+Formulários complexos: Em formulários com muitos campos e lógica complexa, o hook ajuda a organizar o código e evitar a repetição de código.
+Acesso a informações do Formik: Se você precisa acessar informações do Formik em um componente que não está diretamente relacionado ao formulário, o hook fornece uma maneira conveniente de fazer isso.
+Um ponto importante é que esse hook só funciona dentro do contexto de um componente Formik. Se você tentar usá-lo fora desse contexto, receberá um erro.
+
+---
+
 
 
 

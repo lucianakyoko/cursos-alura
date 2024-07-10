@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { Field } from "formik"
+import { ErrorMessage, Field } from "formik"
 
 const LabelEstilizada = styled.label`
     display: block;
@@ -33,5 +33,12 @@ export const CampoTexto = ({ titulo, ...props }) => {
         <InputEstilizado
             {...props}
         />
+        <ErrorMessage name={props.name}>
+            {mensagens => (
+                <div style={{color: 'red', marginTop: '4px'}}>
+                    {mensagens}
+                </div>
+            )}
+        </ErrorMessage>
     </LabelEstilizada>)
 }
