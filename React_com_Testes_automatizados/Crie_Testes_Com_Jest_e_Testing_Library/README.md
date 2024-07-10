@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Conhecendo testes no Front-end | ✔️ |
 | 2 | Criando os primeiros testes | ✔️ |
-| 3 | Simulando interações com a página | ⚫ |
+| 3 | Simulando interações com a página | ✔️ |
 | 4 | Explorando o Jest | ⚫ |
 | 5 | Pensando em CI/CD | ⚫ |
 
@@ -40,7 +40,12 @@
 
 ### Aula 03 - Simulando interações com a página
 <ul>
-  <li></li>
+  <li>Utilizar o userEvent() para simular o comportamento de pessoas usuárias interagindo com a página;</li>
+  <li>Organizar melhor seus testes utilizando o describe() para adicionar uma descrição geral de testes;</li>
+  <li>Testar componentes que recebem props;</li>
+  <li>Garantir que seus componentes de lista exibe dados dinâmicos e não html estático no seu código;</li>
+  <li>Dublar comportamentos de funções;</li>
+  <li>Testar eventos com o onSubmit, que é disparado ao enviar dados em um formulário.</li>
 </ul>
 
 ### Aula 04 - Explorando o Jest

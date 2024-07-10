@@ -77,3 +77,26 @@ Uma dúvida comum que pode surgir quando estamos testando é: “Porque eu preci
 A resposta é que os testes de snapshot sozinhos não são suficientes para testar os componentes de interface da sua aplicação. Eles são facilmente atualizados e precisam de um olhar humano para que alguém veja com cautela a renderização do componente.
 
 Por isso, testes de snapshots são fortes aliados nos testes, mas só eles tornam as asserções dos testes frágeis. Sempre busque fazer testes de snapshot combinados com asserções fortes que realmente testam o componente.
+
+---
+
+## explorando o userEvent
+O userEvent é uma biblioteca complementar para o Testing Library que fornece uma simulação mais avançada de interações do navegador do que o método integrado fireEvent
+
+Por padrão, ao criar uma aplicação React com o create-react-app o userEvent já vem instalado. Mas se por acaso você quiser realizar a instalação você pode fazer via terminal com o comando:
+```
+npm install --save-dev @testing-library/user-event @testing-library/dom
+```
+
+Alguns dos métodos do userEvent são:
+
+- click(): Dispara um evento de clique em um elemento;
+- dblClick: Dispara um evento de double click em um elemento;
+- type(): Escreve um texto dentro de um elemento de <input /> ou <textarea/>;
+- keyboard(): Simula eventos de teclado;
+- selectOptions(): Seleciona as opções especificadas de um <select /> ou <select multiple/>.
+
+[Documentação](https://testing-library.com/docs/ecosystem-user-event)
+
+---
+
