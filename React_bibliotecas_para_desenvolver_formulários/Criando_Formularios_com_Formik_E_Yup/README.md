@@ -14,7 +14,7 @@
 | 1 | Conhecendo a biblioteca | ✔️ |
 | 2 | Estruturando o formulário | ✔️ |
 | 3 | Validando dados | ✔️ |
-| 4 | Integrando componentes | ⚫ |
+| 4 | Integrando componentes | ✔️ |
 | 5 | Transformando dados | ⚫ |
 
 ---
@@ -47,7 +47,9 @@
 
 ### Aula 04 - Integrando componentes
 <ul>
-  <li></li>
+  <li>Implementar a validação de texto obrigatório;</li>
+  <li>Definir o mínimo de caractéres em um campo de digitação;</li>
+  <li>Aplicar a validação de máximo de caractéres.</li>
 </ul>
 
 ### Aula 05 - Transformando dados

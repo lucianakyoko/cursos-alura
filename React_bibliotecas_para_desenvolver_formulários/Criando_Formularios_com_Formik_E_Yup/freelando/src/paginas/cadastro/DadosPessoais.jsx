@@ -6,6 +6,7 @@ import { Col, Row } from "react-grid-system";
 import { Botao } from "../../componentes/Botao/Botao";
 import { Link } from "react-router-dom";
 import { Form, Formik } from 'formik';
+import * as Yup from 'yup'
 
 const estadosBrasileiros = [
   { text: "Acre", value: "AC" },
@@ -36,6 +37,13 @@ const estadosBrasileiros = [
   { text: "Sergipe", value: "SE" },
   { text: "Tocantins", value: "TO" },
 ];
+
+const schema = Yup.object().shape({
+  nome: Yup.string().required('Campo obrigatório').min(2, 'Digite seu nome completo'),
+  cidade: Yup.string().required('Campo obrigatório').max(58, 'Digiteuma cidade válida'),
+  estado: Yup.string().required('Campo obrigatório')
+});
+
 const DadosPessoais = () => {
   return (
     <Formik initialValues={{

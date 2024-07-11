@@ -100,6 +100,23 @@ Um ponto importante é que esse hook só funciona dentro do contexto de um compo
 
 ---
 
+## reutilização do Formik
+É comum ter vários formulários em um projeto, e o Formik permite usar vários componentes Formik sem problemas. Dessa maneira cada formulário fica encapsulado em seu próprio componente, facilitando a organização e a manutenção do código e as validações e o estado de cada formulário são independentes, evitando conflitos.
+
+Para usar o Formik em outros formulários você deve:
+
+Criar um componente Formik para cada formulário: Implemente a lógica de validação, estado e manipulação de dados específica para cada formulário.
+Importar os componentes Formik onde necessário: Inclua os componentes em seu layout principal ou em outros componentes.
+Passar as props necessárias: Cada componente Formik recebe props como o schema de validação, valores iniciais e funções de callback.
+
+##  Yup?
+O Yup é uma biblioteca JavaScript para validação de dados em diversos contextos, como formulários, APIs e validação de entrada de usuário em geral. Ele oferece uma maneira intuitiva e flexível de definir regras de validação complexas, tornando os dados recebidos pelo usuáro mais padronizados para salvar em sua base de dados.
+
+Ele possui diversas funcionalidades como a validação de tipos, onde podemos definir o tipo de dado que pode ser enviado naquele local. Também há a validação de formato, onde podemos especificar o formato dos dados, como por exemplo, o e-mail e CEP.
+
+Não somente isso, com o Yup podemos construir validações complexas e personalizadas, com combinações diferentes. Além de ter a possibilidade de definir mensagens de erro claras e informativas para cada tipo de validação que falhar.
+
+O Yup funciona com diversas bibliotecas populares, como React, Vue.js, Angular e outras. Bora conhecer melhor ele?
 
 
 
