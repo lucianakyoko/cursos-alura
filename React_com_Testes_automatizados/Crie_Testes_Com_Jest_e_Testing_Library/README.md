@@ -14,7 +14,7 @@
 | 1 | Conhecendo testes no Front-end | ✔️ |
 | 2 | Criando os primeiros testes | ✔️ |
 | 3 | Simulando interações com a página | ✔️ |
-| 4 | Explorando o Jest | ⚫ |
+| 4 | Explorando o Jest | ✔️ |
 | 5 | Pensando em CI/CD | ⚫ |
 
 ---
@@ -50,7 +50,10 @@
 
 ### Aula 04 - Explorando o Jest
 <ul>
-  <li></li>
+  <li>Mockar uma função com o jest.fn();</li>
+  <li>Testar funções que fazem parte da regra de negócio de suas aplicações como no caso da função que calcula o novo saldo;</li>
+  <li>Escrever testes com funções dubladas e assim já pensar em novas features para sua aplicação mesmo sem elas estarem implementadas;</li>
+  <li>Teve o primeiro contato com TDD, que significa Test Driven Development e em tradução livre pode ser entendido como Desenvolvimento Orientado a Testes.</li>
 </ul>
 
 ### Aula 05 - Pensando em CI/CD
