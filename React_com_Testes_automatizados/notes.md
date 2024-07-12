@@ -11,3 +11,9 @@
 ## 📄 - Leitura do artigo - Tipos de testes: quais os principais e por que utilizá-los?
 [Artigo](https://www.alura.com.br/artigos/tipos-de-testes-principais-por-que-utiliza-los)
 
+---
+
+## 📄 - Leitura do artigo - Entenda a Pirâmide de Teste
+(precisa estar logado)
+[Alura +](https://cursos.alura.com.br/extra/alura-mais/entenda-a-piramide-de-teste-c206)
+
