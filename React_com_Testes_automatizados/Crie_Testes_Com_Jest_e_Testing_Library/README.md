@@ -15,7 +15,7 @@
 | 2 | Criando os primeiros testes | ✔️ |
 | 3 | Simulando interações com a página | ✔️ |
 | 4 | Explorando o Jest | ✔️ |
-| 5 | Pensando em CI/CD | ⚫ |
+| 5 | Pensando em CI/CD | ✔️ |
 
 ---
 
@@ -58,14 +58,8 @@
 
 ### Aula 05 - Pensando em CI/CD
 <ul>
-  <li></li>
+  <li>Como escrever testes melhores com boas práticas e com uma linguagem semântica;</li>
+  <li>Como proteger sua aplicação em produção de códigos que foram inseridos mas não testados na sua aplicação.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->

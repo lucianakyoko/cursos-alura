@@ -100,3 +100,19 @@ Alguns dos métodos do userEvent são:
 
 ---
 
+## o que é CI/CD?
+Você já ouviu falar em Continuous Integration e Continuos Delivery? Não? Pois é exatamente o que significa as siglas CI e CD, respectivamente.
+
+Continuos Integration significa Integração Contínua e está relacionada a uma automação criada para que todas às vezes que haja uma mudança no código da aplicação ela seja integrada, testada ou implementada. Esse processo é compartilhado com todas as pessoas do time, permitindo uma integração das mudanças de código de maneira muito mais rápida. Com CI é possível reduzir conflitos e problemas no código.
+
+Já CD significa Entrega Contínua, e reúne a Integração Contínua, os testes realizados na aplicação e também a ação de colocar ela em produção, ou seja, CD junta os códigos e testes realizados na aplicação e coloca-os em produção, isto é, no ar.
+
+Tais técnicas são utilizadas e aplicadas com frequência em grandes times de desenvolvimento por permitir que o código, assim como os testes, tenham um fluxo de atualização constante, com qualidade e produtividade.
+
+---
+
+## GitHub Actions
+[Documentação](https://docs.github.com/pt/actions)
+Você sabe o que é o Github Actions? É uma plataforma de integração contínua e entrega contínua, o famoso CI/CD que permite automatizar a sua compilação, testar, rodar comandos de pipeline.
+
+O Github Actions permite executar fluxos de trabalho, que são processos automatizados que são executados quando acionado por um evento no repósitório como um push ou pull request. Além disso, o Github Actions fornece máquinas de virtuais Linux, Windows e MacOS para executar estes fluxos de trabalhos. 
