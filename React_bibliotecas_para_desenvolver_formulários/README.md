@@ -25,8 +25,8 @@
 ### 1️⃣ - Formulários com Formik e Yup
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | React: criando formulários com Formik e yup | Freelando | ➖ | 🔵 |
-| . | 1.2 | 🟫 | Criando esquemas de validacao com Yup | ✖️ | ➖ | ⚫ |
+| . | 1.1 | 🟪 | React: criando formulários com Formik e yup | Freelando | ➖ | ✔️ |
+| 🚩 | 1.2 | 🟫 | Criando esquemas de validacao com Yup | ✖️ | ➖ | ⚫ |
 
 
 

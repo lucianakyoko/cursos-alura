@@ -118,5 +118,38 @@ Não somente isso, com o Yup podemos construir validações complexas e personal
 
 O Yup funciona com diversas bibliotecas populares, como React, Vue.js, Angular e outras. Bora conhecer melhor ele?
 
+---
 
+## validação de e-mail
+O método yup.email() é uma ferramenta para validar endereços de e-mail em JavaScript. Com o auxílio dessa funcionalidade podemos garantir que os endereços de e-mail coletados sejam válidos e confiáveis e identificar o problema para o usuário com a possibilidade de imprimir mensagens de erro personalizadas.
 
+Ele verifica se um valor inserido segue o formato padrão de um endereço de e-mail, garantindo que os dados coletados sejam válidos e confiáveis, utilizando uma série de regras para verificar a estrutura de um endereço de e-mail:
+
+Presença de caracteres específicos: Verifica se o valor contém os caracteres '@', '.' e pelo menos um caractere antes de '@'.
+Formato do nome de usuário: O nome de usuário antes de '@' pode conter letras, números, pontos, sublinhados e hífens.
+Formato do domínio: O domínio após '@' deve conter pelo menos um ponto e pode conter letras, números, pontos, sublinhados e hífens.
+Tamanho máximo: O endereço de e-mail completo não pode ter mais de 254 caracteres.
+```
+const schema = Yup.object({
+  email: Yup.string().email("Email invalido").required("Email é obrigatório"),
+});
+
+const data = {
+  email: "joaosilva@email.com",
+};
+
+try {
+  await schema.validate(data);
+  // Email válido
+} catch (error) {
+  // Exibir mensagem de erro para o usuário
+}
+```
+
+O Yup.email() nesse caso fornece mensagens de erro personalizadas caso o valor inserido não seja válido:
+
+"Email inválido": O valor não segue o formato padrão de um endereço de e-mail.
+"Email é obrigatório": O campo de email está vazio.
+É importante considerar o contexto de seu projeto. Em alguns casos, você pode precisar de validações mais complexas, como verificar se o endereço de e-mail realmente existe ou se possuí um domínio específico.
+
+---

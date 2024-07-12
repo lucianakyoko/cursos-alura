@@ -38,10 +38,23 @@ const estadosBrasileiros = [
   { text: "Tocantins", value: "TO" },
 ];
 
+const formatarTelefone = valor => {
+  if(!value) return;
+
+  const telefone = valor.replace(/\D/g, "")
+  return `(${telefone.slice(0,2)}) ${telefone.slice(2,7)}-${telefone.slice(7)}`
+}
+
 const schema = Yup.object().shape({
-  nome: Yup.string().required('Campo obrigatório').min(2, 'Digite seu nome completo'),
-  cidade: Yup.string().required('Campo obrigatório').max(58, 'Digiteuma cidade válida'),
-  estado: Yup.string().required('Campo obrigatório')
+  nome: Yup.string().trim().lowercase().required('Campo obrigatório').min(2, 'Digite seu nome completo'),
+  cidade: Yup.string().titlecase().required('Campo obrigatório').max(58, 'Digiteuma cidade válida'),
+  estado: Yup.string().required('Campo obrigatório'),
+  email: Yup.string().required('Campo obrigatório').email('Digite um e-mail válido'),
+  telefone: Yup.string().required('Campo obrigatório').matches(/^\d{11}$/, 'Número de telefone inválido').transform(formatarTelefone),
+  senha: Yup.string().required('Campo obrigatório'),
+  confirmarSenha: Yup.string().required('Campo obrigatório').oneOf([Yup.ref('senha'), null], 'As senhas não conferem'),
+  termos: Yup.boolean().oneOf([true], 'Você deve aceitar os termos'),
+  nascimento: Yup.date().required('Campo obrigatório').max(new Date(), 'Digite uma data válida')
 });
 
 const DadosPessoais = () => {
@@ -55,35 +68,8 @@ const DadosPessoais = () => {
       senha: '', 
       confirmarSenha:''
     }}
-      validate={(values) => {
-        const errors = {};
-        if (!values.estado) {
-          errors.estado = 'Campo obrigatório';
-      }
-      if (!values.cidade) {
-          errors.cidade = 'Campo obrigatório';
-      }
-      if (!values.senha) {
-          errors.senha = 'Campo obrigatório';
-      }
-      if (!values.telefone) {
-          errors.telefone = 'Campo obrigatório'
-      } else if (!/^\d{11}$/i.test(values.telefone)) {
-          errors.telefone = 'Número de telefone inválido'
-      }
-      if (!values.email) {
-          errors.email = 'Campo obrigatório'
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-          errors.email = 'Email inválido'
-      }
-      if (!values.confirmarSenha) {
-          errors.confirmarSenha = 'Campo obrigatório'
-      } else if (values.senha != values.confirmarSenha) {
-          errors.confirmarSenha = 'As senhas não conferem'
-      }
-        return errors;
-      }}
-
+     
+      validationSchema={schema}
       onSubmit={(values) => {
         console.log('dados do formulario', values)
       }}
@@ -107,6 +93,13 @@ const DadosPessoais = () => {
                 titulo="Nome completo"
                 name='nome'
                 type="text"
+              />
+            </Col>
+            <Col>
+              <CampoTexto 
+                titulo='Data de nascimento' 
+                name='nascimento' 
+                type='date'
               />
             </Col>
           </Row>
@@ -162,6 +155,12 @@ const DadosPessoais = () => {
               />
             </Col>
           </Row>
+          <Row>
+            <label type='checkbox' name='termos'>Aceito os termos e condições</label>
+          </Row>
+          {formik.errors.termos ? (
+            <div style={{ color: 'red', marginTop: '4px'}}>{formik.errors.termos}</div>
+          ): null}
           <Row>
             <Col lg={6} md={6} sm={6}>
               <Link to="/cadastro/interesses">

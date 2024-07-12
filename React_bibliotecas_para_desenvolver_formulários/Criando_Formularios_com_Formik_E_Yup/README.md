@@ -15,7 +15,7 @@
 | 2 | Estruturando o formulário | ✔️ |
 | 3 | Validando dados | ✔️ |
 | 4 | Integrando componentes | ✔️ |
-| 5 | Transformando dados | ⚫ |
+| 5 | Transformando dados | ✔️ |
 
 ---
 
@@ -54,14 +54,13 @@
 
 ### Aula 05 - Transformando dados
 <ul>
-  <li></li>
+  <li>Construir validações para campos de e-mail;</li>
+  <li>Definir expressões regulares para validações de campos de digitação com Yup;</li>
+  <li>Aplicar a propriedade validationSchema para unir o Yup e a biblioteca Formik;</li>
+  <li>Construir um input do tipo checkbox com a biblioteca Formik;</li>
+  <li>Validar dados do tipo boolean;</li>
+  <li>Desenvolver um componente de digitação de datas com a biblioteca Formik;</li>
+  <li>Conferir datas e valida-las com o Yup.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
