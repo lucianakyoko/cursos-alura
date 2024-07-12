@@ -8,4 +8,6 @@
 
 ---
 
+## 📄 - Leitura do artigo - Tipos de testes: quais os principais e por que utilizá-los?
+[Artigo](https://www.alura.com.br/artigos/tipos-de-testes-principais-por-que-utiliza-los)
 
