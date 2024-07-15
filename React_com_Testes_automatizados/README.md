@@ -26,10 +26,10 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 1.1 | 🟥 | React.js Como testar seu Front-End? com Mario Souto | ✖️ | ➖ | ✔️ |
-| . | 1.2 | 🟪 | Crie testes com Jest e Testing Library... | Bytebank | ➖ | ✔️ |
+| . | 1.2 | 🟪 | Crie testes com Jest e Testing Library... | Bytebank | [🗂️](./Crie_Testes_Com_Jest_e_Testing_Library/) | ✔️ |
 | . | 1.3 | 🟫 | Tipos de testes: quais os principais e por que utiliza-los | ✖️ | ➖ | ✔️ |
 | . | 1.4 | 🟦 | Entenda a Pirâmide de TEste | ✖️ | ➖ | ✔️ |
-| 🚩 | 1.5 | 🟪 | React: testes de integracao e mocks no front-end | ✖️ | ➖ | ⚫ |
+| 🚩 | 1.5 | 🟪 | React: testes de integracao e mocks no front-end | Bytebank | [🗂️](./Testes_Integracao_Mocks_Frontend/) | 🔵 |
 
 
 

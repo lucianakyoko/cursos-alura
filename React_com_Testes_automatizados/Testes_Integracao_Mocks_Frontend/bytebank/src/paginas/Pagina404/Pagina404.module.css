@@ -1,0 +1,40 @@
+.container {
+  width: 590px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.container > p {
+  margin: 0 0 2rem 0;
+  text-align: center;
+  color: #000000;
+  font-size: 1.025rem;
+}
+
+.link {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: #47a138;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.container > img {
+  width: 470px;
+  height: 354px;
+}

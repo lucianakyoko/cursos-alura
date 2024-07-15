@@ -1,0 +1,74 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper p {
+  margin: 0.25rem 0;
+  color: #2f2e41;
+}
+
+.cartao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 124px;
+  width: 100%;
+}
+
+.cartao > img {
+  width: 267px;
+  height: 134px;
+}
+
+.funcoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  height: 100%;
+}
+
+.funcoes > span {
+  font-size: 0.9rem;
+}
+
+.botaoConfigurar {
+  width: 250px;
+  height: 40px;
+  background: #47a138;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 120%;
+  cursor: pointer;
+  transition: 0.2 ease-in-out;
+}
+
+.botaoBloquear {
+  width: 250px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #bf1313;
+  border-radius: 8px;
+  color: #bf1313;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 120%;
+  cursor: pointer;
+  transition: 0.2 ease-in-out;
+}
+
+.botaoConfigurar:hover {
+  background-color: #38812c;
+}

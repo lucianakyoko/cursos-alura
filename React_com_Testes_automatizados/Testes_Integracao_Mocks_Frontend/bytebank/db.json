@@ -1,0 +1,28 @@
+{
+  "transacoes": [
+    {
+      "transacao": "Depósito",
+      "valor": "150",
+      "data": "18/11/2022",
+      "mes": "Novembro",
+      "id": 1
+    },
+    {
+      "transacao": "Depósito",
+      "valor": "100",
+      "data": "21/11/2022",
+      "mes": "Novembro",
+      "id": 2
+    },
+    {
+      "transacao": "Depósito",
+      "valor": "102",
+      "data": "22/11/2022",
+      "mes": "Novembro",
+      "id": 3
+    }
+  ],
+  "saldo": {
+    "valor": 2000
+  }
+}

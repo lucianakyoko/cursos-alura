@@ -1,0 +1,32 @@
+.cabecalho {
+  background-color: #111111;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 1199px;
+}
+
+.usuario {
+  width: 282px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+p {
+  color: #31b237;
+  font-size: 14px;
+  margin-right: 1.5rem;
+}
+
+img {
+  height: 40px;
+  width: 40px;
+}

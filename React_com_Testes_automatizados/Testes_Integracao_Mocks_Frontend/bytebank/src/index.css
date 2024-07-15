@@ -1,0 +1,36 @@
+.container {
+  background-color: #cbcbcb;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 1rem;
+  width: 690px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.detalhe__superior {
+  background-image: url(./assets/detalhe-sup.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.detalhe__inferior {
+  background-image: url(./assets/detalhe-inf.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

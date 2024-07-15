@@ -1,0 +1,65 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 75%;
+  height: 100%;
+  padding-top: 16px;
+  z-index: 1;
+}
+
+.areaValor {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  margin-top: 2rem;
+}
+
+.grupo__opcoes {
+  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid #47a138;
+  font-size: 14px;
+  outline: none;
+}
+
+.legenda__opcoes {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 1rem;
+}
+
+.legenda {
+  padding: 0.8rem 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.campo__valor {
+  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid #91e697;
+  font-size: 14px;
+  outline: none;
+  text-align: center;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+.botao {
+  background-color: #47a138;
+  color: #f7f7f7;
+  padding: 0.8rem 0;
+  width: 70%;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+}
+
+.botao:hover {
+  background-color: #50bd3f;
+}

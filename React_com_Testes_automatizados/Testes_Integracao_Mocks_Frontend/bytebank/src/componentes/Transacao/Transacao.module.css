@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 60%;
+  height: 100%;
+}
+
+.detalhe__superior {
+  background-image: url(../../assets/detalhe-sup.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.detalhe__inferior {
+  background-image: url(../../assets/detalhe-inf.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
