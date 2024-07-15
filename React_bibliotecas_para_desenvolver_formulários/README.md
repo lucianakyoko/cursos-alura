@@ -25,7 +25,7 @@
 ### 1️⃣ - Formulários com Formik e Yup
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 1.1 | 🟪 | React: criando formulários com Formik e yup | Freelando | ➖ | ✔️ |
+| . | 1.1 | 🟪 | React: criando formulários com Formik e yup | Freelando | [🗂️](./Criando_Formularios_com_Formik_E_Yup/) | ✔️ |
 | . | 1.2 | 🟫 | Criando esquemas de validacao com Yup | ✖️ | ➖ | ✔️ |
 
 
@@ -34,6 +34,6 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 2.1 | 🟪 | React: gerencie e valide formulários com o React Hook Form | . | . | ⚫ |
+| 🚩 | 2.1 | 🟪 | React: gerencie e valide formulários com o React Hook Form | Voll | [🗂️](./Gerencia_Valide_Forms_React_Hook_Form/) | 🔵 |
 | . | 2.2 | 🟫 | React: validacao de formularios com React Hook Form | . | . | ⚫ |
 | . | 2.3 | 🟪 | React: eleve o nível de seus formularios com Zod e o React Hook Form | . | . | ⚫ |
