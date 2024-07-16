@@ -180,4 +180,39 @@ filterFunction(arr, maiorQueCinco)
 
 ---
 
+## por dentro do register
+[documentacao React](https://pt-br.legacy.reactjs.org/docs/forms.html)
 
+Quando criamos componentes como campos de entrada no React, temos dois caminhos a seguir, ou criamos os componentes controlados ou não controlados. A documentação do React recomenda o uso de componentes controlados, pois com eles a gente consegue ter o controle do estado do componente, e nesse caso dos dados do formulário.
+
+Mas imagine que você tenha um formulário grande e complexo, com vários campos. Você teria que criar um estado para cada campo e controlar muitos estados em uma aplicação pode ser bem problemático. Então é aí que surge o React Hook Form, e a solução que essa biblioteca disponibiliza para a gente é genial.
+
+Estou falando do register, que é um método que lida com toda tarefa de controlar o formulário. O register recebe como parâmetro o nome do campo e um objeto de opções. E como retorno a gente consegue obter formas de manipular e ter acesso aos valores dos campos de entrada de nosso formulário.
+
+Por exemplo, poderíamos usar o register da seguinte forma:
+```
+const { onChange, onBlur, name, ref } = register('nome'); 
+        
+<Input
+  onChange={onChange} // assina o evento de onChange
+  onBlur={onBlur} // assina o evento de onBluor
+  name={name} // assina a prop name
+  ref={ref} // assina uma referencia com o ref
+/>
+```
+
+O que é equivalente a
+```
+<input {...register('nome')} />
+```
+
+Entre as opções que podemos passar como parâmetro para o register estão:
+
+max : O valor máximo que podemos passar para o campo de entrada;
+min : O valor mínimo que podemos passar para o campo de entrada;
+disabled : Destiva o campo se o seu valor for true;
+onChange : Uma função que pode ser invocada sempre que o formulário mudar. Boa para debuggar sua aplicação;
+onBlur : Outra função usada para debuggar seu código quando o foco não estiver mais no campo em questão;
+E muitas outras.
+
+O método register lida com toda essa lógica por debaixo dos panos e você não precisa criar vários estados para os campos de seus formulários.

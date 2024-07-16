@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Conhecendo o React Hook Form | ✔️ |
-| 2 | Aplicando validações | ⚫ |
+| 2 | Aplicando validações | ✔️ |
 | 3 | Lidando com erros | ⚫ |
 | 4 | Validando dados de uma API | ⚫ |
 | 5 | Componentes controlados | ⚫ |
@@ -32,7 +32,9 @@
 
 ### Aula 02 - Aplicando validações
 <ul>
-  <li></li>
+  <li>Fazer validação básicas nos campos de entrada do formulário usando as opções de validações do próprio React Hook Form;</li>
+  <li>Criar validações customizadas e usá-las nos campos de entrada do formulário usando a opção validate do register;</li>
+  <li>Funciona o register e como ele faz para controlar os nossos campos do formulário por debaixo dos panos.</li>
 </ul>
 
 ### Aula 03 - Lidando com erros
