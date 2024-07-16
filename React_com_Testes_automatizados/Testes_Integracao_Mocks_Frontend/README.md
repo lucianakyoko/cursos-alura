@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Testando rotas da aplicação | ✔️ |
-| 2 | Testes de integração | ⚫ |
+| 2 | Testes de integração | ✔️ |
 | 3 | Testando chamadas a API | ⚫ |
 | 4 | Testando hooks | ⚫ |
 | 5 | Cobertura de testes | ⚫ |
@@ -30,7 +30,10 @@
 
 ### Aula 02 - Testes de integração
 <ul>
-  <li></li>
+  <li>Como escrever testes de integração entre dois componentes da apliação;</li>
+  <li>Como escrever testes de integração entre as páginas da aplicação;</li>
+  <li>Mais sobre consultas de elementos na tela;</li>
+  <li>A verificar se um elemento possui outro elemento dentro dele utilizando o .toContainHTML().</li>
 </ul>
 
 ### Aula 03 - Testando chamadas a API
