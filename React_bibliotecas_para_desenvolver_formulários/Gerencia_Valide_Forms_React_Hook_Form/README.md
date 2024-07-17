@@ -39,7 +39,9 @@
 
 ### Aula 03 - Lidando com erros
 <ul>
-  <li></li>
+  <li>Usar o formState para ter acesso ao objeto errors com os erros de validação que acontecem durante o preenchimento dos seus formulários;</li>
+  <li>Criar mensagens de erro personalizadas, melhorando a usabilidade da sua aplicação;</li>
+  <li>Usar o watch para observar o valor de um campo do formulário e usar isso para construir uma validação de verificação de senha.</li>
 </ul>
 
 ### Aula 04 - Validando dados de uma API
