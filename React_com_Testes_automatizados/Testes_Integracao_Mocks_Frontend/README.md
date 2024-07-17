@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Testando rotas da aplicação | ✔️ |
 | 2 | Testes de integração | ✔️ |
-| 3 | Testando chamadas a API | ⚫ |
+| 3 | Testando chamadas a API | ✔️ |
 | 4 | Testando hooks | ⚫ |
 | 5 | Cobertura de testes | ⚫ |
 
@@ -38,7 +38,11 @@
 
 ### Aula 03 - Testando chamadas a API
 <ul>
-  <li></li>
+  <li>Criar testes de integração entre o Front e o Backend;</li>
+  <li>Criar testes de requisições para uma api;</li>
+  <li>Usar mocks para mockar o retorno de uma api;</li>
+  <li>Criar testes para requisições em casos de sucesso;</li>
+  <li>Criar testes para requisições em casos de falha.</li>
 </ul>
 
 ### Aula 04 - Testando hooks
