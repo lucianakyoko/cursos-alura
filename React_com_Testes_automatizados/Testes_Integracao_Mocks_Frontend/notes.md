@@ -69,3 +69,10 @@ beforeEach(() => {
 ```
 
 Ah, e só um detalhe, os hooks não podem ser chamados dentro de um test, sempre se lembre de chamá-los fora! Ok?
+
+---
+
+##  biblioteca react-hooks
+
+Sabia que até pouco tempo atrás se testava hooks do React de forma diferente? Existe uma biblioteca para isso, a react-hooks, que até o momento em que foi produzido este curso ainda não possui suporte para a versão 18 do React.
+[link](https://github.com/testing-library/react-hooks-testing-library)

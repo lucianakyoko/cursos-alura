@@ -14,7 +14,7 @@
 | 1 | Testando rotas da aplicação | ✔️ |
 | 2 | Testes de integração | ✔️ |
 | 3 | Testando chamadas a API | ✔️ |
-| 4 | Testando hooks | ⚫ |
+| 4 | Testando hooks | ✔️ |
 | 5 | Cobertura de testes | ⚫ |
 
 ---
@@ -47,7 +47,10 @@
 
 ### Aula 04 - Testando hooks
 <ul>
-  <li></li>
+  <li>Utilizar o renderHook para renderizar hooks fora de componentes React;</li>
+  <li>Testar hooks do React utilizando o renderHook;</li>
+  <li>Testar hooks customizados;</li>
+  <li>Utilizar o act para lidar com alterações de estados nos testes.</li>
 </ul>
 
 ### Aula 05 - Cobertura de testes
