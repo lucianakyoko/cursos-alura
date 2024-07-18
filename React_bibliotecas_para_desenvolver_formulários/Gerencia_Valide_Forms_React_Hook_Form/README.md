@@ -46,7 +46,9 @@
 
 ### Aula 04 - Validando dados de uma API
 <ul>
-  <li></li>
+  <li>Validar formulários que fazem requisição de dados para uma API;</li>
+  <li>Implementar preenchimento automático usando o setValue do react hook form para preencher automáticamente os campos de um formulário;</li>
+  <li>Usar o objeto defaultValues para fornecer valores iniciais para os campos de entrada do formulário de endereço.</li>
 </ul>
 
 ### Aula 05 - Componentes controlados
