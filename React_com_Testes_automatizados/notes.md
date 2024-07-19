@@ -17,3 +17,9 @@
 (precisa estar logado)
 [Alura +](https://cursos.alura.com.br/extra/alura-mais/entenda-a-piramide-de-teste-c206)
 
+---
+
+## 📄 - Leitura do artigo - Dicas para desenvolver testes unitários e de integração no Front-end
+[Artigo](https://www.alura.com.br/artigos/dicas-desenvolver-testes-unitarios-integracao-front-end?utm_source=gnarus&utm_medium=timeline)
+
+---
