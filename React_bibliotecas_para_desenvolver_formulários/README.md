@@ -34,6 +34,6 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 2.1 | 🟪 | React: gerencie e valide formulários com o React Hook Form | Voll | [🗂️](./Gerencia_Valide_Forms_React_Hook_Form/) | 🔵 |
-| . | 2.2 | 🟫 | React: validacao de formularios com React Hook Form | . | . | ⚫ |
-| . | 2.3 | 🟪 | React: eleve o nível de seus formularios com Zod e o React Hook Form | . | . | ⚫ |
+| . | 2.1 | 🟪 | React: gerencie e valide formulários com o React Hook Form | Voll | [🗂️](./Gerencia_Valide_Forms_React_Hook_Form/) | ✔️ |
+| . | 2.2 | 🟫 | React: validacao de formularios com React Hook Form | ✖️ | ✖️ | ✔️ |
+| 🚩 | 2.3 | 🟪 | React: eleve o nível de seus formularios com Zod e o React Hook Form | . | . | ⚫ |
