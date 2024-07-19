@@ -29,7 +29,7 @@
 | . | 1.2 | 🟪 | Crie testes com Jest e Testing Library... | Bytebank | [🗂️](./Crie_Testes_Com_Jest_e_Testing_Library/) | ✔️ |
 | . | 1.3 | 🟫 | Tipos de testes: quais os principais e por que utiliza-los | ✖️ | ➖ | ✔️ |
 | . | 1.4 | 🟦 | Entenda a Pirâmide de TEste | ✖️ | ➖ | ✔️ |
-| 🚩 | 1.5 | 🟪 | React: testes de integracao e mocks no front-end | Bytebank | [🗂️](./Testes_Integracao_Mocks_Frontend/) | 🔵 |
+| . | 1.5 | 🟪 | React: testes de integracao e mocks no front-end | Bytebank | [🗂️](./Testes_Integracao_Mocks_Frontend/) | ✔️ |
 
 
 
@@ -37,7 +37,7 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 2.1 | 🟫 | Dicas para desenvolver testes unitários e de integração no front-end | . | . | ⚫ |
+| 🚩 | 2.1 | 🟫 | Dicas para desenvolver testes unitários e de integração no front-end | . | . | ⚫ |
 | . | 2.2 | 🟪 | React: escreva testes end to end com Cypress | . | . | ⚫ |
 | . | 2.3 | 🟨 | Case Avenue: Testes e Qualidade | . | . | ⚫ |
 | . | 2.4 | 🟪 | React: avançando em testes e2e com Cypress | . | . | ⚫ |

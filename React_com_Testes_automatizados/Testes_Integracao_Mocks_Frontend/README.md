@@ -55,14 +55,11 @@
 
 ### Aula 05 - Cobertura de testes
 <ul>
-  <li></li>
+  <li>O que é cobertura de testes;</li>
+  <li>Como gerar um relatório de cobertura de testes;</li>
+  <li>O que são cada coluna do relatório de cobertura de testes;</li>
+  <li>Como adicionar um limite de cobertura mínima para seus testes;</li>
+  <li>Como criar uma action no github para permitir pull requests para a branch principal apenas se ela atingir o limite mínimo de cobertura de testes.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->

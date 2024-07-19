@@ -76,3 +76,61 @@ Ah, e só um detalhe, os hooks não podem ser chamados dentro de um test, sempre
 
 Sabia que até pouco tempo atrás se testava hooks do React de forma diferente? Existe uma biblioteca para isso, a react-hooks, que até o momento em que foi produzido este curso ainda não possui suporte para a versão 18 do React.
 [link](https://github.com/testing-library/react-hooks-testing-library)
+
+---
+
+##  falsos positivos nos testes
+Dizemos que um código está coberto por testes quando ao executarmos os nossos testes suas linhas são executadas. Mas não se engane, mesmo que um código possua 100% de cobertura de testes isso não significa que ele está 100% testado.
+
+É muito fácil gerar o que chamamos de falsos positivos enquanto testamos nosso software. Por exemplo, podemos ter um arquivo onde uma funçãoA utiliza uma funçãoB internamente, porém só a função A é exportada e testada
+```
+//falsoPositivo.js
+const funcaoB () {
+    // executa algo
+}
+
+const funcaoA () {
+    funcaoB()
+    return 'texto qualquer'
+}
+
+export default funcaoA
+```
+
+```
+ //falsoPositivo.test.js
+test('retorna um texto qualquer', () => {
+   expect(funcaA()).toEqual(expect.any(String))
+}
+``` 
+
+Se rodarmos os testes veremos que o relatório de cobertura nos mostra que o arquivo falsoPositivo.js foi testado 100%, mas na verdade só estamos testando a funcaoA e claramente não testamos nada sobre a funcaoB, não temos nenhum testes para garantir que ela funciona como deveria ou até um teste para verificar se ela foi chamada.
+
+Então não se deixe enganar por relatórios de cobertura de teste. O que você como pessoa desenvolvedora deve fazer é garantir que seus testes se assemelhe o máximo possível com a forma que seu software ou aplicação será utilizado.
+
+---
+
+##  cobertura de código
+Pode ser que você encontre em literaturas sobre testes o termo Cobertura de código (code coverage), e pode pensar que cobertura de código e Cobertura de testes (test coverage) são a mesma coisa. Afinal, são ou não são a mesma coisa? Para esclarecer, precisamos entender o que é cada um.
+
+**Cobertura de código x Cobertura de testes**
+É uma medida quantitativa que visa medir a eficácia dos testes perante os requisitos testados, determinando se os casos de testes cobrem os requisitos testados. Com ela é possível identificar códigos mal escritos, supérfluos, que não são testados e facilita o aumento da cobertura de testes já que podemos descobrir com essa métrica cenários que não estão sendo explorados.
+
+Já a cobertura de testes é uma medida qualitativa que visa medir a eficácia dos testes perante os requisitos testados, determinando se os casos de testes existentes cobrem os requisitos que estão sendo testados.
+
+E como isso se relaciona com o quanto meu código está testado ou não?
+
+Em resumo, podemos dizer que uma cobertura de código alta não garante que o código será livre de defeitos, sendo mais objetiva mas sem dizer o quão realmente testado o nosso software é, enquanto que a cobertura de testes é mais subjetiva e dá um pouco mais de informação.
+
+**Artigos para leitura**
+- [Um pouco sobre cobertura de código e cobertura de testes](https://medium.com/liferay-engineering-brazil/um-pouco-sobre-cobertura-de-c%C3%B3digo-e-cobertura-de-testes-4fd062e91007)
+
+- [Test Coverage](https://www.martinfowler.com/bliki/TestCoverage.html)
+
+- [Code Coverage vs Test Coverage; Subjectivity and Usefulness](https://danashby.co.uk/2019/02/14/code-coverage-vs-test-coverage/)
+---
+
+## GitHub Actions
+Você sabe o que é o Github Actions? É uma plataforma de integração contínua e entrega contínua, o famoso CI/CD que permite automatizar a sua compilação, testar, rodar comandos de pipeline.
+
+O Github Actions permite executar fluxos de trabalho, que são processos automatizados que são executados quando acionado por um evento no repositório como um push ou pull request. Além disso, o Github actions fornece máquinas virtuais Linux, Windows e MacOS para executar estes fluxos de trabalhos.
