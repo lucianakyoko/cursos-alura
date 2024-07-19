@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import {
   Button,
   ErrorMessage,
@@ -9,6 +9,7 @@ import {
   Label,
   Titulo,
 } from "../../components";
+import InputMask from "../../components/InputMask";
 
 interface FormInputEndereco {
   cep: string;
@@ -24,6 +25,7 @@ const CadastroEndereco = () => {
     handleSubmit, setError, 
     setValue, 
     watch, 
+    control,
     formState:{errors} 
   } = useForm<FormInputEndereco>({
     mode: 'all',
@@ -71,18 +73,29 @@ const CadastroEndereco = () => {
     <>
       <Titulo>Agora, mais alguns dados sobre você:</Titulo>
       <Form onSubmit={handleSubmit(aoSubmeter)}>
-        <Fieldset>
-          <Label htmlFor="campo-cep">CEP</Label>
-          <Input 
-            id="campo-cep" 
-            placeholder="Insira seu CEP" 
-            type="text" 
-            {...register('cep', {required: 'O campo é obrigatório'})}
-            $error={!!errors.cep}
-            onBlur={() => fetchEndereco(cepDigitado)}
-          />
-          {errors.cep && <ErrorMessage>{errors.cep.message}</ErrorMessage>}
-        </Fieldset>
+        <Controller
+          control={control}
+          name="cep"
+          rules={{
+            required: "O campo de cep é obrigatório",
+          }}
+          render={({ field }) => (
+            <Fieldset>
+              <Label>CEP</Label>
+              <InputMask
+                mask="99999-999"
+                id="campo-cep"
+                placeholder="Insira seu CEP"
+                type="text"
+                $error={!!errors.cep}
+                onChange={field.onChange}
+                onBlur={() => fetchEndereco(cepDigitado)}
+              />
+              {errors.cep && <ErrorMessage>{errors.cep.message}</ErrorMessage>}
+            </Fieldset>
+          )}
+        />
+
         <Fieldset>
           <Label htmlFor="campo-rua">Rua</Label>
           <Input 

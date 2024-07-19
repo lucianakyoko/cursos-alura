@@ -216,3 +216,55 @@ onBlur : Outra função usada para debuggar seu código quando o foco não estiv
 E muitas outras.
 
 O método register lida com toda essa lógica por debaixo dos panos e você não precisa criar vários estados para os campos de seus formulários.
+
+---
+
+## você no controle
+Em muitas situações na nossa vida como pessoas desenvolvedoras, quando precisamos criar um site, uma landing page ou página para algum serviço, não é vantajoso criar algo bem do início, bem do zero mesmo. Por exemplo, uma página de vendas que irá ficar no ar por apenas 30 dias, ou então uma landing page de divulgação de um evento que ficará online durante o evento.
+
+Esses produtos geralmente precisam ser criados de forma rápida e eficiente, e isso pode fazer com que muita vezes seja melhor usar uma biblioteca de componentes com componentes prontos do que criar tudo do zero e não mão, linha de código por linha de código.
+
+Mas vimos que componentes de bibliotecas externas geralmente são controlados, e o react hook form prefere os componentes não controlados. Mas como as pessoas que criaram essa biblioteca sabiam da possibilidade de eventualmente ser preciso usar componentes controlados eles criaram o [Controller](https://react-hook-form.com/docs/usecontroller/controller).
+
+O Controller é um componente da API do React Hook Form que permite com que possamos trabalhar com componentes controlados de bibliotecas externas como o MUI, Tailwind CSS components, etc.
+
+Então, caso você esteja trabalhando com uma biblioteca de componentes, com componentes prontos e controlados, é muito recomendado que você use o Controller. Por exemplo:
+
+```
+import { useForm, Controller, SubmitHandler } from "react-hook-form"
+import { TextField, Checkbox } from "@material-ui/core"
+
+interface IFormInputs {
+  TextField: string
+  MyCheckbox: boolean
+}
+
+function App() {
+  const { handleSubmit, control, reset } = useForm<IFormInputs>({
+    defaultValues: {
+      MyCheckbox: false,
+    },
+  })
+  const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data)
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        name="MyCheckbox"
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => <Checkbox {...field} />}
+      />
+      <input type="submit" />
+    </form>
+  )
+}
+```
+
+No exemplo acima, usa-se o Controller para renderizar o componente Checkbox do MUI. A gente precisa da prop control, que será quem irá gerenciar as informações desse componente e passá-las para o useForm. Com isso temos acesso ao estado desse componente e seus valores.
+
+E para renderizar o Checkbox usamos o método render com uma função de callback. Como parâmetro dessa função temos o fiel, que é um objeto que irá funcionar semelhante ao register, e com isso conseguimos controlar o componente Checkbox.
+
+[Documentação](https://react-hook-form.com/docs/usecontroller/controller)
+
+---

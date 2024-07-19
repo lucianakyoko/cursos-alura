@@ -53,14 +53,9 @@
 
 ### Aula 05 - Componentes controlados
 <ul>
-  <li></li>
+  <li>Aplicar máscaras de formulários através do uso de bibliotecas externas como o react input mask;</li>
+  <li>Usar o Controller do React Hook Form para poder utilizar componentes controlados de bibliotecas externas, como MUI, Ant Design;</li>
+  <li>Usar o reset para limpar os campos dos formulários após a submissão.</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
