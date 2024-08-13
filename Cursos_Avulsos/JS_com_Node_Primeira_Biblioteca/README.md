@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Acessando e lendo arquivos  | 🔵 |
-| 2 | Criando a lógica do projeto | ⚫ |
+| 2 | Criando a lógica do projeto | 🔵 |
 | 3 | Tratamento de erros | ⚫ |
 | 4 | Import/export e promessas | ⚫ |
 | 5 | O NPM e suas bibliotecas | ⚫ |
@@ -32,7 +32,8 @@
 
 ### Aula 02 - Criando a lógica do projeto
 <ul>
-  <li></li>
+  <li>Como utilizar métodos de array e objeto do JavaScript para resolver problemas comuns de lógica de programação, como manipulação de arrays, strings e objetos;</li>
+  <li>Como organizar as funcionalidades do projeto em funções separadas, utilizando a importação e exportação de módulos para comunicar as funções entre si e utilizá-las onde necessário.</li>
 </ul>
 
 ### Aula 03 - Tratamento de erros
