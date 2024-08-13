@@ -1,0 +1,21 @@
+:root {
+  --azul-claro: #339cff;
+  --azul-escuro: #0b3b60;
+  --branco: #ffffff;
+  --cinza: #6b6e71;
+  --cinza-claro: #e7ebef;
+  --fonte-principal: "Public Sans", sans-serif;
+  --fonte-secundaria: "Archivo", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
