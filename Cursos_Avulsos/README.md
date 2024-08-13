@@ -38,7 +38,8 @@
 | . | --- | 📘 Curso | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- |
 | . | 4.1 | Node.js: Autenticação, Passport e OAuth 2.0 | ➖ | [🗂️](./NodeJS_Autenticacao_Passport_Oauth2/) | 🔵 |
-| . | 4.2 | ➖ | ➖ | 🗂️ | ⚫ |
+| . | 4.2 | Js com Node.js: criando sua primeira biblioteca | ➖ | [🗂️](./JS_com_Node_Primeira_Biblioteca/) | 🔵 |
+| . | 4.3 | ➖ | ➖ | 🗂️ | ⚫ |
 
 
 ### 5️⃣ - Banco de dados

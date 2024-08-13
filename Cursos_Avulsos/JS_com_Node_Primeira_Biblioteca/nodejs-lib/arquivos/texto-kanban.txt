@@ -1,0 +1,126 @@
+https://www.alura.com.br/artigos/metodo-kanban
+
+Introdução
+
+Mesmo que você nunca tenha trabalhado ou estudado Kanban, se você trabalha com agilidade, é muito provável que já tenha ouvido alguma dessas frases:
+
+"Comece pelo que você já tem";
+"Pare de começar e comece a terminar";
+"Kanban é um método e não um framework";
+"Kanban e Scrum, é tudo a mesma coisa";
+"Kanban é uma metodologia ágil";
+"Você precisa limitar o trabalho em andamento";
+"Para que isso funcione, precisamos de uma política explícita";
+"Para ser ágil, é preciso trabalhar com um sistema puxado".
+
+Independentemente do seu nível de conhecimento de agilidade, ao final deste artigo você conseguirá entender cada uma dessas frases e saber identificar as que estão corretas, as que estão incorretas e aquelas que fazem parte do universo Kanban.
+
+O que é Kanban? E para que serve esse método?
+
+Primeiramente, precisamos definir que este artigo fala especificamente do Método Kanban e isso é importante porque kanban tem diversos significados diferentes.
+
+A palavra japonesa kanban significa “sinalização” ou “cartão” e poderia ser usada para fazer referência a um sistema de sinalização que utiliza cartões.
+
+Quadro Kanban
+Diversas metodologias e frameworks utilizados na agilidade, como o Scrum, por exemplo, utilizam-se de um quadro que podemos chamar “Quadro Kanban”, no qual temos alguns cartões que se deslocam pelo quadro, ou seja, alguns “kanbans”. Por isso, é fundamental ter em mente o que é Scrum e Kanban, para não se confundir.
+Lean Manufacturing (ou sistema de produção Toyota)
+
+No sistema de produção Toyota, idealizado pelo engenheiro Taiichi Ohno, nos anos 1950, a palavra kanban foi utilizada para referir-se à sinalização criada para permitir o uso do sistema puxado (detalharemos isso um pouco mais adiante).
+
+Método Kanban
+
+Em 2010, David J. Anderson criou o modelo Kanban para desenvolvimento de software, que combina elementos do pensamento Lean com o pensamento ágil no processo de desenvolvimento de software. Esse novo modelo foi batizado de Método Kanban. Tempos depois, o Método Kanban evoluiria para o uso com outros tipos de produtos, além de software.
+
+Kanban: Método, Metodologia ou Framework?
+
+David J. Anderson sugeriu convencionar o nome Método Kanban sempre com a palavra Kanban escrita com “K” maiúsculo. Isso na tentativa de diferenciar o Método Kanban dos outros significados da palavra kanban (com “k” minúsculo). Anderson descreveu esse método de trabalho no livro “Kanban: Mudança Evolucionária de Sucesso para o seu Negócio de Tecnologia”, publicado em 2010. Nesse mesmo ano, foi um dos criadores da Kanban University.
+
+Nos materiais da Kanban University, como o Guia Oficial do Método Kanban (que pode ser baixado na própria página web em 17 idiomas, incluindo inglês, português e espanhol) sempre encontramos de forma clara a distinção entre o conceito de Método e Framework. Isso para que os praticantes do Método Kanban tenham clareza de que a função e a forma de implementação deste é um pouco diferente da implementação de um framework, como o Scrum, por exemplo.
+
+Uma metodologia, por outro lado, é muito mais prescritiva e completa que um método ou um framework. Dessa forma, o Método Kanban claramente não pode ser considerado uma metodologia kanban.
+
+Em resumo, o que é o Método Kanban?
+
+Método Kanban é um conjunto de princípios e práticas que tem o objetivo de proporcionar uma evolução na forma que sua equipe (ou empresa) entrega valor nos serviços prestados. No Kanban, eliminamos os desperdícios e melhoramos a entrega contínua de valor através de um sistema puxado.
+
+Embora a frase acima pareça apenas uma peça de marketing, há uma série de conceitos técnicos incluídos nessa explicação, os quais veremos em detalhes neste artigo.
+Qual a principal característica do Kanban?
+
+O Kanban se baseia em princípios e características específicas para melhorar a eficiência e a produtividade de uma organização. Vamos conhecer as principais características do Kanban e como elas contribuem para a melhoria dos processos.
+
+    Produção nivelada: o sistema Kanban visa equilibrar a demanda de trabalho em cada etapa do processo, evitando gargalos e assegurando que a quantidade de trabalho seja distribuída de maneira uniforme. Assim, é possível garantir um fluxo de trabalho leve, contínuo e sem sobrecargas;
+
+    Redução do tempo de preparação: o Kanban busca minimizar o tempo necessário para configurar e preparar uma tarefa ou processo. Ao reduzir os tempos de troca de ferramentas, configuração de máquinas e outros processos de preparação, é possível aumentar a eficiência e a capacidade de resposta do sistema, permitindo que mais trabalho seja concluído em menos tempo;
+
+    Layout de máquinas: ao projetar a disposição física de ferramentas como máquinas e equipamentos de trabalho, o Kanban tem o objetivo de otimizar o fluxo de trabalho e reduzir o desperdício. Reorganizando o layout de forma lógica e eficiente, é possível reduzir o tempo de deslocamento e o transporte de materiais, facilitando a execução das tarefas e evitando atrasos;
+
+    Padronização dos trabalhos: ao estabelecer procedimentos padronizados e claros para a execução de cada tarefa, é possível eliminar as variações e inconsistências, garantindo assim a qualidade e a consistência do trabalho realizado. Além disso, a padronização facilita a aprendizagem e o treinamento de novos membros da equipe, tornando a transição e a integração mais suaves;
+
+    Aperfeiçoamento contínuo das atividades: por meio da análise de dados e da identificação de oportunidades de otimização, o Kanban incentiva a busca constante por melhorias nos processos. Ao promover uma cultura de melhoria contínua, o Kanban estimula a equipe a identificar e a resolver problemas, eliminando desperdícios, reduzindo tempo de espera e aprimorando a eficiência do sistema.
+
+Essas características trabalham em conjunto para otimizar os processos, melhorar a eficiência e aumentar a produtividade, tornando o Kanban uma metodologia poderosa para organizações que buscam aprimorar seus fluxos de trabalho e alcançar resultados consistentes.
+Quais são os dois tipos de Kanban?
+
+Existem dois tipos principais de Kanban, o Kanban de Produção e o Kanban de Movimentação.
+
+O Kanban de Produção é utilizado em ambientes de manufatura e fabricação. Os cartões representam os itens em diferentes etapas do processo produtivo. À medida que um item é concluído em uma etapa, o cartão correspondente é movido para a próxima etapa, sinalizando que a produção seguinte pode começar. Esse sistema de controle ajuda a equilibrar o fluxo de trabalho, evitando o acúmulo de estoque em etapas específicas e melhorando a eficiência geral da produção.
+
+E o Kanban de movimentação, também conhecido como Kanban de transporte, é utilizado para controlar o fluxo de materiais, componentes ou produtos, entre diferentes locais ou departamentos. Ele é particularmente útil em empresas com múltiplos armazéns, linhas de produção ou pontos de distribuição. Nesse caso, os cartões Kanban são usados ​​para rastrear o movimento físico dos itens para garantir que haja material suficiente disponível em qualquer ponto do processo. Esse sistema visa evitar gargalos de material em áreas específicas, além de otimizar e reduzir atrasos na produção.
+
+A utilização tanto do Kanban de produção quanto do Kanban de movimentação, facilita a sincronização do gerenciamento de estoque e da produção, permitindo operações mais eficientes, melhor controle dos fluxos de trabalho e resposta ágil às demandas do mercado.
+Onde é recomendado usar Kanban?
+
+O Kanban é uma metodologia versátil que pode ser aplicada em diversos contextos e setores. Sua abordagem visual e com foco no fluxo de trabalho, o tornam uma ferramenta eficaz para melhorar a gestão e a eficiência em diversas áreas, como:
+
+    Gestão de projetos;
+    Gestão de TI;
+    Desenvolvimento de software;
+    Gerenciamento de fluxo de produção;
+    Finanças;
+    Logística e cadeia de suprimentos;
+    Design;
+    Marketing; Atendimento ao cliente;
+    Gestão das atividades pessoais;
+    Gestão de fluxo de trabalho em escritórios.
+
+Através do uso do Kanban, as organizações podem ganhar visibilidade, transparência e controle sobre suas atividades, resultando em uma maior produtividade e melhor gerenciamento de prazos. De forma geral, é recomendado utilizar esse sistema em qualquer contexto que envolva a gestão de tarefas, controle de fluxo de trabalho e melhoria da eficiência operacional, por ser um sistema visual e flexível.
+Quais as vantagens do Kanban?
+
+Já vimos diversas vantagens do sistema Kanban nos tópicos anteriores. Essa abordagem oferece benefícios significativos para o controle de processos, o aprimoramento da eficiência e a gestão de projetos. Aqui estão mais algumas das vantagens de utilizar o Kanban:
+
+    Visualização do fluxo de trabalho: ao utilizar um quadro Kanban, os membros da equipe podem visualizar todas as tarefas, seus estágios e o andamento do trabalho. Essa representação visual permite que todos tenham uma visão geral do projeto, tornando mais fácil entender o progresso e identificar os gargalos;
+
+    Dinamismo entre as pessoas: o Kanban promove maior dinamismo entre as pessoas ao incentivar a colaboração, a comunicação transparente e o trabalho em equipe. Através da visualização clara do fluxo de trabalho, todos os membros da equipe têm acesso às informações atualizadas, o que facilita a identificação de tarefas, prioridades e dependências;
+
+    Ambiente colaborativo: o Kanban promove um ambiente de colaboração ao incentivar a clareza, a comunicação aberta e o trabalho em equipe, permitindo que todas as etapas do fluxo de trabalho sejam visualizadas e compartilhadas entre os membros do time. Isso cria uma base sólida para a colaboração, pois todas as pessoas têm acesso às informações atualizadas sobre as tarefas, prioridades e dependências;
+
+    Autonomia: o Kanban estimula a autonomia e a responsabilidade individual, uma vez que cada pessoa é encorajada a contribuir ativamente para o sucesso do projeto, tomando decisões e agindo de acordo com as necessidades do fluxo de trabalho;
+
+    Visibilidade dos impedimentos: o Kanban proporciona a visualização do processo, promovendo a identificação de forma rápida de quaisquer problemas ou obstáculos que possam surgir. Ao visualizar os problemas de forma tangível, a equipe pode tomar medidas imediatas para resolvê-los;
+
+    Otimiza o tempo: através da visualização das tarefas e da limitação do trabalho em progresso, o Kanban ajuda a evitar a sobrecarga de trabalho e a dispersão de esforços. E, com isso, a equipe pode concentrar seus esforços em concluir as atividades com agilidade;
+
+    Planejamento diário eficiente: com a visualização do quadro Kanban, a equipe pode facilmente identificar quais tarefas estão prontas para serem iniciadas no dia, quais estão em progresso e quais foram concluídas. Isso facilita a organização e priorização das atividades diárias, garantindo que os recursos sejam alocados de maneira adequada e que as metas sejam alcançadas.
+
+De forma geral, a utilização do Kanban oferece vantagens significativas, por proporcionar maior visibilidade e controle do fluxo de trabalho. Ao adotar o Kanban, as equipes podem aprimorar a produtividade e qualidade dos processos.
+Por onde começar
+
+O mais interessante de estudar o Método Kanban é que um dos seus princípios é: “Comece pelo que você faz agora” ou “Comece pelo que você já tem”. Seguindo esse princípio, é importante entender bem a metodologia, método ou framework que você já está utilizando.
+
+Dessa forma, vamos começar o nosso estudo justamente conhecendo os conceitos de agilidade que estão relacionados ao Método Kanban e também são utilizados em outras metodologias ou frameworks.
+
+    Pensamento Lean (Lean Thinking): Filosofia de gestão inspirada em práticas e resultados do sistema Toyota. Seu foco é entregar mais valor às pessoas que adquirem um produto ou serviço, eliminando desperdícios e corrigindo problemas de maneira sistemática.
+
+    Pensamento Ágil (Agile Mindset): Podemos considerar como pensamento ágil o conjunto de valores e princípios trazidos pelo Manifesto Ágil, assinado em 2001.
+
+    Sistema Puxado (em oposição ao “Sistema Empurrado”): Uma das contribuições do engenheiro japonês Taiichi Ohno para o sistema Toyota, e consequentemente para o Pensamento Lean, é o trabalho com o sistema puxado em oposição ao sistema empurrado.
+
+No primeiro tipo de sistema, um determinado serviço ou uma determinada etapa do trabalho só será executada quando o seu valor (seu resultado) for necessário para a linha de produção ou para a entrega de valor final do produto.
+
+O tipo de trabalho com sistema puxado deu origem ao conceito de Just in Time (“somente na hora certa”), que mais tarde se popularizou na indústria e nos serviços.
+Entrega de Valor
+
+Mais que um produto ou um serviço, as pessoas querem receber valor. Esse valor é aquilo que faz com que elas paguem pelo produto, é o resultado desejado ao final do processo. Quando alguém aluga um carro ou pede um carro por aplicativo, por exemplo, essa pessoa não quer ter o carro em si, mas, sim, realizar um deslocamento. Neste caso, o deslocamento é o valor desejado.
+Desperdícios
+
+A partir do momento que começamos a visualizar o valor que devemos entregar, podemos considerar como um desperdício qualquer parte do processo ou do serviço que executamos e que não agrega uma parte desse valor final, mas nem todo desperdício é dispensável.
