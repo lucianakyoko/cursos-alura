@@ -5,3 +5,8 @@ Assistir Alura +
 
 ---
 
+Leitura do artigo no Blog da Alura
+[C++: Vale a Pena Aprender atualmente? Por que e onde Usar?](https://www.alura.com.br/artigos/formacao-linguagem-c-plus-plus)
+
+---
+
