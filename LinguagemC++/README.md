@@ -28,8 +28,8 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 1.1 | . | Sobre a formação C++ | ✖️ | ➖ | ✔️ |
-| 🚩  | 1.2 | . | C++: Por que aprender C++ em 2021 | ✖️ | ➖ | ⚫ |
-| .  | 1.3 | . | C++? Conhecendo a linguagem e a STL | ✖️ | ➖ | ⚫ |
+| .  | 1.2 | . | C++: Por que aprender C++ em 2021 | ✖️ | ➖ | ⚫ |
+| 🚩  | 1.3 | . | C++? Conhecendo a linguagem e a STL | ✖️ | ➖ | ⚫ |
 | .  | 1.4 | . | Avançando em C++: entenda melhor a linguagem | ✖️ | ➖ | ⚫ |
 | .  | 1.5 | . | O que é Assembly? | ✖️ | ➖ | ⚫ |
 
