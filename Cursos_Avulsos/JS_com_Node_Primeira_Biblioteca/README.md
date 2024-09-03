@@ -38,7 +38,11 @@
 
 ### Aula 03 - Tratamento de erros
 <ul>
-  <li></li>
+  <li>Como fazer os primeiros tratamentos de erro em uma função;</li>
+  <li>A utilizar o bloco try/catch para capturar e direcionar erros de execução da função;</li>
+  <li>O objeto Error e em que momentos podemos utilizá-lo para “estourar” erros no programa;</li>
+  <li>Quais são as partes de um objeto de erro;</li>
+  <li>Como criar nossas próprias funções de manejo de erros.</li>
 </ul>
 
 ### Aula 04 - Import/export e promessas

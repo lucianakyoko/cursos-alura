@@ -13,6 +13,7 @@
 - Documentação do Node.js: [process.argv](https://nodejs.org/api/process.html#processargv).
 - Documentação do Node.js: [fs.readFile](https://nodejs.org/api/fs.html#fsreadfilepath-options-callback).
 - Documentação do MDN: [flatMap](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap).
+- Documentação do MDN: [objeto Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 ---
 
@@ -117,3 +118,52 @@ Para finalizar “fim de linha” ou “quebra de linha”, existem alguns carac
 
 ---
 
+## JS_com_Node_Primeira_Biblioteca
+Uma das primeiras coisas que percebemos ao começarmos a programar é que praticamente qualquer aviso de erro será acompanhado de uma longa sequência de texto difícil de compreender.
+
+Por exemplo, se tentarmos usar console.log() em alguma variável que não existe em nosso código:
+
+```
+node teste.js
+
+file:///home/juliana/Documents/nodejs-lib/teste.js:3
+console.log(nome);
+            ^
+
+ReferenceError: nome is not defined
+    at file:///home/juliana/Documents/nodejs-lib/teste.js:3:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+
+Node.js v20.11.0
+```
+
+Boa parte de todo esse texto é representado pela **stack trace**, ou seja, pelo “rastro” de comandos executados pelo interpretador ao enviarmos o comando node teste.js.
+
+No caso, para que o Node.js execute corretamente o código dentro de um arquivo .js de nosso projeto, ele utiliza por sua vez diversos códigos (funções) que estão dentro de seu próprio código-fonte. Cada parte do código necessário para que o Node.js interprete corretamente o nosso próprio código pode se encontrar em arquivos ou módulos diferentes, e cada comando executado “guarda” este caminho desde o ponto inicial até o último.
+
+Podemos analisar qualquer linha do erro acima e acompanhar este processo:
+
+```
+at file:///home/juliana/Documents/nodejs-lib/teste.js:3:13
+```
+
+O ponto inicial de chamada do código problemático: arquivo teste.js que está dentro da nossa pasta de projeto, na linha 3 e coluna 13.
+
+```
+at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+```
+
+Este erro se “propagou” para o método ModuleJob.run interno do Node.js. Podemos saber que já não estamos mais na pasta do nosso projeto pois a stack trace fornece exatamente o módulo, linha e coluna para onde o erro se propagou.
+
+Assim continua até o último ponto, a função interna do Node.js ```handleMainPromise```.
+
+Quando um erro ocorre, todo esse caminho percorrido pelo comando é passado para dentro de um objeto Error para que possa ser acessado e consultado de alguma forma, por exemplo, exibido no terminal. Dessa forma, podemos usar esse “mapa” para entender o caminho que o processamento percorreu.
+
+Nem todos os avisos de erro são gerados da mesma forma: dependendo da origem, alguns erros são devolvidos pelo sistema operacional, outros pelo Node.js, outros podem ser gerados a partir de alguma biblioteca que estamos usando em nosso projeto. Porém, quase sempre eles seguem o mesmo padrão, apresentando o nome do erro, a descrição do erro e a stack trace.
+
+[Link para leitura](https://www.alura.com.br/artigos/lidando-com-erros-node-js)
+
+---
