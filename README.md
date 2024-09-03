@@ -37,6 +37,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 10 | Next.js: implementando autenticação com Auth.js | [🗂️](./) | ✔️ |
 | 11 | Melhore sua aplicação React com testes automatizados | [🗂️](./React_com_Testes_automatizados/) | 🔵 |
 | 12 | React: bibliotecas para desenvolver formulários | [🗂️](./React_bibliotecas_para_desenvolver_formulários/) | 🔵 |
-| 13 | --- | 🗂️ | ⚫ |
+| 13 | Linguagem C++ | [🗂️](./LinguagemC++/) | 🔵 |
+| 14 | --- | 🗂️ | ⚫ |
 
 ---
