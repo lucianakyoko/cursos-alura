@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Começando com a linguagem | ✔️ |
-| 2 | Verificando as tentativas | ⚫ |
+| 2 | Verificando as tentativas | ✔️ |
 | 3 | Adicionando pontuação ao jogo | ⚫ |
 | 4 | Finalizando o jogo da adivinhação | ⚫ |
 | 5 | Iniciando o jogo da forca | ⚫ |
@@ -32,7 +32,9 @@
 
 ### Aula 02 - Verificando as tentativas
 <ul>
-  <li></li>
+  <li>Como ler valores usando o cin</li>
+  <li>Como declarar e usar variáveis do tipo bool</li>
+  <li>Como utilizar o identificador const na declaração de variáveis</li>
 </ul>
 
 ### Aula 03 - Adicionando pontuação ao jogo
