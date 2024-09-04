@@ -13,8 +13,8 @@
 | --- | --- | --- |
 | 1 | Acessando e lendo arquivos  | 🔵 |
 | 2 | Criando a lógica do projeto | 🔵 |
-| 3 | Tratamento de erros | ⚫ |
-| 4 | Import/export e promessas | ⚫ |
+| 3 | Tratamento de erros | 🔵 |
+| 4 | Import/export e promessas | 🔵 |
 | 5 | O NPM e suas bibliotecas | ⚫ |
 
 ---
@@ -47,7 +47,10 @@
 
 ### Aula 04 - Import/export e promessas
 <ul>
-  <li></li>
+  <li>O que é programação assíncrona e sua importância para viabilizar processos complexos como operações com bancos de dados;</li>
+  <li>As formas que o JavaScript utiliza para trabalhar com código assíncrono, como callbacks e promessas;</li>
+  <li>O que são promessas, quais são os estados possíveis de uma promessa e o que é o objeto Promise;</li>
+  <li>A resolver promessas utilizando then e async/await e as diferenças entre estes métodos.</li>
 </ul>
 
 ### Aula 05 - O NPM e suas bibliotecas

@@ -14,6 +14,9 @@
 - Documentação do Node.js: [fs.readFile](https://nodejs.org/api/fs.html#fsreadfilepath-options-callback).
 - Documentação do MDN: [flatMap](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap).
 - Documentação do MDN: [objeto Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
+- Artigo: [Guia de importaçã e exportação de módulos em JS](https://www.alura.com.br/artigos/guia-importacao-exportacao-modulos-javascript)
+- Artigo: [async/await: o que é e como usar](https://www.alura.com.br/artigos/async-await-no-javascript-o-que-e-e-quando-usar)
+- Documentação do MDN: [objeto Promise](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 ---
 
@@ -165,5 +168,119 @@ Quando um erro ocorre, todo esse caminho percorrido pelo comando é passado para
 Nem todos os avisos de erro são gerados da mesma forma: dependendo da origem, alguns erros são devolvidos pelo sistema operacional, outros pelo Node.js, outros podem ser gerados a partir de alguma biblioteca que estamos usando em nosso projeto. Porém, quase sempre eles seguem o mesmo padrão, apresentando o nome do erro, a descrição do erro e a stack trace.
 
 [Link para leitura](https://www.alura.com.br/artigos/lidando-com-erros-node-js)
+
+---
+
+## Then, async e await
+Além do .then() e do async/await, que são necessários quando nosso código executa métodos ou funções definidas como assíncronas (como no caso dos métodos fs.promises.writeFile ou fs.promises.readFile do Node.js), existem outras formas de se trabalhar com promessas.
+
+**Promise.all**
+No nosso projeto recebemos o endereço de um arquivo .txt por vez e processamos apenas este arquivo usando o método fs.readFile().
+
+E o que aconteceria se, ao invés de apenas um arquivo, tivéssemos uma lista de diversos arquivos para serem processados?
+
+Aqui entra um dos métodos de promessas do JavaScript, o Promise.all().
+
+Este método recebe um iterável, como um array, e retorna uma única promessa após todos os itens no array forem percorridos. O conteúdo dessa única promessa, após resolvida, é um array com os valores esperados (em caso de sucesso). O método irá retornar uma promessa rejeitada caso qualquer um dos itens do array não se resolva com sucesso.
+
+Vamos analisar o exemplo:
+```
+async function lerMultiplosArquivos(arrayDeCaminhos) {
+ try {
+ const arrayDePromessas = arrayDeCaminhos
+   .map((caminho) => fs.promises.readFile(caminho, "utf-8")
+ );
+   const listaDeDados = await Promise.all(arrayDePromessas);
+   return listaDeDados;
+ } catch (erro) {
+   throw erro;
+ }
+}
+```
+
+Confira os passos da função lerMultiplosAquivos:
+
+A função recebe como parâmetro um array de caminhos de arquivo.
+O código arrayDeCaminhos.map() vai executar o método fs.promises.readFile() para cada um dos caminhos. Nesse momento, como não usamos then nem async/await, o valor retornado para cada um e guardado na variável arrayDePromessas será literalmente um array contendo objetos Promise ainda não resolvidos.
+A partir deste array de promessas, o método Promise.all se encarrega de resolver cada uma delas e retornar o resultado esperado para dentro da variável listaDeDados.
+Executando a função utilizando then:
+
+```
+const caminhos = [
+ "./arquivos/texto-kanban.txt",
+ "./arquivos/texto-web.txt",
+ "./arquivos/texto-aprendizado.txt",
+];
+
+lerMultiplosArquivos(caminhos)
+ .then((conteudoDosArquivos) => {
+   console.log(conteudoDosArquivos);
+   // Aqui podem ser processados os conteúdos de cada arquivo
+ })
+ .catch((erro) => {
+   console.error('Erro ao ler arquivos', erro.message);
+ });
+```
+
+Ou podemos refatorar a função para usar async/await:
+```
+const caminhos = [
+ "./arquivos/texto-kanban.txt",
+ "./arquivos/texto-web.txt",
+ "./arquivos/texto-aprendizado.txt",
+];
+
+async function lerMultiplosArquivos(arrayDeCaminhos) {
+ const arrayDePromessas = arrayDeCaminhos.map(
+   async (caminho) => await fs.promises.readFile(caminho, "utf-8")
+ );
+ const conteudosDosArquivos = await Promise.all(arrayDePromessas);
+ return conteudosDosArquivos;
+}
+
+lerMultiplosArquivos(caminhos);
+```
+
+Esse método é bastante útil quando é necessário interagir com mais de um arquivo (por exemplo, todos os arquivos em uma pasta) ou quando devemos acessar diversas URLs.
+
+**O construtor Promise()**
+Quando há métodos que sabemos que retornam promessas (por exemplo, o fs.promises.writeFile) e precisamos utilizá-los em nosso código, usamos then ou async/await. Isso serve tanto para métodos nativos do Node.js ou de diversas outras bibliotecas e frameworks que vamos usar no dia a dia para buscar dados em bancos de dados, acessar URLs, manipular arquivos, fazer grandes processamentos de muitos dados, operações em nuvem etc.
+
+Além disso, podemos também usar o construtor Promise() para escrever do zero nossas próprias promessas e também indicar como resolvê-las.
+
+O Promise também é usado para resolver casos de encadeamento de promessas mais complexas ou para interagir com bibliotecas e APIs que usam callbacks em seus métodos assíncronos ao invés do objeto Promise.
+
+Vamos ver um exemplo de função que recebe um valor booleano (true ou false) e com base nesse valor retorna uma new Promise() rejeitada ou realizada.
+
+```
+function promessa(bool) {
+ const x = bool;
+ return new Promise((resolve, reject) => {
+   if (!x) {
+     reject(new Error("falha na promessa"));
+   }
+   resolve("sucesso na promessa");
+ });
+}
+
+function exibeResposta(textoResult) {
+ console.log(textoResult);
+}
+
+promessa(true)
+ .then((texto) => exibeResposta(texto))
+// sucesso na promessa
+```
+
+Veja que a função promessa() cria uma nova promessa a partir do construtor new Promise() e com dois parâmetros: resolve e reject. Promise() precisa trabalhar sempre com estes dois parâmetros, que devem ser invocados após a resolução (com ou sem sucesso).
+
+Neste caso, passamos um texto como parâmetro de cada um deles. Quando executamos a função promessa(true) este valor é carregado através das promessas até ser passado para a função exibeResposta(textoResult), que por fim vai exibir a mensagem correta. No caso de promessa(false), além da mensagem “falha na promessa” o Node.js também vai lançar no terminal a stack trace do objeto Error.
+
+Assim, concluímos que sempre temos que ter em mente os estados possíveis de qualquer promessa em JavaScript:
+
+Promessas podem ser concluídas de duas formas: fulfilled (realizada, completa) ou rejected (rejeitada). Isso equivale a duas situações possíveis: a promessa se concretizou (retornou os dados ou executou o código que deveria) ou não.
+Promessas que não estão fulfilled nem rejected estão pending (pendentes), ou seja, ainda não é possível saber o resultado final porque o processamento ainda não foi concluído.
+Após a finalização do processamento, a promessa passa para o estado de settled (concluída), independente do resultado.
+Uma vez que a promessa está settled seu resultado não se altera mais, ou seja, uma promessa que se concluiu como rejected não muda mais para o estado de fulfilled e vice-versa.
 
 ---
