@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Começando com a linguagem | ✔️ |
 | 2 | Verificando as tentativas | ✔️ |
-| 3 | Adicionando pontuação ao jogo | ⚫ |
+| 3 | Adicionando pontuação ao jogo | ✔️ |
 | 4 | Finalizando o jogo da adivinhação | ⚫ |
 | 5 | Iniciando o jogo da forca | ⚫ |
 | 6 | Criando a condição de final de jogo | ⚫ |
@@ -39,7 +39,8 @@
 
 ### Aula 03 - Adicionando pontuação ao jogo
 <ul>
-  <li></li>
+  <li>Como utilizar variáveis do tipo double</li>
+  <li>Como formatar a saída para imprimir números com precisão definida</li>
 </ul>
 
 ### Aula 04 - Finalizando o jogo da adivinhação
