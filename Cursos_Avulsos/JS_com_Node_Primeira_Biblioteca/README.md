@@ -11,11 +11,11 @@
 
 | Aula | Titulo | Status |
 | --- | --- | --- |
-| 1 | Acessando e lendo arquivos  | 🔵 |
-| 2 | Criando a lógica do projeto | 🔵 |
-| 3 | Tratamento de erros | 🔵 |
-| 4 | Import/export e promessas | 🔵 |
-| 5 | O NPM e suas bibliotecas | ⚫ |
+| 1 | Acessando e lendo arquivos  | ✔️ |
+| 2 | Criando a lógica do projeto | ✔️ |
+| 3 | Tratamento de erros | ✔️ |
+| 4 | Import/export e promessas | ✔️ |
+| 5 | O NPM e suas bibliotecas | ✔️ |
 
 ---
 
@@ -55,7 +55,10 @@
 
 ### Aula 05 - O NPM e suas bibliotecas
 <ul>
-  <li></li>
+  <li>O que é o NPM e como funciona um gerenciador de pacotes;</li>
+  <li>Como utilizar o NPM para criar o esqueleto de um novo projeto Node.js e seu arquivo principal de configuração, o package.json;</li>
+  <li>Como instalar bibliotecas externas, importá-las e utilizá-las em seus projetos;</li>
+  <li>O que é a pasta node_modules e para que ela serve.</li>
 </ul>
 
 ---

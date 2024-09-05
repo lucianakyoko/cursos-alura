@@ -20,6 +20,17 @@
 
 ---
 
+##
+Rodando o programa:
+```
+  node src/cli.js arquivos/texto-kanban.txt ./resultado
+```
+
+```
+  node src/cli.js -t arquivos/texto-kanban.txt -d ./resultados
+```
+---
+
 ## O que é o Node.js
 O que exatamente é o Node e por que ele é tão importante? Para entender isso, é necessário recordar que todo programa precisa de um ambiente de execução para funcionar, independentemente da linguagem utilizada. No caso do JavaScript, existem dois ambientes principais: os navegadores e o runtime, como é conhecido, que inclui o Node, bem como seus concorrentes, como o Dyno e o BAN.
 
@@ -284,3 +295,118 @@ Após a finalização do processamento, a promessa passa para o estado de settle
 Uma vez que a promessa está settled seu resultado não se altera mais, ou seja, uma promessa que se concluiu como rejected não muda mais para o estado de fulfilled e vice-versa.
 
 ---
+
+## Callbacks vs Promises
+Durante o curso praticamos com duas formas de se trabalhar com código assíncrono em JavaScript: callbacks e promises.
+
+### Callbacks
+Vamos relembrar o primeiro método de file system que utilizamos, o readFile():
+```
+   fs.readFile(texto, 'utf-8', (erro, texto) => {
+   try {
+     if (erro) throw erro
+     const resultado = contaPalavras(texto);
+     criaESalvaArquivo(resultado, destino)
+   } catch(erro) {
+     trataErros(erro);
+   }
+ })
+```
+
+Ao consultarmos a documentação do Node.js sobre o método callback, temos a informação que fs.readFile asynchronously reads the entire contents of a file ou lê assíncronamente todo o conteúdo de um arquivo (em tradução livre).
+
+Mas se já existe esse método, qual o motivo de existir o método adicional fs.promises.readFile() e também o método síncrono fs.readFileSync()?
+
+Funções callback são a forma “pré-ES6” de o JavaScript manejar operações assíncronas. Internamente, o funcionamento de uma função callback envolve a chamada (ou execução) da função interna após a finalização da função mais externa, quando os dados resultantes são passados como parâmetro.
+
+O ES6 (EcmaScript 6 ou, ainda, JavaScript 2015) foi uma das atualizações mais importantes da linguagem e implementou diversas funcionalidades do que chamamos de “JavaScript moderno”.
+
+Por exemplo:
+```
+  fs.readFile('/pasta/texto.txt', (erro, texto) => {
+  if (erro) throw erro;
+  console.log(texto);
+});
+```
+
+No código acima, o método fs.readFile é executado com o parâmetro '/pasta/texto.txt'. Após o término desse primeiro processamento, os dados retornados pelo método são passados via parâmetro (texto em caso de sucesso ou erro em caso de erro) para dentro da função callback anônima.
+
+Dessa forma, é possível afirmar que a função callback “aguarda” a finalização da função externa para somente então executar com os dados recebidos por parâmetro.
+
+### Promises
+O ES6 trouxe a funcionalidade Promise (ou promessa), um objeto que representa a eventual resolução de um processamento assíncrono.
+
+Vamos relembrar o método fs.promises.writeFile() usado no curso:
+```
+  await fs.promises.writeFile(arquivoNovo, textoPalavras);
+```
+
+Este método faz o processamento assíncrono baseado em promessas. Ou seja, ao invés de uma função callback, a função pode receber apenas os parâmetros necessários. O uso do async/await (ou then) possibilitará a resolução das promessas e retorno dos dados esperados (ou do erro).
+
+### Qual método utilizar?
+As promessas são a forma mais “moderna” de trabalhar com operações assíncronas em JavaScript, possibilitando a escrita de código mais limpo, legível e desacoplado.
+
+Callbacks ainda podem ser (e são) utilizadas, especialmente em contextos nos quais as funções devem executar tarefas mais simples, ou seja, sem tratamento complexo de erro e sem encadeamento de funções. Além disso, há muitas bibliotecas que utilizam “código legado” composto por funções callback, que ainda podem ser utilizadas.
+
+Já Promises, além de serem a opção mais atual e moderna, têm uma forma mais estruturada de fazer o tratamento de erros com try/catch, uma estrutura que facilita o encadeamento de funções quando necessário (com o uso do then) e também permitem código mais limpo e organizado com async/await. Assim, podem ser utilizadas de forma mais produtiva quando é necessário lidar com fluxos assíncronos mais complexos e tratamento de erros mais robusto.
+
+---
+
+## argumentos de linha de comando
+[link artigo](https://www.alura.com.br/artigos/cli-interface-linha-comandos)
+O terminal e seus comandos são as nossas ferramentas principais enquanto devs back-end (embora também se utilize bastante no front-end!). É através dele que damos ordens ao sistema sobre o que executar, de que forma e com quais parâmetros, além de muitos outros usos como rodar scripts, testes, configurações etc.
+
+Durante o curso praticamos para entender como um programa JavaScript pode compreender estes comandos e utilizá-los internamente.
+
+Além do artigo sobre o que é CLI que já indicamos anteriormente, é importante saber que os comandos também têm padrões próprios. Conhecendo esses padrões podemos tirar melhor proveito das ferramentas de CLI e compreender melhor seus usos.
+
+Um exemplo é o --help. Grande parte das ferramentas mais estruturadas têm por padrão um comando --help que mostra uma lista de todos os comandos possíveis da ferramenta.
+
+Você pode fazer o teste com o Node.js, executando node --help no terminal. O resultado deverá ser uma lista extensa de comandos do Node.js que podem ser executados, incluindo o -v ou --version que usamos para conferir qual a versão que estamos utilizando.
+
+O Commander, lib que utilizamos para criar nossos próprios comandos, implementa o --help por padrão! Faça o teste.
+
+---
+
+## NPM, pacotes e dependências
+Sempre que vamos trabalhar com um projeto em Node.js do zero, uma das primeiras coisas que fazemos é criar um arquivo package.json utilizando o comando npm init; assim como para todas as instalações de libs externas utilizamos o comando npm install <nome do pacote>.
+
+O NPM é o que chamamos de gerenciador de pacotes, sendo NPM o acrônimo de Node Package Manager ou Gerenciador de Pacotes do Node.
+
+Mas o que são exatamente estes gerenciadores?
+Gerenciadores de pacotes são repositórios de código aberto nos quais devs disponibilizam soluções para o uso da comunidade. Estas soluções são programas que outras pessoas desenvolveram e que utilizamos para ganhar tempo no desenvolvimento de nosso próprio código, e vão desde libs (bibliotecas) pequenas e específicas até frameworks com vários recursos prontos. Pacote é como chamamos o conjunto do código que determinada lib ou framework utiliza para executar.
+
+Algumas dessas bibliotecas são criadas por times de desenvolvimento para resolver algum problema específico que tiveram que enfrentar. Depois elas são disponibilizadas para que outras pessoas com o mesmo contratempo aproveitem e também utilizem. Outras são disponibilizadas por empresas de software que utilizam as plataformas dos gerenciadores (como o NPM) para a distribuição de suas soluções de código. Por serem de código aberto, isso significa que você também pode criar e publicar a sua lib para outras pessoas baixarem e instalarem em seus projetos.
+
+Além do NPM, outro gerenciador muito utilizado em projetos Node.js é o Yarn, criado em 2016 com a proposta de resolver algumas questões do NPM, especialmente as relacionadas à performance e segurança. Hoje, ambos os gerenciadores são bastante utilizados, porém, o NPM ainda é o gerenciador padrão disponibilizado com a instalação do Node.js.
+
+Instalação local vs global
+Estes pacotes de código podem ser instalados localmente, estando disponíveis somente para o projeto no qual foi instalado através da pasta node_modules, e globalmente, sendo instalados em um diretório geral do NPM e ficando disponíveis para todos os projetos em seu computador, sem a necessidade de instalar separadamente em cada projeto.
+
+Na maior parte das vezes, você vai utilizar a opção local, com os comandos npm install <nome do pacote> ou yarn add <nome do pacote>, pois fica mais fácil gerenciar a versão das libs que utilizamos e é muito comum que um pacote que instalamos “puxe” um ou vários outros pacotes auxiliares que ele precisa para funcionar internamente, o que pode acabar “inflando” a pasta global do node_modules. O ideal é não poluir este diretório global com libs que em alguns casos serão utilizadas em somente um projeto.
+
+Já algumas libs e frameworks mais complexas vão solicitar que a instalação seja feita globalmente para funcionar. Sempre vale a pena consultar a documentação de cada uma. Para fazer uma instalação global de pacotes, utilizamos os comandos npm install -g <nome do pacote> ou yarn add global <nome do pacote>. Novamente, recomendamos que essa opção só seja utilizada quando indicada de forma expressa na documentação do framework ou biblioteca.
+
+A recomendação é que a instalação de pacotes seja feita sempre localmente (sem o -g) e que a instalação global só seja feita em casos específicos – normalmente a documentação da ferramenta vai informar se isso é necessário.
+
+O NPM e o Yarn têm algumas pequenas diferenças nos comandos e na forma como lidam com os pacotes. 
+
+---
+
+## versões de bibliotecas e softwares
+[Link -  convenção Semantic Versioning na página oficial](https://semver.org/)
+As versões dos softwares que usamos – sejam bibliotecas, frameworks, runtimes como o Node.js e mesmo os navegadores – são importantes. Softwares em uso constante estão em evolução constante, e mesmo quando não há a implementação de novas funcionalidades sempre existem bugs para resolver e coisas a melhorar.
+
+Todos os softwares que trabalhamos em nosso curso, inclusive o próprio Node.js e o NPM, têm algo em comum: trabalham com o conceito de versionamento semântico.
+
+Você já deve ter notado que as sequências numéricas das versões de todos eles seguem o mesmo padrão de três números separados por pontos, por exemplo 1.0.0 (a versão inicial que o package.json cria) ou 20.11.0 (última versão recomendada do Node.js no momento em que este texto foi escrito). O que significa cada número desta sequência?
+
+O versionamento semântico utiliza os seguintes critérios:
+
+O primeiro número da sequência (o 20 em 20.11.0) se refere a breaking changes, ou seja, atualizações de versão que têm potencial para “quebrar” códigos que utilizem as versões anteriores. Ou seja, uma aplicação que utiliza códigos (métodos, funções etc.) da versão 18.X.X de determinada lib pode deixar de funcionar com a versão 20.X.X, pois haverá diferenças significativas entre as versões. Estas atualizações são conhecidas como major (ou “maiores”, em tradução livre).
+O número do meio (o 11 em 20.11.0) se refere a novas funcionalidades adicionadas, mas que não causam “quebra” em relação a códigos das versões anteriores. Este tipo de atualização é conhecida como minor (ou “menores”).
+O último número (o 0 em 20.11.0) se refere à correção de código: resolução de bugs, melhoramento de performance ou alterações similares que não alteram as funcionalidades atuais (com exceção da correção de bugs) nem introduzem novas. É conhecida como patch (que pode ser traduzido como “remendo”).
+À medida que um sistema ou biblioteca cresce, se integra com outras, resolve bugs e adiciona funcionalidades, mais importante se torna a adoção de um padrão que documente essas mudanças, especialmente com relação às breaking changes. Uma atualização não planejada em toda uma funcionalidade baseada nesta biblioteca, em outro sistema, pode quebrar completamente. Por isso a convenção é tão importante e é seguida à risca por todo e qualquer time de desenvolvimento.
+
+---
+
