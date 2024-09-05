@@ -14,7 +14,7 @@
 | 1 | Começando com a linguagem | ✔️ |
 | 2 | Verificando as tentativas | ✔️ |
 | 3 | Adicionando pontuação ao jogo | ✔️ |
-| 4 | Finalizando o jogo da adivinhação | ⚫ |
+| 4 | Finalizando o jogo da adivinhação | ✔️ |
 | 5 | Iniciando o jogo da forca | ⚫ |
 | 6 | Criando a condição de final de jogo | ⚫ |
 | 7 | Finalizando o jogo da forca | ⚫ |
@@ -45,7 +45,9 @@
 
 ### Aula 04 - Finalizando o jogo da adivinhação
 <ul>
-  <li></li>
+  <li>Como usar a função srand() para determinar a semente dos valores aleatórios</li>
+  <li>Como usar a função rand() para gerar valores aleatórios</li>
+  <li>Como usar a função módulo, ou resto de divisão, denotada por % para conseguir valores aleatórios menores</li>
 </ul>
 
 ### Aula 05 - Iniciando o jogo da forca

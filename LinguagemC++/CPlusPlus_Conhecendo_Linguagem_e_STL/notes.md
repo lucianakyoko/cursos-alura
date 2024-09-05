@@ -38,3 +38,19 @@ Deste modo, das próximas vezes que o cout for imprimir valores reais, ele sempr
 
 ---
 
+## Como sortear valores
+Para que o valor do número secreto variasse entre as execuções do nosso jogo, usamos as funções srand() e rand().
+A primeira serve pra determinar a semente que vai ser usada na hora de gerar os valores pseudo-aleatórios do nosso programa, e a segunda para retornar um valor aleatório.
+
+```
+srand(time(NULL));
+const int NUMERO_SECRETO = rand() % 100; 
+``` 
+
+Usamos a função time(NULL) como semente dos números aleatórios por ser uma função que está sempre mudando de valor.
+
+Além disso, a função rand() pode retornar valores muito maiores que 99, por isso precisamos de algum jeito de diminuir esses valores grandes.
+
+Para isso usamos a operação resto, denotada por %, como queremos valores de 0 a 99, basta tomarmos o resto da divisão do valor sorteado por 100, que desse modo sempre teremos um valor dentro dos limites desejados.
+
+---
