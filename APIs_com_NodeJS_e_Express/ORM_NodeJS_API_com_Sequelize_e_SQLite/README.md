@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Conhecendo o Sequelize | ✔️ |
 | 2 | Criando um modelo | ✔️ |
-| 3 | Desenvolvendo a API | ⚫ |
+| 3 | Desenvolvendo a API | ✔️ |
 | 4 | Relações e associaçõe | ⚫ |
 | 5 | Atualizando a API | ⚫ |
 
@@ -41,7 +41,11 @@
 
 ### Aula 03 - Desenvolvendo a API
 <ul>
-  <li></li>
+  <li>O que é o padrão MVC de arquitetura e cada uma de suas partes principais (model, controller e view);</li>
+  <li>Como implementar um controller que receba dados de uma requisição HTTP e retorne uma resposta;</li>
+  <li>Como separar as rotas em arquivos organizados com apenas um ponto de entrada;</li>
+  <li>O que são Services e qual a função da camada de serviços no contexto de uma aplicação MVC;</li>
+  <li>Como utilizar herança de classe para reaproveitar métodos do Controller e Services.</li>
 </ul>
 
 ### Aula 04 - Relações e associaçõe

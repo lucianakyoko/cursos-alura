@@ -1,5 +1,11 @@
 # Anotações do curso: ORM com Node.js: desenvolvendo uma API com Sequelize e SQLite
 
+### Subir servidor:
+```
+npm run dev
+```
+
+
 ---
 ### conectando com o Sequelize
 com exceção do SQLite, todos os outros dialetos, como MySQL e Postgres, requerem o uso de um servidor próprio para banco de dados, seja em um host remoto, seja em um servidor local em seu computador (o localhost). Além disso, para conectarmos qualquer aplicação a um banco, há sempre algumas informações necessárias:
@@ -110,3 +116,51 @@ Vale lembrar que, como costumamos dizer na programação, “não existe bala de
 **O MVC no front-end**
 Embora ainda seja amplamente utilizado no desenvolvimento de APIs, a evolução do front-end e o desenvolvimento de bibliotecas e frameworks, como Angular, React e Vue, fez com que o uso do MVC no front-end tenha sido em grande parte substituído por outros padrões de arquitetura que respondem melhor às necessidades específicas do front-end, como a arquitetura baseada em componentes e os micro front-ends.
 
+---
+
+### services e repositories
+Nesta aula estamos implementando uma camada extra de separação entre o model e o controller, que chamamos de services. Services é uma das camadas principais adicionadas ao MVC básico para aumentar a modularidade da aplicação e deixá-la mais desacoplada e testável.
+
+A camada de serviços é responsável por implementar a lógica das regras de negócio e age como intermediária entre controlador e camada de dados. Dessa forma, regras como validações, lógicas de cálculos e interações entre entidades ficam separadas da camada que maneja as requisições (o controller) e o model fica responsável apenas pela interação com os dados.
+
+Esta camada pode ser implementada de diversas maneiras, sendo uma delas em conjunto com outra camada de abstração chamada Repository, que não implementamos neste curso.
+
+Assim como Services centralizam e separam regras de negócio, O padrão Repository (repositório) é comumente usado para separar a camada de dados do restante da aplicação. Isso contribui para a manutenção da aplicação, uma vez que permite que a fonte dos dados seja substituída sem impactar o código das outras camadas.
+
+Repositórios são normalmente implementados como abstrações da camada de dados utilizando classes ou interfaces. Assim, detalhes a respeito do acesso aos dados podem ser encapsulados, fazendo com que várias fontes de dados possam ser utilizadas sem que o restante da aplicação tenha que “se envolver” com estes detalhes. O uso dos repositórios também facilita os testes através do uso de mock functions para garantir que a lógica das regras de negócio funcione independente da base de dados.
+
+O padrão Repository trabalha em conjunto com outras camadas de abstração bastante utilizadas na chamada arquitetura limpa (clean architecture), como Domains e Use Cases. 
+Claro que toda vez que acrescentamos uma camada de abstração e modularidade ao código também adicionamos um certo grau de complexidade. Por isso, é importante ter em mente que, embora padrões como Services e Repository sejam muito úteis para desenvolvermos aplicações desacopladas e organizadas, precisamos sempre analisar se são necessárias de acordo com a complexidade da nossa aplicação.
+
+---
+
+### arrow function e contexto
+Nesta aula fizemos uma alteração nas rotas pessoas para executar o método correspondente no controlador PessoaController.
+
+De:
+```
+  router.get('/pessoas', pessoaController.pegaTodos);
+```
+Para:
+```
+  router.get('/pessoas', (req, res) => pessoaController.pegaTodos(req, res));
+```
+
+Embora pareça uma alteração pequena, é importante entendermos o que está acontecendo nesse trecho do código para evitarmos um problema muito comum em JavaScript: bugs causados por perda de contexto.
+
+No primeiro exemplo de código, é importante lembrar que pessoaController.pegaTodos é um método estático, ou seja, quando definimos um método como static, ele não está “preso” a nenhuma instância específica da classe (no caso, PessoaController) e sim à própria classe.
+
+Na prática, métodos estáticos não podem ser utilizados a partir de um objeto específico, por exemplo, criado a partir de new PessoaController(params). Eles estão diretamente ligados à classe à qual pertencem; ou seja, não pertencem ao contexto de um objeto e nem dependem disso para serem executados.
+
+No segundo exemplo, fizemos alterações no código para adicionar a camada de Services ao projeto. Assim, cada controlador deve interagir com seu próprio serviço, por isso os métodos de PessoaController deixam de ser estáticos e passam a “depender” de um objeto específico, que carrega todas as informações referentes à entidade Pessoa.
+
+Por isso, neste momento, o método pegaTodos() deixa de ser static (pertencente à classe), pois precisa do contexto fornecido por um objeto - no caso, o objeto instanciado a partir de new PessoaController(PessoaServices).
+
+Assim, para executar o método pegaTodos com sucesso, o JavaScript precisa que o controlador seja instanciado recebendo seu serviço correspondente:
+```
+  const pessoaController = new PessoaController();
+```
+
+O método pessoaController.pegaTodos, então, é passado como callback function com uma arrow function, recebendo os parâmetros de requisição e resposta vindos de router.get. Arrow functions herdam automaticamente o contexto de onde foram criadas e não têm seu próprio “contexto de invocação”.
+
+```router.get('/pessoas', (req, res) => pessoaController.pegaTodos(req, res));```
