@@ -15,7 +15,7 @@
 | 2 | Verificando as tentativas | ✔️ |
 | 3 | Adicionando pontuação ao jogo | ✔️ |
 | 4 | Finalizando o jogo da adivinhação | ✔️ |
-| 5 | Iniciando o jogo da forca | ⚫ |
+| 5 | Iniciando o jogo da forca | ✔️ |
 | 6 | Criando a condição de final de jogo | ⚫ |
 | 7 | Finalizando o jogo da forca | ⚫ |
 
@@ -52,7 +52,9 @@
 
 ### Aula 05 - Iniciando o jogo da forca
 <ul>
-  <li></li>
+  <li>Como usar variáveis do tipo String</li>
+  <li>Como usar laços de repetição do C++11</li>
+  <li>Como escrever um Makefile para compilar arquivos de C++ mais facilmente</li>
 </ul>
 
 ### Aula 06 - Criando a condição de final de jogo

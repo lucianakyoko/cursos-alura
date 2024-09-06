@@ -54,3 +54,27 @@ Além disso, a função rand() pode retornar valores muito maiores que 99, por i
 Para isso usamos a operação resto, denotada por %, como queremos valores de 0 a 99, basta tomarmos o resto da divisão do valor sorteado por 100, que desse modo sempre teremos um valor dentro dos limites desejados.
 
 ---
+
+
+# Jogo da forca
+- para compilar
+```
+  g++ forca.cpp -o forca.out
+```
+
+- para rodar o jogo
+```
+  ./forca.out
+```
+
+- usando a versão 11 do C++
+```
+  $ g++ forca.cpp -o forca.out -std=c++11
+```
+
+- usando make
+```
+  mingw32-make forca
+
+  ./forca
+```
