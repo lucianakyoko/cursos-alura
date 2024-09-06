@@ -16,7 +16,7 @@
 | 3 | Adicionando pontuação ao jogo | ✔️ |
 | 4 | Finalizando o jogo da adivinhação | ✔️ |
 | 5 | Iniciando o jogo da forca | ✔️ |
-| 6 | Criando a condição de final de jogo | ⚫ |
+| 6 | Criando a condição de final de jogo | ✔️ |
 | 7 | Finalizando o jogo da forca | ⚫ |
 
 ---
@@ -59,7 +59,9 @@
 
 ### Aula 06 - Criando a condição de final de jogo
 <ul>
-  <li></li>
+  <li>Como inserimos valores em uma variável do tipo vector</li>
+  <li>Como imprimir os valores de um vector usando o for em intervalos</li>
+  <li>Como descobrir o tamanho de um vector, usando o método size()</li>
 </ul>
 
 ### Aula 07 - Finalizando o jogo da forca
