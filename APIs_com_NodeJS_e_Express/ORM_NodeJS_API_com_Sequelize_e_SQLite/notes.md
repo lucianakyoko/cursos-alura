@@ -164,3 +164,141 @@ Assim, para executar o método pegaTodos com sucesso, o JavaScript precisa que o
 O método pessoaController.pegaTodos, então, é passado como callback function com uma arrow function, recebendo os parâmetros de requisição e resposta vindos de router.get. Arrow functions herdam automaticamente o contexto de onde foram criadas e não têm seu próprio “contexto de invocação”.
 
 ```router.get('/pessoas', (req, res) => pessoaController.pegaTodos(req, res));```
+
+
+---
+
+### PKs e FKs
+[documentação oficial para saber mais sobre como o SQLite trabalha com foreign keys.](https://www.sqlite.org/foreignkeys.html)
+Toda tabela relacional conta com ao menos uma coluna chamada primary key (chave primária) ou PK. As PKs são utilizadas como identificadores únicos de cada registro da tabela. É comum que a PK de uma tabela seja o id por se tratar de um campo que sempre tem valores únicos, porém não é estritamente necessário. Uma PK pode ser definida a partir da junção de mais de uma coluna com dados variados, contanto que o resultado desta junção seja um valor único.
+
+De forma semelhante, as foreign keys (chaves estrangeiras) ou FKs são compostas por uma ou mais colunas que fazem referência a uma PK de outra coluna. São utilizadas para estabelecer e forçar uma relação entre duas colunas, o que interfere na validação dos dados dessas colunas.
+
+Por exemplo, vamos examinar as tabelas pessoas e cursos:
+pessoas
+PK	id
+nome
+email
+cpf
+ativo
+role
+ 
+cursos
+PK	id
+titulo
+descricao
+data_inicio
+FK	categoria_id
+FK	docente_id
+
+Note que pessoas tem a coluna id estabelecida como PK. Para relacionarmos uma pessoa a um curso, passamos para o SQL um constraint (uma restrição ou limitação) que relaciona o valor da coluna docente_id da tabela cursos ao valor de id na tabela pessoas.
+
+A “limitação” nesse caso significa que, a partir do momento em que as tabelas estão relacionadas, seus dados também estão, ou seja, somente é possível adicionar um novo curso à tabela cursos caso o valor de docente_id seja um id que realmente exista na tabela pessoas.
+
+Uma tabela pode ter de zero a várias FKs, dependendo de quais relações são necessárias para unir os dados de diversas tabelas no banco. Assim como as PKs, é comum que seja utilizado o valor de id como FK, porém não é obrigatório.
+
+Confira abaixo como uma relação entre tabelas é registrada no banco de dados com esse exemplo escrito para SQLite:
+
+```
+CREATE TABLE cursos(
+  id 		 	INTEGER PRIMARY KEY, 
+  titulo	 	TEXT, 
+  descricao 	TEXT,
+  data_inicio	TEXT,
+  docente_id	INTEGER,
+  FOREIGN KEY(docente_id) REFERENCES pessoas(id)
+);
+```
+
+A criação de chaves envolve diversos outros conceitos de SQL como indexação. 
+
+---
+
+###  BelongsTo para quê?
+Se você pesquisou tutoriais sobre como fazer associações com Sequelize, pode ter visto que em alguns deles a associação 1:n (um para muitos) é feita utilizando somente o método hasMany(), sem acrescentar o belongsTo(). Será que isso vai funcionar? Então, por que a documentação do Sequelize diz para utilizar os dois métodos juntos?
+
+Vamos pegar o seguinte exemplo:
+```
+Equipe.hasMany(Atleta);
+Atleta.belongsTo(Equipe);
+```
+
+Ou seja, uma equipe tem vários (hasMany) atletas, mas atletas pertencem a (belongsTo) somente uma equipe cada.
+
+Bom, mas e aí?
+Quando utilizamos o método Atleta.belongsTo(Equipe) o Sequelize cria, “por baixo dos panos”, alguns métodos “getters” e “setters”, por exemplo, atleta.getEquipe().
+
+O método Equipe.hasMany(Atleta) faz a associação na outra ponta, permitindo a criação do método equipe.getAtletas(). A criação destes métodos é um comportamento padrão do Sequelize (e de ORMs em geral), mesmo que não tenham sido usados no projeto que fizemos no curso.
+
+Se utilizarmos apenas um dos métodos - por exemplo, somente o hasMany em um dos lados da relação - seria possível usar o método para get (trazer) todas as atletas de uma equipe, mas não a equipe a que pertence uma atleta.
+
+---
+
+### alterando o banco com migrações
+Neste curso temos um diagrama que já estabelece as tabelas necessárias para nosso MVC e quais as relações entre elas.
+
+Porém, no dia a dia de trabalho é comum que, durante a fase de desenvolvimento, sejam necessários ajustes nas tabelas. Como fazer isso em um projeto Sequelize usando migrações?
+
+Vamos considerar a tabela usuarios como exemplo:
+
+```
+|	| usuarios |
+|----|---------|
+| PK | id  	|
+|	| nome	|
+|	| celular |
+```
+
+Após criarmos um modelo e um arquivo de migrações com os dados acima e executar a migração com npx sequelize-cli db:migrate, o banco de dados vai refletir um resultado semelhante a esse:
+```
+| nome  	| tipo     	| PK |
+|-----------|--------------|----|
+| id    	| INTEGER  	| 1  |
+| nome  	| VARCHAR(255) | 0  |
+| celular   | VARCHAR(255) | 0  |
+| createdAt | DATETIME 	| 0  |
+| updatedAt | DATETIME 	| 0  | 			 
+```
+
+Vamos considerar que, somente após executarmos o comando de migração, notamos que um dado importante não havia sido incorporado no diagrama, o CPF. Como fazer essa alteração?
+
+1 - Comece criando um novo arquivo de migração, mantendo o padrão data-descricao.js. Não precisa ser exatamente os minutos e segundos do momento da criação, basta ser uma data posterior às migrações anteriores. Por exemplo 20230913000516-addcolumn-usuarios.js;
+
+2 - Os métodos chamados na migração são parecidos, porém, ao invés de createTable e dropTable, usaremos addColumn e removeColumn. Adicione os dados desejados;
+
+```
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+ async up(queryInterface, Sequelize) {
+   await queryInterface.addColumn('usuarios', 'cpf', {
+      allowNull: false,
+      type: Sequelize.STRING
+    });
+ },
+ async down(queryInterface, Sequelize) {
+   await queryInterface.removeColumn('usuarios', 'cpf');
+ }
+};
+```
+
+3 - Não se esqueça de atualizar o modelo! Por exemplo, com a propriedade:
+
+```
+cpf: {
+    type: Sequelize.STRING,
+    allowNull: false
+},
+```
+
+4 - Execute novamente o comando de migração npx sequelize-cli db:migrate.
+
+Com os passos acima utilizamos novamente as migrações para fazer alterações rastreáveis no banco. As migrações ficam indexadas em sequelizeMeta e podem ser revertidas, mas não é preciso desfazer a migração anterior para fazer uma nova alteração no banco, como adicionar uma coluna. É só rodar um novo comando de migração para adicionar as alterações.
+
+Observação: embora o exemplo acima seja válido para os diversos banco de dados aceito pelo Sequelize, o SQLite excepcionalmente não permite a alteração direta de tabelas (como adicionar ou remover colunas). Nesse caso, o Sequelize implementa internamente um workaround (ou seja, uma gambiarra!) para fazer com que a migração funcione. 
+[Confira mais sobre este corner case (caso excepcional) na documentação do Sequelize.](https://sequelize.org/docs/v6/other-topics/query-interface/#changing-and-removing-columns-in-sqlite)
+
+Confira com mais detalhes como desfazer uma migração ou como remover dados adicionados ao banco via seeds na documentação oficial:
+
+- [Desfazendo migrações](https://sequelize.org/docs/v6/other-topics/migrations/#undoing-migrations)
+- [Desfazendo seeds](https://sequelize.org/docs/v6/other-topics/migrations/#undoing-seeds)

@@ -14,7 +14,7 @@
 | 1 | Conhecendo o Sequelize | ✔️ |
 | 2 | Criando um modelo | ✔️ |
 | 3 | Desenvolvendo a API | ✔️ |
-| 4 | Relações e associaçõe | ⚫ |
+| 4 | Relações e associaçõe | ✔️ |
 | 5 | Atualizando a API | ⚫ |
 
 ---
@@ -50,7 +50,10 @@
 
 ### Aula 04 - Relações e associaçõe
 <ul>
-  <li></li>
+  <li>O que são associações e como utilizar os métodos do Sequelize para associar modelos;</li>
+  <li>As diferenças entre a associação de migrações e as associações entre modelos;</li>
+  <li>As diferenças entre padrões de relacionamento entre entidades: 1:1, 1:n e n:m;</li>
+  <li>As características e os usos de cada um dos padrões de relacionamento e como identificar qual o tipo de relacionamento entre tabelas.</li>
 </ul>
 
 ### Aula 05 - Atualizando a API
