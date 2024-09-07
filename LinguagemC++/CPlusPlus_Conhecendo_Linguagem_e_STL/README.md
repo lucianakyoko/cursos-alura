@@ -17,7 +17,7 @@
 | 4 | Finalizando o jogo da adivinhação | ✔️ |
 | 5 | Iniciando o jogo da forca | ✔️ |
 | 6 | Criando a condição de final de jogo | ✔️ |
-| 7 | Finalizando o jogo da forca | ⚫ |
+| 7 | Finalizando o jogo da forca | ✔️ |
 
 ---
 
@@ -66,14 +66,10 @@
 
 ### Aula 07 - Finalizando o jogo da forca
 <ul>
-  <li></li>
+  <li>Como ler e imprimir valores em arquivos usando os tipos ifstream e ofstream</li>
+  <li>Como checar se um arquivo pode ser acessado usando o método is_open()</li>
+  <li>Como usar o método close() para indicar a finalização de uso de um arquivo previamente aberto</li>
+  <li>Como interromper a execução de um programa usando exit(0)</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->
