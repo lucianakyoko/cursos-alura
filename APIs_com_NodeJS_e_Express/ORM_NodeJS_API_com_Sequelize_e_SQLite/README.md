@@ -15,7 +15,7 @@
 | 2 | Criando um modelo | ✔️ |
 | 3 | Desenvolvendo a API | ✔️ |
 | 4 | Relações e associaçõe | ✔️ |
-| 5 | Atualizando a API | ⚫ |
+| 5 | Atualizando a API | ✔️ |
 
 ---
 
@@ -58,7 +58,8 @@
 
 ### Aula 05 - Atualizando a API
 <ul>
-  <li></li>
+  <li>Como usar a herança de classe para adicionar Services e Controllers sem duplicar os métodos de CRUD;</li>
+  <li>Como utilizar métodos especiais criados com associação dos modelos para adicionar funcionalidades à API.</li>
 </ul>
 
 ---

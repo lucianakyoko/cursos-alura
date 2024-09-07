@@ -5,7 +5,6 @@
 npm run dev
 ```
 
-
 ---
 ### conectando com o Sequelize
 com exceção do SQLite, todos os outros dialetos, como MySQL e Postgres, requerem o uso de um servidor próprio para banco de dados, seja em um host remoto, seja em um servidor local em seu computador (o localhost). Além disso, para conectarmos qualquer aplicação a um banco, há sempre algumas informações necessárias:
@@ -302,3 +301,50 @@ Confira com mais detalhes como desfazer uma migração ou como remover dados adi
 
 - [Desfazendo migrações](https://sequelize.org/docs/v6/other-topics/migrations/#undoing-migrations)
 - [Desfazendo seeds](https://sequelize.org/docs/v6/other-topics/migrations/#undoing-seeds)
+
+---
+
+### sobre APIs REST
+Podemos definir uma API (interface de programação de aplicações) como um ponto de contato entre sistemas, aplicações ou mesmo partes de uma mesma aplicação, e também como o conjunto de regras que definem como essa comunicação ocorre.
+
+Basicamente APIs são utilizadas para que sistemas acessem serviços de outros sistemas. Existem vários tipos de APIs e um dos mais comuns é o chamado API REST.
+
+---
+
+###  ORM x Query builder
+As ferramentas de ORM são a forma mais comum de conectar APIs a bancos de dados SQL. Porém não são a única forma, pois também é possível utilizar um tipo de ferramenta chamada de query builder (construtor de consultas).
+
+Query builders são similares aos ORMs, pois ambas as ferramentas são usadas para “abstrair” a sintaxe do SQL e seus diversos comandos para a linguagem de programação escolhida, porém, há diferenças entre os dois tipos de ferramentas.
+
+Vamos analisar um exemplo de consultas feitas com o Knex, query builder usado em JavaScript:
+```
+knex.select('titulo', 'autor', 'ano')
+  .from('livros')
+
+knex.select()
+  .table('livros')
+```
+
+O código acima representa as seguintes consultas em SQL:
+```
+SELECT titulo, autor, ano
+FROM livros;
+
+SELECT * FROM livros;
+```
+
+Onde estamos solicitando uma consulta à tabela livros que retorne apenas os valores das colunas titulo, autor e ano (primeiro exemplo) ou que retorne os valores de todas as colunas da tabela livros (segundo exemplo).
+
+Embora o código acima seja de certa forma similar ao que fizemos com o Sequelize usando findAll(), os métodos dos query builders tendem a ser mais aproximados da linguagem original do SQL: ao invés de findAll(), que abstrai bastante o que é feito “por baixo dos panos” pela biblioteca, temos select().from(), mais próximo do SELECT * FROM etc.;, ao mesmo tempo que abstrai as pequenas diferenças de sintaxe existentes entre os gerenciadores de bancos.
+
+No entanto, essa não é a única diferença. Em termos gerais, a maior diferença entre query builders e ORMs está no nível de abstração que adicionam entre o SQL e a linguagem de programação usada na aplicação e quanto isso impacta no desenvolvimento e na manutenção do código. Conheça alguns pontos importantes abaixo.
+
+Query Builders
+Query Builders são literalmente “construtores de consultas”, ou seja, transformam métodos (em JavaScript, por exemplo) em código SQL para serem executados. Normalmente adicionam um nível de abstração menor do que ORMs e dão maior controle sobre o código SQL que está sendo gerado.
+Devido a isso, são mais indicados para uso em aplicações em que a questão da performance é crítica, casos nos quais é necessário o uso de consultas SQL mais complexas ou específicas ou, ainda, quando é necessário um maior controle sobre o código SQL gerado pelo builder.
+Exigem uma curva mais acentuada de aprendizado em SQL, pois seu uso requer maior domínio da linguagem.
+ORMs
+ORMs mapeiam tabelas para classes e fornecem os métodos para manipular os dados do banco através destas classes.
+Adicionam uma camada maior de abstração em cima do código SQL que será gerado, o que pode impactar na performance da aplicação em casos específicos.
+O maior nível de abstração e as “soluções prontas” incluídas nos frameworks são úteis para o desenvolvimento de aplicações fáceis de criar, manter e atualizar, independentemente do nível de conhecimento em SQL do time.
+Tanto query builders quanto ORMs costumam contar com métodos que permitem o uso de raw queries, em que é possível adicionar consultas em SQL ao código para resolver casos mais específicos sem perder o restante das funcionalidades e vantagens das ferramentas.
