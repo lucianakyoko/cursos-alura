@@ -14,7 +14,7 @@
 | 1 | O que são arrays  | ✔️ |
 | 2 | Alterando arrays | ✔️ |
 | 3 | Laços de repetição | ✔️ |
-| 4 | Funções callback | ⚫ |
+| 4 | Funções callback | ✔️ |
 | 5 | Avançando em arrays | ⚫ |
 
 ---
@@ -47,7 +47,9 @@
 
 ### Aula 04 - Funções callback
 <ul>
-  <li></li>
+  <li>Como utilizar o forEach</li>
+  <li>Diferentes formas de utilizar funções callback</li>
+  <li>Como utilizar o map</li>
 </ul>
 
 ### Aula 05 - Avançando em arrays
