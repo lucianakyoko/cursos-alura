@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | O que são arrays  | ✔️ |
-| 2 | Alterando arrays | ⚫ |
+| 2 | Alterando arrays | ✔️ |
 | 3 | Laços de repetição | ⚫ |
 | 4 | Funções callback | ⚫ |
 | 5 | Avançando em arrays | ⚫ |
@@ -31,7 +31,10 @@
 
 ### Aula 02 - Alterando arrays
 <ul>
-  <li></li>
+  <li>Separar um array em partes com slice()</li>
+  <li>Remover e incluir novos elementos em um array com splice()</li>
+  <li>Concatenar elementos em um único array com concat()</li>
+  <li>Trabalhar com arrays de duas dimensões</li>
 </ul>
 
 ### Aula 03 - Laços de repetição
