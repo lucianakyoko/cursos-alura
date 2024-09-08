@@ -493,3 +493,143 @@ A função log() é a mais geral e a mais utilizada, porém o objeto Console tem
 
 ---
 
+## Number
+### Criando o arquivo tipo-number.js
+Criaremos um novo arquivo chamado tipo-number.js. Nesse arquivo, vamos adicionar algumas variáveis para trabalhar com nossos tipos.
+
+Começaremos criando uma const que chamaremos de notaPrimeiroBi, igual a 8. Passamos para a variável o valor 8 sem aspas, porque queremos que seja um número.
+```
+  tipo-number.js:
+```
+
+```
+  const notaPrimeiroBi = 8;
+```
+Em seguida, vamos criar outra const chamada notaSegundoBi, igual a 6.3. É importante saber que, no JavaScript, se quisermos usar um número decimal, deve ser com ponto e não com vírgula.
+
+```
+const notaSegundoBi = 6.3;
+```
+
+Feito isso, criaremos outra constante para somar esses dois valores. Portanto, vamos criar uma const chamada total, que receberá a soma dos valores das duas variáveis notaPrimeiroBi e notaSegundoBi.
+```
+const total = notaPrimeiroBi + notaSegundoBi;
+```
+
+Com isso, o JavaScript irá pegar o valor da primeira variável, o valor da segunda variável, somar esses dois valores, e passar ambos para dentro da variável total.
+Importante: sempre que o JavaScript passa por uma linha que faz uma atribuição de variável, primeiro ele analisa o que está à direita do igual (=), depois pega o resultado e passa para a variável que está à esquerda do igual.
+
+### Testando o código
+Vamos verificar se tudo está correto com o método console.log(). Entre os parênteses, pediremos para exibir o valor de total no terminal.
+```
+console.log(total);
+```
+Com o terminal aberto, executaremos o seguinte comando:
+```
+node tipo-number.js
+```
+
+Como retorno, foi exibido o valor 14.3.
+
+Entendemos que o JavaScript aceita como valor numérico números inteiros e números não inteiros, o que chamamos nesse caso de ponto flutuante. Nós não chamamos de decimal, conforme explicado nos materiais extras disponibilizados, e todos eles são do tipo number. Nós usamos o operador de adição (+) para somar estes dois números e exibir no console.
+
+### Adicionando outras notas
+Vamos adicionar mais algumas notas ao código de tipo-number.js, porque um ano letivo tem mais de dois bimestres. Primeiramente, criaremos uma constante notaTerceiroBi, que será -2.
+
+Outra const será a notaQuartoBi, com o valor 5. Porém, nesse caso específico, vamos colocar a nota entre aspas simples, ou seja, agora o valor é 5, mas quando o colocamos entre aspas, ele teoricamente é uma string, não um número. Vamos entender o que acontece no código quando usamos dessa forma.
+
+Feito isso, atualizaremos a constante total para somar todas as notas. Assim, teremos notaPrimeiroBi mais notaSegundoBi, mais notaTerceiroBi, mais notaQuartoBi.
+
+O console.log() pode ser mantido como está.
+```
+tipo-number.js:
+const notaPrimeiroBi = 8;
+const notaSegundoBi = 6.3;
+const notaTerceiroBi = -2;
+const notaQuartoBi = '5';
+
+const total = notaPrimeiroBi + notaSegundoBi + notaTerceiroBi + notaQuartoBi;
+
+console.log(total);
+```
+Ao voltar no terminal e executar o mesmo comando anterior (node tipo-number.js), temos o valor 12.35. O que podemos entender disso? O valor 5, que estava como string, não deu nenhum erro; o Node.js não acusou que temos valores de número e valores de string e tentamos somar essas coisas.
+
+Porém, onde foi parar esse valor 5? Se prestarmos atenção, o 5 foi parar junto com o número. Se fizéssemos a soma de 8, 6.3 e -2, daria 12.3. Esse 5 que aparece ao final do resultado é o 5 em formato de string, que simplesmente foi colado no final da conta.
+
+Por que isso aconteceu? Porque o mesmo operador de mais (+) que usamos para somar números, também é utilizado para concatenar textos.
+
+### Concatenando strings
+Como exemplo, vamos criar mais duas constantes ao final do código. A primeira será uma const chamada nome, recebendo uma string com o nome "Juliana".
+
+Daremos um console.log() na linha abaixo e passaremos uma frase entre parênteses e aspas simples. A frase será "meu nome é ", seguida de um sinal de mais e da variável nome.
+```
+// código omitido
+
+const nome = 'Juliana';
+console.log('meu nome é ' + nome);
+```
+
+Dessa forma, concatenamos duas strings. A primeira string é "meu nome é ", e a segunda string é "Juliana", que está dentro da variável nome.
+
+Vamos voltar ao terminal, limpá-lo com "Ctrl + L", e executar novamente o mesmo comando. Como retorno, temos a mensagem "meu nome é Juliana".
+
+Agora conseguimos pensar no problema que é misturar strings e números, porque a situação que criamos, em vez de somar a nota do quarto bimestre, concatenou e colocou o 5 após a conta toda.
+
+Quando fazemos operações em um programa, isso não pode acontecer. Portanto, é muito importante sempre ter em mente os tipos de dado que guardamos nas variáveis. No nosso exemplo, temos o tipo number, que pode ser inteiro, ponto flutuante, ou um número negativo.
+
+Porém, quando colocamos um número dentro de strings (entre aspas simples), ele não é mais um número, e sim uma string, não importa que o valor dentro dela seja 5, 12, 10, ou 0.
+
+### Convertendo string em número
+É normal, em diversas situações, termos acesso aos números na nossa aplicação como string, por exemplo, quando eles chegam a partir de formulários. Existem algumas formas de converter.
+
+Vamos passar uma das formas possíveis de usar o JavaScript para converter uma string para um número. Em const notaQuartoBi, vamos passar Number.parseInt() e, entre parênteses, colocar o número 5.
+```
+const notaQuartoBi = Number.parseInt('5');
+```
+
+Agora, se executarmos o arquivo novamente, temos o resultado 17.3 no terminal. O 5 ao final não existe mais e todos os quatro valores são tratados como números.
+
+### Calculando a média
+Podemos finalizar o nosso cálculo de média. Em const total, vamos englobar o cálculo da soma das quatro notas entre parênteses e dividir o resultado por 4.
+```
+const total = (notaPrimeiroBi + notaSegundoBi + notaTerceiroBi + notaQuartoBi) / 4;
+```
+Após salvar o arquivo e testar novamente no terminal, temos 4.325. É possível também modificar o retorno, se quisermos reduzir a quantidade de casas decimais, utilizando outra função do JavaScript.
+
+Vamos fechar o console.log() passando primeiro a string "a média é " seguida do operador de mais (+). Na sequência, o total recebe uma função para reduzir o número de casas decimais. Assim, teremos total.toFixed(2), para fixar 2 casas após a vírgula.
+```
+console.log('a média é ' + total.toFixed(2));
+```
+De volta ao terminal, executamos novamente o comando node tipo-number.js. Agora, temos como retorno a média de 4.33, ou seja, funcionou conforme esperado.
+
+---
+
+##  tipo Symbol
+O tipo Symbol é um dos tipos primitivos em JavaScript, introduzido no ES6 (ECMAScript 2015), e representa um identificador único e imutável. Símbolos são frequentemente utilizados para criar propriedades de objeto que são únicas e não interferem com outras propriedades existentes.
+
+### Exemplo de uso do Tipo Symbol:
+```
+// Criando um símbolo
+const meuSimbolo = Symbol();
+
+// Símbolos podem receber uma descrição (opcional)
+const simboloComDescricao = Symbol('descricao_do_simbolo');
+
+// Símbolos são únicos
+const outroSimbolo = Symbol();
+console.log(meuSimbolo === outroSimbolo); // Saída: false
+
+// Símbolos podem ser usados como chaves de propriedades de objetos
+const obj = {
+  [meuSimbolo]: 'valor_do_simbolo'
+};
+
+// Acessando a propriedade usando o símbolo como chave
+console.log(obj[meuSimbolo]); // Saída: 'valor_do_simbolo'
+```
+
+Dado que os símbolos são únicos, mesmo quando criados com a mesma descrição, tornam-se ideais para a criação de chaves de propriedades de objetos. Essa característica evita conflitos com outras chaves, prevenindo a sobrescrita acidental de propriedades.
+
+Além disso, símbolos também podem ser usados para adicionar propriedades "escondidas" em objetos, tornando-as inacessíveis sem a referência direta ao símbolo correspondente. Essa prática é particularmente útil em bibliotecas ou frameworks, contribuindo para evitar colisões de nomes de propriedades.
+
+---

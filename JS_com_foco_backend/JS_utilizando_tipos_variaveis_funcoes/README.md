@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | JS, Node.js e o backend  | ✔️ |
 | 2 | Variáveis | ✔️ |
-| 3 | Tipos de dados | ⚫ |
+| 3 | Tipos de dados | ✔️ |
 | 4 | Operadores | ⚫ |
 | 5 | Funções | ⚫ |
 
@@ -37,7 +37,10 @@
 
 ### Aula 03 - Tipos de dados
 <ul>
-  <li></li>
+  <li>Armazenar dados utilizando variáveis e quais tipos de dados podemos armazenar para utilizar posteriormente em programas desenvolvidos;</li>
+  <li>Converter um dado do tipo string em number para realizar operações;</li>
+  <li>Realizar operações com strings e como trabalhar utilizando template strings para criar expressões embutidas e tornar o código mais legível;</li>
+  <li>Trabalhar com o tipo booleano para representar valores lógicos, realizar controle de fluxo, tomada de decisões e validações.</li>
 </ul>
 
 ### Aula 04 - Operadores
