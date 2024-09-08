@@ -25,8 +25,8 @@
 ### 1️⃣ - Fundamentos do JavaScript
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟦 | O que é Back-end e Front-end | ✖️ | ➖ | ⚫ |
-| . | 1.2 | 🟪 | JS: utilizando tipos, variáveis e funções | ✖️ | 🗂️ | ⚫ |
+| . | 1.1 | 🟦 | O que é Back-end e Front-end | ✖️ | ➖ | ✔️ |
+| 🚩 | 1.2 | 🟪 | JS: utilizando tipos, variáveis e funções | ✖️ | 🗂️ | ⚫ |
 | . | 1.3 | 🟪 | JS: conhecendo arrays | ✖️ | 🗂️ | ⚫ |
 | . | 1.4 | 🟪 | JS: conhecendo objetos | ✖️ | 🗂️ | ⚫ |
 
