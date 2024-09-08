@@ -50,7 +50,9 @@
 
 ### Aula 05 - Funções
 <ul>
-  <li></li>
+  <li>Declarar e executar corretamente uma função para realizar tarefas;</li>
+  <li>Utilizar uma expressão de função para tornar o código mais dinâmico e funcional;</li>
+  <li>Trabalhar com arrow functions para criar funções mais curtas e em casos que precisamos chamar uma função dentro de outra.</li>
 </ul>
 
 ---
