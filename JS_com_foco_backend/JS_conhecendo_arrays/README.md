@@ -15,7 +15,7 @@
 | 2 | Alterando arrays | ✔️ |
 | 3 | Laços de repetição | ✔️ |
 | 4 | Funções callback | ✔️ |
-| 5 | Avançando em arrays | ⚫ |
+| 5 | Avançando em arrays | ✔️ |
 
 ---
 
@@ -54,7 +54,9 @@
 
 ### Aula 05 - Avançando em arrays
 <ul>
-  <li></li>
+  <li>Como utilizar o filter e o reduce</li>
+  <li>Como clonar arrays com o spread operator ...</li>
+  <li>Como utilizar a estrutura Set</li>
 </ul>
 
 ---
