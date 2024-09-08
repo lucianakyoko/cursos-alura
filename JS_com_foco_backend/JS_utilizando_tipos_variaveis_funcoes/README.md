@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | JS, Node.js e o backend  | ✔️ |
-| 2 | Variáveis | ⚫ |
+| 2 | Variáveis | ✔️ |
 | 3 | Tipos de dados | ⚫ |
 | 4 | Operadores | ⚫ |
 | 5 | Funções | ⚫ |
@@ -29,7 +29,10 @@
 
 ### Aula 02 - Variáveis
 <ul>
-  <li></li>
+  <li>Diferenciar var, let e const e identificar qual a melhor forma para armazenar dados de acordo com cada situação;</li>
+  <li>A proteger dados em uma variável de serem alterados, utilizando const;</li>
+  <li>Lidar com mensagens de erro, entendendo o que o Node.js está tentando nos dizer com elas, para realizar correções no código;</li>
+  <li>Trabalhar com escopos e entender como os escopos funcionam para “limitar” o acesso do código a uma variável.</li>
 </ul>
 
 ### Aula 03 - Tipos de dados
