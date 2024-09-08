@@ -14,8 +14,8 @@
 | 1 | JS, Node.js e o backend  | ✔️ |
 | 2 | Variáveis | ✔️ |
 | 3 | Tipos de dados | ✔️ |
-| 4 | Operadores | ⚫ |
-| 5 | Funções | ⚫ |
+| 4 | Operadores | ✔️ |
+| 5 | Funções | ✔️ |
 
 ---
 
@@ -45,7 +45,9 @@
 
 ### Aula 04 - Operadores
 <ul>
-  <li></li>
+  <li>Fazer cálculos e manipulações numéricas utilizando operadores aritméticos;</li>
+  <li>Criar fluxos de tomada de decisão em algoritmos através dos operadores lógicos;</li>
+  <li>Criar lógicas condicionais e aplicar lógica de programação com operadores de comparação.</li>
 </ul>
 
 ### Aula 05 - Funções
