@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | O que são arrays  | ✔️ |
 | 2 | Alterando arrays | ✔️ |
-| 3 | Laços de repetição | ⚫ |
+| 3 | Laços de repetição | ✔️ |
 | 4 | Funções callback | ⚫ |
 | 5 | Avançando em arrays | ⚫ |
 
@@ -39,7 +39,10 @@
 
 ### Aula 03 - Laços de repetição
 <ul>
-  <li></li>
+  <li>Utilizar os métodos includes() e indexOf()</li>
+  <li>Desestruturar um array</li>
+  <li>Utilizar a estrutura for e entender seu funcionamento</li>
+  <li>Utilizar a estrutura for of e entender a diferença em relação ao for</li>
 </ul>
 
 ### Aula 04 - Funções callback
