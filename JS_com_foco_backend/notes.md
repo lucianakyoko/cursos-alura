@@ -7,3 +7,11 @@
 
 ---
 
+## Assistir Alura+
+[NodeJS: o que é e como funciona](https://cursos.alura.com.br/extra/alura-mais/nodejs-o-que-e-e-como-funciona-c1414)
+
+---
+
+## Leitura do artigo
+[Como instalar o Node.js no Windows, Linux e macOS](https://www.alura.com.br/artigos/como-instalar-node-js-windows-linux-macos)
+

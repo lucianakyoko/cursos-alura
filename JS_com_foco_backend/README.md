@@ -36,8 +36,8 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 2.1 | 🟦 | Node.js: o que é e como funciona | ✖️ | ✖️ | ⚫ |
-| . | 2.2 | 🟫 | Como instalar Node.js no Windows, Linux e macOS | ✖️ | ✖️ | ⚫ |
+| . | 2.1 | 🟦 | Node.js: o que é e como funciona | ✖️ | ✖️ | ✔️ |
+| . | 2.2 | 🟫 | Como instalar Node.js no Windows, Linux e macOS | ✖️ | ✖️ | ✔️ |
 | . | 2.3 | 🟪 | JS com Node.js: criando sua primeira biblioteca | ➖ | [🗂️](../Cursos_Avulsos//JS_com_Node_Primeira_Biblioteca/) | ✔️ |
 
 
@@ -45,5 +45,5 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 3.1 | 🟪 | JS: programação Orientada a Objetos | ➖ | 🗂️ | ⚫ |
+| 🚩 | 3.1 | 🟪 | JS: programação Orientada a Objetos | ➖ | 🗂️ | ⚫ |
 
