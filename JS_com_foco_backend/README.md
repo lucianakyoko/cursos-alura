@@ -28,7 +28,7 @@
 | . | 1.1 | 🟦 | O que é Back-end e Front-end | ✖️ | ➖ | ✔️ |
 | . | 1.2 | 🟪 | JS: utilizando tipos, variáveis e funções | ✖️ | [🗂️](./JS_utilizando_tipos_variaveis_funcoes/) | ✔️ |
 | . | 1.3 | 🟪 | JS: conhecendo arrays | ✖️ | [🗂️](./JS_conhecendo_arrays/) | ✔️ |
-| 🚩 | 1.4 | 🟪 | JS: conhecendo objetos | ✖️ | 🗂️ | 🔵 |
+| . | 1.4 | 🟪 | JS: conhecendo objetos | ✖️ | [🗂️](./JS_conhecendo_objetos/) | ✔️ |
 
 
 
@@ -36,7 +36,7 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| . | 2.1 | 🟦 | Node.js: o que é e como funciona | ✖️ | ✖️ | ⚫ |
+| 🚩 | 2.1 | 🟦 | Node.js: o que é e como funciona | ✖️ | ✖️ | ⚫ |
 | . | 2.2 | 🟫 | Como instalar Node.js no Windows, Linux e macOS | ✖️ | ✖️ | ⚫ |
 | . | 2.3 | 🟪 | JS com Node.js: criando sua primeira biblioteca | ➖ | [🗂️](../Cursos_Avulsos//JS_com_Node_Primeira_Biblioteca/) | ✔️ |
 

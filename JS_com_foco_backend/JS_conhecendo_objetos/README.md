@@ -15,7 +15,7 @@
 | 2 | Manipulando objetos | ✔️ |
 | 3 | Percorrendo objetos | ✔️ |
 | 4 | Conhecendo o JSON | ✔️ |
-| 5 | Manipulando listas de objetos | ⚫ |
+| 5 | Manipulando listas de objetos | ✔️ |
 
 ---
 
@@ -53,7 +53,9 @@
 
 ### Aula 05 - Manipulando listas de objetos
 <ul>
-  <li></li>
+  <li>Como podemos utilizar os métodos de arrays para percorrer listas de objetos;</li>
+  <li>Como criar funções que manipulam listas de objetos, passamos as propriedades e valores através de parâmetros;</li>
+  <li>Como encontrar, filtrar e ordenar uma lista de objetos.</li>
 </ul>
 
 ---
