@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | O que são objetos | ✔️ |
 | 2 | Manipulando objetos | ✔️ |
-| 3 | Percorrendo objetos | ⚫ |
+| 3 | Percorrendo objetos | ✔️ |
 | 4 | Conhecendo o JSON | ⚫ |
 | 5 | Manipulando listas de objetos | ⚫ |
 
@@ -38,7 +38,9 @@
 
 ### Aula 03 - Percorrendo objetos
 <ul>
-  <li></li>
+  <li>Como percorrer objetos a partir das chaves com for...in, iterando sobre as propriedades de um objeto;</li>
+  <li>Como extrair chaves e valores de objetos é usando métodos de Object;</li>
+  <li>A utilizar o spread operator (ou operador de espalhamento) para decompor objetos e juntar objetos.</li>
 </ul>
 
 ### Aula 04 - Conhecendo o JSON
