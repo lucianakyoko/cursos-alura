@@ -38,7 +38,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 11 | Melhore sua aplicação React com testes automatizados | [🗂️](./React_com_Testes_automatizados/) | 🔵 |
 | 12 | React: bibliotecas para desenvolver formulários | [🗂️](./React_bibliotecas_para_desenvolver_formulários/) | 🔵 |
 | 13 | Linguagem C++ | [🗂️](./LinguagemC++/) | 🔵 |
-| 14 | Aprenda a programar em JavaScript com foco no back-end | [🗂️](./JS_com_foco_backend/) | 🔵 |
+| 14 | Aprenda a programar em JavaScript com foco no back-end | [🗂️](./JS_com_foco_backend/) | ✔️ |
 | 15 | --- | 🗂️ | ⚫ |
 
 ---

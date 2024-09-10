@@ -45,5 +45,5 @@
 
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 3.1 | 🟪 | JS: programação Orientada a Objetos | ➖ | [🗂️](./JS_programacao_Orientada_a_Objetos/) | 🔵 |
+| . | 3.1 | 🟪 | JS: programação Orientada a Objetos | ➖ | [🗂️](./JS_programacao_Orientada_a_Objetos/) | ✔️ |
 

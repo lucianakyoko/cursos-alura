@@ -756,3 +756,28 @@ Dessa forma, o uso de get/set ajuda na legibilidade.
 Além disso, os assessores têm, em si mesmos, limitações quanto aos parâmetros aceitos: get não aceita nenhum parâmetro e set aceita apenas um parâmetro (referente ao dado que será definido), o que ajuda a garantir que não irão receber parâmetros “inesperados” que podem causar bugs. O mesmo comportamento pode ser implementado em métodos normais, por meio de validações, porém isso torna o desenvolvimento menos ágil.
 
 Na verdade (como em vários outros aspectos do desenvolvimento com JavaScript) não há consenso quanto ao uso de métodos normais no lugar de assessores, e você vai encontrar as mais diversas opiniões sobre esse assunto. Como há outras linguagens de programação que não têm assessores e utilizam funções como getters/setters, pessoas que já desenvolvem nestas linguagens podem transferir sua experiência para o JavaScript. Porém, agora que você já conhece os dois casos, já fica mais fácil identificar e ler códigos que implementam o encapsulamento das duas formas.
+
+---
+
+## próximos passos - TS e SOLID
+A partir deste momento, você já pode utilizar princípios da orientação a objetos em vários projetos, inclusive conferindo como elas são utilizadas em projetos e frameworks na formação de[ APIs com Node.js e Express](../../APIs_com_NodeJS_e_Express/).
+
+Porém, é possível se aprofundar ainda mais nos estudos focando somente em orientação a objetos, indo além do que o JavaScript implementa nativamente. Estamos falando aqui do famoso TypeScript e dos princípios SOLID.
+
+### TypeScript e a orientação a objetos
+Por ter sido pensada inicialmente tendo como foco a herança de protótipo, não há em JavaScript várias ferramentas importantes na orientação a objetos “clássica”. Porém é possível contornar essa questão utilizando TypeScript.
+
+O TypeScript é o que chamamos de superset, ou seja, um pacote de funcionalidades extras que é “adicionado” ao JavaScript e que permite a adição de diversas funcionalidades ao código. As mais importantes são relacionadas à tipagem, mas também foram adicionadas diversas ferramentas que fazem muita diferença na implementação de um projeto orientado a objetos, como interfaces, modificadores de acesso, classes abstratas, entre outros.
+
+### SOLID
+SOLID é um acrônimo para cinco princípios de design de software com orientação a objetos, visando manutenção, legibilidade, escalabilidade e boas práticas em geral:
+
+- S: Single responsibility principle (princípio da responsabilidade única).
+- O: Open/closed principle (princípio do aberto/fechado).
+- L: Liskov substitution principle (princípio da substituição de Liskov).
+- I: Interface segregation principle (princípio da segregação de interface).
+- D: Dependency inversion principle (princípio da inversão de dependência).
+
+O estudo e prática dos princípios SOLID são o próximo passo para aperfeiçoar seus conhecimentos em orientação a objetos.
+
+---

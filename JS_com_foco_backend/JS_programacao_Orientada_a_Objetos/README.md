@@ -14,8 +14,8 @@
 | 1 | Entendendo a orientação a objetos | ✔️ |
 | 2 | Funções e protótipos | ✔️ |
 | 3 | Classes e herança | ✔️ |
-| 4 | Encapsulamento | ⚫ |
-| 5 | Polimorfismo | ⚫ |
+| 4 | Encapsulamento | ✔️ |
+| 5 | Polimorfismo | ✔️ |
 
 ---
 
@@ -54,7 +54,9 @@
 
 ### Aula 05 - Polimorfismo
 <ul>
-  <li></li>
+  <li>Que chamamos de polimorfismo a alteração de um método de uma classe para que, na subclasse, o mesmo método tenha comportamentos diferentes do método executado no contexto da superclasse;</li>
+  <li>Qual a diferença entre polimorfismo e herança de classe, e como o polimorfismo também é uma ferramenta para desenvolver código legível e desacoplado;</li>
+  <li>O que são métodos estáticos, qual a diferença entre os métodos instanciados e os estáticos, e em que casos podem ser utilizados.</li>
 </ul>
 
 ---
