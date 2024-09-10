@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Entendendo a orientação a objetos | ✔️ |
-| 2 | Funções e protótipos | ⚫ |
+| 2 | Funções e protótipos | ✔️ |
 | 3 | Classes e herança | ⚫ |
 | 4 | Encapsulamento | ⚫ |
 | 5 | Polimorfismo | ⚫ |
@@ -31,7 +31,10 @@
 
 ### Aula 02 - Funções e protótipos
 <ul>
-  <li></li>
+  <li>O que é a palavra-chave this e sua importância na manipulação de objetos com JavaScript, uma vez que o this representa o contexto em que determinada função ou método será executada, e como este contexto pode ser identificado e modificado utilizando os métodos bind(), call() e apply().</li>
+  <li>Como funciona a criação de objetos em JavaScript com o modelo de protótipo, que é a forma nativa do JavaScript trabalhar com o conceito de orientação a objetos conhecido como “herança”, quando objetos recebem propriedades e métodos de outros.</li>
+  <li>Como acessar as propriedades prototype e __proto__ e, através delas, identificar a cadeia de protótipos desde o nível mais baixo, normalmente um objeto do próprio tipo de dado, como Object.</li>
+  <li>Como o JavaScript cria objetos a partir de funções construtoras com new, utilizando uma sintaxe mais próxima das classes.</li>
 </ul>
 
 ### Aula 03 - Classes e herança
