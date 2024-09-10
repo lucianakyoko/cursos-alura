@@ -584,3 +584,175 @@ O modo estrito do JavaScript serve para impedir que alguns comportamentos da lin
 JavaScript é uma linguagem que não tem breaking changes, ou seja, não é possível corrigir certos comportamentos não desejados retirando o código das novas versões, pois há o risco de quebrar código que já está rodando em sites e aplicações na internet.
 
 O modo estrito é uma forma de ajudar a contornar alguns destes comportamentos sem que o código “não estrito” deixe de funcionar. Essa política não se aplica tanto para aplicações back-end que rodam em servidores (em que é possível controlar melhor as versões utilizadas pelo interpretador), mas é extremamente importante nos navegadores, em que o código é interpretado no lado “cliente” da requisição e não há como ter controle sobre as versões de navegador dos usuários.
+
+
+---
+
+## atributos privados com _
+
+Até recentemente, o JavaScript não tinha a opção de usar atributos privados com #. Em vez disso, atributos privados tinham um _ como prefixo como convenção, indicando se tratar de atributos privados. Vamos ver alguns exemplos de como essa convenção funcionava.
+
+Podemos entender “convenção” como um “acordo”. A comunidade dev adotou a sintaxe _variavel (com o _ antes do nome) como um aviso no código de que se trata de uma propriedade ou método privado que não deve ser chamado ou modificado fora da classe. Porém, incluir o _ não produz nenhuma modificação sintática no código, ou seja, os atributos na prática continuam se comportando como propriedade ou método normal (público) e ainda podem ser acessados livremente.
+
+Lembrando que propriedades e métodos públicos são aqueles que podem ser acessados a partir de qualquer parte do código; os privados são acessados apenas “por dentro” da classe.
+
+Além da convenção, existem algumas formas de fazer um atributo se comportar como privado. Vamos ver alguns exemplos, começando por uma classe totalmente pública:
+```
+class User {
+ role = '';
+
+ constructor(nome) {
+   this.nome = nome;
+   console.log(`Criado novo usuário: ${nome}` );
+ }
+}
+
+// criar o usuário
+let novoUser = new User('Rodrigo');
+
+// modificar o role
+novoUser.role = 'admin';
+console.log(novoUser.role) // admin
+```
+
+Agora vamos “proteger” as propriedades nome e role, marcando com o prefixo _ e também modificando um pouco a estrutura da classe:
+
+```
+class User {
+ _role = '';
+
+ set role(tipoRole) {
+   if (tipoRole !== 'admin') {
+     tipoRole = 'estudante'
+   }
+   this._role = tipoRole
+ }
+
+ get role() {
+   return this._role
+ }
+
+ constructor(nome) {
+   this._nome = nome;
+ }
+}
+```
+
+Ao criarmos a classe, condicionamos o acesso aos getters e setters. Ao criarmos a instância e executarmos os métodos:
+
+```
+// criar o usuário
+let novoUser = new User('Rodrigo');
+
+// modificar o role
+novoUser.role = 'admin'; // acessando via setter
+console.log(novoUser.role) // admin
+
+// tentar incluir um role não existente
+novoUser.role = 'gerente';
+console.log(novoUser.role) // estudante
+```
+
+### Propriedades do tipo “apenas leitura” (read-only)
+A partir do momento em que usamos getters ou setters em uma classe, as operações ficam dependentes entre si. Uma classe que utiliza getters para acessar propriedades vai precisar necessariamente de setters para modificá-las. Por exemplo:
+```
+class User {
+  constructor(nome) {
+   this._nome = nome
+ }
+
+ get nome(){
+   return this._nome
+ }
+}
+```
+
+No exemplo acima, criamos uma classe com apenas um construtor para receber um valor para a propriedade nome e um getter para nome.
+
+Vamos instanciar a classe e tentar atualizar nome:
+```
+// criar o usuário
+let novoUser = new User('Rodrigo');
+console.log(novoUser.nome) //usando o getter
+
+novoUser.nome = 'Mariana'
+console.log(novoUser.nome) //não é modificado, continua 'Rodrigo'
+```
+
+O setter não foi implementado, então a propriedade não é modificada.
+
+### Usando métodos
+É possível emular os getters e setters com funções. As funções são mais flexíveis do que get/set (podem aceitar argumentos diferentes, por exemplo).
+
+```
+class User {
+ _nome = '';
+
+ setNome(nome) {
+   this._nome = nome;
+ }
+
+ getNome() {
+   return this._nome;
+ }
+}
+```
+
+Nesse caso, suprimimos o construtor e passamos toda a responsabilidade para setName(). Vamos executar:
+
+```
+const novoUser = new User()
+novoUser.setNome('Rodrigo');
+console.log(novoUser.getNome()); //Rodrigo
+```
+
+A convenção do prefixo _ para atributos privados têm sido usada há muito tempo e, apesar da funcionalidade de atributos privados com # já ter sido implementada, você ainda pode encontrar a forma anterior com frequência.
+
+---
+
+## assessores são sempre necessários?
+Durante a aula conhecemos os chamados assessores, ou métodos que dão acesso a determinadas propriedades. Os getters retornam valores e os setters definem valores. Mas será que estes métodos são sempre necessários, em todas as classes?
+
+Assim como a função constructor(), os assessores podem ser utilizados somente quando as funcionalidades são realmente necessárias. Por exemplo, um getter pode ser utilizado para retornar um dado da classe de uma forma específica. Um setter é útil quando se deseja executar algum código sempre que alguma propriedade é definida ou sofre alguma modificação, por exemplo, códigos que façam validação de campos. Os assessores também atuam na segurança de uma classe, encapsulando dados quando necessário.
+
+---
+
+##  getters e setters com funções
+Na atividade sobre atributos privados com _, estudamos um exemplo de código onde, ao invés de get e set, foram utilizadas funções para esse papel:
+```
+class User {
+ _nome = '';
+
+ setNome(nome) {
+   this._nome = nome;
+ }
+
+ getNome() {
+   return this._nome;
+ }
+}
+```
+
+É possível usar métodos como assessores, como visto acima. Porém, há algumas vantagens na utilização de get/set:
+
+Apesar de serem métodos, a sintaxe para uso do get e set é a mesma que utilizamos para acessar/modificar propriedades públicas normalmente, o que faz sentido com a ideia do encapsulamento de “expôr” somente o que é necessário da classe. Por outro lado, na forma acima, os métodos são acessados com a sintaxe usual de execução de função (usando parênteses).
+
+Por exemplo, usando funções como assessores teríamos as seguintes chamadas de método:
+```
+const nome = novoUser.getNome() //getter
+novoUser.setNome('Pedro') //setter
+novoUser.exibeInfos() // método normal
+```
+
+Utilizando get e set:
+```
+const nome = novoUser.nome //getter
+novoUser.nome = 'Pedro' //setter
+novoUser.exibeInfos() // método normal
+```
+
+Dessa forma, o uso de get/set ajuda na legibilidade.
+
+Além disso, os assessores têm, em si mesmos, limitações quanto aos parâmetros aceitos: get não aceita nenhum parâmetro e set aceita apenas um parâmetro (referente ao dado que será definido), o que ajuda a garantir que não irão receber parâmetros “inesperados” que podem causar bugs. O mesmo comportamento pode ser implementado em métodos normais, por meio de validações, porém isso torna o desenvolvimento menos ágil.
+
+Na verdade (como em vários outros aspectos do desenvolvimento com JavaScript) não há consenso quanto ao uso de métodos normais no lugar de assessores, e você vai encontrar as mais diversas opiniões sobre esse assunto. Como há outras linguagens de programação que não têm assessores e utilizam funções como getters/setters, pessoas que já desenvolvem nestas linguagens podem transferir sua experiência para o JavaScript. Porém, agora que você já conhece os dois casos, já fica mais fácil identificar e ler códigos que implementam o encapsulamento das duas formas.

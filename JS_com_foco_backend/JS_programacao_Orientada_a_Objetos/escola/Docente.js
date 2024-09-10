@@ -1,6 +1,6 @@
 import User from "./User.js";
 
-class Docente extends User{
+export default class Docente extends User{
   constructor(nome, email, nascimento, role='docente', ativo='true') {
     super(nome, email, nascimento, role, ativo)
   }
@@ -13,5 +13,5 @@ class Docente extends User{
   }
 }
 
-const novaDocente = new Docente('Ana', 'a@a.com', '2024-01-01');
-console.log(novaDocente.aprovarEstudante('Juliana', 'JavaScript'));
+// const novaDocente = new Docente('Ana', 'a@a.com', '2024-01-01');
+// console.log(novaDocente.aprovarEstudante('Juliana', 'JavaScript'));
