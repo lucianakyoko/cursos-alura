@@ -575,3 +575,12 @@ No caso da factory function não há perda de contexto na execução dos método
 Não há consenso, pois ambas têm vantagens e desvantagens. A sintaxe da função construtora é mais confortável para quem está acostumado com o uso de classes; já a factory function é mais flexível a respeito do tipo de objeto que será retornado.
 
 Boa parte dos frameworks e bibliotecas do Node.js atualmente vão trabalhar com classes ou construtores, instanciados com new.
+
+---
+
+##  strict mode
+O modo estrito do JavaScript serve para impedir que alguns comportamentos da linguagem causem “falhas silenciosas” (ou seja, falhas que não resultam em lançamento de erros pelo programa) e corrigir alguns outros que podem induzir bugs potenciais e comportamentos inesperados.
+
+JavaScript é uma linguagem que não tem breaking changes, ou seja, não é possível corrigir certos comportamentos não desejados retirando o código das novas versões, pois há o risco de quebrar código que já está rodando em sites e aplicações na internet.
+
+O modo estrito é uma forma de ajudar a contornar alguns destes comportamentos sem que o código “não estrito” deixe de funcionar. Essa política não se aplica tanto para aplicações back-end que rodam em servidores (em que é possível controlar melhor as versões utilizadas pelo interpretador), mas é extremamente importante nos navegadores, em que o código é interpretado no lado “cliente” da requisição e não há como ter controle sobre as versões de navegador dos usuários.

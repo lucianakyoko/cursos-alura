@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Entendendo a orientação a objetos | ✔️ |
 | 2 | Funções e protótipos | ✔️ |
-| 3 | Classes e herança | ⚫ |
+| 3 | Classes e herança | ✔️ |
 | 4 | Encapsulamento | ⚫ |
 | 5 | Polimorfismo | ⚫ |
 
@@ -39,7 +39,10 @@
 
 ### Aula 03 - Classes e herança
 <ul>
-  <li></li>
+  <li>O que são e como funcionam as classes, que são elementos essenciais para se trabalhar com orientação a objetos em grande parte das linguagens de programação voltadas para este paradigma. As classes fornecem um modelo para a criação de cópias (instâncias) de objetos que compartilham dos mesmos tipos de propriedades e métodos.</li>
+  <li>Como criar subclasses que herdam propriedades e métodos de uma superclasse e como reaproveitar estas propriedades e métodos da superclasse através da função super(). Isso tem relação com o conceito de herança de classe, que é importante para trabalhar com orientação a objetos.</li>
+  <li>Como uma subclasse pode ter propriedades e métodos próprios, além dos recebidos da superclasse, e como declarar isso no código criando novos métodos.</li>
+  <li>A praticar a sintaxe de classe com JavaScript, criando classes, subclasses, propriedades, construtores e métodos.</li>
 </ul>
 
 ### Aula 04 - Encapsulamento
