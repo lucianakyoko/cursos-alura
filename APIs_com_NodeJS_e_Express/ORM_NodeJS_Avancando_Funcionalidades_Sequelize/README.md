@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Soft delete  | ✔️ |
-| 2 | Escopo de modelo e validações | ⚫ |
+| 2 | Escopo de modelo e validações | ✔️ |
 | 3 | Escopo de associação | ⚫ |
 | 4 | Operadores e agregadores | ⚫ |
 | 5 | Transações | ⚫ |
@@ -30,7 +30,12 @@
 
 ### Aula 02 - Escopo de modelo e validações
 <ul>
-  <li></li>
+  <li>Para que são utilizados os escopos de modelo e como implementar um escopo específico no modelo Pessoa;</li>
+  <li>Algumas possibilidades de uso de escopos para abstração de lógicas comuns em consultas a bancos, como where e include;</li>
+  <li>Como criar escopos de associação padrão e específicos, e quais as diferenças entre escopo de modelo e escopo de associação;</li>
+  <li>Para que utilizamos diversos métodos built in de validação do Sequelize e como implementá-los;</li>
+  <li>Como refinar uma validação de campo utilizando funções validadoras;</li>
+  <li>A diferença entre validação e constraint e porque essa diferenciação é importante para a implementação correta no código.</li>
 </ul>
 
 ### Aula 03 - Escopo de associação
