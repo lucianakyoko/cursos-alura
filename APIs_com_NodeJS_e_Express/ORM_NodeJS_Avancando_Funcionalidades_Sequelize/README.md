@@ -14,8 +14,8 @@
 | 1 | Soft delete  | ✔️ |
 | 2 | Escopo de modelo e validações | ✔️ |
 | 3 | Escopo de associação | ✔️ |
-| 4 | Operadores e agregadores | ⚫ |
-| 5 | Transações | ⚫ |
+| 4 | Operadores e agregadores | ✔️ |
+| 5 | Transações | ✔️ |
 
 ---
 
@@ -57,7 +57,8 @@
 
 ### Aula 05 - Transações
 <ul>
-  <li></li>
+  <li>Como garantir a integridade das operações feitas em bancos de dados através do uso de transações;</li>
+  <li>Como implementar uma transação gerenciada usando métodos do Sequelize.</li>
 </ul>
 
 ---

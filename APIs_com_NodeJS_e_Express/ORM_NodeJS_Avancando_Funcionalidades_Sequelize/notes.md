@@ -199,3 +199,94 @@ Cada query começa encontrando os dados, filtrando e ordenando. Essa ordem pode 
 Porém, os DBMS (Database Management Systems ou sistemas de gerenciamento de banco de dados), como MySQL, PostgreSQL, MsSQL, entre outros, utilizam database engines, ou algo como “motores de bancos de dados” numa tradução mais literal, para executar as queries. Esses engines, na prática, reorganizam a ordem lógica acima para otimizar as queries e deixá-las mais rápidas e com melhor performance, enquanto essa reorganização não modificar os resultados da query. Os database engines também fazem algumas verificações para garantir que a query faça sentido como um todo antes de fazer essa reorganização e executar qualquer consulta.
 
 Assim, embora exista uma ordem lógica na execução de uma query SELECT, e seja uma boa prática nos basearmos nela, na prática não temos realmente como saber qual é a ordem que será efetivamente utilizada, pois isso vai depender de como cada engine vai calcular a forma mais otimizada de execução da query.
+
+---
+
+##  objeto options
+No desenvolvimento do projeto utilizamos bastante um objeto específico que está presente em diversos métodos do Sequelize. Ele é chamado, na documentação, de objeto options.
+
+Um exemplo de como o objeto foi utilizado:
+```
+ async cancelaPessoaEMatriculas(estudanteId){
+   await super.atualizaRegistro({ ativo: false }, { id: estudanteId });
+   await this.matriculaServices.atualizaRegistro({ status: 'cancelado' }, 
+{ estudante_id: estudanteId });
+ }
+```
+
+Que faz a chamada para o método update do Sequelize:
+```
+async atualizaRegistro(dadosAtualizados, where) {
+  const listadeRegistrosAtualizados = await dataSource[this.model]
+    .update(dadosAtualizados, {
+      where: { ...where }
+    });
+  if (listadeRegistrosAtualizados[0] === 0) {
+    return false;
+  }
+  return true;
+}
+```
+
+Analisando o método acima, relembramos que update recebe pelo menos dois parâmetros:
+
+1. Objeto com os dados para atualização;
+2. Objeto com informações necessárias para que a query seja montada, como onde, ou where, na tabela o registro será alterado.
+
+Este segundo objeto é o chamado objeto options e a propriedade where é apenas uma das várias propriedades que podem ser utilizadas.
+
+### Utilizando a API reference
+Como fizemos algumas vezes durante o curso, para conferir quais são as propriedades do objeto options e seus tipos o ideal é procurar pela API reference da biblioteca.
+
+Bibliotecas e frameworks mais complexos costumam ter a seção de API reference (ou referência da API) separada da documentação usual. Na documentação ficam os exemplos, explicações e casos de uso mais comuns, e na referência da API ficam as funções e métodos expostos pela API, explicados em detalhe.
+
+Ao consultarmos a referência da API sobre o método update podemos conferir a assinatura do método:
+
+public static async update(values: object, options: object): Promise<Array<number, number>>
+
+Acima, a assinatura nos informa que o método recebe dois parâmetros, chamados values e options, ambos objetos.
+
+A assinatura de uma função ou método é a descrição de seus inputs e outputs, incluindo o nome da função, os parâmetros recebidos com seus nomes e tipos, e o tipo de retorno. Confira mais sobre assinaturas de função no glossário do MDN (em inglês).
+
+Em seguida, a tabela nos informa mais detalhes sobre os objetos recebidos por parâmetro. Confira algumas das propriedades do objeto option, inclusive já utilizadas em nosso projeto:
+
+| nome | tipo | atributo | --- |
+| --- | --- | --- | --- |
+| values | objeto | --- | valores a serem atualizados |
+| options | objeto | --- | opções de validação |
+| options.where | objeto | --- | opções para descrever o escopo da atualização |
+| options.paranoid	 | boolean | opcional default: true | Se true, apenas registros não deletados serão atualizados. Se false, tanto registros deletados quanto não deletados serão atualizados. Apenas aplicável se options.paranoid for true para o modelo. |
+| options.validate | boolean | opcional default: true | Se cada linha deve ser validada antes da inserção. A operação de inserção falhará por completo em caso de falha de validação em qualquer uma das linhas. |
+
+O restante das opções pode ser conferido no link mencionado acima.
+
+Sempre consulte a documentação caso tenha dúvidas sobre a implementação de qualquer método de qualquer biblioteca ou framework; se os exemplos e casos de dúvidas não resolverem sua necessidade, a referência da API costuma ter as informações necessárias.
+
+---
+
+## tipos de transação do Sequelize
+O Sequelize não implementa transações nas queries por padrão; mas é muito aconselhável que você as utilize, especialmente em produção.
+
+Existem duas formas de fazer isso utilizando os métodos do Sequelize: a primeira é utilizando transações não gerenciadas (unmanaged transactions), onde quem está desenvolvendo é responsável por chamar os métodos apropriados de rollback e commit:
+```
+const transacao = await sequelize.transaction();
+
+try {
+  const personagem = await Personagem.create({
+    nome: 'Bart',
+    sobrenome: 'Simpson'
+  }, { transaction: transacao });
+  await personagem.addParente({
+    nome: 'Lisa',
+    sobrenome: 'Simpson'
+  }, { transaction: transacao });
+  await transacao.commit();
+} catch (error) {
+  await transacao.rollback();
+}
+```
+
+No exemplo acima (da própria documentação do Sequelize) os métodos t.commit() e t.rollback() foram adicionados manualmente.
+
+A outra forma, como fizemos no vídeo, foi utilizando transações gerenciadas (managed transactions) onde toda a operação a ser feita no banco é passada como callback do método sequelize.transaction(). Nesse caso, e como foi feito no código do nosso projeto, não há a necessidade de adicionar manualmente os métodos t.commit() e t.rollback().
+
