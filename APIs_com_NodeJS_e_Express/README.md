@@ -44,8 +44,8 @@
 ### 3️⃣ - Comunicação com WebSockets
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 3.1 | 🟥 | Websocket - Dicionário do programador | ✖️ | ✖️ | ⚫ |
+| . | 3.1 | 🟥 | Websocket - Dicionário do programador | ✖️ | ✖️ | ✔️ |
 | . | 3.2 | 🟪 | WebSockets: implemente comunicações em tempo real com Socket.IO e MongoDB | ➖ | ➖ | ⚫ |
-| . | 3.3 | 🟫 | O que são cookies e como eles funcionam? | ✖️ | ✖️ | ⚫ |
+| 🚩 | 3.3 | 🟫 | O que são cookies e como eles funcionam? | ✖️ | ✖️ | ⚫ |
 | . | 3.4 | 🟪 | Websockets: implemente autenticação e avance no Socket.IO | ➖ | ➖ | ⚫ |
 
