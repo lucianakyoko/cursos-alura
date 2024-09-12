@@ -49,7 +49,10 @@
 
 ### Aula 04 - Operadores e agregadores
 <ul>
-  <li></li>
+  <li>Mais formas de utilização de operadores, com operadores de comparação;</li>
+  <li>Como utilizar query params para trafegar dados em uma requisição;</li>
+  <li>A utilizar mais métodos finders do Sequelize, como findAndCountAll</li>
+  <li>Como executar consultas escritas diretamente em SQL através do Sequelize.</li>
 </ul>
 
 ### Aula 05 - Transações

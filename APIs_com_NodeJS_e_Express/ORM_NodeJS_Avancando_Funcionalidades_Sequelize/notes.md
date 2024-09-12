@@ -134,3 +134,68 @@ Entre os usos mais comuns de “helper functions” ou funções auxiliares/util
 - A estratégia de centralizar estas tarefas mais simples e comuns em um diretório próprio visa deixar o código mais organizado e reutilizável.
 
 Vale notar que o uso dessa estratégia para separar funções auxiliares deve ser feita com cuidado, para evitar que partes específicas da aplicação que pertencem a camadas específicas acabem indo parar dentro de utils junto com as funções mais simples.
+
+---
+
+## eager loading e lazy loading
+Quando fazemos consultas em um banco e organizamos seus resultados através da API, é importante termos em mente os conceitos de lazy loading e eager loading. Ambos os termos são usados normalmente em inglês, mas podemos traduzir bem livremente como “carregamento preguiçoso” e “carregamento ansioso”.
+
+Lazy e eager são duas estratégias que podem ser aplicadas em qualquer contexto que envolva carregamento de dados. Elas funcionam de forma um pouco diferente no front-end e você pode conferir um exemplo neste artigo sobre [lazy loading em Angular](https://www.alura.com.br/artigos/como-lazy-loading-pode-melhorar-desempenho-aplicacao-angular).
+
+Trabalhando no contexto de uma API REST como a que estamos construindo, utilizar a estratégia eager loading significa que todos os dados associados a um determinado recurso serão carregados quando é feita uma requisição ao recurso. No nível do SQL, isso significa o uso de cláusulas JOIN.
+
+Assim, podemos concluir que a estratégia de lazy loading fará o contrário, carregando dados associados apenas quando necessário e solicitado.
+
+Como nosso foco nesse projeto é o uso do Sequelize, é interessante entendermos como estas duas estratégias são utilizadas pelo ORM.
+
+### Lazy loading
+No Sequelize, a estratégia de lazy loading é implementada através dos métodos automáticos criados com as associações entre modelos. Por exemplo:
+```
+const estudante = await Pessoa.findOne({
+  where: {
+    nome: "Roberta Estudante"
+  }
+});
+console.log('nome:', estudante.nome);
+console.log('ativo:', estudante.ativo);
+
+const matriculas = await estudante.getMatriculas();
+console.log('matrículas de estudante:', matriculas);
+```
+
+Dessa forma, os dados associados são buscados no banco através de uma segunda consulta, apenas quando solicitado pelo programa.
+
+### Eager loading
+Para implementar a estratégia de eager loading usando Sequelize, é possível utilizar uma as propriedades do objeto options, include:
+```
+const estudante = await Pessoa.findOne({
+  where: {
+    name: "Roberta Estudante"
+  },
+  include: Matricula
+});
+
+console.log('nome:', estudante.nome);
+console.log('matriculas:', estudante.matricula);
+```
+
+---
+
+## ordem de execução do SQL
+Agora que estamos acrescentando alguma complexidade às queries que o Sequelize vai passar para o SQL, é interessante saber que existe uma ordem de execução para os operadores e cláusulas.
+
+No caso de queries de SELECT, a ordem lógica é a seguinte:
+
+- FROM: pega as tabelas onde estão os dados
+- WHERE: filtra os dados
+- GROUP BY: agrega os dados
+- HAVING: filtra os dados agregados
+- SELECT: retorna os resultados
+- ORDER BY: ordena os resultados
+- LIMIT: limita a quantidade de resultados
+
+Cada query começa encontrando os dados, filtrando e ordenando. Essa ordem pode fazer com que certos resultados sejam acessíveis ou não em dado momento. Por exemplo, a cláusula WHERE é executada antes de GROUP BY, então não podemos depender de dados retornados pelo GROUP BY para então passar WHERE.
+
+Porém, os DBMS (Database Management Systems ou sistemas de gerenciamento de banco de dados), como MySQL, PostgreSQL, MsSQL, entre outros, utilizam database engines, ou algo como “motores de bancos de dados” numa tradução mais literal, para executar as queries. Esses engines, na prática, reorganizam a ordem lógica acima para otimizar as queries e deixá-las mais rápidas e com melhor performance, enquanto essa reorganização não modificar os resultados da query. Os database engines também fazem algumas verificações para garantir que a query faça sentido como um todo antes de fazer essa reorganização e executar qualquer consulta.
+
+Assim, embora exista uma ordem lógica na execução de uma query SELECT, e seja uma boa prática nos basearmos nela, na prática não temos realmente como saber qual é a ordem que será efetivamente utilizada, pois isso vai depender de como cada engine vai calcular a forma mais otimizada de execução da query.
