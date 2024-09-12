@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Soft delete  | ✔️ |
 | 2 | Escopo de modelo e validações | ✔️ |
-| 3 | Escopo de associação | ⚫ |
+| 3 | Escopo de associação | ✔️ |
 | 4 | Operadores e agregadores | ⚫ |
 | 5 | Transações | ⚫ |
 
@@ -40,7 +40,11 @@
 
 ### Aula 03 - Escopo de associação
 <ul>
-  <li></li>
+  <li>Como continuar trabalhando com métodos “mixin” gerados a partir das associações entre modelos;</li>
+  <li>Como criar escopos de associação diversos para cada necessidade da API;</li>
+  <li>Como utilizar o método findOne para buscar um registro no banco a partir de qualquer coluna (ou colunas);</li>
+  <li>A refatorar o código para que os métodos finders sejam genéricos e reutilizáveis;</li>
+  <li>A separar as responsabilidades do código utilizando helper functions.</li>
 </ul>
 
 ### Aula 04 - Operadores e agregadores

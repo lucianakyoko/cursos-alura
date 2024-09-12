@@ -97,3 +97,40 @@ São constraints em SQL:
 
 ---
 
+## o que são mixins
+Podemos resumir mixins em: classes que contêm métodos que podem ser utilizados por outras classes, sem a necessidade de herança direta. Dito de outra forma: um mixin fornece métodos que implementam um certo comportamento em objetos, sem poder ser utilizado sozinho, mas sim para adicionar esse comportamento a outras classes.
+
+No Sequelize, temos uma diferença entre escopos de modelo, que são aplicados em chamadas estáticas ao modelo (como no exemplo que fizemos no vídeo, Pessoa.scope('todos').findAll()), e escopos de associação, que são uma regra, ou um conjunto de atributos que são automaticamente aplicados em instâncias do modelo (como em Pessoa.associate = function(models) {...}).
+
+Escopos de associação se comportam da mesma forma que os escopos de modelo, no sentido que ambos aplicam palavras-chave como WHERE em chamadas ao banco; mas os mixins são métodos que existem somente nas instâncias dos modelos, por exemplo Pessoa.getPessoasMatriculadas.
+
+A lista de métodos criados automaticamente com as instâncias de modelo são:
+
+- addModel()
+- addModels()
+- countModels()
+- createModel()
+- getModels()
+- hasModel()
+- hasModels()
+- removeModel()
+- removeModels()
+- setModels()
+
+Lembrando que “Model” e “Models”, aqui, referem-se ao nome do modelo! Lembre-se também que o Sequelize cria os nomes automaticamente mas não entende muito bem o singular e plural em português, mas você pode definir nomes personalizados para seus mixins, como fizemos em nosso código.
+
+---
+
+## utils e helper functions
+Esta é uma estratégia comum para armazenar funções utilitárias comuns para que sejam utilizadas em outras partes da API.
+
+Entre os usos mais comuns de “helper functions” ou funções auxiliares/utilitárias, estão:
+
+- Validações de dados;
+- Formatação de dados de saída;
+- Conversão entre tipos de dados (por exemplo, formatos de data);
+- Conversão de strings (por exemplo, de string para número como fizemos na aula);
+- Geração de tokens ou sequências de caracteres aleatórios.
+- A estratégia de centralizar estas tarefas mais simples e comuns em um diretório próprio visa deixar o código mais organizado e reutilizável.
+
+Vale notar que o uso dessa estratégia para separar funções auxiliares deve ser feita com cuidado, para evitar que partes específicas da aplicação que pertencem a camadas específicas acabem indo parar dentro de utils junto com as funções mais simples.
