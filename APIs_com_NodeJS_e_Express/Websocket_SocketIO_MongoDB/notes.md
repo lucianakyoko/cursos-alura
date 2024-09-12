@@ -156,3 +156,121 @@ Servidor desconectado!
 ```
 
 Você pode ler mais sobre esses eventos e os diferentes motivos de desconexão nas seções [The Socket instance (server-side)](https://socket.io/docs/v4/server-socket-instance/#disconnect) e [The Socket instance (client-side)](https://socket.io/docs/v4/client-socket-instance/#disconnect) da documentação. Essas páginas também contêm informações de outros eventos das instâncias socket tanto no lado do front-end quanto no lado do back-end.
+
+---
+
+## obtendo parâmetros da URL
+Primeiramente, nós nos aproveitamos da classe URLSearchParams, que pode ser instanciada para criar um objeto que conterá informações da URL.
+
+Existem diferentes tipos de dados válidos que podemos passar como parâmetro de URLSearchParams() para criar uma nova instância; como por exemplo uma string, um array de arrays ou um objeto. Os três exemplos abaixo são equivalentes:
+```
+// string como parâmetro
+const parametros = new URLSearchParams("?nome=maria&sobrenome=eduarda");
+
+// array de arrays como parâmetro
+const parametros = new URLSearchParams([
+  ["nome", "maria"],
+  ["sobrenome", "eduarda"],
+]);
+
+// objeto como parâmetro
+const parametros = new URLSearchParams({
+  nome: "maria",
+  sobrenome: "eduarda"
+});
+```
+
+Note que, ao passar uma string, ela deve seguir o mesmo padrão dos parâmetros passados em uma URL: os parâmetros são separados por & e a chave e o valor de cada parâmetro são separados por =. E especificamente no caso do URLSearchParams(), a interrogação ? no início da string é opcional.
+
+Mas no vídeo passamos o valor window.location.search como parâmetro de URLSearchParams(). De onde ele vem?
+
+Window é um objeto global que contém várias propriedades e métodos do front-end. Uma dessas propriedades é a location, que é um objeto que possui métodos e propriedades relacionados à URL atual. E uma de suas propriedades é a search, que nos dá justamente uma string dos parâmetros da URL.
+
+Assim, se você estiver em http://localhost:3000/documento.html?nome=JavaScript no navegador, o valor de window.location.search será "?nome=JavaScript".
+
+Logo, chegamos ao código escrito em vídeo:
+```
+const parametros = new URLSearchParams(window.location.search);
+```
+
+Agora que a constante parametros é uma instância de URLSearchParams, ela possui métodos como get(), has(), entries(), entre outros. Então, adicionamos o seguinte código:
+```
+const nomeDocumento = parametros.get("nome");
+```
+
+Perceba que o método get() recebe o nome do parâmetro da URL e retorna seu valor. Assim, ainda usando a URL http://localhost:3000/documento.html?nome=JavaScript como exemplo, o código parametros.get("nome") irá nos retornar a string "JavaScript".
+
+---
+
+## possibilidades de emissão
+Vimos como o servidor pode agrupar clientes em diferentes salas do Socket.IO, para posteriormente emitir eventos para salas específicas. Você pode ler mais sobre isso na seção Rooms da documentação.
+
+Nos vídeos, escrevemos o seguinte código:
+```
+io.on("connection", (socket) => {
+  socket.on("selecionar_documento", (nomeDocumento) => {
+    socket.join(nomeDocumento);
+  });
+
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    socket.to(nomeDocumento).emit("texto_editor_clientes", texto);
+  });
+});
+```
+
+Um detalhe importante é que a função socket.to("nome_da_sala").emit("nome_do_evento") emite o evento para todos os clientes de uma determinada sala, exceto para o cliente conectado ao socket.
+
+Mas se quiséssemos emitir um evento para todos os clientes de uma sala, independente se um deles é o que está conectado ao socket, utilizaríamos: io.to("nome_da_sala").emit("nome_do_evento") (troca de socket para io). O código ficaria assim:
+```
+io.to(nomeDocumento).emit("texto_editor_clientes", texto);
+```
+
+O servidor (ou um socket) também pode emitir para mais de uma sala, repetindo o método to():
+```
+io.on("connection", (socket) => {
+  // código omitido...
+
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    // servidor emitindo
+    io.to(nomeDocumento).to("JavaScript").emit("texto_editor_clientes", texto);
+
+    // socket emitindo
+    socket.to(nomeDocumento).to("JavaScript").emit("texto_editor_clientes", texto);
+  });
+});
+```
+
+Ou então passando para o to() um array com os nomes das salas:
+```
+io.on("connection", (socket) => {
+  // código omitido...
+
+  socket.on("texto_editor", ({ texto, nomeDocumento }) => {
+    // servidor emitindo
+    io.to([nomeDocumento, "JavaScript"]).emit("texto_editor_clientes", texto);
+
+    // socket emitindo
+    socket.to([nomeDocumento, "JavaScript"]).emit("texto_editor_clientes", texto);
+  });
+});
+```
+
+Vale ressaltar que todos esses códigos acontecem apenas do lado do back-end. As salas do Socket.IO são uma funcionalidade apenas do servidor, e no lado do front-end não há como saber quais clientes estão em quais salas.
+
+Além disso, os clientes também podem entrar em diversas salas do Socket.IO. Com isso, no lado do servidor, podemos emitir eventos para clientes que estão, por exemplo, nas salas "sala1", "sala2", mas que não estão na "sala3", com auxílio do método except() (que significa “exceto”, do inglês):
+```
+io.to(["sala1", "sala2"]).except("sala3").emit("nome_do_evento");
+```
+
+O método except() também pode ser usado em conjunto com outras formas de emissão, como io.emit(), socket.broadcast().emit(), etc. Confira alguns exemplos no código abaixo:
+```
+  // envia para todos os clientes, exceto os que estão na sala "sala_excluida"
+io.except("sala_excluida").emit("nome_do_evento");
+
+// envia para todos os clientes, exceto para o que está em `socket` e os que estão na sala "sala_excluida_1" e "sala_excluida_2"
+io.on("connection", (socket) => {
+  socket.broadcast.except(["sala_excluida_1", "sala_excluida_2"]).emit("nome_do_evento");
+});
+```
+
+Com esses conhecimentos a mais, você já conhece várias das formas de se emitir eventos no Socket.IO. Aproveite para conferir a [Emit cheatsheet](https://socket.io/docs/v4/emit-cheatsheet/) (Folha de dicas de Emissões) da documentação, ela também serve como uma boa consulta.
