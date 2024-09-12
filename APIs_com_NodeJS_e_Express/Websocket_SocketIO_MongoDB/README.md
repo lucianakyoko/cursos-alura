@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Criando o Alura Docs | ✔️ |
-| 2 | Trabalhando com Socket.IO | ⚫ |
+| 2 | Trabalhando com Socket.IO | ✔️ |
 | 3 | Avançando na comunicação | ⚫ |
 | 4 | Utilizando o MongoDB | ⚫ |
 | 5 | Avançando o Alura Docs | ⚫ |
@@ -30,7 +30,9 @@
 
 ### Aula 02 - Trabalhando com Socket.IO
 <ul>
-  <li></li>
+  <li>Emitir seu primeiro evento a partir do cliente:</li>
+  <li>Emitir um evento para vários clientes a partir do servidor:</li>
+  <li>Organizar melhor os arquivos por responsabilidade:</li>
 </ul>
 
 ### Aula 03 - Avançando na comunicação
