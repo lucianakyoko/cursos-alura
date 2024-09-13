@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Cadastrando usuários | ✔️ |
-| 2 | Implementando login | ⚫ |
+| 2 | Implementando login | ✔️ |
 | 3 | Controlando acessos | ⚫ |
 | 4 | Usuários online | ⚫ |
 | 5 | Outros Finalizando a aplicação | ⚫ |
@@ -29,7 +29,8 @@
 
 ### Aula 02 - Implementando login
 <ul>
-  <li></li>
+  <li>Autenticar um usuário ao verificar a senha digitada no formulário de login</li>
+  <li>Gerar um JWT quando um usuário é autenticado com sucesso</li>
 </ul>
 
 ### Aula 03 - Controlando acessos
