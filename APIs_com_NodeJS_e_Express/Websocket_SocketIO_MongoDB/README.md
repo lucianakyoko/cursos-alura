@@ -14,8 +14,8 @@
 | 1 | Criando o Alura Docs | ✔️ |
 | 2 | Trabalhando com Socket.IO | ✔️ |
 | 3 | Avançando na comunicação | ✔️ |
-| 4 | Utilizando o MongoDB | ⚫ |
-| 5 | Avançando o Alura Docs | ⚫ |
+| 4 | Utilizando o MongoDB | ✔️ |
+| 5 | Avançando o Alura Docs | ✔️ |
 
 ---
 
@@ -44,19 +44,17 @@
 
 ### Aula 04 - Utilizando o MongoDB
 <ul>
-  <li></li>
+  <li>Criar um banco de dados e conectá-lo com o Alura Docs</li>
+  <li>Obter dados do banco de dados</li>
+  <li>Alterar dados do banco de dados</li>
 </ul>
 
 ### Aula 05 - Avançando o Alura Docs
 <ul>
-  <li></li>
+  <li>Obter todos os documentos do banco de dados</li>
+  <li>Adicionar um documento</li>
+  <li>Excluir um documento</li>
+  <li>Atualizar diferentes páginas a partir do mesmo evento</li>
 </ul>
 
 ---
-
-<!-- ## 🎯 Projeto desenvolvido
-Este é o screenshot do projeto que foi desenvolvido durante o curso:
-
-<p align="center">
-  <img alt="Miniatura da imagem do projeto"src="../../.github/thumbs/preview.jpg">
-</p> -->

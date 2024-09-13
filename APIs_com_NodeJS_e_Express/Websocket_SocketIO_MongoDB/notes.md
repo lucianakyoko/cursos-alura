@@ -274,3 +274,21 @@ io.on("connection", (socket) => {
 ```
 
 Com esses conhecimentos a mais, você já conhece várias das formas de se emitir eventos no Socket.IO. Aproveite para conferir a [Emit cheatsheet](https://socket.io/docs/v4/emit-cheatsheet/) (Folha de dicas de Emissões) da documentação, ela também serve como uma boa consulta.
+
+---
+
+## cursor do MongoDB
+Até agora utilizamos alguns métodos do driver do NodeJS do MongoDB, como findOne, updateOne e find(). A documentação do MongoDB é uma excelente fonte de consultas e contém informações valiosas para impulsionar seus estudos neste banco de dados. A seção CRUD Operations explica os métodos que utilizamos até agora, bem como os que ainda iremos utilizar (insertOne e deleteOne).
+
+Algumas operações do MongoDB podem retornar grandes quantidades de documentos, então em vez de criarem um array do JavaScript com os documentos, essas operações retornam um Cursor com esses dados. Cursor é um tipo de dado do MongoDB otimizado para lidar com grandes quantidades de dados.
+
+O método find() de coleções do MongoDB retorna um Cursor, então podemos utilizar o método toArray(), que retorna uma Promise contendo um array com os documentos, como no código que escrevemos em vídeo:
+```
+  const documentos = documentosColecao.find().toArray();
+```
+
+Entretanto, ao utilizar esse método, uma grande quantidade de dados retornados pode causar problemas de performance. Então, nos casos em que for possível, pode ser mais apropriado utilizar o método forEach() de um Cursor para executar algum determinado código para cada documento, como no exemplo abaixo:
+```
+  const documentosCursor = documentosColecao.find();
+  await documentosCursor.forEach((documento) => console.log(documento));
+```
