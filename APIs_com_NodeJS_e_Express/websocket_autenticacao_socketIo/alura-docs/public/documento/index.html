@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <title>AluraDocs | Documento</title>
+</head>
+
+<body class="my-3">
+  <header>
+    <h1 class="display-4 mb-4 text-center" id="titulo-documento">Documento sem título</h1>
+  </header>
+
+  <main class="container-md">
+    <div class="row mb-3">
+      <div class="col-sm-8 col-md-9">
+        <textarea id="editor-texto" class="form-control mb-4" style="height: 400px; resize: none;"></textarea>
+      </div>
+
+      <div class="col-sm-4 col-md-3">
+        <h2 class="fs-5 fw-normal mb-3">Usuários conectados:</h2>
+
+        <ul class="list-group" id="usuarios-conectados">
+          <li class="list-group-item">Usuário 1</li>
+          <li class="list-group-item">Usuário 2</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-sm-8 col-md-9 d-flex justify-content-between">
+      <a href="/index.html" class="btn btn-primary">Voltar</a>
+      <button id="excluir-documento" class="btn btn-outline-danger">Excluir documento</button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="documento.js" type="module"></script>
+</body>
+
+</html>

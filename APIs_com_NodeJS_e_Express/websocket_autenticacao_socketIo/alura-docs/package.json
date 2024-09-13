@@ -1,0 +1,30 @@
+{
+  "name": "alura-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon servidor/socket-back.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonio-evaldo/alura-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonio-evaldo/alura-docs/issues"
+  },
+  "homepage": "https://github.com/antonio-evaldo/alura-docs#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "4.11",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
