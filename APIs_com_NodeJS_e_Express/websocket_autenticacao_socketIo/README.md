@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 1 | Cadastrando usuários | ✔️ |
 | 2 | Implementando login | ✔️ |
-| 3 | Controlando acessos | ⚫ |
+| 3 | Controlando acessos | ✔️ |
 | 4 | Usuários online | ⚫ |
 | 5 | Outros Finalizando a aplicação | ⚫ |
 
@@ -35,7 +35,9 @@
 
 ### Aula 03 - Controlando acessos
 <ul>
-  <li></li>
+  <li>Guardar o token JWT nos cookies do navegador</li>
+  <li>Registrar middlewares no servidor</li>
+  <li>Criar e utilizar namespaces para agrupar conexões</li>
 </ul>
 
 ### Aula 04 - Usuários online

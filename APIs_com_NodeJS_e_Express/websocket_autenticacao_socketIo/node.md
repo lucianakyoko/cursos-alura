@@ -113,3 +113,167 @@ const io = new Server(servidorHttp, {
 Nós trabalhamos apenas com URLs locais, mas o mesmo passo a passo seria realizado caso o WebSockets estivesse sendo utilizado em um aplicação com um domínio de verdade na internet.
 
 Você pode ler mais informações sobre como lidar com CORS no servidor, na página Handling CORS da documentação! Além disso, você também pode acessar a página Client Initialization para consultar as diferentes formas de conectar o cliente com o servidor.
+
+---
+
+## explorando cookies no front-end
+### Entendendo o document.cookie
+Como você já aprendeu, o objeto global document no front-end fornece diversas propriedades e métodos que nos auxiliam no desenvolvimento. Uma das propriedades é a document.cookie, que é uma string que armazena todos os cookies guardados no navegador.
+
+Se você imprimir document.cookie no console do navegador, vai obter uma string que segue a seguinte sintaxe:
+```
+"<nomeDoCookie1>=<valorDoCookie1>; <nomeDoCookie2>=<valorDoCookie2>; <nomeDoCookie3>=<valorDoCookie3>"
+```
+
+Um cookie, assim como um objeto do JavaScript, armazena um par chave/valor. Na string guardada por document.cookie, cada cookie é separado por um ponto e vírgula (;), e a chave e o valor de cada cookie é separado por um sinal de igual (=).
+
+Caso não haja nenhum cookie armazenado no navegador, document.cookie retorna uma string vazia.
+
+### Definindo um novo cookie
+Para definir um novo cookie no navegador, você pode utilizar um código como o seguinte:
+```
+document.cookie = "nomeDoCookie=valorDoCookie;path=/";
+```
+
+Ao ler o código, talvez você pense: “Ué, mas essa atribuição não vai sobrescrever os cookies que já estão armazenados no navegador?”
+
+Respondendo sua pergunta: não, pois document.cookie não é uma string convencional do JavaScript. “Por baixo dos panos”, ao atribuir um novo valor para document.cookie, o JavaScript entende que queremos adicionar um novo cookie. Além disso, podemos acrescentar apenas um cookie por vez com essa sintaxe.
+
+Note que você também pode adicionar configurações em relação a esse cookie que irão definir seu comportamento, ou como ele deve ser guardado no navegador. Essas configurações são chamadas de atributos. Um novo atributo é sempre precedido por um ponto e vírgula (;) na string que atribuímos a documento.cookie.
+
+Ao final desta atividade, há links com mais informações sobre os atributos que podemos passar para os cookies.
+
+Nós também podemos reescrever o valor de um cookie já existente ou até mesmo reescrever as informações adicionais, basta utilizarmos a mesma sintaxe:
+```
+document.cookie = "nomeDoCookie=novoValor";
+```
+
+No código acima, reescrevemos o cookie nomeDoCookie com o valor novoValor, e também removemos qualquer atributo adicional que pudesse estar junto com o cookie anteriormente (por exemplo, ;path=/).
+
+### Obtendo o valor de um cookie
+Agora que já sabemos como ler todos os cookies armazenados e como definir um novo, como podemos acessar o valor de um cookie específico?
+
+Para isso, podemos fazer manipulações puras com JavaScript na string retornada por document.cookie. Para demonstrar esse processo, vamos utilizar a seguinte string como exemplo:
+```
+"cookie1=valor1; cookie2=valor2; cookie3=valor3"
+```
+
+Digamos que você queira obter o valor do cookie que tem o nome cookie2. Para isso, você pode utilizar o método split das strings do JavaScript para criar um array de strings, separadas por um ponto e vírgula seguido de um espaço ("; ").
+
+E no novo array criado, você pode utilizar o método find de arrays, em conjunto com o método startsWith de strings, para buscar pela string que inicia com "cookie2=".
+
+Primeiro, vamos analisar o array retornado por document.cookie.split("; "):
+```
+["cookie1=valor1", "cookie2=valor2", "cookie3=valor3"]
+```
+
+Agora, aplicando o método find no array obtido, podemos obter especificamente a string do cookie2, com o seguinte código:
+```
+document.cookie
+  .split("; ")
+  .find((cookie) => cookie.startsWith("cookie2="))
+```
+
+Após obter a string "cookie2=valor2", podemos acessar o valor do cookie ao utilizar novamente o método split de arrays, separando a chave e o valor do cookie pelo sinal de igual (=). Com isso, obteremos um array com a chave na posição 0 e o valor na posição 1.
+
+Assim, podemos obter o valor do cookie, conforme é mostrado a seguir:
+```
+document.cookie
+  .split("; ")
+  .find((cookie) => cookie.startsWith("cookie2="))
+  ?.split("=")[1];
+```
+
+Note que ao final do código acessamos o método split por meio da sintaxe ?.split em vez de apenas .split. Caso você não conheça, o ?. é o operador de Encadeamento opcional do JavaScript.
+
+Esse operador é utilizado para prevenir especificamente o famoso erro de tentar acessar uma propriedade de null ou undefined. Nós utilizamos ele, nesse caso, pois o retorno do método find pode ser undefined, que é justamente quando o método não encontra nenhum item no array que satisfaz a condição passada. Não é nossa situação atual, mas poderia ser se estivéssemos procurando pelo nome de um cookie que não existe.
+
+Assim, finalmente o código irá retornar o valor do cookie2, que é valor2!
+
+### Removendo um cookie
+Para remover um cookie específico (por exemplo, o cookie3), também atribuímos uma string para document.cookie, com um código como na sequência abaixo:
+```
+document.cookie = "cookie3=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
+```
+
+O código acima sobrescreve o cookie3 ao adicionar o atributo expires=Thu, 01 Jan 1970 00:00:00 GMT. Esse atributo especifica a data de expiração do cookie, e a definimos para seu menor valor possível aceito, que é a data de 1º de Janeiro de 1970. Ao especificar esse atributo para uma data que já passou, o cookie é removido automaticamente de document.cookie.
+
+---
+
+## middlewares globais e namespaces
+No último vídeo, você aprendeu a registrar um middleware em um namespace específico. Mas digamos que você queira realizar uma verificação para todas as páginas do seu sistema. Nesse caso, você precisaria registrar um middleware em todos os namespaces da sua aplicação, ou seja, um middleware global. Como você faria isso?
+
+Na versão 2 do Socket.IO você alcançaria esse feito registrando um middleware diretamente no namespace principal. Confira o código abaixo e os seus comentários:
+```
+// Versão 2 do Socket.io
+
+io.use((socket, next) => {
+  // Este seria um middleware global na versão 2 do Socket.IO
+  next();
+});
+
+io.of("/namespace-personalizado").use((socket, next) => {
+  // Este middleware seria executado após o middleware global
+  next();
+});
+```
+
+Ou seja, o método io.use registraria um middleware global, e até mesmo uma conexão direcionada a um namespace personalizado teria que passar pelo middleware global.
+
+Entretanto, a partir da versão 3 do Socket.IO, esse não é mais o caso. Agora, um middleware registrado no namespace principal é executado apenas pelo cliente que tentar acessá-lo diretamente. Confira os novos comentários no código abaixo:
+```
+// A partir da versão 3 do Socket.io
+
+io.use((socket, next) => {
+  // Este middleware é executado apenas quando o cliente tenta se conectar diretamente ao namespace principal
+  next();
+});
+
+io.of("/namespace-personalizado").use((socket, next) => {
+  // Quando o cliente tenta se conectar a este namespace personalizado, ele passa por este middleware, mas não pelo middleware do namespace principal
+  next();
+});
+```
+
+Nas versões mais recentes, podemos dizer que a separação entre os namespaces se torna mais consolidada. Então, como fazemos agora para registrar um middleware global, que se aplica a todos os namespaces?
+
+Confira duas diferentes abordagens para resolver esse problema:
+
+1) Registre o middleware manualmente em cada namespace:
+
+Confira o seguinte código:
+```
+function middlewareGlobal (socket, next) {
+  // verificações a serem feitas...
+  next();
+};
+
+io.use(middlewareGlobal);
+io.of("/namespace-personalizado").use(middlewareGlobal);
+```
+
+Ao declarar a função middleware separadamente, podemos utilizá-la como callback do método use de todos os namespaces.
+
+2) Use o evento new_namespace:
+
+O evento new_namespace é emitido sempre que um novo namespace é criado. Assim, podemos escutar esse evento para registrar o middleware a cada novo namespace criado. Confira o código abaixo:
+```
+const middlewareGlobal = (socket, next) => {
+  // verificações a serem feitas...
+  next();
+};
+
+// ainda precisamos registrar o middleware manualmente no namespace principal
+io.use(middlewareGlobal);
+
+io.on("new_namespace", (namespace) => {
+  namespace.use(middlewareGlobal);
+});
+
+// declare os namespaces personalizados após registrar o ouvinte de "new_namespace"
+io.of("/namespace-personalizado");
+```
+
+É importante que os novos namespaces sejam criados após registrar o ouvinte do evento new_namespace. Se um namespace for criado antes desse ouvinte, o middleware não será registrado nele.
+
+Por esse mesmo motivo, note que precisamos registrar o middleware global manualmente no namespace principal, já que ele é criado antes do ouvinte do evento new_namespace.
