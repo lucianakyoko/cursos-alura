@@ -325,4 +325,71 @@ Dessa forma, podemos utilizar um if... else dentro da função callback. Indepen
 
 ---
 
+## guardando o id do socket
+Nesta aula, nos aproveitamos das informações nomeDocumento e nomeUsuario para remover corretamente uma conexão da lista de conexões. A função que faz isso é a removerConexao.
 
+Porém, podemos utilizar uma abordagem diferente para remover uma conexão específica, que vai se basear no id do socket. Vamos conhecê-la?
+
+### Utilizando socket.id
+A ideia dessa abordagem é armazenar na lista local de conexões o id do socket também. Isso pode ser feito no momento em que adicionamos uma nova conexão. Assim, ao invés de remover uma conexão com base no nome do usuário e do documento (como está sendo feito no momento), poderemos remover uma conexão com base no id do socket.
+
+Para isso, no arquivo documento.js do back-end, iremos fazer uma alteração no lugar onde adicionamos uma conexão, que é no seguinte código:
+```
+adicionarConexao({ nomeDocumento, nomeUsuario });
+```
+
+Vamos adicionar mais uma propriedade no objeto que passamos para a função adicionarConexao, que irá informar o id do socket. Seu código deve ficar assim:
+```
+adicionarConexao({ nomeDocumento, nomeUsuario, id: socket.id });
+```
+
+Com isso, as conexões da lista local agora terão o nome do documento, o nome do usuário e o id do socket.
+
+Agora, no arquivo conexoesDocumentos.js, nós podemos alterar a implementação da função removerConexao para receber, como parâmetro, o id da conexão a ser removida. Atualmente a função está assim:
+
+```
+function removerConexao(nomeDocumento, nomeUsuario) {
+  const indice = conexoesDocumentos.findIndex((conexao) => {
+    return (
+      conexao.nomeDocumento === nomeDocumento && conexao.nomeUsuario === nomeUsuario
+    );
+  });
+
+  if (indice !== -1) {
+    conexoesDocumentos.splice(indice, 1);
+  }
+}
+```
+
+Modifique os parâmetros e a função callback do método findIndex de acordo. O código da função deve ficar assim:
+```
+function removerConexao(id) {
+  const indice = conexoesDocumentos.findIndex((conexao) => conexao.id === id);
+
+  if (indice !== -1) {
+    conexoesDocumentos.splice(indice, 1);
+  }
+
+  console.log(conexoesDocumentos);
+}
+```
+Em seguida, podemos voltar para documento.js e alterar o código que escrevemos dentro do ouvinte do evento disconnect. Considere o seguinte código que já escrevemos:
+```
+removerConexao(nomeDocumento, nomeUsuario);
+```
+
+Vamos remover os parâmetros nomeDocumento e nomeUsuario para passar o socket.id no lugar, como no código a seguir:
+```
+removerConexao(socket.id);
+```
+
+Com isso, se você salvar os arquivos, o projeto deverá continuar funcionando normalmente!
+
+Ambas as abordagens que vimos são soluções super válidas para o nosso projeto. Dependendo do contexto de cada aplicação, uma pode fazer mais sentido que outra, e cabe a nós, pessoas desenvolvedoras, refletir nos prós e contras de cada uma.
+
+### Uma terceira solução?
+Os sockets no lado do back-end ainda possuem uma outra propriedade que tem a ver com a nossa situação, que é a socket.rooms. Ela pode ser utilizada em conjunto com o evento disconnecting para descobrirmos de qual sala um determinado socket está saindo.
+
+Entretanto, essa propriedade retorna apenas o id do socket junto com o nome da sala que ele está saindo. Dessa forma, ainda precisaríamos recorrer à abordagem de guardar o id do socket na lista local de conexões. Por esse motivo, não vi necessidade de utilizar esse recurso no nosso caso, pois já tínhamos acesso ao id do socket dentro do evento disconnect.
+
+Contudo, é sempre interessante conhecermos as possibilidades que uma ferramenta oferece, pois nunca se sabe quando esse recurso poderá ser a solução ideal para você em uma situação futura.

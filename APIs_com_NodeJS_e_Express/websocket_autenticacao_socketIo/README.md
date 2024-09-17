@@ -48,7 +48,8 @@
 
 ### Aula 05 - Finalizando a aplicação
 <ul>
-  <li></li>
+  <li>Lidar com a saída de um usuário de um documento</li>
+  <li>Guardar informações em socket.data</li>
 </ul>
 
 ---
