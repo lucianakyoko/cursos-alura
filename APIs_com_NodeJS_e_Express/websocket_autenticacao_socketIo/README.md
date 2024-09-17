@@ -42,7 +42,8 @@
 
 ### Aula 04 - Usuários online
 <ul>
-  <li></li>
+  <li>Retornar o payload do token para o cliente</li>
+  <li>Registrar conexões dos documentos no servidor</li>
 </ul>
 
 ### Aula 05 - Finalizando a aplicação

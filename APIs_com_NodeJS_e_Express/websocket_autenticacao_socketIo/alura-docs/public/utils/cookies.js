@@ -1,14 +1,16 @@
-export function definirCookie(chave, valor) {
+function definirCookie(chave, valor) {
   document.cookie = `${chave}=${valor};path=/`;
 }
 
-export function obterCookie(chave) {
+function obterCookie(chave) {
   return document.cookie
-    .split('; ')
+    .split("; ")
     .find((cookie) => cookie.startsWith(`${chave}=`))
-    ?.split('=')[1];
+    ?.split("=")[1];
 }
 
-export function removerCookie(chave) {
+function removerCookie(chave) {
   document.cookie = `${chave}=; expires=Thu, 01 Jan 1970 00:00:00`;
 }
+
+export { definirCookie, obterCookie, removerCookie };

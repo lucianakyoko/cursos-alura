@@ -277,3 +277,52 @@ io.of("/namespace-personalizado");
 É importante que os novos namespaces sejam criados após registrar o ouvinte do evento new_namespace. Se um namespace for criado antes desse ouvinte, o middleware não será registrado nele.
 
 Por esse mesmo motivo, note que precisamos registrar o middleware global manualmente no namespace principal, já que ele é criado antes do ouvinte do evento new_namespace.
+
+---
+
+## abordagem alternativa do jwt.verify
+No vídeo anterior, entendemos que o método jwt.verify retorna o payload do token JWT quando ele é verificado com sucesso. Em caso de erro na verificação, esse método lança um erro. Para tratar os casos de sucesso e erro, utilizamos um bloco try… catch no middleware autorizarUsuario, com o seguinte código:
+```
+function autorizarUsuario(socket, next) {
+  const token = socket.handshake.auth.tokenJwt;
+
+  try {
+    const tokenJwt = jwt.verify(token, process.env.SEGREDO_JWT);
+
+    socket.emit("autorizacao_sucesso", tokenJwt);
+
+    next();
+  } catch (erro) {
+    next(erro);
+  }
+}
+```
+
+Além dessa solução, há uma segunda forma de tratar o erro e o payload do token. O método jwt.verify opcionalmente recebe um terceiro parâmetro, que é uma função callback que recebe o erro e o payload do token como parâmetros.
+
+Se utilizarmos essa abordagem, o método não lança mais um erro em caso de falha na verificação do token.
+
+Para você entender melhor, o código do middleware ficaria assim:
+```
+function autorizarUsuario(socket, next) {
+  const token = socket.handshake.auth.tokenJwt;
+
+  jwt.verify(token, process.env.SEGREDO_JWT, (erro, tokenJwt) => {
+    if (!erro) {
+      socket.emit("autorizacao_sucesso", tokenJwt);
+
+      next();
+    } else {
+      next(erro);
+    }
+  });
+}
+```
+
+No código acima, quando o token JWT é verificado com sucesso, o parâmetro erro tem valor null e o parâmetro tokenJwt guarda o valor do token. Em caso de falha, erro é personalizado de acordo com o erro, e tokenJwt torna-se undefined.
+
+Dessa forma, podemos utilizar um if... else dentro da função callback. Independente da abordagem, sempre certifique-se de chamar a função next dentro de uma função middleware do Socket.IO.
+
+---
+
+

@@ -1,11 +1,10 @@
 import { MongoClient } from "mongodb";
 
 const cliente = new MongoClient(
-  "mongodb+srv://alura:123@aluracluster.tmy85.mongodb.net/?retryWrites=true&w=majority&appName=AluraCluster"
+  process.env.MONGO_URI
 );
 
-let documentosColecao;
-let usuariosColecao;
+let documentosColecao, usuariosColecao;
 
 try {
   await cliente.connect();
