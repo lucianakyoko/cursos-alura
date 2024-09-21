@@ -39,6 +39,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 12 | React: bibliotecas para desenvolver formulários | [🗂️](./React_bibliotecas_para_desenvolver_formulários/) | 🔵 |
 | 13 | Linguagem C++ | [🗂️](./LinguagemC++/) | 🔵 |
 | 14 | Aprenda a programar em JavaScript com foco no back-end | [🗂️](./JS_com_foco_backend/) | ✔️ |
-| 15 | --- | 🗂️ | ⚫ |
+| 15 | Cursos de micro front-ends: implementando a arquitetura com Single SPA | [🗂️](./Micro_Frontend_Arquitetura_SPA/) | 🔵 |
+| 16 | --- | 🗂️ | ⚫ |
 
 ---
