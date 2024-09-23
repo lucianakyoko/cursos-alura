@@ -26,7 +26,7 @@
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
 | . | 1.1 | 🟫 | Monorepos descomplicados: explorando o NX | ✖️ | ➖ | ✔️ |
-| 🚩 | 1.2 | 🟪 | Single SPA: orquestrando micro front-ends | ✖️ | ➖ | ⚫ |
+| 🚩 | 1.2 | 🟪 | Single SPA: orquestrando micro front-ends | HomeHub | [🗂️](./Orquestrando_Micro_Front-ends/) | 🔵 |
 | . | 1.3 | 🟪 | Single SPA: roteando micro front-ends de forma avançada | ✖️ | ➖ | ⚫ |
 
 
