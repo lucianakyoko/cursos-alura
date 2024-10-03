@@ -71,3 +71,4 @@ Após rodar o comando npx create-single-spa siga o seguinte passo a passo:
 
 ---
 
+## Conhecendo o arquivo index.ejs
