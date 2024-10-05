@@ -12,7 +12,7 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Primeiro programa em Java | ✔️ |
-| 2 | Construindo o catálogo de filmes | ⚫ |
+| 2 | Construindo o catálogo de filmes | ✔️ |
 | 3 | Controlando o fluxo da aplicação | ⚫ |
 | 4 | Consolidando conhecimentos | ⚫ |
 
@@ -29,7 +29,10 @@
 
 ### Aula 02 - Construindo o catálogo de filmes
 <ul>
-  <li></li>
+  <li>A trabalhar com variáveis: recurso utilizado para armazenar valores em memória;</li>
+  <li>Sobre tipos primitivos</li>
+  <li>Como representar textos em Java, utilizando a classe String;</li>
+  <li>A realizar casting de valores, para resolver situações de tipos incompatíveis no momento de realizar um cálculo ou atribuição de uma variável.</li>
 </ul>
 
 ### Aula 03 - Controlando o fluxo da aplicação
