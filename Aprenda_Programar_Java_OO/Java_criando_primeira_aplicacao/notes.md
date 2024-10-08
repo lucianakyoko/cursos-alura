@@ -3,6 +3,7 @@
 ---
 
 ## Links importantes:
+- Documentação: [Java](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Scanner.html)
 - Leitura do artigo: [Java: Tudo o que você precisa saber sobre a linguagem](https://www.alura.com.br/artigos/java)
 - Leitura do artigo: [IntelliJ IDEA: dicas e truques para usar no dia a dia](https://www.alura.com.br/artigos/intellij-idea-dicas-truques-usar-no-dia-a-dia)
 - Leitura do artigo: [JVM: conhecendo o processo de execução de código](https://www.alura.com.br/artigos/jvm-conhecendo-processo-execucao-de-codigo)
@@ -185,4 +186,111 @@ Abaixo tem uma tabela, onde você pode visualizar mais facilmente as conversões
 | long | (byte) | (short) | (char) | (int) | --- | Impl. | Impl. |
 | float | (byte) | (short) | (char) | (int) | (long) | --- | Impl. |
 | double | (byte) | (short) | (char) | (int) | (long) | (float) | --- |
+
+---
+
+##  Switch Case
+Uma alternativa ao if/else é o switch case, que é uma estrutura de controle de fluxo que permite executar diferentes ações com base no valor de uma expressão. É uma forma mais simplificada e legível de escrever vários blocos if/else encadeados.
+
+A sintaxe do switch case em Java é a seguinte:
+```
+switch (expressão) {
+   case valor1:
+      // código a ser executado se a expressão for igual a valor1
+      break;
+   case valor2:
+      // código a ser executado se a expressão for igual a valor2
+      break;
+   case valor3:
+      // código a ser executado se a expressão for igual a valor3
+      break;
+   ...
+   default:
+      // código a ser executado se a expressão não for igual a nenhum valor
+      break;
+}
+```
+
+A expressão é uma variável ou uma expressão de código que será avaliada. Cada case é uma possível condição que pode ser atendida pela expressão. Quando a expressão é igual ao valor especificado em um determinado case, o código correspondente a esse case será executado. A palavra-chave break é usada para sair do switch case após a execução do código correspondente.
+
+O case default é opcional e é executado quando nenhum dos cases especificados é atendido.
+
+Veja um exemplo simples de uso do switch case em Java para verificar o dia da semana com base em um número inteiro:
+```
+int dia = 3;
+String nomeDia;
+
+switch (dia) {
+   case 1:
+      nomeDia = "domingo";
+      break;
+   case 2:
+      nomeDia = "segunda-feira";
+      break;
+   case 3:
+      nomeDia = "terça-feira";
+      break;
+   case 4:
+      nomeDia = "quarta-feira";
+      break;
+   case 5:
+      nomeDia = "quinta-feira";
+      break;
+   case 6:
+      nomeDia = "sexta-feira";
+      break;
+   case 7:
+      nomeDia = "sábado";
+      break;
+   default:
+      nomeDia = "Dia inválido";
+      break;
+}
+
+System.out.println("O dia " + dia + " é " + nomeDia);
+```
+
+Nesse exemplo, a expressão é a variável dia, que contém o valor 3. O switch case verifica o valor da variável dia e executa o código correspondente ao caso em que dia é igual a 3. O resultado será a impressão no console: "O dia 3 é terça-feira".
+
+Vantagens do switch case:
+
+Em resumo, o switch case torna o código mais fácil de entender e mais legível, em comparação ao if/else, especialmente quando há várias condições possíveis.
+
+---
+
+## A classe Scanner
+A classe Scanner do Java é utilizada para ler dados de entrada em um programa Java. Esses dados podem ser lidos a partir de várias fontes de entrada, como arquivos, fluxos de entrada, Strings e até mesmo a entrada do usuário através do teclado, como vimos em aula.
+
+Ela oferece uma série de métodos para ler dados de diferentes tipos, como inteiros, números de ponto flutuante, strings e caracteres.
+
+Para utilizar a classe Scanner, primeiro é necessário importá-la no início do seu programa. Provavelmente ao incluir a mesma no código, a IDE já vai sugerir o import. Esse import ficará como descrito abaixo:
+```
+import java.util.Scanner;
+```
+
+Veja um exemplo básico de como utilizar a classe Scanner para ler dados distintos:
+```
+public class ExemploScanner {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite seu nome: ");
+        String nome = scanner.nextLine();
+        System.out.print("Digite sua idade: ");
+        int idade = scanner.nextInt();
+        System.out.print("Digite o valor que pretende investir esse mês: ");
+        double valor = scanner.nextDouble();
+
+        System.out.println(nome + " que tem " + idade + " anos, irá investir R$ " + valor + " esse mês.");
+
+        scanner.close();
+    }
+}
+```
+
+Nesse exemplo, primeiro importamos a classe Scanner e, em seguida, criamos uma instância dela passando o objeto System.in' como parâmetro para indicar que queremos ler a entrada do usuário pelo teclado.
+
+Depois, usamos o método nextLine() para ler uma linha de texto. Além desse, utilizamos também o nextInt() para ler um número inteiro e o nextDouble() para ler um número decimal.
+
+---
 

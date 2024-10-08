@@ -37,7 +37,11 @@
 
 ### Aula 03 - Controlando o fluxo da aplicação
 <ul>
-  <li></li>
+  <li>A configurar uma aplicação para que ela escolha entre executar uma ação ou outra baseada em algum elemento;</li>
+  <li>Comparações para as condicionais: igual, diferente, maior, menor;</li>
+  <li>A usar a leitura do teclado com a classe Scanner;</li>
+  <li>Trabalhar com alternativas para as condicionais e escolher a ideal para o caso escolhido;</li>
+  <li>A utilizar estruturas de repetição com for e while.</li>
 </ul>
 
 ### Aula 04 - Consolidando conhecimentos
