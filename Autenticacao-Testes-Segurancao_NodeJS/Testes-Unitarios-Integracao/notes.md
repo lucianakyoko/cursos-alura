@@ -219,4 +219,52 @@ Os matchers podem ser do tipo:
 
 ---
 
+### ferramentas para API
+Toda pessoa desenvolvedora ao direcionar seus estudos para o Back-End se depara com a necessidade de verificar o funcionamento de rotas, endpoints, acesso ao banco de dados, dentre outros. Em outras palavras, em algum momento você precisará testar sua API. Dessa maneira, há algumas formas de realizar os testes sem precisar de um Front-End, e uma delas é através do próprio terminal. No entanto, esse processo é muito verboso e custoso, pois demanda muito tempo. Pensando então em otimizar e facilitar os testes, há diversas ferramentas e plataformas que apresentam essas especialidades. 
+
+- Postman
+A ferramenta Postman é uma API Client e funciona simulando as requisições feitas no lado do cliente, ou seja, você não precisa de um front para testar requisições e ainda pode automatizar os testes.
+
+- Insomnia
+Apresenta uma aparência mais “simples” e tem o mesmo papel que o Postman. Também é amplamente utilizado pela comunidade dev. É uma ferramenta gratuita.
+
+- Thunder Client
+Já imaginou utilizar uma ferramenta como Postman ou Insomnia direto no VSCode? Pois bem, alguém já pensou nisso e desenvolveu uma solução em formato de extensão. O Thunder Client é leve, intuitivo e se consolida como uma boa opção para quem deseja simplicidade e rapidez na hora de testar seus projetos.
+
+---
+
+### escopos de pacotes
+Durante a aula a instalação da ferramenta Jest foi feita de uma maneira diferente de instalação global.
+```
+npm i @jest/globals
+```
+
+O uso do @ nem sempre é presente nas instalações de pacotes NPM. Mas então, o que seria isso?
+
+Chamamos essa nomenclatura de escopo. Imagine que ao configurar um nome e publicar um pacote NPM, o escopo permite que você crie um pacote com o mesmo nome que outros pacotes criados por usuários diferentes sem conflitos.
+
+Quando listados como dependentes em um arquivo package.json, os pacotes com escopo são precedidos por seu nome de escopo. O nome do escopo é tudo entre o “@” e a barra e você pode separar pacotes públicos (NPM) e privados (NPMCorp) adicionando o prefixo de escopo:
+
+Escopo "npm": @npm/nome-do-pacote
+Escopo "npmcorp": @npmcorp/nome-do-pacote
+Sendo assim, quando precisamos instalar um pacote NPM basta usar o “@” para diferenciar o pacote com ou sem escopo.
+
+Para pacotes com escopo, execute npm install <@escopo/nome-do-pacote>
+Para pacotes sem escopo, execute npm install <nome-do-pacote>
+Mas o que seriam pacotes npm com escopo público e privado? Vamos entender melhor essas diferenças.
+
+**Escopo de pacotes públicos**:
+[Criando e publicando pacotes públicos](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)
+Nem todo pacote público tem escopo, e, por padrão, pacotes privados sempre têm escopo. Mas é possível compartilhar seu código publicamente em um namespace de usuário ou organização e você pode publicar pacotes públicos com escopo de usuário ou de organização no registro NPM.
+
+**Escopo de pacotes privados**:
+É possível usar o registro NPM para hospedar código que é visível apenas para você e colaboradores escolhidos, permitindo que você gerencie e use código privado junto com código público em seus projetos.
+
+O serviço do NPM tem a capacidade de hospedar pacotes privados. Porém, esse serviço não é gratuito e requer pagamentos mensais. 
+Para obter mais informações, clique no link:
+[pacotes privados](https://docs.npmjs.com/about-private-packages) e [criando e publicando pacotes privados](https://docs.npmjs.com/creating-and-publishing-private-packages).
+
+[Artigo: Criando e publicando uma biblioteca JS no NPM](https://www.alura.com.br/artigos/criando-e-publicando-uma-biblioteca-javascript-no-npm)
+
+---
 

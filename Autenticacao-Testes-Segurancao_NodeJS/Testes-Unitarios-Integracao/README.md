@@ -12,9 +12,9 @@
 | Aula | Titulo | Status |
 | --- | --- | --- |
 | 1 | Conceituando testes | ✔️ |
-| 2 | Asserções e Jest | ⚫ |
-| 3 | Implementando testes | ⚫ |
-| 4 | Testando uma API | ⚫ |
+| 2 | Asserções e Jest | ✔️ |
+| 3 | Implementando testes | ✔️ |
+| 4 | Testando uma API | ✔️ |
 | 5 | Testando rotas | ⚫ |
 
 ---
@@ -49,7 +49,10 @@
 
 ### Aula 04 - Testando uma API
 <ul>
-  <li></li>
+  <li>Implementar os primeiros testes unitários em uma API;</li>
+  <li>Utilizar o método "skip", que serve para pular temporariamente os testes que constam na coleção de asserções;</li>
+  <li>Rodar testes de forma assíncrona (com o then e await);</li>
+  <li>Criar funções de simulação (mocks), com o jest. fn(), para simular um novo comportamento no teste.</li>
 </ul>
 
 ### Aula 05 - Testando rotas
