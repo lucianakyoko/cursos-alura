@@ -31,7 +31,11 @@
 
 ### Aula 02 - Asserções e Jest
 <ul>
-  <li></li>
+  <li>Utilizar métodos nativos de asserções para fins de comparação de igualdade;</li>
+  <li>Instalar e executar o Jest com a flag --experimental;</li>
+  <li>Criar arquivos de testes com o Jest e analisar erros;</li>
+  <li>Usar a função describe um método do Jest usado para conjunto de testes relacionados. O describe possui a sintaxe de dois argumentos: Uma string para descrever; Uma função callback para executar o teste.</li>
+  <li>Gerar relatório com o coverage, uma ferramenta integrada do jest para cobertura de testes, que possibilita identificar caminhos não testados no código.</li>
 </ul>
 
 ### Aula 03 - Implementando testes

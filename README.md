@@ -24,7 +24,7 @@ Cada **Formação** é composta por diversas atividades como:
 </p>
 
 | --- | Formação | Repo                                                                         | Status |
-|-----| --- |------------------------------------------------------------------------------| --- |
+|-----| --- |---| --- |
 | 1   | Aplique TypeScript no front-end | [🗂️](./Aplique_TypeScript_no_front-end/)                                    | ✔️ |
 | 2   | Aplicação acessível com JS, Emotion e React Router | [🗂️](./Criando_uma_aplicacao_acessivel_com_JavaScript_Emotion_React_Router/) | ✔️ |
 | 3   | APIs com Node.js e Express | [🗂️](./APIs_com_NodeJS_e_Express/)                                          | 🔵 |
@@ -41,6 +41,7 @@ Cada **Formação** é composta por diversas atividades como:
 | 14  | Aprenda a programar em JavaScript com foco no back-end | [🗂️](./JS_com_foco_backend/)                                                | ✔️ |
 | 15  | Cursos de micro front-ends: implementando a arquitetura com Single SPA | [🗂️](./Micro_Frontend_Arquitetura_SPA/)                                     | 🔵 |
 | 16  | Aprenda a programar em Java com Orientação a Objetos | [🗂️]()                                                                      | 🔵 |
+| 17  | Autenticação, testes e segurança em Node.js | [🗂️](/) | 🔵 | 
 | 17  | --- | 🗂️                                                                          | ⚫ | 
 
 ---
