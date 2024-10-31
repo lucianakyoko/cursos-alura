@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1730384557944" clover="3.2.0">
+  <project timestamp="1730384557944" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8" elements="26" coveredelements="26" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
+    <file name="carrinho.js" path="C:\Users\lukyo\Desktop\cursos-alura\Autenticacao-Testes-Segurancao_NodeJS\Testes-Unitarios-Integracao\carrinho\carrinho.js">
+      <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="6" type="stmt"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="6" count="6" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+    </file>
+    <file name="item.js" path="C:\Users\lukyo\Desktop\cursos-alura\Autenticacao-Testes-Segurancao_NodeJS\Testes-Unitarios-Integracao\carrinho\item.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="6" type="stmt"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+    </file>
+  </project>
+</coverage>

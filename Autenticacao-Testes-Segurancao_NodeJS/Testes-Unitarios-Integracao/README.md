@@ -40,7 +40,11 @@
 
 ### Aula 03 - Implementando testes
 <ul>
-  <li></li>
+  <li>Usar Matchers para diferentes formas de testes, comparando igualdade, inclusão, erros e propriedades de valores;</li>
+  <li>Alinhar o uso do matcher com asserções e estrutura de dados para utilizar em arrays, partes de objetos e conjuntos;</li>
+  <li>Identificar as situações de "falso positivo", por meio da análise do percentual de cobertura com a flag --coverage;</li>
+  <li>Reconhecer que nem sempre quando obtivermos 100% de cobertura de acordo com um relatório estaremos realmente testando todo o código;</li>
+  <li>Conhecemos algumas formas que falso-positivos podem existir nos nossos testes.</li>
 </ul>
 
 ### Aula 04 - Testando uma API

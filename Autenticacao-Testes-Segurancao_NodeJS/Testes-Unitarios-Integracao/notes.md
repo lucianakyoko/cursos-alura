@@ -172,3 +172,51 @@ Ran all test suites.
 O Jest também fornece o relatório de cobertura de forma mais visual. Quando utilizamos a flag coverage, além de exibir o relatório no terminal, o Jest também cria a pasta coverage na raiz do projeto. Dentro desta pasta, você pode acessar a subpasta lcov-report para ver o relatório (report) e interagir com os arquivos, abrindo o arquivo index.html e navegando pelos arquivos.
 
 ---
+
+### funções adicionais
+- [Guia iniciando com Jest](https://jestjs.io/pt-BR/docs/getting-started)
+- [Documentação API Expect](https://jestjs.io/pt-BR/docs/expect)
+
+Como podemos observar, o framework Jest apresenta diversas funcionalidades para tornar o desenvolvimento de testes unitários mais eficiente. Pensando nisso, o uso de matchers é interessante para comparar valores e permite a construção de asserções no seu código.
+
+| Método	| Funcionalidade |
+| --- | --- |
+| expect(value)	| Testar um valor |
+| expect.extend(matchers)	| Adicionar seus próprios "matchers" |
+| expect.anything()	| Corresponde a qualquer coisa menos null e Undefined |
+| expect.any(constructor)	| Testa qualquer coisa que é criada com um construtor |
+| expect.arrayContaining(array)	| O array esperado é um subconjunto do array recebido |
+| expect.assertions(número)	| Verifica que um certo número de verificações são chamadas durante um teste |
+| expect.closeTo(number, numDigits?)	| é útil quando você compara números quebrados num array |
+| expect.hasAssertions()	| Verifica que pelo menos uma verificação é chamada durante um teste |
+| expect.not.arrayContaining(array)	| Quando o array esperado não é um subconjunto do array recebido |
+| expect.not.objectContaining(object)	| Quando o objeto esperado não é um subconjunto do objeto recebido |
+| expect.not.stringContaining(string)	| Quando o valor recebido não é uma String ou não corresponde ao valor esperado da String |
+| expect.not.stringMatching(string / regexp)	| Quando o valor recebido não é String ou não corresponde a String esperada ou a expressão  |regular
+| expect.objectContaining(object)	| Corresponde a qualquer objeto recebido que recursivamente coincide com as propriedades esperadas |
+| expect.stringContaining(string)	| Quando o valor recebido é uma String que contém a String esperada |
+| expect.stringMatching(string / regexp)	| Quando o valor recebido é uma String que contém a String ou expressão regular esperada |
+| expect.addSnapshotSerializer(serializer)	| Para adicionar um módulo que formata estruturas de dados específicas da aplicação |
+| .not |	Se você sabe como testar algo, .not permite que você teste seu oposto |
+| .resolves |	Decodifica o valor de uma promessa cumprida, para que qualquer outro matcher possa então ser encadeado |
+| .rejects |	Decodifica o motivo de uma promessa rejeitada, para que qualquer outro matcher possa ser encadeado |
+
+---
+
+### lista de matchers 
+[Documentação de matchers](https://jestjs.io/docs/using-matchers);
+
+O Jest utiliza funções chamadas de matchers (em português, algo como “combinadoras”), que servem para verificar e comparar resultados esperados e recebidos nos testes - ou seja, essas funções verificam se os resultados “combinam” entre si. Existe uma variedade de matchers, cada qual para uma finalidade diferente.
+
+Os matchers podem ser do tipo:
+
+- **Comuns**: usados para testar igualdade de valores de forma exata;
+- **Veracidade**: usados para distinguir de forma explícita entre undefined, null e false;
+- **Number**: usados para comparar números equivalentes;
+- **String: usados para verificar expressões regulares;
+- **Arrays e iteráveis**: usados para verificar a inclusão de um item em um array ou iterável;
+- **Exceções**: usado para testar se uma função lança um erro quando chamada;
+
+---
+
+
