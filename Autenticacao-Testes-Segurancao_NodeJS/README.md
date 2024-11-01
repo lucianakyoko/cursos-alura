@@ -25,8 +25,8 @@
 ### 1️⃣ - ####
 | . | --- | Type | 📘 Atividade | 🔗 PROJETO | REPOSITÓRIO | STATUS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🚩 | 1.1 | 🟪 | [Node.js: testes unitários e de integração](./Testes-Unitarios-Integracao/) | ✖️ | ➖ | 🔵 |
-| . | 1.2 | 🟫 | O que são ambientes? | ✖️ | ➖ | ⚫ |
+| . | 1.1 | 🟪 | [Node.js: testes unitários e de integração](./Testes-Unitarios-Integracao/) | ✖️ | ➖ | ✔️ |
+| 🚩 | 1.2 | 🟫 | O que são ambientes? | ✖️ | ➖ | ⚫ |
 | . | 1.3 | 🟪 | Node.js: implementando testes em uma API Rest | ✖️ | ➖ | ⚫ |
 
 

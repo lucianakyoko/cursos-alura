@@ -268,3 +268,70 @@ Para obter mais informações, clique no link:
 
 ---
 
+## ambiente de testes
+No decorrer dos seus estudos, pode ser que já tenha encontrado o termo “ambiente de testes” (test environment ou test env), algumas vezes junto com seus colegas “ambiente de desenvolvimento”, “ambiente de stage/staging” e “ambiente de produção”, entre os principais. Mas o que exatamente é esse tal ambiente?
+
+**O ambiente de testes é o conjunto formado pelo programa, as configurações (hardware, redes, servidores, dispositivos, etc) e os dados necessários para que os testes sejam executados.**
+
+A proposta do ambiente de testes é verificar todos os componentes de um sistema nas condições mais próximas possíveis das condições de uso real pelos usuários, para que possíveis bugs e erros de implementação possam ser corrigidos antes que o programa ou funcionalidade seja disponibilizado - o tal “ambiente de produção”.
+
+Vamos ver de forma resumida o que é cada um destes ambientes:
+
+### Desenvolvimento
+É o ambiente onde o programa é desenvolvido - como o próprio nome diz. Desenvolver aqui pode tanto se referir ao desenvolvimento de algo do zero (por exemplo, uma funcionalidade) como a atualizações de partes de um programa que já existem. Neste momento, já são efetuados diversos testes, especialmente os que estamos vendo durante o curso, como os testes unitários e de integração.
+
+### Testes
+Como o código que está em desenvolvimento está sempre sendo atualizado, é normal que testes mais complexos e que levem mais tempo para serem implementados, por exemplo os testes E2E (end to end ou “ponta a ponta”) estejam em um ambiente separado do de desenvolvimento, utilizado muitas vezes pelas pessoas que chamamos de QAs (de quality assurance ou “garantia de qualidade”) ou testers.
+
+Neste momento são testadas e avaliadas várias partes do programa, como a integração com outras partes do sistema, comportamento com o banco, performance das tarefas, etc.
+
+### Staging
+O último estágio antes da produção, onde o time procura “imitar” o ambiente de produção da forma mais fiel possível, para últimos testes como os de desempenho, stress e carga.
+
+### Produção
+É o ambiente onde o código “final” está rodando e por onde ele é acessado e utilizado pelos usuários reais do produto. Mesmo neste estágio os times ainda observam e monitoram o comportamento do programa em busca de possíveis bugs e/ou comportamentos não esperados; ou seja, os testes continuam acontecendo!
+
+
+---
+
+## hooks
+Praticamos com alguns métodos do Jest que controlavam eventos em alguns momentos específicos, como por exemplo antes de cada teste acontecer ou após todos os testes. Chamamos este tipo de função de hook (algo como “gancho” em português).
+
+As funções hook não são exclusivas do Jest ou mesmo do JavaScript, e sim um conceito utilizado em programação no geral. Chamamos de hook uma função ou método que é chamado quando queremos dar ao programa um comportamento específico em alguma determinada circunstância - por exemplo, antes, durante ou depois de determinado código ser executado.
+
+Assim, os exemplos que usamos no vídeo, beforeEach() e afterEach() são consideradas funções hooks, pois são executadas em determinados momentos/eventos que ocorrem no programa e permitem que o comportamento do programa “reaja” a estes eventos, alterando o código que será executado ou executando algum código específico.
+
+- [Documentação Jest](https://jestjs.io/pt-BR/docs/setup-teardown)
+- [Referencia da API](https://jestjs.io/pt-BR/docs/api)
+
+
+---
+
+## mais sobre HTTP
+- requisições
+- respostas
+- métodos HTTP (GET, POST, etc)
+- códigos de status HTTP (200, 400, etc)
+- headers (cabeçalhos de requisição/resposta)
+- body (corpos da requisição/resposta)
+
+---
+
+##  spyOn vs jest.fn()
+No curso foram utilizadas duas funções para “simular” chamadas a outras funções: spyOn() e jest.fn(). Mas existe alguma diferença teórica entre elas? Posso usar tanto uma quanto outra?
+
+Como vimos, chamamos de mocking o processo de “substituir” (ou criar “dublês”) módulos. Substituímos a implementação original destes módulos por código que podemos testar - normalmente objetos que retornam dados úteis para os nossos testes.
+
+Isso foi feito de duas formas durante o curso, substituindo o retorno da função com jest.fn() e chamando a função com spyOn(). Então qual a diferença?
+
+Podemos utilizar jest.fn() quando a implementação original da função - ou seja, o código que ela executa - não é importante para o teste, e pode ser substituída pelo que definimos durante o teste, normalmente retornando um objeto.
+
+E por que a implementação não é importante, ou em que casos isso ocorre? Por exemplo, quando o módulo que estamos testando em nossos testes unitários executa internamente uma outra função. Por se tratar de um teste unitário de nosso código, muitas vezes não temos interesse neste momento em saber da execução de outra função interna, especialmente quando se trata de bibliotecas ou módulos externos ao nosso código.
+
+No caso de jest.spyOn(), não há substituição da implementação original da função e queremos testar se, por exemplo, a função está sendo “chamada”, se está recebendo determinado parâmetro, etc. Nesse caso, apenas executar a função com jest.spyOn() ainda vai executar a função “original” e o código dentro dela. Porém, também é possível “mocar” (ou seja, substituir a implementação original de uma função).
+
+Para ver todos os métodos do Jest relativo a mock de funções, você pode consultar a lista na documentação oficial.
+- [Documentação](https://jestjs.io/docs/jest-object#mock-functions)
+
+---
+

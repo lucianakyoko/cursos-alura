@@ -15,7 +15,7 @@
 | 2 | Asserções e Jest | ✔️ |
 | 3 | Implementando testes | ✔️ |
 | 4 | Testando uma API | ✔️ |
-| 5 | Testando rotas | ⚫ |
+| 5 | Testando rotas | ✔️ |
 
 ---
 
@@ -57,7 +57,11 @@
 
 ### Aula 05 - Testando rotas
 <ul>
-  <li></li>
+  <li>O que são e qual a utilidade dos hooks, para configurar as condições iniciais e finais dos nossos testes;</li>
+  <li>A utilizar o supertest, para simplificar as requisições e asserções lidando com o HTTP;</li>
+  <li>Lembrar dos casos de contorno e os motivos pelos quais queremos testá-los;</li>
+  <li>Utilizar o test.each() para fornecer tabelas e simplificar as entradas para testes mais repetitivos;</li>
+  <li>Conhecer o método jest.spyOn() para acompanhar melhor chamadas de métodos e fazer outras asserções.</li>
 </ul>
 
 ---
