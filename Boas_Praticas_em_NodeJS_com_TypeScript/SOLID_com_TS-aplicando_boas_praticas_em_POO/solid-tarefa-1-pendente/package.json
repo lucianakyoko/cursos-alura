@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name": "Emerson Laranja",
+    "url": "https://github.com/EmersonLaranja"
+  },
+  "engines": {
+    "node": ">=20.8.0"
+  },
+    "scripts": {
+      "tarefa-1":"npx tsc tarefa-1/main.ts --outDir tarefa-1/dist && node tarefa-1/dist/main.js",
+      "tarefa-2":"npx tsc tarefa-2/main.ts --outDir tarefa-2/dist && node tarefa-2/dist/main.js",
+      "tarefa-3":"npx tsc tarefa-3/main.ts --outDir tarefa-3/dist && node tarefa-3/dist/main.js",
+      "tarefa-4":"npx tsc tarefa-4/main.ts --outDir tarefa-4/dist && node tarefa-4/dist/main.js",
+      "tarefa-5":"npx tsc tarefa-5/main.ts --outDir tarefa-5/dist && node tarefa-5/dist/main.js"
+    },
+    "dependencies": {
+      "typescript": "^5.3.2"
+    }
+  }
+  
